@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Header } from '@/components/Header';
 import { HomeScreen } from '@/components/HomeScreen';
 import { ExerciseView } from '@/components/ExerciseView';
@@ -15,6 +15,7 @@ const Index = () => {
     currentLesson,
     currentExerciseIndex,
     lessons,
+    units,
     addXp,
     loseHeart,
     increaseStreak,
@@ -103,11 +104,13 @@ const Index = () => {
     <>
       <Header hearts={hearts} maxHearts={maxHearts} xp={totalXp} streak={streak} />
       <HomeScreen
+        units={units}
         lessons={lessons}
         completedLessons={completedLessons}
         getLessonProgress={getLessonProgress}
         onStartLesson={handleStartLesson}
         totalXp={totalXp}
+        streak={streak}
       />
     </>
   );
