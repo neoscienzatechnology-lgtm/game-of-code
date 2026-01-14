@@ -1,25 +1,48 @@
-import { Code2, BookOpen, Target } from 'lucide-react';
-import { LessonCard } from './LessonCard';
-import { Lesson } from '@/data/htmlLessons';
+import { useState } from 'react';
+import { Code2, BookOpen, Target, Flame } from 'lucide-react';
+import { Unit, Lesson } from '@/data/htmlLessons';
+import { UnitAccordion } from './UnitAccordion';
 
 interface HomeScreenProps {
+  units: Unit[];
   lessons: Lesson[];
   completedLessons: string[];
   getLessonProgress: (lessonId: string) => number;
   onStartLesson: (lessonId: string) => void;
   totalXp: number;
+  streak: number;
 }
 
 export function HomeScreen({
+  units,
   lessons,
   completedLessons,
   getLessonProgress,
   onStartLesson,
   totalXp,
+  streak,
 }: HomeScreenProps) {
+  const [openUnitId, setOpenUnitId] = useState<string | null>(units[0]?.id || null);
+
   const completedCount = completedLessons.length;
   const totalLessons = lessons.length;
   const overallProgress = Math.round((completedCount / totalLessons) * 100);
+
+  // Calculate completed units
+  const completedUnits = units.filter(unit => 
+    unit.lessons.every(lesson => completedLessons.includes(lesson.id))
+  ).length;
+
+  // Determine if a unit is locked (all previous units must have at least 1 completed lesson)
+  const isUnitLocked = (unitIndex: number): boolean => {
+    if (unitIndex === 0) return false;
+    // For simplicity, unlock all units for now - can add progressive unlocking later
+    return false;
+  };
+
+  const handleToggleUnit = (unitId: string) => {
+    setOpenUnitId(prev => prev === unitId ? null : unitId);
+  };
 
   return (
     <div className="min-h-screen pt-20 pb-8 px-4">
@@ -35,8 +58,8 @@ export function HomeScreen({
                 <Code2 className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">HTML Básico</h1>
-                <p className="text-muted-foreground text-sm">Fundamentos da Web</p>
+                <h1 className="text-2xl font-bold">HTML Completo</h1>
+                <p className="text-muted-foreground text-sm">Do básico ao avançado</p>
               </div>
             </div>
 
@@ -52,41 +75,53 @@ export function HomeScreen({
             </div>
 
             {/* Stats */}
-            <div className="flex gap-4">
-              <div className="flex items-center gap-2 text-sm">
-                <BookOpen className="w-4 h-4 text-muted-foreground" />
-                <span><strong>{completedCount}</strong>/{totalLessons} lições</span>
+            <div className="grid grid-cols-3 gap-3">
+              <div className="flex flex-col items-center p-2 rounded-lg bg-muted/50">
+                <BookOpen className="w-4 h-4 text-primary mb-1" />
+                <span className="text-lg font-bold">{completedCount}</span>
+                <span className="text-xs text-muted-foreground">Lições</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <Target className="w-4 h-4 text-muted-foreground" />
-                <span><strong>{totalXp}</strong> XP total</span>
+              <div className="flex flex-col items-center p-2 rounded-lg bg-muted/50">
+                <Target className="w-4 h-4 text-xp mb-1" />
+                <span className="text-lg font-bold">{totalXp}</span>
+                <span className="text-xs text-muted-foreground">XP Total</span>
+              </div>
+              <div className="flex flex-col items-center p-2 rounded-lg bg-muted/50">
+                <Flame className="w-4 h-4 text-streak mb-1" />
+                <span className="text-lg font-bold">{streak}</span>
+                <span className="text-xs text-muted-foreground">Streak</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Section Title */}
-        <div className="flex items-center gap-3 mb-4">
-          <h2 className="text-lg font-semibold">Lições</h2>
-          <div className="flex-1 h-px bg-border" />
+        {/* Course Overview */}
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-semibold">Unidades</h2>
+          <span className="text-sm text-muted-foreground">
+            {completedUnits}/{units.length} completas
+          </span>
         </div>
 
-        {/* Lessons List */}
+        {/* Units List */}
         <div className="space-y-3">
-          {lessons.map((lesson) => (
-            <LessonCard
-              key={lesson.id}
-              lesson={lesson}
-              progress={getLessonProgress(lesson.id)}
-              isCompleted={completedLessons.includes(lesson.id)}
-              onClick={() => onStartLesson(lesson.id)}
+          {units.map((unit, index) => (
+            <UnitAccordion
+              key={unit.id}
+              unit={unit}
+              isOpen={openUnitId === unit.id}
+              onToggle={() => handleToggleUnit(unit.id)}
+              completedLessons={completedLessons}
+              getLessonProgress={getLessonProgress}
+              onStartLesson={onStartLesson}
+              isLocked={isUnitLocked(index)}
             />
           ))}
         </div>
 
         {/* Footer hint */}
         <p className="text-center text-muted-foreground text-sm mt-8">
-          Complete todas as lições para dominar HTML! 🚀
+          {totalLessons} lições em {units.length} unidades • Domine HTML completo! 🚀
         </p>
       </div>
     </div>

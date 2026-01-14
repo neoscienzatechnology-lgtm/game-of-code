@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { htmlLessons, Lesson } from '@/data/htmlLessons';
+import { htmlLessons, htmlUnits, Lesson } from '@/data/htmlLessons';
 
 interface GameState {
   totalXp: number;
@@ -121,6 +121,7 @@ export function useGameState() {
   return {
     ...gameState,
     lessons: htmlLessons,
+    units: htmlUnits,
     addXp,
     loseHeart,
     increaseStreak,
