@@ -36,8 +36,10 @@ export function HomeScreen({
   // Determine if a unit is locked (all previous units must have at least 1 completed lesson)
   const isUnitLocked = (unitIndex: number): boolean => {
     if (unitIndex === 0) return false;
-    // For simplicity, unlock all units for now - can add progressive unlocking later
-    return false;
+    const previousUnit = units[unitIndex - 1];
+    if (!previousUnit) return false;
+
+    return !previousUnit.lessons.some(lesson => completedLessons.includes(lesson.id));
   };
 
   const handleToggleUnit = (unitId: string) => {
