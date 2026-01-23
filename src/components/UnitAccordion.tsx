@@ -89,15 +89,20 @@ export function UnitAccordion({
       {/* Lessons List */}
       {isOpen && !isLocked && (
         <div className="px-4 pb-4 space-y-2 animate-accordion-down">
-          {unit.lessons.map((lesson, index) => (
-            <LessonCard
-              key={lesson.id}
-              lesson={lesson}
-              progress={getLessonProgress(lesson.id)}
-              isCompleted={completedLessons.includes(lesson.id)}
-              onClick={() => onStartLesson(lesson.id)}
-            />
-          ))}
+          {unit.lessons.map((lesson, index) => {
+            const isLessonLocked = !lesson.unlocked || (index > 0 && !completedLessons.includes(unit.lessons[index - 1].id));
+
+            return (
+              <LessonCard
+                key={lesson.id}
+                lesson={lesson}
+                progress={getLessonProgress(lesson.id)}
+                isCompleted={completedLessons.includes(lesson.id)}
+                isLocked={isLessonLocked}
+                onClick={() => onStartLesson(lesson.id)}
+              />
+            );
+          })}
         </div>
       )}
     </div>
