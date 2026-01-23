@@ -5415,6 +5415,1138 @@ const unit16Lessons: Lesson[] = [
 ];
 
 // ============================================
+// UNIDADE 17 — FUNDAMENTOS DE CSS
+// ============================================
+
+const unit17Lessons: Lesson[] = [
+  {
+    id: 'u17-l1',
+    title: 'O que é CSS',
+    description: 'Estilos para a web',
+    icon: '🎨',
+    unlocked: true,
+    unitId: 'unit-17',
+    unitTitle: 'Fundamentos de CSS',
+    exercises: [
+      {
+        id: 'u17-l1-1',
+        type: 'info',
+        instruction: 'CSS em uma frase',
+        explanation: 'CSS (Cascading Style Sheets) define a **aparência** dos elementos HTML: cores, tamanhos, espaçamentos e layout.',
+        xp: 5
+      },
+      {
+        id: 'u17-l1-2',
+        type: 'info',
+        instruction: 'Separação de responsabilidades',
+        explanation: 'HTML estrutura o conteúdo, CSS estiliza, JavaScript adiciona comportamento.',
+        xp: 5
+      },
+      {
+        id: 'u17-l1-3',
+        type: 'multiple-choice',
+        instruction: 'O CSS é responsável por:',
+        options: [
+          { id: 'a', text: 'Estrutura do conteúdo', correct: false },
+          { id: 'b', text: 'Estilo e layout', correct: true },
+          { id: 'c', text: 'Lógica e interatividade', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u17-l1-4',
+        type: 'fill-blank',
+        instruction: 'Complete a sigla:',
+        codeTemplate: '{{blank1}} Style Sheets',
+        blanks: [{ id: 'blank1', answer: 'Cascading', placeholder: '_________' }],
+        xp: 10
+      }
+    ]
+  },
+  {
+    id: 'u17-l2',
+    title: 'Seletores',
+    description: 'Como escolher elementos',
+    icon: '🧲',
+    unlocked: true,
+    unitId: 'unit-17',
+    unitTitle: 'Fundamentos de CSS',
+    exercises: [
+      {
+        id: 'u17-l2-1',
+        type: 'info',
+        instruction: 'Seletores básicos',
+        explanation: 'Seletores apontam quais elementos receberão estilo: `p`, `.classe`, `#id`.',
+        xp: 5
+      },
+      {
+        id: 'u17-l2-2',
+        type: 'fill-blank',
+        instruction: 'Selecione todos os parágrafos:',
+        codeTemplate: '{{blank1}} { color: red; }',
+        blanks: [{ id: 'blank1', answer: 'p', placeholder: '_' }],
+        xp: 10
+      },
+      {
+        id: 'u17-l2-3',
+        type: 'multiple-choice',
+        instruction: 'O seletor de classe é:',
+        options: [
+          { id: 'a', text: '.classe', correct: true },
+          { id: 'b', text: '#classe', correct: false },
+          { id: 'c', text: 'classe', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u17-l2-4',
+        type: 'info',
+        instruction: 'Especificidade rápida',
+        explanation: 'IDs são mais específicos que classes, e classes são mais específicas que tags.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u17-l3',
+    title: 'Cores e tipografia',
+    description: 'Deixando o texto legível',
+    icon: '🖋️',
+    unlocked: true,
+    unitId: 'unit-17',
+    unitTitle: 'Fundamentos de CSS',
+    exercises: [
+      {
+        id: 'u17-l3-1',
+        type: 'info',
+        instruction: 'Propriedades essenciais',
+        explanation: 'Use `color`, `font-size`, `font-family` e `font-weight` para estilizar textos.',
+        xp: 5
+      },
+      {
+        id: 'u17-l3-2',
+        type: 'fill-blank',
+        instruction: 'Defina a cor do texto:',
+        codeTemplate: 'p { {{blank1}}: #1f2937; }',
+        blanks: [{ id: 'blank1', answer: 'color', placeholder: '_____' }],
+        xp: 10
+      },
+      {
+        id: 'u17-l3-3',
+        type: 'multiple-choice',
+        instruction: 'Qual propriedade muda o tamanho da fonte?',
+        options: [
+          { id: 'a', text: 'font-size', correct: true },
+          { id: 'b', text: 'font-style', correct: false },
+          { id: 'c', text: 'line-style', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u17-l3-4',
+        type: 'info',
+        instruction: 'Dica de leitura',
+        explanation: 'Use `line-height` para melhorar a leitura, como `line-height: 1.6`.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u17-l4',
+    title: 'Box model',
+    description: 'Espaçamento e tamanho',
+    icon: '📦',
+    unlocked: true,
+    unitId: 'unit-17',
+    unitTitle: 'Fundamentos de CSS',
+    exercises: [
+      {
+        id: 'u17-l4-1',
+        type: 'info',
+        instruction: 'O que é box model?',
+        explanation: 'Todo elemento tem **conteúdo**, **padding**, **border** e **margin**.',
+        xp: 5
+      },
+      {
+        id: 'u17-l4-2',
+        type: 'fill-blank',
+        instruction: 'Adicione espaço interno:',
+        codeTemplate: '.card { {{blank1}}: 16px; }',
+        blanks: [{ id: 'blank1', answer: 'padding', placeholder: '_______' }],
+        xp: 10
+      },
+      {
+        id: 'u17-l4-3',
+        type: 'multiple-choice',
+        instruction: 'Qual propriedade cria espaço externo?',
+        options: [
+          { id: 'a', text: 'padding', correct: false },
+          { id: 'b', text: 'margin', correct: true },
+          { id: 'c', text: 'border', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u17-l4-4',
+        type: 'info',
+        instruction: 'Box sizing',
+        explanation: 'Use `box-sizing: border-box` para o padding não aumentar o tamanho total.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u17-l5',
+    title: 'Cascata e especificidade',
+    description: 'Quem vence?',
+    icon: '🏆',
+    unlocked: true,
+    unitId: 'unit-17',
+    unitTitle: 'Fundamentos de CSS',
+    exercises: [
+      {
+        id: 'u17-l5-1',
+        type: 'info',
+        instruction: 'Cascata',
+        explanation: 'Se dois estilos se aplicam, vence o mais específico ou o que está por último.',
+        xp: 5
+      },
+      {
+        id: 'u17-l5-2',
+        type: 'multiple-choice',
+        instruction: 'Quem tem maior especificidade?',
+        options: [
+          { id: 'a', text: '.botao', correct: false },
+          { id: 'b', text: '#botao', correct: true },
+          { id: 'c', text: 'button', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u17-l5-3',
+        type: 'fill-blank',
+        instruction: 'Selecione por id:',
+        codeTemplate: '{{blank1}}menu { color: white; }',
+        blanks: [{ id: 'blank1', answer: '#', placeholder: '_' }],
+        xp: 10
+      },
+      {
+        id: 'u17-l5-4',
+        type: 'info',
+        instruction: 'Evite !important',
+        explanation: 'Use `!important` apenas em casos extremos. Prefira ajustar especificidade.',
+        xp: 5
+      }
+    ]
+  }
+];
+
+// ============================================
+// UNIDADE 18 — LAYOUT E RESPONSIVIDADE
+// ============================================
+
+const unit18Lessons: Lesson[] = [
+  {
+    id: 'u18-l1',
+    title: 'Flexbox',
+    description: 'Alinhamento flexível',
+    icon: '🧩',
+    unlocked: true,
+    unitId: 'unit-18',
+    unitTitle: 'Layout e Responsividade',
+    exercises: [
+      {
+        id: 'u18-l1-1',
+        type: 'info',
+        instruction: 'display flex',
+        explanation: 'Flexbox organiza elementos em linha ou coluna com alinhamento simples.',
+        xp: 5
+      },
+      {
+        id: 'u18-l1-2',
+        type: 'fill-blank',
+        instruction: 'Ative o flex:',
+        codeTemplate: '.container { display: {{blank1}}; }',
+        blanks: [{ id: 'blank1', answer: 'flex', placeholder: '____' }],
+        xp: 10
+      },
+      {
+        id: 'u18-l1-3',
+        type: 'multiple-choice',
+        instruction: 'Centralizar horizontalmente no eixo principal:',
+        options: [
+          { id: 'a', text: 'justify-content: center', correct: true },
+          { id: 'b', text: 'align-items: center', correct: false },
+          { id: 'c', text: 'flex-wrap: center', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u18-l1-4',
+        type: 'info',
+        instruction: 'Eixos do Flex',
+        explanation: 'Eixo principal: `justify-content`. Eixo cruzado: `align-items`.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u18-l2',
+    title: 'Grid',
+    description: 'Layout em grade',
+    icon: '🧮',
+    unlocked: true,
+    unitId: 'unit-18',
+    unitTitle: 'Layout e Responsividade',
+    exercises: [
+      {
+        id: 'u18-l2-1',
+        type: 'info',
+        instruction: 'CSS Grid',
+        explanation: 'Grid cria linhas e colunas para layouts complexos.',
+        xp: 5
+      },
+      {
+        id: 'u18-l2-2',
+        type: 'fill-blank',
+        instruction: 'Crie duas colunas iguais:',
+        codeTemplate: '.grid { display: grid; {{blank1}}: 1fr 1fr; }',
+        blanks: [{ id: 'blank1', answer: 'grid-template-columns', placeholder: '____________________' }],
+        xp: 10
+      },
+      {
+        id: 'u18-l2-3',
+        type: 'multiple-choice',
+        instruction: 'Para espaçamento entre colunas/linhas use:',
+        options: [
+          { id: 'a', text: 'gap', correct: true },
+          { id: 'b', text: 'padding', correct: false },
+          { id: 'c', text: 'margin', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u18-l2-4',
+        type: 'info',
+        instruction: 'Quando usar',
+        explanation: 'Grid é ideal para layouts de página; Flexbox para alinhamento de itens.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u18-l3',
+    title: 'Position',
+    description: 'Controle de posicionamento',
+    icon: '📍',
+    unlocked: true,
+    unitId: 'unit-18',
+    unitTitle: 'Layout e Responsividade',
+    exercises: [
+      {
+        id: 'u18-l3-1',
+        type: 'info',
+        instruction: 'Position básico',
+        explanation: '`relative` mantém espaço, `absolute` remove do fluxo e posiciona no ancestral.',
+        xp: 5
+      },
+      {
+        id: 'u18-l3-2',
+        type: 'fill-blank',
+        instruction: 'Posicione com absolute:',
+        codeTemplate: '.badge { position: {{blank1}}; top: 8px; right: 8px; }',
+        blanks: [{ id: 'blank1', answer: 'absolute', placeholder: '________' }],
+        xp: 10
+      },
+      {
+        id: 'u18-l3-3',
+        type: 'multiple-choice',
+        instruction: 'Elemento fixo no topo da tela:',
+        options: [
+          { id: 'a', text: 'position: sticky', correct: false },
+          { id: 'b', text: 'position: fixed', correct: true },
+          { id: 'c', text: 'position: static', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u18-l3-4',
+        type: 'info',
+        instruction: 'Dica',
+        explanation: 'Use `relative` no pai para `absolute` se posicionar corretamente.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u18-l4',
+    title: 'Responsividade',
+    description: 'Layouts para todas telas',
+    icon: '📱',
+    unlocked: true,
+    unitId: 'unit-18',
+    unitTitle: 'Layout e Responsividade',
+    exercises: [
+      {
+        id: 'u18-l4-1',
+        type: 'info',
+        instruction: 'Media queries',
+        explanation: 'Media queries aplicam estilos em condições, como largura da tela.',
+        xp: 5
+      },
+      {
+        id: 'u18-l4-2',
+        type: 'fill-blank',
+        instruction: 'Crie uma media query:',
+        codeTemplate: '@media (max-width: 768px) { {{blank1}} }',
+        blanks: [{ id: 'blank1', answer: 'body { font-size: 14px; }', placeholder: '________________________' }],
+        xp: 10
+      },
+      {
+        id: 'u18-l4-3',
+        type: 'multiple-choice',
+        instruction: 'Para mobile first, começamos:',
+        options: [
+          { id: 'a', text: 'Estilos base para mobile', correct: true },
+          { id: 'b', text: 'Estilos base para desktop', correct: false },
+          { id: 'c', text: 'Sem estilos base', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u18-l4-4',
+        type: 'info',
+        instruction: 'Unidades relativas',
+        explanation: 'Use `rem`, `%`, `vw` e `vh` para melhor responsividade.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u18-l5',
+    title: 'Pseudo-classes',
+    description: 'Estados interativos',
+    icon: '✨',
+    unlocked: true,
+    unitId: 'unit-18',
+    unitTitle: 'Layout e Responsividade',
+    exercises: [
+      {
+        id: 'u18-l5-1',
+        type: 'info',
+        instruction: 'Estados comuns',
+        explanation: 'Pseudo-classes como `:hover`, `:focus` e `:active` controlam estados.',
+        xp: 5
+      },
+      {
+        id: 'u18-l5-2',
+        type: 'fill-blank',
+        instruction: 'Crie um hover:',
+        codeTemplate: 'button{{blank1}} { background: #22c55e; }',
+        blanks: [{ id: 'blank1', answer: ':hover', placeholder: '______' }],
+        xp: 10
+      },
+      {
+        id: 'u18-l5-3',
+        type: 'multiple-choice',
+        instruction: 'Qual pseudo-classe indica foco?',
+        options: [
+          { id: 'a', text: ':focus', correct: true },
+          { id: 'b', text: ':visited', correct: false },
+          { id: 'c', text: ':checked', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u18-l5-4',
+        type: 'info',
+        instruction: 'Acessibilidade',
+        explanation: 'Estilize foco visível para navegação via teclado.',
+        xp: 5
+      }
+    ]
+  }
+];
+
+// ============================================
+// UNIDADE 19 — CSS AVANÇADO
+// ============================================
+
+const unit19Lessons: Lesson[] = [
+  {
+    id: 'u19-l1',
+    title: 'Transitions',
+    description: 'Animações suaves',
+    icon: '🧘‍♀️',
+    unlocked: true,
+    unitId: 'unit-19',
+    unitTitle: 'CSS Avançado',
+    exercises: [
+      {
+        id: 'u19-l1-1',
+        type: 'info',
+        instruction: 'Transições',
+        explanation: '`transition` cria mudanças suaves entre estados, como hover.',
+        xp: 5
+      },
+      {
+        id: 'u19-l1-2',
+        type: 'fill-blank',
+        instruction: 'Adicione transição:',
+        codeTemplate: '.btn { transition: {{blank1}}; }',
+        blanks: [{ id: 'blank1', answer: 'all 0.3s ease', placeholder: '______________' }],
+        xp: 10
+      },
+      {
+        id: 'u19-l1-3',
+        type: 'multiple-choice',
+        instruction: 'Qual propriedade define duração?',
+        options: [
+          { id: 'a', text: 'transition-duration', correct: true },
+          { id: 'b', text: 'transition-delay', correct: false },
+          { id: 'c', text: 'transition-property', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u19-l1-4',
+        type: 'info',
+        instruction: 'Dica',
+        explanation: 'Transicione apenas propriedades necessárias para manter performance.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u19-l2',
+    title: 'Animations',
+    description: 'Keyframes no CSS',
+    icon: '🎬',
+    unlocked: true,
+    unitId: 'unit-19',
+    unitTitle: 'CSS Avançado',
+    exercises: [
+      {
+        id: 'u19-l2-1',
+        type: 'info',
+        instruction: 'Keyframes',
+        explanation: 'Crie animações com `@keyframes` e aplique com `animation`.',
+        xp: 5
+      },
+      {
+        id: 'u19-l2-2',
+        type: 'fill-blank',
+        instruction: 'Defina uma animação:',
+        codeTemplate: '@keyframes {{blank1}} { from { opacity: 0; } to { opacity: 1; } }',
+        blanks: [{ id: 'blank1', answer: 'fadeIn', placeholder: '______' }],
+        xp: 10
+      },
+      {
+        id: 'u19-l2-3',
+        type: 'multiple-choice',
+        instruction: 'Repetir infinitamente:',
+        options: [
+          { id: 'a', text: 'animation-iteration-count: infinite', correct: true },
+          { id: 'b', text: 'animation-delay: infinite', correct: false },
+          { id: 'c', text: 'animation-fill-mode: infinite', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u19-l2-4',
+        type: 'info',
+        instruction: 'Preferências do usuário',
+        explanation: 'Respeite `prefers-reduced-motion` para acessibilidade.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u19-l3',
+    title: 'Variáveis CSS',
+    description: 'Custom properties',
+    icon: '🧩',
+    unlocked: true,
+    unitId: 'unit-19',
+    unitTitle: 'CSS Avançado',
+    exercises: [
+      {
+        id: 'u19-l3-1',
+        type: 'info',
+        instruction: 'Custom properties',
+        explanation: 'Variáveis CSS começam com `--` e são usadas com `var()`.',
+        xp: 5
+      },
+      {
+        id: 'u19-l3-2',
+        type: 'fill-blank',
+        instruction: 'Defina uma variável:',
+        codeTemplate: ':root { {{blank1}}: #22c55e; }',
+        blanks: [{ id: 'blank1', answer: '--cor-primaria', placeholder: '____________' }],
+        xp: 10
+      },
+      {
+        id: 'u19-l3-3',
+        type: 'fill-blank',
+        instruction: 'Use a variável:',
+        codeTemplate: 'button { background: {{blank1}}; }',
+        blanks: [{ id: 'blank1', answer: 'var(--cor-primaria)', placeholder: '____________________' }],
+        xp: 10
+      },
+      {
+        id: 'u19-l3-4',
+        type: 'info',
+        instruction: 'Benefícios',
+        explanation: 'Facilita temas e consistência visual.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u19-l4',
+    title: 'Pseudo-elementos',
+    description: 'Detalhes com ::before/::after',
+    icon: '🪄',
+    unlocked: true,
+    unitId: 'unit-19',
+    unitTitle: 'CSS Avançado',
+    exercises: [
+      {
+        id: 'u19-l4-1',
+        type: 'info',
+        instruction: 'Pseudo-elementos',
+        explanation: 'Use `::before` e `::after` para inserir conteúdo decorativo.',
+        xp: 5
+      },
+      {
+        id: 'u19-l4-2',
+        type: 'fill-blank',
+        instruction: 'Crie um marcador:',
+        codeTemplate: '.item{{blank1}} { content: \"•\"; color: #22c55e; }',
+        blanks: [{ id: 'blank1', answer: '::before', placeholder: '________' }],
+        xp: 10
+      },
+      {
+        id: 'u19-l4-3',
+        type: 'multiple-choice',
+        instruction: 'Pseudo-elementos requerem:',
+        options: [
+          { id: 'a', text: 'content', correct: true },
+          { id: 'b', text: 'display', correct: false },
+          { id: 'c', text: 'position', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u19-l4-4',
+        type: 'info',
+        instruction: 'Uso comum',
+        explanation: 'Ícones decorativos e efeitos visuais sem alterar HTML.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u19-l5',
+    title: 'Sombras e fundos',
+    description: 'Profundidade visual',
+    icon: '🌈',
+    unlocked: true,
+    unitId: 'unit-19',
+    unitTitle: 'CSS Avançado',
+    exercises: [
+      {
+        id: 'u19-l5-1',
+        type: 'info',
+        instruction: 'Box shadow',
+        explanation: 'Use `box-shadow` para criar profundidade em cartões e botões.',
+        xp: 5
+      },
+      {
+        id: 'u19-l5-2',
+        type: 'fill-blank',
+        instruction: 'Adicione sombra:',
+        codeTemplate: '.card { box-shadow: {{blank1}}; }',
+        blanks: [{ id: 'blank1', answer: '0 8px 24px rgba(0,0,0,0.2)', placeholder: '__________________________' }],
+        xp: 10
+      },
+      {
+        id: 'u19-l5-3',
+        type: 'multiple-choice',
+        instruction: 'Para gradiente use:',
+        options: [
+          { id: 'a', text: 'background: linear-gradient(...)', correct: true },
+          { id: 'b', text: 'background: solid(...)', correct: false },
+          { id: 'c', text: 'background: gradient(...)', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u19-l5-4',
+        type: 'info',
+        instruction: 'Imagens de fundo',
+        explanation: 'Use `background-size: cover` para preencher o elemento.',
+        xp: 5
+      }
+    ]
+  }
+];
+
+// ============================================
+// UNIDADE 20 — JAVASCRIPT FUNDAMENTOS
+// ============================================
+
+const unit20Lessons: Lesson[] = [
+  {
+    id: 'u20-l1',
+    title: 'O que é JavaScript',
+    description: 'Interatividade na web',
+    icon: '⚙️',
+    unlocked: true,
+    unitId: 'unit-20',
+    unitTitle: 'JavaScript Fundamentos',
+    exercises: [
+      {
+        id: 'u20-l1-1',
+        type: 'info',
+        instruction: 'JavaScript',
+        explanation: 'JavaScript adiciona **comportamento** às páginas: cliques, animações, validações.',
+        xp: 5
+      },
+      {
+        id: 'u20-l1-2',
+        type: 'multiple-choice',
+        instruction: 'JavaScript roda no:',
+        options: [
+          { id: 'a', text: 'Navegador', correct: true },
+          { id: 'b', text: 'Somente servidor', correct: false },
+          { id: 'c', text: 'Apenas HTML', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u20-l1-3',
+        type: 'fill-blank',
+        instruction: 'Saída no console:',
+        codeTemplate: '{{blank1}}(\"Olá!\")',
+        blanks: [{ id: 'blank1', answer: 'console.log', placeholder: '___________' }],
+        xp: 10
+      },
+      {
+        id: 'u20-l1-4',
+        type: 'info',
+        instruction: 'Dica',
+        explanation: 'Use o DevTools (F12) para ver o console.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u20-l2',
+    title: 'Variáveis',
+    description: 'Guardar valores',
+    icon: '📦',
+    unlocked: true,
+    unitId: 'unit-20',
+    unitTitle: 'JavaScript Fundamentos',
+    exercises: [
+      {
+        id: 'u20-l2-1',
+        type: 'info',
+        instruction: 'Declarações',
+        explanation: 'Use `const` para valores fixos e `let` para valores que mudam.',
+        xp: 5
+      },
+      {
+        id: 'u20-l2-2',
+        type: 'fill-blank',
+        instruction: 'Crie uma constante:',
+        codeTemplate: '{{blank1}} nome = \"Ada\";',
+        blanks: [{ id: 'blank1', answer: 'const', placeholder: '_____' }],
+        xp: 10
+      },
+      {
+        id: 'u20-l2-3',
+        type: 'multiple-choice',
+        instruction: 'Para variável mutável:',
+        options: [
+          { id: 'a', text: 'let', correct: true },
+          { id: 'b', text: 'const', correct: false },
+          { id: 'c', text: 'var', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u20-l2-4',
+        type: 'info',
+        instruction: 'Boas práticas',
+        explanation: 'Use nomes claros e evite `var` em projetos modernos.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u20-l3',
+    title: 'Tipos de dados',
+    description: 'Strings, números e booleanos',
+    icon: '🔤',
+    unlocked: true,
+    unitId: 'unit-20',
+    unitTitle: 'JavaScript Fundamentos',
+    exercises: [
+      {
+        id: 'u20-l3-1',
+        type: 'info',
+        instruction: 'Tipos básicos',
+        explanation: 'Principais tipos: `string`, `number`, `boolean`, `null`, `undefined`.',
+        xp: 5
+      },
+      {
+        id: 'u20-l3-2',
+        type: 'fill-blank',
+        instruction: 'Exemplo booleano:',
+        codeTemplate: 'const ativo = {{blank1}};',
+        blanks: [{ id: 'blank1', answer: 'true', placeholder: '____' }],
+        xp: 10
+      },
+      {
+        id: 'u20-l3-3',
+        type: 'multiple-choice',
+        instruction: 'Qual é um number?',
+        options: [
+          { id: 'a', text: '\"42\"', correct: false },
+          { id: 'b', text: '42', correct: true },
+          { id: 'c', text: 'true', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u20-l3-4',
+        type: 'info',
+        instruction: 'Template strings',
+        explanation: 'Use crases para interpolar: `Olá, ${nome}`.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u20-l4',
+    title: 'Operadores',
+    description: 'Comparações e lógica',
+    icon: '🧮',
+    unlocked: true,
+    unitId: 'unit-20',
+    unitTitle: 'JavaScript Fundamentos',
+    exercises: [
+      {
+        id: 'u20-l4-1',
+        type: 'info',
+        instruction: 'Operadores',
+        explanation: 'Use `===` para comparação estrita e `&&` / `||` para lógica.',
+        xp: 5
+      },
+      {
+        id: 'u20-l4-2',
+        type: 'fill-blank',
+        instruction: 'Comparação estrita:',
+        codeTemplate: '5 {{blank1}} \"5\" // false',
+        blanks: [{ id: 'blank1', answer: '===', placeholder: '___' }],
+        xp: 10
+      },
+      {
+        id: 'u20-l4-3',
+        type: 'multiple-choice',
+        instruction: 'Operador E lógico:',
+        options: [
+          { id: 'a', text: '&&', correct: true },
+          { id: 'b', text: '||', correct: false },
+          { id: 'c', text: '!==', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u20-l4-4',
+        type: 'info',
+        instruction: 'Dica',
+        explanation: 'Prefira `===` e `!==` para evitar coerção.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u20-l5',
+    title: 'Funções',
+    description: 'Reutilize lógica',
+    icon: '🧠',
+    unlocked: true,
+    unitId: 'unit-20',
+    unitTitle: 'JavaScript Fundamentos',
+    exercises: [
+      {
+        id: 'u20-l5-1',
+        type: 'info',
+        instruction: 'Funções',
+        explanation: 'Funções agrupam passos. Podem receber parâmetros e retornar valores.',
+        xp: 5
+      },
+      {
+        id: 'u20-l5-2',
+        type: 'fill-blank',
+        instruction: 'Crie uma função:',
+        codeTemplate: 'function {{blank1}}(nome) { return `Olá, ${nome}`; }',
+        blanks: [{ id: 'blank1', answer: 'saudacao', placeholder: '________' }],
+        xp: 10
+      },
+      {
+        id: 'u20-l5-3',
+        type: 'multiple-choice',
+        instruction: 'Função arrow:',
+        options: [
+          { id: 'a', text: 'const soma = (a, b) => a + b', correct: true },
+          { id: 'b', text: 'const soma = function => a + b', correct: false },
+          { id: 'c', text: 'const soma = a + b', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u20-l5-4',
+        type: 'info',
+        instruction: 'Boas práticas',
+        explanation: 'Dê nomes claros às funções para facilitar manutenção.',
+        xp: 5
+      }
+    ]
+  }
+];
+
+// ============================================
+// UNIDADE 21 — DOM E EVENTOS
+// ============================================
+
+const unit21Lessons: Lesson[] = [
+  {
+    id: 'u21-l1',
+    title: 'Selecionar elementos',
+    description: 'Acessando o DOM',
+    icon: '🔍',
+    unlocked: true,
+    unitId: 'unit-21',
+    unitTitle: 'DOM e Eventos',
+    exercises: [
+      {
+        id: 'u21-l1-1',
+        type: 'info',
+        instruction: 'DOM',
+        explanation: 'O DOM representa a página como uma árvore de elementos.',
+        xp: 5
+      },
+      {
+        id: 'u21-l1-2',
+        type: 'fill-blank',
+        instruction: 'Selecione por id:',
+        codeTemplate: 'const botao = document.{{blank1}}(\"btn\");',
+        blanks: [{ id: 'blank1', answer: 'getElementById', placeholder: '______________' }],
+        xp: 10
+      },
+      {
+        id: 'u21-l1-3',
+        type: 'multiple-choice',
+        instruction: 'Selecionar por classe:',
+        options: [
+          { id: 'a', text: 'querySelector', correct: true },
+          { id: 'b', text: 'getElementByTag', correct: false },
+          { id: 'c', text: 'selectClass', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u21-l1-4',
+        type: 'info',
+        instruction: 'Dica',
+        explanation: '`querySelector` aceita seletores CSS como `.classe` e `#id`.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u21-l2',
+    title: 'Eventos',
+    description: 'Reagir a ações',
+    icon: '🖱️',
+    unlocked: true,
+    unitId: 'unit-21',
+    unitTitle: 'DOM e Eventos',
+    exercises: [
+      {
+        id: 'u21-l2-1',
+        type: 'info',
+        instruction: 'Eventos',
+        explanation: 'Eventos capturam ações do usuário: clique, teclado, scroll.',
+        xp: 5
+      },
+      {
+        id: 'u21-l2-2',
+        type: 'fill-blank',
+        instruction: 'Adicione evento de clique:',
+        codeTemplate: 'botao.{{blank1}}(\"click\", () => { console.log(\"clicou\"); });',
+        blanks: [{ id: 'blank1', answer: 'addEventListener', placeholder: '_______________' }],
+        xp: 10
+      },
+      {
+        id: 'u21-l2-3',
+        type: 'multiple-choice',
+        instruction: 'Evento de envio de formulário:',
+        options: [
+          { id: 'a', text: 'submit', correct: true },
+          { id: 'b', text: 'send', correct: false },
+          { id: 'c', text: 'form', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u21-l2-4',
+        type: 'info',
+        instruction: 'Previna o envio',
+        explanation: 'Use `event.preventDefault()` para evitar reload no submit.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u21-l3',
+    title: 'Manipular classes',
+    description: 'Alterar estilos via JS',
+    icon: '🧷',
+    unlocked: true,
+    unitId: 'unit-21',
+    unitTitle: 'DOM e Eventos',
+    exercises: [
+      {
+        id: 'u21-l3-1',
+        type: 'info',
+        instruction: 'classList',
+        explanation: 'Use `classList.add/remove/toggle` para manipular classes.',
+        xp: 5
+      },
+      {
+        id: 'u21-l3-2',
+        type: 'fill-blank',
+        instruction: 'Adicionar classe:',
+        codeTemplate: 'card.classList.{{blank1}}(\"ativo\");',
+        blanks: [{ id: 'blank1', answer: 'add', placeholder: '___' }],
+        xp: 10
+      },
+      {
+        id: 'u21-l3-3',
+        type: 'multiple-choice',
+        instruction: 'Alternar classe:',
+        options: [
+          { id: 'a', text: 'toggle', correct: true },
+          { id: 'b', text: 'switch', correct: false },
+          { id: 'c', text: 'flip', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u21-l3-4',
+        type: 'info',
+        instruction: 'Dica',
+        explanation: 'Combine com CSS para estados visuais.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u21-l4',
+    title: 'Atributos e conteúdo',
+    description: 'Atualizar texto e HTML',
+    icon: '📝',
+    unlocked: true,
+    unitId: 'unit-21',
+    unitTitle: 'DOM e Eventos',
+    exercises: [
+      {
+        id: 'u21-l4-1',
+        type: 'info',
+        instruction: 'Conteúdo',
+        explanation: 'Use `textContent` para texto e `innerHTML` com cuidado.',
+        xp: 5
+      },
+      {
+        id: 'u21-l4-2',
+        type: 'fill-blank',
+        instruction: 'Atualize texto:',
+        codeTemplate: 'titulo.{{blank1}} = \"Olá\";',
+        blanks: [{ id: 'blank1', answer: 'textContent', placeholder: '___________' }],
+        xp: 10
+      },
+      {
+        id: 'u21-l4-3',
+        type: 'multiple-choice',
+        instruction: 'Atualizar um atributo:',
+        options: [
+          { id: 'a', text: 'setAttribute', correct: true },
+          { id: 'b', text: 'setStyle', correct: false },
+          { id: 'c', text: 'setText', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u21-l4-4',
+        type: 'info',
+        instruction: 'Segurança',
+        explanation: 'Evite inserir HTML de usuários com `innerHTML`.',
+        xp: 5
+      }
+    ]
+  },
+  {
+    id: 'u21-l5',
+    title: 'Fetch básico',
+    description: 'Consumindo dados',
+    icon: '🌐',
+    unlocked: true,
+    unitId: 'unit-21',
+    unitTitle: 'DOM e Eventos',
+    exercises: [
+      {
+        id: 'u21-l5-1',
+        type: 'info',
+        instruction: 'Fetch',
+        explanation: 'Use `fetch` para buscar dados de APIs.',
+        xp: 5
+      },
+      {
+        id: 'u21-l5-2',
+        type: 'fill-blank',
+        instruction: 'Requisição simples:',
+        codeTemplate: '{{blank1}}(\"https://api.exemplo.com/dados\")\n  .then(res => res.json())',
+        blanks: [{ id: 'blank1', answer: 'fetch', placeholder: '_____' }],
+        xp: 10
+      },
+      {
+        id: 'u21-l5-3',
+        type: 'multiple-choice',
+        instruction: 'Para usar await, a função precisa ser:',
+        options: [
+          { id: 'a', text: 'async', correct: true },
+          { id: 'b', text: 'defer', correct: false },
+          { id: 'c', text: 'awaitable', correct: false },
+        ],
+        xp: 10
+      },
+      {
+        id: 'u21-l5-4',
+        type: 'info',
+        instruction: 'Erros',
+        explanation: 'Use `try/catch` para lidar com falhas de rede.',
+        xp: 5
+      }
+    ]
+  }
+];
+
+// ============================================
 // EXPORTAÇÃO DE UNIDADES
 // ============================================
 
@@ -5514,6 +6646,36 @@ export const htmlUnits: Unit[] = [
     title: 'Complementar',
     icon: '📚',
     lessons: unit16Lessons
+  },
+  {
+    id: 'unit-17',
+    title: 'Fundamentos de CSS',
+    icon: '🎨',
+    lessons: unit17Lessons
+  },
+  {
+    id: 'unit-18',
+    title: 'Layout e Responsividade',
+    icon: '📐',
+    lessons: unit18Lessons
+  },
+  {
+    id: 'unit-19',
+    title: 'CSS Avançado',
+    icon: '🎨',
+    lessons: unit19Lessons
+  },
+  {
+    id: 'unit-20',
+    title: 'JavaScript Fundamentos',
+    icon: '⚙️',
+    lessons: unit20Lessons
+  },
+  {
+    id: 'unit-21',
+    title: 'DOM e Eventos',
+    icon: '🧭',
+    lessons: unit21Lessons
   }
 ];
 
