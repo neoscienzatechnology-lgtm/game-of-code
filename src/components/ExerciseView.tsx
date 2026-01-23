@@ -116,6 +116,41 @@ export function ExerciseView({
     );
   };
 
+  const renderCorrection = () => {
+    if (showResult !== 'wrong') return null;
+
+    if (exercise.type === 'fill-blank' && exercise.blanks) {
+      return (
+        <div className="glass-card p-4 text-center text-sm text-foreground">
+          <p className="font-semibold mb-2">Resposta correta</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {exercise.blanks.map(blank => (
+              <span key={blank.id} className="px-3 py-1 rounded-full bg-success/20 text-success font-mono">
+                {blank.answer}
+              </span>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    if (exercise.type === 'multiple-choice' && exercise.options) {
+      const correctOption = exercise.options.find(option => option.correct);
+      if (!correctOption) return null;
+
+      return (
+        <div className="glass-card p-4 text-center text-sm text-foreground">
+          <p className="font-semibold mb-2">Resposta correta</p>
+          <p className="font-mono text-success">{correctOption.text}</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
+  const correction = renderCorrection();
+
   const canCheck = () => {
     if (exercise.type === 'info') return true;
     if (exercise.type === 'fill-blank' && exercise.blanks) {
@@ -221,6 +256,12 @@ export function ExerciseView({
                   </button>
                 );
               })}
+            </div>
+          )}
+
+          {correction && (
+            <div className="mt-6">
+              {correction}
             </div>
           )}
         </div>

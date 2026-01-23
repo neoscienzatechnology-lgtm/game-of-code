@@ -5,12 +5,11 @@ interface LessonCardProps {
   lesson: Lesson;
   progress: number;
   isCompleted: boolean;
+  isLocked: boolean;
   onClick: () => void;
 }
 
-export function LessonCard({ lesson, progress, isCompleted, onClick }: LessonCardProps) {
-  const isLocked = !lesson.unlocked;
-
+export function LessonCard({ lesson, progress, isCompleted, isLocked, onClick }: LessonCardProps) {
   return (
     <button
       onClick={onClick}
