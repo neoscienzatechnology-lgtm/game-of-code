@@ -29,19 +29,10 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Pin npm version
-        run: npm install -g npm@10.7.0
-
-      - name: Clean npm cache
-        run: npm cache clean --force
-
       - name: Install dependencies
-        run: npm install --no-fund --no-audit
+        run: npm ci
 
       - name: Build
-        if: ${{ success() }}
-        env:
-          NODE_ENV: development
         run: npm run build
 
       - name: Configure Pages
