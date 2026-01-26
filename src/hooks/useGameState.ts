@@ -10,6 +10,7 @@ interface GameState {
   completedExercises: string[];
   currentLesson: string | null;
   currentExerciseIndex: number;
+  lastHeartRefill: number;
 }
 
 const INITIAL_STATE: GameState = {
@@ -21,17 +22,58 @@ const INITIAL_STATE: GameState = {
   completedExercises: [],
   currentLesson: null,
   currentExerciseIndex: 0,
+  lastHeartRefill: Date.now(),
 };
+
+const HEART_REFILL_INTERVAL_MS = 15 * 60 * 1000;
 
 export function useGameState() {
   const [gameState, setGameState] = useState<GameState>(() => {
     const saved = localStorage.getItem('mimo-game-state');
-    return saved ? JSON.parse(saved) : INITIAL_STATE;
+    if (!saved) return INITIAL_STATE;
+
+    const parsed = JSON.parse(saved) as Partial<GameState>;
+    return {
+      ...INITIAL_STATE,
+      ...parsed,
+    };
   });
 
   useEffect(() => {
     localStorage.setItem('mimo-game-state', JSON.stringify(gameState));
   }, [gameState]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGameState(prev => {
+        if (prev.hearts >= prev.maxHearts) {
+          if (Date.now() - prev.lastHeartRefill < HEART_REFILL_INTERVAL_MS) {
+            return prev;
+          }
+          return {
+            ...prev,
+            lastHeartRefill: Date.now(),
+          };
+        }
+
+        const now = Date.now();
+        const elapsed = now - prev.lastHeartRefill;
+        if (elapsed < HEART_REFILL_INTERVAL_MS) return prev;
+
+        const heartsToAdd = Math.floor(elapsed / HEART_REFILL_INTERVAL_MS);
+        const nextHearts = Math.min(prev.maxHearts, prev.hearts + heartsToAdd);
+        const nextRefill = prev.lastHeartRefill + heartsToAdd * HEART_REFILL_INTERVAL_MS;
+
+        return {
+          ...prev,
+          hearts: nextHearts,
+          lastHeartRefill: nextRefill,
+        };
+      });
+    }, 60 * 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const addXp = (amount: number) => {
     setGameState(prev => ({
@@ -44,6 +86,7 @@ export function useGameState() {
     setGameState(prev => ({
       ...prev,
       hearts: Math.max(0, prev.hearts - 1),
+      lastHeartRefill: prev.hearts === prev.maxHearts ? Date.now() : prev.lastHeartRefill,
       streak: 0,
     }));
   };
@@ -104,6 +147,7 @@ export function useGameState() {
     setGameState(prev => ({
       ...prev,
       hearts: prev.maxHearts,
+      lastHeartRefill: Date.now(),
     }));
   };
 
