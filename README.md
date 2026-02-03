@@ -60,6 +60,99 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Learning system (Lessons + Exercises)
+
+This repo now includes a lightweight learning engine with:
+- Lesson/Exercise data model
+- Local JSON seed + persistence in localStorage
+- Exercise validation (JS tests and HTML/CSS structural checks)
+- Spaced repetition and quick review
+
+### Data model
+
+Lesson fields (required):
+- id
+- language
+- concept
+- title
+- content (microlicao curta)
+- order
+- tags
+
+Exercise fields (required):
+- id
+- lesson_id
+- type (blank | bugfix | code)
+- prompt
+- starter_code
+- validations
+- hints[]
+- solution
+- difficulty
+- estimated_time
+
+### Seed data
+
+Seed JSON lives in:
+- public/seed/learning.json
+
+The app also has a TS fallback seed used if JSON is unavailable:
+- src/data/learningSeed.ts
+
+### Persistence
+
+Learning progress is stored in localStorage under:
+- learning-db
+
+### Add a new lesson or exercise
+
+1. Edit public/seed/learning.json and add your lesson/exercise.
+2. Mirror the same change in src/data/learningSeed.ts (fallback).
+3. Keep ids unique and reference lesson_id on exercises.
+4. Reload the app after clearing localStorage key learning-db to re-seed.
+
+### Validation types
+
+blank:
+- starter_code contains {{blank1}} markers
+- validations.type = "blank" with blanks list
+
+js-tests:
+- validations.type = "js-tests"
+- tests is an array of { name, code } using assert(...)
+
+js-output:
+- validations.type = "js-output"
+- define functionName + cases with inputs/expected
+
+html-structure:
+- requiredTags, requiredClasses, requiredAttributes, requiredCss
+- checks are minimal and structural (no layout evaluation)
+
+### Spaced repetition rules
+
+- Correct:
+  interval_days = max(1, round(interval_days * ease))
+  ease += 0.05 (cap 3.0)
+  due_at = now + interval_days
+- Wrong:
+  interval_days = 1
+  ease -= 0.2 (floor 1.3)
+  due_at = now + 1 day
+
+### Run tests
+
+```sh
+npm run test
+```
+
+### Add a new language/concept
+
+1. Add a new module in public/seed/learning.json with language and tags.
+2. Add lessons referencing that module_id.
+3. Add exercises with validations for that language.
+4. Update UI labels if needed (LearningPanel).
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
