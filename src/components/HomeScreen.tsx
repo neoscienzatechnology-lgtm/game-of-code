@@ -51,7 +51,7 @@ export function HomeScreen({
     const previousUnit = units[unitIndex - 1];
     if (!previousUnit) return false;
 
-    return !previousUnit.lessons.some(lesson => completedLessons.includes(lesson.id));
+    return !previousUnit.lessons.every(lesson => completedLessons.includes(lesson.id));
   };
 
   const handleToggleUnit = (unitId: string) => {
