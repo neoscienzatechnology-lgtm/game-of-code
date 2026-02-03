@@ -141,7 +141,7 @@ export function HomeScreen({
           </div>
         </div>
 
-        <LearningPanel />
+        {activeCourseId === 'js' && <LearningPanel />}
 
         {/* Course Overview */}
         <div className="flex items-center justify-between mb-4">
