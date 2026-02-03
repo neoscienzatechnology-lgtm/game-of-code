@@ -3,6 +3,7 @@ import { BookOpen, Target, Flame } from 'lucide-react';
 import type { Course } from '@/data/courses';
 import { Unit, Lesson } from '@/data/htmlLessons';
 import { UnitAccordion } from './UnitAccordion';
+import { LearningPanel } from './LearningPanel';
 
 interface HomeScreenProps {
   courses: Course[];
@@ -139,6 +140,8 @@ export function HomeScreen({
             </div>
           </div>
         </div>
+
+        <LearningPanel />
 
         {/* Course Overview */}
         <div className="flex items-center justify-between mb-4">
