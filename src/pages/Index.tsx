@@ -15,7 +15,8 @@ const Index = () => {
     currentLesson,
     currentExerciseIndex,
     lessons,
-    units,
+    courses,
+    activeCourseId,
     addXp,
     loseHeart,
     increaseStreak,
@@ -24,6 +25,7 @@ const Index = () => {
     startLesson,
     nextExercise,
     exitLesson,
+    setActiveCourse,
     getLessonProgress,
   } = useGameState();
 
@@ -31,6 +33,9 @@ const Index = () => {
   const [lessonXpEarned, setLessonXpEarned] = useState(0);
 
   const currentLessonData = lessons.find(l => l.id === currentLesson);
+  const activeCourse = courses.find(course => course.id === activeCourseId) ?? courses[0];
+  const courseUnits = activeCourse?.units ?? [];
+  const courseLessons = courseUnits.flatMap(unit => unit.lessons);
 
   const handleCorrect = (xp: number) => {
     addXp(xp);
@@ -104,8 +109,11 @@ const Index = () => {
     <>
       <Header hearts={hearts} maxHearts={maxHearts} xp={totalXp} streak={streak} />
       <HomeScreen
-        units={units}
-        lessons={lessons}
+        courses={courses}
+        activeCourseId={activeCourseId}
+        onCourseChange={setActiveCourse}
+        units={courseUnits}
+        lessons={courseLessons}
         completedLessons={completedLessons}
         getLessonProgress={getLessonProgress}
         onStartLesson={handleStartLesson}

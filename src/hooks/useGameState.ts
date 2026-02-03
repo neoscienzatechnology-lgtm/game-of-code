@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { courses } from '@/data/courses';
+import type { CourseId } from '@/data/courses';
 import { htmlLessons, htmlUnits, Lesson } from '@/data/htmlLessons';
 
 interface GameState {
@@ -11,6 +13,7 @@ interface GameState {
   currentLesson: string | null;
   currentExerciseIndex: number;
   lastHeartRefill: number;
+  activeCourseId: CourseId;
 }
 
 const INITIAL_STATE: GameState = {
@@ -23,6 +26,7 @@ const INITIAL_STATE: GameState = {
   currentLesson: null,
   currentExerciseIndex: 0,
   lastHeartRefill: Date.now(),
+  activeCourseId: 'html',
 };
 
 const HEART_REFILL_INTERVAL_MS = 15 * 60 * 1000;
@@ -33,9 +37,15 @@ export function useGameState() {
     if (!saved) return INITIAL_STATE;
 
     const parsed = JSON.parse(saved) as Partial<GameState>;
+    const activeCourseId =
+      parsed.activeCourseId && courses.some(course => course.id === parsed.activeCourseId)
+        ? parsed.activeCourseId
+        : INITIAL_STATE.activeCourseId;
+
     return {
       ...INITIAL_STATE,
       ...parsed,
+      activeCourseId,
     };
   });
 
@@ -139,6 +149,13 @@ export function useGameState() {
     }));
   };
 
+  const setActiveCourse = (courseId: CourseId) => {
+    setGameState(prev => ({
+      ...prev,
+      activeCourseId: courseId,
+    }));
+  };
+
   const resetProgress = () => {
     setGameState(INITIAL_STATE);
   };
@@ -166,6 +183,7 @@ export function useGameState() {
     ...gameState,
     lessons: htmlLessons,
     units: htmlUnits,
+    courses,
     addXp,
     loseHeart,
     increaseStreak,
@@ -174,6 +192,7 @@ export function useGameState() {
     startLesson,
     nextExercise,
     exitLesson,
+    setActiveCourse,
     resetProgress,
     refillHearts,
     getLessonProgress,

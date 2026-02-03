@@ -1,3 +1,5 @@
+import { extraUnits } from './extraUnits';
+
 export interface Exercise {
   id: string;
   type: 'fill-blank' | 'multiple-choice' | 'info';
@@ -6676,7 +6678,8 @@ export const htmlUnits: Unit[] = [
     title: 'DOM e Eventos',
     icon: '🧭',
     lessons: unit21Lessons
-  }
+  },
+  ...extraUnits
 ];
 
 // Export flat lessons array for backward compatibility
