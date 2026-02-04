@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { courses } from '@/data/courses';
 import type { CourseId } from '@/data/courses';
-import { htmlLessons, htmlUnits, Lesson } from '@/data/htmlLessons';
+import { htmlLessonsEnriched, htmlUnitsEnriched } from '@/data/htmlLessonsEnriched';
+import { Lesson } from '@/data/htmlLessons';
 
 interface GameState {
   totalXp: number;
@@ -169,20 +170,23 @@ export function useGameState() {
   };
 
   const getLessonProgress = (lessonId: string): number => {
-    const lesson = htmlLessons.find(l => l.id === lessonId);
+    const lesson = htmlLessonsEnriched.find(l => l.id === lessonId);
     if (!lesson) return 0;
     
-    const completed = lesson.exercises.filter(ex => 
+    const trackableExercises = lesson.exercises.filter(ex => ex.type !== 'info');
+    const completed = trackableExercises.filter(ex =>
       gameState.completedExercises.includes(ex.id)
     ).length;
-    
-    return Math.round((completed / lesson.exercises.length) * 100);
+
+    return trackableExercises.length
+      ? Math.round((completed / trackableExercises.length) * 100)
+      : 0;
   };
 
   return {
     ...gameState,
-    lessons: htmlLessons,
-    units: htmlUnits,
+    lessons: htmlLessonsEnriched,
+    units: htmlUnitsEnriched,
     courses,
     addXp,
     loseHeart,
