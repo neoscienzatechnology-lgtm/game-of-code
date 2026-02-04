@@ -151,6 +151,50 @@ export function ExerciseView({
 
   const correction = renderCorrection();
 
+  const renderInline = (text: string, keyPrefix: string) =>
+    text.split('`').map((part, i) =>
+      i % 2 === 1 ? (
+        <code key={`${keyPrefix}-code-${i}`} className="bg-primary/20 text-primary px-2 py-0.5 rounded font-mono">
+          {part}
+        </code>
+      ) : (
+        <span key={`${keyPrefix}-text-${i}`}>
+          {part.split('**').map((piece, j) =>
+            j % 2 === 1 ? (
+              <strong key={`${keyPrefix}-bold-${i}-${j}`} className="text-foreground">
+                {piece}
+              </strong>
+            ) : (
+              piece
+            )
+          )}
+        </span>
+      )
+    );
+
+  const renderExplanation = (text: string) =>
+    text.split('```').map((segment, index) => {
+      if (index % 2 === 1) {
+        return (
+          <pre key={`code-block-${index}`} className="code-block whitespace-pre-wrap text-sm text-left">
+            {segment.trim()}
+          </pre>
+        );
+      }
+
+      const cleaned = segment.trim();
+      if (!cleaned) return null;
+
+      return (
+        <p
+          key={`text-block-${index}`}
+          className="text-muted-foreground leading-relaxed text-center whitespace-pre-line"
+        >
+          {renderInline(cleaned, `inline-${index}`)}
+        </p>
+      );
+    });
+
   const canCheck = () => {
     if (exercise.type === 'info') return true;
     if (exercise.type === 'fill-blank' && exercise.blanks) {
@@ -195,19 +239,9 @@ export function ExerciseView({
           {/* Explanation for info type */}
           {exercise.type === 'info' && exercise.explanation && (
             <div className="glass-card p-6 mb-6">
-              <p className="text-muted-foreground leading-relaxed text-center">
-                {exercise.explanation.split('`').map((part, i) => 
-                  i % 2 === 1 ? (
-                    <code key={i} className="bg-primary/20 text-primary px-2 py-0.5 rounded font-mono">
-                      {part}
-                    </code>
-                  ) : (
-                    <span key={i}>{part.split('**').map((p, j) => 
-                      j % 2 === 1 ? <strong key={j} className="text-foreground">{p}</strong> : p
-                    )}</span>
-                  )
-                )}
-              </p>
+              <div className="space-y-4">
+                {renderExplanation(exercise.explanation)}
+              </div>
             </div>
           )}
 

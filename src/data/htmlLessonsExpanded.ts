@@ -3,6 +3,401 @@ import type { Exercise, Lesson, Unit } from './htmlLessons';
 
 const normalize = (value: string) => value.toLowerCase();
 
+const DETAILED_EXPLANATIONS: Record<string, string> = {
+  'u1-l1-1': [
+    'A Web e um conjunto de documentos ligados por links e acessados via navegador.',
+    'Ela usa a internet (a rede fisica) para transportar dados, enquanto a Web define como o conteudo e publicado.',
+    '',
+    '```txt',
+    'Navegador -> Requisicao HTTP -> Servidor -> HTML/CSS/JS -> Pagina renderizada',
+    '```',
+    '',
+    'Exemplo de uso: ao digitar um endereco, o navegador baixa arquivos HTML, CSS e JS.',
+    'Uso comum: sites, dashboards e aplicativos web.',
+    'Dica pratica: use o DevTools (F12) para ver o HTML recebido.',
+  ].join('\n'),
+  'u1-l2-1': [
+    'HTML define a estrutura do conteudo. Pense nele como o esqueleto da pagina.',
+    'Cada elemento e criado com tags e pode ter atributos.',
+    '',
+    '```html',
+    '<h1>Meu titulo</h1>',
+    '<p>Um paragrafo simples.</p>',
+    '```',
+    '',
+    'Exemplo de uso: paginas, artigos e blogs sempre tem HTML por tras.',
+    'Uso comum: organizar titulos, textos, listas e imagens.',
+    'Dica pratica: comece simples e va adicionando tags aos poucos.',
+  ].join('\n'),
+  'u1-l3-1': [
+    'HTML, CSS e JavaScript trabalham juntos.',
+    'HTML define estrutura, CSS define aparencia e JS adiciona comportamento.',
+    '',
+    '```html',
+    '<button class="btn">Comprar</button>',
+    '```',
+    '```css',
+    '.btn { background: #22c55e; color: white; padding: 8px 12px; }',
+    '```',
+    '```js',
+    'document.querySelector(".btn").addEventListener("click", () => alert("Ok"));',
+    '```',
+    '',
+    'Exemplo de uso: botao estilizado que responde a clique.',
+    'Uso comum: interfaces completas e responsivas.',
+    'Dica pratica: teste cada camada separadamente.',
+  ].join('\n'),
+  'u2-l1-1': [
+    'O DOCTYPE informa ao navegador que o documento segue o padrao HTML5.',
+    'Sem ele, alguns navegadores entram em modo de compatibilidade.',
+    '',
+    '```html',
+    '<!DOCTYPE html>',
+    '<html lang="pt-BR">',
+    '  <head>...</head>',
+    '  <body>...</body>',
+    '</html>',
+    '```',
+    '',
+    'Exemplo de uso: todo arquivo HTML deve iniciar com o DOCTYPE.',
+    'Uso comum: padronizar renderizacao entre navegadores.',
+    'Dica pratica: deixe o DOCTYPE sempre na primeira linha.',
+  ].join('\n'),
+  'u2-l2-1': [
+    'A tag <html> envolve todo o documento e define o idioma com lang.',
+    '',
+    '```html',
+    '<html lang="pt-BR">',
+    '  <head>...</head>',
+    '  <body>...</body>',
+    '</html>',
+    '```',
+    '',
+    'Exemplo de uso: `lang="pt-BR"` ajuda leitores de tela e SEO.',
+    'Uso comum: definir idioma e agrupar head/body.',
+    'Dica pratica: sempre configure o lang correto.',
+  ].join('\n'),
+  'u2-l3-1': [
+    'O head guarda metadados e links para recursos externos.',
+    '',
+    '```html',
+    '<head>',
+    '  <meta charset="UTF-8">',
+    '  <title>Meu site</title>',
+    '  <link rel="stylesheet" href="style.css">',
+    '</head>',
+    '```',
+    '',
+    'Exemplo de uso: carregar CSS e definir o titulo da pagina.',
+    'Uso comum: incluir fontes, meta tags e scripts.',
+    'Dica pratica: mantenha o head organizado e limpo.',
+  ].join('\n'),
+  'u2-l4-1': [
+    'O body contem tudo que aparece na pagina: textos, imagens, botoes.',
+    '',
+    '```html',
+    '<body>',
+    '  <h1>Bem-vindo</h1>',
+    '  <p>Texto principal</p>',
+    '</body>',
+    '```',
+    '',
+    'Exemplo de uso: todo conteudo visivel vai no body.',
+    'Uso comum: organizar a interface da pagina.',
+    'Dica pratica: separe o conteudo em secoes.',
+  ].join('\n'),
+  'u3-l1-1': [
+    'Titulos criam hierarquia de leitura. Use h1 apenas uma vez por pagina.',
+    '',
+    '```html',
+    '<h1>Titulo principal</h1>',
+    '<h2>Subtitulo</h2>',
+    '<h3>Detalhe</h3>',
+    '```',
+    '',
+    'Exemplo de uso: organizar secao de conteudo.',
+    'Uso comum: melhorar SEO e acessibilidade.',
+    'Dica pratica: nao pule niveis de titulo.',
+  ].join('\n'),
+  'u3-l2-1': [
+    'Paragrafos agrupam texto e criam espacamento automatico.',
+    '',
+    '```html',
+    '<p>Primeiro paragrafo.</p>',
+    '<p>Segundo paragrafo.</p>',
+    '```',
+    '',
+    'Exemplo de uso: textos longos em artigos.',
+    'Uso comum: separar ideias em blocos.',
+    'Dica pratica: evite usar <br> para blocos de texto.',
+  ].join('\n'),
+  'u4-l1-1': [
+    'Links conectam paginas e recursos com a tag <a>.',
+    '',
+    '```html',
+    '<a href="https://exemplo.com">Visitar site</a>',
+    '```',
+    '',
+    'Exemplo de uso: navegar para outra pagina ou abrir um email.',
+    'Uso comum: menus e chamadas para acao.',
+    'Dica pratica: sempre use texto descritivo no link.',
+  ].join('\n'),
+  'u5-l1-1': [
+    'Imagens usam a tag <img> com src e alt.',
+    '',
+    '```html',
+    '<img src="foto.jpg" alt="Foto do produto">',
+    '```',
+    '',
+    'Exemplo de uso: ilustrar produtos e conteudos.',
+    'Uso comum: banners, galerias e perfis.',
+    'Dica pratica: o alt ajuda acessibilidade e SEO.',
+  ].join('\n'),
+  'u8-l1-1': [
+    'Formularios coletam dados com inputs, labels e botoes.',
+    '',
+    '```html',
+    '<form>',
+    '  <label for="email">Email</label>',
+    '  <input id="email" type="email">',
+    '  <button>Enviar</button>',
+    '</form>',
+    '```',
+    '',
+    'Exemplo de uso: cadastro e login.',
+    'Uso comum: pesquisas, contato e pagamento.',
+    'Dica pratica: sempre associe label ao input.',
+  ].join('\n'),
+  'u9-l1-1': [
+    'HTML semantico usa tags que descrevem o conteudo.',
+    '',
+    '```html',
+    '<header>...</header>',
+    '<main>...</main>',
+    '<footer>...</footer>',
+    '```',
+    '',
+    'Exemplo de uso: organizar pagina em areas claras.',
+    'Uso comum: melhorar acessibilidade e SEO.',
+    'Dica pratica: evite excesso de div sem significado.',
+  ].join('\n'),
+  'u11-l1-1': [
+    'Acessibilidade garante que todos consigam usar o site.',
+    '',
+    '```html',
+    '<img src="grafico.png" alt="Grafico de vendas">',
+    '<button aria-label="Fechar">X</button>',
+    '```',
+    '',
+    'Exemplo de uso: leitores de tela dependem do alt e aria.',
+    'Uso comum: formularios, botoes e menus.',
+    'Dica pratica: teste com teclado e leitor de tela.',
+  ].join('\n'),
+  'u17-l1-1': [
+    'CSS define a aparencia dos elementos HTML.',
+    '',
+    '```css',
+    'body {',
+    '  font-family: Arial, sans-serif;',
+    '  color: #0f172a;',
+    '}',
+    '```',
+    '',
+    'Exemplo de uso: mudar cores, tamanhos e espacamentos.',
+    'Uso comum: criar identidade visual.',
+    'Dica pratica: comece pelo layout geral e refine depois.',
+  ].join('\n'),
+  'u17-l2-1': [
+    'Seletores escolhem quais elementos receberao estilo.',
+    '',
+    '```css',
+    'h1 { color: #22c55e; }',
+    '.card { padding: 16px; }',
+    '#menu { background: #0f172a; }',
+    '```',
+    '',
+    'Exemplo de uso: aplicar estilos pontuais.',
+    'Uso comum: diferenciar componentes.',
+    'Dica pratica: prefira classes para reutilizacao.',
+  ].join('\n'),
+  'u18-l1-1': [
+    'Box model define como tamanho e espacamento funcionam.',
+    '',
+    '```css',
+    '.card {',
+    '  margin: 12px;',
+    '  padding: 16px;',
+    '  border: 2px solid #94a3b8;',
+    '}',
+    '```',
+    '',
+    'Exemplo de uso: criar cartoes com respiro.',
+    'Uso comum: ajustar layout sem quebrar o conteudo.',
+    'Dica pratica: use DevTools para visualizar o box model.',
+  ].join('\n'),
+  'u18-l2-1': [
+    'Flexbox alinha itens em uma linha ou coluna.',
+    '',
+    '```css',
+    '.linha {',
+    '  display: flex;',
+    '  gap: 12px;',
+    '  justify-content: space-between;',
+    '}',
+    '```',
+    '',
+    'Exemplo de uso: barras de navegacao e cards.',
+    'Uso comum: alinhar botoes e menus.',
+    'Dica pratica: combine com gap para espacamento.',
+  ].join('\n'),
+  'u19-l1-1': [
+    'Transicoes criam animacoes suaves entre estados.',
+    '',
+    '```css',
+    'button {',
+    '  transition: transform 0.2s ease;',
+    '}',
+    'button:hover {',
+    '  transform: scale(1.03);',
+    '}',
+    '```',
+    '',
+    'Exemplo de uso: feedback visual em botoes.',
+    'Uso comum: melhorar a sensacao de interacao.',
+    'Dica pratica: transicoes curtas sao mais naturais.',
+  ].join('\n'),
+  'u20-l1-1': [
+    'JavaScript adiciona comportamento e logica ao HTML.',
+    '',
+    '```js',
+    'document.querySelector("button").addEventListener("click", () => {',
+    '  alert("Clique!");',
+    '});',
+    '```',
+    '',
+    'Exemplo de uso: validar formularios e reagir a eventos.',
+    'Uso comum: criar interacoes e consumir APIs.',
+    'Dica pratica: organize o codigo em funcoes pequenas.',
+  ].join('\n'),
+  'u20-l2-1': [
+    'Variaveis guardam valores que serao usados depois.',
+    '',
+    '```js',
+    'const nome = "Ana";',
+    'let pontos = 0;',
+    'pontos += 10;',
+    '```',
+    '',
+    'Exemplo de uso: guardar estado e resultados.',
+    'Uso comum: counters, formularios e listas.',
+    'Dica pratica: use const sempre que possivel.',
+  ].join('\n'),
+  'u20-l5-1': [
+    'Funcoes agrupam passos e facilitam reutilizacao.',
+    '',
+    '```js',
+    'function soma(a, b) {',
+    '  return a + b;',
+    '}',
+    'const total = soma(2, 3);',
+    '```',
+    '',
+    'Exemplo de uso: calculos e transformacoes.',
+    'Uso comum: organizar regras de negocio.',
+    'Dica pratica: nomeie funcoes com verbos claros.',
+  ].join('\n'),
+  'u21-l2-1': [
+    'Eventos permitem reagir a cliques, teclado e scroll.',
+    '',
+    '```js',
+    'const botao = document.querySelector("#enviar");',
+    'botao.addEventListener("click", () => {',
+    '  console.log("enviado");',
+    '});',
+    '```',
+    '',
+    'Exemplo de uso: validar formulario no clique.',
+    'Uso comum: interacoes do usuario.',
+    'Dica pratica: sempre verifique se o elemento existe.',
+  ].join('\n'),
+};
+
+const VISUAL_EXAMPLES_BY_LESSON: Record<string, string> = {
+  'u1-l2': [
+    '```html',
+    '<!DOCTYPE html>',
+    '<html lang="pt-BR">',
+    '  <head>',
+    '    <meta charset="UTF-8">',
+    '    <title>Minha pagina</title>',
+    '  </head>',
+    '  <body>',
+    '    <h1>Bem-vindo</h1>',
+    '    <p>Esse e um exemplo simples.</p>',
+    '  </body>',
+    '</html>',
+    '```',
+  ].join('\n'),
+  'u3-l2': [
+    '```html',
+    '<p>Primeiro paragrafo com uma ideia.</p>',
+    '<p>Segundo paragrafo reforcando o ponto.</p>',
+    '```',
+  ].join('\n'),
+  'u4-l1': [
+    '```html',
+    '<nav>',
+    '  <a href="/inicio">Inicio</a>',
+    '  <a href="/sobre">Sobre</a>',
+    '</nav>',
+    '```',
+  ].join('\n'),
+  'u5-l1': [
+    '```html',
+    '<figure>',
+    '  <img src="produto.jpg" alt="Foto do produto">',
+    '  <figcaption>Produto em destaque</figcaption>',
+    '</figure>',
+    '```',
+  ].join('\n'),
+  'u8-l1': [
+    '```html',
+    '<form>',
+    '  <label for="nome">Nome</label>',
+    '  <input id="nome" type="text">',
+    '  <button>Enviar</button>',
+    '</form>',
+    '```',
+  ].join('\n'),
+  'u17-l1': [
+    '```css',
+    'body {',
+    '  background: #0f172a;',
+    '  color: #e2e8f0;',
+    '  font-family: Arial, sans-serif;',
+    '}',
+    '```',
+  ].join('\n'),
+  'u18-l1': [
+    '```css',
+    '.card {',
+    '  margin: 16px;',
+    '  padding: 20px;',
+    '  border: 1px solid #94a3b8;',
+    '  border-radius: 12px;',
+    '}',
+    '```',
+  ].join('\n'),
+  'u20-l2': [
+    '```js',
+    'const nome = "Ana";',
+    'let pontos = 0;',
+    'pontos += 5;',
+    'console.log(nome, pontos);',
+    '```',
+  ].join('\n'),
+};
+
 const SELF_CLOSING_TAGS = new Set([
   'br',
   'hr',
@@ -105,6 +500,62 @@ const buildExample = (exercise: Exercise) => {
   return '`Exemplo rapido aplicado em um arquivo real.`';
 };
 
+const buildVisualExample = (lesson: Lesson) => {
+  if (lesson.id && VISUAL_EXAMPLES_BY_LESSON[lesson.id]) {
+    return VISUAL_EXAMPLES_BY_LESSON[lesson.id];
+  }
+
+  const titleMatch = lesson.title?.match(/<([a-z0-9-]+)>/i);
+  if (titleMatch) {
+    const tag = titleMatch[1].toLowerCase();
+    if (SELF_CLOSING_TAGS.has(tag)) {
+      return [
+        '```html',
+        `<${tag}>`,
+        '```',
+      ].join('\n');
+    }
+    return [
+      '```html',
+      `<${tag}>Texto de exemplo</${tag}>`,
+      '```',
+    ].join('\n');
+  }
+
+  const unit = normalize(lesson.unitTitle ?? '');
+  if (unit.includes('css')) {
+    return [
+      '```css',
+      '.card {',
+      '  background: #0f172a;',
+      '  color: #e2e8f0;',
+      '  padding: 16px;',
+      '  border-radius: 12px;',
+      '}',
+      '```',
+    ].join('\n');
+  }
+  if (unit.includes('javascript') || unit.includes('dom')) {
+    return [
+      '```js',
+      'function saudacao(nome) {',
+      '  return `Ola, ${nome}`;',
+      '}',
+      'console.log(saudacao("Lia"));',
+      '```',
+    ].join('\n');
+  }
+
+  return [
+    '```html',
+    '<section>',
+    '  <h2>Titulo</h2>',
+    '  <p>Texto de exemplo.</p>',
+    '</section>',
+    '```',
+  ].join('\n');
+};
+
 const buildUsage = (lesson: Lesson) => {
   const unit = normalize(lesson.unitTitle ?? '');
   if (unit.includes('css')) return 'Uso comum: estilizar elementos e ajustar o layout.';
@@ -136,23 +587,99 @@ const shouldExpand = (exercise: Exercise) => {
 };
 
 const expandInfoExercise = (exercise: Exercise, lesson: Lesson): Exercise => {
-  if (!shouldExpand(exercise)) return exercise;
+  if (exercise.type !== 'info') return exercise;
 
-  const base = exercise.explanation ?? exercise.instruction ?? '';
-  const example = buildExample(exercise);
+  const override = DETAILED_EXPLANATIONS[exercise.id];
+  const baseExercise = override ? { ...exercise, explanation: override } : exercise;
+  if (!shouldExpand(baseExercise)) return baseExercise;
+
+  const base = baseExercise.explanation ?? baseExercise.instruction ?? '';
+  const example = buildExample(baseExercise);
   const usage = buildUsage(lesson);
   const tip = buildTip(lesson);
 
   return {
-    ...exercise,
+    ...baseExercise,
     explanation: `${base}\n\nExemplo de uso: ${example}\nUso comum: ${usage}\nDica pratica: ${tip}`,
   };
 };
 
-const expandLesson = (lesson: Lesson): Lesson => ({
-  ...lesson,
-  exercises: lesson.exercises.map(exercise => expandInfoExercise(exercise, lesson)),
+const buildPracticeExercise = (lesson: Lesson): Exercise | null => {
+  const practiceId = `${lesson.id}-practice`;
+  if (lesson.exercises.some(exercise => exercise.id === practiceId)) {
+    return null;
+  }
+
+  const interactive = lesson.exercises.filter(ex => ex.type !== 'info');
+  const base = interactive[0];
+  if (base) {
+    return {
+      ...base,
+      id: practiceId,
+      instruction: `Pratica guiada: ${base.instruction}`,
+      xp: Math.max(5, Math.floor(base.xp / 2)),
+    };
+  }
+
+  const infoText = lesson.exercises
+    .filter(ex => ex.type === 'info')
+    .map(ex => `${ex.instruction ?? ''} ${ex.explanation ?? ''}`)
+    .join(' ');
+  const tokens = extractTokens(infoText);
+  const answer = tokens[0] ?? 'HTML';
+  const choices = ['HTML', 'CSS', 'JavaScript'].filter(opt => opt !== answer);
+  const options = [
+    { id: 'a', text: answer, correct: true },
+    { id: 'b', text: choices[0] ?? 'CSS', correct: false },
+    { id: 'c', text: choices[1] ?? 'JavaScript', correct: false },
+  ];
+
+  return {
+    id: practiceId,
+    type: 'multiple-choice',
+    instruction: 'Pratica guiada: qual termo apareceu na licao?',
+    options,
+    xp: 5,
+  };
+};
+
+const buildVisualExercise = (lesson: Lesson): Exercise => ({
+  id: `${lesson.id}-visual`,
+  type: 'info',
+  instruction: 'Exemplo visual',
+  explanation: [
+    'Veja um exemplo completo aplicado:',
+    '',
+    buildVisualExample(lesson),
+    '',
+    'O que observar: estrutura, nomes claros e boas praticas.',
+  ].join('\n'),
+  xp: 0,
 });
+
+const expandLesson = (lesson: Lesson): Lesson => {
+  const expandedExercises = lesson.exercises.map(exercise =>
+    expandInfoExercise(exercise, lesson)
+  );
+
+  const hasVisual = expandedExercises.some(ex => ex.id === `${lesson.id}-visual`);
+  const visualExercise = hasVisual ? [] : [buildVisualExercise(lesson)];
+
+  const practiceExercise = buildPracticeExercise({
+    ...lesson,
+    exercises: expandedExercises,
+  });
+
+  return {
+    ...lesson,
+    exercises: [
+      expandedExercises[0],
+      ...visualExercise,
+      ...expandedExercises.slice(1),
+      ...(practiceExercise ? [practiceExercise] : []),
+    ].filter(Boolean) as Exercise[],
+  };
+};
 
 export const htmlUnitsExpanded: Unit[] = htmlUnitsEnriched.map(unit => ({
   ...unit,

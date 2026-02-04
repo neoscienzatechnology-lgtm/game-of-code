@@ -19,7 +19,7 @@ export const learningSeed: LearningSeed = {
       concept: 'variaveis',
       title: 'Variaveis e constantes',
       content:
-        'Variaveis guardam dados para reutilizar no codigo. Use const para valores fixos e let para valores que mudam. Exemplo: `const nome = \"Ana\";` e `let pontos = 0;`. Em projetos reais, nomeie variaveis de forma clara para facilitar manutencao.',
+        'Variaveis guardam dados para reutilizar no codigo. Use const para valores fixos e let para valores que mudam. Exemplo: `const nome = \"Ana\";` e `let pontos = 0;`. Sempre prefira const quando o valor nao muda e use nomes claros. Exemplo de uso: `let total = 0; total += 5;` mostra como atualizar um valor. Dica: evite nomes genericos como x ou y.',
       order: 1,
       tags: ['js', 'variaveis', 'const', 'let'],
     },
@@ -30,7 +30,7 @@ export const learningSeed: LearningSeed = {
       concept: 'condicionais',
       title: 'Condicionais',
       content:
-        'Condicionais executam blocos apenas quando a condicao e verdadeira. Use if/else para decidir caminhos. Exemplo: `if (idade >= 18) { console.log(\"ok\"); } else { console.log(\"nao\"); }`. Isso ajuda a criar fluxos de decisao simples.',
+        'Condicionais executam blocos apenas quando a condicao e verdadeira. Use if/else para decidir caminhos. Exemplo: `if (idade >= 18) { console.log(\"ok\"); } else { console.log(\"nao\"); }`. Voce pode combinar condicoes com `&&` e `||`. Exemplo de uso: `if (logado && admin) { ... }`. Dica: prefira comparacoes estritas (`===`).',
       order: 2,
       tags: ['js', 'if', 'else'],
     },
@@ -41,7 +41,7 @@ export const learningSeed: LearningSeed = {
       concept: 'funcoes',
       title: 'Funcoes',
       content:
-        'Funcoes agrupam logica reutilizavel. Elas podem receber parametros e retornar valores. Exemplo: `function soma(a, b) { return a + b; }`. Para codigo curto, use arrow functions: `const dobro = n => n * 2;`.',
+        'Funcoes agrupam logica reutilizavel. Elas podem receber parametros e retornar valores. Exemplo: `function soma(a, b) { return a + b; }`. Para codigo curto, use arrow functions: `const dobro = n => n * 2;`. Exemplo de uso: `const total = soma(2, 3);`. Dica: mantenha funcoes pequenas e com um unico objetivo.',
       order: 3,
       tags: ['js', 'funcoes'],
     },
