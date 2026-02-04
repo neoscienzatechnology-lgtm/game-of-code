@@ -20,7 +20,7 @@ const buildOutputTests = (
 const toFriendlyMessage = (error?: string) => {
   if (!error) return undefined;
   if (error.includes('SyntaxError')) return 'Parece haver um erro de sintaxe.';
-  if (error.includes('ReferenceError')) return 'Variavel ou funcao nao encontrada.';
+  if (error.includes('ReferenceError')) return 'Variável ou função não encontrada.';
   if (error.toLowerCase().includes('tempo limite')) return 'Seu codigo demorou demais para responder.';
   return error;
 };

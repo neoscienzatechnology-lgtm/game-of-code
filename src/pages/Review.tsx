@@ -26,7 +26,7 @@ export default function Review() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        Carregando revisoes...
+        Carregando revisões...
       </div>
     );
   }
@@ -35,11 +35,11 @@ export default function Review() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="glass-card p-8 max-w-lg text-center space-y-4">
-          <h1 className="text-2xl font-bold">Sem revisoes pendentes</h1>
+          <h1 className="text-2xl font-bold">Sem revisões pendentes</h1>
           <p className="text-muted-foreground">
-            Voce esta em dia. Continue estudando para liberar novas revisoes.
+            Você está em dia. Continue estudando para liberar novas revisões.
           </p>
-          <Button onClick={() => navigate('/')}>Voltar ao inicio</Button>
+          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
         </div>
       </div>
     );
@@ -54,7 +54,7 @@ export default function Review() {
         recordAttempt({
           exerciseId: exercise.id,
           correct,
-          concept: conceptForExercise(exercise.id) ?? 'revisao',
+          concept: conceptForExercise(exercise.id) ?? 'revisão',
         })
       }
       getConceptForExercise={conceptForExercise}

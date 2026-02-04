@@ -63,7 +63,7 @@ const addPrimersToLesson = (lesson: Lesson): Lesson => {
     const primer: Exercise = {
       id: `${exercise.id}-primer`,
       type: 'info',
-      instruction: 'Revisao rapida',
+      instruction: 'Revisão rápida',
       explanation: buildPrimerExplanation(exercise),
       xp: 0,
     };

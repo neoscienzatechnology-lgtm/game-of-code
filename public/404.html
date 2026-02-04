@@ -1,24 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Not Found</title>
-    <script>
-      const url = new URL(window.location.href);
-      const redirectPath = url.pathname;
-      const redirectQuery = url.search.slice(1);
-      const redirectHash = url.hash;
-      const params = new URLSearchParams({
-        p: redirectPath,
-        q: redirectQuery,
-      });
-      const isGithubPages = url.hostname.endsWith(".github.io");
-      const repoBase = isGithubPages ? url.pathname.split("/")[1] : "";
-      const basePath = repoBase ? `/${repoBase}` : "";
-      const redirectUrl = `${url.origin}${basePath}/?${params.toString()}${redirectHash}`;
-      window.location.replace(redirectUrl);
-    </script>
+    <title>CodePlay</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      (function () {
+        var segmentCount = 1;
+        var location = window.location;
+        var pathSegments = location.pathname.split('/').filter(Boolean);
+        var repoSegment = pathSegments.slice(0, segmentCount).join('/');
+        var appPath = '/' + pathSegments.slice(segmentCount).join('/');
+        var newLocation =
+          location.protocol +
+          '//' +
+          location.host +
+          '/' +
+          repoSegment +
+          '/?p=' +
+          encodeURIComponent(appPath || '/') +
+          (location.search ? '&q=' + encodeURIComponent(location.search.slice(1)) : '') +
+          location.hash;
+
+        location.replace(newLocation);
+      })();
+    </script>
+  </body>
 </html>

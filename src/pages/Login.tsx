@@ -73,7 +73,7 @@ export default function Login() {
         </form>
 
         <p className="text-sm text-muted-foreground text-center">
-          Ainda nao tem conta?{' '}
+          Ainda não tem conta?{' '}
           <Link to="/signup" className="text-primary font-semibold">
             Criar conta
           </Link>

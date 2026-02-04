@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BookOpen, Target, Flame } from 'lucide-react';
 import type { Course } from '@/data/courses';
 import { Unit, Lesson } from '@/data/htmlLessons';
@@ -65,7 +65,6 @@ export function HomeScreen({
   return (
     <div className="min-h-screen pt-20 pb-8 px-4">
       <div className="max-w-lg mx-auto">
-        {/* Course Selector */}
         <div className="glass-card p-2 mb-5">
           <div className="grid grid-cols-3 gap-2">
             {courses.map(course => {
@@ -89,7 +88,6 @@ export function HomeScreen({
           </div>
         </div>
 
-        {/* Hero Section */}
         <div className="glass-card p-6 mb-6 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-success/10 rounded-full blur-2xl" />
@@ -109,7 +107,6 @@ export function HomeScreen({
               {activeCourse?.description ?? 'Escolha uma trilha e avance nas unidades.'}
             </p>
 
-            {/* Progress */}
             <div className="mb-4">
               <div className="flex justify-between text-sm mb-2">
                 <span className="text-muted-foreground">Seu progresso</span>
@@ -120,7 +117,6 @@ export function HomeScreen({
               </div>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-3">
               <div className="flex flex-col items-center p-2 rounded-lg bg-muted/50">
                 <BookOpen className="w-4 h-4 text-primary mb-1" />
@@ -143,7 +139,6 @@ export function HomeScreen({
 
         {activeCourseId === 'js' && <LearningPanel />}
 
-        {/* Course Overview */}
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold">Unidades</h2>
           <span className="text-sm text-muted-foreground">
@@ -151,7 +146,6 @@ export function HomeScreen({
           </span>
         </div>
 
-        {/* Units List */}
         <div className="space-y-3">
           {units.map((unit, index) => (
             <UnitAccordion
@@ -167,7 +161,6 @@ export function HomeScreen({
           ))}
         </div>
 
-        {/* Footer hint */}
         <p className="text-center text-muted-foreground text-sm mt-8">
           {totalLessons} lições em {units.length} unidades • Domine {activeCourse?.title ?? 'sua trilha'}! 🚀
         </p>
@@ -175,5 +168,4 @@ export function HomeScreen({
     </div>
   );
 }
-
 
