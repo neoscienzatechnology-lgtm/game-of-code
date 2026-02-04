@@ -2,12 +2,14 @@ import { useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LearningExerciseSession } from '@/components/LearningExerciseSession';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
 
 export default function Lesson() {
   const { lessonId } = useParams();
   const navigate = useNavigate();
-  const { loading, lessons, exercises, recordAttempt } = useLearningData();
+  const { user } = useAuth();
+  const { loading, lessons, exercises, recordAttempt } = useLearningData(user?.id);
   const [stage, setStage] = useState<'intro' | 'exercises' | 'complete'>('intro');
 
   const lesson = useMemo(

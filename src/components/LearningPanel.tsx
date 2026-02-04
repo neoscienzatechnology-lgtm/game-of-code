@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BookOpen, Flame, Shield, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
 
 const daysBetween = (a: Date, b: Date) => {
@@ -12,8 +13,9 @@ const daysBetween = (a: Date, b: Date) => {
 
 export function LearningPanel() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const { loading, modules, lessons, exercises, progressByExercise, stats, dueExercises } =
-    useLearningData();
+    useLearningData(user?.id);
 
   const module = modules[0];
 
@@ -118,6 +120,20 @@ export function LearningPanel() {
           </Button>
         )}
       </div>
+
+      {!user && (
+        <div className="mt-4 glass-card p-3 text-sm text-muted-foreground">
+          Entre ou crie uma conta para salvar seu progresso e streak.
+          <div className="flex gap-2 mt-3">
+            <Button variant="secondary" size="sm" onClick={() => navigate('/login')}>
+              Entrar
+            </Button>
+            <Button variant="secondary" size="sm" onClick={() => navigate('/signup')}>
+              Criar conta
+            </Button>
+          </div>
+        </div>
+      )}
 
       <div className="mt-6 space-y-2">
         <div className="flex items-center gap-2 text-sm font-semibold">

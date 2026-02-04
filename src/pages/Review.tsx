@@ -2,11 +2,13 @@ import { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LearningExerciseSession } from '@/components/LearningExerciseSession';
 import { Button } from '@/components/ui/button';
+import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
 
 export default function Review() {
   const navigate = useNavigate();
-  const { loading, lessons, exercises, dueExercises, recordAttempt } = useLearningData();
+  const { user } = useAuth();
+  const { loading, lessons, exercises, dueExercises, recordAttempt } = useLearningData(user?.id);
 
   const conceptByLesson = useMemo(() => {
     return lessons.reduce<Record<string, string>>((acc, lesson) => {
