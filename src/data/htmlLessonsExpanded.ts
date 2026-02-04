@@ -505,6 +505,50 @@ const buildVisualExample = (lesson: Lesson) => {
     return VISUAL_EXAMPLES_BY_LESSON[lesson.id];
   }
 
+  const unit = normalize(lesson.unitTitle ?? '');
+  if (unit.includes('css')) {
+    return [
+      '```html',
+      '<div class="card">',
+      '  <h3>Plano Pro</h3>',
+      '  <p>Melhore seu layout.</p>',
+      '  <button>Assinar</button>',
+      '</div>',
+      '```',
+      '```css',
+      '.card {',
+      '  background: #0f172a;',
+      '  color: #e2e8f0;',
+      '  padding: 16px;',
+      '  border-radius: 12px;',
+      '  display: grid;',
+      '  gap: 8px;',
+      '}',
+      '.card button {',
+      '  background: #22c55e;',
+      '  color: #0f172a;',
+      '  padding: 8px 12px;',
+      '  border-radius: 999px;',
+      '}',
+      '```',
+    ].join('\n');
+  }
+  if (unit.includes('javascript') || unit.includes('dom')) {
+    return [
+      '```html',
+      '<button id="contador">Clique 0</button>',
+      '```',
+      '```js',
+      'const botao = document.querySelector("#contador");',
+      'let clicks = 0;',
+      'botao.addEventListener("click", () => {',
+      '  clicks += 1;',
+      '  botao.textContent = `Clique ${clicks}`;',
+      '});',
+      '```',
+    ].join('\n');
+  }
+
   const titleMatch = lesson.title?.match(/<([a-z0-9-]+)>/i);
   if (titleMatch) {
     const tag = titleMatch[1].toLowerCase();
@@ -522,36 +566,21 @@ const buildVisualExample = (lesson: Lesson) => {
     ].join('\n');
   }
 
-  const unit = normalize(lesson.unitTitle ?? '');
-  if (unit.includes('css')) {
-    return [
-      '```css',
-      '.card {',
-      '  background: #0f172a;',
-      '  color: #e2e8f0;',
-      '  padding: 16px;',
-      '  border-radius: 12px;',
-      '}',
-      '```',
-    ].join('\n');
-  }
-  if (unit.includes('javascript') || unit.includes('dom')) {
-    return [
-      '```js',
-      'function saudacao(nome) {',
-      '  return `Ola, ${nome}`;',
-      '}',
-      'console.log(saudacao("Lia"));',
-      '```',
-    ].join('\n');
-  }
-
   return [
     '```html',
-    '<section>',
-    '  <h2>Titulo</h2>',
-    '  <p>Texto de exemplo.</p>',
-    '</section>',
+    '<header>',
+    '  <h1>Pagina exemplo</h1>',
+    '  <nav>',
+    '    <a href="#sobre">Sobre</a>',
+    '    <a href="#contato">Contato</a>',
+    '  </nav>',
+    '</header>',
+    '<main id="sobre">',
+    '  <section>',
+    '    <h2>Sobre</h2>',
+    '    <p>Conteudo introdutorio.</p>',
+    '  </section>',
+    '</main>',
     '```',
   ].join('\n');
 };
@@ -574,6 +603,246 @@ const buildTip = (lesson: Lesson) => {
     return 'Dica pratica: teste o codigo no console do navegador.';
   }
   return 'Dica pratica: visualize no navegador e inspecione o elemento.';
+};
+
+const createFillBlank = (params: {
+  id: string;
+  instruction: string;
+  template: string;
+  answers: { id: string; answer: string; placeholder?: string }[];
+  xp?: number;
+}): Exercise => ({
+  id: params.id,
+  type: 'fill-blank',
+  instruction: params.instruction,
+  codeTemplate: params.template,
+  blanks: params.answers,
+  xp: params.xp ?? 10,
+});
+
+const createMultipleChoice = (params: {
+  id: string;
+  instruction: string;
+  correct: string;
+  wrong: string[];
+  xp?: number;
+}): Exercise => {
+  const options = [
+    { id: 'a', text: params.correct, correct: true },
+    { id: 'b', text: params.wrong[0] ?? 'Opcao B', correct: false },
+    { id: 'c', text: params.wrong[1] ?? 'Opcao C', correct: false },
+  ];
+
+  return {
+    id: params.id,
+    type: 'multiple-choice',
+    instruction: params.instruction,
+    options,
+    xp: params.xp ?? 10,
+  };
+};
+
+const buildUniquePracticeExercise = (lesson: Lesson): Exercise | null => {
+  const id = `${lesson.id}-challenge`;
+  if (lesson.exercises.some(exercise => exercise.id === id)) {
+    return null;
+  }
+
+  const title = normalize(lesson.title ?? '');
+  const unit = normalize(lesson.unitTitle ?? '');
+
+  const tagMatch = lesson.title?.match(/<([a-z0-9-]+)>/i);
+  if (tagMatch) {
+    const tag = tagMatch[1].toLowerCase();
+    if (tag === 'img') {
+      return createFillBlank({
+        id,
+        instruction: 'Complete a tag de imagem com src:',
+        template: '<img {{blank1}}="foto.jpg" alt="Perfil">',
+        answers: [{ id: 'blank1', answer: 'src', placeholder: '___' }],
+        xp: 10,
+      });
+    }
+
+    if (tag === 'a') {
+      return createFillBlank({
+        id,
+        instruction: 'Complete o link com href:',
+        template: '<a {{blank1}}="https://exemplo.com">Site</a>',
+        answers: [{ id: 'blank1', answer: 'href', placeholder: '____' }],
+        xp: 10,
+      });
+    }
+
+    if (SELF_CLOSING_TAGS.has(tag)) {
+      return createMultipleChoice({
+        id,
+        instruction: 'Qual dessas tags e auto-fechada?',
+        correct: `<${tag}>`,
+        wrong: ['<div>', '<section>'],
+        xp: 10,
+      });
+    }
+
+    return createFillBlank({
+      id,
+      instruction: `Crie um elemento ${tag} com classe:`,
+      template: `<{{blank1}} class="destaque">Texto</{{blank2}}>`,
+      answers: [
+        { id: 'blank1', answer: tag, placeholder: '____' },
+        { id: 'blank2', answer: tag, placeholder: '____' },
+      ],
+      xp: 10,
+    });
+  }
+
+  if (unit.includes('listas')) {
+    return createFillBlank({
+      id,
+      instruction: 'Crie uma lista nao ordenada:',
+      template: '<{{blank1}}>\n  <li>Item</li>\n</{{blank2}}>',
+      answers: [
+        { id: 'blank1', answer: 'ul', placeholder: '__' },
+        { id: 'blank2', answer: 'ul', placeholder: '__' },
+      ],
+    });
+  }
+
+  if (unit.includes('tabelas')) {
+    return createFillBlank({
+      id,
+      instruction: 'Complete a estrutura da tabela:',
+      template: '<table>\n  <{{blank1}}>\n    <td>Celula</td>\n  </{{blank2}}>\n</table>',
+      answers: [
+        { id: 'blank1', answer: 'tr', placeholder: '__' },
+        { id: 'blank2', answer: 'tr', placeholder: '__' },
+      ],
+    });
+  }
+
+  if (unit.includes('formul')) {
+    return createMultipleChoice({
+      id,
+      instruction: 'Qual atributo define o tipo do input?',
+      correct: 'type',
+      wrong: ['name', 'value'],
+    });
+  }
+
+  if (unit.includes('acessibilidade')) {
+    return createMultipleChoice({
+      id,
+      instruction: 'Qual atributo descreve uma imagem?',
+      correct: 'alt',
+      wrong: ['src', 'title'],
+    });
+  }
+
+  if (unit.includes('css')) {
+    if (title.includes('seletor')) {
+      return createMultipleChoice({
+        id,
+        instruction: 'Qual seletor aplica em classe?',
+        correct: '.card',
+        wrong: ['#card', 'card'],
+      });
+    }
+
+    if (title.includes('flex')) {
+      return createFillBlank({
+        id,
+        instruction: 'Ative o flexbox:',
+        template: '.linha { display: {{blank1}}; }',
+        answers: [{ id: 'blank1', answer: 'flex', placeholder: '____' }],
+      });
+    }
+
+    if (title.includes('grid')) {
+      return createFillBlank({
+        id,
+        instruction: 'Defina duas colunas:',
+        template: '.grid { grid-template-columns: repeat(2, {{blank1}}); }',
+        answers: [{ id: 'blank1', answer: '1fr', placeholder: '___' }],
+      });
+    }
+
+    if (title.includes('cor') || title.includes('cores')) {
+      return createFillBlank({
+        id,
+        instruction: 'Defina a cor do texto:',
+        template: 'p { {{blank1}}: #0f172a; }',
+        answers: [{ id: 'blank1', answer: 'color', placeholder: '_____' }],
+      });
+    }
+
+    if (title.includes('padding') || title.includes('espac')) {
+      return createFillBlank({
+        id,
+        instruction: 'Adicione espacamento interno:',
+        template: '.card { {{blank1}}: 16px; }',
+        answers: [{ id: 'blank1', answer: 'padding', placeholder: '_______' }],
+      });
+    }
+
+    return createMultipleChoice({
+      id,
+      instruction: 'Qual propriedade controla tamanho da fonte?',
+      correct: 'font-size',
+      wrong: ['font-weight', 'line-height'],
+    });
+  }
+
+  if (unit.includes('javascript') || unit.includes('dom')) {
+    if (title.includes('vari')) {
+      return createFillBlank({
+        id,
+        instruction: 'Crie uma constante:',
+        template: '{{blank1}} nome = "Ana";',
+        answers: [{ id: 'blank1', answer: 'const', placeholder: '_____' }],
+      });
+    }
+
+    if (title.includes('operador')) {
+      return createMultipleChoice({
+        id,
+        instruction: 'Qual operador compara com tipo?',
+        correct: '===',
+        wrong: ['==', '!='],
+      });
+    }
+
+    if (title.includes('func')) {
+      return createFillBlank({
+        id,
+        instruction: 'Complete o retorno:',
+        template: 'function soma(a, b) { {{blank1}} a + b; }',
+        answers: [{ id: 'blank1', answer: 'return', placeholder: '______' }],
+      });
+    }
+
+    if (title.includes('event') || unit.includes('eventos')) {
+      return createFillBlank({
+        id,
+        instruction: 'Adicione evento de clique:',
+        template: 'botao.{{blank1}}("click", () => {});',
+        answers: [{ id: 'blank1', answer: 'addEventListener', placeholder: '______________' }],
+      });
+    }
+
+    return createMultipleChoice({
+      id,
+      instruction: 'Qual metodo seleciona um elemento?',
+      correct: 'querySelector',
+      wrong: ['selectElement', 'getElement'],
+    });
+  }
+
+  return createMultipleChoice({
+    id,
+    instruction: 'Qual tecnologia define a estrutura da pagina?',
+    correct: 'HTML',
+    wrong: ['CSS', 'JavaScript'],
+  });
 };
 
 const shouldExpand = (exercise: Exercise) => {
@@ -610,36 +879,14 @@ const buildPracticeExercise = (lesson: Lesson): Exercise | null => {
     return null;
   }
 
-  const interactive = lesson.exercises.filter(ex => ex.type !== 'info');
-  const base = interactive[0];
-  if (base) {
-    return {
-      ...base,
-      id: practiceId,
-      instruction: `Pratica guiada: ${base.instruction}`,
-      xp: Math.max(5, Math.floor(base.xp / 2)),
-    };
-  }
-
-  const infoText = lesson.exercises
-    .filter(ex => ex.type === 'info')
-    .map(ex => `${ex.instruction ?? ''} ${ex.explanation ?? ''}`)
-    .join(' ');
-  const tokens = extractTokens(infoText);
-  const answer = tokens[0] ?? 'HTML';
-  const choices = ['HTML', 'CSS', 'JavaScript'].filter(opt => opt !== answer);
-  const options = [
-    { id: 'a', text: answer, correct: true },
-    { id: 'b', text: choices[0] ?? 'CSS', correct: false },
-    { id: 'c', text: choices[1] ?? 'JavaScript', correct: false },
-  ];
+  const challenge = buildUniquePracticeExercise(lesson);
+  if (!challenge) return null;
 
   return {
+    ...challenge,
     id: practiceId,
-    type: 'multiple-choice',
-    instruction: 'Pratica guiada: qual termo apareceu na licao?',
-    options,
-    xp: 5,
+    instruction: `Pratica guiada: ${challenge.instruction}`,
+    xp: Math.max(8, challenge.xp),
   };
 };
 
