@@ -1,4 +1,4 @@
-import { htmlUnits } from './htmlLessons';
+import { htmlUnitsExpanded } from './htmlLessonsExpanded';
 import type { Unit } from './htmlLessons';
 
 export type CourseId = 'html' | 'css' | 'js';
@@ -16,7 +16,7 @@ const htmlUnitIds = Array.from({ length: 16 }, (_, index) => `unit-${index + 1}`
 const cssUnitIds = ['unit-17', 'unit-18', 'unit-19', 'unit-22', 'unit-23'];
 const jsUnitIds = ['unit-20', 'unit-21', 'unit-24', 'unit-25'];
 
-const pickUnits = (ids: string[]) => htmlUnits.filter((unit) => ids.includes(unit.id));
+const pickUnits = (ids: string[]) => htmlUnitsExpanded.filter((unit) => ids.includes(unit.id));
 
 export const courses: Course[] = [
   {

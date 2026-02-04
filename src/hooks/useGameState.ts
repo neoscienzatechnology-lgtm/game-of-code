@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { courses } from '@/data/courses';
 import type { CourseId } from '@/data/courses';
-import { htmlLessonsEnriched, htmlUnitsEnriched } from '@/data/htmlLessonsEnriched';
+import { htmlLessonsExpanded, htmlUnitsExpanded } from '@/data/htmlLessonsExpanded';
 import { Lesson } from '@/data/htmlLessons';
 
 interface GameState {
@@ -170,7 +170,7 @@ export function useGameState() {
   };
 
   const getLessonProgress = (lessonId: string): number => {
-    const lesson = htmlLessonsEnriched.find(l => l.id === lessonId);
+    const lesson = htmlLessonsExpanded.find(l => l.id === lessonId);
     if (!lesson) return 0;
     
     const trackableExercises = lesson.exercises.filter(ex => ex.type !== 'info');
@@ -185,8 +185,8 @@ export function useGameState() {
 
   return {
     ...gameState,
-    lessons: htmlLessonsEnriched,
-    units: htmlUnitsEnriched,
+    lessons: htmlLessonsExpanded,
+    units: htmlUnitsExpanded,
     courses,
     addXp,
     loseHeart,
