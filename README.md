@@ -153,6 +153,22 @@ npm run test
 3. Add exercises with validations for that language.
 4. Update UI labels if needed (LearningPanel).
 
+## Authentication (Lovable backend / Supabase)
+
+Login/cadastro agora usam o backend do Lovable via Supabase Auth.
+
+Configure as variaveis de ambiente:
+
+```sh
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+No Lovable: Project > Settings > Environment. Em local, use um arquivo `.env`.
+
+Se a confirmacao de email estiver ativa no Supabase, o usuario precisa confirmar o email
+antes de entrar.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.

@@ -1,5 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
+import type { User } from '@supabase/supabase-js';
+import { hasSupabaseEnv, supabase } from '@/lib/supabaseClient';
 
 interface AuthUser {
   id: string;
@@ -8,69 +10,76 @@ interface AuthUser {
   createdAt: string;
 }
 
-interface StoredUser extends AuthUser {
-  passwordHash: string;
+interface AuthResult {
+  ok: boolean;
+  error?: string;
+  message?: string;
+  needsEmailConfirmation?: boolean;
 }
 
 interface AuthContextValue {
   user: AuthUser | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<{ ok: boolean; error?: string }>;
-  signup: (
-    name: string,
-    email: string,
-    password: string
-  ) => Promise<{ ok: boolean; error?: string }>;
+  login: (email: string, password: string) => Promise<AuthResult>;
+  signup: (name: string, email: string, password: string) => Promise<AuthResult>;
   logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-const USERS_KEY = 'auth-users';
-const SESSION_KEY = 'auth-session';
-
-const loadUsers = (): StoredUser[] => {
-  try {
-    const raw = localStorage.getItem(USERS_KEY);
-    if (!raw) return [];
-    return JSON.parse(raw) as StoredUser[];
-  } catch {
-    return [];
-  }
+const displayNameForUser = (user: User) => {
+  const metadata = user.user_metadata ?? {};
+  const rawName =
+    (typeof metadata.name === 'string' && metadata.name) ||
+    (typeof metadata.full_name === 'string' && metadata.full_name) ||
+    '';
+  if (rawName.trim()) return rawName.trim();
+  const email = user.email ?? '';
+  if (email) return email.split('@')[0];
+  return 'Usuario';
 };
 
-const saveUsers = (users: StoredUser[]) => {
-  localStorage.setItem(USERS_KEY, JSON.stringify(users));
+const mapAuthUser = (user: User | null): AuthUser | null => {
+  if (!user) return null;
+  return {
+    id: user.id,
+    name: displayNameForUser(user),
+    email: user.email ?? '',
+    createdAt: user.created_at ?? new Date().toISOString(),
+  };
 };
 
-const saveSession = (user: AuthUser | null) => {
-  if (!user) {
-    localStorage.removeItem(SESSION_KEY);
-    return;
+const formatAuthError = (message?: string) => {
+  const normalized = (message ?? '').toLowerCase();
+  if (normalized.includes('invalid login credentials')) {
+    return 'Email ou senha incorretos.';
   }
-  localStorage.setItem(SESSION_KEY, JSON.stringify(user));
+  if (normalized.includes('email not confirmed')) {
+    return 'Confirme seu email antes de entrar.';
+  }
+  if (normalized.includes('already registered') || normalized.includes('user already')) {
+    return 'Email ja cadastrado.';
+  }
+  if (normalized.includes('signup') && normalized.includes('not allowed')) {
+    return 'Cadastro desativado no momento.';
+  }
+  if (normalized.includes('password')) {
+    return 'Senha invalida.';
+  }
+  if (normalized.includes('email')) {
+    return 'Email invalido.';
+  }
+  return 'Falha na autenticacao.';
 };
 
-const loadSession = (): AuthUser | null => {
-  try {
-    const raw = localStorage.getItem(SESSION_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw) as AuthUser;
-  } catch {
-    return null;
+const ensureSupabase = (): AuthResult | null => {
+  if (!hasSupabaseEnv || !supabase) {
+    return {
+      ok: false,
+      error: 'Supabase nao configurado. Informe as chaves do projeto Lovable.',
+    };
   }
-};
-
-const hashPassword = async (password: string) => {
-  if (typeof crypto === 'undefined' || !crypto.subtle) {
-    return btoa(password);
-  }
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const digest = await crypto.subtle.digest('SHA-256', data);
-  return Array.from(new Uint8Array(digest))
-    .map(byte => byte.toString(16).padStart(2, '0'))
-    .join('');
+  return null;
 };
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -78,35 +87,74 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setUser(loadSession());
-    setLoading(false);
+    let active = true;
+
+    const loadSession = async () => {
+      if (!supabase) {
+        if (active) setLoading(false);
+        return;
+      }
+      const { data, error } = await supabase.auth.getSession();
+      if (!active) return;
+      if (error) {
+        console.warn('Supabase session error:', error.message);
+      }
+      setUser(mapAuthUser(data.session?.user ?? null));
+      setLoading(false);
+    };
+
+    loadSession();
+
+    if (!supabase) {
+      return () => {
+        active = false;
+      };
+    }
+
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(mapAuthUser(session?.user ?? null));
+    });
+
+    return () => {
+      active = false;
+      data.subscription.unsubscribe();
+    };
   }, []);
 
   const login = useCallback(async (email: string, password: string) => {
+    const missing = ensureSupabase();
+    if (missing) return missing;
+
     const normalizedEmail = email.trim().toLowerCase();
-    const users = loadUsers();
-    const found = users.find(item => item.email === normalizedEmail);
-    if (!found) {
-      return { ok: false, error: 'Usuario nao encontrado.' };
+    if (!normalizedEmail || !normalizedEmail.includes('@')) {
+      return { ok: false, error: 'Informe um email valido.' };
+    }
+    if (!password) {
+      return { ok: false, error: 'Informe sua senha.' };
     }
 
-    const passwordHash = await hashPassword(password);
-    if (passwordHash !== found.passwordHash) {
-      return { ok: false, error: 'Senha incorreta.' };
+    try {
+      const { data, error } = await supabase!.auth.signInWithPassword({
+        email: normalizedEmail,
+        password,
+      });
+      if (error) {
+        return { ok: false, error: formatAuthError(error.message) };
+      }
+      setUser(mapAuthUser(data.user ?? null));
+      return { ok: true };
+    } catch (error) {
+      return {
+        ok: false,
+        error: formatAuthError(error instanceof Error ? error.message : undefined),
+      };
     }
-
-    const sessionUser: AuthUser = {
-      id: found.id,
-      name: found.name,
-      email: found.email,
-      createdAt: found.createdAt,
-    };
-    setUser(sessionUser);
-    saveSession(sessionUser);
-    return { ok: true };
   }, []);
 
   const signup = useCallback(async (name: string, email: string, password: string) => {
+    const missing = ensureSupabase();
+    if (missing) return missing;
+
     const normalizedEmail = email.trim().toLowerCase();
     if (!name.trim()) {
       return { ok: false, error: 'Informe seu nome.' };
@@ -118,39 +166,44 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return { ok: false, error: 'A senha deve ter pelo menos 6 caracteres.' };
     }
 
-    const users = loadUsers();
-    if (users.some(item => item.email === normalizedEmail)) {
-      return { ok: false, error: 'Email ja cadastrado.' };
+    try {
+      const { data, error } = await supabase!.auth.signUp({
+        email: normalizedEmail,
+        password,
+        options: {
+          data: {
+            name: name.trim(),
+          },
+        },
+      });
+
+      if (error) {
+        return { ok: false, error: formatAuthError(error.message) };
+      }
+
+      if (!data.session) {
+        return {
+          ok: true,
+          needsEmailConfirmation: true,
+          message: 'Conta criada. Verifique seu email para confirmar o acesso.',
+        };
+      }
+
+      setUser(mapAuthUser(data.user ?? null));
+      return { ok: true };
+    } catch (error) {
+      return {
+        ok: false,
+        error: formatAuthError(error instanceof Error ? error.message : undefined),
+      };
     }
-
-    const passwordHash = await hashPassword(password);
-    const now = new Date().toISOString();
-    const newUser: StoredUser = {
-      id: `user-${Date.now()}`,
-      name: name.trim(),
-      email: normalizedEmail,
-      passwordHash,
-      createdAt: now,
-    };
-
-    const nextUsers = [...users, newUser];
-    saveUsers(nextUsers);
-
-    const sessionUser: AuthUser = {
-      id: newUser.id,
-      name: newUser.name,
-      email: newUser.email,
-      createdAt: newUser.createdAt,
-    };
-
-    setUser(sessionUser);
-    saveSession(sessionUser);
-    return { ok: true };
   }, []);
 
   const logout = useCallback(() => {
+    if (supabase) {
+      void supabase.auth.signOut();
+    }
     setUser(null);
-    saveSession(null);
   }, []);
 
   const value = useMemo(

@@ -12,16 +12,22 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setError(null);
+    setNotice(null);
     setLoading(true);
     const result = await signup(name, email, password);
     setLoading(false);
     if (!result.ok) {
       setError(result.error ?? 'Falha no cadastro.');
+      return;
+    }
+    if (result.needsEmailConfirmation) {
+      setNotice(result.message ?? 'Conta criada. Verifique seu email para confirmar o acesso.');
       return;
     }
     navigate('/');
@@ -74,6 +80,7 @@ export default function Signup() {
           </div>
 
           {error && <p className="text-sm text-error">{error}</p>}
+          {notice && <p className="text-sm text-success">{notice}</p>}
 
           <Button
             type="submit"
