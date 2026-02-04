@@ -464,7 +464,7 @@ const extractTokens = (text: string) => {
 };
 
 const buildHtmlExample = (token: string) => {
-  const match = token.match(/<\\/?([a-z0-9-]+)/i);
+  const match = token.match(/<\/?([a-z0-9-]+)/i);
   if (!match) return null;
   const tag = match[1].toLowerCase();
 
