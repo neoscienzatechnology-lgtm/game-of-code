@@ -117,7 +117,7 @@ const DETAILED_EXPLANATIONS: Record<string, string> = {
     '',
     'Exemplo de uso: organizar secao de conteudo.',
     'Uso comum: melhorar SEO e acessibilidade.',
-    'Dica pratica: nao pule niveis de titulo.',
+    'Dica prática: não pule níveis de título.',
   ].join('\n'),
   'u3-l2-1': [
     'Paragrafos agrupam texto e criam espacamento automatico.',
@@ -347,7 +347,7 @@ const VISUAL_EXAMPLES_BY_LESSON: Record<string, string> = {
   'u4-l1': [
     '```html',
     '<nav>',
-    '  <a href="/inicio">Inicio</a>',
+    '  <a href="/inicio">Início</a>',
     '  <a href="/sobre">Sobre</a>',
     '</nav>',
     '```',
@@ -699,7 +699,7 @@ const buildUniquePracticeExercise = (lesson: Lesson): Exercise | null => {
   if (unit.includes('listas')) {
     return createFillBlank({
       id,
-      instruction: 'Crie uma lista nao ordenada:',
+      instruction: 'Crie uma lista não ordenada:',
       template: '<{{blank1}}>\n  <li>Item</li>\n</{{blank2}}>',
       answers: [
         { id: 'blank1', answer: 'ul', placeholder: '__' },
