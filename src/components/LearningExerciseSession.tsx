@@ -198,7 +198,7 @@ export function LearningExerciseSession({
               </div>
               {conceptLabel && (
                 <p className="text-muted-foreground text-xs">
-                  Voce praticou {conceptLabel}.
+                  Você praticou {conceptLabel}.
                 </p>
               )}
             </div>
@@ -241,7 +241,7 @@ export function LearningExerciseSession({
             {showResult === 'correct'
               ? isLastExercise
                 ? 'Concluir'
-                : 'Proximo'
+                : 'Próximo'
               : showResult === 'wrong'
                 ? 'Tentar novamente'
                 : 'Verificar'}

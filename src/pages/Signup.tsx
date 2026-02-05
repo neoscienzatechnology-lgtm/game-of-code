@@ -92,7 +92,7 @@ export default function Signup() {
         </form>
 
         <p className="text-sm text-muted-foreground text-center">
-          Ja possui conta?{' '}
+          Já possui conta?{' '}
           <Link to="/login" className="text-primary font-semibold">
             Entrar
           </Link>

@@ -4,7 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-const base = repoName ? `/${repoName}/` : "/";
+const base =
+  process.env.VITE_BASE_PATH ??
+  (repoName ? `/${repoName}/` : "/game-of-code/");
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
