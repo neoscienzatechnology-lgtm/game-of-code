@@ -25,7 +25,7 @@ export default function Lesson() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        Carregando licao...
+        Carregando lição...
       </div>
     );
   }
@@ -33,9 +33,9 @@ export default function Lesson() {
   if (!lesson) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
-        <h1 className="text-2xl font-bold mb-2">Licao nao encontrada</h1>
+        <h1 className="text-2xl font-bold mb-2">Lição não encontrada</h1>
         <p className="text-muted-foreground mb-6">Verifique o link e tente novamente.</p>
-        <Button onClick={() => navigate('/')}>Voltar ao inicio</Button>
+        <Button onClick={() => navigate('/')}>Voltar ao início</Button>
       </div>
     );
   }
@@ -44,11 +44,11 @@ export default function Lesson() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="glass-card p-8 max-w-lg text-center space-y-4">
-          <h1 className="text-2xl font-bold">Licao concluida!</h1>
+          <h1 className="text-2xl font-bold">Lição concluída!</h1>
           <p className="text-muted-foreground">
-            Voce finalizou {lesson.title}. Continue para manter o ritmo.
+            Você finalizou {lesson.title}. Continue para manter o ritmo.
           </p>
-          <Button onClick={() => navigate('/')}>Voltar ao inicio</Button>
+          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
         </div>
       </div>
     );
@@ -59,7 +59,7 @@ export default function Lesson() {
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="glass-card p-8 max-w-lg space-y-4">
           <div className="text-xs uppercase tracking-wide text-muted-foreground">
-            Microlicao (15-60s)
+            Microlição (15-60s)
           </div>
           <h1 className="text-2xl font-bold">{lesson.title}</h1>
           <p className="text-muted-foreground text-sm leading-relaxed">{lesson.content}</p>
@@ -67,10 +67,10 @@ export default function Lesson() {
             onClick={() => setStage('exercises')}
             className="w-full h-12 gradient-primary glow-primary font-semibold"
           >
-            Iniciar exercicios
+            Iniciar exercícios
           </Button>
           <Button variant="secondary" onClick={() => navigate('/')} className="w-full h-12">
-            Voltar
+            Voltar ao início
           </Button>
         </div>
       </div>
@@ -81,11 +81,11 @@ export default function Lesson() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="glass-card p-8 max-w-lg text-center space-y-4">
-          <h1 className="text-2xl font-bold">Sem exercicios</h1>
+          <h1 className="text-2xl font-bold">Sem exercícios</h1>
           <p className="text-muted-foreground">
-            Esta licao ainda nao possui exercicios configurados.
+            Esta lição ainda não possui exercícios configurados.
           </p>
-          <Button onClick={() => navigate('/')}>Voltar ao inicio</Button>
+          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
         </div>
       </div>
     );

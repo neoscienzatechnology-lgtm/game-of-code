@@ -74,7 +74,7 @@ export function LearningPanel() {
 
       <div className="mb-4">
         <div className="flex justify-between text-xs text-muted-foreground mb-2">
-          <span>Progresso do modulo</span>
+          <span>Progresso do módulo</span>
           <span>{moduleProgress.percent}%</span>
         </div>
         <div className="progress-bar h-3">
@@ -96,9 +96,9 @@ export function LearningPanel() {
         <div className="flex flex-col items-center p-2 rounded-lg bg-muted/50">
           <Shield className="w-4 h-4 text-success mb-1" />
           <span className="text-xs font-semibold text-foreground">
-            {protectionAvailable ? 'Disponivel' : 'Usada'}
+            {protectionAvailable ? 'Disponível' : 'Usada'}
           </span>
-          <span className="text-xs text-muted-foreground">Protecao</span>
+          <span className="text-xs text-muted-foreground">Proteção</span>
         </div>
       </div>
 
@@ -116,7 +116,7 @@ export function LearningPanel() {
             onClick={() => navigate('/review')}
             className="h-12"
           >
-            Revisao rapida ({dueExercises.length})
+            Revisão rápida ({dueExercises.length})
           </Button>
         )}
       </div>
@@ -138,7 +138,7 @@ export function LearningPanel() {
       <div className="mt-6 space-y-2">
         <div className="flex items-center gap-2 text-sm font-semibold">
           <BookOpen className="w-4 h-4" />
-          Liccoes do modulo
+          Lições do módulo
         </div>
         {lessonProgress.map(item => (
           <button
