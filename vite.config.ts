@@ -3,8 +3,11 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-const base = repoName ? `/${repoName}/` : "/";
+const repoName =
+  process.env.GITHUB_REPOSITORY?.split("/")[1] ??
+  process.env.VITE_REPO_NAME ??
+  "game-of-code";
+const base = process.env.VITE_BASE_PATH ?? `/${repoName}/`;
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
