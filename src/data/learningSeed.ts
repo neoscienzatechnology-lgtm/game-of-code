@@ -5,7 +5,7 @@ export const learningSeed: LearningSeed = {
     {
       id: 'module-js-basics',
       language: 'javascript',
-      title: 'JavaScript Basico',
+      title: 'JavaScript Básico',
       description: 'Fundamentos essenciais para iniciar na linguagem.',
       order: 1,
       tags: ['js', 'basics'],
@@ -16,12 +16,12 @@ export const learningSeed: LearningSeed = {
       id: 'lesson-js-variables',
       module_id: 'module-js-basics',
       language: 'javascript',
-      concept: 'variaveis',
-      title: 'Variaveis e constantes',
+      concept: 'variáveis',
+      title: 'Variáveis e constantes',
       content:
-        'Variaveis guardam dados para reutilizar no codigo. Use const para valores fixos e let para valores que mudam. Exemplo: `const nome = \"Ana\";` e `let pontos = 0;`. Sempre prefira const quando o valor nao muda e use nomes claros. Exemplo de uso: `let total = 0; total += 5;` mostra como atualizar um valor. Dica: evite nomes genericos como x ou y.',
+        'Variáveis guardam dados para reutilizar no código. Use const para valores fixos e let para valores que mudam. Exemplo: `const nome = \"Ana\";` e `let pontos = 0;`. Sempre prefira const quando o valor não muda e use nomes claros. Exemplo de uso: `let total = 0; total += 5;` mostra como atualizar um valor. Dica: evite nomes genéricos como x ou y.',
       order: 1,
-      tags: ['js', 'variaveis', 'const', 'let'],
+      tags: ['js', 'variáveis', 'const', 'let'],
     },
     {
       id: 'lesson-js-conditionals',
@@ -30,7 +30,7 @@ export const learningSeed: LearningSeed = {
       concept: 'condicionais',
       title: 'Condicionais',
       content:
-        'Condicionais executam blocos apenas quando a condicao e verdadeira. Use if/else para decidir caminhos. Exemplo: `if (idade >= 18) { console.log(\"ok\"); } else { console.log(\"nao\"); }`. Voce pode combinar condicoes com `&&` e `||`. Exemplo de uso: `if (logado && admin) { ... }`. Dica: prefira comparacoes estritas (`===`).',
+        'Condicionais executam blocos apenas quando a condição é verdadeira. Use if/else para decidir caminhos. Exemplo: `if (idade >= 18) { console.log(\"ok\"); } else { console.log(\"não\"); }`. Você pode combinar condições com `&&` e `||`. Exemplo de uso: `if (logado && admin) { ... }`. Dica: prefira comparações estritas (`===`).',
       order: 2,
       tags: ['js', 'if', 'else'],
     },
@@ -38,12 +38,12 @@ export const learningSeed: LearningSeed = {
       id: 'lesson-js-functions',
       module_id: 'module-js-basics',
       language: 'javascript',
-      concept: 'funcoes',
-      title: 'Funcoes',
+      concept: 'funções',
+      title: 'Funções',
       content:
-        'Funcoes agrupam logica reutilizavel. Elas podem receber parametros e retornar valores. Exemplo: `function soma(a, b) { return a + b; }`. Para codigo curto, use arrow functions: `const dobro = n => n * 2;`. Exemplo de uso: `const total = soma(2, 3);`. Dica: mantenha funcoes pequenas e com um unico objetivo.',
+        'Funções agrupam lógica reutilizável. Elas podem receber parâmetros e retornar valores. Exemplo: `function soma(a, b) { return a + b; }`. Para código curto, use arrow functions: `const dobro = n => n * 2;`. Exemplo de uso: `const total = soma(2, 3);`. Dica: mantenha funções pequenas e com um único objetivo.',
       order: 3,
-      tags: ['js', 'funcoes'],
+      tags: ['js', 'funções'],
     },
   ],
   exercises: [
@@ -51,7 +51,7 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-vars-1',
       lesson_id: 'lesson-js-variables',
       type: 'blank',
-      prompt: 'Complete a declaracao de constante com o nome correto.',
+      prompt: 'Complete a declaração de constante com o nome correto.',
       starter_code: 'const {{blank1}} = "Ana";',
       validations: [
         {
@@ -60,7 +60,7 @@ export const learningSeed: LearningSeed = {
         },
       ],
       hints: [
-        { level: 1, text: 'Use um nome simples de variavel.' },
+        { level: 1, text: 'Use um nome simples de variável.' },
         { level: 2, text: 'O valor representa o nome da pessoa.' },
         { level: 3, text: 'Resposta: nome' },
       ],
@@ -72,15 +72,15 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-vars-2',
       lesson_id: 'lesson-js-variables',
       type: 'code',
-      prompt: 'Crie uma variavel let chamada contador iniciando em 0.',
-      starter_code: '// escreva seu codigo abaixo',
+      prompt: 'Crie uma variável let chamada contador iniciando em 0.',
+      starter_code: '// escreva seu código abaixo',
       validations: [
         {
           type: 'js-tests',
           tests: [
             {
-              name: 'contador deve ser numero',
-              code: "assert(typeof contador === 'number', 'contador deve ser numero');",
+              name: 'contador deve ser número',
+              code: "assert(typeof contador === 'number', 'contador deve ser número');",
             },
             {
               name: 'contador inicia em 0',
@@ -102,27 +102,27 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-vars-3',
       lesson_id: 'lesson-js-variables',
       type: 'bugfix',
-      prompt: 'Corrija o bug: a funcao nao retorna a mensagem.',
+      prompt: 'Corrija o bug: a função não retorna a mensagem.',
       starter_code:
-        'function criarMensagem(nome) {\n  const mensagem = "Ola, " + nome;\n}',
+        'function criarMensagem(nome) {\n  const mensagem = "Olá, " + nome;\n}',
       validations: [
         {
           type: 'js-tests',
           tests: [
             {
-              name: 'funcao retorna mensagem',
-              code: "assert(criarMensagem('Ada') === 'Ola, Ada', 'A funcao deve retornar a mensagem');",
+              name: 'função retorna mensagem',
+              code: "assert(criarMensagem('Ada') === 'Olá, Ada', 'A função deve retornar a mensagem');",
             },
           ],
         },
       ],
       hints: [
-        { level: 1, text: 'A funcao precisa retornar um valor.' },
+        { level: 1, text: 'A função precisa retornar um valor.' },
         { level: 2, text: 'Use a palavra-chave return.' },
-        { level: 3, text: 'Return mensagem no final da funcao.' },
+        { level: 3, text: 'Return mensagem no final da função.' },
       ],
       solution:
-        'function criarMensagem(nome) {\n  const mensagem = "Ola, " + nome;\n  return mensagem;\n}',
+        'function criarMensagem(nome) {\n  const mensagem = "Olá, " + nome;\n  return mensagem;\n}',
       difficulty: 'medium',
       estimated_time: 60,
     },
@@ -130,7 +130,7 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-if-1',
       lesson_id: 'lesson-js-conditionals',
       type: 'blank',
-      prompt: 'Complete a condicao para validar idade.',
+      prompt: 'Complete a condição para validar idade.',
       starter_code: 'if ({{blank1}} >= 18) {\n  console.log("ok");\n}',
       validations: [
         {
@@ -139,8 +139,8 @@ export const learningSeed: LearningSeed = {
         },
       ],
       hints: [
-        { level: 1, text: 'Use a variavel com a idade.' },
-        { level: 2, text: 'A condicao compara idade com 18.' },
+        { level: 1, text: 'Use a variável com a idade.' },
+        { level: 2, text: 'A condição compara idade com 18.' },
         { level: 3, text: 'Resposta: idade' },
       ],
       solution: 'if (idade >= 18) {\n  console.log("ok");\n}',
@@ -151,8 +151,8 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-if-2',
       lesson_id: 'lesson-js-conditionals',
       type: 'code',
-      prompt: 'Implemente a funcao isPar que retorna true para numeros pares.',
-      starter_code: 'function isPar(n) {\n  // seu codigo\n}',
+      prompt: 'Implemente a função isPar que retorna true para números pares.',
+      starter_code: 'function isPar(n) {\n  // seu código\n}',
       validations: [
         {
           type: 'js-tests',
@@ -181,7 +181,7 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-if-3',
       lesson_id: 'lesson-js-conditionals',
       type: 'bugfix',
-      prompt: 'Corrija a comparacao para permitir 18 anos.',
+      prompt: 'Corrija a comparação para permitir 18 anos.',
       starter_code: 'function podeDirigir(idade) {\n  return idade > 18;\n}',
       validations: [
         {
@@ -195,7 +195,7 @@ export const learningSeed: LearningSeed = {
         },
       ],
       hints: [
-        { level: 1, text: 'A comparacao deve aceitar 18.' },
+        { level: 1, text: 'A comparação deve aceitar 18.' },
         { level: 2, text: 'Use >= em vez de >.' },
         { level: 3, text: 'return idade >= 18;' },
       ],
@@ -207,7 +207,7 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-fn-1',
       lesson_id: 'lesson-js-functions',
       type: 'blank',
-      prompt: 'Complete o nome da funcao de soma.',
+      prompt: 'Complete o nome da função de soma.',
       starter_code: 'function {{blank1}}(a, b) {\n  return a + b;\n}',
       validations: [
         {
@@ -235,8 +235,8 @@ export const learningSeed: LearningSeed = {
           type: 'js-tests',
           tests: [
             {
-              name: 'dobro e funcao',
-              code: "assert(typeof dobro === 'function', 'dobro deve ser funcao');",
+              name: 'dobro é função',
+              code: "assert(typeof dobro === 'function', 'dobro deve ser função');",
             },
             {
               name: 'dobro de 4',
@@ -247,7 +247,7 @@ export const learningSeed: LearningSeed = {
       ],
       hints: [
         { level: 1, text: 'Use const e arrow function.' },
-        { level: 2, text: 'O nome da funcao e dobro.' },
+        { level: 2, text: 'O nome da função é dobro.' },
         { level: 3, text: 'const dobro = (n) => n * 2;' },
       ],
       solution: 'const dobro = (n) => n * 2;',
@@ -258,25 +258,25 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-fn-3',
       lesson_id: 'lesson-js-functions',
       type: 'code',
-      prompt: "Implemente a funcao saudacao que retorna 'Ola, <nome>'.",
-      starter_code: 'function saudacao(nome) {\n  // seu codigo\n}',
+      prompt: "Implemente a função saudação que retorna 'Olá, <nome>'.",
+      starter_code: 'function saudacao(nome) {\n  // seu código\n}',
       validations: [
         {
           type: 'js-tests',
           tests: [
             {
               name: 'saudacao inclui nome',
-              code: "assert(saudacao('Lia') === 'Ola, Lia', 'saudacao deve incluir nome');",
+              code: "assert(saudacao('Lia') === 'Olá, Lia', 'saudacao deve incluir nome');",
             },
           ],
         },
       ],
       hints: [
         { level: 1, text: 'Retorne uma string com o nome.' },
-        { level: 2, text: 'Use concatenacao ou template string.' },
-        { level: 3, text: "return 'Ola, ' + nome;" },
+        { level: 2, text: 'Use concatenação ou template string.' },
+        { level: 3, text: "return 'Olá, ' + nome;" },
       ],
-      solution: 'function saudacao(nome) {\n  return "Ola, " + nome;\n}',
+      solution: 'function saudacao(nome) {\n  return "Olá, " + nome;\n}',
       difficulty: 'medium',
       estimated_time: 60,
     },
@@ -284,7 +284,7 @@ export const learningSeed: LearningSeed = {
       id: 'ex-js-fn-4',
       lesson_id: 'lesson-js-functions',
       type: 'bugfix',
-      prompt: 'Corrija a funcao para usar ambos os parametros.',
+      prompt: 'Corrija a função para usar ambos os parâmetros.',
       starter_code:
         'function areaRetangulo(largura, altura) {\n  return largura * largura;\n}',
       validations: [
@@ -292,14 +292,14 @@ export const learningSeed: LearningSeed = {
           type: 'js-tests',
           tests: [
             {
-              name: 'area correta',
-              code: 'assert(areaRetangulo(3, 4) === 12, "area deve ser largura * altura");',
+              name: 'área correta',
+              code: 'assert(areaRetangulo(3, 4) === 12, "área deve ser largura * altura");',
             },
           ],
         },
       ],
       hints: [
-        { level: 1, text: 'A altura nao esta sendo usada.' },
+        { level: 1, text: 'A altura não está sendo usada.' },
         { level: 2, text: 'Multiplique largura por altura.' },
         { level: 3, text: 'return largura * altura;' },
       ],

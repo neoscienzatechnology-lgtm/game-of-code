@@ -76,7 +76,7 @@ const ensureSupabase = (): AuthResult | null => {
   if (!hasSupabaseEnv || !supabase) {
     return {
       ok: false,
-      error: 'Supabase nao configurado. Informe as chaves do projeto Lovable.',
+      error: 'Supabase não configurado. Informe as chaves do projeto Lovable.',
     };
   }
   return null;

@@ -11,7 +11,7 @@ export const validateHtmlStructure = (
     return {
       passed: false,
       error: 'Parser indisponivel',
-      friendlyMessage: 'O ambiente atual nao suporta validar HTML.',
+      friendlyMessage: 'O ambiente atual não suporta validar HTML.',
     };
   }
 
@@ -23,7 +23,7 @@ export const validateHtmlStructure = (
       if (!doc.querySelector(tag)) {
         return {
           passed: false,
-          error: `Tag ${tag} nao encontrada`,
+          error: `Tag ${tag} não encontrada`,
           friendlyMessage: `Adicione a tag ${tag} ao HTML.`,
         };
       }
@@ -35,7 +35,7 @@ export const validateHtmlStructure = (
       if (!doc.querySelector(selector)) {
         return {
           passed: false,
-          error: `Seletor ${selector} nao encontrado`,
+          error: `Seletor ${selector} não encontrado`,
           friendlyMessage: `Faltou o seletor ${selector} no HTML.`,
         };
       }
@@ -47,7 +47,7 @@ export const validateHtmlStructure = (
       if (!doc.querySelector(`.${className}`)) {
         return {
           passed: false,
-          error: `Classe ${className} nao encontrada`,
+          error: `Classe ${className} não encontrada`,
           friendlyMessage: `Adicione a classe ${className} em um elemento.`,
         };
       }
@@ -60,7 +60,7 @@ export const validateHtmlStructure = (
       if (!element) {
         return {
           passed: false,
-          error: `Seletor ${attr.selector} nao encontrado`,
+          error: `Seletor ${attr.selector} não encontrado`,
           friendlyMessage: `Adicione o elemento ${attr.selector} no HTML.`,
         };
       }
@@ -89,7 +89,7 @@ export const validateHtmlStructure = (
       if (!match) {
         return {
           passed: false,
-          error: `Seletor CSS ${rule.selector} nao encontrado`,
+          error: `Seletor CSS ${rule.selector} não encontrado`,
           friendlyMessage: `Adicione o seletor ${rule.selector} no CSS.`,
         };
       }
