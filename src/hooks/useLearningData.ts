@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import {
   DEFAULT_LEARNING_USER,
+  getConceptProgress,
   getDueExercises,
   getLearningSnapshot,
   initializeLearningDb,
+  loadAllModuleData,
+  loadModuleData,
   recordExerciseAttempt,
 } from '@/lib/learningDb';
 import type { ExerciseData, LessonData, ModuleData, UserProgress, UserStats } from '@/types/learning';
@@ -13,9 +16,17 @@ interface LearningState {
   modules: ModuleData[];
   lessons: LessonData[];
   exercises: ExerciseData[];
+  loadedModules: string[];
   progressByExercise: Record<string, UserProgress>;
   stats: UserStats | null;
   dueExercises: ExerciseData[];
+  conceptProgress: {
+    concept: string;
+    total: number;
+    completed: number;
+    due: number;
+    accuracy: number;
+  }[];
 }
 
 export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
@@ -24,9 +35,11 @@ export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
     modules: [],
     lessons: [],
     exercises: [],
+    loadedModules: [],
     progressByExercise: {},
     stats: null,
     dueExercises: [],
+    conceptProgress: [],
   });
 
   const refresh = useCallback(() => {
@@ -36,9 +49,11 @@ export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
       modules: snapshot.modules,
       lessons: snapshot.lessons,
       exercises: snapshot.exercises,
+      loadedModules: snapshot.loadedModules ?? [],
       progressByExercise: snapshot.progressByExercise,
       stats: snapshot.stats,
       dueExercises: getDueExercises(userId, 3),
+      conceptProgress: getConceptProgress(userId),
     });
   }, [userId]);
 
@@ -50,6 +65,19 @@ export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
     return () => {
       active = false;
     };
+  }, [refresh]);
+
+  const ensureModuleLoaded = useCallback(
+    async (moduleId: string) => {
+      await loadModuleData(moduleId);
+      refresh();
+    },
+    [refresh]
+  );
+
+  const ensureAllModulesLoaded = useCallback(async () => {
+    await loadAllModuleData();
+    refresh();
   }, [refresh]);
 
   const recordAttempt = useCallback(
@@ -69,5 +97,7 @@ export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
     ...state,
     refresh,
     recordAttempt,
+    ensureModuleLoaded,
+    ensureAllModulesLoaded,
   };
 };

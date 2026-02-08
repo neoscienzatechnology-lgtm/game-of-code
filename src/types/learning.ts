@@ -10,6 +10,7 @@ export interface LessonData {
   content: string;
   order: number;
   tags: string[];
+  prerequisites?: string[];
 }
 
 export interface ExerciseHint {
@@ -77,6 +78,7 @@ export interface UserProgress {
   due_at: string;
   streak_correct: number;
   total_correct: number;
+  total_wrong?: number;
   last_result: 'correct' | 'wrong';
   updated_at: string;
 }
@@ -93,6 +95,7 @@ export interface LearningDb {
   modules: ModuleData[];
   lessons: LessonData[];
   exercises: ExerciseData[];
+  loadedModules?: string[];
   userProgress: UserProgress[];
   userStats: Record<string, UserStats>;
 }

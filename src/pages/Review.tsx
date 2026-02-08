@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LearningExerciseSession } from '@/components/LearningExerciseSession';
 import { Button } from '@/components/ui/button';
@@ -8,7 +8,26 @@ import { useLearningData } from '@/hooks/useLearningData';
 export default function Review() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { loading, lessons, exercises, dueExercises, recordAttempt } = useLearningData(user?.id);
+  const {
+    loading,
+    lessons,
+    exercises,
+    dueExercises,
+    ensureAllModulesLoaded,
+    recordAttempt,
+  } = useLearningData(user?.id);
+
+  const [loadingAll, setLoadingAll] = useState(true);
+
+  useEffect(() => {
+    let active = true;
+    void ensureAllModulesLoaded().then(() => {
+      if (active) setLoadingAll(false);
+    });
+    return () => {
+      active = false;
+    };
+  }, [ensureAllModulesLoaded]);
 
   const conceptByLesson = useMemo(() => {
     return lessons.reduce<Record<string, string>>((acc, lesson) => {
@@ -23,10 +42,10 @@ export default function Review() {
     return conceptByLesson[exercise.lesson_id];
   };
 
-  if (loading) {
+  if (loading || loadingAll) {
     return (
       <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        Carregando revisões...
+        Carregando revisoes...
       </div>
     );
   }
@@ -35,11 +54,11 @@ export default function Review() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4">
         <div className="glass-card p-8 max-w-lg text-center space-y-4">
-          <h1 className="text-2xl font-bold">Sem revisões pendentes</h1>
+          <h1 className="text-2xl font-bold">Sem revisoes pendentes</h1>
           <p className="text-muted-foreground">
-            Você está em dia. Continue estudando para liberar novas revisões.
+            Voce esta em dia. Continue estudando para liberar novas revisoes.
           </p>
-          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
+          <Button onClick={() => navigate('/')}>Voltar ao inicio</Button>
         </div>
       </div>
     );
@@ -54,7 +73,7 @@ export default function Review() {
         recordAttempt({
           exerciseId: exercise.id,
           correct,
-          concept: conceptForExercise(exercise.id) ?? 'revisão',
+          concept: conceptForExercise(exercise.id) ?? 'revisao',
         })
       }
       getConceptForExercise={conceptForExercise}

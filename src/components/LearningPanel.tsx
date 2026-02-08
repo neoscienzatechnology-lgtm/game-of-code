@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, Flame, Shield, Zap } from 'lucide-react';
+import { BarChart3, BookOpen, Flame, Loader2, Lock, Search, Shield, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
@@ -25,10 +25,23 @@ const languageLabel = (language: string) => {
 export function LearningPanel() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { loading, modules, lessons, exercises, progressByExercise, stats, dueExercises } =
-    useLearningData(user?.id);
+  const {
+    loading,
+    modules,
+    lessons,
+    exercises,
+    loadedModules,
+    progressByExercise,
+    stats,
+    dueExercises,
+    conceptProgress,
+    ensureModuleLoaded,
+    ensureAllModulesLoaded,
+  } = useLearningData(user?.id);
 
   const [selectedModuleId, setSelectedModuleId] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [loadingAll, setLoadingAll] = useState(false);
 
   const sortedModules = useMemo(
     () => [...modules].sort((a, b) => a.order - b.order),
@@ -60,6 +73,12 @@ export function LearningPanel() {
     return sortedModules.find(item => item.id === selectedModuleId) ?? sortedModules[0];
   }, [sortedModules, selectedModuleId]);
 
+  useEffect(() => {
+    if (!module) return;
+    if (loadedModules.includes(module.id)) return;
+    void ensureModuleLoaded(module.id);
+  }, [ensureModuleLoaded, loadedModules, module]);
+
   const handleSelectModule = (moduleId: string) => {
     setSelectedModuleId(moduleId);
     if (typeof window !== 'undefined') {
@@ -67,26 +86,54 @@ export function LearningPanel() {
     }
   };
 
+  const completedExerciseIds = useMemo(
+    () =>
+      new Set(
+        Object.values(progressByExercise)
+          .filter(item => item.total_correct > 0)
+          .map(item => item.exercise_id)
+      ),
+    [progressByExercise]
+  );
+
   const lessonProgress = useMemo(() => {
     if (!module) return [];
 
-    const completedIds = new Set(
-      Object.values(progressByExercise)
-        .filter(item => item.total_correct > 0)
-        .map(item => item.exercise_id)
-    );
-
-    return lessons
+    const moduleLessons = lessons
       .filter(lesson => lesson.module_id === module.id)
-      .sort((a, b) => a.order - b.order)
-      .map(lesson => {
-        const lessonExercises = exercises.filter(ex => ex.lesson_id === lesson.id);
-        const completed = lessonExercises.filter(ex => completedIds.has(ex.id)).length;
-        const total = lessonExercises.length;
-        const percent = total ? Math.round((completed / total) * 100) : 0;
-        return { lesson, completed, total, percent };
-      });
-  }, [exercises, lessons, module, progressByExercise]);
+      .sort((a, b) => a.order - b.order);
+
+    const completionByLesson = new Map<string, boolean>();
+
+    const progressRows = moduleLessons.map(lesson => {
+      const lessonExercises = exercises.filter(ex => ex.lesson_id === lesson.id);
+      const completed = lessonExercises.filter(ex => completedExerciseIds.has(ex.id)).length;
+      const total = lessonExercises.length;
+      const percent = total ? Math.round((completed / total) * 100) : 0;
+      const fullyCompleted = total > 0 && completed >= total;
+
+      completionByLesson.set(lesson.id, fullyCompleted);
+
+      return {
+        lesson,
+        completed,
+        total,
+        percent,
+        fullyCompleted,
+      };
+    });
+
+    return progressRows.map(row => {
+      const prerequisites = row.lesson.prerequisites ?? [];
+      const blockedBy = prerequisites.filter(prereqId => !completionByLesson.get(prereqId));
+      return {
+        ...row,
+        prerequisites,
+        blockedBy,
+        unlocked: blockedBy.length === 0,
+      };
+    });
+  }, [completedExerciseIds, exercises, lessons, module]);
 
   const moduleProgress = useMemo(() => {
     const total = lessonProgress.reduce((acc, item) => acc + item.total, 0);
@@ -98,9 +145,27 @@ export function LearningPanel() {
     };
   }, [lessonProgress]);
 
+  const filteredLessons = useMemo(() => {
+    const normalizedSearch = searchTerm.trim().toLowerCase();
+    if (!normalizedSearch) return lessonProgress;
+
+    return lessonProgress.filter(item => {
+      const haystack = [
+        item.lesson.title,
+        item.lesson.concept,
+        item.lesson.content,
+        ...(item.lesson.tags ?? []),
+      ]
+        .join(' ')
+        .toLowerCase();
+
+      return haystack.includes(normalizedSearch);
+    });
+  }, [lessonProgress, searchTerm]);
+
   const nextLessonId =
-    lessonProgress.find(item => item.completed < item.total)?.lesson.id ??
-    lessonProgress[0]?.lesson.id ??
+    lessonProgress.find(item => item.unlocked && item.completed < item.total)?.lesson.id ??
+    lessonProgress.find(item => item.unlocked)?.lesson.id ??
     null;
 
   const protectionAvailable = useMemo(() => {
@@ -108,6 +173,27 @@ export function LearningPanel() {
     const last = new Date(stats.protection_used_at);
     return daysBetween(new Date(), last) >= 7;
   }, [stats?.protection_used_at]);
+
+  const weakConcepts = useMemo(() => {
+    if (!module) return [];
+
+    const moduleConcepts = new Set(
+      lessons.filter(lesson => lesson.module_id === module.id).map(lesson => lesson.concept)
+    );
+
+    return conceptProgress
+      .filter(item => moduleConcepts.has(item.concept))
+      .sort((a, b) => {
+        const aCompletion = a.total ? a.completed / a.total : 0;
+        const bCompletion = b.total ? b.completed / b.total : 0;
+        if (aCompletion !== bCompletion) return aCompletion - bCompletion;
+        if (a.accuracy !== b.accuracy) return a.accuracy - b.accuracy;
+        return b.due - a.due;
+      })
+      .slice(0, 4);
+  }, [conceptProgress, lessons, module]);
+
+  const moduleLoaded = module ? loadedModules.includes(module.id) : false;
 
   if (loading || !module) return null;
 
@@ -125,11 +211,33 @@ export function LearningPanel() {
                 onClick={() => handleSelectModule(item.id)}
                 className={isActive ? 'gradient-primary glow-primary' : ''}
                 size="sm"
+                aria-pressed={isActive}
+                aria-label={`Selecionar trilha ${item.title}`}
               >
                 {item.title}
               </Button>
             );
           })}
+          <Button
+            variant="secondary"
+            size="sm"
+            disabled={loadingAll}
+            onClick={async () => {
+              setLoadingAll(true);
+              await ensureAllModulesLoaded();
+              setLoadingAll(false);
+            }}
+            aria-label="Carregar todos os modulos"
+          >
+            {loadingAll ? (
+              <>
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                Carregando
+              </>
+            ) : (
+              'Carregar tudo'
+            )}
+          </Button>
         </div>
       </div>
 
@@ -137,6 +245,9 @@ export function LearningPanel() {
         <div>
           <h3 className="text-lg font-bold">{module.title}</h3>
           <p className="text-sm text-muted-foreground">{module.description}</p>
+          {!moduleLoaded && (
+            <p className="text-xs text-warning mt-1">Carregando conteudo deste modulo...</p>
+          )}
         </div>
         <span className="px-3 py-1 rounded-full text-xs bg-muted/60 text-muted-foreground">
           {languageLabel(module.language)}
@@ -148,7 +259,7 @@ export function LearningPanel() {
           <span>Progresso do modulo</span>
           <span>{moduleProgress.percent}%</span>
         </div>
-        <div className="progress-bar h-3">
+        <div className="progress-bar h-3" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={moduleProgress.percent}>
           <div className="progress-fill" style={{ width: `${moduleProgress.percent}%` }} />
         </div>
       </div>
@@ -173,11 +284,35 @@ export function LearningPanel() {
         </div>
       </div>
 
+      {weakConcepts.length > 0 && (
+        <div className="mb-4 glass-card p-3">
+          <div className="flex items-center gap-2 text-sm font-semibold mb-2">
+            <BarChart3 className="w-4 h-4" />
+            Pontos para reforcar
+          </div>
+          <div className="space-y-2">
+            {weakConcepts.map(item => {
+              const completion = item.total ? Math.round((item.completed / item.total) * 100) : 0;
+              const accuracy = Math.round(item.accuracy * 100);
+              return (
+                <div key={item.concept} className="flex items-center justify-between text-xs">
+                  <span className="font-medium text-foreground">{item.concept}</span>
+                  <span className="text-muted-foreground">
+                    {completion}% concluido | {accuracy}% acerto | {item.due} devidos
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col gap-3">
         <Button
           onClick={() => nextLessonId && navigate(`/lesson/${nextLessonId}`)}
           className="h-12 gradient-primary glow-primary font-semibold"
-          disabled={!nextLessonId}
+          disabled={!nextLessonId || !moduleLoaded}
+          aria-label="Continuar para a proxima licao"
         >
           Continuar trilha
         </Button>
@@ -203,27 +338,67 @@ export function LearningPanel() {
       )}
 
       <div className="mt-6 space-y-2">
-        <div className="flex items-center gap-2 text-sm font-semibold">
-          <BookOpen className="w-4 h-4" />
-          Licoes do modulo
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 text-sm font-semibold">
+            <BookOpen className="w-4 h-4" />
+            Licoes do modulo
+          </div>
+          <div className="relative w-full max-w-[240px]">
+            <label htmlFor="lesson-search" className="sr-only">
+              Buscar licoes
+            </label>
+            <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
+            <input
+              id="lesson-search"
+              value={searchTerm}
+              onChange={event => setSearchTerm(event.target.value)}
+              placeholder="Buscar licao"
+              className="w-full bg-muted/60 border border-border rounded-lg pl-9 pr-3 py-2 text-xs outline-none focus:ring-2 focus:ring-primary/40"
+              aria-label="Buscar licoes por titulo ou conceito"
+            />
+          </div>
         </div>
-        {lessonProgress.map(item => (
-          <button
-            key={item.lesson.id}
-            onClick={() => navigate(`/lesson/${item.lesson.id}`)}
-            className="w-full text-left glass-card p-3 hover:border-primary/40 transition-all"
-          >
-            <div className="flex items-center justify-between text-sm">
-              <span className="font-semibold">{item.lesson.title}</span>
-              <span className="text-xs text-muted-foreground">
-                {item.completed}/{item.total}
-              </span>
-            </div>
-            <div className="mt-2 progress-bar h-2">
-              <div className="progress-fill" style={{ width: `${item.percent}%` }} />
-            </div>
-          </button>
-        ))}
+
+        {filteredLessons.map(item => {
+          const locked = !item.unlocked;
+          return (
+            <button
+              key={item.lesson.id}
+              onClick={() => !locked && navigate(`/lesson/${item.lesson.id}`)}
+              className={`w-full text-left glass-card p-3 transition-all ${
+                locked
+                  ? 'opacity-65 cursor-not-allowed border-border/30'
+                  : 'hover:border-primary/40'
+              }`}
+              disabled={locked}
+              aria-label={locked ? `Licao bloqueada: ${item.lesson.title}` : `Abrir licao ${item.lesson.title}`}
+            >
+              <div className="flex items-center justify-between text-sm gap-2">
+                <span className="font-semibold flex items-center gap-2">
+                  {locked && <Lock className="w-4 h-4 text-warning" />}
+                  {item.lesson.title}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {item.completed}/{item.total}
+                </span>
+              </div>
+              <div className="mt-2 progress-bar h-2">
+                <div className="progress-fill" style={{ width: `${item.percent}%` }} />
+              </div>
+              {locked && item.blockedBy.length > 0 && (
+                <p className="text-[11px] text-warning mt-2">
+                  Complete a licao anterior para desbloquear.
+                </p>
+              )}
+            </button>
+          );
+        })}
+
+        {filteredLessons.length === 0 && (
+          <div className="glass-card p-3 text-xs text-muted-foreground text-center">
+            Nenhuma licao encontrada para "{searchTerm}".
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,0 +1,2869 @@
+{
+  "module": {
+    "id": "module-css-basics",
+    "language": "css",
+    "title": "CSS Basico",
+    "description": "Trilha completa de CSS: seletores, box model, layout, responsividade e animacoes.",
+    "order": 2,
+    "tags": [
+      "css",
+      "layout",
+      "responsivo",
+      "animacao"
+    ]
+  },
+  "lessons": [
+    {
+      "id": "legacy-css-u17-l1",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "fundamentos-de-css-o-que-e-css",
+      "title": "O que e CSS",
+      "content": "Objetivo: Estilos para a web. CSS define a aparencia dos elementos HTML. Exemplo de uso: mudar cores, tamanhos e espacamentos. Uso comum: criar identidade visual. Dica pratica: comece pelo layout geral e refine depois. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 1,
+      "tags": [
+        "fundamentos",
+        "css",
+        "que"
+      ]
+    },
+    {
+      "id": "legacy-css-u17-l2",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "fundamentos-de-css-seletores",
+      "title": "Seletores",
+      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica pratica: prefira classes para reutilizacao. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 2,
+      "tags": [
+        "fundamentos",
+        "css",
+        "seletores"
+      ]
+    },
+    {
+      "id": "legacy-css-u17-l3",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "fundamentos-de-css-cores-e-tipografia",
+      "title": "Cores e tipografia",
+      "content": "Objetivo: Deixando o texto legivel. Use color, font-size, font-family e font-weight para estilizar textos. Exemplo de uso: p { color: #1f2937; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 3,
+      "tags": [
+        "fundamentos",
+        "css",
+        "cores",
+        "tipografia"
+      ]
+    },
+    {
+      "id": "legacy-css-u17-l4",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "fundamentos-de-css-box-model",
+      "title": "Box model",
+      "content": "Objetivo: Espacamento e tamanho. Todo elemento tem conteudo, padding, border e margin. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 4,
+      "tags": [
+        "fundamentos",
+        "css",
+        "box",
+        "model"
+      ]
+    },
+    {
+      "id": "legacy-css-u17-l5",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "fundamentos-de-css-cascata-e-especificidade",
+      "title": "Cascata e especificidade",
+      "content": "Objetivo: Quem vence?. Se dois estilos se aplicam, vence o mais especifico ou o que esta por ultimo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 5,
+      "tags": [
+        "fundamentos",
+        "css",
+        "cascata",
+        "especificidade"
+      ]
+    },
+    {
+      "id": "legacy-css-u18-l1",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "layout-e-responsividade-flexbox",
+      "title": "Flexbox",
+      "content": "Objetivo: Alinhamento flexivel. Box model define como tamanho e espacamento funcionam. Exemplo de uso: criar cartoes com respiro. Uso comum: ajustar layout sem quebrar o conteudo. Dica pratica: use DevTools para visualizar o box model. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 6,
+      "tags": [
+        "layout",
+        "responsividade",
+        "flexbox"
+      ]
+    },
+    {
+      "id": "legacy-css-u18-l2",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "layout-e-responsividade-grid",
+      "title": "Grid",
+      "content": "Objetivo: Layout em grade. Flexbox alinha itens em uma linha ou coluna. Exemplo de uso: barras de navegacao e cards. Uso comum: alinhar botoes e menus. Dica pratica: combine com gap para espacamento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 7,
+      "tags": [
+        "layout",
+        "responsividade",
+        "grid"
+      ]
+    },
+    {
+      "id": "legacy-css-u18-l3",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "layout-e-responsividade-position",
+      "title": "Position",
+      "content": "Objetivo: Controle de posicionamento. relative mantem espaco, absolute remove do fluxo e posiciona no ancestral. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 8,
+      "tags": [
+        "layout",
+        "responsividade",
+        "position"
+      ]
+    },
+    {
+      "id": "legacy-css-u18-l4",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "layout-e-responsividade-responsividade",
+      "title": "Responsividade",
+      "content": "Objetivo: Layouts para todas telas. Media queries aplicam estilos em condicoes, como largura da tela. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 9,
+      "tags": [
+        "layout",
+        "responsividade"
+      ]
+    },
+    {
+      "id": "legacy-css-u18-l5",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "layout-e-responsividade-pseudo-classes",
+      "title": "Pseudo-classes",
+      "content": "Objetivo: Estados interativos. Pseudo-classes como :hover, :focus e :active controlam estados. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 10,
+      "tags": [
+        "layout",
+        "responsividade",
+        "pseudo",
+        "classes"
+      ]
+    },
+    {
+      "id": "legacy-css-u19-l1",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "css-avancado-transitions",
+      "title": "Transitions",
+      "content": "Objetivo: Animacoes suaves. Transicoes criam animacoes suaves entre estados. Exemplo de uso: feedback visual em botoes. Uso comum: melhorar a sensacao de interacao. Dica pratica: transicoes curtas sao mais naturais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 11,
+      "tags": [
+        "css",
+        "avancado",
+        "transitions"
+      ]
+    },
+    {
+      "id": "legacy-css-u19-l2",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "css-avancado-animations",
+      "title": "Animations",
+      "content": "Objetivo: Keyframes no CSS. Crie animacoes com @keyframes e aplique com animation. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 12,
+      "tags": [
+        "css",
+        "avancado",
+        "animations"
+      ]
+    },
+    {
+      "id": "legacy-css-u19-l3",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "css-avancado-variaveis-css",
+      "title": "Variaveis CSS",
+      "content": "Objetivo: Custom properties. Variaveis CSS comecam com -- e sao usadas com var(). Exemplo de uso: p { --: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 13,
+      "tags": [
+        "css",
+        "avancado",
+        "variaveis"
+      ]
+    },
+    {
+      "id": "legacy-css-u19-l4",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "css-avancado-pseudo-elementos",
+      "title": "Pseudo-elementos",
+      "content": "Objetivo: Detalhes com ::before/::after. Use ::before e ::after para inserir conteudo decorativo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 14,
+      "tags": [
+        "css",
+        "avancado",
+        "pseudo",
+        "elementos"
+      ]
+    },
+    {
+      "id": "legacy-css-u19-l5",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "css-avancado-sombras-e-fundos",
+      "title": "Sombras e fundos",
+      "content": "Objetivo: Profundidade visual. Use box-shadow para criar profundidade em cartoes e botoes. Exemplo de uso: p { box-shadow: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 15,
+      "tags": [
+        "css",
+        "avancado",
+        "sombras",
+        "fundos"
+      ]
+    },
+    {
+      "id": "legacy-css-u22-l1",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "seletores-e-especificidade-seletores-basicos",
+      "title": "Seletores basicos",
+      "content": "Objetivo: Elementos, classes e IDs. Seletores permitem escolher quais elementos receberao estilos. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 16,
+      "tags": [
+        "seletores",
+        "especificidade",
+        "basicos"
+      ]
+    },
+    {
+      "id": "legacy-css-u22-l2",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "seletores-e-especificidade-combinadores",
+      "title": "Combinadores",
+      "content": "Objetivo: Descendentes e filhos. Eles definem relacoes entre elementos: descendente, filho e irmao. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 17,
+      "tags": [
+        "seletores",
+        "especificidade",
+        "combinadores"
+      ]
+    },
+    {
+      "id": "legacy-css-u22-l3",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "seletores-e-especificidade-pseudo-classes",
+      "title": "Pseudo-classes",
+      "content": "Objetivo: Estados dos elementos. Use :hover, :focus e :nth-child() para estados e posicao. Exemplo de uso: p { :nth-child(): valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 18,
+      "tags": [
+        "seletores",
+        "especificidade",
+        "pseudo",
+        "classes"
+      ]
+    },
+    {
+      "id": "legacy-css-u22-l4",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "seletores-e-especificidade-especificidade",
+      "title": "Especificidade",
+      "content": "Objetivo: Quem vence no CSS. Quando regras entram em conflito, a mais especifica vence. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 19,
+      "tags": [
+        "seletores",
+        "especificidade"
+      ]
+    },
+    {
+      "id": "legacy-css-u23-l1",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "flexbox-e-grid-flex-container",
+      "title": "Flex container",
+      "content": "Objetivo: Eixos e alinhamento. Ative com display: flex para distribuir itens em um eixo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 20,
+      "tags": [
+        "flexbox",
+        "grid",
+        "flex",
+        "container"
+      ]
+    },
+    {
+      "id": "legacy-css-u23-l2",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "flexbox-e-grid-flex-items",
+      "title": "Flex items",
+      "content": "Objetivo: Crescimento e espaco. Use flex para controlar crescimento, reducao e tamanho base. Exemplo de uso: container { display: flex; gap: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 21,
+      "tags": [
+        "flexbox",
+        "grid",
+        "flex",
+        "items"
+      ]
+    },
+    {
+      "id": "legacy-css-u23-l3",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "flexbox-e-grid-grid-basico",
+      "title": "Grid basico",
+      "content": "Objetivo: Colunas e linhas. Use display: grid para layouts bidimensionais. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 22,
+      "tags": [
+        "flexbox",
+        "grid",
+        "basico"
+      ]
+    },
+    {
+      "id": "legacy-css-u23-l4",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "flexbox-e-grid-layout-responsivo",
+      "title": "Layout responsivo",
+      "content": "Objetivo: Grid fluido. Combine auto-fit e minmax() para grades adaptaveis. Exemplo de uso: p { auto-fit: valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "order": 23,
+      "tags": [
+        "flexbox",
+        "grid",
+        "layout",
+        "responsivo"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "legacy-css-u17-l1-3",
+      "lesson_id": "legacy-css-u17-l1",
+      "type": "blank",
+      "prompt": "O CSS e responsavel por: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Estilo e layout",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: O que e CSS."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura do conteudo / Logica e interatividade."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Estilo e layout"
+        }
+      ],
+      "solution": "Estilo e layout",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l1-4",
+      "lesson_id": "legacy-css-u17-l1",
+      "type": "blank",
+      "prompt": "Complete a sigla:",
+      "starter_code": "{{blank1}} Style Sheets",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Cascading",
+              "placeholder": "_________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: O que e CSS."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Cascading"
+        }
+      ],
+      "solution": "Cascading Style Sheets",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u17-l1-practice",
+      "lesson_id": "legacy-css-u17-l1",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: O que e CSS."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l2-2",
+      "lesson_id": "legacy-css-u17-l2",
+      "type": "blank",
+      "prompt": "Selecione todos os paragrafos:",
+      "starter_code": "{{blank1}} { color: red; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "p",
+              "placeholder": "_"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Seletores."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: p"
+        }
+      ],
+      "solution": "p { color: red; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u17-l2-3",
+      "lesson_id": "legacy-css-u17-l2",
+      "type": "blank",
+      "prompt": "O seletor de classe e: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ".classe",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Seletores."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: #classe / classe."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: .classe"
+        }
+      ],
+      "solution": ".classe",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l2-practice",
+      "lesson_id": "legacy-css-u17-l2",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual seletor aplica em classe? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ".card",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Seletores."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: #card / card."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: .card"
+        }
+      ],
+      "solution": ".card",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l3-2",
+      "lesson_id": "legacy-css-u17-l3",
+      "type": "blank",
+      "prompt": "Defina a cor do texto:",
+      "starter_code": "p { {{blank1}}: #1f2937; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "color",
+              "placeholder": "_____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Cores e tipografia."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: color"
+        }
+      ],
+      "solution": "p { color: #1f2937; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u17-l3-3",
+      "lesson_id": "legacy-css-u17-l3",
+      "type": "blank",
+      "prompt": "Qual propriedade muda o tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Cores e tipografia."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-style / line-style."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l3-practice",
+      "lesson_id": "legacy-css-u17-l3",
+      "type": "blank",
+      "prompt": "Pratica guiada: Defina a cor do texto:",
+      "starter_code": "p { {{blank1}}: #0f172a; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "color",
+              "placeholder": "_____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Cores e tipografia."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: color"
+        }
+      ],
+      "solution": "p { color: #0f172a; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u17-l4-2",
+      "lesson_id": "legacy-css-u17-l4",
+      "type": "blank",
+      "prompt": "Adicione espaco interno:",
+      "starter_code": ".card { {{blank1}}: 16px; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "padding",
+              "placeholder": "_______"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Box model."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: padding"
+        }
+      ],
+      "solution": ".card { padding: 16px; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u17-l4-3",
+      "lesson_id": "legacy-css-u17-l4",
+      "type": "blank",
+      "prompt": "Qual propriedade cria espaco externo? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "margin",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Box model."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: padding / border."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: margin"
+        }
+      ],
+      "solution": "margin",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l4-practice",
+      "lesson_id": "legacy-css-u17-l4",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Box model."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l5-2",
+      "lesson_id": "legacy-css-u17-l5",
+      "type": "blank",
+      "prompt": "Quem tem maior especificidade? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "#botao",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Cascata e especificidade."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: .botao / button."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: #botao"
+        }
+      ],
+      "solution": "#botao",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u17-l5-3",
+      "lesson_id": "legacy-css-u17-l5",
+      "type": "blank",
+      "prompt": "Selecione por id:",
+      "starter_code": "{{blank1}}menu { color: white; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "#",
+              "placeholder": "_"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Cascata e especificidade."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: #"
+        }
+      ],
+      "solution": "#menu { color: white; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u17-l5-practice",
+      "lesson_id": "legacy-css-u17-l5",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Cascata e especificidade."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l1-2",
+      "lesson_id": "legacy-css-u18-l1",
+      "type": "blank",
+      "prompt": "Ative o flex:",
+      "starter_code": ".container { display: {{blank1}}; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "flex",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Flexbox."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: flex"
+        }
+      ],
+      "solution": ".container { display: flex; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u18-l1-3",
+      "lesson_id": "legacy-css-u18-l1",
+      "type": "blank",
+      "prompt": "Centralizar horizontalmente no eixo principal: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "justify-content: center",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Flexbox."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: align-items: center / flex-wrap: center."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: justify-content: center"
+        }
+      ],
+      "solution": "justify-content: center",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l1-practice",
+      "lesson_id": "legacy-css-u18-l1",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Flexbox",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Flexbox."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Flexbox"
+        }
+      ],
+      "solution": "Flexbox",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l2-2",
+      "lesson_id": "legacy-css-u18-l2",
+      "type": "blank",
+      "prompt": "Crie duas colunas iguais:",
+      "starter_code": ".grid { display: grid; {{blank1}}: 1fr 1fr; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "grid-template-columns",
+              "placeholder": "____________________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Grid."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: grid-template-columns"
+        }
+      ],
+      "solution": ".grid { display: grid; grid-template-columns: 1fr 1fr; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u18-l2-3",
+      "lesson_id": "legacy-css-u18-l2",
+      "type": "blank",
+      "prompt": "Para espacamento entre colunas/linhas use: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "gap",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Grid."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: padding / margin."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: gap"
+        }
+      ],
+      "solution": "gap",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l2-practice",
+      "lesson_id": "legacy-css-u18-l2",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Grid",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Grid."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Grid"
+        }
+      ],
+      "solution": "Grid",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l3-2",
+      "lesson_id": "legacy-css-u18-l3",
+      "type": "blank",
+      "prompt": "Posicione com absolute:",
+      "starter_code": ".badge { position: {{blank1}}; top: 8px; right: 8px; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "absolute",
+              "placeholder": "________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Position."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: absolute"
+        }
+      ],
+      "solution": ".badge { position: absolute; top: 8px; right: 8px; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u18-l3-3",
+      "lesson_id": "legacy-css-u18-l3",
+      "type": "blank",
+      "prompt": "Elemento fixo no topo da tela: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "position: fixed",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Position."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: position: sticky / position: static."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: position: fixed"
+        }
+      ],
+      "solution": "position: fixed",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l3-practice",
+      "lesson_id": "legacy-css-u18-l3",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Position",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Position."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Position"
+        }
+      ],
+      "solution": "Position",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l4-2",
+      "lesson_id": "legacy-css-u18-l4",
+      "type": "blank",
+      "prompt": "Crie uma media query:",
+      "starter_code": "@media (max-width: 768px) { {{blank1}} }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "body { font-size: 14px; }",
+              "placeholder": "________________________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Responsividade."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: body { font-size: 14px; }"
+        }
+      ],
+      "solution": "@media (max-width: 768px) { body { font-size: 14px; } }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u18-l4-3",
+      "lesson_id": "legacy-css-u18-l4",
+      "type": "blank",
+      "prompt": "Para mobile first, comecamos: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Estilos base para mobile",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Responsividade."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estilos base para desktop / Sem estilos base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Estilos base para mobile"
+        }
+      ],
+      "solution": "Estilos base para mobile",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l4-practice",
+      "lesson_id": "legacy-css-u18-l4",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Responsividade",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Responsividade."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Responsividade"
+        }
+      ],
+      "solution": "Responsividade",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l5-2",
+      "lesson_id": "legacy-css-u18-l5",
+      "type": "blank",
+      "prompt": "Crie um hover:",
+      "starter_code": "button{{blank1}} { background: #22c55e; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ":hover",
+              "placeholder": "______"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Pseudo-classes."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: :hover"
+        }
+      ],
+      "solution": "button:hover { background: #22c55e; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u18-l5-3",
+      "lesson_id": "legacy-css-u18-l5",
+      "type": "blank",
+      "prompt": "Qual pseudo-classe indica foco? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ":focus",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Pseudo-classes."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: :visited / :checked."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: :focus"
+        }
+      ],
+      "solution": ":focus",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u18-l5-practice",
+      "lesson_id": "legacy-css-u18-l5",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Pseudo-classes",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Pseudo-classes."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Pseudo-classes"
+        }
+      ],
+      "solution": "Pseudo-classes",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l1-2",
+      "lesson_id": "legacy-css-u19-l1",
+      "type": "blank",
+      "prompt": "Adicione transicao:",
+      "starter_code": ".btn { transition: {{blank1}}; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "all 0.3s ease",
+              "placeholder": "______________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Transitions."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: all 0.3s ease"
+        }
+      ],
+      "solution": ".btn { transition: all 0.3s ease; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u19-l1-3",
+      "lesson_id": "legacy-css-u19-l1",
+      "type": "blank",
+      "prompt": "Qual propriedade define duracao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "transition-duration",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Transitions."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: transition-delay / transition-property."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: transition-duration"
+        }
+      ],
+      "solution": "transition-duration",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l1-practice",
+      "lesson_id": "legacy-css-u19-l1",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Transitions."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l2-2",
+      "lesson_id": "legacy-css-u19-l2",
+      "type": "blank",
+      "prompt": "Defina uma animacao:",
+      "starter_code": "@keyframes {{blank1}} { from { opacity: 0; } to { opacity: 1; } }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "fadeIn",
+              "placeholder": "______"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Animations."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: fadeIn"
+        }
+      ],
+      "solution": "@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u19-l2-3",
+      "lesson_id": "legacy-css-u19-l2",
+      "type": "blank",
+      "prompt": "Repetir infinitamente: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "animation-iteration-count: infinite",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Animations."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: animation-delay: infinite / animation-fill-mode: infinite."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: animation-iteration-count: infinite"
+        }
+      ],
+      "solution": "animation-iteration-count: infinite",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l2-practice",
+      "lesson_id": "legacy-css-u19-l2",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Animations."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l3-2",
+      "lesson_id": "legacy-css-u19-l3",
+      "type": "blank",
+      "prompt": "Defina uma variavel:",
+      "starter_code": ":root { {{blank1}}: #22c55e; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "--cor-primaria",
+              "placeholder": "____________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Variaveis CSS."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: --cor-primaria"
+        }
+      ],
+      "solution": ":root { --cor-primaria: #22c55e; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u19-l3-3",
+      "lesson_id": "legacy-css-u19-l3",
+      "type": "blank",
+      "prompt": "Use a variavel:",
+      "starter_code": "button { background: {{blank1}}; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "var(--cor-primaria)",
+              "placeholder": "____________________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Variaveis CSS."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: var(--cor-primaria)"
+        }
+      ],
+      "solution": "button { background: var(--cor-primaria); }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u19-l3-practice",
+      "lesson_id": "legacy-css-u19-l3",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Variaveis CSS."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l4-2",
+      "lesson_id": "legacy-css-u19-l4",
+      "type": "blank",
+      "prompt": "Crie um marcador:",
+      "starter_code": ".item{{blank1}} { content: \" \"; color: #22c55e; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "::before",
+              "placeholder": "________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Pseudo-elementos."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: ::before"
+        }
+      ],
+      "solution": ".item::before { content: \" \"; color: #22c55e; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u19-l4-3",
+      "lesson_id": "legacy-css-u19-l4",
+      "type": "blank",
+      "prompt": "Pseudo-elementos requerem: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "content",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Pseudo-elementos."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: display / position."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: content"
+        }
+      ],
+      "solution": "content",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l4-practice",
+      "lesson_id": "legacy-css-u19-l4",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Pseudo-elementos."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l5-2",
+      "lesson_id": "legacy-css-u19-l5",
+      "type": "blank",
+      "prompt": "Adicione sombra:",
+      "starter_code": ".card { box-shadow: {{blank1}}; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "0 8px 24px rgba(0,0,0,0.2)",
+              "placeholder": "__________________________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Sombras e fundos."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: 0 8px 24px rgba(0,0,0,0.2)"
+        }
+      ],
+      "solution": ".card { box-shadow: 0 8px 24px rgba(0,0,0,0.2); }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u19-l5-3",
+      "lesson_id": "legacy-css-u19-l5",
+      "type": "blank",
+      "prompt": "Para gradiente use: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "background: linear-gradient(...)",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Sombras e fundos."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: background: solid(...) / background: gradient(...)."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: background: linear-gradient(...)"
+        }
+      ],
+      "solution": "background: linear-gradient(...)",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u19-l5-practice",
+      "lesson_id": "legacy-css-u19-l5",
+      "type": "blank",
+      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Sombras e fundos."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: font-weight / line-height."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "font-size",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l1-3",
+      "lesson_id": "legacy-css-u22-l1",
+      "type": "blank",
+      "prompt": "Selecione a classe botao:",
+      "starter_code": "{{blank1}}botao { background: #22c55e; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ".",
+              "placeholder": "_"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Seletores basicos."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: ."
+        }
+      ],
+      "solution": ".botao { background: #22c55e; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u22-l1-4",
+      "lesson_id": "legacy-css-u22-l1",
+      "type": "blank",
+      "prompt": "Qual seletor usa #? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "ID",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Seletores basicos."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Classe / Elemento."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: ID"
+        }
+      ],
+      "solution": "ID",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l1-practice",
+      "lesson_id": "legacy-css-u22-l1",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Seletores basicos",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Seletores basicos."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Seletores basicos"
+        }
+      ],
+      "solution": "Seletores basicos",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l2-2",
+      "lesson_id": "legacy-css-u22-l2",
+      "type": "blank",
+      "prompt": "Selecione apenas filhos diretos:",
+      "starter_code": "ul {{blank1}} li { list-style: none; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ">",
+              "placeholder": "_"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Combinadores."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: >"
+        }
+      ],
+      "solution": "ul > li { list-style: none; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u22-l2-3",
+      "lesson_id": "legacy-css-u22-l2",
+      "type": "blank",
+      "prompt": "Selecione links dentro de nav:",
+      "starter_code": "nav {{blank1}} { color: #0ea5e9; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "a",
+              "placeholder": "_"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Combinadores."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: a"
+        }
+      ],
+      "solution": "nav a { color: #0ea5e9; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u22-l2-4",
+      "lesson_id": "legacy-css-u22-l2",
+      "type": "blank",
+      "prompt": "Qual combinador indica filho direto? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ">",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Combinadores."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: + / ~."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: >"
+        }
+      ],
+      "solution": ">",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l2-practice",
+      "lesson_id": "legacy-css-u22-l2",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Combinadores",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Combinadores."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Combinadores"
+        }
+      ],
+      "solution": "Combinadores",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l3-2",
+      "lesson_id": "legacy-css-u22-l3",
+      "type": "blank",
+      "prompt": "Estilo no hover:",
+      "starter_code": "button{{blank1}} { transform: scale(1.02); }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ":hover",
+              "placeholder": "_______"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Pseudo-classes."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: :hover"
+        }
+      ],
+      "solution": "button:hover { transform: scale(1.02); }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u22-l3-3",
+      "lesson_id": "legacy-css-u22-l3",
+      "type": "blank",
+      "prompt": "Qual pseudo-classe indica foco? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": ":focus",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Pseudo-classes."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: :active / :visited."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: :focus"
+        }
+      ],
+      "solution": ":focus",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l3-practice",
+      "lesson_id": "legacy-css-u22-l3",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Pseudo-classes",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Pseudo-classes."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Pseudo-classes"
+        }
+      ],
+      "solution": "Pseudo-classes",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l4-3",
+      "lesson_id": "legacy-css-u22-l4",
+      "type": "blank",
+      "prompt": "Qual seletor e mais especifico? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "#menu .item",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Especificidade."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: .menu .item / nav a."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: #menu .item"
+        }
+      ],
+      "solution": "#menu .item",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u22-l4-4",
+      "lesson_id": "legacy-css-u22-l4",
+      "type": "blank",
+      "prompt": "Exemplo com ID:",
+      "starter_code": "{{blank1}}header { position: sticky; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "#",
+              "placeholder": "_"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Especificidade."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: #"
+        }
+      ],
+      "solution": "#header { position: sticky; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u22-l4-practice",
+      "lesson_id": "legacy-css-u22-l4",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Especificidade",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Especificidade."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Especificidade"
+        }
+      ],
+      "solution": "Especificidade",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l1-2",
+      "lesson_id": "legacy-css-u23-l1",
+      "type": "blank",
+      "prompt": "Ative o flex:",
+      "starter_code": ".linha { display: {{blank1}}; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "flex",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Flex container."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: flex"
+        }
+      ],
+      "solution": ".linha { display: flex; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u23-l1-3",
+      "lesson_id": "legacy-css-u23-l1",
+      "type": "blank",
+      "prompt": "Alinhar no eixo principal: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "justify-content",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Flex container."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: align-items / place-content."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: justify-content"
+        }
+      ],
+      "solution": "justify-content",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l1-practice",
+      "lesson_id": "legacy-css-u23-l1",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Flex container",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Flex container."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Flex container"
+        }
+      ],
+      "solution": "Flex container",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l2-2",
+      "lesson_id": "legacy-css-u23-l2",
+      "type": "blank",
+      "prompt": "Item que cresce:",
+      "starter_code": ".card { flex: {{blank1}}; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "1",
+              "placeholder": "_"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Flex items."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: 1"
+        }
+      ],
+      "solution": ".card { flex: 1; }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u23-l2-3",
+      "lesson_id": "legacy-css-u23-l2",
+      "type": "blank",
+      "prompt": "Espaco entre itens: Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "gap",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Flex items."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: spacing / margin-inline."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: gap"
+        }
+      ],
+      "solution": "gap",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l2-practice",
+      "lesson_id": "legacy-css-u23-l2",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Flex items",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Flex items."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Flex items"
+        }
+      ],
+      "solution": "Flex items",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l3-2",
+      "lesson_id": "legacy-css-u23-l3",
+      "type": "blank",
+      "prompt": "Crie 3 colunas iguais:",
+      "starter_code": ".grid { grid-template-columns: repeat(3, {{blank1}}); }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "1fr",
+              "placeholder": "___"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Grid basico."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: 1fr"
+        }
+      ],
+      "solution": ".grid { grid-template-columns: repeat(3, 1fr); }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u23-l3-3",
+      "lesson_id": "legacy-css-u23-l3",
+      "type": "blank",
+      "prompt": "Qual propriedade define espacamento? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "gap",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Grid basico."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: space / grid-space."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: gap"
+        }
+      ],
+      "solution": "gap",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l3-practice",
+      "lesson_id": "legacy-css-u23-l3",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Grid basico",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Grid basico."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Grid basico"
+        }
+      ],
+      "solution": "Grid basico",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l4-2",
+      "lesson_id": "legacy-css-u23-l4",
+      "type": "blank",
+      "prompt": "Grade fluida:",
+      "starter_code": ".cards { grid-template-columns: repeat(auto-fit, minmax(220px, {{blank1}})); }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "1fr",
+              "placeholder": "___"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o ponto principal da licao: Layout responsivo."
+        },
+        {
+          "level": 2,
+          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: 1fr"
+        }
+      ],
+      "solution": ".cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }",
+      "difficulty": "easy",
+      "estimated_time": 40
+    },
+    {
+      "id": "legacy-css-u23-l4-3",
+      "lesson_id": "legacy-css-u23-l4",
+      "type": "blank",
+      "prompt": "Quando usar media queries? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Para ajustes por largura",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Layout responsivo."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Para mudar HTML / Para trocar JS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Para ajustes por largura"
+        }
+      ],
+      "solution": "Para ajustes por largura",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "legacy-css-u23-l4-practice",
+      "lesson_id": "legacy-css-u23-l4",
+      "type": "blank",
+      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "starter_code": "{{blank1}}",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "Layout responsivo",
+              "placeholder": "resposta"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pense no conceito central da licao: Layout responsivo."
+        },
+        {
+          "level": 2,
+          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: Layout responsivo"
+        }
+      ],
+      "solution": "Layout responsivo",
+      "difficulty": "easy",
+      "estimated_time": 35
+    }
+  ]
+}

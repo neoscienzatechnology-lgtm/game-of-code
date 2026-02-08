@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "seed:split": "node scripts/split-learning-seed.mjs",
+    "audit:content": "node scripts/audit-learning-content.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
