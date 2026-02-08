@@ -80,7 +80,7 @@
       "language": "javascript",
       "concept": "arrays",
       "title": "Arrays",
-      "content": "Objetivo: armazenar colecoes de dados na ordem. Acesso por indice come�a em 0: lista[0] e o primeiro item. Propriedade util: lista.length mostra quantidade. Operacao comum: lista.push(novoItem) para adicionar no final. Erro comum: tentar acessar indice que nao existe e receber undefined.",
+      "content": "Objetivo: armazenar colecoes de dados na ordem. Acesso por indice comeca em 0: lista[0] e o primeiro item. Propriedade util: lista.length mostra quantidade. Operacao comum: lista.push(novoItem) para adicionar no final. Erro comum: tentar acessar indice que nao existe e receber undefined.",
       "order": 5,
       "tags": [
         "js",

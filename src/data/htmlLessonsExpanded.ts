@@ -587,22 +587,22 @@ const buildVisualExample = (lesson: Lesson) => {
 
 const buildUsage = (lesson: Lesson) => {
   const unit = normalize(lesson.unitTitle ?? '');
-  if (unit.includes('css')) return 'Uso comum: estilizar elementos e ajustar o layout.';
+  if (unit.includes('css')) return 'estilizar elementos e ajustar o layout.';
   if (unit.includes('javascript') || unit.includes('dom')) {
-    return 'Uso comum: adicionar interatividade e validar dados.';
+    return 'adicionar interatividade e validar dados.';
   }
-  return 'Uso comum: estruturar conteudo de paginas web.';
+  return 'estruturar conteudo de paginas web.';
 };
 
 const buildTip = (lesson: Lesson) => {
   const unit = normalize(lesson.unitTitle ?? '');
   if (unit.includes('css')) {
-    return 'Dica pratica: altere valores e observe as mudancas visuais.';
+    return 'altere valores e observe as mudancas visuais.';
   }
   if (unit.includes('javascript') || unit.includes('dom')) {
-    return 'Dica pratica: teste o codigo no console do navegador.';
+    return 'teste o codigo no console do navegador.';
   }
-  return 'Dica pratica: visualize no navegador e inspecione o elemento.';
+  return 'visualize no navegador e inspecione o elemento.';
 };
 
 const createFillBlank = (params: {
@@ -641,6 +641,32 @@ const createMultipleChoice = (params: {
     xp: params.xp ?? 10,
   };
 };
+
+const hashString = (value: string) =>
+  value.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+
+const GENERIC_HTML_CHALLENGES = [
+  {
+    instruction: 'Qual tag representa o conteudo principal da pagina?',
+    correct: '<main>',
+    wrong: ['<head>', '<meta>'],
+  },
+  {
+    instruction: 'Qual atributo melhora acessibilidade de imagens?',
+    correct: 'alt',
+    wrong: ['src', 'href'],
+  },
+  {
+    instruction: 'Qual tag e usada para links clicaveis?',
+    correct: '<a>',
+    wrong: ['<link>', '<img>'],
+  },
+  {
+    instruction: 'Qual tecnologia estrutura o conteudo da pagina?',
+    correct: 'HTML',
+    wrong: ['CSS', 'JavaScript'],
+  },
+];
 
 const buildUniquePracticeExercise = (lesson: Lesson): Exercise | null => {
   const id = `${lesson.id}-challenge`;
@@ -837,11 +863,13 @@ const buildUniquePracticeExercise = (lesson: Lesson): Exercise | null => {
     });
   }
 
+  const fallback =
+    GENERIC_HTML_CHALLENGES[hashString(lesson.id ?? lesson.title ?? id) % GENERIC_HTML_CHALLENGES.length];
   return createMultipleChoice({
     id,
-    instruction: 'Qual tecnologia define a estrutura da pagina?',
-    correct: 'HTML',
-    wrong: ['CSS', 'JavaScript'],
+    instruction: fallback.instruction,
+    correct: fallback.correct,
+    wrong: fallback.wrong,
   });
 };
 
