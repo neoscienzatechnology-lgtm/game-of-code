@@ -20,9 +20,25 @@ const buildOutputTests = (
 const toFriendlyMessage = (error?: string) => {
   if (!error) return undefined;
   if (error.includes('SyntaxError')) return 'Parece haver um erro de sintaxe.';
-  if (error.includes('ReferenceError')) return 'Variável ou função não encontrada.';
+  if (error.includes('ReferenceError')) return 'Variavel ou funcao nao encontrada.';
   if (error.toLowerCase().includes('tempo limite')) return 'Seu codigo demorou demais para responder.';
   return error;
+};
+
+const extractCssFromCode = (code: string) => {
+  const trimmed = code.trim();
+  if (!trimmed) return '';
+
+  // Allow CSS-only answers for style-focused exercises.
+  if (!/<[a-z!/]/i.test(trimmed)) return trimmed;
+  if (typeof DOMParser === 'undefined') return '';
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(trimmed, 'text/html');
+  return Array.from(doc.querySelectorAll('style'))
+    .map(styleTag => styleTag.textContent ?? '')
+    .join('\n')
+    .trim();
 };
 
 export const validateExercise = async (
@@ -72,9 +88,12 @@ export const validateExercise = async (
     }
 
     if (validation.type === 'html-structure') {
+      const sourceCode = input.code ?? '';
+      const htmlInput = input.html ?? sourceCode;
+      const cssInput = input.css ?? extractCssFromCode(sourceCode || htmlInput);
       const htmlResult = validateHtmlStructure(
-        input.html ?? input.code ?? '',
-        input.css ?? '',
+        htmlInput,
+        cssInput,
         validation
       );
       if (!htmlResult.passed) return htmlResult;

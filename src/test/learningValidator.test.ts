@@ -57,6 +57,36 @@ describe('validateExercise', () => {
 
     expect(result.passed).toBe(true);
   });
+
+  it('validates css rules declared inside style tag', async () => {
+    const exercise: ExerciseData = {
+      id: 'ex3',
+      lesson_id: 'lesson1',
+      type: 'code',
+      prompt: 'Estilize o titulo',
+      starter_code: '',
+      validations: [
+        {
+          type: 'html-structure',
+          requiredTags: ['style', 'h1'],
+          requiredCss: [
+            { selector: 'h1', property: 'color' },
+            { selector: 'h1', property: 'font-size' },
+          ],
+        },
+      ],
+      hints: [],
+      solution: '<style>h1 { color: #111827; font-size: 2rem; }</style><h1>Titulo</h1>',
+      difficulty: 'easy',
+      estimated_time: 45,
+    };
+
+    const result = await validateExercise(exercise, {
+      code: '<style>h1 { color: #111827; font-size: 2rem; }</style><h1>Titulo</h1>',
+    });
+
+    expect(result.passed).toBe(true);
+  });
 });
 
 describe('validateHtmlStructure', () => {

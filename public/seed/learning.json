@@ -1,11 +1,35 @@
 {
   "modules": [
     {
+      "id": "module-html-basics",
+      "language": "html",
+      "title": "HTML Basico",
+      "description": "Trilha didatica para estrutura, semantica e acessibilidade em HTML.",
+      "order": 1,
+      "tags": [
+        "html",
+        "estrutura",
+        "acessibilidade"
+      ]
+    },
+    {
+      "id": "module-css-basics",
+      "language": "css",
+      "title": "CSS Basico",
+      "description": "Trilha pratica para seletores, layout e visual responsivo com CSS.",
+      "order": 2,
+      "tags": [
+        "css",
+        "layout",
+        "visual"
+      ]
+    },
+    {
       "id": "module-js-basics",
       "language": "javascript",
       "title": "JavaScript Basico",
       "description": "Trilha pratica para sair do zero com explicacoes curtas, exemplos reais e exercicios guiados.",
-      "order": 1,
+      "order": 3,
       "tags": [
         "js",
         "basics",
@@ -14,6 +38,174 @@
     }
   ],
   "lessons": [
+    {
+      "id": "lesson-html-intro",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "fundamentos-html",
+      "title": "Fundamentos do HTML",
+      "content": "Objetivo: entender HTML como linguagem de marcacao para estruturar paginas. HTML organiza conteudo com tags e atributos, sem executar logica de programa.",
+      "order": 1,
+      "tags": [
+        "html",
+        "tags"
+      ]
+    },
+    {
+      "id": "lesson-html-structure",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "estrutura-base",
+      "title": "Estrutura base do documento",
+      "content": "Objetivo: montar um arquivo valido com DOCTYPE, html lang, head e body. Essa base evita problemas de renderizacao e melhora acessibilidade.",
+      "order": 2,
+      "tags": [
+        "doctype",
+        "head",
+        "body"
+      ]
+    },
+    {
+      "id": "lesson-html-content",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "conteudo-links",
+      "title": "Texto e links",
+      "content": "Objetivo: criar conteudo legivel com titulos, paragrafos e links claros. Hierarquia correta ajuda leitura, SEO e navegacao.",
+      "order": 3,
+      "tags": [
+        "h1",
+        "p",
+        "a"
+      ]
+    },
+    {
+      "id": "lesson-html-media",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "media-listas",
+      "title": "Imagens e listas",
+      "content": "Objetivo: apresentar informacoes visuais e colecoes com img, alt, ul/ol e li. O alt e obrigatorio para acessibilidade.",
+      "order": 4,
+      "tags": [
+        "img",
+        "alt",
+        "ul",
+        "ol"
+      ]
+    },
+    {
+      "id": "lesson-html-forms",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "formularios",
+      "title": "Formularios acessiveis",
+      "content": "Objetivo: coletar dados com form, label e input vinculados por for/id. Use tipos corretos e required para qualidade dos dados.",
+      "order": 5,
+      "tags": [
+        "form",
+        "label",
+        "input"
+      ]
+    },
+    {
+      "id": "lesson-html-semantic",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "semantica-a11y",
+      "title": "Semantica e acessibilidade",
+      "content": "Objetivo: usar header, nav, main e footer para comunicar intencao do layout. Semantica melhora manutencao, SEO e leitura por tecnologias assistivas.",
+      "order": 6,
+      "tags": [
+        "header",
+        "nav",
+        "main",
+        "footer"
+      ]
+    },
+    {
+      "id": "lesson-css-intro",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "fundamentos-css",
+      "title": "Fundamentos do CSS",
+      "content": "Objetivo: aplicar estilo com seletores e propriedades. Comece por regras pequenas e valide no navegador.",
+      "order": 1,
+      "tags": [
+        "css",
+        "seletores"
+      ]
+    },
+    {
+      "id": "lesson-css-box",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "box-model",
+      "title": "Box model",
+      "content": "Objetivo: controlar espacos com margin, padding e border. Entender box model evita layout quebrado.",
+      "order": 2,
+      "tags": [
+        "margin",
+        "padding",
+        "border"
+      ]
+    },
+    {
+      "id": "lesson-css-layout",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "layout-flex-grid",
+      "title": "Layout com Flex e Grid",
+      "content": "Objetivo: distribuir elementos com display flex e display grid. Use gap e colunas para organizar interface.",
+      "order": 3,
+      "tags": [
+        "flex",
+        "grid",
+        "gap"
+      ]
+    },
+    {
+      "id": "lesson-css-visual",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "tipografia-cores",
+      "title": "Tipografia e cores",
+      "content": "Objetivo: melhorar legibilidade com font-size, line-height e contraste entre texto e fundo.",
+      "order": 4,
+      "tags": [
+        "font-size",
+        "line-height",
+        "color"
+      ]
+    },
+    {
+      "id": "lesson-css-motion",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "transicoes",
+      "title": "Transicoes e estados",
+      "content": "Objetivo: criar feedback com transition e :hover sem exagero de animacao.",
+      "order": 5,
+      "tags": [
+        "transition",
+        "hover",
+        "transform"
+      ]
+    },
+    {
+      "id": "lesson-css-vars",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "variaveis-responsivo",
+      "title": "Variaveis e base responsiva",
+      "content": "Objetivo: reutilizar valores com var() e montar blocos fluidos com width 100% e max-width.",
+      "order": 6,
+      "tags": [
+        ":root",
+        "var()",
+        "max-width"
+      ]
+    },
     {
       "id": "lesson-js-variables",
       "module_id": "module-js-basics",
@@ -259,6 +451,944 @@
     }
   ],
   "exercises": [
+    {
+      "id": "ex-html-intro-1",
+      "lesson_id": "lesson-html-intro",
+      "type": "blank",
+      "prompt": "Complete: HTML significa {{blank1}} Markup Language.",
+      "starter_code": "{{blank1}} Markup Language",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "HyperText",
+              "placeholder": "________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (fundamentos do HTML)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: HyperText"
+        }
+      ],
+      "solution": "HyperText Markup Language",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-html-intro-2",
+      "lesson_id": "lesson-html-intro",
+      "type": "code",
+      "prompt": "Crie um HTML com lang, h1 e p dentro do body.",
+      "starter_code": "<!DOCTYPE html>\n<html>\n  <body>\n    <!-- seu codigo -->\n  </body>\n</html>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredTags": [
+            "h1",
+            "p"
+          ],
+          "requiredAttributes": [
+            {
+              "selector": "html",
+              "name": "lang"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: estrutura inicial da pagina."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n  <body>\n    <h1>Bem-vindo</h1>\n    <p>Primeira pagina.</p>\n  </body>\n</html>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-html-structure-1",
+      "lesson_id": "lesson-html-structure",
+      "type": "blank",
+      "prompt": "Complete a declaracao: <!{{blank1}} html>",
+      "starter_code": "<!{{blank1}} html>",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "DOCTYPE",
+              "placeholder": "_______"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (estrutura base)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: DOCTYPE"
+        }
+      ],
+      "solution": "<!DOCTYPE html>",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-html-structure-2",
+      "lesson_id": "lesson-html-structure",
+      "type": "bugfix",
+      "prompt": "Corrija o documento para incluir lang no html e meta charset no head.",
+      "starter_code": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Site</title>\n  </head>\n  <body><h1>Inicio</h1></body>\n</html>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredAttributes": [
+            {
+              "selector": "html",
+              "name": "lang"
+            }
+          ],
+          "requiredSelectors": [
+            "head meta[charset]"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: padrao minimo do documento."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Site</title>\n  </head>\n  <body><h1>Inicio</h1></body>\n</html>",
+      "difficulty": "easy",
+      "estimated_time": 55
+    },
+    {
+      "id": "ex-html-content-1",
+      "lesson_id": "lesson-html-content",
+      "type": "blank",
+      "prompt": "Complete o atributo do link: <a {{blank1}}=\"#sobre\">Sobre</a>",
+      "starter_code": "<a {{blank1}}=\"#sobre\">Sobre</a>",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "href",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (navegacao por links)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: href"
+        }
+      ],
+      "solution": "<a href=\"#sobre\">Sobre</a>",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-html-content-2",
+      "lesson_id": "lesson-html-content",
+      "type": "code",
+      "prompt": "Monte um bloco com h1, dois paragrafos e um link para #sobre.",
+      "starter_code": "<section>\n  <!-- complete -->\n</section>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredTags": [
+            "h1",
+            "p",
+            "a"
+          ],
+          "requiredSelectors": [
+            "a[href=\"#sobre\"]"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: hierarquia de texto e link descritivo."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<section>\n  <h1>Sobre</h1>\n  <p>Resumo 1.</p>\n  <p>Resumo 2.</p>\n  <a href=\"#sobre\">Leia mais</a>\n</section>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-html-media-1",
+      "lesson_id": "lesson-html-media",
+      "type": "blank",
+      "prompt": "Complete o atributo de acessibilidade da imagem.",
+      "starter_code": "<img src=\"produto.jpg\" {{blank1}}=\"Produto principal\">",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "alt",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (acessibilidade de imagem)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: alt"
+        }
+      ],
+      "solution": "<img src=\"produto.jpg\" alt=\"Produto principal\">",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-html-media-2",
+      "lesson_id": "lesson-html-media",
+      "type": "bugfix",
+      "prompt": "Corrija a lista para usar itens li.",
+      "starter_code": "<ul>\n  Item 1\n  Item 2\n</ul>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredTags": [
+            "ul",
+            "li"
+          ],
+          "requiredSelectors": [
+            "ul li"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: estrutura correta de listas."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<ul>\n  <li>Item 1</li>\n  <li>Item 2</li>\n</ul>",
+      "difficulty": "easy",
+      "estimated_time": 55
+    },
+    {
+      "id": "ex-html-forms-1",
+      "lesson_id": "lesson-html-forms",
+      "type": "blank",
+      "prompt": "Complete o tipo para email: <input type=\"{{blank1}}\">",
+      "starter_code": "<input type=\"{{blank1}}\">",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "email",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (tipos de input)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: email"
+        }
+      ],
+      "solution": "<input type=\"email\">",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-html-forms-2",
+      "lesson_id": "lesson-html-forms",
+      "type": "code",
+      "prompt": "Crie form com label+input vinculados e botao submit.",
+      "starter_code": "<!-- escreva seu formulario -->",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredTags": [
+            "form",
+            "label",
+            "input",
+            "button"
+          ],
+          "requiredAttributes": [
+            {
+              "selector": "label",
+              "name": "for"
+            },
+            {
+              "selector": "input",
+              "name": "id"
+            },
+            {
+              "selector": "button",
+              "name": "type",
+              "value": "submit"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: acessibilidade em formularios."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<form>\n  <label for=\"email\">Email</label>\n  <input id=\"email\" type=\"email\" required>\n  <button type=\"submit\">Enviar</button>\n</form>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-html-semantic-1",
+      "lesson_id": "lesson-html-semantic",
+      "type": "blank",
+      "prompt": "Complete a regiao principal: <{{blank1}}>...</{{blank1}}>.",
+      "starter_code": "<{{blank1}}>Conteudo</{{blank1}}>",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "main",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (semantica do layout)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: main"
+        }
+      ],
+      "solution": "<main>Conteudo</main>",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-html-semantic-2",
+      "lesson_id": "lesson-html-semantic",
+      "type": "code",
+      "prompt": "Estruture a pagina com header, nav, main e footer.",
+      "starter_code": "<!-- estruture -->",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredTags": [
+            "header",
+            "nav",
+            "main",
+            "footer"
+          ],
+          "requiredSelectors": [
+            "nav a"
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: uso de tags semanticas."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<header><h1>Site</h1></header>\n<nav><a href=\"#inicio\">Inicio</a></nav>\n<main><p>Conteudo</p></main>\n<footer>Rodape</footer>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-css-intro-1",
+      "lesson_id": "lesson-css-intro",
+      "type": "blank",
+      "prompt": "Complete a propriedade de cor: h1 { {{blank1}}: #111827; }",
+      "starter_code": "h1 { {{blank1}}: #111827; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "color",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (propriedades basicas)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: color"
+        }
+      ],
+      "solution": "h1 { color: #111827; }",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-css-intro-2",
+      "lesson_id": "lesson-css-intro",
+      "type": "code",
+      "prompt": "Adicione regra CSS para h1 com color e font-size.",
+      "starter_code": "<style>\n  /* escreva */\n</style>\n<h1>Titulo</h1>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredTags": [
+            "style",
+            "h1"
+          ],
+          "requiredCss": [
+            {
+              "selector": "h1",
+              "property": "color"
+            },
+            {
+              "selector": "h1",
+              "property": "font-size"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: estilo de texto."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<style>\n  h1 { color: #0f172a; font-size: 2rem; }\n</style>\n<h1>Titulo</h1>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-css-box-1",
+      "lesson_id": "lesson-css-box",
+      "type": "blank",
+      "prompt": "Complete o espaco interno: .card { {{blank1}}: 16px; }",
+      "starter_code": ".card { {{blank1}}: 16px; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "padding",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (box model)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: padding"
+        }
+      ],
+      "solution": ".card { padding: 16px; }",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-css-box-2",
+      "lesson_id": "lesson-css-box",
+      "type": "code",
+      "prompt": "Defina margin, padding e border na classe .card.",
+      "starter_code": "<style>\n  /* complete */\n</style>\n<div class=\"card\">Plano</div>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredClasses": [
+            "card"
+          ],
+          "requiredCss": [
+            {
+              "selector": ".card",
+              "property": "margin"
+            },
+            {
+              "selector": ".card",
+              "property": "padding"
+            },
+            {
+              "selector": ".card",
+              "property": "border"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: controle de espacos."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<style>\n  .card { margin: 12px; padding: 16px; border: 1px solid #94a3b8; }\n</style>\n<div class=\"card\">Plano</div>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-css-layout-1",
+      "lesson_id": "lesson-css-layout",
+      "type": "blank",
+      "prompt": "Complete: .linha { display: {{blank1}}; }",
+      "starter_code": ".linha { display: {{blank1}}; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "flex",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (layout flexivel)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: flex"
+        }
+      ],
+      "solution": ".linha { display: flex; }",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-css-layout-2",
+      "lesson_id": "lesson-css-layout",
+      "type": "code",
+      "prompt": "Crie grade com display grid, colunas e gap.",
+      "starter_code": "<style>\n  /* complete */\n</style>\n<div class=\"grade\"><div>A</div><div>B</div></div>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredClasses": [
+            "grade"
+          ],
+          "requiredCss": [
+            {
+              "selector": ".grade",
+              "property": "display",
+              "value": "grid"
+            },
+            {
+              "selector": ".grade",
+              "property": "grid-template-columns"
+            },
+            {
+              "selector": ".grade",
+              "property": "gap"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: layout em grade."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<style>\n  .grade { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }\n</style>\n<div class=\"grade\"><div>A</div><div>B</div></div>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-css-visual-1",
+      "lesson_id": "lesson-css-visual",
+      "type": "blank",
+      "prompt": "Complete a propriedade de tamanho da fonte: p { {{blank1}}: 16px; }",
+      "starter_code": "p { {{blank1}}: 16px; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "font-size",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (legibilidade tipografica)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: font-size"
+        }
+      ],
+      "solution": "p { font-size: 16px; }",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-css-visual-2",
+      "lesson_id": "lesson-css-visual",
+      "type": "code",
+      "prompt": "Estilize body com color, background e line-height.",
+      "starter_code": "<style>\n  /* complete */\n</style>\n<body><p>Texto</p></body>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredTags": [
+            "body"
+          ],
+          "requiredCss": [
+            {
+              "selector": "body",
+              "property": "color"
+            },
+            {
+              "selector": "body",
+              "property": "background"
+            },
+            {
+              "selector": "body",
+              "property": "line-height"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: contraste e leitura."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<style>\n  body { color: #e2e8f0; background: #0f172a; line-height: 1.6; }\n</style>\n<body><p>Texto</p></body>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
+    {
+      "id": "ex-css-motion-1",
+      "lesson_id": "lesson-css-motion",
+      "type": "blank",
+      "prompt": "Complete: button { {{blank1}}: transform 0.2s ease; }",
+      "starter_code": "button { {{blank1}}: transform 0.2s ease; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "transition",
+              "placeholder": "____"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (animacao suave)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: transition"
+        }
+      ],
+      "solution": "button { transition: transform 0.2s ease; }",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-css-motion-2",
+      "lesson_id": "lesson-css-motion",
+      "type": "bugfix",
+      "prompt": "Corrija o seletor hover para aplicar opacidade no botao.",
+      "starter_code": "<style>\n  .acao { transition: opacity 0.2s ease; }\n  .acao hover { opacity: 0.7; }\n</style>\n<button class=\"acao\">Salvar</button>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredClasses": [
+            "acao"
+          ],
+          "requiredCss": [
+            {
+              "selector": ".acao:hover",
+              "property": "opacity"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: estado de interacao."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<style>\n  .acao { transition: opacity 0.2s ease; }\n  .acao:hover { opacity: 0.7; }\n</style>\n<button class=\"acao\">Salvar</button>",
+      "difficulty": "easy",
+      "estimated_time": 55
+    },
+    {
+      "id": "ex-css-vars-1",
+      "lesson_id": "lesson-css-vars",
+      "type": "blank",
+      "prompt": "Complete a variavel: :root { {{blank1}}: #14b8a6; }",
+      "starter_code": ":root { {{blank1}}: #14b8a6; }",
+      "validations": [
+        {
+          "type": "blank",
+          "blanks": [
+            {
+              "id": "blank1",
+              "answer": "--cor-primaria",
+              "placeholder": "______________"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Revise o conceito principal desta licao (custom properties)."
+        },
+        {
+          "level": 2,
+          "text": "Observe o formato esperado no codigo base."
+        },
+        {
+          "level": 3,
+          "text": "Resposta esperada: --cor-primaria"
+        }
+      ],
+      "solution": ":root { --cor-primaria: #14b8a6; }",
+      "difficulty": "easy",
+      "estimated_time": 35
+    },
+    {
+      "id": "ex-css-vars-2",
+      "lesson_id": "lesson-css-vars",
+      "type": "code",
+      "prompt": "Use var(--cor-primaria) no botao e torne container fluido.",
+      "starter_code": "<style>\n  :root { --cor-primaria: #14b8a6; }\n  /* complete */\n</style>\n<div class=\"container\"><button class=\"botao\">Continuar</button></div>",
+      "validations": [
+        {
+          "type": "html-structure",
+          "requiredClasses": [
+            "container",
+            "botao"
+          ],
+          "requiredCss": [
+            {
+              "selector": ".botao",
+              "property": "background"
+            },
+            {
+              "selector": ".container",
+              "property": "width",
+              "value": "100%"
+            },
+            {
+              "selector": ".container",
+              "property": "max-width"
+            }
+          ]
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Foque no objetivo da licao: reuso e responsividade."
+        },
+        {
+          "level": 2,
+          "text": "Garanta a estrutura pedida antes de validar."
+        },
+        {
+          "level": 3,
+          "text": "Compare seu codigo com os requisitos de tags e atributos."
+        }
+      ],
+      "solution": "<style>\n  :root { --cor-primaria: #14b8a6; }\n  .botao { background: var(--cor-primaria); }\n  .container { width: 100%; max-width: 720px; }\n</style>\n<div class=\"container\"><button class=\"botao\">Continuar</button></div>",
+      "difficulty": "medium",
+      "estimated_time": 75
+    },
     {
       "id": "ex-js-vars-1",
       "lesson_id": "lesson-js-variables",

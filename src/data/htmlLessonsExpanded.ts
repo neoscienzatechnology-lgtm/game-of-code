@@ -497,7 +497,14 @@ const buildExample = (exercise: Exercise) => {
     }
   }
 
-  return '`Exemplo rapido aplicado em um arquivo real.`';
+  const instructionText = normalize(exercise.instruction ?? '');
+  if (instructionText.includes('html')) return '`<main><h1>Titulo</h1><p>Texto base</p></main>`';
+  if (instructionText.includes('css')) return '`.card { padding: 16px; border-radius: 12px; }`';
+  if (instructionText.includes('javascript') || instructionText.includes('js')) {
+    return '`const total = itens.length; console.log(total);`';
+  }
+
+  return '`Trecho pratico aplicado ao mesmo conceito da licao.`';
 };
 
 const buildVisualExample = (lesson: Lesson) => {
