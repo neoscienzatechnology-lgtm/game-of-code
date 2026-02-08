@@ -24,8 +24,10 @@ const App = () => (
         <BrowserRouter basename={import.meta.env.BASE_URL}>
           <Suspense
             fallback={
-              <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-                Carregando...
+              <div className="page-shell flex items-center justify-center">
+                <div className="glass-card p-6 text-sm text-muted-foreground">
+                  Carregando...
+                </div>
               </div>
             }
           >

@@ -1,3 +1,4 @@
+import { RefreshCcw, Sparkles } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LearningExerciseSession } from '@/components/LearningExerciseSession';
@@ -57,21 +58,27 @@ export default function Review() {
 
   if (loading || loadingAll) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-muted-foreground">
-        Carregando revisões...
+      <div className="page-shell flex items-center justify-center">
+        <div className="glass-card p-6 text-muted-foreground">Carregando revisões...</div>
       </div>
     );
   }
 
   if (!dueExercises.length) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="glass-card p-8 max-w-lg text-center space-y-4">
+      <div className="page-shell flex items-center justify-center">
+        <div className="glass-card max-w-xl space-y-4 p-8 text-center">
+          <div className="hero-kicker mx-auto w-fit">
+            <Sparkles className="mr-2 h-3.5 w-3.5" />
+            Tudo em dia
+          </div>
           <h1 className="text-2xl font-bold">Sem revisões pendentes</h1>
           <p className="text-muted-foreground">
             Você está em dia. Continue estudando para liberar novas revisões.
           </p>
-          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
+          <Button onClick={() => navigate('/')} className="gradient-primary text-primary-foreground">
+            Voltar ao início
+          </Button>
         </div>
       </div>
     );

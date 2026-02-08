@@ -229,57 +229,73 @@ export function LearningExerciseSession({
   const hints = exercise.hints.slice(0, hintLevel);
 
   return (
-    <div className="fixed inset-0 bg-background z-50 flex flex-col">
-      <div className="px-4 py-3 flex items-center gap-4">
-        {onExit && (
-          <button
-            onClick={onExit}
-            className="p-2 rounded-lg hover:bg-muted transition-colors"
-            aria-label="Sair da lição"
+    <div className="fixed inset-0 z-50 flex flex-col bg-background/95 backdrop-blur-sm">
+      <div className="border-b border-border/60 bg-background/70 px-4 py-3 backdrop-blur-xl">
+        <div className="mx-auto flex w-full max-w-4xl items-center gap-3">
+          {onExit && (
+            <button
+              onClick={onExit}
+              className="rounded-xl border border-border/60 bg-muted/35 p-2 transition-all hover:border-primary/40 hover:bg-muted/70"
+              aria-label="Sair da lição"
+            >
+              <X className="h-5 w-5 text-muted-foreground" />
+            </button>
+          )}
+          <div
+            className="progress-bar flex-1"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={Math.round(progress)}
           >
-            <X className="w-6 h-6 text-muted-foreground" />
-          </button>
-        )}
-        <div className="flex-1 progress-bar" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress)}>
-          <div className="progress-fill" style={{ width: `${progress}%` }} />
+            <div className="progress-fill" style={{ width: `${progress}%` }} />
+          </div>
+          <span className="rounded-full border border-border/60 bg-muted/30 px-2.5 py-1 text-xs text-muted-foreground">
+            {currentIndex + 1}/{exercises.length}
+          </span>
         </div>
-        <span className="text-xs text-muted-foreground" aria-live="polite">
-          {currentIndex + 1}/{exercises.length}
-        </span>
       </div>
 
       <div className="flex-1 overflow-y-auto px-4 py-6">
-        <div className="max-w-3xl mx-auto animate-slide-up">
-          <h2 className="text-xl font-bold text-center mb-4">{exercise.prompt}</h2>
+        <div className="mx-auto w-full max-w-4xl animate-slide-up">
+          <div className="glass-card mb-4 p-5 md:p-6">
+            <h2 className="text-center text-xl font-bold leading-tight md:text-2xl">{exercise.prompt}</h2>
+          </div>
 
           {exercise.type === 'blank' && renderBlankCode()}
 
           {(exercise.type === 'code' || exercise.type === 'bugfix') && htmlPractice && (
             <div className="space-y-3">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                 <div className="code-block">
-                  <label className="text-xs uppercase tracking-wide text-muted-foreground block mb-2" htmlFor="html-editor">
+                  <label
+                    className="mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+                    htmlFor="html-editor"
+                  >
                     HTML
                   </label>
                   <textarea
                     id="html-editor"
                     value={htmlCode}
                     onChange={event => setHtmlCode(event.target.value)}
-                    className="w-full min-h-[180px] bg-transparent outline-none resize-y font-mono text-sm"
+                    className="min-h-[190px] w-full resize-y bg-transparent text-sm outline-none"
                     spellCheck={false}
                     aria-label="Editor HTML"
                   />
                 </div>
 
                 <div className="code-block">
-                  <label className="text-xs uppercase tracking-wide text-muted-foreground block mb-2" htmlFor="css-editor">
+                  <label
+                    className="mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+                    htmlFor="css-editor"
+                  >
                     CSS
                   </label>
                   <textarea
                     id="css-editor"
                     value={cssCode}
                     onChange={event => setCssCode(event.target.value)}
-                    className="w-full min-h-[180px] bg-transparent outline-none resize-y font-mono text-sm"
+                    className="min-h-[190px] w-full resize-y bg-transparent text-sm outline-none"
                     spellCheck={false}
                     aria-label="Editor CSS"
                   />
@@ -287,17 +303,19 @@ export function LearningExerciseSession({
               </div>
 
               <div className="glass-card p-3">
-                <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Preview</div>
+                <div className="mb-2 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                  Preview
+                </div>
                 <iframe
                   title="Preview do exercício"
                   srcDoc={previewDoc}
-                  className="w-full h-56 bg-white rounded-lg border border-border/40"
+                  className="h-56 w-full rounded-lg border border-border/40 bg-white"
                   sandbox="allow-same-origin"
                 />
               </div>
 
               {exercise.type === 'bugfix' && (
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-center text-xs text-muted-foreground">
                   Encontre e corrija o bug antes de verificar.
                 </p>
               )}
@@ -310,13 +328,13 @@ export function LearningExerciseSession({
                 <textarea
                   value={code}
                   onChange={event => setCode(event.target.value)}
-                  className="w-full min-h-[160px] bg-transparent outline-none resize-y font-mono text-sm"
+                  className="min-h-[170px] w-full resize-y bg-transparent text-sm outline-none"
                   spellCheck={false}
                   aria-label="Editor de código"
                 />
               </div>
               {exercise.type === 'bugfix' && (
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-center text-xs text-muted-foreground">
                   Encontre e corrija o bug antes de verificar.
                 </p>
               )}
@@ -324,23 +342,23 @@ export function LearningExerciseSession({
           )}
 
           {showResult === 'wrong' && errorMessage && (
-            <div className="glass-card p-4 mt-6 text-center text-sm text-error" aria-live="polite">
+            <div className="glass-card mt-6 p-4 text-center text-sm text-error" aria-live="polite">
               {errorMessage}
             </div>
           )}
 
           {showResult === 'correct' && (
-            <div className="glass-card p-4 mt-6 text-center text-sm" aria-live="polite">
-              <div className="flex items-center justify-center gap-2 text-success font-semibold mb-2">
-                <Check className="w-4 h-4" />
+            <div className="glass-card mt-6 p-4 text-center text-sm" aria-live="polite">
+              <div className="mb-2 flex items-center justify-center gap-2 font-semibold text-success">
+                <Check className="h-4 w-4" />
                 Resposta correta!
               </div>
-              <div className="flex items-center justify-center gap-2 text-xp font-semibold mb-1">
-                <Zap className="w-4 h-4" />
+              <div className="mb-1 flex items-center justify-center gap-2 font-semibold text-xp">
+                <Zap className="h-4 w-4" />
                 +{getXpForExercise(exercise)} XP
               </div>
               {conceptLabel && (
-                <p className="text-muted-foreground text-xs">
+                <p className="text-xs text-muted-foreground">
                   Você praticou {conceptLabel}.
                 </p>
               )}
@@ -359,16 +377,16 @@ export function LearningExerciseSession({
         </div>
       </div>
 
-      <div className="p-4 glass-card rounded-none border-x-0 border-b-0">
-        <div className="max-w-3xl mx-auto space-y-3">
+      <div className="border-t border-border/60 bg-background/70 p-4 backdrop-blur-xl">
+        <div className="mx-auto w-full max-w-4xl space-y-3">
           {showResult === 'wrong' && hintLevel < exercise.hints.length && (
             <Button
               variant="secondary"
               onClick={() => setHintLevel(prev => Math.min(prev + 1, exercise.hints.length))}
-              className="w-full h-12"
+              className="h-12 w-full"
               aria-label="Ver próxima dica"
             >
-              <Lightbulb className="w-4 h-4 mr-2" />
+              <Lightbulb className="mr-2 h-4 w-4" />
               Ver dica
             </Button>
           )}
@@ -376,7 +394,7 @@ export function LearningExerciseSession({
           <Button
             onClick={showResult ? handleContinue : handleCheck}
             disabled={checking || (!showResult && !canCheck())}
-            className={`w-full h-14 text-lg font-bold rounded-xl transition-all ${
+            className={`h-14 w-full rounded-xl text-lg font-bold transition-all ${
               showResult === 'correct'
                 ? 'gradient-success glow-success hover:opacity-90'
                 : 'gradient-primary glow-primary hover:opacity-90'
@@ -390,7 +408,7 @@ export function LearningExerciseSession({
               : showResult === 'wrong'
                 ? 'Tentar novamente'
                 : 'Verificar'}
-            <ArrowRight className="w-5 h-5 ml-2" />
+            <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>
