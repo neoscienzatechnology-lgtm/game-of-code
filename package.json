@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "seed:split": "node scripts/split-learning-seed.mjs",
-    "audit:content": "node scripts/audit-learning-content.mjs"
+    "audit:content": "node scripts/audit-learning-content.mjs",
+    "normalize:pt": "node scripts/normalize-portuguese-content.mjs && npm run seed:split"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

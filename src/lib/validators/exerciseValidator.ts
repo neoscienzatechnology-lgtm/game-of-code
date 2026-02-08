@@ -2,7 +2,12 @@ import type { ExerciseData, ExerciseValidation, ValidationResult } from '@/types
 import { runJsTests } from './jsRunner';
 import { validateHtmlStructure } from './htmlValidator';
 
-const normalize = (value: string) => value.trim().toLowerCase();
+const normalize = (value: string) =>
+  value
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
 
 const buildOutputTests = (
   validation: Extract<ExerciseValidation, { type: 'js-output' }>
@@ -20,8 +25,8 @@ const buildOutputTests = (
 const toFriendlyMessage = (error?: string) => {
   if (!error) return undefined;
   if (error.includes('SyntaxError')) return 'Parece haver um erro de sintaxe.';
-  if (error.includes('ReferenceError')) return 'Variavel ou funcao nao encontrada.';
-  if (error.toLowerCase().includes('tempo limite')) return 'Seu codigo demorou demais para responder.';
+  if (error.includes('ReferenceError')) return 'Variável ou função não encontrada.';
+  if (error.toLowerCase().includes('tempo limite')) return 'Seu código demorou demais para responder.';
   return error;
 };
 

@@ -66,7 +66,7 @@ const MINIMAL_FALLBACK_MODULES: ModuleData[] = [
   {
     id: 'module-html-basics',
     language: 'html',
-    title: 'HTML Basico',
+    title: 'HTML Básico',
     description: 'Trilha de HTML',
     order: 1,
     tags: ['html'],
@@ -74,7 +74,7 @@ const MINIMAL_FALLBACK_MODULES: ModuleData[] = [
   {
     id: 'module-css-basics',
     language: 'css',
-    title: 'CSS Basico',
+    title: 'CSS Básico',
     description: 'Trilha de CSS',
     order: 2,
     tags: ['css'],
@@ -82,7 +82,7 @@ const MINIMAL_FALLBACK_MODULES: ModuleData[] = [
   {
     id: 'module-js-basics',
     language: 'javascript',
-    title: 'JavaScript Basico',
+    title: 'JavaScript Básico',
     description: 'Trilha de JavaScript',
     order: 3,
     tags: ['js'],

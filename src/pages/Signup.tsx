@@ -27,7 +27,7 @@ export default function Signup() {
       return;
     }
     if (result.needsEmailConfirmation) {
-      setNotice(result.message ?? 'Conta criada. Verifique seu email para confirmar o acesso.');
+      setNotice(result.message ?? 'Conta criada. Verifique seu e-mail para confirmar o acesso.');
       return;
     }
     navigate('/');
@@ -56,7 +56,7 @@ export default function Signup() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">E-mail</Label>
             <Input
               id="email"
               type="email"

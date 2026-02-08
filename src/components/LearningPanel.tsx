@@ -193,6 +193,16 @@ export function LearningPanel() {
       .slice(0, 4);
   }, [conceptProgress, lessons, module]);
 
+  const conceptLabelById = useMemo(() => {
+    const labels = new Map<string, string>();
+    for (const lesson of lessons) {
+      if (!labels.has(lesson.concept)) {
+        labels.set(lesson.concept, lesson.title);
+      }
+    }
+    return labels;
+  }, [lessons]);
+
   const moduleLoaded = module ? loadedModules.includes(module.id) : false;
 
   if (loading || !module) return null;
@@ -227,7 +237,7 @@ export function LearningPanel() {
               await ensureAllModulesLoaded();
               setLoadingAll(false);
             }}
-            aria-label="Carregar todos os modulos"
+            aria-label="Carregar todos os módulos"
           >
             {loadingAll ? (
               <>
@@ -246,7 +256,7 @@ export function LearningPanel() {
           <h3 className="text-lg font-bold">{module.title}</h3>
           <p className="text-sm text-muted-foreground">{module.description}</p>
           {!moduleLoaded && (
-            <p className="text-xs text-warning mt-1">Carregando conteudo deste modulo...</p>
+            <p className="text-xs text-warning mt-1">Carregando conteúdo deste módulo...</p>
           )}
         </div>
         <span className="px-3 py-1 rounded-full text-xs bg-muted/60 text-muted-foreground">
@@ -256,7 +266,7 @@ export function LearningPanel() {
 
       <div className="mb-4">
         <div className="flex justify-between text-xs text-muted-foreground mb-2">
-          <span>Progresso do modulo</span>
+          <span>Progresso do módulo</span>
           <span>{moduleProgress.percent}%</span>
         </div>
         <div className="progress-bar h-3" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={moduleProgress.percent}>
@@ -278,9 +288,9 @@ export function LearningPanel() {
         <div className="flex flex-col items-center p-2 rounded-lg bg-muted/50">
           <Shield className="w-4 h-4 text-success mb-1" />
           <span className="text-xs font-semibold text-foreground">
-            {protectionAvailable ? 'Disponivel' : 'Usada'}
+            {protectionAvailable ? 'Disponível' : 'Usada'}
           </span>
-          <span className="text-xs text-muted-foreground">Protecao</span>
+          <span className="text-xs text-muted-foreground">Proteção</span>
         </div>
       </div>
 
@@ -288,17 +298,18 @@ export function LearningPanel() {
         <div className="mb-4 glass-card p-3">
           <div className="flex items-center gap-2 text-sm font-semibold mb-2">
             <BarChart3 className="w-4 h-4" />
-            Pontos para reforcar
+            Pontos para reforçar
           </div>
           <div className="space-y-2">
             {weakConcepts.map(item => {
               const completion = item.total ? Math.round((item.completed / item.total) * 100) : 0;
               const accuracy = Math.round(item.accuracy * 100);
+              const conceptLabel = conceptLabelById.get(item.concept) ?? item.concept;
               return (
                 <div key={item.concept} className="flex items-center justify-between text-xs">
-                  <span className="font-medium text-foreground">{item.concept}</span>
+                  <span className="font-medium text-foreground">{conceptLabel}</span>
                   <span className="text-muted-foreground">
-                    {completion}% concluido | {accuracy}% acerto | {item.due} devidos
+                    {completion}% concluído | {accuracy}% acerto | {item.due} devidos
                   </span>
                 </div>
               );
@@ -312,13 +323,13 @@ export function LearningPanel() {
           onClick={() => nextLessonId && navigate(`/lesson/${nextLessonId}`)}
           className="h-12 gradient-primary glow-primary font-semibold"
           disabled={!nextLessonId || !moduleLoaded}
-          aria-label="Continuar para a proxima licao"
+          aria-label="Continuar para a próxima lição"
         >
           Continuar trilha
         </Button>
         {dueExercises.length > 0 && (
           <Button variant="secondary" onClick={() => navigate('/review')} className="h-12">
-            Revisao rapida ({dueExercises.length})
+            Revisão rápida ({dueExercises.length})
           </Button>
         )}
       </div>
@@ -341,20 +352,20 @@ export function LearningPanel() {
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 text-sm font-semibold">
             <BookOpen className="w-4 h-4" />
-            Licoes do modulo
+            Lições do módulo
           </div>
           <div className="relative w-full max-w-[240px]">
             <label htmlFor="lesson-search" className="sr-only">
-              Buscar licoes
+              Buscar lições
             </label>
             <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               id="lesson-search"
               value={searchTerm}
               onChange={event => setSearchTerm(event.target.value)}
-              placeholder="Buscar licao"
+              placeholder="Buscar lição"
               className="w-full bg-muted/60 border border-border rounded-lg pl-9 pr-3 py-2 text-xs outline-none focus:ring-2 focus:ring-primary/40"
-              aria-label="Buscar licoes por titulo ou conceito"
+              aria-label="Buscar lições por título ou conceito"
             />
           </div>
         </div>
@@ -371,7 +382,7 @@ export function LearningPanel() {
                   : 'hover:border-primary/40'
               }`}
               disabled={locked}
-              aria-label={locked ? `Licao bloqueada: ${item.lesson.title}` : `Abrir licao ${item.lesson.title}`}
+              aria-label={locked ? `Lição bloqueada: ${item.lesson.title}` : `Abrir lição ${item.lesson.title}`}
             >
               <div className="flex items-center justify-between text-sm gap-2">
                 <span className="font-semibold flex items-center gap-2">
@@ -387,7 +398,7 @@ export function LearningPanel() {
               </div>
               {locked && item.blockedBy.length > 0 && (
                 <p className="text-[11px] text-warning mt-2">
-                  Complete a licao anterior para desbloquear.
+                  Complete a lição anterior para desbloquear.
                 </p>
               )}
             </button>
@@ -396,7 +407,7 @@ export function LearningPanel() {
 
         {filteredLessons.length === 0 && (
           <div className="glass-card p-3 text-xs text-muted-foreground text-center">
-            Nenhuma licao encontrada para "{searchTerm}".
+            Nenhuma lição encontrada para "{searchTerm}".
           </div>
         )}
       </div>

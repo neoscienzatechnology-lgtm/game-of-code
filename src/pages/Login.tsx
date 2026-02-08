@@ -32,13 +32,13 @@ export default function Login() {
         <div>
           <h1 className="text-2xl font-bold">Entrar</h1>
           <p className="text-sm text-muted-foreground">
-            Acesse sua conta para salvar progresso.
+            Acesse sua conta para salvar o progresso.
           </p>
         </div>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">E-mail</Label>
             <Input
               id="email"
               type="email"
@@ -56,7 +56,7 @@ export default function Login() {
               type="password"
               value={password}
               onChange={event => setPassword(event.target.value)}
-              placeholder="••••••••"
+              placeholder="********"
               required
             />
           </div>

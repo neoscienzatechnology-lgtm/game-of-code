@@ -2,8 +2,8 @@
   "module": {
     "id": "module-css-basics",
     "language": "css",
-    "title": "CSS Basico",
-    "description": "Trilha completa de CSS: seletores, box model, layout, responsividade e animacoes.",
+    "title": "CSS Básico",
+    "description": "Trilha completa de CSS: seletores, box model, layout, responsividade e animações.",
     "order": 2,
     "tags": [
       "css",
@@ -18,8 +18,8 @@
       "module_id": "module-css-basics",
       "language": "css",
       "concept": "fundamentos-de-css-o-que-e-css",
-      "title": "O que e CSS",
-      "content": "Objetivo: Estilos para a web. CSS define a aparencia dos elementos HTML. Exemplo de uso: mudar cores, tamanhos e espacamentos. Uso comum: criar identidade visual. Dica pratica: comece pelo layout geral e refine depois. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "title": "O que é CSS",
+      "content": "Objetivo: Estilos para a web. CSS define a aparência dos elementos HTML. Exemplo de uso: mudar cores, tamanhos e espacamentos. Uso comum: criar identidade visual. Dica prática: comece pelo layout geral e refine depois. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 1,
       "tags": [
         "fundamentos",
@@ -33,7 +33,7 @@
       "language": "css",
       "concept": "fundamentos-de-css-seletores",
       "title": "Seletores",
-      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica pratica: prefira classes para reutilizacao. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica prática: prefira classes para reutilizacao. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 2,
       "tags": [
         "fundamentos",
@@ -47,7 +47,7 @@
       "language": "css",
       "concept": "fundamentos-de-css-cores-e-tipografia",
       "title": "Cores e tipografia",
-      "content": "Objetivo: Deixando o texto legivel. Use color, font-size, font-family e font-weight para estilizar textos. Exemplo de uso: p { color: #1f2937; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Deixando o texto legível. Use color, font-size, font-family e font-weight para estilizar textos. Exemplo de uso: p { color: #1f2937; } Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 3,
       "tags": [
         "fundamentos",
@@ -62,7 +62,7 @@
       "language": "css",
       "concept": "fundamentos-de-css-box-model",
       "title": "Box model",
-      "content": "Objetivo: Espacamento e tamanho. Todo elemento tem conteudo, padding, border e margin. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Espacamento e tamanho. Todo elemento tem conteúdo, padding, border e margin. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 4,
       "tags": [
         "fundamentos",
@@ -77,7 +77,7 @@
       "language": "css",
       "concept": "fundamentos-de-css-cascata-e-especificidade",
       "title": "Cascata e especificidade",
-      "content": "Objetivo: Quem vence?. Se dois estilos se aplicam, vence o mais especifico ou o que esta por ultimo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Quem vence?. Se dois estilos se aplicam, vence o mais especifico ou o que esta por ultimo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 5,
       "tags": [
         "fundamentos",
@@ -92,7 +92,7 @@
       "language": "css",
       "concept": "layout-e-responsividade-flexbox",
       "title": "Flexbox",
-      "content": "Objetivo: Alinhamento flexivel. Box model define como tamanho e espacamento funcionam. Exemplo de uso: criar cartoes com respiro. Uso comum: ajustar layout sem quebrar o conteudo. Dica pratica: use DevTools para visualizar o box model. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Alinhamento flexivel. Box model define como tamanho e espacamento funcionam. Exemplo de uso: criar cartoes com respiro. Uso comum: ajustar layout sem quebrar o conteúdo. Dica prática: use DevTools para visualizar o box model. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 6,
       "tags": [
         "layout",
@@ -106,7 +106,7 @@
       "language": "css",
       "concept": "layout-e-responsividade-grid",
       "title": "Grid",
-      "content": "Objetivo: Layout em grade. Flexbox alinha itens em uma linha ou coluna. Exemplo de uso: barras de navegacao e cards. Uso comum: alinhar botoes e menus. Dica pratica: combine com gap para espacamento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Layout em grade. Flexbox alinha itens em uma linha ou coluna. Exemplo de uso: barras de navegação e cards. Uso comum: alinhar botões e menus. Dica prática: combine com gap para espacamento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 7,
       "tags": [
         "layout",
@@ -120,7 +120,7 @@
       "language": "css",
       "concept": "layout-e-responsividade-position",
       "title": "Position",
-      "content": "Objetivo: Controle de posicionamento. relative mantem espaco, absolute remove do fluxo e posiciona no ancestral. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Controle de posicionamento. relative mantem espaco, absolute remove do fluxo e posiciona no ancestral. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 8,
       "tags": [
         "layout",
@@ -134,7 +134,7 @@
       "language": "css",
       "concept": "layout-e-responsividade-responsividade",
       "title": "Responsividade",
-      "content": "Objetivo: Layouts para todas telas. Media queries aplicam estilos em condicoes, como largura da tela. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Layouts para todas telas. Media queries aplicam estilos em condições, como largura da tela. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 9,
       "tags": [
         "layout",
@@ -147,7 +147,7 @@
       "language": "css",
       "concept": "layout-e-responsividade-pseudo-classes",
       "title": "Pseudo-classes de interacao",
-      "content": "Objetivo: Estados interativos. Pseudo-classes como :hover, :focus e :active controlam estados. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Estados interativos. Pseudo-classes como :hover, :focus e :active controlam estados. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 10,
       "tags": [
         "layout",
@@ -162,7 +162,7 @@
       "language": "css",
       "concept": "css-avancado-transitions",
       "title": "Transitions",
-      "content": "Objetivo: Animacoes suaves. Transicoes criam animacoes suaves entre estados. Exemplo de uso: feedback visual em botoes. Uso comum: melhorar a sensacao de interacao. Dica pratica: transicoes curtas sao mais naturais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Animações suaves. Transicoes criam animações suaves entre estados. Exemplo de uso: feedback visual em botões. Uso comum: melhorar a sensacao de interacao. Dica prática: transicoes curtas são mais naturais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 11,
       "tags": [
         "css",
@@ -176,7 +176,7 @@
       "language": "css",
       "concept": "css-avancado-animations",
       "title": "Animations",
-      "content": "Objetivo: Keyframes no CSS. Crie animacoes com @keyframes e aplique com animation. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Keyframes no CSS. Crie animações com @keyframes e aplique com animation. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 12,
       "tags": [
         "css",
@@ -189,8 +189,8 @@
       "module_id": "module-css-basics",
       "language": "css",
       "concept": "css-avancado-variaveis-css",
-      "title": "Variaveis CSS",
-      "content": "Objetivo: Custom properties. Variaveis CSS comecam com -- e sao usadas com var(). Exemplo de uso: p { --: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "title": "Variáveis CSS",
+      "content": "Objetivo: Custom properties. Variáveis CSS comecam com -- e são usadas com var(). Exemplo de uso: p { --: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 13,
       "tags": [
         "css",
@@ -204,7 +204,7 @@
       "language": "css",
       "concept": "css-avancado-pseudo-elementos",
       "title": "Pseudo-elementos",
-      "content": "Objetivo: Detalhes com ::before/::after. Use ::before e ::after para inserir conteudo decorativo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Detalhes com ::before/::after. Use ::before e ::after para inserir conteúdo decorativo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 14,
       "tags": [
         "css",
@@ -219,7 +219,7 @@
       "language": "css",
       "concept": "css-avancado-sombras-e-fundos",
       "title": "Sombras e fundos",
-      "content": "Objetivo: Profundidade visual. Use box-shadow para criar profundidade em cartoes e botoes. Exemplo de uso: p { box-shadow: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Profundidade visual. Use box-shadow para criar profundidade em cartoes e botões. Exemplo de uso: p { box-shadow: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 15,
       "tags": [
         "css",
@@ -234,7 +234,7 @@
       "language": "css",
       "concept": "seletores-e-especificidade-seletores-basicos",
       "title": "Seletores basicos",
-      "content": "Objetivo: Elementos, classes e IDs. Seletores permitem escolher quais elementos receberao estilos. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Elementos, classes e IDs. Seletores permitem escolher quais elementos receberao estilos. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 16,
       "tags": [
         "seletores",
@@ -248,7 +248,7 @@
       "language": "css",
       "concept": "seletores-e-especificidade-combinadores",
       "title": "Combinadores",
-      "content": "Objetivo: Descendentes e filhos. Eles definem relacoes entre elementos: descendente, filho e irmao. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Descendentes e filhos. Eles definem relacoes entre elementos: descendente, filho e irmao. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 17,
       "tags": [
         "seletores",
@@ -262,7 +262,7 @@
       "language": "css",
       "concept": "seletores-e-especificidade-pseudo-classes",
       "title": "Pseudo-classes em seletores",
-      "content": "Objetivo: Estados dos elementos. Use :hover, :focus e :nth-child() para estados e posicao. Exemplo de uso: p { :nth-child(): valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Estados dos elementos. Use :hover, :focus e :nth-child() para estados e posicao. Exemplo de uso: p { :nth-child(): valor; } Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 18,
       "tags": [
         "seletores",
@@ -277,7 +277,7 @@
       "language": "css",
       "concept": "seletores-e-especificidade-especificidade",
       "title": "Especificidade",
-      "content": "Objetivo: Quem vence no CSS. Quando regras entram em conflito, a mais especifica vence. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Quem vence no CSS. Quando regras entram em conflito, a mais especifica vence. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 19,
       "tags": [
         "seletores",
@@ -290,7 +290,7 @@
       "language": "css",
       "concept": "flexbox-e-grid-flex-container",
       "title": "Flex container",
-      "content": "Objetivo: Eixos e alinhamento. Ative com display: flex para distribuir itens em um eixo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Eixos e alinhamento. Ative com display: flex para distribuir itens em um eixo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 20,
       "tags": [
         "flexbox",
@@ -305,7 +305,7 @@
       "language": "css",
       "concept": "flexbox-e-grid-flex-items",
       "title": "Flex items",
-      "content": "Objetivo: Crescimento e espaco. Use flex para controlar crescimento, reducao e tamanho base. Exemplo de uso: container { display: flex; gap: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crescimento e espaco. Use flex para controlar crescimento, reducao e tamanho base. Exemplo de uso: container { display: flex; gap: 12px; } Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 21,
       "tags": [
         "flexbox",
@@ -319,8 +319,8 @@
       "module_id": "module-css-basics",
       "language": "css",
       "concept": "flexbox-e-grid-grid-basico",
-      "title": "Grid basico",
-      "content": "Objetivo: Colunas e linhas. Use display: grid para layouts bidimensionais. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "title": "Grid básico",
+      "content": "Objetivo: Colunas e linhas. Use display: grid para layouts bidimensionais. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 22,
       "tags": [
         "flexbox",
@@ -334,7 +334,7 @@
       "language": "css",
       "concept": "flexbox-e-grid-layout-responsivo",
       "title": "Layout responsivo",
-      "content": "Objetivo: Grid fluido. Combine auto-fit e minmax() para grades adaptaveis. Exemplo de uso: p { auto-fit: valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Grid fluido. Combine auto-fit e minmax() para grades adaptaveis. Exemplo de uso: p { auto-fit: valor; } Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 23,
       "tags": [
         "flexbox",
@@ -366,11 +366,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e CSS."
+          "text": "Pense no conceito central da lição: O que é CSS."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura do conteudo / Logica e interatividade."
+          "text": "Evite estas alternativas: Estrutura do conteúdo / Lógica e interatividade."
         },
         {
           "level": 3,
@@ -402,11 +402,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: O que e CSS."
+          "text": "Revise o ponto principal da lição: O que é CSS."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -421,7 +421,7 @@
       "id": "legacy-css-u17-l1-practice",
       "lesson_id": "legacy-css-u17-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -438,7 +438,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e CSS."
+          "text": "Pense no conceito central da lição: O que é CSS."
         },
         {
           "level": 2,
@@ -474,11 +474,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Seletores."
+          "text": "Revise o ponto principal da lição: Seletores."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -510,7 +510,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores."
+          "text": "Pense no conceito central da lição: Seletores."
         },
         {
           "level": 2,
@@ -529,7 +529,7 @@
       "id": "legacy-css-u17-l2-practice",
       "lesson_id": "legacy-css-u17-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual seletor aplica em classe? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual seletor aplica em classe? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -546,7 +546,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores."
+          "text": "Pense no conceito central da lição: Seletores."
         },
         {
           "level": 2,
@@ -582,11 +582,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Cores e tipografia."
+          "text": "Revise o ponto principal da lição: Cores e tipografia."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -618,7 +618,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Cores e tipografia."
+          "text": "Pense no conceito central da lição: Cores e tipografia."
         },
         {
           "level": 2,
@@ -637,7 +637,7 @@
       "id": "legacy-css-u17-l3-practice",
       "lesson_id": "legacy-css-u17-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Defina a cor do texto:",
+      "prompt": "Prática guiada: Defina a cor do texto:",
       "starter_code": "p { {{blank1}}: #0f172a; }",
       "validations": [
         {
@@ -654,11 +654,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Cores e tipografia."
+          "text": "Revise o ponto principal da lição: Cores e tipografia."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -690,11 +690,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Box model."
+          "text": "Revise o ponto principal da lição: Box model."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -726,7 +726,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Box model."
+          "text": "Pense no conceito central da lição: Box model."
         },
         {
           "level": 2,
@@ -745,7 +745,7 @@
       "id": "legacy-css-u17-l4-practice",
       "lesson_id": "legacy-css-u17-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -762,7 +762,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Box model."
+          "text": "Pense no conceito central da lição: Box model."
         },
         {
           "level": 2,
@@ -798,7 +798,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Cascata e especificidade."
+          "text": "Pense no conceito central da lição: Cascata e especificidade."
         },
         {
           "level": 2,
@@ -834,11 +834,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Cascata e especificidade."
+          "text": "Revise o ponto principal da lição: Cascata e especificidade."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -853,7 +853,7 @@
       "id": "legacy-css-u17-l5-practice",
       "lesson_id": "legacy-css-u17-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -870,7 +870,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Cascata e especificidade."
+          "text": "Pense no conceito central da lição: Cascata e especificidade."
         },
         {
           "level": 2,
@@ -906,11 +906,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Flexbox."
+          "text": "Revise o ponto principal da lição: Flexbox."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -942,7 +942,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flexbox."
+          "text": "Pense no conceito central da lição: Flexbox."
         },
         {
           "level": 2,
@@ -961,7 +961,7 @@
       "id": "legacy-css-u18-l1-practice",
       "lesson_id": "legacy-css-u18-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -978,11 +978,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flexbox."
+          "text": "Pense no conceito central da lição: Flexbox."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -1014,11 +1014,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Grid."
+          "text": "Revise o ponto principal da lição: Grid."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1050,7 +1050,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid."
+          "text": "Pense no conceito central da lição: Grid."
         },
         {
           "level": 2,
@@ -1069,7 +1069,7 @@
       "id": "legacy-css-u18-l2-practice",
       "lesson_id": "legacy-css-u18-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1086,11 +1086,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid."
+          "text": "Pense no conceito central da lição: Grid."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -1122,11 +1122,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Position."
+          "text": "Revise o ponto principal da lição: Position."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1158,7 +1158,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Position."
+          "text": "Pense no conceito central da lição: Position."
         },
         {
           "level": 2,
@@ -1177,7 +1177,7 @@
       "id": "legacy-css-u18-l3-practice",
       "lesson_id": "legacy-css-u18-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1194,11 +1194,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Position."
+          "text": "Pense no conceito central da lição: Position."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -1230,11 +1230,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Responsividade."
+          "text": "Revise o ponto principal da lição: Responsividade."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1266,7 +1266,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Responsividade."
+          "text": "Pense no conceito central da lição: Responsividade."
         },
         {
           "level": 2,
@@ -1285,7 +1285,7 @@
       "id": "legacy-css-u18-l4-practice",
       "lesson_id": "legacy-css-u18-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1302,11 +1302,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Responsividade."
+          "text": "Pense no conceito central da lição: Responsividade."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -1338,11 +1338,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pseudo-classes."
+          "text": "Revise o ponto principal da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1374,7 +1374,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
@@ -1393,7 +1393,7 @@
       "id": "legacy-css-u18-l5-practice",
       "lesson_id": "legacy-css-u18-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1410,11 +1410,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -1446,11 +1446,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Transitions."
+          "text": "Revise o ponto principal da lição: Transitions."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1482,7 +1482,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Transitions."
+          "text": "Pense no conceito central da lição: Transitions."
         },
         {
           "level": 2,
@@ -1501,7 +1501,7 @@
       "id": "legacy-css-u19-l1-practice",
       "lesson_id": "legacy-css-u19-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1518,7 +1518,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Transitions."
+          "text": "Pense no conceito central da lição: Transitions."
         },
         {
           "level": 2,
@@ -1554,11 +1554,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Animations."
+          "text": "Revise o ponto principal da lição: Animations."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1590,7 +1590,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Animations."
+          "text": "Pense no conceito central da lição: Animations."
         },
         {
           "level": 2,
@@ -1609,7 +1609,7 @@
       "id": "legacy-css-u19-l2-practice",
       "lesson_id": "legacy-css-u19-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1626,7 +1626,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Animations."
+          "text": "Pense no conceito central da lição: Animations."
         },
         {
           "level": 2,
@@ -1645,7 +1645,7 @@
       "id": "legacy-css-u19-l3-2",
       "lesson_id": "legacy-css-u19-l3",
       "type": "blank",
-      "prompt": "Defina uma variavel:",
+      "prompt": "Defina uma variável:",
       "starter_code": ":root { {{blank1}}: #22c55e; }",
       "validations": [
         {
@@ -1662,11 +1662,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Variaveis CSS."
+          "text": "Revise o ponto principal da lição: Variáveis CSS."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1681,7 +1681,7 @@
       "id": "legacy-css-u19-l3-3",
       "lesson_id": "legacy-css-u19-l3",
       "type": "blank",
-      "prompt": "Use a variavel:",
+      "prompt": "Use a variável:",
       "starter_code": "button { background: {{blank1}}; }",
       "validations": [
         {
@@ -1698,11 +1698,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Variaveis CSS."
+          "text": "Revise o ponto principal da lição: Variáveis CSS."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1717,7 +1717,7 @@
       "id": "legacy-css-u19-l3-practice",
       "lesson_id": "legacy-css-u19-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1734,7 +1734,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Variaveis CSS."
+          "text": "Pense no conceito central da lição: Variáveis CSS."
         },
         {
           "level": 2,
@@ -1770,11 +1770,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pseudo-elementos."
+          "text": "Revise o ponto principal da lição: Pseudo-elementos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1806,7 +1806,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-elementos."
+          "text": "Pense no conceito central da lição: Pseudo-elementos."
         },
         {
           "level": 2,
@@ -1825,7 +1825,7 @@
       "id": "legacy-css-u19-l4-practice",
       "lesson_id": "legacy-css-u19-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1842,7 +1842,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-elementos."
+          "text": "Pense no conceito central da lição: Pseudo-elementos."
         },
         {
           "level": 2,
@@ -1878,11 +1878,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Sombras e fundos."
+          "text": "Revise o ponto principal da lição: Sombras e fundos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -1914,7 +1914,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Sombras e fundos."
+          "text": "Pense no conceito central da lição: Sombras e fundos."
         },
         {
           "level": 2,
@@ -1933,7 +1933,7 @@
       "id": "legacy-css-u19-l5-practice",
       "lesson_id": "legacy-css-u19-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1950,7 +1950,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Sombras e fundos."
+          "text": "Pense no conceito central da lição: Sombras e fundos."
         },
         {
           "level": 2,
@@ -1986,11 +1986,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Seletores basicos."
+          "text": "Revise o ponto principal da lição: Seletores basicos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2022,7 +2022,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores basicos."
+          "text": "Pense no conceito central da lição: Seletores basicos."
         },
         {
           "level": 2,
@@ -2041,7 +2041,7 @@
       "id": "legacy-css-u22-l1-practice",
       "lesson_id": "legacy-css-u22-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2058,11 +2058,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores basicos."
+          "text": "Pense no conceito central da lição: Seletores basicos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2094,11 +2094,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Combinadores."
+          "text": "Revise o ponto principal da lição: Combinadores."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2130,11 +2130,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Combinadores."
+          "text": "Revise o ponto principal da lição: Combinadores."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2166,7 +2166,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Combinadores."
+          "text": "Pense no conceito central da lição: Combinadores."
         },
         {
           "level": 2,
@@ -2185,7 +2185,7 @@
       "id": "legacy-css-u22-l2-practice",
       "lesson_id": "legacy-css-u22-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2202,11 +2202,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Combinadores."
+          "text": "Pense no conceito central da lição: Combinadores."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2238,11 +2238,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pseudo-classes."
+          "text": "Revise o ponto principal da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2274,7 +2274,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
@@ -2293,7 +2293,7 @@
       "id": "legacy-css-u22-l3-practice",
       "lesson_id": "legacy-css-u22-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2310,11 +2310,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2346,7 +2346,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Especificidade."
+          "text": "Pense no conceito central da lição: Especificidade."
         },
         {
           "level": 2,
@@ -2382,11 +2382,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Especificidade."
+          "text": "Revise o ponto principal da lição: Especificidade."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2401,7 +2401,7 @@
       "id": "legacy-css-u22-l4-practice",
       "lesson_id": "legacy-css-u22-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2418,11 +2418,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Especificidade."
+          "text": "Pense no conceito central da lição: Especificidade."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2454,11 +2454,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Flex container."
+          "text": "Revise o ponto principal da lição: Flex container."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2490,7 +2490,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex container."
+          "text": "Pense no conceito central da lição: Flex container."
         },
         {
           "level": 2,
@@ -2509,7 +2509,7 @@
       "id": "legacy-css-u23-l1-practice",
       "lesson_id": "legacy-css-u23-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2526,11 +2526,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex container."
+          "text": "Pense no conceito central da lição: Flex container."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2562,11 +2562,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Flex items."
+          "text": "Revise o ponto principal da lição: Flex items."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2598,7 +2598,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex items."
+          "text": "Pense no conceito central da lição: Flex items."
         },
         {
           "level": 2,
@@ -2617,7 +2617,7 @@
       "id": "legacy-css-u23-l2-practice",
       "lesson_id": "legacy-css-u23-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2634,11 +2634,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex items."
+          "text": "Pense no conceito central da lição: Flex items."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2670,11 +2670,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Grid basico."
+          "text": "Revise o ponto principal da lição: Grid básico."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2706,7 +2706,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid basico."
+          "text": "Pense no conceito central da lição: Grid básico."
         },
         {
           "level": 2,
@@ -2725,7 +2725,7 @@
       "id": "legacy-css-u23-l3-practice",
       "lesson_id": "legacy-css-u23-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2733,7 +2733,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Grid basico",
+              "answer": "Grid básico",
               "placeholder": "resposta"
             }
           ]
@@ -2742,18 +2742,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid basico."
+          "text": "Pense no conceito central da lição: Grid básico."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Grid basico"
+          "text": "Resposta esperada: Grid básico"
         }
       ],
-      "solution": "Grid basico",
+      "solution": "Grid básico",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -2778,11 +2778,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Layout responsivo."
+          "text": "Revise o ponto principal da lição: Layout responsivo."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2814,7 +2814,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Layout responsivo."
+          "text": "Pense no conceito central da lição: Layout responsivo."
         },
         {
           "level": 2,
@@ -2833,7 +2833,7 @@
       "id": "legacy-css-u23-l4-practice",
       "lesson_id": "legacy-css-u23-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2850,11 +2850,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Layout responsivo."
+          "text": "Pense no conceito central da lição: Layout responsivo."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,

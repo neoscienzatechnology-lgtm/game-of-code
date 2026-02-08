@@ -3,8 +3,8 @@
     {
       "id": "module-html-basics",
       "language": "html",
-      "title": "HTML Basico",
-      "description": "Trilha completa de HTML: estrutura, semantica, formularios, SEO e boas praticas.",
+      "title": "HTML Básico",
+      "description": "Trilha completa de HTML: estrutura, semantica, formularios, SEO e boas práticas.",
       "order": 1,
       "tags": [
         "html",
@@ -16,8 +16,8 @@
     {
       "id": "module-css-basics",
       "language": "css",
-      "title": "CSS Basico",
-      "description": "Trilha completa de CSS: seletores, box model, layout, responsividade e animacoes.",
+      "title": "CSS Básico",
+      "description": "Trilha completa de CSS: seletores, box model, layout, responsividade e animações.",
       "order": 2,
       "tags": [
         "css",
@@ -29,8 +29,8 @@
     {
       "id": "module-js-basics",
       "language": "javascript",
-      "title": "JavaScript Basico",
-      "description": "Trilha pratica para sair do zero com explicacoes curtas, exemplos reais e exercicios guiados.",
+      "title": "JavaScript Básico",
+      "description": "Trilha prática para sair do zero com explicações curtas, exemplos reais e exercícios guiados.",
       "order": 3,
       "tags": [
         "js",

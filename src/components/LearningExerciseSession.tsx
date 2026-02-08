@@ -235,7 +235,7 @@ export function LearningExerciseSession({
           <button
             onClick={onExit}
             className="p-2 rounded-lg hover:bg-muted transition-colors"
-            aria-label="Sair da licao"
+            aria-label="Sair da lição"
           >
             <X className="w-6 h-6 text-muted-foreground" />
           </button>
@@ -289,7 +289,7 @@ export function LearningExerciseSession({
               <div className="glass-card p-3">
                 <div className="text-xs uppercase tracking-wide text-muted-foreground mb-2">Preview</div>
                 <iframe
-                  title="Preview do exercicio"
+                  title="Preview do exercício"
                   srcDoc={previewDoc}
                   className="w-full h-56 bg-white rounded-lg border border-border/40"
                   sandbox="allow-same-origin"
@@ -312,7 +312,7 @@ export function LearningExerciseSession({
                   onChange={event => setCode(event.target.value)}
                   className="w-full min-h-[160px] bg-transparent outline-none resize-y font-mono text-sm"
                   spellCheck={false}
-                  aria-label="Editor de codigo"
+                  aria-label="Editor de código"
                 />
               </div>
               {exercise.type === 'bugfix' && (
@@ -341,7 +341,7 @@ export function LearningExerciseSession({
               </div>
               {conceptLabel && (
                 <p className="text-muted-foreground text-xs">
-                  Voce praticou {conceptLabel}.
+                  Você praticou {conceptLabel}.
                 </p>
               )}
             </div>
@@ -366,7 +366,7 @@ export function LearningExerciseSession({
               variant="secondary"
               onClick={() => setHintLevel(prev => Math.min(prev + 1, exercise.hints.length))}
               className="w-full h-12"
-              aria-label="Ver proxima dica"
+              aria-label="Ver próxima dica"
             >
               <Lightbulb className="w-4 h-4 mr-2" />
               Ver dica
@@ -381,12 +381,12 @@ export function LearningExerciseSession({
                 ? 'gradient-success glow-success hover:opacity-90'
                 : 'gradient-primary glow-primary hover:opacity-90'
             }`}
-            aria-label={showResult === 'correct' ? 'Ir para proximo exercicio' : 'Verificar resposta'}
+            aria-label={showResult === 'correct' ? 'Ir para próximo exercício' : 'Verificar resposta'}
           >
             {showResult === 'correct'
               ? isLastExercise
                 ? 'Concluir'
-                : 'Proximo'
+                : 'Próximo'
               : showResult === 'wrong'
                 ? 'Tentar novamente'
                 : 'Verificar'}

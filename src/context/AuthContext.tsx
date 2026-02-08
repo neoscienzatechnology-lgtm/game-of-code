@@ -36,7 +36,7 @@ const displayNameForUser = (user: User) => {
   if (rawName.trim()) return rawName.trim();
   const email = user.email ?? '';
   if (email) return email.split('@')[0];
-  return 'Usuario';
+  return 'Usuário';
 };
 
 const mapAuthUser = (user: User | null): AuthUser | null => {
@@ -58,18 +58,18 @@ const formatAuthError = (message?: string) => {
     return 'Confirme seu email antes de entrar.';
   }
   if (normalized.includes('already registered') || normalized.includes('user already')) {
-    return 'Email ja cadastrado.';
+    return 'Email já cadastrado.';
   }
   if (normalized.includes('signup') && normalized.includes('not allowed')) {
     return 'Cadastro desativado no momento.';
   }
   if (normalized.includes('password')) {
-    return 'Senha invalida.';
+    return 'Senha inválida.';
   }
   if (normalized.includes('email')) {
-    return 'Email invalido.';
+    return 'Email inválido.';
   }
-  return 'Falha na autenticacao.';
+  return 'Falha na autenticação.';
 };
 
 const ensureSupabase = (): AuthResult | null => {
@@ -127,7 +127,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     const normalizedEmail = email.trim().toLowerCase();
     if (!normalizedEmail || !normalizedEmail.includes('@')) {
-      return { ok: false, error: 'Informe um email valido.' };
+      return { ok: false, error: 'Informe um email válido.' };
     }
     if (!password) {
       return { ok: false, error: 'Informe sua senha.' };
@@ -160,7 +160,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return { ok: false, error: 'Informe seu nome.' };
     }
     if (!normalizedEmail || !normalizedEmail.includes('@')) {
-      return { ok: false, error: 'Informe um email valido.' };
+      return { ok: false, error: 'Informe um email válido.' };
     }
     if (password.length < 6) {
       return { ok: false, error: 'A senha deve ter pelo menos 6 caracteres.' };

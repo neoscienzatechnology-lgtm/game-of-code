@@ -2,8 +2,8 @@
   "module": {
     "id": "module-js-basics",
     "language": "javascript",
-    "title": "JavaScript Basico",
-    "description": "Trilha pratica para sair do zero com explicacoes curtas, exemplos reais e exercicios guiados.",
+    "title": "JavaScript Básico",
+    "description": "Trilha prática para sair do zero com explicações curtas, exemplos reais e exercícios guiados.",
     "order": 3,
     "tags": [
       "js",
@@ -17,8 +17,8 @@
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "variaveis",
-      "title": "Variaveis e constantes",
-      "content": "Objetivo: guardar dados com clareza. Regra pratica: use const por padrao e let quando o valor precisar mudar. Exemplo: const nome = \"Ana\"; let pontos = 0; pontos += 5;. Erro comum: usar nomes vagos como x ou dado; prefira nomes que expliquem a intencao, como totalCarrinho ou usuarioAtual.",
+      "title": "Variáveis e constantes",
+      "content": "Objetivo: guardar dados com clareza. Regra prática: use const por padrão e let quando o valor precisar mudar. Exemplo: const nome = \"Ana\"; let pontos = 0; pontos += 5;. Erro comum: usar nomes vagos como x ou dado; prefira nomes que expliquem a intenção, como totalCarrinho ou usuarioAtual.",
       "order": 1,
       "tags": [
         "js",
@@ -33,7 +33,7 @@
       "language": "javascript",
       "concept": "condicionais",
       "title": "Condicionais",
-      "content": "Objetivo: tomar decisoes no codigo. Use if/else para escolher entre caminhos: if (idade >= 18) { ... } else { ... }. Compare valores com operadores claros (===, !==, >, >=) e combine regras com && (e) e || (ou). Erro comum: usar = dentro de condicao; lembre que = atribui e === compara.",
+      "content": "Objetivo: tomar decisões no código. Use if/else para escolher entre caminhos: if (idade >= 18) { ... } else { ... }. Compare valores com operadores claros (===, !==, >, >=) e combine regras com && (e) e || (ou). Erro comum: usar = dentro de condicao; lembre que = atribui e === compara.",
       "order": 2,
       "tags": [
         "js",
@@ -47,8 +47,8 @@
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "funcoes",
-      "title": "Funcoes",
-      "content": "Objetivo: reutilizar logica sem repetir codigo. Pense em funcao como maquina: entrada (parametros), processamento e saida (return). Exemplo: function soma(a, b) { return a + b; }. Para casos curtos, use arrow function: const dobro = (n) => n * 2;. Erro comum: esquecer o return quando a funcao precisa devolver valor.",
+      "title": "Funções",
+      "content": "Objetivo: reutilizar lógica sem repetir código. Pense em função como maquina: entrada (parametros), processamento e saída (return). Exemplo: function soma(a, b) { return a + b; }. Para casos curtos, use arrow function: const dobro = (n) => n * 2;. Erro comum: esquecer o return quando a função precisa devolver valor.",
       "order": 3,
       "tags": [
         "js",
@@ -63,7 +63,7 @@
       "language": "javascript",
       "concept": "repeticao",
       "title": "Lacos de repeticao",
-      "content": "Objetivo: repetir instrucoes sem copiar e colar codigo. Use for quando souber quantas repeticoes deseja, e while quando depender de uma condicao. Exemplo for: for (let i = 0; i < 3; i++) { ... }. Erro comum: esquecer de atualizar o contador e criar loop infinito.",
+      "content": "Objetivo: repetir instrucoes sem copiar e colar código. Use for quando souber quantas repeticoes deseja, e while quando depender de uma condicao. Exemplo for: for (let i = 0; i < 3; i++) { ... }. Erro comum: esquecer de atualizar o contador e criar loop infinito.",
       "order": 4,
       "tags": [
         "js",
@@ -78,7 +78,7 @@
       "language": "javascript",
       "concept": "arrays",
       "title": "Arrays",
-      "content": "Objetivo: armazenar colecoes de dados na ordem. Acesso por indice comeca em 0: lista[0] e o primeiro item. Propriedade util: lista.length mostra quantidade. Operacao comum: lista.push(novoItem) para adicionar no final. Erro comum: tentar acessar indice que nao existe e receber undefined.",
+      "content": "Objetivo: armazenar coleções de dados na ordem. Acesso por índice começa em 0: lista[0] e o primeiro item. Propriedade útil: lista.length mostra quantidade. Operacao comum: lista.push(novoItem) para adicionar no final. Erro comum: tentar acessar índice que não existe e receber undefined.",
       "order": 5,
       "tags": [
         "js",
@@ -93,7 +93,7 @@
       "language": "javascript",
       "concept": "objetos",
       "title": "Objetos",
-      "content": "Objetivo: representar entidades com propriedades nomeadas. Exemplo: const usuario = { nome: \"Lia\", idade: 20 };. Leia com usuario.nome e atualize com usuario.idade = 21. Use objetos quando cada item tiver varios campos relacionados. Erro comum: confundir [] de arrays com {} de objetos.",
+      "content": "Objetivo: representar entidades com propriedades nomeadas. Exemplo: const usuário = { nome: \"Lia\", idade: 20 };. Leia com usuário.nome e atualize com usuário.idade = 21. Use objetos quando cada item tiver varios campos relacionados. Erro comum: confundir [] de arrays com {} de objetos.",
       "order": 6,
       "tags": [
         "js",
@@ -107,7 +107,7 @@
       "language": "javascript",
       "concept": "strings",
       "title": "Strings e templates",
-      "content": "Objetivo: manipular texto com seguranca e legibilidade. Operacoes essenciais: trim() remove espacos extras, toLowerCase() padroniza letras e template string facilita montar frases: `Ola, ${nome}`. Erro comum: esquecer parenteses em metodos, por exemplo usar toUpperCase em vez de toUpperCase().",
+      "content": "Objetivo: manipular texto com segurança e legibilidade. Operações essenciais: trim() remove espaços extras, toLowerCase() padroniza letras e template string facilita montar frases: `Ola, ${nome}`. Erro comum: esquecer parenteses em métodos, por exemplo usar toUpperCase em vez de toUpperCase().",
       "order": 7,
       "tags": [
         "js",
@@ -121,8 +121,8 @@
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "logica",
-      "title": "Comparacoes e logica booleana",
-      "content": "Objetivo: escrever regras corretas usando true e false. Use comparacoes estritas (===, !==) e operadores logicos: && exige todas as condicoes; || aceita pelo menos uma. Erro comum: confundir = (atribui) com === (compara). Outra boa pratica: quebrar condicoes complexas em variaveis booleanas com nomes claros.",
+      "title": "Comparacoes e lógica booleana",
+      "content": "Objetivo: escrever regras corretas usando true e false. Use comparacoes estritas (===, !==) e operadores logicos: && exige todas as condições; || aceita pelo menos uma. Erro comum: confundir = (atribui) com === (compara). Outra boa prática: quebrar condições complexas em variáveis booleanas com nomes claros.",
       "order": 8,
       "tags": [
         "js",
@@ -136,7 +136,7 @@
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "metodos-array",
-      "title": "Metodos de array: map, filter e reduce",
+      "title": "Métodos de array: map, filter e reduce",
       "content": "Objetivo: transformar listas sem loops manuais. map cria nova lista transformada, filter seleciona itens por condicao e reduce acumula um resultado unico. Exemplo: precos.reduce((total, p) => total + p, 0). Erro comum: esquecer o valor inicial do reduce e gerar comportamento inesperado em listas vazias.",
       "order": 9,
       "tags": [
@@ -153,7 +153,7 @@
       "language": "javascript",
       "concept": "dom-eventos",
       "title": "DOM e eventos",
-      "content": "Objetivo: conectar JavaScript com a interface. Use document.querySelector para selecionar elementos e addEventListener para reagir a acoes do usuario. Padrao util: selecione, valide se o elemento existe e depois atualize textContent ou classes. Erro comum: tentar manipular elemento nulo sem verificar.",
+      "content": "Objetivo: conectar JavaScript com a interface. Use document.querySelector para selecionar elementos e addEventListener para reagir a acoes do usuário. Padrão útil: selecione, valide se o elemento existe e depois atualize textContent ou classes. Erro comum: tentar manipular elemento nulo sem verificar.",
       "order": 10,
       "tags": [
         "js",
@@ -168,7 +168,7 @@
       "language": "javascript",
       "concept": "async-await",
       "title": "Async/Await e requisicoes",
-      "content": "Objetivo: lidar com operacoes que demoram, como chamadas de API. async transforma a funcao para trabalhar com Promises e await pausa ate o resultado chegar. Fluxo basico: await fetch(...), await resposta.json() e retorno final. Erro comum: esquecer await e tentar usar dados antes da resposta estar pronta.",
+      "content": "Objetivo: lidar com operações que demoram, como chamadas de API. async transforma a função para trabalhar com Promises e await pausa ate o resultado chegar. Fluxo básico: await fetch(...), await resposta.json() e retorno final. Erro comum: esquecer await e tentar usar dados antes da resposta estar pronta.",
       "order": 11,
       "tags": [
         "js",
@@ -184,7 +184,7 @@
       "language": "javascript",
       "concept": "tratamento-erros",
       "title": "Tratamento de erros com try/catch",
-      "content": "Objetivo: evitar que seu programa quebre quando algo inesperado acontece. Use try para executar o codigo que pode falhar e catch para tratar o erro com seguranca. Regra pratica: trate erro perto da origem e devolva um resultado previsivel (null, false ou mensagem). Erro comum: capturar erro e ignorar completamente sem retornar nada util.",
+      "content": "Objetivo: evitar que seu programa quebre quando algo inesperado acontece. Use try para executar o código que pode falhar e catch para tratar o erro com segurança. Regra prática: trate erro perto da origem e devolva um resultado previsivel (null, false ou mensagem). Erro comum: capturar erro e ignorar completamente sem retornar nada útil.",
       "order": 12,
       "tags": [
         "js",
@@ -198,8 +198,8 @@
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "promises",
-      "title": "Promises na pratica",
-      "content": "Objetivo: controlar operacoes assincronas com sucesso e falha. Promise.resolve entrega um valor com sucesso e Promise.reject representa erro. Com then voce trata sucesso; com catch trata falha. Em codigo moderno, async/await torna esse fluxo mais legivel. Erro comum: esquecer o catch e deixar erro sem tratamento.",
+      "title": "Promises na prática",
+      "content": "Objetivo: controlar operações assíncronas com sucesso e falha. Promise.resolve entrega um valor com sucesso e Promise.reject representa erro. Com then você trata sucesso; com catch trata falha. Em código moderno, async/await torna esse fluxo mais legível. Erro comum: esquecer o catch e deixar erro sem tratamento.",
       "order": 13,
       "tags": [
         "js",
@@ -214,8 +214,8 @@
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "classes",
-      "title": "Classes e objetos na pratica",
-      "content": "Objetivo: organizar dados e comportamentos relacionados. Com class voce define um molde e com new cria objetos. O constructor recebe os dados iniciais e metodos ficam no corpo da classe. Erro comum: esquecer this ao acessar propriedades da instancia.",
+      "title": "Classes e objetos na prática",
+      "content": "Objetivo: organizar dados e comportamentos relacionados. Com class você define um molde e com new cria objetos. O constructor recebe os dados iniciais e métodos ficam no corpo da classe. Erro comum: esquecer this ao acessar propriedades da instância.",
       "order": 14,
       "tags": [
         "js",
@@ -230,8 +230,8 @@
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "modularizacao",
-      "title": "Modularizacao de codigo",
-      "content": "Objetivo: dividir o codigo em partes pequenas e reutilizaveis. Um modulo deve ter responsabilidade clara, com funcoes de entrada e saida bem definidas. Em projetos reais usamos export/import para ligar modulos. Erro comum: criar modulo gigante com regras de varios assuntos misturados.",
+      "title": "Modularizacao de código",
+      "content": "Objetivo: dividir o código em partes pequenas e reutilizaveis. Um módulo deve ter responsabilidade clara, com funções de entrada e saída bem definidas. Em projetos reais usamos export/import para ligar módulos. Erro comum: criar módulo gigante com regras de varios assuntos misturados.",
       "order": 15,
       "tags": [
         "js",
@@ -246,7 +246,7 @@
       "language": "javascript",
       "concept": "testes",
       "title": "Testes unitarios para iniciantes",
-      "content": "Objetivo: garantir que funcoes continuem corretas ao evoluir o codigo. Um teste unitario valida uma regra pequena, com entrada previsivel e saida esperada. Padrao util: organize por cenarios de sucesso, limite e erro. Erro comum: testar varias responsabilidades ao mesmo tempo e nao saber onde o bug aconteceu.",
+      "content": "Objetivo: garantir que funções continuem corretas ao evoluir o código. Um teste unitário valida uma regra pequena, com entrada previsivel e saída esperada. Padrão útil: organize por cenários de sucesso, limite e erro. Erro comum: testar varias responsabilidades ao mesmo tempo e não saber onde o bug aconteceu.",
       "order": 16,
       "tags": [
         "js",
@@ -261,7 +261,7 @@
       "id": "ex-js-vars-1",
       "lesson_id": "lesson-js-variables",
       "type": "blank",
-      "prompt": "Complete o nome da variavel para guardar o nome da pessoa.",
+      "prompt": "Complete o nome da variável para guardar o nome da pessoa.",
       "starter_code": "const {{blank1}} = \"Ana\";",
       "validations": [
         {
@@ -278,7 +278,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Use um nome de variavel que descreva o valor guardado."
+          "text": "Use um nome de variável que descreva o valor guardado."
         },
         {
           "level": 2,
@@ -297,7 +297,7 @@
       "id": "ex-js-vars-2",
       "lesson_id": "lesson-js-variables",
       "type": "code",
-      "prompt": "Crie uma variavel let chamada contador iniciando em 0.",
+      "prompt": "Crie uma variável let chamada contador iniciando em 0.",
       "starter_code": "// escreva seu codigo abaixo",
       "validations": [
         {
@@ -336,7 +336,7 @@
       "id": "ex-js-vars-3",
       "lesson_id": "lesson-js-variables",
       "type": "bugfix",
-      "prompt": "Corrija o bug: a funcao monta a mensagem, mas nao devolve o resultado.",
+      "prompt": "Corrija o bug: a função monta a mensagem, mas não devolve o resultado.",
       "starter_code": "function criarMensagem(nome) {\n  const mensagem = \"Ola, \" + nome;\n}",
       "validations": [
         {
@@ -352,15 +352,15 @@
       "hints": [
         {
           "level": 1,
-          "text": "A variavel mensagem esta correta. Falta devolver o valor."
+          "text": "A variável mensagem esta correta. Falta devolver o valor."
         },
         {
           "level": 2,
-          "text": "Use return no final da funcao."
+          "text": "Use return no final da função."
         },
         {
           "level": 3,
-          "text": "Return mensagem no final da funcao."
+          "text": "Return mensagem no final da função."
         }
       ],
       "solution": "function criarMensagem(nome) {\n  const mensagem = \"Ola, \" + nome;\n  return mensagem;\n}",
@@ -371,7 +371,7 @@
       "id": "ex-js-if-1",
       "lesson_id": "lesson-js-conditionals",
       "type": "blank",
-      "prompt": "Complete a condicao com a variavel correta.",
+      "prompt": "Complete a condicao com a variável correta.",
       "starter_code": "if ({{blank1}} >= 18) {\n  console.log(\"acesso permitido\");\n}",
       "validations": [
         {
@@ -392,7 +392,7 @@
         },
         {
           "level": 2,
-          "text": "A variavel representa a idade da pessoa."
+          "text": "A variável representa a idade da pessoa."
         },
         {
           "level": 3,
@@ -407,7 +407,7 @@
       "id": "ex-js-if-2",
       "lesson_id": "lesson-js-conditionals",
       "type": "code",
-      "prompt": "Implemente a funcao isPar que retorna true para numeros pares.",
+      "prompt": "Implemente a função isPar que retorna true para numeros pares.",
       "starter_code": "function isPar(n) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -450,7 +450,7 @@
       "id": "ex-js-if-3",
       "lesson_id": "lesson-js-conditionals",
       "type": "bugfix",
-      "prompt": "Corrija a comparacao para que 18 anos tambem seja permitido.",
+      "prompt": "Corrija a comparacao para que 18 anos também seja permitido.",
       "starter_code": "function podeDirigir(idade) {\n  return idade > 18;\n}",
       "validations": [
         {
@@ -489,7 +489,7 @@
       "id": "ex-js-fn-1",
       "lesson_id": "lesson-js-functions",
       "type": "blank",
-      "prompt": "Complete o nome da funcao de soma.",
+      "prompt": "Complete o nome da função de soma.",
       "starter_code": "function {{blank1}}(a, b) {\n  return a + b;\n}",
       "validations": [
         {
@@ -506,11 +506,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Use um nome que indique claramente a acao."
+          "text": "Use um nome que indique claramente a ação."
         },
         {
           "level": 2,
-          "text": "A funcao adiciona dois numeros."
+          "text": "A função adiciona dois numeros."
         },
         {
           "level": 3,
@@ -545,7 +545,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Use const para armazenar a funcao."
+          "text": "Use const para armazenar a função."
         },
         {
           "level": 2,
@@ -564,7 +564,7 @@
       "id": "ex-js-fn-3",
       "lesson_id": "lesson-js-functions",
       "type": "code",
-      "prompt": "Implemente a funcao saudacao que retorna 'Ola, <nome>'.",
+      "prompt": "Implemente a função saudacao que retorna 'Ola, <nome>'.",
       "starter_code": "function saudacao(nome) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -588,7 +588,7 @@
         },
         {
           "level": 2,
-          "text": "Voce pode usar concatenacao ou template string."
+          "text": "Você pode usar concatenacao ou template string."
         },
         {
           "level": 3,
@@ -603,7 +603,7 @@
       "id": "ex-js-fn-4",
       "lesson_id": "lesson-js-functions",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para usar largura e altura no calculo da area.",
+      "prompt": "Corrija a função para usar largura e altura no calculo da área.",
       "starter_code": "function areaRetangulo(largura, altura) {\n  return largura * largura;\n}",
       "validations": [
         {
@@ -619,7 +619,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "A altura foi ignorada no codigo atual."
+          "text": "A altura foi ignorada no código atual."
         },
         {
           "level": 2,
@@ -655,7 +655,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "O for comeca em 0."
+          "text": "O for começa em 0."
         },
         {
           "level": 2,
@@ -674,7 +674,7 @@
       "id": "ex-js-loop-2",
       "lesson_id": "lesson-js-loops",
       "type": "code",
-      "prompt": "Crie a funcao somaAte(n) que soma todos os numeros de 1 ate n.",
+      "prompt": "Crie a função somaAte(n) que soma todos os numeros de 1 ate n.",
       "starter_code": "function somaAte(n) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -698,7 +698,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Crie uma variavel acumuladora com valor inicial 0."
+          "text": "Crie uma variável acumuladora com valor inicial 0."
         },
         {
           "level": 2,
@@ -773,7 +773,7 @@
         },
         {
           "level": 2,
-          "text": "Comeca com a letra l."
+          "text": "Começa com a letra l."
         },
         {
           "level": 3,
@@ -808,11 +808,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Lembre que o primeiro indice de um array e 0."
+          "text": "Lembre que o primeiro índice de um array e 0."
         },
         {
           "level": 2,
-          "text": "Acesso por colchetes: lista[indice]."
+          "text": "Acesso por colchetes: lista[índice]."
         },
         {
           "level": 3,
@@ -827,7 +827,7 @@
       "id": "ex-js-arr-3",
       "lesson_id": "lesson-js-arrays",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para adicionar tarefa no final da lista.",
+      "prompt": "Corrija a função para adicionar tarefa no final da lista.",
       "starter_code": "function adicionarTarefa(lista, tarefa) {\n  lista.pop(tarefa);\n  return lista;\n}",
       "validations": [
         {
@@ -847,7 +847,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "pop remove item; aqui voce precisa adicionar."
+          "text": "pop remove item; aqui você precisa adicionar."
         },
         {
           "level": 2,
@@ -866,7 +866,7 @@
       "id": "ex-js-obj-1",
       "lesson_id": "lesson-js-objects",
       "type": "blank",
-      "prompt": "Complete o acesso para pegar o nome no objeto usuario.",
+      "prompt": "Complete o acesso para pegar o nome no objeto usuário.",
       "starter_code": "const usuario = { nome: 'Lia', idade: 20 };\nconst nomeUsuario = usuario.{{blank1}};",
       "validations": [
         {
@@ -894,7 +894,7 @@
           "text": "Resposta: nome"
         }
       ],
-      "solution": "const usuario = { nome: 'Lia', idade: 20 };\nconst nomeUsuario = usuario.nome;",
+      "solution": "const usuário = { nome: 'Lia', idade: 20 };\nconst nomeUsuario = usuário.nome;",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -902,7 +902,7 @@
       "id": "ex-js-obj-2",
       "lesson_id": "lesson-js-objects",
       "type": "code",
-      "prompt": "Crie a funcao criarProduto(nome, preco) que retorna um objeto com essas propriedades.",
+      "prompt": "Crie a função criarProduto(nome, preco) que retorna um objeto com essas propriedades.",
       "starter_code": "function criarProduto(nome, preco) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -961,7 +961,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Percentual nao e valor fixo. Voce precisa calcular uma parte do preco."
+          "text": "Percentual não e valor fixo. Você precisa calcular uma parte do preco."
         },
         {
           "level": 2,
@@ -980,7 +980,7 @@
       "id": "ex-js-str-1",
       "lesson_id": "lesson-js-strings",
       "type": "blank",
-      "prompt": "Complete com o metodo que remove espacos no inicio e no fim da string.",
+      "prompt": "Complete com o metodo que remove espaços no inicio e no fim da string.",
       "starter_code": "const frase = '  JavaScript  ';\nconst limpa = frase.{{blank1}}();",
       "validations": [
         {
@@ -997,7 +997,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "O metodo remove espacos extras das bordas."
+          "text": "O metodo remove espaços extras das bordas."
         },
         {
           "level": 2,
@@ -1016,7 +1016,7 @@
       "id": "ex-js-str-2",
       "lesson_id": "lesson-js-strings",
       "type": "code",
-      "prompt": "Implemente criarSlug(texto) para retornar minusculo, sem espacos nas pontas e com espacos trocados por hifen.",
+      "prompt": "Implemente criarSlug(texto) para retornar minusculo, sem espaços nas pontas e com espaços trocados por hifen.",
       "starter_code": "function criarSlug(texto) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -1040,7 +1040,7 @@
         },
         {
           "level": 2,
-          "text": "Voce pode usar split(' ') e join('-')."
+          "text": "Você pode usar split(' ') e join('-')."
         },
         {
           "level": 3,
@@ -1055,7 +1055,7 @@
       "id": "ex-js-str-3",
       "lesson_id": "lesson-js-strings",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para retornar o texto com primeira letra maiuscula.",
+      "prompt": "Corrija a função para retornar o texto com primeira letra maiuscula.",
       "starter_code": "function primeiraLetraMaiuscula(nome) {\n  return nome[0].toUpperCase + nome.slice(1);\n}",
       "validations": [
         {
@@ -1130,7 +1130,7 @@
       "id": "ex-js-logic-2",
       "lesson_id": "lesson-js-logic",
       "type": "code",
-      "prompt": "Implemente podeAcessarAreaPremium(logado, assinaturaAtiva). Deve retornar true somente quando as duas condicoes forem verdadeiras.",
+      "prompt": "Implemente podeAcessarAreaPremium(logado, assinaturaAtiva). Deve retornar true somente quando as duas condições forem verdadeiras.",
       "starter_code": "function podeAcessarAreaPremium(logado, assinaturaAtiva) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -1154,7 +1154,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Use operador && para combinar as condicoes."
+          "text": "Use operador && para combinar as condições."
         },
         {
           "level": 2,
@@ -1287,7 +1287,7 @@
       "id": "ex-js-arrm-3",
       "lesson_id": "lesson-js-array-methods",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para somar os precos corretamente com reduce.",
+      "prompt": "Corrija a função para somar os precos corretamente com reduce.",
       "starter_code": "function totalCarrinho(itens) {\n  return itens.reduce((total, item) => total - item.preco, 0);\n}",
       "validations": [
         {
@@ -1362,7 +1362,7 @@
       "id": "ex-js-dom-2",
       "lesson_id": "lesson-js-dom-events",
       "type": "code",
-      "prompt": "Implemente atualizarTexto(doc, seletor, texto): selecione o elemento, atualize textContent e retorne true. Se nao existir, retorne false.",
+      "prompt": "Implemente atualizarTexto(doc, seletor, texto): selecione o elemento, atualize textContent e retorne true. Se não existir, retorne false.",
       "starter_code": "function atualizarTexto(doc, seletor, texto) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -1382,7 +1382,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Guarde o resultado de doc.querySelector(seletor) em uma variavel."
+          "text": "Guarde o resultado de doc.querySelector(seletor) em uma variável."
         },
         {
           "level": 2,
@@ -1401,7 +1401,7 @@
       "id": "ex-js-dom-3",
       "lesson_id": "lesson-js-dom-events",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para registrar o evento correto de clique.",
+      "prompt": "Corrija a função para registrar o evento correto de clique.",
       "starter_code": "function registrarClique(botao, aoClicar) {\n  botao.addEventListener('mouseover', aoClicar);\n}",
       "validations": [
         {
@@ -1417,7 +1417,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "A funcao esta ouvindo o evento errado."
+          "text": "A função esta ouvindo o evento errado."
         },
         {
           "level": 2,
@@ -1472,7 +1472,7 @@
       "id": "ex-js-async-2",
       "lesson_id": "lesson-js-async",
       "type": "code",
-      "prompt": "Implemente a funcao async buscarNomeUsuario(fetchFn, url) que faz a requisicao e retorna dados.nome.",
+      "prompt": "Implemente a função async buscarNomeUsuario(fetchFn, url) que faz a requisicao e retorna dados.nome.",
       "starter_code": "async function buscarNomeUsuario(fetchFn, url) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -1511,7 +1511,7 @@
       "id": "ex-js-async-3",
       "lesson_id": "lesson-js-async",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para aguardar a resposta e retornar dados.total.",
+      "prompt": "Corrija a função para aguardar a resposta e retornar dados.total.",
       "starter_code": "async function obterTotalPedidos(fetchFn) {\n  const resposta = fetchFn('/pedidos');\n  const dados = resposta.json();\n  return dados.total;\n}",
       "validations": [
         {
@@ -1535,7 +1535,7 @@
         },
         {
           "level": 2,
-          "text": "Quando nao usa await, resposta e dados viram Promise, nao valor final."
+          "text": "Quando não usa await, resposta e dados viram Promise, não valor final."
         },
         {
           "level": 3,
@@ -1625,7 +1625,7 @@
       "id": "ex-js-err-3",
       "lesson_id": "lesson-js-error-handling",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para retornar null quando houver divisao por zero.",
+      "prompt": "Corrija a função para retornar null quando houver divisao por zero.",
       "starter_code": "function dividirSeguro(a, b) {\n  try {\n    return a / b;\n  } catch (error) {\n    return null;\n  }\n}",
       "validations": [
         {
@@ -1645,7 +1645,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Dividir por zero nao gera excecao automaticamente em JS."
+          "text": "Dividir por zero não gera excecao automaticamente em JS."
         },
         {
           "level": 2,
@@ -1685,7 +1685,7 @@
         },
         {
           "level": 2,
-          "text": "Comeca com letra maiuscula."
+          "text": "Começa com letra maiuscula."
         },
         {
           "level": 3,
@@ -1700,7 +1700,7 @@
       "id": "ex-js-promise-2",
       "lesson_id": "lesson-js-promises",
       "type": "code",
-      "prompt": "Implemente esperarValor(valor) como funcao async que aguarda uma Promise e retorna o valor final.",
+      "prompt": "Implemente esperarValor(valor) como função async que aguarda uma Promise e retorna o valor final.",
       "starter_code": "async function esperarValor(valor) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -1739,7 +1739,7 @@
       "id": "ex-js-promise-3",
       "lesson_id": "lesson-js-promises",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para usar fallback quando a promessa principal falhar.",
+      "prompt": "Corrija a função para usar fallback quando a promessa principal falhar.",
       "starter_code": "function buscarComFallback(buscarPrimario, buscarSecundario) {\n  return buscarPrimario().then((dados) => dados);\n}",
       "validations": [
         {
@@ -1759,7 +1759,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "A funcao nao trata erro do primario."
+          "text": "A função não trata erro do primario."
         },
         {
           "level": 2,
@@ -1799,14 +1799,14 @@
         },
         {
           "level": 2,
-          "text": "A palavra comeca com c."
+          "text": "A palavra começa com c."
         },
         {
           "level": 3,
           "text": "Resposta: class"
         }
       ],
-      "solution": "class Usuario {\n  constructor(nome) {\n    this.nome = nome;\n  }\n}",
+      "solution": "class Usuário {\n  constructor(nome) {\n    this.nome = nome;\n  }\n}",
       "difficulty": "easy",
       "estimated_time": 30
     },
@@ -1869,7 +1869,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Dentro de metodo de classe, propriedades da instancia usam this."
+          "text": "Dentro de metodo de classe, propriedades da instância usam this."
         },
         {
           "level": 2,
@@ -1888,7 +1888,7 @@
       "id": "ex-js-mod-1",
       "lesson_id": "lesson-js-modularizacao",
       "type": "blank",
-      "prompt": "Complete o nome do objeto que representa um modulo de calculo.",
+      "prompt": "Complete o nome do objeto que representa um módulo de calculo.",
       "starter_code": "const {{blank1}} = {\n  somar(a, b) { return a + b; }\n};",
       "validations": [
         {
@@ -1909,7 +1909,7 @@
         },
         {
           "level": 2,
-          "text": "Comeca com modulo e termina com Calculo."
+          "text": "Começa com módulo e termina com Calculo."
         },
         {
           "level": 3,
@@ -1924,7 +1924,7 @@
       "id": "ex-js-mod-2",
       "lesson_id": "lesson-js-modularizacao",
       "type": "code",
-      "prompt": "Crie a funcao criarModuloUsuario() que retorna um objeto com dois metodos: normalizarNome(nome) e gerarSlug(nome).",
+      "prompt": "Crie a função criarModuloUsuario() que retorna um objeto com dois métodos: normalizarNome(nome) e gerarSlug(nome).",
       "starter_code": "function criarModuloUsuario() {\n  // seu codigo\n}",
       "validations": [
         {
@@ -1948,7 +1948,7 @@
       "hints": [
         {
           "level": 1,
-          "text": "Retorne um objeto com as duas funcoes dentro."
+          "text": "Retorne um objeto com as duas funções dentro."
         },
         {
           "level": 2,
@@ -1967,7 +1967,7 @@
       "id": "ex-js-mod-3",
       "lesson_id": "lesson-js-modularizacao",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para delegar validacao ao modulo recebido por parametro.",
+      "prompt": "Corrija a função para delegar validacao ao módulo recebido por parametro.",
       "starter_code": "function validarComModulo(modulo, email) {\n  return validarEmail(email);\n}",
       "validations": [
         {
@@ -1987,15 +1987,15 @@
       "hints": [
         {
           "level": 1,
-          "text": "A funcao precisa usar o parametro modulo."
+          "text": "A função precisa usar o parametro módulo."
         },
         {
           "level": 2,
-          "text": "Chame modulo.validarEmail(email)."
+          "text": "Chame módulo.validarEmail(email)."
         },
         {
           "level": 3,
-          "text": "return modulo.validarEmail(email);"
+          "text": "return módulo.validarEmail(email);"
         }
       ],
       "solution": "function validarComModulo(modulo, email) {\n  return modulo.validarEmail(email);\n}",
@@ -2006,7 +2006,7 @@
       "id": "ex-js-test-1",
       "lesson_id": "lesson-js-testing",
       "type": "blank",
-      "prompt": "Complete com o nome da funcao usada para validar condicoes em testes.",
+      "prompt": "Complete com o nome da função usada para validar condições em testes.",
       "starter_code": "{{blank1}}(soma(2, 2) === 4, \"2 + 2 deve ser 4\");",
       "validations": [
         {
@@ -2023,11 +2023,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Essa funcao ja aparece nos testes autom?ticos dos exercicios."
+          "text": "Essa função ja aparece nos testes autom?ticos dos exercícios."
         },
         {
           "level": 2,
-          "text": "Comeca com a letra a."
+          "text": "Começa com a letra a."
         },
         {
           "level": 3,
@@ -2042,7 +2042,7 @@
       "id": "ex-js-test-2",
       "lesson_id": "lesson-js-testing",
       "type": "code",
-      "prompt": "Implemente a funcao verificarParidade(fnIsPar) que retorna true somente se a funcao passar nos testes basicos de paridade.",
+      "prompt": "Implemente a função verificarParidade(fnIsPar) que retorna true somente se a função passar nos testes basicos de paridade.",
       "starter_code": "function verificarParidade(fnIsPar) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -2066,7 +2066,7 @@
         },
         {
           "level": 2,
-          "text": "Teste ao menos dois cenarios: 2 -> true e 3 -> false."
+          "text": "Teste ao menos dois cenários: 2 -> true e 3 -> false."
         },
         {
           "level": 3,
@@ -2081,7 +2081,7 @@
       "id": "ex-js-test-3",
       "lesson_id": "lesson-js-testing",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para validar todos os cenarios de teste e retornar false se qualquer um falhar.",
+      "prompt": "Corrija a função para validar todos os cenários de teste e retornar false se qualquer um falhar.",
       "starter_code": "function executarCenarios(fn, cenarios) {\n  for (const cenario of cenarios) {\n    if (fn(cenario.entrada) === cenario.esperado) {\n      return true;\n    }\n  }\n  return false;\n}",
       "validations": [
         {
