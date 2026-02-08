@@ -114,13 +114,28 @@ const loadSeed = async (): Promise<LearningSeed> => {
 
 export const initializeLearningDb = async () => {
   const db = loadDb();
-  if (db.lessons.length && db.exercises.length) return db;
   const seed = await loadSeed();
+  const dbLessonIds = new Set(db.lessons.map(lesson => lesson.id));
+  const dbExerciseIds = new Set(db.exercises.map(exercise => exercise.id));
+  const seedExerciseIds = new Set(seed.exercises.map(exercise => exercise.id));
+
+  const hasMissingData = !db.lessons.length || !db.exercises.length;
+  const hasCountMismatch =
+    db.modules.length !== seed.modules.length
+    || db.lessons.length !== seed.lessons.length
+    || db.exercises.length !== seed.exercises.length;
+  const hasIdMismatch =
+    seed.lessons.some(lesson => !dbLessonIds.has(lesson.id))
+    || seed.exercises.some(exercise => !dbExerciseIds.has(exercise.id));
+
+  if (!hasMissingData && !hasCountMismatch && !hasIdMismatch) return db;
+
   const next: LearningDb = {
     ...db,
     modules: seed.modules,
     lessons: seed.lessons,
     exercises: seed.exercises,
+    userProgress: db.userProgress.filter(progress => seedExerciseIds.has(progress.exercise_id)),
   };
   saveDb(next);
   return next;

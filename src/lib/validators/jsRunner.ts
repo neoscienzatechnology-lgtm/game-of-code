@@ -17,22 +17,34 @@ self.onmessage = (event) => {
     }
   };
 
-  try {
+  (async () => {
     const console = { log: () => {} };
     const module = { exports: {} };
     const exports = module.exports;
-    const combinedCode = [userCode, ...tests.map((test) => test.code)].join('\\n');
-    const fn = new Function('assert', 'console', 'module', 'exports', combinedCode);
-    fn(assert, console, module, exports);
+    const wrappedTests = tests
+      .map((test) => '{\\n' + test.code + '\\n}')
+      .join('\\n');
+    const combinedCode = userCode + '\\n' + wrappedTests;
+    const fn = new Function(
+      'assert',
+      'console',
+      'module',
+      'exports',
+      'return (async () => {\\n' + combinedCode + '\\n})();'
+    );
+    await fn(assert, console, module, exports);
 
     self.postMessage({ passed: true });
-  } catch (err) {
+  })().catch((err) => {
     self.postMessage({ passed: false, error: err && err.message ? err.message : String(err) });
-  }
+  });
 };
 `;
 
-export const runJsTestsInline = (userCode: string, tests: JsTestCase[]): JsTestResult => {
+export const runJsTestsInline = async (
+  userCode: string,
+  tests: JsTestCase[]
+): Promise<JsTestResult> => {
   const assert = (condition: boolean, message?: string) => {
     if (!condition) throw new Error(message || 'Assertion failed');
   };
@@ -41,9 +53,18 @@ export const runJsTestsInline = (userCode: string, tests: JsTestCase[]): JsTestR
     const console = { log: () => {} };
     const module = { exports: {} };
     const exports = module.exports;
-    const combinedCode = [userCode, ...tests.map(test => test.code)].join('\n');
-    const fn = new Function('assert', 'console', 'module', 'exports', combinedCode);
-    fn(assert, console, module, exports);
+    const wrappedTests = tests
+      .map(test => '{\n' + test.code + '\n}')
+      .join('\n');
+    const combinedCode = userCode + '\n' + wrappedTests;
+    const fn = new Function(
+      'assert',
+      'console',
+      'module',
+      'exports',
+      'return (async () => {\n' + combinedCode + '\n})();'
+    );
+    await fn(assert, console, module, exports);
 
     return { passed: true };
   } catch (err) {
@@ -57,7 +78,7 @@ export const runJsTests = async (
   timeoutMs = 1500
 ): Promise<JsTestResult> => {
   if (typeof Worker === 'undefined') {
-    return runJsTestsInline(userCode, tests);
+    return await runJsTestsInline(userCode, tests);
   }
 
   const workerScript = buildWorkerScript();
