@@ -5,6 +5,7 @@ import { LearningExerciseSession } from '@/components/LearningExerciseSession';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
+import { getLessonVisual } from '@/lib/lessonVisuals';
 
 export default function Lesson() {
   const { lessonId } = useParams();
@@ -29,6 +30,11 @@ export default function Lesson() {
   const lessonExercises = useMemo(
     () => exercises.filter(exercise => exercise.lesson_id === lessonId),
     [exercises, lessonId]
+  );
+
+  const lessonVisual = useMemo(
+    () => (lesson ? getLessonVisual(lesson) : null),
+    [lesson]
   );
 
   const completedExerciseIds = useMemo(
@@ -129,6 +135,19 @@ export default function Lesson() {
             <Sparkles className="mr-2 h-3.5 w-3.5" />
             Microlição (15-60s)
           </div>
+          {lessonVisual && (
+            <figure className="overflow-hidden rounded-xl border border-border/60 bg-card/70">
+              <img
+                src={lessonVisual.src}
+                alt={lessonVisual.alt}
+                loading="lazy"
+                className="h-auto w-full object-cover"
+              />
+              <figcaption className="border-t border-border/50 px-3 py-2 text-xs text-muted-foreground">
+                {lessonVisual.caption}
+              </figcaption>
+            </figure>
+          )}
           <h1 className="text-2xl font-bold md:text-3xl">{lesson.title}</h1>
           <p className="leading-relaxed text-muted-foreground">{lesson.content}</p>
 

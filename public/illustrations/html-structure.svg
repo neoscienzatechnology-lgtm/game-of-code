@@ -1,0 +1,28 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Estrutura de documento HTML</title>
+  <desc id="desc">Diagrama em camadas mostrando doctype, html, head e body.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1b33"/>
+      <stop offset="100%" stop-color="#0c1326"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <text x="70" y="80" fill="#e8f7ff" font-size="42" font-family="Arial" font-weight="700">Estrutura base do HTML</text>
+  <text x="70" y="120" fill="#9cb7cc" font-size="22" font-family="Arial">Organize o arquivo por blocos: doctype, html, head e body.</text>
+
+  <rect x="120" y="170" width="960" height="460" rx="24" fill="#101f3a" stroke="#2d5f89"/>
+  <text x="160" y="220" fill="#90d7ff" font-size="28" font-family="Arial" font-weight="700">&lt;!DOCTYPE html&gt;</text>
+
+  <rect x="160" y="250" width="880" height="340" rx="20" fill="#102846" stroke="#3a7ba9"/>
+  <text x="200" y="292" fill="#6fe0d5" font-size="26" font-family="Arial" font-weight="700">&lt;html lang="pt-BR"&gt;</text>
+
+  <rect x="210" y="320" width="780" height="100" rx="16" fill="#0e3251" stroke="#52a9cf"/>
+  <text x="245" y="360" fill="#9be9ff" font-size="24" font-family="Arial" font-weight="700">&lt;head&gt;</text>
+  <text x="245" y="390" fill="#b8d9ec" font-size="19" font-family="Arial">meta charset, title, links de CSS, scripts de configuracao</text>
+
+  <rect x="210" y="440" width="780" height="130" rx="16" fill="#0e3857" stroke="#52b8d8"/>
+  <text x="245" y="480" fill="#9be9ff" font-size="24" font-family="Arial" font-weight="700">&lt;body&gt;</text>
+  <text x="245" y="512" fill="#b8d9ec" font-size="19" font-family="Arial">conteudo visivel: titulos, paragrafos, imagens, links e formularios</text>
+  <text x="245" y="542" fill="#84b3cc" font-size="17" font-family="Arial">Tudo que o usuario ve na pagina deve estar dentro do body.</text>
+</svg>

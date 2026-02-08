@@ -1,0 +1,35 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Layout com Flexbox e Grid</title>
+  <desc id="desc">Comparacao visual entre distribuicao em eixo unico e em grade.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1a31"/>
+      <stop offset="100%" stop-color="#0a1020"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <text x="70" y="80" fill="#e8f6ff" font-size="42" font-family="Arial" font-weight="700">Layout no CSS</text>
+  <text x="70" y="120" fill="#9cb7cc" font-size="22" font-family="Arial">Use Flexbox para eixo unico e Grid para linhas e colunas.</text>
+
+  <rect x="100" y="170" width="480" height="470" rx="24" fill="#132a48" stroke="#2e628a"/>
+  <text x="145" y="225" fill="#7fe4ff" font-size="30" font-family="Arial" font-weight="700">Flexbox</text>
+  <text x="145" y="265" fill="#c8e3f4" font-size="20" font-family="Arial">display: flex; justify-content: space-between;</text>
+  <rect x="145" y="310" width="390" height="260" rx="16" fill="#0e1f3a"/>
+  <rect x="175" y="410" width="90" height="120" rx="10" fill="#35d8ca"/>
+  <rect x="295" y="370" width="90" height="160" rx="10" fill="#59b6ff"/>
+  <rect x="415" y="430" width="90" height="100" rx="10" fill="#8f7dff"/>
+  <line x1="175" y1="560" x2="505" y2="560" stroke="#8daec6" stroke-dasharray="8 8"/>
+  <text x="176" y="592" fill="#8daec6" font-size="17" font-family="Arial">Alinhamento em um eixo principal</text>
+
+  <rect x="620" y="170" width="480" height="470" rx="24" fill="#153154" stroke="#3875a0"/>
+  <text x="665" y="225" fill="#9af5d7" font-size="30" font-family="Arial" font-weight="700">Grid</text>
+  <text x="665" y="265" fill="#c8e3f4" font-size="20" font-family="Arial">display: grid; grid-template-columns: repeat(3, 1fr);</text>
+  <rect x="665" y="310" width="390" height="260" rx="16" fill="#0f2441"/>
+  <rect x="695" y="340" width="100" height="90" rx="10" fill="#4fc4ff"/>
+  <rect x="810" y="340" width="100" height="90" rx="10" fill="#35d8ca"/>
+  <rect x="925" y="340" width="100" height="90" rx="10" fill="#8f7dff"/>
+  <rect x="695" y="445" width="100" height="90" rx="10" fill="#8f7dff"/>
+  <rect x="810" y="445" width="100" height="90" rx="10" fill="#4fc4ff"/>
+  <rect x="925" y="445" width="100" height="90" rx="10" fill="#35d8ca"/>
+  <text x="695" y="592" fill="#8daec6" font-size="17" font-family="Arial">Controle bidimensional de colunas e linhas</text>
+</svg>

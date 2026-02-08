@@ -1,0 +1,40 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Arrays e objetos</title>
+  <desc id="desc">Representacao visual de lista e objeto com operacoes comuns.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#121f38"/>
+      <stop offset="100%" stop-color="#0d1323"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <text x="70" y="80" fill="#edf6ff" font-size="42" font-family="Arial" font-weight="700">Colecoes em JavaScript</text>
+  <text x="70" y="120" fill="#9db5cc" font-size="22" font-family="Arial">Use arrays para lista ordenada e objetos para dados nomeados.</text>
+
+  <rect x="110" y="170" width="500" height="470" rx="24" fill="#183153" stroke="#3b739d"/>
+  <text x="150" y="225" fill="#7cead9" font-size="30" font-family="Arial" font-weight="700">Array</text>
+  <text x="150" y="265" fill="#d6ebf8" font-size="21" font-family="Arial">const alunos = ["Ana", "Leo", "Rafa"]</text>
+  <rect x="150" y="295" width="420" height="310" rx="16" fill="#112748"/>
+  <rect x="180" y="345" width="100" height="200" rx="10" fill="#4fbaff"/>
+  <rect x="290" y="345" width="100" height="200" rx="10" fill="#35d8ca"/>
+  <rect x="400" y="345" width="140" height="200" rx="10" fill="#8f7dff"/>
+  <text x="212" y="380" fill="#0f1d35" font-size="20" font-family="Arial" font-weight="700">0</text>
+  <text x="325" y="380" fill="#0f1d35" font-size="20" font-family="Arial" font-weight="700">1</text>
+  <text x="456" y="380" fill="#0f1d35" font-size="20" font-family="Arial" font-weight="700">2</text>
+  <text x="200" y="430" fill="#0f1d35" font-size="20" font-family="Arial" font-weight="700">Ana</text>
+  <text x="314" y="430" fill="#0f1d35" font-size="20" font-family="Arial" font-weight="700">Leo</text>
+  <text x="446" y="430" fill="#0f1d35" font-size="20" font-family="Arial" font-weight="700">Rafa</text>
+  <text x="185" y="584" fill="#8db2cf" font-size="17" font-family="Arial">Metodos uteis: push, map, filter, find</text>
+
+  <rect x="650" y="170" width="440" height="470" rx="24" fill="#194061" stroke="#4a98ba"/>
+  <text x="690" y="225" fill="#8de8ff" font-size="30" font-family="Arial" font-weight="700">Objeto</text>
+  <text x="690" y="265" fill="#d6ebf8" font-size="21" font-family="Arial">const aluno = { nome: "Ana", nota: 9 }</text>
+  <rect x="690" y="295" width="360" height="310" rx="16" fill="#123252"/>
+  <rect x="720" y="340" width="300" height="60" rx="10" fill="#35d8ca"/>
+  <rect x="720" y="415" width="300" height="60" rx="10" fill="#4fbaff"/>
+  <rect x="720" y="490" width="300" height="60" rx="10" fill="#8f7dff"/>
+  <text x="748" y="378" fill="#10213c" font-size="22" font-family="Arial" font-weight="700">nome: "Ana"</text>
+  <text x="748" y="453" fill="#10213c" font-size="22" font-family="Arial" font-weight="700">nota: 9</text>
+  <text x="748" y="528" fill="#10213c" font-size="22" font-family="Arial" font-weight="700">ativo: true</text>
+  <text x="720" y="584" fill="#95bdd8" font-size="17" font-family="Arial">Acesso: aluno.nome, aluno["nota"]</text>
+</svg>

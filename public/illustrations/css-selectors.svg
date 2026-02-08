@@ -1,0 +1,40 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Seletores CSS</title>
+  <desc id="desc">Comparacao entre seletor por tag, classe e id.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1a32"/>
+      <stop offset="100%" stop-color="#0c1121"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <text x="70" y="80" fill="#ecf6ff" font-size="42" font-family="Arial" font-weight="700">Seletores CSS na pratica</text>
+  <text x="70" y="120" fill="#9db4cc" font-size="22" font-family="Arial">Cada seletor escolhe elementos de um jeito diferente.</text>
+
+  <rect x="90" y="170" width="320" height="470" rx="20" fill="#142744" stroke="#2a557f"/>
+  <text x="130" y="225" fill="#7cd9ff" font-size="30" font-family="Arial" font-weight="700">Tag</text>
+  <text x="130" y="275" fill="#d6e9f6" font-size="23" font-family="Arial">p { color: #0ea5e9; }</text>
+  <rect x="130" y="315" width="240" height="260" rx="14" fill="#0d1d35"/>
+  <text x="150" y="355" fill="#e2f6ff" font-size="19" font-family="Arial">&lt;p&gt;Texto 1&lt;/p&gt;</text>
+  <text x="150" y="390" fill="#6ad9ff" font-size="19" font-family="Arial">&lt;p&gt;Texto 2&lt;/p&gt;</text>
+  <text x="150" y="425" fill="#6ad9ff" font-size="19" font-family="Arial">&lt;p&gt;Texto 3&lt;/p&gt;</text>
+  <text x="150" y="470" fill="#90a8bf" font-size="17" font-family="Arial">Aplica em todos os paragrafos.</text>
+
+  <rect x="440" y="170" width="320" height="470" rx="20" fill="#15304e" stroke="#2e698f"/>
+  <text x="480" y="225" fill="#7cf0db" font-size="30" font-family="Arial" font-weight="700">Classe</text>
+  <text x="480" y="275" fill="#d6e9f6" font-size="23" font-family="Arial">.card { border-radius: 12px; }</text>
+  <rect x="480" y="315" width="240" height="260" rx="14" fill="#0f243d"/>
+  <text x="500" y="355" fill="#e2f6ff" font-size="19" font-family="Arial">&lt;div class="card"&gt;</text>
+  <text x="500" y="390" fill="#76efd8" font-size="19" font-family="Arial">&lt;div class="card"&gt;</text>
+  <text x="500" y="425" fill="#e2f6ff" font-size="19" font-family="Arial">&lt;div&gt;sem classe&lt;/div&gt;</text>
+  <text x="500" y="470" fill="#90a8bf" font-size="17" font-family="Arial">Reutiliza estilo em varios itens.</text>
+
+  <rect x="790" y="170" width="320" height="470" rx="20" fill="#18365a" stroke="#2f7698"/>
+  <text x="830" y="225" fill="#80c7ff" font-size="30" font-family="Arial" font-weight="700">ID</text>
+  <text x="830" y="275" fill="#d6e9f6" font-size="23" font-family="Arial">#hero { padding: 24px; }</text>
+  <rect x="830" y="315" width="240" height="260" rx="14" fill="#122845"/>
+  <text x="850" y="355" fill="#80c7ff" font-size="19" font-family="Arial">&lt;section id="hero"&gt;</text>
+  <text x="850" y="390" fill="#e2f6ff" font-size="19" font-family="Arial">&lt;section id="promo"&gt;</text>
+  <text x="850" y="425" fill="#e2f6ff" font-size="19" font-family="Arial">&lt;section id="footer"&gt;</text>
+  <text x="850" y="470" fill="#90a8bf" font-size="17" font-family="Arial">Ideal para alvo unico.</text>
+</svg>
