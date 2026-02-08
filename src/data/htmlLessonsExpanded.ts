@@ -642,31 +642,42 @@ const createMultipleChoice = (params: {
   };
 };
 
-const hashString = (value: string) =>
-  value.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+const stripTagsFromText = (value: string) => value.replace(/<[^>]+>/g, '').trim();
 
-const GENERIC_HTML_CHALLENGES = [
-  {
-    instruction: 'Qual tag representa o conteudo principal da pagina?',
-    correct: '<main>',
-    wrong: ['<head>', '<meta>'],
-  },
-  {
-    instruction: 'Qual atributo melhora acessibilidade de imagens?',
-    correct: 'alt',
-    wrong: ['src', 'href'],
-  },
-  {
-    instruction: 'Qual tag e usada para links clicaveis?',
-    correct: '<a>',
-    wrong: ['<link>', '<img>'],
-  },
-  {
-    instruction: 'Qual tecnologia estrutura o conteudo da pagina?',
-    correct: 'HTML',
-    wrong: ['CSS', 'JavaScript'],
-  },
-];
+const pickWrongOptions = (correct: string, candidates: string[]) => {
+  const normalizedCorrect = normalize(correct);
+  const unique: string[] = [];
+
+  for (const candidate of candidates) {
+    const normalizedCandidate = normalize(candidate);
+    if (!normalizedCandidate || normalizedCandidate === normalizedCorrect) continue;
+    if (unique.some(item => normalize(item) === normalizedCandidate)) continue;
+    unique.push(candidate);
+  }
+
+  while (unique.length < 2) {
+    unique.push(`Tema diferente ${unique.length + 1}`);
+  }
+
+  return unique.slice(0, 2);
+};
+
+const buildContextualFallbackChallenge = (lesson: Lesson) => {
+  const lessonTopic = stripTagsFromText(lesson.title ?? '').trim() || 'Tema da licao';
+  const wrong = pickWrongOptions(lessonTopic, [
+    'Estrutura basica de HTML',
+    'Estilizacao com CSS',
+    'Interatividade com JavaScript',
+    'Acessibilidade para leitores de tela',
+    'Integracao com APIs',
+  ]);
+
+  return {
+    instruction: 'Com base no que voce acabou de estudar, qual e o tema principal desta licao?',
+    correct: lessonTopic,
+    wrong,
+  };
+};
 
 const buildUniquePracticeExercise = (lesson: Lesson): Exercise | null => {
   const id = `${lesson.id}-challenge`;
@@ -863,8 +874,7 @@ const buildUniquePracticeExercise = (lesson: Lesson): Exercise | null => {
     });
   }
 
-  const fallback =
-    GENERIC_HTML_CHALLENGES[hashString(lesson.id ?? lesson.title ?? id) % GENERIC_HTML_CHALLENGES.length];
+  const fallback = buildContextualFallbackChallenge(lesson);
   return createMultipleChoice({
     id,
     instruction: fallback.instruction,
