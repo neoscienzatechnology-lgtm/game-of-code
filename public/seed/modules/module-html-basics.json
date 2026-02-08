@@ -434,7 +434,7 @@
       "module_id": "module-html-basics",
       "language": "html",
       "concept": "links-e-navegacao-links-internos",
-      "title": "Links internos",
+      "title": "Links internos (site)",
       "content": "Objetivo: Links dentro do site. Links internos apontam para outras paginas do mesmo site. Use caminhos relativos. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
       "order": 29,
       "tags": [
@@ -1426,7 +1426,7 @@
       "module_id": "module-html-basics",
       "language": "html",
       "concept": "seo-com-html-links-internos",
-      "title": "Links internos",
+      "title": "Links internos para SEO",
       "content": "Objetivo: Conectando paginas. Links entre paginas do seu site ajudam buscadores a descobrir e indexar conteudo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
       "order": 100,
       "tags": [

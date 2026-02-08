@@ -29,4 +29,10 @@ export default tseslint.config(
       "no-useless-escape": "off",
     },
   },
+  {
+    files: ["src/components/ui/**/*.tsx", "src/context/AuthContext.tsx"],
+    rules: {
+      "react-refresh/only-export-components": "off",
+    },
+  },
 );
