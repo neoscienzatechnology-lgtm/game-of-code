@@ -21,13 +21,9 @@ self.onmessage = (event) => {
     const console = { log: () => {} };
     const module = { exports: {} };
     const exports = module.exports;
-    const fn = new Function('assert', 'console', 'module', 'exports', userCode);
+    const combinedCode = [userCode, ...tests.map((test) => test.code)].join('\\n');
+    const fn = new Function('assert', 'console', 'module', 'exports', combinedCode);
     fn(assert, console, module, exports);
-
-    for (const test of tests) {
-      const testFn = new Function('assert', 'console', 'module', 'exports', test.code);
-      testFn(assert, console, module, exports);
-    }
 
     self.postMessage({ passed: true });
   } catch (err) {
@@ -45,13 +41,9 @@ export const runJsTestsInline = (userCode: string, tests: JsTestCase[]): JsTestR
     const console = { log: () => {} };
     const module = { exports: {} };
     const exports = module.exports;
-    const fn = new Function('assert', 'console', 'module', 'exports', userCode);
+    const combinedCode = [userCode, ...tests.map(test => test.code)].join('\n');
+    const fn = new Function('assert', 'console', 'module', 'exports', combinedCode);
     fn(assert, console, module, exports);
-
-    for (const test of tests) {
-      const testFn = new Function('assert', 'console', 'module', 'exports', test.code);
-      testFn(assert, console, module, exports);
-    }
 
     return { passed: true };
   } catch (err) {
