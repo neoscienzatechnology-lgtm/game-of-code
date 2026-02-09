@@ -1,5 +1,9 @@
 import { BrainCircuit, Clock3, Sparkles, Target } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { LearningPanel } from '@/components/LearningPanel';
+import { Button } from '@/components/ui/button';
+import { useAuth } from '@/context/AuthContext';
+import { useLearningData } from '@/hooks/useLearningData';
 
 const highlights = [
   {
@@ -19,9 +23,36 @@ const highlights = [
   },
 ];
 
-const Index = () => (
-  <div className="page-shell">
-    <main className="page-content">
+const Index = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const { dueExercises } = useLearningData(user?.id);
+
+  return (
+    <div className="page-shell">
+      <main className="page-content">
+        {dueExercises.length > 0 && (
+          <section className="glass-card mb-6 animate-slide-up p-5 md:p-6">
+            <div className="hero-kicker">
+              <Sparkles className="mr-2 h-3.5 w-3.5" />
+              Revisão diária automática
+            </div>
+            <h2 className="text-xl font-bold md:text-2xl">
+              Você tem {dueExercises.length} questões para revisar hoje
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              A fila diária (3 a 5 questões) foi montada automaticamente para reforçar os pontos
+              mais fracos e manter retenção alta.
+            </p>
+            <Button
+              className="gradient-primary mt-4 text-primary-foreground"
+              onClick={() => navigate('/review')}
+            >
+              Iniciar revisão do dia
+            </Button>
+          </section>
+        )}
+
       <section className="hero-card animate-slide-up">
         <div className="hero-kicker">
           <Sparkles className="mr-2 h-3.5 w-3.5" />
@@ -47,8 +78,9 @@ const Index = () => (
       <div className="mx-auto max-w-3xl">
         <LearningPanel />
       </div>
-    </main>
-  </div>
-);
+      </main>
+    </div>
+  );
+};
 
 export default Index;

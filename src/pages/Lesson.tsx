@@ -1,4 +1,4 @@
-import { BookOpenCheck, Eye, Info, Lightbulb, Lock, Rocket, Sparkles, Target } from 'lucide-react';
+﻿import { BookOpenCheck, Eye, Info, Lightbulb, Lock, Rocket, Sparkles, Target } from 'lucide-react';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LearningExerciseSession } from '@/components/LearningExerciseSession';
@@ -6,6 +6,11 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
 import { getLessonVisual } from '@/lib/lessonVisuals';
+import {
+  LESSON_MASTERY_THRESHOLD,
+  buildMasteredLessonMap,
+  mergeMasteredLessonIds,
+} from '@/lib/learningMastery';
 
 type TheorySection = {
   id: string;
@@ -28,9 +33,9 @@ const normalizeSectionLabel = (raw: string) => {
   if (normalized === 'fato-chave' || normalized === 'fato chave') return 'Fato-chave';
   if (normalized === 'exemplo de uso') return 'Exemplo de uso';
   if (normalized === 'uso comum') return 'Uso comum';
-  if (normalized === 'dica pratica') return 'Dica pratica';
+  if (normalized === 'dica pratica') return 'Dica prática';
   if (normalized === 'importante') return 'Importante';
-  if (normalized === 'atencao') return 'Atencao';
+  if (normalized === 'atencao') return 'Atenção';
   if (normalized === 'veja um exemplo completo aplicado') return 'Exemplo completo';
   if (normalized === 'o que observar') return 'O que observar';
   return raw;
@@ -43,7 +48,7 @@ const parseTheorySections = (content: string): TheorySection[] => {
   const matcher = new RegExp(LABEL_PATTERN.source, 'gi');
   const matches = [...cleanContent.matchAll(matcher)];
   if (!matches.length) {
-    return [{ id: 'teoria-geral', label: 'Visao geral', content: cleanContent }];
+    return [{ id: 'teoria-geral', label: 'Visão geral', content: cleanContent }];
   }
 
   const sections: TheorySection[] = [];
@@ -163,6 +168,7 @@ export default function Lesson() {
     lessons,
     exercises,
     progressByExercise,
+    moduleDiagnostics,
     ensureAllModulesLoaded,
     recordAttempt,
   } = useLearningData(user?.id);
@@ -179,43 +185,52 @@ export default function Lesson() {
     [exercises, lessonId]
   );
 
-  const lessonVisual = useMemo(
-    () => (lesson ? getLessonVisual(lesson) : null),
-    [lesson]
-  );
+  const lessonVisual = useMemo(() => (lesson ? getLessonVisual(lesson) : null), [lesson]);
 
-  const theorySections = useMemo(
-    () => (lesson ? parseTheorySections(lesson.content) : []),
-    [lesson]
-  );
+  const theorySections = useMemo(() => (lesson ? parseTheorySections(lesson.content) : []), [lesson]);
 
-  const completedExerciseIds = useMemo(
-    () =>
-      new Set(
-        Object.values(progressByExercise)
-          .filter(item => item.total_correct > 0)
-          .map(item => item.exercise_id)
-      ),
-    [progressByExercise]
-  );
+  const masteredLessonIds = useMemo(() => {
+    if (!lesson) return new Set<string>();
 
-  const completedLessonIds = useMemo(() => {
-    return new Set(
-      lessons
-        .filter(item => {
-          const lessonExercisesForItem = exercises.filter(exercise => exercise.lesson_id === item.id);
-          if (lessonExercisesForItem.length === 0) return false;
-          return lessonExercisesForItem.every(exercise => completedExerciseIds.has(exercise.id));
-        })
-        .map(item => item.id)
+    const moduleLessons = lessons.filter(item => item.module_id === lesson.module_id);
+    const masteryMap = buildMasteredLessonMap(
+      moduleLessons,
+      exercises,
+      progressByExercise,
+      LESSON_MASTERY_THRESHOLD
     );
-  }, [completedExerciseIds, exercises, lessons]);
+    const diagnostic = moduleDiagnostics[lesson.module_id];
+
+    return mergeMasteredLessonIds(masteryMap, diagnostic?.mastered_lesson_ids ?? []);
+  }, [exercises, lesson, lessons, moduleDiagnostics, progressByExercise]);
 
   const lessonUnlocked = useMemo(() => {
     if (!lesson) return true;
     const prerequisites = lesson.prerequisites ?? [];
-    return prerequisites.every(prereq => completedLessonIds.has(prereq));
-  }, [completedLessonIds, lesson]);
+    return prerequisites.every(prereq => masteredLessonIds.has(prereq));
+  }, [lesson, masteredLessonIds]);
+
+  const currentLessonAccuracy = useMemo(() => {
+    if (!lesson) return 0;
+    const lessonExercises = exercises.filter(exercise => exercise.lesson_id === lesson.id);
+    let totalCorrect = 0;
+    let totalWrong = 0;
+
+    for (const exercise of lessonExercises) {
+      const progress = progressByExercise[exercise.id];
+      if (!progress) continue;
+      totalCorrect += progress.total_correct;
+      totalWrong += progress.total_wrong ?? (progress.last_result === 'wrong' ? 1 : 0);
+    }
+
+    const attempts = totalCorrect + totalWrong;
+    return attempts > 0 ? totalCorrect / attempts : 0;
+  }, [exercises, lesson, progressByExercise]);
+
+  const currentLessonMastered = useMemo(() => {
+    if (!lesson) return false;
+    return masteredLessonIds.has(lesson.id);
+  }, [lesson, masteredLessonIds]);
 
   useEffect(() => {
     if (loading || !lessonId || lesson || loadedAll) return;
@@ -251,7 +266,8 @@ export default function Lesson() {
           </div>
           <h1 className="text-2xl font-bold">Lição bloqueada</h1>
           <p className="text-muted-foreground">
-            Esta lição possui pré-requisitos. Conclua as lições anteriores para desbloquear.
+            Esta lição possui pré-requisitos. Conclua as lições anteriores com domínio mínimo de{' '}
+            {Math.round(LESSON_MASTERY_THRESHOLD * 100)}% para desbloquear.
           </p>
           <Button onClick={() => navigate('/')}>Voltar ao início</Button>
         </div>
@@ -271,6 +287,15 @@ export default function Lesson() {
           <p className="text-muted-foreground">
             Você finalizou <strong className="text-foreground">{lesson.title}</strong>. Continue para manter o ritmo.
           </p>
+          <p className="text-xs text-muted-foreground">
+            Acurácia atual: {Math.round(currentLessonAccuracy * 100)}% (mínimo para avanço:{' '}
+            {Math.round(LESSON_MASTERY_THRESHOLD * 100)}%).
+          </p>
+          {!currentLessonMastered && (
+            <Button variant="secondary" onClick={() => setStage('exercises')}>
+              Reforçar esta lição
+            </Button>
+          )}
           <Button onClick={() => navigate('/')} className="gradient-primary text-primary-foreground">
             Voltar ao início
           </Button>
@@ -308,10 +333,7 @@ export default function Lesson() {
               const Icon = meta.icon;
 
               return (
-                <article
-                  key={section.id}
-                  className={`rounded-xl border p-4 ${meta.accentClass}`}
-                >
+                <article key={section.id} className={`rounded-xl border p-4 ${meta.accentClass}`}>
                   <div className="mb-2 flex items-center gap-2">
                     <span
                       className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] ${meta.chipClass}`}
@@ -368,6 +390,7 @@ export default function Lesson() {
         recordAttempt({ exerciseId: exercise.id, correct, concept: lesson.concept })
       }
       getConceptForExercise={() => lesson.title}
+      getLessonContext={() => ({ title: lesson.title, content: lesson.content })}
     />
   );
 }

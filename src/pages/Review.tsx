@@ -44,6 +44,13 @@ export default function Review() {
     }, {});
   }, [lessons]);
 
+  const lessonContentById = useMemo(() => {
+    return lessons.reduce<Record<string, string>>((acc, lesson) => {
+      acc[lesson.id] = lesson.content;
+      return acc;
+    }, {});
+  }, [lessons]);
+
   const conceptForExercise = (exerciseId: string) => {
     const exercise = exercises.find(item => item.id === exerciseId);
     if (!exercise) return undefined;
@@ -54,6 +61,15 @@ export default function Review() {
     const exercise = exercises.find(item => item.id === exerciseId);
     if (!exercise) return undefined;
     return lessonTitleById[exercise.lesson_id] ?? conceptByLesson[exercise.lesson_id];
+  };
+
+  const lessonContextForExercise = (exerciseId: string) => {
+    const exercise = exercises.find(item => item.id === exerciseId);
+    if (!exercise) return undefined;
+    const title = lessonTitleById[exercise.lesson_id];
+    const content = lessonContentById[exercise.lesson_id];
+    if (!title || !content) return undefined;
+    return { title, content };
   };
 
   if (loading || loadingAll) {
@@ -97,6 +113,7 @@ export default function Review() {
         })
       }
       getConceptForExercise={labelForExercise}
+      getLessonContext={lessonContextForExercise}
     />
   );
 }

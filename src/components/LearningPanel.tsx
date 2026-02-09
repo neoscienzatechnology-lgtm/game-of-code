@@ -1,9 +1,22 @@
-import { useEffect, useMemo, useState } from 'react';
+﻿import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BarChart3, BookOpen, Flame, Loader2, Lock, Search, Shield, Zap } from 'lucide-react';
+import {
+  BarChart3,
+  BookOpen,
+  ClipboardCheck,
+  Flame,
+  Loader2,
+  Lock,
+  Search,
+  Shield,
+  Target,
+  Trophy,
+  Zap,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
+import { LESSON_MASTERY_THRESHOLD, buildMasteredLessonMap, mergeMasteredLessonIds } from '@/lib/learningMastery';
 
 const SELECTED_MODULE_KEY = 'learning-selected-module';
 
@@ -34,14 +47,20 @@ export function LearningPanel() {
     progressByExercise,
     stats,
     dueExercises,
+    weeklyProgress,
+    leaderboard,
     conceptProgress,
+    moduleDiagnostics,
+    moduleProjectStatus,
     ensureModuleLoaded,
     ensureAllModulesLoaded,
+    updateWeeklyGoal,
   } = useLearningData(user?.id);
 
   const [selectedModuleId, setSelectedModuleId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [loadingAll, setLoadingAll] = useState(false);
+  const [weeklyGoalInput, setWeeklyGoalInput] = useState('');
 
   const sortedModules = useMemo(
     () => [...modules].sort((a, b) => a.order - b.order),
@@ -79,6 +98,11 @@ export function LearningPanel() {
     void ensureModuleLoaded(module.id);
   }, [ensureModuleLoaded, loadedModules, module]);
 
+  useEffect(() => {
+    if (!weeklyProgress) return;
+    setWeeklyGoalInput(String(weeklyProgress.goalXp));
+  }, [weeklyProgress]);
+
   const handleSelectModule = (moduleId: string) => {
     setSelectedModuleId(moduleId);
     if (typeof window !== 'undefined') {
@@ -86,15 +110,7 @@ export function LearningPanel() {
     }
   };
 
-  const completedExerciseIds = useMemo(
-    () =>
-      new Set(
-        Object.values(progressByExercise)
-          .filter(item => item.total_correct > 0)
-          .map(item => item.exercise_id)
-      ),
-    [progressByExercise]
-  );
+  const diagnostic = module ? moduleDiagnostics[module.id] : null;
 
   const lessonProgress = useMemo(() => {
     if (!module) return [];
@@ -103,37 +119,42 @@ export function LearningPanel() {
       .filter(lesson => lesson.module_id === module.id)
       .sort((a, b) => a.order - b.order);
 
-    const completionByLesson = new Map<string, boolean>();
+    const masteryMap = buildMasteredLessonMap(
+      moduleLessons,
+      exercises,
+      progressByExercise,
+      LESSON_MASTERY_THRESHOLD
+    );
+    const masteredLessonIds = mergeMasteredLessonIds(
+      masteryMap,
+      diagnostic?.mastered_lesson_ids ?? []
+    );
 
-    const progressRows = moduleLessons.map(lesson => {
-      const lessonExercises = exercises.filter(ex => ex.lesson_id === lesson.id);
-      const completed = lessonExercises.filter(ex => completedExerciseIds.has(ex.id)).length;
-      const total = lessonExercises.length;
+    const rows = moduleLessons.map(lesson => {
+      const mastery = masteryMap.get(lesson.id);
+      const completed = mastery?.completed ?? 0;
+      const total = mastery?.total ?? 0;
       const percent = total ? Math.round((completed / total) * 100) : 0;
-      const fullyCompleted = total > 0 && completed >= total;
-
-      completionByLesson.set(lesson.id, fullyCompleted);
+      const accuracy = Math.round((mastery?.accuracy ?? 0) * 100);
+      const mastered = masteredLessonIds.has(lesson.id);
+      const prerequisites = lesson.prerequisites ?? [];
+      const blockedBy = prerequisites.filter(prereqId => !masteredLessonIds.has(prereqId));
 
       return {
         lesson,
         completed,
         total,
         percent,
-        fullyCompleted,
-      };
-    });
-
-    return progressRows.map(row => {
-      const prerequisites = row.lesson.prerequisites ?? [];
-      const blockedBy = prerequisites.filter(prereqId => !completionByLesson.get(prereqId));
-      return {
-        ...row,
+        accuracy,
+        mastered,
         prerequisites,
         blockedBy,
         unlocked: blockedBy.length === 0,
       };
     });
-  }, [completedExerciseIds, exercises, lessons, module]);
+
+    return rows;
+  }, [diagnostic?.mastered_lesson_ids, exercises, lessons, module, progressByExercise]);
 
   const moduleProgress = useMemo(() => {
     const total = lessonProgress.reduce((acc, item) => acc + item.total, 0);
@@ -142,6 +163,16 @@ export function LearningPanel() {
       total,
       completed,
       percent: total ? Math.round((completed / total) * 100) : 0,
+    };
+  }, [lessonProgress]);
+
+  const moduleMastery = useMemo(() => {
+    const totalLessons = lessonProgress.length;
+    const masteredLessons = lessonProgress.filter(item => item.mastered).length;
+    return {
+      totalLessons,
+      masteredLessons,
+      percent: totalLessons ? Math.round((masteredLessons / totalLessons) * 100) : 0,
     };
   }, [lessonProgress]);
 
@@ -163,10 +194,19 @@ export function LearningPanel() {
     });
   }, [lessonProgress, searchTerm]);
 
-  const nextLessonId =
-    lessonProgress.find(item => item.unlocked && item.completed < item.total)?.lesson.id ??
-    lessonProgress.find(item => item.unlocked)?.lesson.id ??
-    null;
+  const nextLessonId = useMemo(() => {
+    const recommended = diagnostic?.recommended_lesson_id;
+    if (recommended) {
+      const row = lessonProgress.find(item => item.lesson.id === recommended);
+      if (row && row.unlocked && !row.mastered) return row.lesson.id;
+    }
+
+    return (
+      lessonProgress.find(item => item.unlocked && !item.mastered)?.lesson.id ??
+      lessonProgress.find(item => item.unlocked)?.lesson.id ??
+      null
+    );
+  }, [diagnostic?.recommended_lesson_id, lessonProgress]);
 
   const protectionAvailable = useMemo(() => {
     if (!stats?.protection_used_at) return true;
@@ -204,6 +244,10 @@ export function LearningPanel() {
   }, [lessons]);
 
   const moduleLoaded = module ? loadedModules.includes(module.id) : false;
+  const projectStatus = module
+    ? moduleProjectStatus[module.id] ?? { submitted: false, score: 0, submittedAt: null }
+    : { submitted: false, score: 0, submittedAt: null };
+  const diagnosticScorePercent = diagnostic ? Math.round(diagnostic.score * 100) : null;
 
   if (loading || !module) return null;
 
@@ -293,6 +337,23 @@ export function LearningPanel() {
           <p className="mt-2 text-[11px] text-muted-foreground">
             {moduleProgress.completed} de {moduleProgress.total} exercícios concluídos
           </p>
+
+          <div className="mb-2 mt-4 flex items-center justify-between text-xs text-muted-foreground">
+            <span>Domínio da trilha (mín. {Math.round(LESSON_MASTERY_THRESHOLD * 100)}%)</span>
+            <span className="font-semibold text-foreground">{moduleMastery.percent}%</span>
+          </div>
+          <div
+            className="progress-bar h-2.5"
+            role="progressbar"
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-valuenow={moduleMastery.percent}
+          >
+            <div className="progress-fill" style={{ width: `${moduleMastery.percent}%` }} />
+          </div>
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            {moduleMastery.masteredLessons} de {moduleMastery.totalLessons} lições com domínio validado
+          </p>
         </div>
 
         <div className="grid grid-cols-3 gap-2">
@@ -315,6 +376,112 @@ export function LearningPanel() {
           </div>
         </div>
       </div>
+
+      <div className="mb-5 grid gap-3 md:grid-cols-2">
+        <div className="glass-card p-4">
+          <div className="mb-2 flex items-center gap-2 text-sm font-semibold">
+            <Target className="h-4 w-4 text-primary" />
+            Diagnóstico inicial
+          </div>
+          {diagnostic ? (
+            <p className="text-xs text-muted-foreground">
+              Último resultado: <strong className="text-foreground">{diagnosticScorePercent}%</strong>. Recomendação salva para acelerar a trilha.
+            </p>
+          ) : (
+            <p className="text-xs text-muted-foreground">
+              Faça o diagnóstico para pular conteúdos já dominados e focar nos pontos fracos.
+            </p>
+          )}
+          <Button
+            variant="secondary"
+            className="mt-3 w-full"
+            onClick={() => navigate(`/diagnostic/${module.id}`)}
+          >
+            {diagnostic ? 'Refazer diagnóstico' : 'Iniciar diagnóstico'}
+          </Button>
+        </div>
+
+        <div className="glass-card p-4">
+          <div className="mb-2 flex items-center gap-2 text-sm font-semibold">
+            <ClipboardCheck className="h-4 w-4 text-primary" />
+            Projeto final do módulo
+          </div>
+          <p className="text-xs text-muted-foreground">
+            {projectStatus.submitted
+              ? `Projeto salvo com ${projectStatus.score} pontos.`
+              : 'Checklist prático para consolidar o módulo com critérios objetivos.'}
+          </p>
+          <Button
+            variant="secondary"
+            className="mt-3 w-full"
+            onClick={() => navigate(`/project/${module.id}`)}
+          >
+            {projectStatus.submitted ? 'Atualizar projeto' : 'Abrir projeto final'}
+          </Button>
+        </div>
+      </div>
+
+      {weeklyProgress && (
+        <div className="glass-card mb-5 p-4">
+          <div className="mb-3 flex items-center gap-2 text-sm font-semibold">
+            <Trophy className="h-4 w-4 text-xp" />
+            Meta semanal e ranking
+          </div>
+
+          <div className="mb-2 flex items-center justify-between text-xs text-muted-foreground">
+            <span>Semana iniciada em {weeklyProgress.weekKey}</span>
+            <span className="font-semibold text-foreground">{weeklyProgress.percent}%</span>
+          </div>
+          <div className="progress-bar h-2.5">
+            <div className="progress-fill" style={{ width: `${weeklyProgress.percent}%` }} />
+          </div>
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            {weeklyProgress.earnedXp} / {weeklyProgress.goalXp} XP (faltam {weeklyProgress.remainingXp} XP)
+          </p>
+
+          <div className="mt-3 grid gap-2 sm:grid-cols-[1fr_auto]">
+            <input
+              value={weeklyGoalInput}
+              onChange={event => setWeeklyGoalInput(event.target.value)}
+              className="w-full rounded-xl border border-border bg-muted/35 px-3 py-2 text-sm outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/30"
+              placeholder="Meta semanal de XP"
+              inputMode="numeric"
+            />
+            <Button
+              variant="secondary"
+              onClick={() => {
+                const parsedGoal = Number(weeklyGoalInput.replace(/[^0-9]/g, ''));
+                if (!Number.isFinite(parsedGoal) || parsedGoal <= 0) return;
+                updateWeeklyGoal(parsedGoal);
+              }}
+            >
+              Salvar meta
+            </Button>
+          </div>
+
+          {leaderboard.length > 0 && (
+            <div className="mt-3 space-y-2">
+              {leaderboard.map((entry, index) => (
+                <div
+                  key={`${entry.userId}-${index}`}
+                  className="flex items-center justify-between rounded-lg border border-border/50 bg-muted/25 px-3 py-2 text-xs"
+                >
+                  <span className="font-semibold text-foreground">#{index + 1} {entry.label}</span>
+                  <span className="text-xp">{entry.xp} XP</span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <Button
+            variant="secondary"
+            className="mt-3 w-full"
+            onClick={() => navigate('/admin')}
+          >
+            Abrir painel do professor
+          </Button>
+        </div>
+      )}
 
       {weakConcepts.length > 0 && (
         <div className="glass-card mb-5 p-4">
@@ -354,7 +521,7 @@ export function LearningPanel() {
         </Button>
         {dueExercises.length > 0 && (
           <Button variant="secondary" onClick={() => navigate('/review')} className="h-12">
-            Revisão rápida ({dueExercises.length})
+            Revisão diária ({dueExercises.length})
           </Button>
         )}
       </div>
@@ -415,15 +582,20 @@ export function LearningPanel() {
                   {item.lesson.title}
                 </span>
                 <span className="text-xs text-muted-foreground">
-                  {item.completed}/{item.total}
+                  {item.completed}/{item.total} | acerto {item.accuracy}%
                 </span>
               </div>
               <div className="progress-bar mt-2 h-2">
                 <div className="progress-fill" style={{ width: `${item.percent}%` }} />
               </div>
+              <p className="mt-2 text-[11px] text-muted-foreground">
+                {item.mastered
+                  ? 'Domínio validado para esta lição.'
+                  : `Necessário domínio mínimo de ${Math.round(LESSON_MASTERY_THRESHOLD * 100)}% para avançar.`}
+              </p>
               {locked && item.blockedBy.length > 0 && (
-                <p className="mt-2 text-[11px] text-warning">
-                  Complete a lição anterior para desbloquear.
+                <p className="mt-1 text-[11px] text-warning">
+                  Complete os pré-requisitos com domínio mínimo para desbloquear.
                 </p>
               )}
             </button>

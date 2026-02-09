@@ -10,6 +10,7 @@ interface LearningExerciseSessionProps {
   onExit?: () => void;
   onAttempt?: (exercise: ExerciseData, correct: boolean) => void;
   getConceptForExercise?: (exerciseId: string) => string | undefined;
+  getLessonContext?: (exerciseId: string) => { title: string; content: string } | undefined;
 }
 
 const getXpForExercise = (exercise: ExerciseData) => {
@@ -143,12 +144,43 @@ const GENERIC_DISTRACTORS = [
   'action',
 ];
 
+const getTheorySnippet = (content: string) => {
+  if (!content.trim()) return '';
+  const sections = content.split(/(?=\b(?:Objetivo|Fato-chave|Exemplo de uso|Dica prática|Uso comum)\s*:)/i);
+  const first = sections[0]?.trim() || content.trim();
+  return first.slice(0, 220);
+};
+
+const buildPedagogicalFeedback = (params: {
+  exercise: ExerciseData;
+  lessonContext?: { title: string; content: string };
+  blankValidation?: Extract<ExerciseValidation, { type: 'blank' }>;
+  hint?: string;
+  attemptsOnCurrent: number;
+}) => {
+  const { exercise, lessonContext, blankValidation, hint, attemptsOnCurrent } = params;
+  const concept = lessonContext?.title || 'este conceito';
+  const snippet = lessonContext ? getTheorySnippet(lessonContext.content) : '';
+  const firstBlankAnswer = blankValidation?.blanks[0]?.answer?.trim();
+
+  if (attemptsOnCurrent >= 1 && firstBlankAnswer && blankValidation?.blanks.length === 1) {
+    return `Revisão orientada (${concept}): ${snippet || 'Volte ao resumo da lição e compare sua resposta com o conceito-chave.'} Atenção ao termo central: ${firstBlankAnswer}.`;
+  }
+
+  if (hint) {
+    return `Revisão orientada (${concept}): ${snippet || 'Leia novamente a teoria da lição.'} Dica pedagógica: ${hint}`;
+  }
+
+  return `Revisão orientada (${concept}): ${snippet || 'Leia novamente a teoria e destaque os termos principais antes de tentar de novo.'}`;
+};
+
 export function LearningExerciseSession({
   exercises,
   onComplete,
   onExit,
   onAttempt,
   getConceptForExercise,
+  getLessonContext,
 }: LearningExerciseSessionProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [blanks, setBlanks] = useState<Record<string, string>>({});
@@ -158,6 +190,8 @@ export function LearningExerciseSession({
   const [showResult, setShowResult] = useState<'correct' | 'wrong' | null>(null);
   const [hintLevel, setHintLevel] = useState(0);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
+  const [pedagogicalFeedback, setPedagogicalFeedback] = useState<string | undefined>(undefined);
+  const [attemptsOnCurrent, setAttemptsOnCurrent] = useState(0);
   const [checking, setChecking] = useState(false);
 
   const exercise = exercises[currentIndex];
@@ -257,6 +291,8 @@ export function LearningExerciseSession({
     setShowResult(null);
     setHintLevel(0);
     setErrorMessage(undefined);
+    setPedagogicalFeedback(undefined);
+    setAttemptsOnCurrent(0);
     setChecking(false);
   }, [exercise?.id, exercise?.starter_code]);
 
@@ -292,10 +328,21 @@ export function LearningExerciseSession({
     if (result.passed) {
       setShowResult('correct');
       setErrorMessage(undefined);
+      setPedagogicalFeedback(undefined);
       onAttempt?.(exercise, true);
     } else {
+      const lessonContext = getLessonContext?.(exercise.id);
+      const feedback = buildPedagogicalFeedback({
+        exercise,
+        lessonContext,
+        blankValidation,
+        hint: exercise.hints[0]?.text,
+        attemptsOnCurrent,
+      });
       setShowResult('wrong');
       setErrorMessage(result.friendlyMessage ?? result.error);
+      setPedagogicalFeedback(feedback);
+      setAttemptsOnCurrent(prev => prev + 1);
       onAttempt?.(exercise, false);
     }
 
@@ -543,8 +590,11 @@ export function LearningExerciseSession({
           )}
 
           {showResult === 'wrong' && errorMessage && (
-            <div className="glass-card mt-6 p-4 text-center text-sm text-error" aria-live="polite">
-              {errorMessage}
+            <div className="glass-card mt-6 space-y-2 p-4 text-sm" aria-live="polite">
+              <p className="text-center font-semibold text-error">{errorMessage}</p>
+              {pedagogicalFeedback && (
+                <p className="text-center text-muted-foreground">{pedagogicalFeedback}</p>
+              )}
             </div>
           )}
 

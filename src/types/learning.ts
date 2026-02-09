@@ -91,12 +91,51 @@ export interface UserStats {
   protection_used_at: string | null;
 }
 
+export interface ModuleDiagnosticRecord {
+  user_id: string;
+  module_id: string;
+  score: number;
+  question_count: number;
+  mastered_lesson_ids: string[];
+  recommended_lesson_id: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ProjectChecklistItemResult {
+  id: string;
+  checked: boolean;
+}
+
+export interface ModuleProjectSubmission {
+  user_id: string;
+  module_id: string;
+  score: number;
+  checklist: ProjectChecklistItemResult[];
+  notes?: string;
+  project_url?: string;
+  submitted_at: string;
+}
+
+export interface AttemptLogEntry {
+  user_id: string;
+  exercise_id: string;
+  concept: string;
+  correct: boolean;
+  xp_earned: number;
+  created_at: string;
+}
+
 export interface LearningDb {
   modules: ModuleData[];
   lessons: LessonData[];
   exercises: ExerciseData[];
   loadedModules?: string[];
   seedRevision?: string;
+  moduleDiagnostics?: ModuleDiagnosticRecord[];
+  moduleProjects?: ModuleProjectSubmission[];
+  attemptLog?: AttemptLogEntry[];
+  weeklyGoals?: Record<string, number>;
   userProgress: UserProgress[];
   userStats: Record<string, UserStats>;
 }

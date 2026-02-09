@@ -9,6 +9,9 @@ import { AuthProvider } from "@/context/AuthContext";
 const Index = lazy(() => import("./pages/Index"));
 const Lesson = lazy(() => import("./pages/Lesson"));
 const Review = lazy(() => import("./pages/Review"));
+const Diagnostic = lazy(() => import("./pages/Diagnostic"));
+const Project = lazy(() => import("./pages/Project"));
+const Admin = lazy(() => import("./pages/Admin"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -35,6 +38,9 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/lesson/:lessonId" element={<Lesson />} />
               <Route path="/review" element={<Review />} />
+              <Route path="/diagnostic/:moduleId" element={<Diagnostic />} />
+              <Route path="/project/:moduleId" element={<Project />} />
+              <Route path="/admin" element={<Admin />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -1,7 +1,10 @@
 import type {
+  AttemptLogEntry,
   ExerciseData,
   LearningDb,
   LessonData,
+  ModuleDiagnosticRecord,
+  ModuleProjectSubmission,
   ModuleData,
   UserProgress,
   UserStats,
@@ -9,7 +12,7 @@ import type {
 
 const DB_KEY = 'learning-db';
 const DEFAULT_USER_ID = 'local-user';
-const SEED_REVISION = '2026-02-09-theory-check-v1';
+const SEED_REVISION = '2026-02-09-learning-suite-v1';
 
 type ModuleManifest = {
   modules: ModuleData[];
@@ -38,6 +41,10 @@ const DEFAULT_DB: LearningDb = {
   exercises: [],
   loadedModules: [],
   seedRevision: SEED_REVISION,
+  moduleDiagnostics: [],
+  moduleProjects: [],
+  attemptLog: [],
+  weeklyGoals: {},
   userProgress: [],
   userStats: {},
 };
@@ -50,7 +57,51 @@ let fullSeedCache: {
   exercises: ExerciseData[];
 } | null = null;
 
+const DEFAULT_WEEKLY_GOAL_XP = 300;
+const DAILY_REVIEW_MIN = 3;
+const DAILY_REVIEW_MAX = 5;
+const MODULE_DIAGNOSTIC_QUESTION_COUNT = 5;
+
 const getTodayKey = (date: Date) => date.toISOString().split('T')[0];
+
+const getWeekStart = (date: Date) => {
+  const start = new Date(date);
+  const day = start.getDay();
+  const diff = day === 0 ? -6 : 1 - day; // Monday as first day
+  start.setHours(0, 0, 0, 0);
+  start.setDate(start.getDate() + diff);
+  return start;
+};
+
+const getWeekEnd = (date: Date) => {
+  const end = getWeekStart(date);
+  end.setDate(end.getDate() + 7);
+  return end;
+};
+
+const getWeekKey = (date: Date) => {
+  const start = getWeekStart(date);
+  return start.toISOString().slice(0, 10);
+};
+
+const isWithinInterval = (value: Date, start: Date, end: Date) =>
+  value.getTime() >= start.getTime() && value.getTime() < end.getTime();
+
+const diagnosticRecordKey = (userId: string, moduleId: string) => `${userId}::${moduleId}`;
+
+const getProgressWrongCount = (progress: UserProgress | undefined) =>
+  progress?.total_wrong ?? (progress?.last_result === 'wrong' ? 1 : 0);
+
+const isLikelyCodeFragment = (value: string) => {
+  const trimmed = value.trim();
+  if (!trimmed) return false;
+  if (/<\/?[a-z!][\s\S]*>/i.test(trimmed)) return true;
+  if (/[@{}();=]/.test(trimmed)) return true;
+  if (/=>/.test(trimmed)) return true;
+  if (/\b(function|const|let|var|return|if|for|while|class|import|export)\b/i.test(trimmed)) return true;
+  if (trimmed.includes('\n') && /[<>:{};]/.test(trimmed)) return true;
+  return false;
+};
 
 const daysBetween = (a: Date, b: Date) => {
   const utcA = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
@@ -292,6 +343,10 @@ const loadDb = (): LearningDb => {
       ...DEFAULT_DB,
       ...parsed,
       loadedModules: parsed.loadedModules ?? [],
+      moduleDiagnostics: parsed.moduleDiagnostics ?? [],
+      moduleProjects: parsed.moduleProjects ?? [],
+      attemptLog: parsed.attemptLog ?? [],
+      weeklyGoals: parsed.weeklyGoals ?? {},
       userProgress: parsed.userProgress ?? [],
       userStats: parsed.userStats ?? {},
     };
@@ -512,6 +567,53 @@ export const loadAllModuleData = async () => {
   return db;
 };
 
+const getDiagnosticRecord = (db: LearningDb, userId: string, moduleId: string) => {
+  const key = diagnosticRecordKey(userId, moduleId);
+  return (db.moduleDiagnostics ?? []).find(record =>
+    diagnosticRecordKey(record.user_id, record.module_id) === key
+  ) ?? null;
+};
+
+const getProjectRecord = (db: LearningDb, userId: string, moduleId: string) =>
+  (db.moduleProjects ?? []).find(record => record.user_id === userId && record.module_id === moduleId) ?? null;
+
+const getWeekXpFromAttemptLog = (
+  attempts: AttemptLogEntry[],
+  userId: string,
+  now: Date = new Date()
+) => {
+  const weekStart = getWeekStart(now);
+  const weekEnd = getWeekEnd(now);
+
+  return attempts
+    .filter(item => item.user_id === userId)
+    .filter(item => isWithinInterval(new Date(item.created_at), weekStart, weekEnd))
+    .reduce((sum, item) => sum + item.xp_earned, 0);
+};
+
+const computeModuleDiagnosticRecommendation = (
+  lessons: LessonData[],
+  masteredLessonIds: string[]
+) => {
+  const mastered = new Set(masteredLessonIds);
+  const sorted = [...lessons].sort((a, b) => a.order - b.order);
+
+  for (const lesson of sorted) {
+    const prerequisites = lesson.prerequisites ?? [];
+    const unlocked = prerequisites.every(id => mastered.has(id));
+    if (!unlocked) continue;
+    if (!mastered.has(lesson.id)) return lesson.id;
+  }
+
+  return sorted[0]?.id ?? null;
+};
+
+const ensureWeeklyGoal = (db: LearningDb, userId: string) => {
+  const existing = db.weeklyGoals?.[userId];
+  if (typeof existing === 'number' && existing > 0) return existing;
+  return DEFAULT_WEEKLY_GOAL_XP;
+};
+
 export const getLearningSnapshot = (userId: string = DEFAULT_USER_ID) => {
   const db = loadDb();
   const stats = db.userStats[userId] ?? {
@@ -535,6 +637,10 @@ export const getLearningSnapshot = (userId: string = DEFAULT_USER_ID) => {
     lessons: db.lessons,
     exercises: db.exercises,
     loadedModules: db.loadedModules ?? [],
+    moduleDiagnostics: db.moduleDiagnostics ?? [],
+    moduleProjects: db.moduleProjects ?? [],
+    attemptLog: db.attemptLog ?? [],
+    weeklyGoals: db.weeklyGoals ?? {},
     stats,
     progressByExercise,
   };
@@ -589,6 +695,306 @@ export const getExercises = (): ExerciseData[] => {
   return db.exercises;
 };
 
+export type ModuleDiagnosticQuestion = {
+  id: string;
+  exercise_id: string;
+  lesson_id: string;
+  lesson_title: string;
+  prompt: string;
+  options: string[];
+  answer: string;
+};
+
+const deterministicShuffle = <T,>(items: T[], seed: string) => {
+  const output = [...items];
+  let hash = 0;
+  for (let i = 0; i < seed.length; i += 1) {
+    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+  hash = hash || 1;
+
+  for (let idx = output.length - 1; idx > 0; idx -= 1) {
+    hash = (hash * 1664525 + 1013904223) >>> 0;
+    const swap = hash % (idx + 1);
+    [output[idx], output[swap]] = [output[swap], output[idx]];
+  }
+
+  return output;
+};
+
+const buildOptionsForAnswer = (answer: string, pool: string[], seed: string) => {
+  const unique = new Map<string, string>();
+  unique.set(answer.toLowerCase(), answer);
+
+  for (const candidate of pool) {
+    if (!candidate.trim()) continue;
+    const key = candidate.toLowerCase();
+    if (unique.has(key)) continue;
+    unique.set(key, candidate);
+    if (unique.size >= 4) break;
+  }
+
+  const options = Array.from(unique.values()).slice(0, 4);
+  return deterministicShuffle(options, seed);
+};
+
+export const getModuleDiagnosticQuestions = (
+  moduleId: string,
+  count: number = MODULE_DIAGNOSTIC_QUESTION_COUNT
+): ModuleDiagnosticQuestion[] => {
+  const db = loadDb();
+  const lessons = db.lessons
+    .filter(lesson => lesson.module_id === moduleId)
+    .sort((a, b) => a.order - b.order);
+  const lessonById = new Map(lessons.map(lesson => [lesson.id, lesson]));
+
+  const candidates = db.exercises
+    .filter(exercise => lessonById.has(exercise.lesson_id))
+    .map(exercise => {
+      const blankValidation = exercise.validations.find(item => item.type === 'blank');
+      if (!blankValidation || blankValidation.blanks.length !== 1) return null;
+      if (exercise.type !== 'blank') return null;
+      const answer = blankValidation.blanks[0].answer.trim();
+      if (!answer) return null;
+      if (isLikelyCodeFragment(answer)) return null;
+      const lesson = lessonById.get(exercise.lesson_id);
+      if (!lesson) return null;
+      return {
+        exercise,
+        lesson,
+        answer,
+      };
+    })
+    .filter(
+      (
+        item
+      ): item is {
+        exercise: ExerciseData;
+        lesson: LessonData;
+        answer: string;
+      } => Boolean(item)
+    );
+
+  if (!candidates.length) return [];
+
+  const uniqueByLesson = new Map<string, { exercise: ExerciseData; lesson: LessonData; answer: string }>();
+  for (const candidate of candidates) {
+    if (!uniqueByLesson.has(candidate.lesson.id)) {
+      uniqueByLesson.set(candidate.lesson.id, candidate);
+    }
+  }
+
+  const selected = Array.from(uniqueByLesson.values()).slice(0, count);
+  const answerPool = Array.from(new Set(candidates.map(item => item.answer)));
+
+  return selected.map((item, index) => ({
+    id: `diagnostic-${moduleId}-${index + 1}`,
+    exercise_id: item.exercise.id,
+    lesson_id: item.lesson.id,
+    lesson_title: item.lesson.title,
+    prompt: item.exercise.prompt,
+    answer: item.answer,
+    options: buildOptionsForAnswer(
+      item.answer,
+      answerPool.filter(value => value.toLowerCase() !== item.answer.toLowerCase()),
+      `${moduleId}-${item.exercise.id}`
+    ),
+  }));
+};
+
+export const getModuleDiagnostic = (
+  moduleId: string,
+  userId: string = DEFAULT_USER_ID
+): ModuleDiagnosticRecord | null => {
+  const db = loadDb();
+  return getDiagnosticRecord(db, userId, moduleId);
+};
+
+export const saveModuleDiagnostic = (params: {
+  userId?: string;
+  moduleId: string;
+  score: number;
+  questionCount: number;
+  masteredLessonIds: string[];
+}) => {
+  const {
+    userId = DEFAULT_USER_ID,
+    moduleId,
+    score,
+    questionCount,
+    masteredLessonIds,
+  } = params;
+
+  const db = loadDb();
+  const nowIso = new Date().toISOString();
+  const moduleLessons = db.lessons.filter(lesson => lesson.module_id === moduleId);
+  const recommendedLessonId = computeModuleDiagnosticRecommendation(moduleLessons, masteredLessonIds);
+
+  const record: ModuleDiagnosticRecord = {
+    user_id: userId,
+    module_id: moduleId,
+    score,
+    question_count: questionCount,
+    mastered_lesson_ids: Array.from(new Set(masteredLessonIds)),
+    recommended_lesson_id: recommendedLessonId,
+    created_at: nowIso,
+    updated_at: nowIso,
+  };
+
+  const existing = getDiagnosticRecord(db, userId, moduleId);
+  const nextDiagnostics = existing
+    ? (db.moduleDiagnostics ?? []).map(item =>
+        item.user_id === userId && item.module_id === moduleId
+          ? {
+              ...record,
+              created_at: item.created_at,
+            }
+          : item
+      )
+    : [...(db.moduleDiagnostics ?? []), record];
+
+  const nextDb: LearningDb = {
+    ...db,
+    moduleDiagnostics: nextDiagnostics,
+  };
+
+  saveDb(nextDb);
+  return record;
+};
+
+export const getModuleProject = (
+  moduleId: string,
+  userId: string = DEFAULT_USER_ID
+): ModuleProjectSubmission | null => {
+  const db = loadDb();
+  return getProjectRecord(db, userId, moduleId);
+};
+
+export const getModuleProjectStatus = (
+  moduleId: string,
+  userId: string = DEFAULT_USER_ID
+) => {
+  const submission = getModuleProject(moduleId, userId);
+  if (!submission) {
+    return {
+      submitted: false,
+      score: 0,
+      submittedAt: null as string | null,
+    };
+  }
+
+  return {
+    submitted: true,
+    score: submission.score,
+    submittedAt: submission.submitted_at,
+  };
+};
+
+export const saveModuleProject = (params: {
+  userId?: string;
+  moduleId: string;
+  score: number;
+  checklist: { id: string; checked: boolean }[];
+  notes?: string;
+  projectUrl?: string;
+}) => {
+  const {
+    userId = DEFAULT_USER_ID,
+    moduleId,
+    score,
+    checklist,
+    notes,
+    projectUrl,
+  } = params;
+
+  const db = loadDb();
+  const submission: ModuleProjectSubmission = {
+    user_id: userId,
+    module_id: moduleId,
+    score,
+    checklist,
+    notes: notes?.trim() || undefined,
+    project_url: projectUrl?.trim() || undefined,
+    submitted_at: new Date().toISOString(),
+  };
+
+  const existing = getProjectRecord(db, userId, moduleId);
+  const nextProjects = existing
+    ? (db.moduleProjects ?? []).map(item =>
+        item.user_id === userId && item.module_id === moduleId ? submission : item
+      )
+    : [...(db.moduleProjects ?? []), submission];
+
+  const nextDb: LearningDb = {
+    ...db,
+    moduleProjects: nextProjects,
+  };
+
+  saveDb(nextDb);
+  return submission;
+};
+
+export const getWeeklyProgress = (userId: string = DEFAULT_USER_ID, now: Date = new Date()) => {
+  const db = loadDb();
+  const earnedXp = getWeekXpFromAttemptLog(db.attemptLog ?? [], userId, now);
+  const goalXp = ensureWeeklyGoal(db, userId);
+  const percent = goalXp > 0 ? Math.min(100, Math.round((earnedXp / goalXp) * 100)) : 0;
+
+  return {
+    weekKey: getWeekKey(now),
+    earnedXp,
+    goalXp,
+    remainingXp: Math.max(0, goalXp - earnedXp),
+    percent,
+  };
+};
+
+export const setWeeklyGoal = (goalXp: number, userId: string = DEFAULT_USER_ID) => {
+  const db = loadDb();
+  const normalizedGoal = Math.max(50, Math.round(goalXp));
+  const nextDb: LearningDb = {
+    ...db,
+    weeklyGoals: {
+      ...(db.weeklyGoals ?? {}),
+      [userId]: normalizedGoal,
+    },
+  };
+  saveDb(nextDb);
+  return normalizedGoal;
+};
+
+export const getWeeklyLeaderboard = (params?: {
+  userId?: string;
+  now?: Date;
+  limit?: number;
+}) => {
+  const { userId = DEFAULT_USER_ID, now = new Date(), limit = 5 } = params ?? {};
+  const db = loadDb();
+  const attempts = db.attemptLog ?? [];
+  const weekStart = getWeekStart(now);
+  const weekEnd = getWeekEnd(now);
+
+  const totals = new Map<string, number>();
+  for (const attempt of attempts) {
+    const createdAt = new Date(attempt.created_at);
+    if (!isWithinInterval(createdAt, weekStart, weekEnd)) continue;
+    totals.set(attempt.user_id, (totals.get(attempt.user_id) ?? 0) + attempt.xp_earned);
+  }
+
+  if (!totals.has(userId)) {
+    totals.set(userId, 0);
+  }
+
+  return Array.from(totals.entries())
+    .map(([entryUserId, xp]) => ({
+      userId: entryUserId,
+      label: entryUserId === userId ? 'Voce' : `Aluno ${entryUserId.slice(0, 6)}`,
+      xp,
+    }))
+    .sort((a, b) => b.xp - a.xp)
+    .slice(0, limit);
+};
+
 export const getDueExercises = (userId: string = DEFAULT_USER_ID, limit = 3) => {
   const db = loadDb();
   const now = new Date();
@@ -623,6 +1029,62 @@ export const getDueExercises = (userId: string = DEFAULT_USER_ID, limit = 3) => 
     .map(item => item.exercise);
 
   return due;
+};
+
+export const getDailyReviewExercises = (
+  userId: string = DEFAULT_USER_ID,
+  minItems: number = DAILY_REVIEW_MIN,
+  maxItems: number = DAILY_REVIEW_MAX
+) => {
+  const db = loadDb();
+  const due = getDueExercises(userId, maxItems);
+
+  if (due.length >= minItems) return due.slice(0, maxItems);
+
+  const dueIds = new Set(due.map(exercise => exercise.id));
+  const userProgress = db.userProgress.filter(progress => progress.user_id === userId);
+  const conceptWeakness = new Map<string, number>();
+
+  for (const progress of userProgress) {
+    const key = progress.concept || 'geral';
+    const correct = progress.total_correct;
+    const wrong = getProgressWrongCount(progress);
+    const totals = conceptWeakness.get(key) ?? 0;
+    const attempts = correct + wrong;
+    const weakness = attempts > 0 ? wrong / attempts : 0;
+    conceptWeakness.set(key, Math.max(totals, weakness));
+  }
+
+  const lessonsById = new Map(db.lessons.map(lesson => [lesson.id, lesson]));
+  const reinforcementPool = db.exercises
+    .filter(exercise => !dueIds.has(exercise.id))
+    .map(exercise => {
+      const lesson = lessonsById.get(exercise.lesson_id);
+      if (!lesson) return null;
+      const progress = userProgress.find(item => item.exercise_id === exercise.id);
+      const attempts = (progress?.total_correct ?? 0) + getProgressWrongCount(progress);
+      if (attempts <= 0) return null;
+      const seenPenalty = attempts > 0 ? 0.1 : 0;
+      const weakness = conceptWeakness.get(lesson.concept) ?? 0;
+      const priority = weakness + seenPenalty;
+
+      return {
+        exercise,
+        priority,
+      };
+    })
+    .filter((item): item is { exercise: ExerciseData; priority: number } => Boolean(item))
+    .sort((a, b) => b.priority - a.priority)
+    .map(item => item.exercise);
+
+  const queue = [...due];
+  for (const exercise of reinforcementPool) {
+    if (queue.length >= Math.max(minItems, maxItems)) break;
+    if (queue.some(item => item.id === exercise.id)) continue;
+    queue.push(exercise);
+  }
+
+  return queue.slice(0, maxItems);
 };
 
 export const getConceptProgress = (
@@ -827,9 +1289,23 @@ export const recordExerciseAttempt = (params: {
       }
     : stats;
 
+  const attemptEntry: AttemptLogEntry = {
+    user_id: userId,
+    exercise_id: exerciseId,
+    concept,
+    correct,
+    xp_earned: correct ? getXpForExercise(exercise) : 0,
+    created_at: now.toISOString(),
+  };
+
   const nextDb: LearningDb = {
     ...db,
     userProgress: nextProgress,
+    attemptLog: [...(db.attemptLog ?? []), attemptEntry],
+    weeklyGoals: {
+      ...(db.weeklyGoals ?? {}),
+      [userId]: ensureWeeklyGoal(db, userId),
+    },
     userStats: {
       ...db.userStats,
       [userId]: nextStats,
