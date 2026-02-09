@@ -9,6 +9,7 @@ import type {
 
 const DB_KEY = 'learning-db';
 const DEFAULT_USER_ID = 'local-user';
+const SEED_REVISION = '2026-02-09-theory-check-v1';
 
 type ModuleManifest = {
   modules: ModuleData[];
@@ -36,6 +37,7 @@ const DEFAULT_DB: LearningDb = {
   lessons: [],
   exercises: [],
   loadedModules: [],
+  seedRevision: SEED_REVISION,
   userProgress: [],
   userStats: {},
 };
@@ -156,6 +158,87 @@ const normalizeLessons = (lessons: LessonData[]): LessonData[] => {
     });
 };
 
+const normalizeTheoryText = (value: string) =>
+  String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+
+const hasTermInText = (haystack: string, term: string) => {
+  if (!term) return true;
+  return (
+    haystack === term
+    || haystack.startsWith(`${term} `)
+    || haystack.endsWith(` ${term}`)
+    || haystack.includes(` ${term} `)
+  );
+};
+
+const getSingleBlankAnswer = (exercise: ExerciseData) => {
+  const validation = exercise.validations.find(item => item.type === 'blank');
+  if (!validation || validation.blanks.length !== 1) return null;
+  return validation.blanks[0].answer.trim();
+};
+
+const isStandaloneBlankExercise = (exercise: ExerciseData) =>
+  exercise.type === 'blank' && exercise.starter_code.trim() === '{{blank1}}';
+
+const sanitizeExercisesAgainstTheory = (
+  lessons: LessonData[],
+  exercises: ExerciseData[]
+): ExerciseData[] => {
+  const lessonById = new Map(lessons.map(lesson => [lesson.id, lesson]));
+
+  return exercises.map(exercise => {
+    if (!isStandaloneBlankExercise(exercise)) return exercise;
+
+    const answer = getSingleBlankAnswer(exercise);
+    if (!answer) return exercise;
+
+    const lesson = lessonById.get(exercise.lesson_id);
+    if (!lesson) return exercise;
+
+    const lessonCorpus = normalizeTheoryText(
+      [
+        lesson.title,
+        lesson.content,
+        lesson.concept,
+        ...(lesson.tags ?? []),
+      ].join(' ')
+    );
+    const normalizedAnswer = normalizeTheoryText(answer);
+
+    if (hasTermInText(lessonCorpus, normalizedAnswer)) return exercise;
+
+    const safeAnswer = lesson.title.trim() || lesson.concept.trim() || answer;
+    return {
+      ...exercise,
+      prompt: 'Prática guiada: com base na teoria acima, qual é o tema principal desta lição?',
+      starter_code: '{{blank1}}',
+      validations: [
+        {
+          type: 'blank',
+          blanks: [
+            {
+              id: 'blank1',
+              answer: safeAnswer,
+              placeholder: 'resposta',
+            },
+          ],
+        },
+      ],
+      hints: [
+        { level: 1, text: 'Releia o título e o objetivo da lição.' },
+        { level: 2, text: 'A resposta está explícita no conteúdo teórico acima.' },
+        { level: 3, text: `Resposta esperada: ${safeAnswer}` },
+      ],
+      solution: safeAnswer,
+    };
+  });
+};
+
 const canUseProtection = (stats: UserStats, now: Date) => {
   if (!stats.protection_used_at) return true;
   const last = new Date(stats.protection_used_at);
@@ -205,12 +288,29 @@ const loadDb = (): LearningDb => {
     const raw = localStorage.getItem(DB_KEY);
     if (!raw) return { ...DEFAULT_DB };
     const parsed = JSON.parse(raw) as LearningDb;
-    return {
+    const hydrated: LearningDb = {
       ...DEFAULT_DB,
       ...parsed,
       loadedModules: parsed.loadedModules ?? [],
       userProgress: parsed.userProgress ?? [],
       userStats: parsed.userStats ?? {},
+    };
+    const shouldReloadSeed = (parsed.seedRevision ?? '') !== SEED_REVISION;
+
+    if (shouldReloadSeed) {
+      return {
+        ...hydrated,
+        modules: [],
+        lessons: [],
+        exercises: [],
+        loadedModules: [],
+        seedRevision: SEED_REVISION,
+      };
+    }
+
+    return {
+      ...hydrated,
+      seedRevision: SEED_REVISION,
     };
   } catch {
     return { ...DEFAULT_DB };
@@ -275,10 +375,11 @@ const loadModulePayload = async (moduleId: string): Promise<ModulePayload | null
       });
       if (response.ok) {
         const payload = (await response.json()) as ModulePayload;
+        const normalizedLessons = normalizeLessons(payload.lessons);
         const normalizedPayload: ModulePayload = {
           module: payload.module,
-          lessons: normalizeLessons(payload.lessons),
-          exercises: payload.exercises,
+          lessons: normalizedLessons,
+          exercises: sanitizeExercisesAgainstTheory(normalizedLessons, payload.exercises),
         };
         payloadCache.set(moduleId, normalizedPayload);
         return normalizedPayload;
@@ -304,6 +405,10 @@ const loadModulePayload = async (moduleId: string): Promise<ModulePayload | null
   const normalizedFallback: ModulePayload = {
     ...fallbackPayload,
     lessons: normalizeLessons(fallbackPayload.lessons),
+    exercises: sanitizeExercisesAgainstTheory(
+      normalizeLessons(fallbackPayload.lessons),
+      fallbackPayload.exercises
+    ),
   };
 
   payloadCache.set(moduleId, normalizedFallback);
@@ -311,6 +416,7 @@ const loadModulePayload = async (moduleId: string): Promise<ModulePayload | null
 };
 
 const mergeModuleData = (db: LearningDb, payload: ModulePayload): LearningDb => {
+  const sanitizedExercises = sanitizeExercisesAgainstTheory(payload.lessons, payload.exercises);
   const nextModules = db.modules
     .filter(module => module.id !== payload.module.id)
     .concat(payload.module)
@@ -325,7 +431,7 @@ const mergeModuleData = (db: LearningDb, payload: ModulePayload): LearningDb => 
   const lessonIds = new Set(payload.lessons.map(lesson => lesson.id));
   const nextExercises = db.exercises
     .filter(exercise => !lessonIds.has(exercise.lesson_id))
-    .concat(payload.exercises);
+    .concat(sanitizedExercises);
 
   const loaded = new Set(db.loadedModules ?? []);
   loaded.add(payload.module.id);
@@ -336,6 +442,7 @@ const mergeModuleData = (db: LearningDb, payload: ModulePayload): LearningDb => 
     lessons: nextLessons,
     exercises: nextExercises,
     loadedModules: Array.from(loaded),
+    seedRevision: SEED_REVISION,
   };
 };
 
@@ -354,6 +461,7 @@ export const initializeLearningDb = async () => {
       return lesson ? moduleIds.has(lesson.module_id) : true;
     }),
     loadedModules: (db.loadedModules ?? []).filter(moduleId => moduleIds.has(moduleId)),
+    seedRevision: SEED_REVISION,
   };
 
   saveDb(nextBase);

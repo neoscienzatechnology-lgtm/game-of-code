@@ -96,6 +96,7 @@ export interface LearningDb {
   lessons: LessonData[];
   exercises: ExerciseData[];
   loadedModules?: string[];
+  seedRevision?: string;
   userProgress: UserProgress[];
   userStats: Record<string, UserStats>;
 }
