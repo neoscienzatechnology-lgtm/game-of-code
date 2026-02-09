@@ -33,7 +33,7 @@
       "language": "css",
       "concept": "fundamentos-de-css-seletores",
       "title": "Seletores",
-      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica prática: prefira classes para reutilizacao. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
+      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica prática: prefira classes para reutilizacao. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas. Exemplo direto: .card { border-radius: 12px; } aplica estilo ao elemento com classe card.",
       "order": 2,
       "tags": [
         "fundamentos",
@@ -162,7 +162,7 @@
       "language": "css",
       "concept": "css-avancado-transitions",
       "title": "Transitions",
-      "content": "Objetivo: Animações suaves. Transicoes criam animações suaves entre estados. Exemplo de uso: feedback visual em botões. Uso comum: melhorar a sensacao de interacao. Dica prática: transicoes curtas são mais naturais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
+      "content": "Objetivo: Animações suaves. Transicoes criam animações suaves entre estados. Exemplo de uso: feedback visual em botões. Uso comum: melhorar a sensacao de interacao. Dica prática: transicoes curtas são mais naturais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas. A propriedade transition controla duração, curva e atraso da transição.",
       "order": 11,
       "tags": [
         "css",
@@ -421,7 +421,7 @@
       "id": "legacy-css-u17-l1-practice",
       "lesson_id": "legacy-css-u17-l1",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual sigla nomeia a linguagem usada para estilizar páginas web?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -429,7 +429,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "CSS",
               "placeholder": "resposta"
             }
           ]
@@ -438,18 +438,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: O que é CSS."
+          "text": "Ela define aparência e layout."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "Seu nome vem de Cascading Style Sheets."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: CSS"
         }
       ],
-      "solution": "font-size",
+      "solution": "CSS",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -529,7 +529,7 @@
       "id": "legacy-css-u17-l2-practice",
       "lesson_id": "legacy-css-u17-l2",
       "type": "blank",
-      "prompt": "Prática guiada: Qual seletor aplica em classe? Digite a resposta correta.",
+      "prompt": "Prática guiada: no exemplo da lição, qual seletor de classe foi usado?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -546,11 +546,11 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Seletores."
+          "text": "Seletores de classe começam com ponto."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: #card / card."
+          "text": "O exemplo aplica estilo ao componente card."
         },
         {
           "level": 3,
@@ -745,7 +745,7 @@
       "id": "legacy-css-u17-l4-practice",
       "lesson_id": "legacy-css-u17-l4",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: como se chama o modelo formado por conteúdo, padding, border e margin?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -753,7 +753,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "box model",
               "placeholder": "resposta"
             }
           ]
@@ -762,18 +762,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Box model."
+          "text": "Ele explica espaçamento e tamanho dos elementos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "É um conceito-base do CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: box model"
         }
       ],
-      "solution": "font-size",
+      "solution": "box model",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -853,7 +853,7 @@
       "id": "legacy-css-u17-l5-practice",
       "lesson_id": "legacy-css-u17-l5",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: no conflito entre regras CSS, qual conceito decide qual estilo vence?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -861,7 +861,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "especificidade",
               "placeholder": "resposta"
             }
           ]
@@ -870,18 +870,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Cascata e especificidade."
+          "text": "Quanto mais específico o seletor, maior prioridade."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "Também pode considerar a ordem de declaração."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: especificidade"
         }
       ],
-      "solution": "font-size",
+      "solution": "especificidade",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -1501,7 +1501,7 @@
       "id": "legacy-css-u19-l1-practice",
       "lesson_id": "legacy-css-u19-l1",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual propriedade CSS cria transições suaves entre estados?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1509,7 +1509,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "transition",
               "placeholder": "resposta"
             }
           ]
@@ -1518,18 +1518,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Transitions."
+          "text": "Muito usada em hover de botões."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "Define duração e curva da mudança visual."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: transition"
         }
       ],
-      "solution": "font-size",
+      "solution": "transition",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -1609,7 +1609,7 @@
       "id": "legacy-css-u19-l2-practice",
       "lesson_id": "legacy-css-u19-l2",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual regra define quadros de animação no CSS?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1617,7 +1617,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "@keyframes",
               "placeholder": "resposta"
             }
           ]
@@ -1626,18 +1626,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Animations."
+          "text": "Ela descreve os estágios da animação."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "Depois é aplicada com a propriedade animation."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: @keyframes"
         }
       ],
-      "solution": "font-size",
+      "solution": "@keyframes",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -1717,7 +1717,7 @@
       "id": "legacy-css-u19-l3-practice",
       "lesson_id": "legacy-css-u19-l3",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual função é usada para ler variáveis CSS?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1725,7 +1725,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "var()",
               "placeholder": "resposta"
             }
           ]
@@ -1734,18 +1734,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Variáveis CSS."
+          "text": "Ela referencia custom properties (--nome)."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "Exemplo: color: var(--cor-primaria)."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: var()"
         }
       ],
-      "solution": "font-size",
+      "solution": "var()",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -1825,7 +1825,7 @@
       "id": "legacy-css-u19-l4-practice",
       "lesson_id": "legacy-css-u19-l4",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual pseudo-elemento é usado para inserir conteúdo antes do elemento?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1833,7 +1833,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "::before",
               "placeholder": "resposta"
             }
           ]
@@ -1842,18 +1842,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Pseudo-elementos."
+          "text": "Existe também a versão para depois (::after)."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "É comum junto da propriedade content."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: ::before"
         }
       ],
-      "solution": "font-size",
+      "solution": "::before",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -1933,7 +1933,7 @@
       "id": "legacy-css-u19-l5-practice",
       "lesson_id": "legacy-css-u19-l5",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual propriedade cria sombras em elementos de bloco?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -1941,7 +1941,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "box-shadow",
               "placeholder": "resposta"
             }
           ]
@@ -1950,18 +1950,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Sombras e fundos."
+          "text": "Ela ajuda a gerar sensação de profundidade."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "É comum em cartões e botões."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: box-shadow"
         }
       ],
-      "solution": "font-size",
+      "solution": "box-shadow",
       "difficulty": "easy",
       "estimated_time": 35
     },

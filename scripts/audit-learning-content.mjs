@@ -5,6 +5,27 @@ const root = process.cwd();
 const seedPath = path.join(root, 'public', 'seed', 'learning.json');
 const seed = JSON.parse(readFileSync(seedPath, 'utf8'));
 
+const normalizeText = value =>
+  String(value || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
+const normalizeForSearch = value =>
+  normalizeText(value)
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+
+const hasNormalizedTerm = (haystack, term) => {
+  if (!term) return true;
+  return (
+    haystack === term ||
+    haystack.startsWith(`${term} `) ||
+    haystack.endsWith(` ${term}`) ||
+    haystack.includes(` ${term} `)
+  );
+};
+
 const report = {
   summary: {
     modules: seed.modules.length,
@@ -17,11 +38,14 @@ const report = {
     genericPhrases: [],
     unresolvedPlaceholders: [],
     shortContent: [],
+    practiceWithoutTheorySupport: [],
   },
 };
 
 const titleMap = new Map();
+const lessonsById = new Map();
 for (const lesson of seed.lessons) {
+  lessonsById.set(lesson.id, lesson);
   const key = `${lesson.module_id}::${(lesson.title || '').trim().toLowerCase()}`;
   if (!titleMap.has(key)) titleMap.set(key, []);
   titleMap.get(key).push(lesson.id);
@@ -96,6 +120,30 @@ for (const exercise of seed.exercises) {
       field: 'solution',
     });
   }
+
+  if (exercise.id.endsWith('-practice')) {
+    const blankValidation = exercise.validations.find(validation => validation.type === 'blank');
+    const answer = blankValidation?.blanks?.[0]?.answer?.trim();
+    const lesson = lessonsById.get(exercise.lesson_id);
+    if (answer && lesson) {
+      const lessonCorpus = normalizeForSearch([
+        lesson.title,
+        lesson.content,
+        lesson.concept,
+        ...(lesson.tags ?? []),
+      ].join(' '));
+      const normalizedAnswer = normalizeForSearch(answer);
+
+      if (normalizedAnswer && !hasNormalizedTerm(lessonCorpus, normalizedAnswer)) {
+        report.findings.practiceWithoutTheorySupport.push({
+          exercise_id: exercise.id,
+          lesson_id: lesson.id,
+          lesson_title: lesson.title,
+          answer,
+        });
+      }
+    }
+  }
 }
 
 for (const [key, ids] of promptMap.entries()) {
@@ -109,11 +157,13 @@ const totalIssues =
   report.findings.duplicatePrompts.length +
   report.findings.genericPhrases.length +
   report.findings.unresolvedPlaceholders.length +
-  report.findings.shortContent.length;
+  report.findings.shortContent.length +
+  report.findings.practiceWithoutTheorySupport.length;
 
 const criticalIssues =
   report.findings.genericPhrases.length +
-  report.findings.unresolvedPlaceholders.length;
+  report.findings.unresolvedPlaceholders.length +
+  report.findings.practiceWithoutTheorySupport.length;
 
 console.log(JSON.stringify(report, null, 2));
 console.log(`Total issues found: ${totalIssues}`);

@@ -19,7 +19,7 @@
       "language": "html",
       "concept": "introducao-a-web-o-que-e-a-web",
       "title": "O que é a Web",
-      "content": "Objetivo: Entenda como a internet funciona. A Web é um conjunto de documentos ligados por links e acessados via navegador. Ela usa a internet (a rede física) para transportar dados, enquanto a Web define como o conteúdo e publicado. Exemplo de uso: ao digitar um endereço, o navegador baixa arquivos HTML, CSS e JS. Uso comum: sites, dashboards e aplicativos web. Dica prática: use o DevTools (F12) para ver o HTML recebido. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
+      "content": "Objetivo: Entenda como a internet funciona. A Web é um conjunto de documentos ligados por links e acessados via navegador. Fato-chave: a World Wide Web foi criada por Tim Berners-Lee em 1989, no CERN. Ela usa a internet (a rede física) para transportar dados, enquanto a Web define como o conteúdo é publicado. Exemplo de uso: ao digitar um endereço, o navegador baixa arquivos HTML, CSS e JS. Uso comum: sites, dashboards e aplicativos web. Dica prática: use o DevTools (F12) para ver o HTML recebido. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
       "order": 1,
       "tags": [
         "introducao",
@@ -392,7 +392,7 @@
       "language": "html",
       "concept": "links-e-navegacao-tag-a",
       "title": "Tag <a>",
-      "content": "Objetivo: Criando links. Links conectam páginas e recursos com a tag . Exemplo de uso: navegar para outra página ou abrir um email. Uso comum: menus e chamadas para ação. Dica prática: sempre use texto descritivo no link. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
+      "content": "Objetivo: Criando links. Links conectam páginas e recursos com a tag . Exemplo de uso: navegar para outra página ou abrir um email. Uso comum: menus e chamadas para ação. Dica prática: sempre use texto descritivo no link. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas. O atributo href define o destino do link e deve conter a URL correta.",
       "order": 26,
       "tags": [
         "links",
@@ -693,7 +693,7 @@
       "language": "html",
       "concept": "listas-listas-aninhadas",
       "title": "Listas aninhadas",
-      "content": "Objetivo: Listas dentro de listas. Você pode colocar uma lista dentro de outra, criando sublistas. A lista interna fica dentro de um . Exemplo de uso: Texto aqui Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
+      "content": "Objetivo: Listas dentro de listas. Você pode colocar uma lista dentro de outra, criando sublistas. A lista interna fica dentro de um . Exemplo de uso: Texto aqui Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas. Para aninhar listas, coloque uma tag <ul> dentro de um item <li> da lista principal.",
       "order": 47,
       "tags": [
         "listas",
@@ -809,7 +809,7 @@
       "language": "html",
       "concept": "tabelas-colspan-e-rowspan",
       "title": "colspan e rowspan",
-      "content": "Objetivo: Mesclando celulas. colspan mescla colunas horizontalmente. rowspan mescla linhas verticalmente. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas.",
+      "content": "Objetivo: Mesclando celulas. colspan mescla colunas horizontalmente. rowspan mescla linhas verticalmente. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da lição. Uso comum: estruturar conteúdo de páginas web. Dica prática: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas práticas. Em tabelas, cada linha é criada com a tag <tr>.",
       "order": 56,
       "tags": [
         "tabelas",
@@ -2561,7 +2561,7 @@
       "id": "legacy-html-u2-l1-practice",
       "lesson_id": "legacy-html-u2-l1",
       "type": "blank",
-      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual declaração indica ao navegador que o documento está em HTML5?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2569,7 +2569,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Tema da lição",
+              "answer": "<!DOCTYPE html>",
               "placeholder": "resposta"
             }
           ]
@@ -2578,18 +2578,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: <!DOCTYPE html>."
+          "text": "Ela fica na primeira linha do arquivo HTML."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
+          "text": "Começa com <!DOCTYPE ...>."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Tema da lição"
+          "text": "Resposta esperada: <!DOCTYPE html>"
         }
       ],
-      "solution": "Tema da lição",
+      "solution": "<!DOCTYPE html>",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3141,7 +3141,7 @@
       "id": "legacy-html-u2-l6-practice",
       "lesson_id": "legacy-html-u2-l6",
       "type": "blank",
-      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo da tag meta define a codificação de caracteres?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3149,7 +3149,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Tema da lição",
+              "answer": "charset",
               "placeholder": "resposta"
             }
           ]
@@ -3158,18 +3158,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: <meta charset>."
+          "text": "Ele aparece em <meta ...>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
+          "text": "É usado junto de UTF-8."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Tema da lição"
+          "text": "Resposta esperada: charset"
         }
       ],
-      "solution": "Tema da lição",
+      "solution": "charset",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3249,7 +3249,7 @@
       "id": "legacy-html-u2-l7-practice",
       "lesson_id": "legacy-html-u2-l7",
       "type": "blank",
-      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual é o tema principal desta lição? Digite a resposta correta.",
+      "prompt": "Prática guiada: na meta de responsividade, qual atributo define a área visível da página?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3257,7 +3257,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Tema da lição",
+              "answer": "viewport",
               "placeholder": "resposta"
             }
           ]
@@ -3266,18 +3266,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: <meta name=\"viewport\">."
+          "text": "Ele aparece em <meta name=\"...\">."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
+          "text": "É essencial para telas de celular."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Tema da lição"
+          "text": "Resposta esperada: viewport"
         }
       ],
-      "solution": "Tema da lição",
+      "solution": "viewport",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -4666,8 +4666,8 @@
       "id": "legacy-html-u4-l1-practice",
       "lesson_id": "legacy-html-u4-l1",
       "type": "blank",
-      "prompt": "Prática guiada: Complete o link com href:",
-      "starter_code": "<a {{blank1}}=\"https://exemplo.com\">Site</a>",
+      "prompt": "Prática guiada: qual atributo da tag <a> define o destino do link?",
+      "starter_code": "{{blank1}}",
       "validations": [
         {
           "type": "blank",
@@ -4675,7 +4675,7 @@
             {
               "id": "blank1",
               "answer": "href",
-              "placeholder": "____"
+              "placeholder": "resposta"
             }
           ]
         }
@@ -4683,18 +4683,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da lição: Tag <a>."
+          "text": "Sem ele, o link não sabe para onde ir."
         },
         {
           "level": 2,
-          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
+          "text": "É o atributo principal de navegação."
         },
         {
           "level": 3,
           "text": "Resposta esperada: href"
         }
       ],
-      "solution": "<a href=\"https://exemplo.com\">Site</a>",
+      "solution": "href",
       "difficulty": "easy",
       "estimated_time": 40
     },
@@ -6968,8 +6968,8 @@
       "id": "legacy-html-u6-l4-practice",
       "lesson_id": "legacy-html-u6-l4",
       "type": "blank",
-      "prompt": "Prática guiada: Crie uma lista não ordenada:",
-      "starter_code": "<{{blank1}}>\n <li>Item</li>\n</{{blank2}}>",
+      "prompt": "Prática guiada: em listas aninhadas, qual tag cria uma lista não ordenada dentro de outra lista?",
+      "starter_code": "{{blank1}}",
       "validations": [
         {
           "type": "blank",
@@ -6977,12 +6977,7 @@
             {
               "id": "blank1",
               "answer": "ul",
-              "placeholder": "__"
-            },
-            {
-              "id": "blank2",
-              "answer": "ul",
-              "placeholder": "__"
+              "placeholder": "resposta"
             }
           ]
         }
@@ -6990,18 +6985,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da lição: Listas aninhadas."
+          "text": "Ela cria listas com marcadores."
         },
         {
           "level": 2,
-          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
+          "text": "Pode ser usada dentro de um item <li>."
         },
         {
           "level": 3,
           "text": "Resposta esperada: ul"
         }
       ],
-      "solution": "<ul>\n <li>Item</li>\n</ul>",
+      "solution": "ul",
       "difficulty": "medium",
       "estimated_time": 55
     },
@@ -8410,7 +8405,7 @@
       "id": "legacy-html-u8-l2-practice",
       "lesson_id": "legacy-html-u8-l2",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo do <form> define para onde os dados serão enviados?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -8418,7 +8413,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "type",
+              "answer": "action",
               "placeholder": "resposta"
             }
           ]
@@ -8427,18 +8422,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: action."
+          "text": "Ele recebe a URL de destino."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: name / value."
+          "text": "É configurado na abertura do formulário."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: type"
+          "text": "Resposta esperada: action"
         }
       ],
-      "solution": "type",
+      "solution": "action",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -8518,7 +8513,7 @@
       "id": "legacy-html-u8-l3-practice",
       "lesson_id": "legacy-html-u8-l3",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo do <form> define como os dados serão enviados (GET ou POST)?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -8526,7 +8521,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "type",
+              "answer": "method",
               "placeholder": "resposta"
             }
           ]
@@ -8535,18 +8530,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: method."
+          "text": "Aceita valores como GET e POST."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: name / value."
+          "text": "Define a forma de envio da requisição."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: type"
+          "text": "Resposta esperada: method"
         }
       ],
-      "solution": "type",
+      "solution": "method",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -9638,7 +9633,7 @@
       "id": "legacy-html-u8-l13-practice",
       "lesson_id": "legacy-html-u8-l13",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo torna um campo obrigatório no formulário?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9646,7 +9641,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "type",
+              "answer": "required",
               "placeholder": "resposta"
             }
           ]
@@ -9655,18 +9650,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: required."
+          "text": "Se estiver vazio, o formulário não envia."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: name / value."
+          "text": "É um atributo booleano."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: type"
+          "text": "Resposta esperada: required"
         }
       ],
-      "solution": "type",
+      "solution": "required",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -9746,7 +9741,7 @@
       "id": "legacy-html-u8-l14-practice",
       "lesson_id": "legacy-html-u8-l14",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo mostra um texto de dica dentro do campo?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9754,7 +9749,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "type",
+              "answer": "placeholder",
               "placeholder": "resposta"
             }
           ]
@@ -9763,18 +9758,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: placeholder."
+          "text": "A dica desaparece quando você começa a digitar."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: name / value."
+          "text": "É útil para orientar o preenchimento."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: type"
+          "text": "Resposta esperada: placeholder"
         }
       ],
-      "solution": "type",
+      "solution": "placeholder",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -9854,7 +9849,7 @@
       "id": "legacy-html-u8-l15-practice",
       "lesson_id": "legacy-html-u8-l15",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo identifica o nome do campo enviado no formulário?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9862,7 +9857,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "type",
+              "answer": "name",
               "placeholder": "resposta"
             }
           ]
@@ -9871,18 +9866,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: name."
+          "text": "Ele vira a chave no par chave=valor."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: name / value."
+          "text": "Sem ele, o dado pode não ser enviado corretamente."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: type"
+          "text": "Resposta esperada: name"
         }
       ],
-      "solution": "type",
+      "solution": "name",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -12130,7 +12125,7 @@
       "id": "legacy-html-u11-l4-practice",
       "lesson_id": "legacy-html-u11-l4",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual tecla é usada para avançar a navegação por foco na ordem de tabulação?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12138,7 +12133,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "alt",
+              "answer": "Tab",
               "placeholder": "resposta"
             }
           ]
@@ -12147,18 +12142,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Ordem de tabulacao."
+          "text": "É a tecla padrão de navegação por teclado."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: src / title."
+          "text": "A ordem de foco deve ser lógica ao usá-la."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: alt"
+          "text": "Resposta esperada: Tab"
         }
       ],
-      "solution": "alt",
+      "solution": "Tab",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -12202,7 +12197,7 @@
       "id": "legacy-html-u11-l5-practice",
       "lesson_id": "legacy-html-u11-l5",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual conjunto de atributos melhora acessibilidade quando o HTML nativo não basta?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12210,7 +12205,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "alt",
+              "answer": "ARIA",
               "placeholder": "resposta"
             }
           ]
@@ -12219,18 +12214,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: Introducao a ARIA."
+          "text": "A sigla vem de Accessible Rich Internet Applications."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: src / title."
+          "text": "Inclui atributos como aria-label e aria-hidden."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: alt"
+          "text": "Resposta esperada: ARIA"
         }
       ],
-      "solution": "alt",
+      "solution": "ARIA",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -12310,7 +12305,7 @@
       "id": "legacy-html-u11-l6-practice",
       "lesson_id": "legacy-html-u11-l6",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo fornece um rótulo acessível quando não há texto visível?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12318,7 +12313,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "alt",
+              "answer": "aria-label",
               "placeholder": "resposta"
             }
           ]
@@ -12327,18 +12322,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: aria-label."
+          "text": "É útil em botões que têm só ícone."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: src / title."
+          "text": "Leitores de tela usam esse rótulo para anunciar o elemento."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: alt"
+          "text": "Resposta esperada: aria-label"
         }
       ],
-      "solution": "alt",
+      "solution": "aria-label",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -12418,7 +12413,7 @@
       "id": "legacy-html-u11-l7-practice",
       "lesson_id": "legacy-html-u11-l7",
       "type": "blank",
-      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo pode ocultar um elemento de tecnologias assistivas?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12426,7 +12421,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "alt",
+              "answer": "aria-hidden",
               "placeholder": "resposta"
             }
           ]
@@ -12435,18 +12430,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: aria-hidden."
+          "text": "Quando recebe \"true\", o elemento deixa de ser lido."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: src / title."
+          "text": "Ele mantém o elemento visual, mas remove da leitura assistiva."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: alt"
+          "text": "Resposta esperada: aria-hidden"
         }
       ],
-      "solution": "alt",
+      "solution": "aria-hidden",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -13338,7 +13333,7 @@
       "id": "legacy-html-u13-l4-practice",
       "lesson_id": "legacy-html-u13-l4",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo adia a execução do script até depois do parsing do HTML?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13346,7 +13341,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "defer",
               "placeholder": "resposta"
             }
           ]
@@ -13355,18 +13350,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: defer."
+          "text": "O download pode ocorrer em paralelo."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "A execução espera o HTML ser processado."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: defer"
         }
       ],
-      "solution": "font-size",
+      "solution": "defer",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -13446,7 +13441,7 @@
       "id": "legacy-html-u13-l5-practice",
       "lesson_id": "legacy-html-u13-l5",
       "type": "blank",
-      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: qual atributo executa o script assim que o download termina, sem esperar o HTML completo?",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13454,7 +13449,7 @@
           "blanks": [
             {
               "id": "blank1",
-              "answer": "font-size",
+              "answer": "async",
               "placeholder": "resposta"
             }
           ]
@@ -13463,18 +13458,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da lição: async."
+          "text": "Também faz download em paralelo."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: font-weight / line-height."
+          "text": "A execução acontece imediatamente após baixar."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: font-size"
+          "text": "Resposta esperada: async"
         }
       ],
-      "solution": "font-size",
+      "solution": "async",
       "difficulty": "easy",
       "estimated_time": 35
     },
