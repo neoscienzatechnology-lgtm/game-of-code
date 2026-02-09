@@ -83,6 +83,66 @@ const buildPreviewDoc = (html: string, css: string) => {
   ].join('\n');
 };
 
+const normalizeChoiceValue = (value: string) =>
+  value
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
+const hashSeed = (value: string) => {
+  let hash = 0;
+  for (let i = 0; i < value.length; i += 1) {
+    hash = (hash * 31 + value.charCodeAt(i)) >>> 0;
+  }
+  return hash || 1;
+};
+
+const deterministicShuffle = <T,>(items: T[], seed: string) => {
+  const shuffled = [...items];
+  let state = hashSeed(seed);
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    state = (state * 1664525 + 1013904223) >>> 0;
+    const swapIndex = state % (index + 1);
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+
+  return shuffled;
+};
+
+const isLikelyCodeFragment = (value: string) => {
+  const trimmed = value.trim();
+  if (!trimmed) return false;
+
+  if (/<\/?[a-z!][\s\S]*>/i.test(trimmed)) return true;
+  if (/[@{}();=]/.test(trimmed)) return true;
+  if (/\b(function|const|let|var|return|if|for|while|class|import|export)\b/i.test(trimmed)) return true;
+  if (trimmed.includes('\n') && /[<>:{};]/.test(trimmed)) return true;
+  if (/=>/.test(trimmed)) return true;
+
+  return false;
+};
+
+const GENERIC_DISTRACTORS = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'GET',
+  'POST',
+  'href',
+  'src',
+  'class',
+  'id',
+  'alt',
+  'name',
+  'type',
+  'required',
+  'placeholder',
+  'method',
+  'action',
+];
+
 export function LearningExerciseSession({
   exercises,
   onComplete,
@@ -104,6 +164,78 @@ export function LearningExerciseSession({
   const progress = exercises.length ? ((currentIndex + 1) / exercises.length) * 100 : 0;
   const isLastExercise = currentIndex === exercises.length - 1;
   const blankValidation = useMemo(() => getBlankValidation(exercise), [exercise]);
+  const lessonBlankAnswers = useMemo(() => {
+    const byNormalized = new Map<string, string>();
+
+    for (const lessonExercise of exercises) {
+      for (const validation of lessonExercise.validations) {
+        if (validation.type !== 'blank') continue;
+
+        for (const blank of validation.blanks) {
+          const answer = blank.answer.trim();
+          if (!answer) continue;
+          const normalized = normalizeChoiceValue(answer);
+          if (!byNormalized.has(normalized)) {
+            byNormalized.set(normalized, answer);
+          }
+        }
+      }
+    }
+
+    return Array.from(byNormalized.values());
+  }, [exercises]);
+  const blankNeedsCodeTyping = useMemo(() => {
+    if (exercise.type !== 'blank' || !blankValidation) return false;
+
+    const starterWithoutPlaceholders = exercise.starter_code.replace(/\{\{blank\d+\}\}/g, ' ').trim();
+    if (isLikelyCodeFragment(starterWithoutPlaceholders)) return true;
+
+    return blankValidation.blanks.some(blank => isLikelyCodeFragment(blank.answer));
+  }, [blankValidation, exercise.starter_code, exercise.type]);
+  const isMultipleChoiceOnly = exercise.type === 'blank' && Boolean(blankValidation) && !blankNeedsCodeTyping;
+  const templateHasVisibleText = useMemo(() => {
+    if (exercise.type !== 'blank') return false;
+    const withoutPlaceholders = exercise.starter_code.replace(/\{\{blank\d+\}\}/g, ' ').trim();
+    return withoutPlaceholders.length > 0;
+  }, [exercise.starter_code, exercise.type]);
+  const blankChoices = useMemo(() => {
+    if (!blankValidation) return {} as Record<string, string[]>;
+
+    const choicesByBlank: Record<string, string[]> = {};
+
+    for (const blank of blankValidation.blanks) {
+      const answer = blank.answer.trim();
+      const answerNormalized = normalizeChoiceValue(answer);
+      const unique = new Map<string, string>();
+      unique.set(answerNormalized, answer);
+
+      const lessonCandidates = lessonBlankAnswers.filter(candidate => {
+        const normalized = normalizeChoiceValue(candidate);
+        return normalized !== answerNormalized && candidate.trim().length > 0;
+      });
+
+      const fallbackCandidates = GENERIC_DISTRACTORS.filter(candidate => {
+        const normalized = normalizeChoiceValue(candidate);
+        return normalized !== answerNormalized;
+      });
+
+      for (const candidate of [...lessonCandidates, ...fallbackCandidates]) {
+        const normalized = normalizeChoiceValue(candidate);
+        if (unique.has(normalized)) continue;
+        unique.set(normalized, candidate);
+        if (unique.size >= 4) break;
+      }
+
+      const options = deterministicShuffle(
+        Array.from(unique.values()).slice(0, 4),
+        `${exercise.id}-${blank.id}-${answerNormalized}`
+      );
+
+      choicesByBlank[blank.id] = options;
+    }
+
+    return choicesByBlank;
+  }, [blankValidation, exercise.id, lessonBlankAnswers]);
   const htmlPractice = useMemo(
     () =>
       Boolean(exercise)
@@ -184,7 +316,7 @@ export function LearningExerciseSession({
     }
   };
 
-  const renderBlankCode = () => {
+  const renderBlankCode = (allowTyping: boolean) => {
     if (!blankValidation) return null;
     const parts = exercise.starter_code.split(/(\{\{blank\d+\}\})/g);
 
@@ -196,6 +328,17 @@ export function LearningExerciseSession({
           const blank = blankValidation.blanks.find(field => field.id === match[1]);
           if (!blank) return <span key={index}>{part}</span>;
           const value = blanks[blank.id] || '';
+
+          if (!allowTyping) {
+            return (
+              <span
+                key={index}
+                className="mx-1 inline-flex min-w-[96px] items-center justify-center rounded-md border border-primary/35 bg-primary/10 px-2 py-1 font-semibold text-primary"
+              >
+                {value || '____'}
+              </span>
+            );
+          }
 
           return (
             <input
@@ -219,6 +362,49 @@ export function LearningExerciseSession({
               spellCheck="false"
               aria-label={`Resposta para ${blank.id}`}
             />
+          );
+        })}
+      </div>
+    );
+  };
+
+  const renderBlankChoices = () => {
+    if (!blankValidation) return null;
+
+    return (
+      <div className="mt-4 space-y-3">
+        {blankValidation.blanks.map((blank, index) => {
+          const selected = blanks[blank.id] || '';
+          const options = blankChoices[blank.id] ?? [blank.answer];
+          const showCodeStyle = isLikelyCodeFragment(blank.answer);
+
+          return (
+            <div key={blank.id} className="glass-card p-3">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+                {blankValidation.blanks.length === 1
+                  ? 'Selecione a resposta'
+                  : `Selecione a resposta ${index + 1}`}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {options.map(option => {
+                  const isSelected = normalizeChoiceValue(option) === normalizeChoiceValue(selected);
+                  return (
+                    <Button
+                      key={`${blank.id}-${option}`}
+                      type="button"
+                      variant={isSelected ? 'default' : 'secondary'}
+                      disabled={showResult === 'correct'}
+                      onClick={() => setBlanks(prev => ({ ...prev, [blank.id]: option }))}
+                      className={`h-auto min-h-10 whitespace-normal px-3 py-2 text-left ${
+                        showCodeStyle ? 'font-mono text-xs' : 'text-sm'
+                      }`}
+                    >
+                      {option}
+                    </Button>
+                  );
+                })}
+              </div>
+            </div>
           );
         })}
       </div>
@@ -262,7 +448,22 @@ export function LearningExerciseSession({
             <h2 className="text-center text-xl font-bold leading-tight md:text-2xl">{exercise.prompt}</h2>
           </div>
 
-          {exercise.type === 'blank' && renderBlankCode()}
+          {exercise.type === 'blank' && (
+            <div>
+              {(blankNeedsCodeTyping || templateHasVisibleText) && renderBlankCode(blankNeedsCodeTyping)}
+              {renderBlankChoices()}
+              {isMultipleChoiceOnly && (
+                <p className="mt-3 text-center text-xs text-muted-foreground">
+                  Questão teórica: responda por múltipla escolha.
+                </p>
+              )}
+              {blankNeedsCodeTyping && (
+                <p className="mt-3 text-center text-xs text-muted-foreground">
+                  Você pode digitar no código ou selecionar a resposta abaixo.
+                </p>
+              )}
+            </div>
+          )}
 
           {(exercise.type === 'code' || exercise.type === 'bugfix') && htmlPractice && (
             <div className="space-y-3">
