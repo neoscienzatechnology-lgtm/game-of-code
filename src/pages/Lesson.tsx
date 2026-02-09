@@ -1,11 +1,158 @@
-import { BookOpenCheck, Lock, Rocket, Sparkles } from 'lucide-react';
-import { useEffect, useMemo, useState } from 'react';
+import { BookOpenCheck, Eye, Info, Lightbulb, Lock, Rocket, Sparkles, Target } from 'lucide-react';
+import { type ReactNode, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LearningExerciseSession } from '@/components/LearningExerciseSession';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
 import { getLessonVisual } from '@/lib/lessonVisuals';
+
+type TheorySection = {
+  id: string;
+  label: string;
+  content: string;
+};
+
+const normalizeForMatch = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim();
+
+const LABEL_PATTERN = /\b(Objetivo|Fato-chave|Fato chave|Exemplo de uso|Uso comum|Dica prática|Dica pratica|Importante|Atenção|Atencao|Veja um exemplo completo aplicado|O que observar)\s*:/gi;
+
+const normalizeSectionLabel = (raw: string) => {
+  const normalized = normalizeForMatch(raw);
+  if (normalized === 'objetivo') return 'Objetivo';
+  if (normalized === 'fato-chave' || normalized === 'fato chave') return 'Fato-chave';
+  if (normalized === 'exemplo de uso') return 'Exemplo de uso';
+  if (normalized === 'uso comum') return 'Uso comum';
+  if (normalized === 'dica pratica') return 'Dica pratica';
+  if (normalized === 'importante') return 'Importante';
+  if (normalized === 'atencao') return 'Atencao';
+  if (normalized === 'veja um exemplo completo aplicado') return 'Exemplo completo';
+  if (normalized === 'o que observar') return 'O que observar';
+  return raw;
+};
+
+const parseTheorySections = (content: string): TheorySection[] => {
+  const cleanContent = content.replace(/\s+/g, ' ').trim();
+  if (!cleanContent) return [];
+
+  const matcher = new RegExp(LABEL_PATTERN.source, 'gi');
+  const matches = [...cleanContent.matchAll(matcher)];
+  if (!matches.length) {
+    return [{ id: 'teoria-geral', label: 'Visao geral', content: cleanContent }];
+  }
+
+  const sections: TheorySection[] = [];
+  const firstIndex = matches[0].index ?? 0;
+
+  if (firstIndex > 0) {
+    const intro = cleanContent.slice(0, firstIndex).trim();
+    if (intro) {
+      sections.push({
+        id: 'teoria-contexto',
+        label: 'Contexto',
+        content: intro,
+      });
+    }
+  }
+
+  matches.forEach((match, index) => {
+    const start = match.index ?? 0;
+    const nextStart = matches[index + 1]?.index ?? cleanContent.length;
+    const contentStart = start + match[0].length;
+    const sectionContent = cleanContent.slice(contentStart, nextStart).trim();
+    if (!sectionContent) return;
+
+    sections.push({
+      id: `teoria-${index}-${normalizeSectionLabel(match[1]).toLowerCase().replace(/\s+/g, '-')}`,
+      label: normalizeSectionLabel(match[1]),
+      content: sectionContent,
+    });
+  });
+
+  return sections;
+};
+
+const EMPHASIS_PATTERN =
+  /(<[^>\n]+>|@[a-z-]+|aria-[a-z-]+|--[a-z0-9-]+|`[^`]+`|\b(?:HTML|CSS|JS|JavaScript|DOM|SEO|API|URL|GET|POST|UTF-8|ARIA|WWW|href|src|class|id|name|method|action|required|placeholder|defer|async|transition|box-shadow|viewport|charset|var\(\)|@keyframes)\b)/gi;
+
+const renderWithHighlights = (text: string) => {
+  const matcher = new RegExp(EMPHASIS_PATTERN.source, 'gi');
+  const nodes: ReactNode[] = [];
+  let cursor = 0;
+
+  for (const match of text.matchAll(matcher)) {
+    const start = match.index ?? 0;
+    const matched = match[0];
+
+    if (start > cursor) {
+      nodes.push(text.slice(cursor, start));
+    }
+
+    nodes.push(
+      <strong
+        key={`hl-${start}-${matched}`}
+        className="rounded bg-primary/20 px-1 py-0.5 font-semibold text-primary"
+      >
+        {matched}
+      </strong>
+    );
+
+    cursor = start + matched.length;
+  }
+
+  if (cursor < text.length) {
+    nodes.push(text.slice(cursor));
+  }
+
+  return nodes;
+};
+
+const getSectionMeta = (label: string) => {
+  const key = normalizeForMatch(label);
+
+  if (key === 'objetivo') {
+    return {
+      icon: Target,
+      accentClass: 'border-primary/40 bg-primary/8',
+      chipClass: 'border-primary/40 bg-primary/15 text-primary',
+    };
+  }
+
+  if (key === 'dica pratica') {
+    return {
+      icon: Lightbulb,
+      accentClass: 'border-warning/35 bg-warning/8',
+      chipClass: 'border-warning/35 bg-warning/15 text-warning',
+    };
+  }
+
+  if (key === 'fato-chave' || key === 'fato chave' || key === 'importante') {
+    return {
+      icon: Info,
+      accentClass: 'border-primary-alt/35 bg-primary-alt/8',
+      chipClass: 'border-primary-alt/35 bg-primary-alt/15 text-cyan-300',
+    };
+  }
+
+  if (key === 'o que observar') {
+    return {
+      icon: Eye,
+      accentClass: 'border-success/35 bg-success/8',
+      chipClass: 'border-success/35 bg-success/15 text-success',
+    };
+  }
+
+  return {
+    icon: Sparkles,
+    accentClass: 'border-border/60 bg-muted/20',
+    chipClass: 'border-border/60 bg-muted/35 text-muted-foreground',
+  };
+};
 
 export default function Lesson() {
   const { lessonId } = useParams();
@@ -34,6 +181,11 @@ export default function Lesson() {
 
   const lessonVisual = useMemo(
     () => (lesson ? getLessonVisual(lesson) : null),
+    [lesson]
+  );
+
+  const theorySections = useMemo(
+    () => (lesson ? parseTheorySections(lesson.content) : []),
     [lesson]
   );
 
@@ -149,7 +301,32 @@ export default function Lesson() {
             </figure>
           )}
           <h1 className="text-2xl font-bold md:text-3xl">{lesson.title}</h1>
-          <p className="leading-relaxed text-muted-foreground">{lesson.content}</p>
+
+          <div className="space-y-3">
+            {theorySections.map(section => {
+              const meta = getSectionMeta(section.label);
+              const Icon = meta.icon;
+
+              return (
+                <article
+                  key={section.id}
+                  className={`rounded-xl border p-4 ${meta.accentClass}`}
+                >
+                  <div className="mb-2 flex items-center gap-2">
+                    <span
+                      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold uppercase tracking-[0.08em] ${meta.chipClass}`}
+                    >
+                      <Icon className="h-3.5 w-3.5" />
+                      {section.label}
+                    </span>
+                  </div>
+                  <p className="text-sm leading-relaxed text-foreground/90 md:text-base">
+                    {renderWithHighlights(section.content)}
+                  </p>
+                </article>
+              );
+            })}
+          </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
             <Button
