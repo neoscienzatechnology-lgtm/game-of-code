@@ -61,6 +61,7 @@ export default function Diagnostic() {
 
     const masteredLessonIds: string[] = [];
     let correct = 0;
+
     for (const item of questions) {
       const answer = answers[item.id];
       const isCorrect = normalize(answer || '') === normalize(item.answer);
@@ -94,7 +95,7 @@ export default function Diagnostic() {
   if (loading) {
     return (
       <div className="page-shell flex items-center justify-center">
-        <div className="glass-card p-6 text-muted-foreground">Carregando diagnóstico...</div>
+        <div className="glass-card p-6 text-muted-foreground">Preparando seu diagnóstico...</div>
       </div>
     );
   }
@@ -104,7 +105,7 @@ export default function Diagnostic() {
       <div className="page-shell flex items-center justify-center">
         <div className="glass-card max-w-lg space-y-4 p-8 text-center">
           <h1 className="text-2xl font-bold">Módulo não encontrado</h1>
-          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
+          <Button onClick={() => navigate('/')}>Voltar para a trilha</Button>
         </div>
       </div>
     );
@@ -116,9 +117,10 @@ export default function Diagnostic() {
         <div className="glass-card max-w-xl space-y-4 p-8 text-center">
           <h1 className="text-2xl font-bold">Diagnóstico indisponível</h1>
           <p className="text-muted-foreground">
-            Ainda não há perguntas teóricas suficientes para o diagnóstico deste módulo.
+            Este módulo ainda não possui perguntas teóricas suficientes para gerar um diagnóstico
+            confiável.
           </p>
-          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
+          <Button onClick={() => navigate('/')}>Voltar para a trilha</Button>
         </div>
       </div>
     );
@@ -143,13 +145,15 @@ export default function Diagnostic() {
             <CheckCircle2 className="mr-2 h-3.5 w-3.5" />
             Diagnóstico concluído
           </div>
-          <h1 className="text-2xl font-bold md:text-3xl">Resultado do módulo {module.title}</h1>
+          <h1 className="text-2xl font-bold md:text-3xl">
+            Seu ponto de partida no módulo {module.title}
+          </h1>
 
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="stat-tile">
               <Gauge className="mx-auto mb-1 h-4 w-4 text-primary" />
               <span className="stat-value">{scorePercent}%</span>
-              <span className="block text-[11px] text-muted-foreground">Aproveitamento</span>
+              <span className="block text-[11px] text-muted-foreground">Acertos</span>
             </div>
             <div className="stat-tile">
               <ClipboardList className="mx-auto mb-1 h-4 w-4 text-primary" />
@@ -159,15 +163,15 @@ export default function Diagnostic() {
             <div className="stat-tile">
               <Target className="mx-auto mb-1 h-4 w-4 text-primary" />
               <span className="stat-value">
-                {recommendedLesson ? 'Definida' : 'Inicial'}
+                {recommendedLesson ? 'Definido' : 'Revisar base'}
               </span>
-              <span className="block text-[11px] text-muted-foreground">Lição sugerida</span>
+              <span className="block text-[11px] text-muted-foreground">Recomendação</span>
             </div>
           </div>
 
           <p className="text-sm text-muted-foreground">
-            Resultado salvo. O desbloqueio de lições agora considera seu domínio diagnosticado
-            para acelerar a trilha com segurança.
+            Seu resultado foi salvo. A trilha será ajustada para reforçar lacunas sem pular
+            fundamentos. Você pode refazer este diagnóstico quando quiser.
           </p>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -176,14 +180,14 @@ export default function Diagnostic() {
                 onClick={() => navigate(`/lesson/${recommendedLesson}`)}
                 className="gradient-primary text-primary-foreground"
               >
-                Ir para lição sugerida
+                Abrir lição recomendada
               </Button>
             ) : (
               <Button
                 onClick={() => navigate('/')}
                 className="gradient-primary text-primary-foreground"
               >
-                Voltar à trilha
+                Voltar para a trilha
               </Button>
             )}
             <Button
@@ -213,7 +217,8 @@ export default function Diagnostic() {
         </div>
         <h1 className="text-2xl font-bold md:text-3xl">{module.title}</h1>
         <p className="text-sm text-muted-foreground">
-          Responda {questions.length} questões rápidas para ajustar sua trilha ao que você já domina.
+          Responda {questions.length} questões de múltipla escolha. Elas medem o que você já domina
+          para priorizar lacunas sem comprometer a base.
         </p>
 
         <div className="glass-card p-4">
@@ -222,7 +227,7 @@ export default function Diagnostic() {
           </p>
           <h2 className="text-lg font-semibold">{question.prompt}</h2>
           <p className="mt-1 text-xs text-muted-foreground">
-            Tema: {question.lesson_title}
+            Conceito avaliado: {question.lesson_title}
           </p>
 
           <div className="mt-4 grid gap-2">
@@ -253,7 +258,7 @@ export default function Diagnostic() {
             onClick={() => setCurrentIndex(prev => Math.max(0, prev - 1))}
             disabled={currentIndex === 0}
           >
-            Voltar
+            Anterior
           </Button>
           <Button
             onClick={() => {
@@ -266,7 +271,7 @@ export default function Diagnostic() {
             className="gradient-primary text-primary-foreground"
             disabled={!selected}
           >
-            {currentIndex === questions.length - 1 ? 'Finalizar diagnóstico' : 'Próxima'}
+            {currentIndex === questions.length - 1 ? 'Concluir diagnóstico' : 'Próxima questão'}
           </Button>
         </div>
       </div>

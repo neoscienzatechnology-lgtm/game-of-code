@@ -80,7 +80,7 @@ export default function Project() {
       <div className="page-shell flex items-center justify-center">
         <div className="glass-card max-w-lg space-y-4 p-8 text-center">
           <h1 className="text-2xl font-bold">Projeto não encontrado</h1>
-          <Button onClick={() => navigate('/')}>Voltar ao início</Button>
+          <Button onClick={() => navigate('/')}>Voltar para a trilha</Button>
         </div>
       </div>
     );
@@ -92,14 +92,18 @@ export default function Project() {
         <section className="glass-card space-y-5 p-8">
           <div className="hero-kicker w-fit">
             <GraduationCap className="mr-2 h-3.5 w-3.5" />
-            Projeto final
+            Projeto guiado
           </div>
           <h1 className="text-2xl font-bold md:text-3xl">{template.title}</h1>
           <p className="text-muted-foreground">{template.summary}</p>
+          <p className="text-sm text-muted-foreground">
+            Use este checklist como guia de qualidade. Você pode salvar o progresso quantas vezes
+            quiser.
+          </p>
 
           <div className="rounded-xl border border-border/60 bg-muted/25 p-4">
             <p className="mb-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-              Entregável
+              Objetivo da entrega
             </p>
             <p className="text-sm">{template.deliverable}</p>
           </div>
@@ -134,7 +138,7 @@ export default function Project() {
           <div className="grid gap-3 md:grid-cols-2">
             <div className="space-y-2">
               <label className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                URL do projeto (opcional)
+                Link da entrega (opcional)
               </label>
               <input
                 value={projectUrl}
@@ -145,13 +149,13 @@ export default function Project() {
             </div>
             <div className="space-y-2">
               <label className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-                Notas de implementação
+                Anotações do projeto
               </label>
               <textarea
                 value={notes}
                 onChange={event => setNotes(event.target.value)}
                 className="min-h-[84px] w-full rounded-xl border border-border bg-muted/30 px-3 py-2 text-sm outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/30"
-                placeholder="Explique decisões, melhorias e pontos pendentes."
+                placeholder="Explique decisões técnicas, melhorias e pontos pendentes."
               />
             </div>
           </div>
@@ -160,22 +164,22 @@ export default function Project() {
             <div className="stat-tile">
               <ClipboardCheck className="mx-auto mb-1 h-4 w-4 text-primary" />
               <span className="stat-value">{score}</span>
-              <span className="block text-[11px] text-muted-foreground">Pontuação</span>
+              <span className="block text-[11px] text-muted-foreground">Pontuação atual</span>
             </div>
             <div className="stat-tile">
               <CheckSquare className="mx-auto mb-1 h-4 w-4 text-success" />
               <span className="stat-value">
                 {template.checklist.filter(item => checked[item.id]).length}/{template.checklist.length}
               </span>
-              <span className="block text-[11px] text-muted-foreground">Itens marcados</span>
+              <span className="block text-[11px] text-muted-foreground">Checklist concluído</span>
             </div>
             <div className="stat-tile">
               <ExternalLink className="mx-auto mb-1 h-4 w-4 text-primary-alt" />
               <span className="text-xs font-semibold text-foreground">
-                {savedAt ? 'Salvo' : 'Pendente'}
+                {savedAt ? 'Salvo' : 'Não salvo'}
               </span>
               <span className="block text-[11px] text-muted-foreground">
-                {savedAt ? new Date(savedAt).toLocaleDateString('pt-BR') : 'Sem envio'}
+                {savedAt ? new Date(savedAt).toLocaleDateString('pt-BR') : 'Ainda não salvo'}
               </span>
             </div>
           </div>
@@ -198,10 +202,10 @@ export default function Project() {
               }}
             >
               <Save className="mr-2 h-4 w-4" />
-              Salvar avaliação
+              Salvar progresso
             </Button>
             <Button variant="secondary" onClick={() => navigate('/')}>
-              Voltar ao início
+              Voltar para a trilha
             </Button>
           </div>
         </section>
@@ -209,4 +213,3 @@ export default function Project() {
     </div>
   );
 }
-

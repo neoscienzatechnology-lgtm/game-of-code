@@ -12,7 +12,7 @@ import type {
 
 const DB_KEY = 'learning-db';
 const DEFAULT_USER_ID = 'local-user';
-const SEED_REVISION = '2026-02-09-learning-suite-v1';
+const SEED_REVISION = '2026-02-09-learning-suite-v2';
 
 type ModuleManifest = {
   modules: ModuleData[];
@@ -247,6 +247,7 @@ const sanitizeExercisesAgainstTheory = (
 
     const answer = getSingleBlankAnswer(exercise);
     if (!answer) return exercise;
+    if (isLikelyCodeFragment(answer)) return exercise;
 
     const lesson = lessonById.get(exercise.lesson_id);
     if (!lesson) return exercise;

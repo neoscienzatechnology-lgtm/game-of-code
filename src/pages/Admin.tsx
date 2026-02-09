@@ -92,7 +92,8 @@ export default function Admin() {
           </div>
           <h1 className="text-2xl font-bold">Acesso ao painel pedagógico</h1>
           <p className="text-muted-foreground">
-            Ative o modo professor local para revisar erros, precisão por conceito e evolução semanal.
+            Ative o modo professor para acompanhar erros recorrentes, acerto por conceito e
+            evolução semanal da turma.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             <Button
@@ -107,7 +108,7 @@ export default function Admin() {
               Ativar modo professor
             </Button>
             <Button variant="secondary" onClick={() => navigate('/')}>
-              Voltar ao início
+              Voltar para a trilha
             </Button>
           </div>
         </div>
@@ -123,13 +124,13 @@ export default function Admin() {
             <GraduationCap className="mr-2 h-3.5 w-3.5" />
             Painel do professor
           </div>
-          <h1 className="text-2xl font-bold md:text-3xl">Diagnóstico pedagógico da turma local</h1>
+          <h1 className="text-2xl font-bold md:text-3xl">Diagnóstico pedagógico da turma</h1>
 
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="stat-tile">
               <Users className="mx-auto mb-1 h-4 w-4 text-primary" />
               <span className="stat-value">{leaderboard.length}</span>
-              <span className="block text-[11px] text-muted-foreground">Alunos ativos (semana)</span>
+              <span className="block text-[11px] text-muted-foreground">Alunos ativos (7 dias)</span>
             </div>
             <div className="stat-tile">
               <AlertTriangle className="mx-auto mb-1 h-4 w-4 text-warning" />
@@ -139,7 +140,7 @@ export default function Admin() {
             <div className="stat-tile">
               <BarChart3 className="mx-auto mb-1 h-4 w-4 text-success" />
               <span className="stat-value">{lowConceptAccuracy.length}</span>
-              <span className="block text-[11px] text-muted-foreground">Conceitos monitorados</span>
+              <span className="block text-[11px] text-muted-foreground">Conceitos em alerta</span>
             </div>
           </div>
 
@@ -162,7 +163,7 @@ export default function Admin() {
             </section>
 
             <section className="rounded-xl border border-border/60 bg-muted/20 p-4">
-              <h2 className="mb-3 text-sm font-semibold">Conceitos com menor acerto</h2>
+              <h2 className="mb-3 text-sm font-semibold">Conceitos com menor taxa de acerto</h2>
               <div className="space-y-2">
                 {lowConceptAccuracy.map(item => (
                   <div
@@ -171,7 +172,7 @@ export default function Admin() {
                   >
                     <p className="font-semibold text-foreground">{item.concept}</p>
                     <p className="text-muted-foreground">
-                      Acurácia: {Math.round(item.accuracy * 100)}% | Devidos: {item.due}
+                      Acurácia: {Math.round(item.accuracy * 100)}% | Revisões pendentes: {item.due}
                     </p>
                   </div>
                 ))}
@@ -201,7 +202,7 @@ export default function Admin() {
 
           <div className="flex justify-end">
             <Button variant="secondary" onClick={() => navigate('/')}>
-              Voltar ao início
+              Voltar para a trilha
             </Button>
           </div>
         </section>
