@@ -281,11 +281,10 @@ export function LearningPanel() {
                 key={item.id}
                 variant={isActive ? 'default' : 'secondary'}
                 onClick={() => handleSelectModule(item.id)}
-                className={`shrink-0 ${
-                  isActive
+                className={`shrink-0 ${isActive
                     ? 'gradient-primary text-primary-foreground shadow-[0_16px_32px_-18px_hsl(var(--primary)/0.9)]'
                     : 'bg-secondary/80 text-secondary-foreground'
-                }`}
+                  }`}
                 size="sm"
                 aria-pressed={isActive}
                 aria-label={`Selecionar trilha ${item.title}`}
@@ -320,7 +319,7 @@ export function LearningPanel() {
       </div>
 
       <div className="mb-5 grid gap-3 md:grid-cols-[1.35fr_1fr]">
-        <div className="glass-card p-4">
+        <div className="rounded-xl border border-border/40 bg-card/30 p-4">
           <div className="mb-2 flex items-center justify-between text-xs text-muted-foreground">
             <span>Progresso do módulo</span>
             <span className="font-semibold text-foreground">{moduleProgress.percent}%</span>
@@ -378,7 +377,7 @@ export function LearningPanel() {
       </div>
 
       <div className="mb-5 grid gap-3 md:grid-cols-2">
-        <div className="glass-card p-4">
+        <div className="rounded-xl border border-border/40 bg-card/30 p-4">
           <div className="mb-2 flex items-center gap-2 text-sm font-semibold">
             <Target className="h-4 w-4 text-primary" />
             Diagnóstico inicial
@@ -401,7 +400,7 @@ export function LearningPanel() {
           </Button>
         </div>
 
-        <div className="glass-card p-4">
+        <div className="rounded-xl border border-border/40 bg-card/30 p-4">
           <div className="mb-2 flex items-center gap-2 text-sm font-semibold">
             <ClipboardCheck className="h-4 w-4 text-primary" />
             Projeto final do módulo
@@ -422,7 +421,7 @@ export function LearningPanel() {
       </div>
 
       {weeklyProgress && (
-        <div className="glass-card mb-5 p-4">
+        <div className="mb-5 rounded-xl border border-border/40 bg-card/30 p-4">
           <div className="mb-3 flex items-center gap-2 text-sm font-semibold">
             <Trophy className="h-4 w-4 text-xp" />
             Meta semanal e ranking
@@ -484,7 +483,7 @@ export function LearningPanel() {
       )}
 
       {weakConcepts.length > 0 && (
-        <div className="glass-card mb-5 p-4">
+        <div className="mb-5 rounded-xl border border-border/40 bg-card/30 p-4">
           <div className="mb-3 flex items-center gap-2 text-sm font-semibold">
             <BarChart3 className="h-4 w-4 text-primary" />
             Pontos para reforçar
@@ -527,7 +526,7 @@ export function LearningPanel() {
       </div>
 
       {!user && (
-        <div className="glass-card mb-5 p-4 text-sm text-muted-foreground">
+        <div className="mb-5 rounded-xl border border-border/40 bg-card/30 p-4 text-sm text-muted-foreground">
           Entre ou crie uma conta para salvar progresso, XP e sequência de estudos.
           <div className="mt-3 flex gap-2">
             <Button variant="secondary" size="sm" onClick={() => navigate('/login')}>
@@ -568,11 +567,10 @@ export function LearningPanel() {
             <button
               key={item.lesson.id}
               onClick={() => !locked && navigate(`/lesson/${item.lesson.id}`)}
-              className={`w-full rounded-xl border p-3 text-left transition-all ${
-                locked
+              className={`w-full rounded-xl border p-3 text-left transition-all ${locked
                   ? 'cursor-not-allowed border-border/45 bg-muted/25 opacity-70'
                   : 'border-border/60 bg-card/55 hover:-translate-y-0.5 hover:border-primary/45'
-              }`}
+                }`}
               disabled={locked}
               aria-label={locked ? `Lição bloqueada: ${item.lesson.title}` : `Abrir lição ${item.lesson.title}`}
             >

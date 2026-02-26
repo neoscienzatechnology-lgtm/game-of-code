@@ -28,7 +28,8 @@ const highlights = [
 const Index = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { dueExercises, achievements } = useLearningData(user?.id);
+  const { dueExercises, achievements, progressByExercise } = useLearningData(user?.id);
+  const isNewUser = achievements.length === 0 && Object.keys(progressByExercise).length === 0;
 
   return (
     <div className="page-shell">
@@ -58,27 +59,29 @@ const Index = () => {
           </section>
         )}
 
-        <section className="hero-card animate-slide-up">
-          <div className="hero-kicker">
-            <Sparkles className="mr-2 h-3.5 w-3.5" />
-            Game of Code
-          </div>
-          <h1 className="hero-title">Aprenda HTML, CSS e JavaScript com clareza e prática diária</h1>
-          <p className="hero-description">
-            Seu painel de estudo agora está mais visual, com foco em progresso real: lições desbloqueáveis,
-            exercícios guiados e revisão contínua dos pontos fracos.
-          </p>
+        {isNewUser && (
+          <section className="hero-card animate-slide-up">
+            <div className="hero-kicker">
+              <Sparkles className="mr-2 h-3.5 w-3.5" />
+              Game of Code
+            </div>
+            <h1 className="hero-title">Aprenda HTML, CSS e JavaScript com clareza e prática diária</h1>
+            <p className="hero-description">
+              Seu painel de estudo agora está mais visual, com foco em progresso real: lições desbloqueáveis,
+              exercícios guiados e revisão contínua dos pontos fracos.
+            </p>
 
-          <div className="mt-5 grid gap-3 md:grid-cols-3">
-            {highlights.map(item => (
-              <article key={item.title} className="feature-chip">
-                <item.icon className="mb-2 h-4 w-4 text-primary" />
-                <strong>{item.title}</strong>
-                <span>{item.description}</span>
-              </article>
-            ))}
-          </div>
-        </section>
+            <div className="mt-5 grid gap-3 md:grid-cols-3">
+              {highlights.map(item => (
+                <article key={item.title} className="feature-chip">
+                  <item.icon className="mb-2 h-4 w-4 text-primary" />
+                  <strong>{item.title}</strong>
+                  <span>{item.description}</span>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
         <div className="mx-auto max-w-5xl mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
           <div className="lg:col-span-2 w-full">
