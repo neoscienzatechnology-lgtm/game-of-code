@@ -251,8 +251,26 @@ export function LearningPanel() {
 
   if (loading || !module) return null;
 
+  const getModuleImage = (moduleId: string) => {
+    if (moduleId.includes('html')) return '/images/html_module_3d.png';
+    if (moduleId.includes('css')) return '/images/css_module_3d.png';
+    if (moduleId.includes('js')) return '/images/js_module_3d.png';
+    return null;
+  };
+
+  const moduleImage = getModuleImage(module.id);
+
   return (
-    <div className="glass-card mb-6 animate-slide-up p-5 md:p-6">
+    <div className="glass-card mb-6 animate-slide-up p-5 md:p-6 overflow-hidden relative">
+      {moduleImage && (
+        <div className="-mx-5 -mt-5 mb-5 md:-mx-6 md:-mt-6 h-32 w-[calc(100%+2.5rem)] md:w-[calc(100%+3rem)] overflow-hidden border-b border-border/40 sm:h-48 bg-black/40">
+          <img
+            src={moduleImage}
+            alt={module.title}
+            className="h-full w-full object-cover opacity-85 transition-opacity duration-500 hover:opacity-100 mix-blend-screen"
+          />
+        </div>
+      )}
       <div className="mb-5 flex items-start justify-between gap-4">
         <div>
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary/95">
@@ -282,8 +300,8 @@ export function LearningPanel() {
                 variant={isActive ? 'default' : 'secondary'}
                 onClick={() => handleSelectModule(item.id)}
                 className={`shrink-0 ${isActive
-                    ? 'gradient-primary text-primary-foreground shadow-[0_16px_32px_-18px_hsl(var(--primary)/0.9)]'
-                    : 'bg-secondary/80 text-secondary-foreground'
+                  ? 'gradient-primary text-primary-foreground shadow-[0_16px_32px_-18px_hsl(var(--primary)/0.9)]'
+                  : 'bg-secondary/80 text-secondary-foreground'
                   }`}
                 size="sm"
                 aria-pressed={isActive}
@@ -568,8 +586,8 @@ export function LearningPanel() {
               key={item.lesson.id}
               onClick={() => !locked && navigate(`/lesson/${item.lesson.id}`)}
               className={`w-full rounded-xl border p-3 text-left transition-all ${locked
-                  ? 'cursor-not-allowed border-border/45 bg-muted/25 opacity-70'
-                  : 'border-border/60 bg-card/55 hover:-translate-y-0.5 hover:border-primary/45'
+                ? 'cursor-not-allowed border-border/45 bg-muted/25 opacity-70'
+                : 'border-border/60 bg-card/55 hover:-translate-y-0.5 hover:border-primary/45'
                 }`}
               disabled={locked}
               aria-label={locked ? `Lição bloqueada: ${item.lesson.title}` : `Abrir lição ${item.lesson.title}`}

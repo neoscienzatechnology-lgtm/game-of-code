@@ -37,6 +37,20 @@ const Index = () => {
         <ThemeToggle />
       </header>
       <main className="page-content">
+        <div className="relative mb-8 w-full overflow-hidden rounded-2xl border border-border/40 bg-black/50 h-32 sm:h-48">
+          <img
+            src="/images/dashboard_hero_3d.png"
+            alt="Dashboard"
+            className="h-full w-full object-cover opacity-75 mix-blend-screen transition-opacity duration-700 hover:opacity-100"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/20 to-transparent pointer-events-none" />
+          <div className="absolute bottom-4 left-6 pointer-events-none">
+            <h1 className="text-xl sm:text-2xl font-bold text-foreground">Sua Jornada</h1>
+            <p className="text-xs sm:text-sm text-foreground/80">Continue dominando código de forma inteligente.</p>
+          </div>
+        </div>
+
         {dueExercises.length > 0 && (
           <section className="glass-card mb-6 animate-slide-up p-5 md:p-6">
             <div className="hero-kicker">
