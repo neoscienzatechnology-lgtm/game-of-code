@@ -52,6 +52,7 @@ interface LearningState {
     string,
     ReturnType<typeof getModuleProjectStatus>
   >;
+  achievements: import('@/types/achievements').UserAchievement[];
 }
 
 export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
@@ -69,6 +70,7 @@ export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
     conceptProgress: [],
     moduleDiagnostics: {},
     moduleProjectStatus: {},
+    achievements: [],
   });
 
   const refresh = useCallback(() => {
@@ -102,6 +104,7 @@ export const useLearningData = (userId: string = DEFAULT_LEARNING_USER) => {
       conceptProgress: getConceptProgress(userId),
       moduleDiagnostics,
       moduleProjectStatus,
+      achievements: snapshot.userAchievements?.[userId] || [],
     });
   }, [userId]);
 

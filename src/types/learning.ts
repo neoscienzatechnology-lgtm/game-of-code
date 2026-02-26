@@ -1,5 +1,6 @@
 export type ExerciseType = 'blank' | 'bugfix' | 'code';
 export type Difficulty = 'easy' | 'medium' | 'hard';
+import type { UserAchievement } from './achievements';
 
 export interface LessonData {
   id: string;
@@ -26,26 +27,26 @@ export interface BlankField {
 
 export type ExerciseValidation =
   | {
-      type: 'blank';
-      blanks: BlankField[];
-    }
+    type: 'blank';
+    blanks: BlankField[];
+  }
   | {
-      type: 'js-tests';
-      tests: { name: string; code: string }[];
-    }
+    type: 'js-tests';
+    tests: { name: string; code: string }[];
+  }
   | {
-      type: 'js-output';
-      functionName: string;
-      cases: { input: unknown[]; expected: unknown }[];
-    }
+    type: 'js-output';
+    functionName: string;
+    cases: { input: unknown[]; expected: unknown }[];
+  }
   | {
-      type: 'html-structure';
-      requiredTags?: string[];
-      requiredSelectors?: string[];
-      requiredClasses?: string[];
-      requiredAttributes?: { selector: string; name: string; value?: string }[];
-      requiredCss?: { selector: string; property: string; value?: string }[];
-    };
+    type: 'html-structure';
+    requiredTags?: string[];
+    requiredSelectors?: string[];
+    requiredClasses?: string[];
+    requiredAttributes?: { selector: string; name: string; value?: string }[];
+    requiredCss?: { selector: string; property: string; value?: string }[];
+  };
 
 export interface ExerciseData {
   id: string;
@@ -138,6 +139,7 @@ export interface LearningDb {
   weeklyGoals?: Record<string, number>;
   userProgress: UserProgress[];
   userStats: Record<string, UserStats>;
+  userAchievements?: Record<string, UserAchievement[]>;
 }
 
 export interface LearningSeed {

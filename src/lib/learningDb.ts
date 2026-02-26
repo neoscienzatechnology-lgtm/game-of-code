@@ -9,6 +9,7 @@ import type {
   UserProgress,
   UserStats,
 } from '@/types/learning';
+import { checkAchievements } from './achievements';
 
 const DB_KEY = 'learning-db';
 const DEFAULT_USER_ID = 'local-user';
@@ -627,6 +628,7 @@ export const getLearningSnapshot = (userId: string = DEFAULT_USER_ID) => {
     weeklyGoals: db.weeklyGoals ?? {},
     stats,
     progressByExercise,
+    userAchievements: db.userAchievements ?? {},
   };
 };
 
@@ -828,13 +830,13 @@ export const saveModuleDiagnostic = (params: {
   const existing = getDiagnosticRecord(db, userId, moduleId);
   const nextDiagnostics = existing
     ? (db.moduleDiagnostics ?? []).map(item =>
-        item.user_id === userId && item.module_id === moduleId
-          ? {
-              ...record,
-              created_at: item.created_at,
-            }
-          : item
-      )
+      item.user_id === userId && item.module_id === moduleId
+        ? {
+          ...record,
+          created_at: item.created_at,
+        }
+        : item
+    )
     : [...(db.moduleDiagnostics ?? []), record];
 
   const nextDb: LearningDb = {
@@ -905,8 +907,8 @@ export const saveModuleProject = (params: {
   const existing = getProjectRecord(db, userId, moduleId);
   const nextProjects = existing
     ? (db.moduleProjects ?? []).map(item =>
-        item.user_id === userId && item.module_id === moduleId ? submission : item
-      )
+      item.user_id === userId && item.module_id === moduleId ? submission : item
+    )
     : [...(db.moduleProjects ?? []), submission];
 
   const nextDb: LearningDb = {
@@ -1159,10 +1161,12 @@ export const applySpacedRepetition = (
 
   if (correct) {
     const nextInterval =
-      base.interval_days <= 0
+      base.streak_correct === 0
         ? 1
-        : Math.max(1, Math.round(base.interval_days * base.ease));
-    const nextEase = Math.min(3.0, base.ease + 0.05);
+        : base.streak_correct === 1
+          ? 4
+          : Math.max(1, Math.round(base.interval_days * base.ease));
+    const nextEase = Math.min(3.0, Math.max(1.3, base.ease + 0.1));
     const due = new Date(now);
     due.setDate(due.getDate() + nextInterval);
 
@@ -1254,8 +1258,8 @@ export const recordExerciseAttempt = (params: {
 
   const nextProgress = existing
     ? db.userProgress.map(progress =>
-        progress === existing ? { ...updated } : progress
-      )
+      progress === existing ? { ...updated } : progress
+    )
     : [...db.userProgress, updated];
 
   const stats = db.userStats[userId] ?? {
@@ -1268,9 +1272,9 @@ export const recordExerciseAttempt = (params: {
 
   const nextStats = correct
     ? {
-        ...updateStreak(stats, now),
-        xp: stats.xp + getXpForExercise(exercise),
-      }
+      ...updateStreak(stats, now),
+      xp: stats.xp + getXpForExercise(exercise),
+    }
     : stats;
 
   const attemptEntry: AttemptLogEntry = {
@@ -1282,10 +1286,14 @@ export const recordExerciseAttempt = (params: {
     created_at: now.toISOString(),
   };
 
+  const nextAttemptLog = [...(db.attemptLog ?? []), attemptEntry];
+  const currentAchievements = db.userAchievements?.[userId] ?? [];
+  const newAchievements = checkAchievements(userId, nextStats, nextProgress, nextAttemptLog, currentAchievements);
+
   const nextDb: LearningDb = {
     ...db,
     userProgress: nextProgress,
-    attemptLog: [...(db.attemptLog ?? []), attemptEntry],
+    attemptLog: nextAttemptLog,
     weeklyGoals: {
       ...(db.weeklyGoals ?? {}),
       [userId]: ensureWeeklyGoal(db, userId),
@@ -1293,6 +1301,10 @@ export const recordExerciseAttempt = (params: {
     userStats: {
       ...db.userStats,
       [userId]: nextStats,
+    },
+    userAchievements: {
+      ...(db.userAchievements ?? {}),
+      [userId]: newAchievements,
     },
   };
 

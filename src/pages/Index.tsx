@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { AchievementsPanel } from '@/components/AchievementsPanel';
 
 const highlights = [
   {
@@ -27,7 +28,7 @@ const highlights = [
 const Index = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { dueExercises } = useLearningData(user?.id);
+  const { dueExercises, achievements } = useLearningData(user?.id);
 
   return (
     <div className="page-shell">
@@ -79,8 +80,13 @@ const Index = () => {
           </div>
         </section>
 
-        <div className="mx-auto max-w-3xl">
-          <LearningPanel />
+        <div className="mx-auto max-w-5xl mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+          <div className="lg:col-span-2 w-full">
+            <LearningPanel />
+          </div>
+          <div className="lg:col-span-1 w-full">
+            <AchievementsPanel unlocked={achievements} />
+          </div>
         </div>
       </main>
     </div>
