@@ -44,7 +44,7 @@ const normalizeSectionLabel = (raw: string) => {
 };
 
 const parseTheorySections = (content: string): TheorySection[] => {
-  const cleanContent = content.replace(/\s+/g, ' ').trim();
+  const cleanContent = content.trim();
   if (!cleanContent) return [];
 
   const matcher = new RegExp(LABEL_PATTERN.source, 'gi');
@@ -236,7 +236,8 @@ export default function Lesson() {
 
   useEffect(() => {
     if (loading || !lessonId || lesson || loadedAll) return;
-    void ensureAllModulesLoaded().then(() => setLoadedAll(true));
+    setLoadedAll(true);
+    void ensureAllModulesLoaded();
   }, [ensureAllModulesLoaded, lesson, lessonId, loadedAll, loading]);
 
   useEffect(() => {
@@ -356,7 +357,7 @@ export default function Lesson() {
                       {section.label}
                     </span>
                   </div>
-                  <p className="text-sm leading-relaxed text-foreground/90 md:text-base">
+                  <p className="text-sm leading-relaxed text-foreground/90 md:text-base whitespace-pre-wrap">
                     {renderWithHighlights(section.content)}
                   </p>
                 </article>
