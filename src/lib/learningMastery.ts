@@ -10,8 +10,15 @@ export interface LessonMasteryStatus {
   mastered: boolean;
 }
 
-const getWrongAttempts = (progress?: UserProgress) =>
-  progress?.total_wrong ?? (progress?.last_result === 'wrong' ? 1 : 0);
+export const getRecentWrongWeight = (progress?: UserProgress) => {
+  if (!progress) return 0;
+  // Se acertou na última e tem uma ofensiva, o peso do erro no "domínio da lição" cai muito.
+  if (progress.last_result === 'correct' && progress.streak_correct > 0) {
+    // Reduz dramaticamente o impacto dos erros históricos se o usuário já provou que aprendeu
+    return Math.max(0, (progress.total_wrong ?? 0) - (progress.streak_correct * 2));
+  }
+  return progress.total_wrong ?? (progress.last_result === 'wrong' ? 1 : 0);
+};
 
 export const computeLessonMastery = (
   lessonId: string,
@@ -28,7 +35,7 @@ export const computeLessonMastery = (
   for (const exercise of lessonExercises) {
     const progress = progressByExercise[exercise.id];
     const correct = progress?.total_correct ?? 0;
-    const wrong = getWrongAttempts(progress);
+    const wrong = getRecentWrongWeight(progress);
 
     if (correct > 0) completed += 1;
     totalCorrect += correct;

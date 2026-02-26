@@ -11,7 +11,9 @@ import confetti from 'canvas-confetti';
 import {
   LESSON_MASTERY_THRESHOLD,
   buildMasteredLessonMap,
+  computeLessonMastery,
   mergeMasteredLessonIds,
+  getRecentWrongWeight,
 } from '@/lib/learningMastery';
 
 type TheorySection = {
@@ -222,7 +224,7 @@ export default function Lesson() {
       const progress = progressByExercise[exercise.id];
       if (!progress) continue;
       totalCorrect += progress.total_correct;
-      totalWrong += progress.total_wrong ?? (progress.last_result === 'wrong' ? 1 : 0);
+      totalWrong += getRecentWrongWeight(progress);
     }
 
     const attempts = totalCorrect + totalWrong;
