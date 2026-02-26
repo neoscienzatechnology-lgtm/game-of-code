@@ -214,11 +214,17 @@ const normalizeTheoryText = (value: string) =>
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/[^a-z0-9<>]+/g, ' ')
     .trim();
 
 const hasTermInText = (haystack: string, term: string) => {
   if (!term) return true;
+  if (term.length === 1 && /^[a-z]$/.test(term)) {
+    if (haystack.includes(`<${term}>`)) return true;
+    const isCommonWord = ['a', 'e', 'o'].includes(term);
+    if (!isCommonWord && (haystack === term || haystack.startsWith(`${term} `) || haystack.endsWith(` ${term}`) || haystack.includes(` ${term} `))) return true;
+    return false;
+  }
   return (
     haystack === term
     || haystack.startsWith(`${term} `)
@@ -242,15 +248,15 @@ const sanitizeExercisesAgainstTheory = (
 ): ExerciseData[] => {
   const lessonById = new Map(lessons.map(lesson => [lesson.id, lesson]));
 
-  return exercises.map(exercise => {
-    if (!isStandaloneBlankExercise(exercise)) return exercise;
+  return exercises.filter(exercise => {
+    if (!isStandaloneBlankExercise(exercise)) return true;
 
     const answer = getSingleBlankAnswer(exercise);
-    if (!answer) return exercise;
-    if (isLikelyCodeFragment(answer)) return exercise;
+    if (!answer) return true;
+    if (isLikelyCodeFragment(answer)) return true;
 
     const lesson = lessonById.get(exercise.lesson_id);
-    if (!lesson) return exercise;
+    if (!lesson) return true;
 
     const lessonCorpus = normalizeTheoryText(
       [
@@ -262,32 +268,9 @@ const sanitizeExercisesAgainstTheory = (
     );
     const normalizedAnswer = normalizeTheoryText(answer);
 
-    if (hasTermInText(lessonCorpus, normalizedAnswer)) return exercise;
+    if (hasTermInText(lessonCorpus, normalizedAnswer)) return true;
 
-    const safeAnswer = lesson.title.trim() || lesson.concept.trim() || answer;
-    return {
-      ...exercise,
-      prompt: 'Prática guiada: com base na teoria acima, qual é o tema principal desta lição?',
-      starter_code: '{{blank1}}',
-      validations: [
-        {
-          type: 'blank',
-          blanks: [
-            {
-              id: 'blank1',
-              answer: safeAnswer,
-              placeholder: 'resposta',
-            },
-          ],
-        },
-      ],
-      hints: [
-        { level: 1, text: 'Releia o título e o objetivo da lição.' },
-        { level: 2, text: 'A resposta está explícita no conteúdo teórico acima.' },
-        { level: 3, text: `Resposta esperada: ${safeAnswer}` },
-      ],
-      solution: safeAnswer,
-    };
+    return false;
   });
 };
 
