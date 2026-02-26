@@ -239,14 +239,6 @@ export default function Lesson() {
     void ensureAllModulesLoaded().then(() => setLoadedAll(true));
   }, [ensureAllModulesLoaded, lesson, lessonId, loadedAll, loading]);
 
-  if (loading) {
-    return (
-      <div className="page-shell flex items-center justify-center">
-        <div className="glass-card p-6 text-muted-foreground">Carregando lição...</div>
-      </div>
-    );
-  }
-
   useEffect(() => {
     if (stage === 'complete') {
       playSound('levelup');
@@ -258,6 +250,14 @@ export default function Lesson() {
       });
     }
   }, [stage]);
+
+  if (loading) {
+    return (
+      <div className="page-shell flex items-center justify-center">
+        <div className="glass-card p-6 text-muted-foreground">Carregando lição...</div>
+      </div>
+    );
+  }
 
   if (!lesson) {
     return (
