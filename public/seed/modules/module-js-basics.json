@@ -333,41 +333,6 @@
       "estimated_time": 45
     },
     {
-      "id": "ex-js-vars-3",
-      "lesson_id": "lesson-js-variables",
-      "type": "bugfix",
-      "prompt": "Corrija o bug: a função monta a mensagem, mas não devolve o resultado.",
-      "starter_code": "function criarMensagem(nome) {\n  const mensagem = \"Ola, \" + nome;\n}",
-      "validations": [
-        {
-          "type": "js-tests",
-          "tests": [
-            {
-              "name": "funcao retorna mensagem",
-              "code": "assert(criarMensagem('Ada') === 'Ola, Ada', 'A funcao deve retornar a mensagem');"
-            }
-          ]
-        }
-      ],
-      "hints": [
-        {
-          "level": 1,
-          "text": "A variável mensagem esta correta. Falta devolver o valor."
-        },
-        {
-          "level": 2,
-          "text": "Use return no final da função."
-        },
-        {
-          "level": 3,
-          "text": "Return mensagem no final da função."
-        }
-      ],
-      "solution": "function criarMensagem(nome) {\n  const mensagem = \"Ola, \" + nome;\n  return mensagem;\n}",
-      "difficulty": "medium",
-      "estimated_time": 60
-    },
-    {
       "id": "ex-js-if-1",
       "lesson_id": "lesson-js-conditionals",
       "type": "blank",
@@ -407,23 +372,15 @@
       "id": "ex-js-if-2",
       "lesson_id": "lesson-js-conditionals",
       "type": "code",
-      "prompt": "Implemente a função isPar que retorna true para numeros pares.",
-      "starter_code": "function isPar(n) {\n  // seu codigo\n}",
+      "prompt": "Use um if para mudar o valor de 'resultado' para 'Ganhou' se 'pontos' for maior que 10.",
+      "starter_code": "let pontos = 15;\nlet resultado = '';\n\n// escreva seu if abaixo\n",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "2 e par",
-              "code": "assert(isPar(2) === true, '2 deve ser par');"
-            },
-            {
-              "name": "3 e impar",
-              "code": "assert(isPar(3) === false, '3 deve ser impar');"
-            },
-            {
-              "name": "0 e par",
-              "code": "assert(isPar(0) === true, '0 deve ser par');"
+              "name": "Condição correta",
+              "code": "assert(resultado === 'Ganhou', 'resultado deve ser atualizado para Ganhou');"
             }
           ]
         }
@@ -431,18 +388,18 @@
       "hints": [
         {
           "level": 1,
-          "text": "Use o operador de resto (%)."
+          "text": "Verifique se pontos > 10."
         },
         {
           "level": 2,
-          "text": "Numero par deixa resto 0 ao dividir por 2."
+          "text": "Se for verdade, faça resultado = 'Ganhou';"
         },
         {
           "level": 3,
-          "text": "return n % 2 === 0;"
+          "text": "if (pontos > 10) { resultado = 'Ganhou'; }"
         }
       ],
-      "solution": "function isPar(n) {\n  return n % 2 === 0;\n}",
+      "solution": "let pontos = 15;\nlet resultado = '';\n\nif (pontos > 10) {\n  resultado = 'Ganhou';\n}",
       "difficulty": "medium",
       "estimated_time": 60
     },
@@ -450,19 +407,15 @@
       "id": "ex-js-if-3",
       "lesson_id": "lesson-js-conditionals",
       "type": "bugfix",
-      "prompt": "Corrija a comparacao para que 18 anos também seja permitido.",
-      "starter_code": "function podeDirigir(idade) {\n  return idade > 18;\n}",
+      "prompt": "Corrija o bug: a condição deveria permitir acesso se a idade for 18 anos ou mais.",
+      "starter_code": "let idade = 18;\nlet acesso = false;\n\nif (idade > 18) {\n  acesso = true;\n}",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "18 deve ser permitido",
-              "code": "assert(podeDirigir(18) === true, '18 deve ser permitido');"
-            },
-            {
-              "name": "17 deve ser negado",
-              "code": "assert(podeDirigir(17) === false, '17 deve ser negado');"
+              "name": "Acesso permitido para 18 anos",
+              "code": "assert(acesso === true, 'O acesso deve ser true quando idade for 18 ou mais');"
             }
           ]
         }
@@ -478,10 +431,10 @@
         },
         {
           "level": 3,
-          "text": "return idade >= 18;"
+          "text": "if (idade >= 18) { acesso = true; }"
         }
       ],
-      "solution": "function podeDirigir(idade) {\n  return idade >= 18;\n}",
+      "solution": "let idade = 18;\nlet acesso = false;\n\nif (idade >= 18) {\n  acesso = true;\n}",
       "difficulty": "easy",
       "estimated_time": 45
     },
