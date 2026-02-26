@@ -3,6 +3,7 @@ import { ArrowRight, Check, Lightbulb, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ExerciseData, ExerciseValidation } from '@/types/learning';
 import { validateExercise } from '@/lib/validators/exerciseValidator';
+import { playSound } from '@/lib/sounds';
 
 interface LearningExerciseSessionProps {
   exercises: ExerciseData[];
@@ -271,10 +272,11 @@ export function LearningExerciseSession({
     return choicesByBlank;
   }, [blankValidation, exercise.id, lessonBlankAnswers]);
   const htmlPractice = useMemo(
-    () =>
-      Boolean(exercise)
-      && (exercise.type === 'code' || exercise.type === 'bugfix')
-      && isHtmlStructureExercise(exercise),
+    () => {
+      if (!exercise || (exercise.type !== 'code' && exercise.type !== 'bugfix')) return false;
+      if (isHtmlStructureExercise(exercise)) return true;
+      return /<\/?[a-z!][\s\S]*>/i.test(exercise.starter_code || '');
+    },
     [exercise]
   );
 
@@ -326,6 +328,7 @@ export function LearningExerciseSession({
     });
 
     if (result.passed) {
+      playSound('success');
       setShowResult('correct');
       setErrorMessage(undefined);
       setPedagogicalFeedback(undefined);
@@ -339,6 +342,7 @@ export function LearningExerciseSession({
         hint: exercise.hints[0]?.text,
         attemptsOnCurrent,
       });
+      playSound('error');
       setShowResult('wrong');
       setErrorMessage(result.friendlyMessage ?? result.error);
       setPedagogicalFeedback(feedback);
@@ -397,9 +401,8 @@ export function LearningExerciseSession({
               }
               placeholder={blank.placeholder}
               disabled={showResult === 'correct'}
-              className={`exercise-input ${
-                showResult === 'correct' ? 'exercise-input-correct' : ''
-              }`}
+              className={`exercise-input ${showResult === 'correct' ? 'exercise-input-correct' : ''
+                }`}
               style={{
                 width: `${Math.max(blank.placeholder?.length || 4, value.length || 0) * 12 + 24}px`,
               }}
@@ -442,9 +445,8 @@ export function LearningExerciseSession({
                       variant={isSelected ? 'default' : 'secondary'}
                       disabled={showResult === 'correct'}
                       onClick={() => setBlanks(prev => ({ ...prev, [blank.id]: option }))}
-                      className={`h-auto min-h-10 whitespace-normal px-3 py-2 text-left ${
-                        showCodeStyle ? 'font-mono text-xs' : 'text-sm'
-                      }`}
+                      className={`h-auto min-h-10 whitespace-normal px-3 py-2 text-left ${showCodeStyle ? 'font-mono text-xs' : 'text-sm'
+                        }`}
                     >
                       {option}
                     </Button>
@@ -645,11 +647,10 @@ export function LearningExerciseSession({
           <Button
             onClick={showResult ? handleContinue : handleCheck}
             disabled={checking || (!showResult && !canCheck())}
-            className={`h-14 w-full rounded-xl text-lg font-bold transition-all ${
-              showResult === 'correct'
-                ? 'gradient-success glow-success hover:opacity-90'
-                : 'gradient-primary glow-primary hover:opacity-90'
-            }`}
+            className={`h-14 w-full rounded-xl text-lg font-bold transition-all ${showResult === 'correct'
+              ? 'gradient-success glow-success hover:opacity-90'
+              : 'gradient-primary glow-primary hover:opacity-90'
+              }`}
             aria-label={showResult === 'correct' ? 'Ir para próximo exercício' : 'Verificar resposta'}
           >
             {showResult === 'correct'

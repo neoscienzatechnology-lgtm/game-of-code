@@ -4,6 +4,7 @@ import { LearningPanel } from '@/components/LearningPanel';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const highlights = [
   {
@@ -30,6 +31,9 @@ const Index = () => {
 
   return (
     <div className="page-shell">
+      <header className="flex w-full justify-end p-4">
+        <ThemeToggle />
+      </header>
       <main className="page-content">
         {dueExercises.length > 0 && (
           <section className="glass-card mb-6 animate-slide-up p-5 md:p-6">
@@ -53,31 +57,31 @@ const Index = () => {
           </section>
         )}
 
-      <section className="hero-card animate-slide-up">
-        <div className="hero-kicker">
-          <Sparkles className="mr-2 h-3.5 w-3.5" />
-          Game of Code
-        </div>
-        <h1 className="hero-title">Aprenda HTML, CSS e JavaScript com clareza e prática diária</h1>
-        <p className="hero-description">
-          Seu painel de estudo agora está mais visual, com foco em progresso real: lições desbloqueáveis,
-          exercícios guiados e revisão contínua dos pontos fracos.
-        </p>
+        <section className="hero-card animate-slide-up">
+          <div className="hero-kicker">
+            <Sparkles className="mr-2 h-3.5 w-3.5" />
+            Game of Code
+          </div>
+          <h1 className="hero-title">Aprenda HTML, CSS e JavaScript com clareza e prática diária</h1>
+          <p className="hero-description">
+            Seu painel de estudo agora está mais visual, com foco em progresso real: lições desbloqueáveis,
+            exercícios guiados e revisão contínua dos pontos fracos.
+          </p>
 
-        <div className="mt-5 grid gap-3 md:grid-cols-3">
-          {highlights.map(item => (
-            <article key={item.title} className="feature-chip">
-              <item.icon className="mb-2 h-4 w-4 text-primary" />
-              <strong>{item.title}</strong>
-              <span>{item.description}</span>
-            </article>
-          ))}
-        </div>
-      </section>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {highlights.map(item => (
+              <article key={item.title} className="feature-chip">
+                <item.icon className="mb-2 h-4 w-4 text-primary" />
+                <strong>{item.title}</strong>
+                <span>{item.description}</span>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <div className="mx-auto max-w-3xl">
-        <LearningPanel />
-      </div>
+        <div className="mx-auto max-w-3xl">
+          <LearningPanel />
+        </div>
       </main>
     </div>
   );

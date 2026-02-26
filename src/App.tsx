@@ -1,4 +1,5 @@
 import { Suspense, lazy } from "react";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,38 +20,40 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <AuthProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
-          <Suspense
-            fallback={
-              <div className="page-shell flex items-center justify-center">
-                <div className="glass-card p-6 text-sm text-muted-foreground">
-                  Carregando...
+  <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <Suspense
+              fallback={
+                <div className="page-shell flex items-center justify-center">
+                  <div className="glass-card p-6 text-sm text-muted-foreground">
+                    Carregando...
+                  </div>
                 </div>
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/lesson/:lessonId" element={<Lesson />} />
-              <Route path="/review" element={<Review />} />
-              <Route path="/diagnostic/:moduleId" element={<Diagnostic />} />
-              <Route path="/project/:moduleId" element={<Project />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </TooltipProvider>
-    </AuthProvider>
-  </QueryClientProvider>
+              }
+            >
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/lesson/:lessonId" element={<Lesson />} />
+                <Route path="/review" element={<Review />} />
+                <Route path="/diagnostic/:moduleId" element={<Diagnostic />} />
+                <Route path="/project/:moduleId" element={<Project />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </BrowserRouter>
+        </TooltipProvider>
+      </AuthProvider>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;

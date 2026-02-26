@@ -6,6 +6,8 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { useLearningData } from '@/hooks/useLearningData';
 import { getLessonVisual } from '@/lib/lessonVisuals';
+import { playSound } from '@/lib/sounds';
+import confetti from 'canvas-confetti';
 import {
   LESSON_MASTERY_THRESHOLD,
   buildMasteredLessonMap,
@@ -244,6 +246,18 @@ export default function Lesson() {
       </div>
     );
   }
+
+  useEffect(() => {
+    if (stage === 'complete') {
+      playSound('levelup');
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#4f46e5', '#10b981', '#f59e0b', '#ec4899']
+      });
+    }
+  }, [stage]);
 
   if (!lesson) {
     return (
