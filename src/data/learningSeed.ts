@@ -43,34 +43,166 @@ export const learningSeed: LearningSeed = {
   ],
   "lessons": [
     {
-      "id": "legacy-html-u1-l1",
+      "id": "html-01-fundamentos-da-web",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "introducao-a-web-o-que-e-a-web",
-      "title": "O que e a Web",
-      "content": "Objetivo: Entenda a diferença entre internet e Web.\n\nFato-chave: A internet é a infraestrutura física (cabos, roteadores, servidores). A Web é um serviço que roda sobre ela — formada por páginas HTML acessadas via navegador usando o protocolo HTTP ou HTTPS.\n\nExemplo de uso: Quando você digita https://google.com, o navegador envia uma requisição HTTP ao servidor, que devolve um arquivo HTML. O navegador interpreta esse HTML e exibe a página.\n\nUso comum: Sites, aplicações web, dashboards, sistemas de e-commerce e blogs — tudo funciona sobre a Web.\n\nDica prática: Abra o DevTools (F12) → aba Network e recarregue uma página. Você verá cada arquivo solicitado: HTML, CSS, JS, imagens e fontes.",
+      "concept": "fundamentos-da-web",
+      "title": "Fundamentos da Web",
+      "content": "Objetivo: Entenda o que é a Web, o papel do HTML e como o navegador interpreta páginas.\n\nFato-chave: A internet é a infraestrutura física; a Web é um serviço sobre ela — páginas HTML acessadas via HTTP/HTTPS. HTML (HyperText Markup Language) define a ESTRUTURA e o significado semântico do conteúdo. CSS define a APARÊNCIA e JavaScript define o COMPORTAMENTO. Juntos formam os três pilares da web.\n\nComo o navegador funciona: Ao receber um HTML, o navegador lê de cima para baixo e constrói a árvore DOM (Document Object Model). Em seguida combina com o CSSOM (regras CSS) para gerar a Render Tree e exibir a página.\n\nO que são tags: Tags são delimitadas por < e >. A maioria vem em pares: <p>abre</p> fecha. Algumas são void elements (auto-fechantes): <br>, <img>, <input>. Atributos ficam dentro da tag de abertura: <a href=\"url\" target=\"_blank\">.\n\nExemplo de uso:\n<!-- O navegador lê HTML de cima para baixo -->\n<!DOCTYPE html>\n<html lang=\"pt-BR\">\n  <head><title>Meu Site</title></head>\n  <body>\n    <h1>Olá, Mundo!</h1>        <!-- HTML: estrutura -->\n    <p id=\"intro\">Bem-vindo.</p> <!-- id conecta ao CSS/JS -->\n  </body>\n</html>\n\nUso comum: Todo site começa com HTML. É o esqueleto sobre o qual CSS e JS constroem a experiência completa.\n\nDica prática: Abra o DevTools (F12) → aba Elements para ver a árvore DOM em tempo real. Edite elementos diretamente no navegador para experimentar sem alterar o arquivo.",
       "order": 1,
-      "tags": [
-        "introducao",
-        "web",
-        "que"
-      ]
+      "tags": []
     },
     {
-      "id": "legacy-html-u1-l2",
+      "id": "html-02-estrutura-do-documento",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "introducao-a-web-o-que-e-html",
-      "title": "O que e HTML",
-      "content": "Objetivo: Descubra o papel do HTML na web.\n\nFato-chave: HTML (HyperText Markup Language) é uma linguagem de marcação que define a estrutura e o significado semântico do conteúdo. Ele não controla a aparência — isso é trabalho do CSS.\n\nExemplo de uso:\n<h1>Meu Site</h1>\n<p>Bem-vindo ao meu primeiro site!</p>\n<a href=\"sobre.html\">Saiba mais</a>\n\nUso comum: Todo site tem pelo menos um arquivo HTML como ponto de entrada. HTML é o esqueleto sobre o qual CSS e JavaScript trabalham.\n\nDica prática: Use o validador validator.w3.org para encontrar erros de HTML. O navegador tolera erros silenciosamente, mas eles causam problemas em acessibilidade e SEO.",
+      "concept": "estrutura-do-documento-html",
+      "title": "Estrutura do Documento HTML",
+      "content": "Objetivo: Construa a estrutura completa e correta de um documento HTML5.\n\nFato-chave: Todo documento HTML válido segue esta estrutura obrigatória — cada parte tem um papel específico:\n\n<!DOCTYPE html>          → informa ao navegador: padrão HTML5 (evita Quirks Mode)\n<html lang=\"pt-BR\">      → raiz da árvore DOM; lang melhora acessibilidade e SEO\n  <head>                 → metadados: charset, viewport, title, CSS, meta SEO\n    <meta charset=\"UTF-8\">           → suporta acentos, emojis e todos os idiomas\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">  → responsividade mobile\n    <title>Título da Página</title>  → aparece na aba e nos resultados do Google (50-60 chars ideal)\n    <link rel=\"stylesheet\" href=\"estilos.css\">\n  </head>\n  <body>                 → todo conteúdo visível: textos, imagens, botões, links\n    <!-- Comentários são ignorados pelo navegador — não coloque dados sensíveis! -->\n    <h1>Conteúdo Principal</h1>\n  </body>\n</html>\n\nIndentação: Use 2 espaços por nível para visualizar a hierarquia. VS Code: Shift+Alt+F formata o arquivo inteiro.\n\nExemplo de uso:\n<!DOCTYPE html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"description\" content=\"Aprenda HTML do zero com exemplos práticos.\">\n    <title>Curso de HTML | Plataforma</title>\n    <link rel=\"stylesheet\" href=\"estilo.css\">\n  </head>\n  <body>\n    <h1>Bem-vindo ao Curso de HTML</h1>\n    <p>Comece pelo módulo de fundamentos.</p>\n  </body>\n</html>\n\nDica prática: Confirme o modo de renderização no Console: document.compatMode. \"CSS1Compat\" = correto. \"BackCompat\" = está em Quirks Mode (falta o DOCTYPE).",
       "order": 2,
-      "tags": [
-        "introducao",
-        "web",
-        "que",
-        "html"
-      ]
+      "tags": []
     },
+    {
+      "id": "html-03-texto-e-formatacao",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "texto-e-formatacao",
+      "title": "Texto e Formatação",
+      "content": "Objetivo: Estruture e formate textos com semântica correta — não apenas aparência visual.\n\nFato-chave: Em HTML, formatação semântica importa mais que a visual. A aparência é trabalho do CSS.\n\nHierarquia de títulos: h1 (único por página) a h6. Nunca pule níveis. Use para estrutura, não para tamanho.\n<h1>Título Principal</h1>\n  <h2>Seção</h2>\n    <h3>Subseção</h3>\n\nParágrafos e quebras:\n<p>Bloco de texto independente — tem margem automática acima e abaixo.</p>\n<address>Rua das Flores, 123<br>São Paulo — SP</address>   <!-- br: parte do conteúdo, não layout -->\n<hr>  <!-- separador temático entre seções -->\n\nÊnfase semântica:\n<strong>Importância alta</strong>  → negrito + impacto em leitores de tela\n<em>Ênfase que muda o sentido</em> → itálico + entonação em leitores de tela\n<b>Negrito visual</b> / <i>Itálico visual</i>  → sem semântica, apenas aparência\n\nCódigo e citações:\n<code>display: flex</code>          → código inline dentro de texto\n<pre><code>function soma(a, b) {\n  return a + b;\n}</code></pre>                       → bloco de código com formatação preservada\n<blockquote cite=\"https://w3.org\">\n  <p>A Web é para todos.</p>\n  <footer>— <cite>Tim Berners-Lee</cite></footer>\n</blockquote>\n<q>Citação curta inline</q>         → navegador adiciona aspas automáticas\n\nDica prática: Nunca use <br><br> para criar espaço entre parágrafos — use margin CSS. Use a extensão HeadingsMap no Chrome para visualizar a hierarquia de títulos de qualquer página.",
+      "order": 3,
+      "tags": []
+    },
+    {
+      "id": "html-04-links-e-navegacao",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "links-e-navegacao",
+      "title": "Links e Navegação",
+      "content": "Objetivo: Crie links de todos os tipos com segurança e boas práticas de UX e SEO.\n\nFato-chave: A tag <a> (anchor) é a base da Web — sem ela não existe navegação entre páginas. O atributo href define o destino.\n\nTipos de href:\n<a href=\"https://exemplo.com\">URL absoluta — outro site</a>\n<a href=\"sobre.html\">URL relativa — mesma pasta</a>\n<a href=\"../index.html\">Pasta acima</a>\n<a href=\"/produtos\">Raiz do site</a>\n<a href=\"#contato\">Âncora — mesma página</a>\n<a href=\"mailto:email@ex.com?subject=Oi\">E-mail</a>\n<a href=\"tel:+5511999999999\">(11) 99999-9999</a>\n\nSegurança com target=\"_blank\":\n<!-- SEMPRE adicione rel=\"noopener noreferrer\" com _blank — evita reverse tabnapping -->\n<a href=\"https://externo.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Abre em nova aba com segurança\n</a>\n\nÂncoras (navegação interna):\n<nav>\n  <a href=\"#sobre\">Sobre</a>\n  <a href=\"#contato\">Contato</a>\n</nav>\n<section id=\"sobre\">...</section>\n<section id=\"contato\">...</section>\n/* CSS para rolagem suave: html { scroll-behavior: smooth; } */\n\nAtributo rel para SEO:\nrel=\"nofollow\"   → Google não segue o link (links pagos, UGC)\nrel=\"sponsored\"  → links patrocinados/afiliados\nrel=\"ugc\"        → conteúdo gerado por usuários (comentários)\n\nDica prática: Use sempre texto descritivo no link — nunca \"clique aqui\". Leitores de tela anunciam apenas o texto do link para navegar pela página; \"clique aqui\" não diz nada ao usuário.",
+      "order": 4,
+      "tags": []
+    },
+    {
+      "id": "html-05-imagens-e-midia",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "imagens-e-midia",
+      "title": "Imagens e Mídia",
+      "content": "Objetivo: Incorpore imagens, áudio e vídeo com acessibilidade e performance otimizadas.\n\nFato-chave: Imagens mal otimizadas são a principal causa de páginas lentas. Sempre defina width, height e alt.\n\nImagens corretas:\n<!-- Sempre: src, alt descritivo, width e height (evita layout shift / CLS) -->\n<img src=\"produto.webp\" alt=\"Camiseta azul com estampa de astronauta, tamanho M\" width=\"400\" height=\"400\">\n<!-- Imagem decorativa: alt=\"\" (não omita o atributo!) -->\n<img src=\"divisor.svg\" alt=\"\" width=\"100\" height=\"2\">\n\nFormatos: WebP → fotos modernas (25% menor que JPG) | SVG → logos e ícones | PNG → transparência | JPG → fotos legadas\n\nResponsive image com fallback:\n<picture>\n  <source srcset=\"hero.webp\" type=\"image/webp\">\n  <img src=\"hero.jpg\" alt=\"Imagem de destaque\" width=\"1200\" height=\"600\">\n</picture>\n\nFigura com legenda:\n<figure>\n  <img src=\"grafico.png\" alt=\"Gráfico de barras: crescimento de 40% em 2024\">\n  <figcaption>Figura 1 — Crescimento anual de 2024. Fonte: IBGE.</figcaption>\n</figure>\n\nÁudio e vídeo nativos:\n<audio controls>\n  <source src=\"podcast.mp3\" type=\"audio/mpeg\">\n  <a href=\"podcast.mp3\">Baixar áudio</a>\n</audio>\n\n<video controls width=\"800\" height=\"450\" poster=\"capa.jpg\">\n  <source src=\"aula.mp4\" type=\"video/mp4\">\n  <source src=\"aula.webm\" type=\"video/webm\">\n</video>\n<!-- Vídeo de fundo: autoplay muted loop playsinline (sem controls) -->\n\nDica prática: Use Squoosh (squoosh.app) para converter e comprimir imagens gratuitamente no browser. Defina width e height sempre — reserva espaço antes do carregamento e melhora o Core Web Vitals (CLS).",
+      "order": 5,
+      "tags": []
+    },
+    {
+      "id": "html-06-listas",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "listas-html",
+      "title": "Listas",
+      "content": "Objetivo: Organize informações em listas semânticas de três tipos.\n\nFato-chave: Escolha o tipo de lista correto pelo significado — não pela aparência visual (isso é CSS).\n\nLista não ordenada — ordem não importa:\n<ul>\n  <li>HTML — estrutura</li>\n  <li>CSS — aparência</li>\n  <li>JavaScript — comportamento</li>\n</ul>\n\nLista ordenada — a sequência importa:\n<ol>\n  <li>Pré-aqueça o forno a 180°C</li>\n  <li>Misture ingredientes secos</li>\n  <li>Adicione líquidos e mexa</li>\n</ol>\n<!-- Atributos: start=\"5\" (começo), reversed (regressiva), type=\"A\" (A B C...) -->\n\nLista de definição — pares termo/definição:\n<dl>\n  <dt>HTML</dt>\n  <dd>Linguagem de marcação que estrutura páginas web.</dd>\n  <dt>CSS</dt>\n  <dd>Define a aparência visual dos elementos HTML.</dd>\n</dl>\n\nListas aninhadas:\n<ul>\n  <li>Frontend\n    <ul>\n      <li>HTML</li>\n      <li>CSS</li>\n    </ul>\n  </li>\n  <li>Backend\n    <ol>\n      <li>Node.js</li>\n      <li>Python</li>\n    </ol>\n  </li>\n</ul>\n\nMenus de navegação (padrão da web):\n<nav>\n  <ul style=\"list-style:none; padding:0\">\n    <li><a href=\"/\">Início</a></li>\n    <li><a href=\"/blog\">Blog</a></li>\n  </ul>\n</nav>\n\nDica prática: Leitores de tela anunciam o tipo e a quantidade de itens (\"lista com 3 itens\"). Use <ul> para menus de navegação — é o padrão semântico esperado por tecnologias assistivas.",
+      "order": 6,
+      "tags": []
+    },
+    {
+      "id": "html-07-tabelas",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "tabelas-html",
+      "title": "Tabelas",
+      "content": "Objetivo: Crie tabelas acessíveis para dados tabulares — nunca para layout de página.\n\nFato-chave: Tabelas HTML são para dados que fazem sentido em grade de linhas e colunas. Para layout de páginas, use CSS Grid ou Flexbox.\n\nEstrutura semântica completa:\n<table>\n  <caption>Resultados do 1º Trimestre de 2024</caption>\n  <thead>\n    <tr>\n      <th scope=\"col\">Mês</th>\n      <th scope=\"col\">Receita</th>\n      <th scope=\"col\">Despesa</th>\n      <th scope=\"col\">Saldo</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\">Janeiro</th>\n      <td>R$ 10.000</td>\n      <td>R$ 7.500</td>\n      <td>R$ 2.500</td>\n    </tr>\n    <tr>\n      <th scope=\"row\">Fevereiro</th>\n      <td>R$ 12.000</td>\n      <td>R$ 8.000</td>\n      <td>R$ 4.000</td>\n    </tr>\n  </tbody>\n  <tfoot>\n    <tr>\n      <th scope=\"row\">Total</th>\n      <td>R$ 22.000</td>\n      <td>R$ 15.500</td>\n      <td>R$ 6.500</td>\n    </tr>\n  </tfoot>\n</table>\n\nMescla de células:\n<td colspan=\"2\">Ocupa 2 colunas</td>\n<td rowspan=\"3\">Ocupa 3 linhas</td>\n\nCSS básico para tabelas:\ntable { border-collapse: collapse; width: 100%; }\nth, td { padding: 8px 12px; border-bottom: 1px solid #ddd; text-align: left; }\nthead { background: #2d3748; color: white; }\ntr:nth-child(even) { background: #f5f5f5; }  /* zebra striping */\n\nDica prática: Use scope=\"col\" em <th> de colunas e scope=\"row\" em <th> de linhas. Isso permite que leitores de tela JAWS e NVDA anunciem o cabeçalho correto para cada célula, tornando a tabela acessível.",
+      "order": 7,
+      "tags": []
+    },
+    {
+      "id": "html-08-formularios",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "formularios-html",
+      "title": "Formulários HTML",
+      "content": "Objetivo: Crie formulários acessíveis e funcionais com validação nativa do navegador.\n\nFato-chave: O atributo name de cada campo define a chave dos dados enviados ao servidor. Sem name, o campo não é enviado.\n\nEstrutura do formulário:\n<form action=\"/cadastro\" method=\"POST\" novalidate>\n  <!-- action: onde enviar | method: GET (URL) ou POST (corpo HTTP) -->\n\n  <label for=\"nome\">Nome completo *</label>\n  <input type=\"text\" id=\"nome\" name=\"nome\" required placeholder=\"João Silva\">\n\n  <label for=\"email\">E-mail *</label>\n  <input type=\"email\" id=\"email\" name=\"email\" required>\n\n  <label for=\"senha\">Senha *</label>\n  <input type=\"password\" id=\"senha\" name=\"senha\" minlength=\"8\" required>\n\n  <label for=\"telefone\">Telefone</label>\n  <input type=\"tel\" id=\"telefone\" name=\"telefone\" pattern=\"[0-9]{10,11}\">\n\n  <label for=\"nascimento\">Data de nascimento</label>\n  <input type=\"date\" id=\"nascimento\" name=\"nascimento\">\n\n  <label for=\"bio\">Biografia</label>\n  <textarea id=\"bio\" name=\"bio\" rows=\"4\" maxlength=\"500\"\n            placeholder=\"Conte um pouco sobre você...\"></textarea>\n\n  <label for=\"estado\">Estado</label>\n  <select id=\"estado\" name=\"estado\">\n    <option value=\"\">-- Selecione --</option>\n    <option value=\"SP\">São Paulo</option>\n    <option value=\"RJ\">Rio de Janeiro</option>\n  </select>\n\n  <label>\n    <input type=\"checkbox\" name=\"termos\" required>\n    Aceito os <a href=\"/termos\">Termos de Uso</a>\n  </label>\n\n  <button type=\"submit\">Cadastrar</button>\n  <button type=\"reset\">Limpar</button>\n</form>\n\nTipos de input essenciais: text | email | password | number | tel | date | checkbox | radio | file | range | color | hidden | submit\n\nValidação nativa (sem JavaScript):\nrequired          → campo obrigatório\nminlength=\"8\"     → mínimo de caracteres\nmaxlength=\"100\"   → máximo de caracteres\nmin=\"0\" max=\"120\" → para numbers e dates\npattern=\"regex\"   → validação por expressão regular\ntype=\"email\"      → valida formato de e-mail automaticamente\n\nDica prática: SEMPRE use <label for=\"id\"> associado ao campo pelo id. Isso amplia a área clicável (UX) e permite que leitores de tela identifiquem o campo corretamente (acessibilidade). Nunca use placeholder como substituto do label — ele desaparece ao digitar.",
+      "order": 8,
+      "tags": []
+    },
+    {
+      "id": "html-09-html-semantico",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "html-semantico",
+      "title": "HTML Semântico",
+      "content": "Objetivo: Use elementos semânticos do HTML5 para estruturar páginas de forma significativa.\n\nFato-chave: HTML semântico significa usar a tag correta para cada tipo de conteúdo. Isso melhora acessibilidade, SEO e manutenção — o código \"descreve\" o que é, não só como parece.\n\nEstrutura semântica de uma página típica:\n<header>        → cabeçalho do site ou de uma seção (logo, nav principal)\n  <nav>         → navegação principal — links para outras áreas do site\n    <ul>...</ul>\n  </nav>\n</header>\n\n<main>          → conteúdo principal ÚNICO da página (apenas um por documento)\n  <article>     → conteúdo autônomo que faz sentido fora do contexto (post, notícia)\n    <h1>Título do Artigo</h1>\n    <p>Texto...</p>\n\n    <section>   → agrupamento temático dentro de um article ou main\n      <h2>Subtópico</h2>\n    </section>\n  </article>\n\n  <aside>       → conteúdo complementar, lateralmente relacionado (sidebar, anúncio)\n</main>\n\n<footer>        → rodapé do site (contatos, links legais, copyright)\n\nQuando usar <div>: Quando NENHUM elemento semântico se aplica. Use para agrupamentos puramente estruturais/visuais sem significado de conteúdo.\n\nRegra prática:\nheader → cabeçalho\nnav    → navegação\nmain   → conteúdo principal (único!)\narticle→ conteúdo independente (blog post, produto, comentário)\nsection→ agrupamento temático com heading próprio\naside  → conteúdo secundário/complementar\nfooter → rodapé\n\nDica prática: Instale a extensão \"Web Developer\" no Chrome → Information → View Document Outline. Ela mostra a hierarquia semântica da sua página. Se tudo estiver em <div>, você precisa revisar a semântica.",
+      "order": 9,
+      "tags": []
+    },
+    {
+      "id": "html-10-atributos-globais",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "atributos-globais-html",
+      "title": "Atributos Globais",
+      "content": "Objetivo: Domine os atributos disponíveis em qualquer elemento HTML.\n\nFato-chave: Atributos globais podem ser usados em qualquer tag HTML. São fundamentais para conectar HTML ao CSS e JavaScript.\n\nAtributos globais essenciais:\nid=\"identificador-unico\"      → único por página; usado por CSS (#id) e JS (getElementById)\nclass=\"classe1 classe2\"       → pode repetir; usado por CSS (.classe) e JS\nstyle=\"color: red;\"           → CSS inline — evite; prefira arquivos .css externos\ntitle=\"Dica ao passar o mouse\" → tooltip nativo do navegador\nlang=\"pt-BR\"                  → idioma do conteúdo (pode sobrescrever o lang do <html>)\nhidden                        → oculta o elemento (como display:none mas semântico)\ntabindex=\"0\"                  → inclui na ordem de tabulação (Tab); -1 remove do Tab\ndata-*=\"valor\"                → dados customizados para JS sem poluir atributos nativos\n\nExemplos práticos:\n<!-- id para JS e ancoragem -->\n<section id=\"sobre-nos\">...</section>\n\n<!-- class para estilos CSS -->\n<button class=\"btn btn-primary\">Salvar</button>\n\n<!-- data-* para passar dados ao JavaScript -->\n<button data-produto-id=\"42\" data-preco=\"99.90\" class=\"btn-comprar\">\n  Comprar\n</button>\n<script>\n  document.querySelector('.btn-comprar').addEventListener('click', function() {\n    const id = this.dataset.produtoId;   // \"42\"\n    const preco = this.dataset.preco;    // \"99.90\"\n  });\n</script>\n\n<!-- tabindex para acessibilidade de elementos não interativos -->\n<div tabindex=\"0\" role=\"button\" onclick=\"ação()\">Elemento clicável</div>\n\nDica prática: Nunca use id com espaços (inválido) ou começando com número. IDs devem ser únicos na página — se precisar reutilizar, use class. Atributos data-* são a forma correta de embutir dados para JavaScript sem usar variáveis globais ou atributos inválidos.",
+      "order": 10,
+      "tags": []
+    },
+    {
+      "id": "html-11-acessibilidade-e-seo",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "acessibilidade-e-seo-html",
+      "title": "Acessibilidade e SEO",
+      "content": "Objetivo: Torne suas páginas acessíveis para todos e bem posicionadas nos motores de busca.\n\nFato-chave: Acessibilidade e SEO compartilham muitas práticas. Um HTML semântico e bem estruturado beneficia ambos simultaneamente.\n\nAcessibilidade (a11y):\n1. Sempre use alt descritivo em imagens (ou alt=\"\" para decorativas)\n2. Associe labels a inputs com for=\"id\" — nunca omita o <label>\n3. Garanta ordem de tabulação lógica (tabindex mínimo; use HTML na ordem correta)\n4. Contraste de cores: mínimo 4.5:1 para texto normal (verifique em webaim.org/contrast)\n5. ARIA somente quando HTML nativo não resolve:\n   role=\"alert\" → anuncia mudanças dinâmicas\n   aria-label=\"Fechar\" → rótulo para elementos sem texto visível\n   aria-hidden=\"true\" → oculta elemento de leitores de tela (ícones decorativos)\n   aria-expanded=\"false\" → estado de menus/accordions\n\nSEO On-page:\n<head>\n  <title>Palavra-chave Principal | Nome do Site</title>           <!-- 50-60 chars -->\n  <meta name=\"description\" content=\"Resumo atraente com a palavra-chave \n    principal. Ideal entre 150-160 caracteres.\">\n  <link rel=\"canonical\" href=\"https://seusite.com/pagina\">       <!-- evita conteúdo duplicado -->\n  <meta property=\"og:title\" content=\"Título para redes sociais\"> <!-- Open Graph -->\n  <meta property=\"og:image\" content=\"https://.../imagem.jpg\">\n</head>\n\nPilares de SEO com HTML:\n- Um único <h1> por página com a palavra-chave principal\n- Hierarquia de títulos lógica (h1 → h2 → h3)\n- Alt em imagens (o Google indexa imagens pelo alt)\n- URLs descritivas e amigáveis (use <link rel=\"canonical\">)\n- Velocidade de carregamento (imagens em WebP, scripts com defer)\n- Dados estruturados (Schema.org via JSON-LD no <script type=\"application/ld+json\">)\n\nFerramentas: Google Search Console, Lighthouse (DevTools → aba Lighthouse), axe DevTools (extensão para acessibilidade).\n\nDica prática: Execute Lighthouse (DevTools → Lighthouse → Analisar) para obter uma pontuação de acessibilidade e SEO com sugestões específicas. Tente atingir 90+ em todas as categorias.",
+      "order": 11,
+      "tags": []
+    },
+    {
+      "id": "html-12-integrando-css-e-js",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "integrando-css-js-html",
+      "title": "Integrando CSS e JavaScript",
+      "content": "Objetivo: Conecte CSS e JavaScript ao HTML da forma correta e com melhor performance.\n\nFato-chave: A posição e os atributos dos elementos <link> e <script> afetam drasticamente o desempenho de carregamento da página.\n\nCSS — sempre no <head>:\n<!-- Arquivo externo (recomendado) -->\n<link rel=\"stylesheet\" href=\"estilos.css\">\n\n<!-- CSS inline na tag (apenas exceções — evite) -->\n<p style=\"color: red; font-weight: bold;\">Evite esto</p>\n\n<!-- Bloco de CSS (para Critical CSS ou componentes isolados) -->\n<style>\n  body { font-family: 'Inter', sans-serif; }\n</style>\n\nJavaScript — com defer ou async:\n<!-- defer: baixa em paralelo, executa APÓS o HTML ser parseado (ordem garantida) -->\n<script src=\"app.js\" defer></script>\n\n<!-- async: baixa em paralelo, executa assim que estiver pronto (ordem NÃO garantida) -->\n<script src=\"analytics.js\" async></script>\n\n<!-- Inline (para scripts pequenos e críticos) -->\n<script>\n  document.querySelector('#btn').addEventListener('click', () => alert('Clicado!'));\n</script>\n\nQuando usar cada um:\ndefer  → scripts que dependem do DOM ou da ordem (app.js, framework.js)\nasync  → scripts independentes (analytics, chat widgets, A/B testing)\nnormal → scripts que devem bloquear — raramente necessário\n\nValidação e boas práticas:\n- Valide HTML: validator.w3.org\n- Verifique compatibilidade: caniuse.com\n- Performance: DevTools → aba Lighthouse → gera relatório completo\n- Minifique CSS/JS em produção (Vite, Webpack e Parcel fazem isso automaticamente)\n\nDica prática: O DevTools → aba Network → filtre por \"Doc\" para ver o HTML inicial. Filtre por \"CSS\" e \"JS\" para ver quanto tempo cada arquivo leva para carregar. Tamanhos acima de 200KB para JS merecem atenção.",
+      "order": 12,
+      "tags": []
+    },
+    {
+      "id": "html-13-boas-praticas-e-projetos",
+      "module_id": "module-html-basics",
+      "language": "html",
+      "concept": "boas-praticas-projetos-html",
+      "title": "Boas Práticas e Projetos",
+      "content": "Objetivo: Aplique boas práticas em projetos HTML reais e entenda o ecossistema moderno.\n\nChecklist de HTML de qualidade:\n✅ DOCTYPE correto na primeira linha\n✅ lang=\"pt-BR\" no <html>\n✅ meta charset UTF-8 como primeiro elemento do <head>\n✅ meta viewport para responsividade mobile\n✅ title único e descritivo (50-60 chars)\n✅ meta description (150-160 chars)\n✅ Um único <h1> por página\n✅ alt em todas as imagens (descritivo ou \"\" para decorativas)\n✅ labels associados a todos os inputs\n✅ CSS em arquivo externo com <link> no <head>\n✅ JS com defer antes de </body> ou no <head>\n✅ Código indentado e organizado (Prettier / EditorConfig)\n✅ HTML válido (validator.w3.org)\n\nProjetos práticos para fixar o aprendizado:\n1. Página pessoal — header com foto e bio, seções de habilidades e projetos, formulário de contato, footer\n2. Landing page — hero section, benefícios, depoimentos, CTA (call-to-action), footer\n3. Blog simples — lista de artigos com <article>, página de post individual com <time> e <address>\n4. Formulário de cadastro — ao menos 8 tipos de input, validação nativa, fieldset/legend para grupos\n\nHTML moderno e ecossistema:\n- Web Components: elementos HTML customizados (<my-button>) com Shadow DOM\n- Frameworks (React, Vue, Angular): geram HTML dinâmico, mas o HTML de saída ainda segue os mesmos princípios\n- PWA (Progressive Web App): usa <link rel=\"manifest\"> e Service Workers — HTML como base\n\nDica prática: Todo projeto hospedado no GitHub Pages é publicado gratuitamente. Crie um repositório, ative GitHub Pages nas configurações e seu portfólio estará online em minutos em username.github.io/projeto.",
+      "order": 13,
+      "tags": []
+    },
+    {
+      "id": "css-01-fundamentos-css",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "fundamentos-css",
+      "title": "Fundamentos do CSS",
+      "content": "Objetivo: Entenda como o CSS funciona — seletores, cascata, especificidade e o box model.\n\nFato-chave: CSS (Cascading Style Sheets) define a aparência dos elementos HTML. \"Cascading\" significa que regras podem se sobrepor — a especificidade e a ordem determinam qual vence.\n\nAnatomia de uma regra CSS:\nseletor { propriedade: valor; }\nh1      { color: #1a1a2e; font-size: 2rem; }\n\nTipos de seletores:\n*           → universal (todos os elementos)\np           → tipo (tag)\n.classe     → classe (pode repetir)\n#id         → ID (único por página — alta especificidade)\n[attr]      → atributo: input[type=\"email\"]\na:hover     → pseudo-classe (estado)\np::first-line → pseudo-elemento (parte do contenúdo)\n\nCombinadores:\ndiv p       → descend ente (p dentro de qualquer div)\ndiv > p     → filho direto\nh2 + p      → imediato seguinte\nh2 ~ p      → todos os seguintes\n\nEspecificidade (maior número = mais forte):\n0-0-1  tipo/pseudo-elemento (p, h1, ::before)\n0-1-0  classe/pseudo-classe (.card, :hover)\n1-0-0  ID (#header)\ninline → style=\"\" (mais forte ainda — evite)\n!important → força bruta (usar só em últimas situações)\n\nBox Model — todo elemento é uma caixa:\ncontent → o conteúdo real (text, image)\npadding → espaço interno (entre content e border)\nborder  → borda\nmargin  → espaço externo (entre este e outros elementos)\n\n/* box-sizing: border-box faz width incluir padding+border (recomendado sempre) */\n*, *::before, *::after { box-sizing: border-box; }\n\n.card {\n  width: 300px;        /* largura total incluindo padding+border */\n  padding: 20px;\n  border: 2px solid #ccc;\n  margin: 16px auto;   /* centraliza horizontalmente */\n}\n\nExemplo de uso:\n/* Reset básico recomendado */\n*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\n\nbody {\n  font-family: 'Inter', system-ui, sans-serif;\n  line-height: 1.6;\n  color: #1a1a2e;\n  background: #f8fafc;\n}\n\nh1 { font-size: clamp(1.8rem, 4vw, 3rem); }   /* responsivo sem media query */\n\nDica prática: Prefira unidades relativas: rem (relativo ao root, bom para fontes), em (relativo ao pai), % (relativo ao container), vh/vw (relativo à viewport). Evite px para fontes — prejudica usuários que aumentam o tamanho padrão do navegador.",
+      "order": 1,
+      "tags": []
+    },
+    {
+      "id": "css-02-layout-moderno",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "layout-css-flexbox-grid",
+      "title": "Layout Moderno: Flexbox e Grid",
+      "content": "Objetivo: Domine Flexbox e Grid para criar qualquer layout responsivo sem hacks.\n\nFato-chave: Flexbox é para layouts em UMA dimensão (linha ou coluna). Grid é para layouts em DUAS dimensões (linhas e colunas). Use o certo para cada caso.\n\nFLEXBOX — uma dimensão:\n.container {\n  display: flex;\n  flex-direction: row;           /* row (padrão) | column | row-reverse | column-reverse */\n  justify-content: space-between; /* alinhamento no eixo principal */\n  align-items: center;            /* alinhamento no eixo cruzado */\n  flex-wrap: wrap;                /* permite quebrar linha */\n  gap: 16px;                      /* espaço entre itens */\n}\n.item {\n  flex: 1;          /* cresce igualmente */\n  flex: 0 0 200px;  /* fixo em 200px */\n  flex: 1 1 300px;  /* base 300px, pode crescer e encolher */\n}\n\nCasos de uso Flexbox: menu, barra de navegação, card row, botões lado a lado, centralizar um elemento.\n\nGRID — duas dimensões:\n.grid {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);      /* 3 colunas iguais */\n  grid-template-columns: 250px 1fr 1fr;       /* sidebar fixa + 2 colunas */\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* responsivo automático */\n  gap: 24px;\n}\n.destaque {\n  grid-column: 1 / 3;   /* ocupa colunas 1 e 2 */\n  grid-row: 1 / 3;      /* ocupa linhas 1 e 2 */\n}\n\nCasos de uso Grid: layout de página completa, galeria de cards, formulários complexos.\n\nPosition:\nstatic    → padrão (fluxo normal)\nrelative  → offset sem sair do fluxo (base para absolute filhos)\nabsolute  → remove do fluxo, posiciona relativo ao pai position:relative\nfixed     → relativo à viewport (navbar fixa, chat button)\nsticky    → misto: fluxo normal até rolar para além do threshold\n\nResponsividade com Mobile First:\n/* Base: mobile */\n.grid { display: grid; grid-template-columns: 1fr; gap: 16px; }\n\n/* Tablet */\n@media (min-width: 768px) {\n  .grid { grid-template-columns: repeat(2, 1fr); }\n}\n\n/* Desktop */\n@media (min-width: 1024px) {\n  .grid { grid-template-columns: repeat(3, 1fr); }\n}\n\nPseudo-classes de interação:\n:hover  → cursor sobre o elemento\n:focus  → elemento com foco (Tab)\n:active → durante o clique\n:visited → link já visitado\n:nth-child(2n) → elementos pares\n\nDica prática: Use grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) para criar grids responsivas que ajustam o número de colunas automaticamente sem media queries. É a técnica mais elegante para cards e galerias.",
+      "order": 2,
+      "tags": []
+    },
+    {
+      "id": "css-03-animacoes-e-avancado",
+      "module_id": "module-css-basics",
+      "language": "css",
+      "concept": "animacoes-transicoes-css-avancado",
+      "title": "Animações, Transições e CSS Avançado",
+      "content": "Objetivo: Crie animações fluidas, pseudo-elementos e domine técnicas avançadas de CSS.\n\nFato-chave: Anime preferencialmente transform e opacity — essas propriedades são executadas na GPU e não causam reflow (mais performáticas que animar width, height ou top).\n\nTransitions — para mudanças de estado (hover, focus):\n.btn {\n  background: #4f46e5;\n  transform: translateY(0);\n  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;\n}\n.btn:hover {\n  background: #4338ca;\n  transform: translateY(-2px);\n  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);\n}\n\nAnimations — para animações contínuas ou complexas:\n/* Definição com @keyframes */\n@keyframes fadeInUp {\n  from { opacity: 0; transform: translateY(20px); }\n  to   { opacity: 1; transform: translateY(0); }\n}\n@keyframes pulse {\n  0%, 100% { transform: scale(1); }\n  50%       { transform: scale(1.05); }\n}\n\n/* Aplicação */\n.elemento {\n  animation: fadeInUp 0.6s ease forwards;\n  animation: pulse 2s ease-in-out infinite;\n}\n/* Propriedades: name | duration | timing-function | delay | iteration-count | direction | fill-mode */\n\nPseudo-elementos — conteúdo decorativo sem HTML extra:\n.card::before {\n  content: '';          /* obrigatório (pode ser texto ou '') */\n  display: block;\n  width: 4px;\n  height: 100%;\n  background: #4f46e5;\n  position: absolute;\n  left: 0; top: 0;\n}\n.required::after { content: ' *'; color: red; }\n\nCombinadores avançados:\nnav > ul > li > a          → filho direto em cadeia\ninput:checked + label      → label APÓS input marcado (customizar checkboxes)\n.card:not(:last-child)     → todos exceto o último\nli:nth-child(3n+1)         → 1º, 4º, 7º...\n\nEspecificidade detalhada:\nID (1,0,0) > Classe/atrib/pseudo-class (0,1,0) > Tipo/pseudo-elem (0,0,1)\n.btn.primary { color: blue; }   /* 0,2,0 */\n#header .btn { color: red; }    /* 1,1,0 — vence */\n\nCSS Custom Properties (variáveis):\n:root {\n  --color-primary: #4f46e5;\n  --spacing-md: 1rem;\n  --radius: 8px;\n}\n.btn { background: var(--color-primary); padding: var(--spacing-md); border-radius: var(--radius); }\n\nDica prática: Use prefers-reduced-motion para respeitar usuários sensíveis a animações:\n@media (prefers-reduced-motion: reduce) {\n  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }\n}",
+      "order": 3,
+      "tags": []
+    },
+
     {
       "id": "legacy-html-u1-l3",
       "module_id": "module-html-basics",
@@ -85,54 +217,6 @@ export const learningSeed: LearningSeed = {
         "html",
         "css",
         "javascript"
-      ]
-    },
-    {
-      "id": "legacy-html-u1-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "introducao-a-web-como-o-navegador-interpreta-html",
-      "title": "Como o navegador interpreta HTML",
-      "content": "Objetivo: Entenda o processo de renderização do navegador.\n\nFato-chave: O navegador lê o HTML de cima para baixo, construindo uma árvore chamada DOM (Document Object Model). Em seguida, combina o DOM com o CSSOM (regras CSS) para criar a Render Tree e exibir a página.\n\nExemplo de uso: Se você colocar um <script> no <head> sem o atributo defer, ele bloqueia a análise do HTML até ser executado. Por isso, use defer ou coloque scripts antes de </body>.\n\nUso comum: Entender o fluxo de renderização é essencial para otimizar performance e evitar conteúdo que \"pisca\" ao carregar.\n\nDica prática: No DevTools (F12) → aba Performance, grave o carregamento da página para visualizar cada etapa: Parse HTML, Style, Layout, Paint e Composite.",
-      "order": 4,
-      "tags": [
-        "introducao",
-        "web",
-        "como",
-        "navegador",
-        "interpreta"
-      ]
-    },
-    {
-      "id": "legacy-html-u1-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "introducao-a-web-o-que-são-tags",
-      "title": "O que são tags",
-      "content": "Objetivo: Aprenda a sintaxe básica das tags HTML.\n\nFato-chave: Tags são delimitadas por < e >. A maioria vem em pares: <tag> abre e </tag> fecha. Algumas são void elements (auto-fechantes) como <br>, <img> e <input> — não possuem conteúdo interno nem tag de fechamento.\n\nExemplo de uso:\n<p>Isso é um parágrafo.</p>\n<img src=\"foto.jpg\" alt=\"Minha foto\">\n<input type=\"text\" placeholder=\"Digite aqui\">\n\nUso comum: O HTML5 define mais de 100 tags diferentes, cada uma com significado semântico específico. Usar a tag certa melhora acessibilidade e SEO.\n\nDica prática: Nunca use <br> para adicionar espaçamento visual — use margin CSS. A tag <br> é para quebras que fazem parte do conteúdo, como em endereços postais ou poemas.",
-      "order": 5,
-      "tags": [
-        "introducao",
-        "web",
-        "que",
-        "são",
-        "tags"
-      ]
-    },
-    {
-      "id": "legacy-html-u1-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "introducao-a-web-o-que-são-atributos",
-      "title": "O que são atributos",
-      "content": "Objetivo: Adicione informações extras às tags com atributos.\n\nFato-chave: Atributos ficam dentro da tag de abertura no formato nome=\"valor\". Eles modificam o comportamento ou as propriedades do elemento. Um elemento pode ter vários atributos separados por espaço.\n\nExemplo de uso:\n<a href=\"https://exemplo.com\" target=\"_blank\" rel=\"noopener\">Abrir site</a>\n<img src=\"logo.png\" alt=\"Logo da empresa\" width=\"200\">\n<input type=\"email\" required placeholder=\"Seu e-mail\">\n\nUso comum: Atributos class e id conectam HTML ao CSS e JavaScript. Atributos como required e disabled controlam formulários.\n\nDica prática: Sempre coloque valores de atributos entre aspas duplas. Embora aspas sejam opcionais em alguns casos no HTML5, mantê-las evita erros e é uma boa prática universal.",
-      "order": 6,
-      "tags": [
-        "introducao",
-        "web",
-        "que",
-        "são",
-        "atributos"
       ]
     },
     {
@@ -152,152 +236,6 @@ export const learningSeed: LearningSeed = {
       ]
     },
     {
-      "id": "legacy-html-u2-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-doctype-html",
-      "title": "<!DOCTYPE html>",
-      "content": "Objetivo: Entenda por que todo documento HTML começa com DOCTYPE.\n\nFato-chave: <!DOCTYPE html> não é uma tag — é uma instrução para o navegador que indica que o documento segue o padrão HTML5. Sem ela, navegadores antigos entram em \"Quirks Mode\", que renderiza páginas de forma imprevisível e diferente entre browsers.\n\nExemplo de uso:\n<!DOCTYPE html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Meu Site</title>\n  </head>\n  <body>\n    <p>Conteúdo da página.</p>\n  </body>\n</html>\n\nUso comum: Presente em absolutamente todo arquivo HTML moderno. É sempre a primeira linha do documento.\n\nDica prática: Confirme o modo de renderização no DevTools: Console → digit document.compatMode. O valor \"CSS1Compat\" indica modo padrão (correto). \"BackCompat\" indica Quirks Mode (problema).",
-      "order": 8,
-      "tags": [
-        "estrutura",
-        "html",
-        "doctype"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-tag-html",
-      "title": "Tag <html>",
-      "content": "Objetivo: Conheça o elemento raiz de todo documento HTML.\n\nFato-chave: A tag <html> envolve todo o conteúdo da página e é a raiz da árvore DOM. O atributo lang define o idioma principal do documento — essencial para leitores de tela, tradução automática e indexação pelo Google.\n\nExemplo de uso:\n<html lang=\"pt-BR\">  <!-- Português do Brasil -->\n  ...\n</html>\n\n<!-- Outros idiomas: -->\n<html lang=\"en\">     <!-- Inglês -->\n<html lang=\"es\">     <!-- Espanhol -->\n<html lang=\"pt-PT\">  <!-- Português de Portugal -->\n\nUso comum: Todo documento HTML tem exatamente uma tag <html>. O lang é recomendado pelas diretrizes WCAG 2.1 de acessibilidade.\n\nDica prática: Use códigos IETF corretos: pt-BR, en-US, es-ES. Evite usar apenas \"pt\" quando o conteúdo é especificamente brasileiro — afeta leitores de tela e SEO regional.",
-      "order": 9,
-      "tags": [
-        "estrutura",
-        "html",
-        "tag"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-tag-head",
-      "title": "Tag <head>",
-      "content": "Objetivo: Entenda o papel dos metadados no <head>.\n\nFato-chave: O <head> contém informações sobre a página que não aparecem no conteúdo visível. Inclui charset, viewport, título, links para CSS, meta tags de SEO e scripts com defer.\n\nExemplo de uso:\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Aprenda HTML do zero com exemplos práticos.\">\n  <title>Curso de HTML | Exemplo</title>\n  <link rel=\"stylesheet\" href=\"estilo.css\">\n</head>\n\nUso comum: O <head> bem estruturado melhora SEO, acessibilidade e desempenho. O Google lê as meta tags para indexar e exibir seu site nos resultados de busca.\n\nDica prática: A ordem dos elementos no <head> importa para performance: primeiro <meta charset>, depois <meta viewport>, depois o CSS. Scripts com defer podem vir por último.",
-      "order": 10,
-      "tags": [
-        "estrutura",
-        "html",
-        "tag",
-        "head"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-tag-body",
-      "title": "Tag <body>",
-      "content": "Objetivo: Conheça onde vai todo o conteúdo visível da página.\n\nFato-chave: O <body> contém todo o conteúdo que o usuário vê e interage: textos, imagens, botões, formulários, vídeos. É único por página e deve ser organizado com elementos semânticos para melhor acessibilidade.\n\nExemplo de uso:\n<body>\n  <header>\n    <h1>Meu Blog</h1>\n    <nav>...</nav>\n  </header>\n  <main>\n    <article>...</article>\n  </main>\n  <footer>...</footer>\n</body>\n\nUso comum: Toda estrutura de página — menus, conteúdo, rodapé, formulários — vive dentro do <body>.\n\nDica prática: Coloque scripts que manipulam o DOM logo antes de </body> (ou use defer no <head>) para garantir que o HTML já foi completamente carregado quando o script executar.",
-      "order": 11,
-      "tags": [
-        "estrutura",
-        "html",
-        "tag",
-        "body"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-title",
-      "title": "<title>",
-      "content": "Objetivo: Defina o título que aparece na aba do navegador.\n\nFato-chave: A tag <title> define o texto exibido na aba do navegador, nos resultados do Google e nos favoritos. É um dos fatores mais importantes de SEO on-page. Cada página deve ter um <title> único.\n\nExemplo de uso:\n<!-- Ruim (genérico, prejudica SEO): -->\n<title>Página</title>\n\n<!-- Bom (descritivo e único): -->\n<title>Como Fazer Bolo de Cenoura em 30 Minutos | Receitas da Maria</title>\n\nO ideal: entre 50–60 caracteres para não ser cortado nos resultados de busca.\n\nUso comum: SEO, abas do navegador, histórico de navegação, favoritos compartilhados.\n\nDica prática: Use o formato \"Tópico Principal | Nome do Site\". Evite títulos genéricos como \"Início\" ou \"Home\". Ferramentas como Google Search Console mostram como seus títulos aparecem nos resultados de busca.",
-      "order": 12,
-      "tags": [
-        "estrutura",
-        "html",
-        "title"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-meta-charset",
-      "title": "<meta charset>",
-      "content": "Objetivo: Configure a codificação de caracteres do documento.\n\nFato-chave: O charset define como o navegador interpreta os bytes do arquivo HTML. UTF-8 é o padrão universal que suporta caracteres de todos os idiomas — incluindo acentos (ã, é, ç), emojis e ideogramas asiáticos.\n\nExemplo de uso:\n<head>\n  <meta charset=\"UTF-8\">   <!-- Sempre a primeira linha do <head> -->\n</head>\n\n<!-- Sem isso, acentos aparecem corrompidos: -->\n<!-- \"Olá\" vira \"OlÃ¡\" -->\n<!-- \"não\" vira \"nÃ£o\" -->\n\nUso comum: Obrigatório em 100% dos documentos HTML modernos. Sem ele, o site pode exibir caracteres corrompidos dependendo do sistema operacional do usuário.\n\nDica prática: O <meta charset> deve ser o PRIMEIRO elemento dentro do <head>, antes do <title>. Isso garante que o navegador saiba a codificação antes de tentar interpretar qualquer texto.",
-      "order": 13,
-      "tags": [
-        "estrutura",
-        "html",
-        "meta",
-        "charset"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l7",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-meta-name-viewport",
-      "title": "<meta name=\"viewport\">",
-      "content": "Objetivo: Torne seu site responsivo em dispositivos móveis.\n\nFato-chave: Sem a meta viewport, navegadores mobile exibem a página simulando uma tela de desktop e fazem zoom out, tornando o texto minúsculo. A meta viewport instrui o navegador a usar a largura real do dispositivo.\n\nExemplo de uso:\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n<!-- NUNCA desabilite o zoom (prejudica acessibilidade): -->\n<meta name=\"viewport\" content=\"..., user-scalable=no\">  <!-- Evite! -->\n\nUso comum: Presente em 100% dos sites responsivos. É pré-requisito para que media queries CSS funcionem corretamente em celulares e tablets.\n\nDica prática: No DevTools (F12), pressione Ctrl+Shift+M para ativar o modo responsivo. Você pode simular iPhone, iPad e outros dispositivos sem precisar de um aparelho físico.",
-      "order": 14,
-      "tags": [
-        "estrutura",
-        "html",
-        "meta",
-        "name",
-        "viewport"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l8",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-comentarios-html",
-      "title": "Comentarios HTML",
-      "content": "Objetivo: Documente e organize seu código com comentários.\n\nFato-chave: Comentários HTML ficam entre <!-- e --> e são ignorados pelo navegador. Eles servem para explicar o código, deixar lembretes para a equipe ou desativar partes do HTML temporariamente.\n\nExemplo de uso:\n<!-- Cabeçalho principal da página -->\n<header>\n  <h1>Meu Site</h1>\n</header>\n\n<!-- TODO: adicionar navegação responsiva aqui -->\n\n<!-- Seção desativada temporariamente:\n<div class=\"banner-antigo\">...</div>\n-->\n\nUso comum: Marcar seções em arquivos HTML longos, indicar onde terminam elementos, documentar decisões de arquitetura.\n\nDica prática: CUIDADO: comentários HTML são visíveis no código-fonte (Ctrl+U). Jamais insira senhas, tokens de API ou dados privados em comentários HTML — qualquer usuário pode lê-los.",
-      "order": 15,
-      "tags": [
-        "estrutura",
-        "html",
-        "comentarios"
-      ]
-    },
-    {
-      "id": "legacy-html-u2-l9",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "estrutura-do-html-indentação-e-organização",
-      "title": "Indentação e organização",
-      "content": "Objetivo: Escreva HTML limpo, legível e fácil de manter.\n\nFato-chave: Indentação é o recuo que mostra visualmente a hierarquia dos elementos. O padrão mais comum é 2 espaços por nível de aninhamento. Código bem indentado facilita debugging, revisão em equipe e manutenção a longo prazo.\n\nExemplo de uso:\n<!-- Mal indentado (difícil de ler): -->\n<div><ul><li>Item</li><li>Item</li></ul></div>\n\n<!-- Bem indentado (fácil de ler): -->\n<div>\n  <ul>\n    <li>Item 1</li>\n    <li>Item 2</li>\n  </ul>\n</div>\n\nUso comum: Projetos profissionais sempre têm padrões de formatação definidos. Editores como VS Code indentam automaticamente ao pressionar Enter após uma tag de abertura.\n\nDica prática: Use Shift+Alt+F no VS Code para formatar o arquivo inteiro de uma vez. Instale a extensão Prettier para padronizar formatação automaticamente ao salvar.",
-      "order": 16,
-      "tags": [
-        "estrutura",
-        "html",
-        "indentação",
-        "organização"
-      ]
-    },
-    {
-      "id": "legacy-html-u3-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "texto-e-conteúdo-títulos-h1-a-h6",
-      "title": "Titulos <h1> a <h6>",
-      "content": "Objetivo: Crie hierarquia de conteúdo com títulos semânticos.\n\nFato-chave: HTML tem 6 níveis de títulos: <h1> é o mais importante e <h6> o menos. Os títulos definem hierarquia de conteúdo — não tamanho de fonte (para isso, use CSS). Nunca pule níveis (de h2 direto para h4).\n\nExemplo de uso:\n<h1>Guia de Culinária Brasileira</h1>\n  <h2>Sobremesas</h2>\n    <h3>Bolos</h3>\n      <h4>Bolo de Cenoura com Cobertura de Chocolate</h4>\n\nUso comum: Motores de busca lêem títulos para entender a estrutura do conteúdo. Leitores de tela usam títulos para navegação rápida na página.\n\nDica prática: Cada página deve ter exatamente um <h1> — o título principal. A extensão \"HeadingsMap\" para Chrome exibe a hierarquia de títulos de qualquer página, útil para revisar sua própria estrutura.",
-      "order": 17,
-      "tags": [
-        "texto",
-        "conteúdo",
-        "títulos"
-      ]
-    },
-    {
       "id": "legacy-html-u3-l2",
       "module_id": "module-html-basics",
       "language": "html",
@@ -309,21 +247,6 @@ export const learningSeed: LearningSeed = {
         "texto",
         "conteúdo",
         "paragrafos"
-      ]
-    },
-    {
-      "id": "legacy-html-u3-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "texto-e-conteúdo-quebra-de-linha-br",
-      "title": "Quebra de linha <br>",
-      "content": "Objetivo: Insira quebras de linha dentro de blocos de texto.\n\nFato-chave: <br> é um void element (auto-fechante) que força uma quebra de linha sem criar novo parágrafo. Use apenas quando a quebra é parte do significado do conteúdo — não para fins de espaçamento.\n\nExemplo de uso:\n<!-- Uso correto: endereço postal -->\n<address>\n  Rua das Flores, 123<br>\n  Jardim Primavera<br>\n  São Paulo — SP, 01234-567\n</address>\n\n<!-- Uso correto: trecho de poema -->\n<p>Rosas são vermelhas,<br>Violetas são azuis,<br>HTML é estrutura,<br>E CSS é o visual.</p>\n\nUso comum: Endereços, poemas, letras de música, código com quebras específicas de formatação.\n\nDica prática: Se você usa <br> para criar espaço visual entre elementos, esse é um sinal claro de que você precisa de CSS (margin ou padding), não de <br>.",
-      "order": 19,
-      "tags": [
-        "texto",
-        "conteúdo",
-        "quebra",
-        "linha"
       ]
     },
     {
@@ -339,35 +262,6 @@ export const learningSeed: LearningSeed = {
         "conteúdo",
         "linha",
         "horizontal"
-      ]
-    },
-    {
-      "id": "legacy-html-u3-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "texto-e-conteúdo-negrito-strong",
-      "title": "Negrito <strong>",
-      "content": "Objetivo: Destaque texto com importância semântica alta.\n\nFato-chave: <strong> indica importância forte — não apenas negrito visual. Leitores de tela enfatizam a voz ao ler <strong>. Use para alertas críticos, termos-chave ou informações que o leitor jamais deve ignorar.\n\nExemplo de uso:\n<p><strong>Atenção:</strong> Nunca compartilhe sua senha com ninguém.</p>\n<p>O prazo final é <strong>31 de dezembro de 2025</strong>, sem prorrogação.</p>\n\n<!-- <b> é para negrito visual sem importância semântica: -->\n<p>Os produtos em <b>destaque</b> estão na vitrine central.</p>\n\nUso comum: Alertas, definições, termos-chave em documentação técnica, datas ou valores críticos.\n\nDica prática: Diferencie <strong> (importância semântica, afeta acessibilidade) de <b> (apenas visual). O estilo padrão é idêntico, mas o significado para tecnologias assistivas é diferente. Prefira <strong> na maioria dos casos.",
-      "order": 21,
-      "tags": [
-        "texto",
-        "conteúdo",
-        "negrito",
-        "strong"
-      ]
-    },
-    {
-      "id": "legacy-html-u3-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "texto-e-conteúdo-italico-em",
-      "title": "Italico <em>",
-      "content": "Objetivo: Destaque texto com ênfase semântica que muda o sentido.\n\nFato-chave: <em> (emphasis) indica ênfase que altera o significado da frase — como se fosse a entonação na fala. Leitores de tela mudam o tom de voz ao ler <em>. Use quando a ênfase muda o sentido, não apenas a aparência.\n\nExemplo de uso:\n<p>Você precisa salvar o arquivo <em>antes</em> de fechar o editor.</p>\n<p>O framework não é obrigatório — o <em>JavaScript</em> em si é o que importa.</p>\n\n<!-- <i> é para itálico visual sem ênfase semântica: -->\n<p>O nome científico é <i>Homo sapiens</i>.</p>\n<p>Função de <i>callback</i> é executada assincronamente.</p>\n\nUso comum: Ênfase em instruções, termos em língua estrangeira, títulos de obras.\n\nDica prática: <em> pode ser aninhado com <strong>: <strong><em>Crítico:</em> leia com atenção.</strong>. Use <i> para itálico decorativo (termos técnicos em inglês, nomes científicos, etc.).",
-      "order": 22,
-      "tags": [
-        "texto",
-        "conteúdo",
-        "italico"
       ]
     },
     {
@@ -401,78 +295,6 @@ export const learningSeed: LearningSeed = {
       ]
     },
     {
-      "id": "legacy-html-u3-l9",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "texto-e-conteúdo-citações-blockquote",
-      "title": "Citacoes <blockquote>",
-      "content": "Objetivo: Marque citações longas de fontes externas com semântica correta.\n\nFato-chave: <blockquote> define um bloco de citação proveniente de outra fonte. O atributo cite especifica a URL da fonte original (não visível na página, mas útil para ferramentas e SEO). Use <q> para citações curtas inline.\n\nExemplo de uso:\n<blockquote cite=\"https://www.w3.org/\">\n  <p>A missão do W3C é liderar a World Wide Web para que atinja seu pleno potencial.</p>\n  <footer>— <cite>World Wide Web Consortium (W3C)</cite></footer>\n</blockquote>\n\n<!-- Para citações curtas dentro de um parágrafo: -->\n<p>Tim Berners-Lee disse: <q>A Web é para todos.</q></p>\n\nUso comum: Artigos com citações de obras, entrevistas, depoimentos, trechos de documentações técnicas ou discursos.\n\nDica prática: O navegador adiciona aspas automáticas ao conteúdo de <q> no idioma definido pelo atributo lang da página. Sempre inclua a fonte da citação — melhora credibilidade e evita problemas de plágio.",
-      "order": 25,
-      "tags": [
-        "texto",
-        "conteúdo",
-        "citações",
-        "blockquote"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-tag-a",
-      "title": "Tag <a>",
-      "content": "Objetivo: Crie links para conectar páginas e recursos.\n\nFato-chave: A tag <a> (anchor) é a base da Web — ela cria hyperlinks que conectam páginas, arquivos e seções. O atributo href define o destino. Sem <a>, não existiria navegação entre páginas.\n\nExemplo de uso:\n<a href=\"https://developer.mozilla.org\">MDN Web Docs</a>\n<a href=\"sobre.html\">Sobre nós</a>\n<a href=\"#contato\">Ir para Contato</a>\n<a href=\"mailto:email@exemplo.com\">Enviar e-mail</a>\n\nUso comum: Menus de navegação, botões que redirecionam, breadcrumbs, rodapés com links sociais e links dentro de texto corrido.\n\nDica prática: Use texto descritivo no link — nunca \"clique aqui\". Leitores de tela leem apenas o texto do link para navegar. Prefira \"Saiba mais sobre acessibilidade\" a \"Clique aqui\".",
-      "order": 26,
-      "tags": [
-        "links",
-        "navegação",
-        "tag"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-atributo-href",
-      "title": "Atributo href",
-      "content": "Objetivo: Defina o destino de um link com o atributo href.\n\nFato-chave: href (Hypertext Reference) é o atributo obrigatório da tag <a>. Pode receber: URL absoluta (https://...), URL relativa (pagina.html), âncora (#secao), e-mail (mailto:), telefone (tel:) ou JavaScript (javascript:void 0 — evitar).\n\nExemplo de uso:\n<!-- URL absoluta (outro site) -->\n<a href=\"https://github.com\">GitHub</a>\n\n<!-- URL relativa (mesma pasta) -->\n<a href=\"contato.html\">Contato</a>\n\n<!-- URL relativa (pasta acima) -->\n<a href=\"../index.html\">Início</a>\n\n<!-- Âncora na mesma página -->\n<a href=\"#sobre\">Sobre</a>\n\nUso comum: Toda navegação web depende de href correto. URLs relativas são preferidas para links internos — o site funciona em qualquer domínio.\n\nDica prática: Nunca use href=\"#\" para links que não redirecionam — cria rolar para o topo inesperado. Use href=\"javascript:void(0)\" ou um <button> com evento JS se precisar de um elemento clicável sem navegação.",
-      "order": 27,
-      "tags": [
-        "links",
-        "navegação",
-        "atributo",
-        "href"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-links-externos",
-      "title": "Links externos",
-      "content": "Objetivo: Crie links que abrem outros sites corretamente.\n\nFato-chave: Links externos apontam para outros domínios e devem usar a URL completa com protocolo (https://). Boas práticas de segurança recomendam target=\"_blank\" + rel=\"noopener noreferrer\" para evitar que a página de destino acesse window.opener.\n\nExemplo de uso:\n<!-- Link externo seguro -->\n<a href=\"https://www.google.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Pesquisar no Google\n</a>\n\n<!-- Link externo sem abrir nova aba -->\n<a href=\"https://exemplo.com\">Visitar Exemplo</a>\n\nUso comum: Referências a fontes externas, redes sociais, documentações de terceiros, parceiros e afiliados.\n\nDica prática: Sempre adicione rel=\"noopener noreferrer\" quando usar target=\"_blank\". Sem isso, a nova aba pode manipular a página original via JavaScript — uma vulnerabilidade conhecida como \"reverse tabnapping\".",
-      "order": 28,
-      "tags": [
-        "links",
-        "navegação",
-        "externos"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-links-internos",
-      "title": "Links internos",
-      "content": "Objetivo: Navegue entre páginas do mesmo site com links internos.\n\nFato-chave: Links internos usam caminhos relativos — sem domínio. Isso faz o site funcionar em qualquer ambiente (localhost, staging, produção) sem necessidade de atualizar os links. O navegador resolve o caminho relativo a partir da URL atual.\n\nExemplo de uso:\n<!-- Da raiz do site -->\n<a href=\"sobre.html\">Sobre</a>\n<a href=\"blog/artigo.html\">Artigo</a>\n\n<!-- De dentro de uma subpasta -->\n<a href=\"../index.html\">Voltar ao início</a>\n<a href=\"./contato.html\">Contato</a>\n\n<!-- Caminho absoluto do site (barra inicial) -->\n<a href=\"/produtos\">Ver Produtos</a>\n\nUso comum: Menus, breadcrumbs, paginação, links entre seções do site, botões \"Próximo artigo\" / \"Artigo anterior\".\n\nDica prática: Use / (barra) no início para links absolutos do site: href=\"/contato\" sempre aponta para a raiz, independente de qual página você está. Use caminhos relativos (../outra.html) para projetos simples sem servidor.",
-      "order": 29,
-      "tags": [
-        "links",
-        "navegação",
-        "internos"
-      ]
-    },
-    {
       "id": "legacy-html-u4-l5",
       "module_id": "module-html-basics",
       "language": "html",
@@ -484,109 +306,6 @@ export const learningSeed: LearningSeed = {
         "links",
         "navegação",
         "ancoras"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-atributo-target",
-      "title": "Atributo target",
-      "content": "Objetivo: Controle onde o link abre com o atributo target.\n\nFato-chave: O atributo target define onde a página de destino é aberta. Os valores mais usados são _self (mesma aba, padrão) e _blank (nova aba). Evite _blank sem rel=\"noopener\" por questões de segurança.\n\nExemplo de uso:\n<!-- Abre na mesma aba (padrão) -->\n<a href=\"pagina.html\" target=\"_self\">Mesma aba</a>\n\n<!-- Abre em nova aba -->\n<a href=\"https://exemplo.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Nova aba\n</a>\n\n<!-- Outros valores menos comuns -->\n<a href=\"pagina.html\" target=\"_parent\">Frame pai</a>\n<a href=\"pagina.html\" target=\"_top\">Janela completa</a>\n\nUso comum: Links externos geralmente abrem em _blank para não tirar o usuário do seu site. Links internos ficam em _self.\n\nDica prática: Do ponto de vista de UX, abrir links em nova aba (_blank) sem aviso pode confundir usuários. Considere adicionar um ícone de \"nova aba\" ou uma tooltip indicando esse comportamento, especialmente em contextos de acessibilidade.",
-      "order": 31,
-      "tags": [
-        "links",
-        "navegação",
-        "atributo",
-        "target"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l7",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-atributo-rel",
-      "title": "Atributo rel",
-      "content": "Objetivo: Defina a relação semântica entre a página e o link com rel.\n\nFato-chave: O atributo rel define a relação entre a página atual e o destino do link. É essencial para segurança (noopener), SEO (nofollow) e acessibilidade. Pode receber múltiplos valores separados por espaço.\n\nExemplo de uso:\n<!-- Segurança: impede acesso a window.opener -->\n<a href=\"...\" target=\"_blank\" rel=\"noopener noreferrer\">Link externo</a>\n\n<!-- SEO: instrui o Google a não seguir/valorizar este link -->\n<a href=\"...\" rel=\"nofollow\">Link pago ou não endossado</a>\n\n<!-- Link para o autor do conteúdo -->\n<a href=\"...\" rel=\"author\">Sobre o autor</a>\n\n<!-- Link alternativo (como feed RSS) -->\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"/feed.xml\">\n\nUso comum: noopener noreferrer em links externos com _blank. nofollow em links pagos, comments e conteúdo de usuários.\n\nDica prática: O Google interpreta rel=\"nofollow\" como uma sugestão desde 2019 — não uma regra absoluta. Para afiliados e publicidade, use rel=\"sponsored\". Para conteúdo de usuários (comentários), use rel=\"ugc\".",
-      "order": 32,
-      "tags": [
-        "links",
-        "navegação",
-        "atributo",
-        "rel"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l8",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-links-mailto",
-      "title": "Links mailto",
-      "content": "Objetivo: Crie links que abrem o cliente de e-mail do usuário.\n\nFato-chave: O esquema mailto: no href transforma um link em ação de e-mail. Ao clicar, o sistema operacional abre o aplicativo de e-mail padrão com o destinatário já preenchido. Você pode pré-preencher subject, cc, bcc e body também.\n\nExemplo de uso:\n<!-- Simples -->\n<a href=\"mailto:contato@empresa.com\">Envie um e-mail</a>\n\n<!-- Com assunto e corpo pré-preenchidos -->\n<a href=\"mailto:suporte@app.com?subject=Problema%20com%20login&body=Olá%2C%20preciso%20de%20ajuda%20com...\">\n  Contatar suporte\n</a>\n\n<!-- Com cópia -->\n<a href=\"mailto:fulano@email.com?cc=beltrano@email.com\">Email com cópia</a>\n\nUso comum: Páginas de contato, rodapés de sites corporativos, portfolios, formulários simples sem backend.\n\nDica prática: Use encodeURIComponent() em JavaScript para gerar URLs mailto: dinâmicas corretamente. Espaços viram %20, @ vira %40. Evite expor e-mails em texto puro no HTML — bots coletam esses endereços para spam.",
-      "order": 33,
-      "tags": [
-        "links",
-        "navegação",
-        "mailto"
-      ]
-    },
-    {
-      "id": "legacy-html-u4-l9",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "links-e-navegação-links-tel",
-      "title": "Links tel",
-      "content": "Objetivo: Crie links que iniciam ligações em dispositivos móveis.\n\nFato-chave: O esquema tel: transforma um link em ação de ligação. Em celulares, ao clicar, o discador é aberto com o número preenchido. Em desktops, pode abrir apps de VoIP como Skype ou FaceTime, dependendo da configuração do sistema.\n\nExemplo de uso:\n<!-- Formato recomendado: E.164 (código do país + DDD + número) -->\n<a href=\"tel:+5511987654321\">(11) 98765-4321</a>\n\n<!-- Com texto descritivo -->\n<a href=\"tel:+5508001234567\">\n  Ligue grátis: 0800 123 4567\n</a>\n\nUso comum: Sites de negócios locais, clínicas, imobiliárias, e-commerce com suporte telefônico — qualquer site onde o usuário precisa ligar.\n\nDica prática: Exiba o número formatado de forma legível para humanos no texto do link (com parênteses, traços e espaços) e use o formato E.164 no href (apenas números e + no início). Isso garante compatibilidade com todos os sistemas.",
-      "order": 34,
-      "tags": [
-        "links",
-        "navegação",
-        "tel"
-      ]
-    },
-    {
-      "id": "legacy-html-u5-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-tag-img",
-      "title": "Tag <img>",
-      "content": "Objetivo: Insira imagens em páginas web com a tag correta.\n\nFato-chave: A tag <img> é um void element (sem fechamento) que incorpora imagens. Os atributos src (caminho) e alt (texto alternativo) são obrigatórios. Sem alt, leitores de tela não conseguem descrever a imagem.\n\nExemplo de uso:\n<!-- Imagem local -->\n<img src=\"foto.jpg\" alt=\"Foto do produto X em fundo branco\">\n\n<!-- Imagem externa (URL) -->\n<img src=\"https://exemplo.com/logo.png\" alt=\"Logo da Empresa\">\n\n<!-- Com dimensões definidas -->\n<img src=\"banner.jpg\" alt=\"Promoção de verão\" width=\"800\" height=\"400\">\n\nUso comum: Fotos de produtos, avatars de usuários, logos, banners, ilustrações, ícones e galerias de imagens.\n\nDica prática: Sempre defina width e height no HTML mesmo que controle o tamanho com CSS. Isso reserva o espaço antes da imagem carregar, evitando o \"layout shift\" (CLS) que prejudica a experiência e o score do Core Web Vitals.",
-      "order": 35,
-      "tags": [
-        "imagens",
-        "midia",
-        "tag",
-        "img"
-      ]
-    },
-    {
-      "id": "legacy-html-u5-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-atributo-src",
-      "title": "Atributo src",
-      "content": "Objetivo: Especifique o caminho ou URL da imagem com src.\n\nFato-chave: O atributo src (source) define de onde a imagem será carregada. Aceita três formatos: URL absoluta (https://...), URL relativa ao arquivo HTML atual (../img/foto.jpg) ou URL relativa à raiz do site (/img/foto.jpg).\n\nExemplo de uso:\n<!-- URL absoluta (outro servidor) -->\n<img src=\"https://picsum.photos/400/300\" alt=\"Imagem aleatória\">\n\n<!-- Relativa ao arquivo atual -->\n<img src=\"imagens/perfil.jpg\" alt=\"Foto de perfil\">\n<img src=\"../assets/logo.svg\" alt=\"Logo\">\n\n<!-- Relativa à raiz do site -->\n<img src=\"/img/hero.webp\" alt=\"Imagem de destaque\">\n\nUso comum: Em projetos reais, imagens ficam em pastas como /img, /assets ou /public e são referenciadas com caminhos relativos à raiz.\n\nDica prática: Use imagens modernas no formato WebP — são 25–35% menores que JPG mantendo a mesma qualidade. Ferramentas como Squoosh (squoosh.app) convertem e comprimem imagens diretamente no browser, de graça.",
-      "order": 36,
-      "tags": [
-        "imagens",
-        "midia",
-        "atributo",
-        "src"
-      ]
-    },
-    {
-      "id": "legacy-html-u5-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-atributo-alt",
-      "title": "Atributo alt",
-      "content": "Objetivo: Forneça texto alternativo acessível para imagens com alt.\n\nFato-chave: O atributo alt fornece uma descrição textual da imagem. É lido por leitores de tela para usuários com deficiência visual, exibido quando a imagem falha ao carregar e indexado por motores de busca para SEO de imagens.\n\nExemplo de uso:\n<!-- Imagem informativa: descreva o conteúdo -->\n<img src=\"grafico.png\" alt=\"Gráfico de barras mostrando crescimento de 40% em 2024\">\n\n<!-- Imagem decorativa: alt vazio (não omita o atributo) -->\n<img src=\"divisor.svg\" alt=\"\">\n\n<!-- Logo: nome da empresa/marca -->\n<img src=\"logo.png\" alt=\"CodeLearn — plataforma de ensino de programação\">\n\nUso comum: Toda imagem precisa de alt. O WCAG 2.1 exige alt descritivo em imagens informativas e alt=\"\" em imagens puramente decorativas.\n\nDica prática: Nunca use alt=\"imagem\" ou alt=\"foto\" — isso não ajuda ninguém. Descreva o que a imagem comunica, não o que ela é. Ferramentas de acessibilidade como axe DevTools verificam automaticamente a qualidade dos textos alt.",
-      "order": 37,
-      "tags": [
-        "imagens",
-        "midia",
-        "atributo",
-        "alt"
       ]
     },
     {
@@ -604,132 +323,6 @@ export const learningSeed: LearningSeed = {
       ]
     },
     {
-      "id": "legacy-html-u5-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-formatos-de-imagem",
-      "title": "Formatos de imagem",
-      "content": "Objetivo: Escolha o formato de imagem certo para cada situação.\n\nFato-chave: Cada formato tem seu caso de uso ideal. JPG é melhor para fotografias. PNG para imagens com transparência. GIF para animações simples (mas prefira CSS). WebP para tudo — é moderno e mais eficiente. SVG para ícones e logos escaláveis.\n\nExemplo de uso:\n<!-- Fotografia: use WebP (ou JPG como fallback) -->\n<img src=\"produto.webp\" alt=\"Foto do produto\">\n\n<!-- Logo vetorial escalável: use SVG -->\n<img src=\"logo.svg\" alt=\"Logo da empresa\">\n\n<!-- Ícone pequeno: use SVG inline ou PNG -->\n<img src=\"icone-busca.svg\" alt=\"\" width=\"24\" height=\"24\">\n\n<!-- Animação simples: prefira CSS, mas GIF funciona -->\n<img src=\"loading.gif\" alt=\"Carregando...\">\n\nUso comum: Sites modernos usam WebP para fotos, SVG para ícones e logos, PNG para imagens com transparência em contextos específicos.\n\nDica prática: Use a tag <picture> para oferecer formatos modernos com fallback: <picture><source srcset=\"img.webp\" type=\"image/webp\"><img src=\"img.jpg\" alt=\"...\"></picture>. Isso garante WebP para browsers modernos e JPG para os antigos.",
-      "order": 39,
-      "tags": [
-        "imagens",
-        "midia",
-        "formatos",
-        "imagem"
-      ]
-    },
-    {
-      "id": "legacy-html-u5-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-figure",
-      "title": "<figure>",
-      "content": "Objetivo: Agrupe imagens com its legenda usando elementos semânticos.\n\nFato-chave: O elemento <figure> é um container semântico para conteúdo autônomo — imagens, gráficos, trechos de código ou citações. Combinado com <figcaption>, cria uma unidade semântica de figura + legenda, usada por leitores de tela e motores de busca.\n\nExemplo de uso:\n<figure>\n  <img src=\"grafico-vendas.png\" alt=\"Gráfico de vendas do 1º trimestre de 2024\">\n  <figcaption>\n    Figura 1 — Crescimento de 32% nas vendas entre janeiro e março de 2024.\n  </figcaption>\n</figure>\n\n<!-- Figure também funciona para código: -->\n<figure>\n  <pre><code>const soma = (a, b) => a + b;</code></pre>\n  <figcaption>Exemplo de arrow function em JavaScript.</figcaption>\n</figure>\n\nUso comum: Artigos técnicos, relatórios, documentações, blogs com imagens ou gráficos comentados.\n\nDica prática: O <figure> pode ser movido para outra posição no documento sem afetar o fluxo do texto principal — isso é o que o define semanticamente. Use quando a imagem e sua legenda formam uma unidade independente do texto ao redor.",
-      "order": 40,
-      "tags": [
-        "imagens",
-        "midia",
-        "figure"
-      ]
-    },
-    {
-      "id": "legacy-html-u5-l7",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-figcaption",
-      "title": "<figcaption>",
-      "content": "Objetivo: Associe legendas descritivas a imagens com figcaption.\n\nFato-chave: O elemento <figcaption> deve ser o primeiro ou último filho do <figure>. Ele fornece contexto adicional que o alt não precisa repetir — alt descreve a imagem para quem não pode vê-la; figcaption complementa com informações para todos os leitores.\n\nExemplo de uso:\n<figure>\n  <img src=\"mapa-brasil.svg\" alt=\"Mapa político do Brasil com estados demarcados\">\n  <figcaption>\n    Mapa do Brasil dividido por estados e regiões.\n    Fonte: IBGE, 2023.\n  </figcaption>\n</figure>\n\n<!-- figcaption pode conter HTML -->\n<figure>\n  <img src=\"screenshot.png\" alt=\"Tela do dashboard com gráfico de barras\">\n  <figcaption>Dashboard de <strong>análise de vendas</strong> — versão 3.0</figcaption>\n</figure>\n\nUso comum: Gráficos com fonte de dados, screenshots com explicações, fotos de produtos com descrições, diagramas técnicos.\n\nDica prática: Não repita no figcaption o que já está no alt. Use alt para descrever o conteúdo visual e figcaption para adicionar contexto, fonte, interpretação ou informação complementar.",
-      "order": 41,
-      "tags": [
-        "imagens",
-        "midia",
-        "figcaption"
-      ]
-    },
-    {
-      "id": "legacy-html-u5-l8",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-audio",
-      "title": "<audio>",
-      "content": "Objetivo: Incorpore áudio em páginas web de forma nativa.\n\nFato-chave: O elemento <audio> permite reproduzir arquivos de áudio diretamente no browser sem plugins. O atributo controls exibe os controles nativos do navegador (play, pause, volume). Suporte a múltiplos formatos garante compatibilidade cross-browser.\n\nExemplo de uso:\n<!-- Com controles visíveis -->\n<audio controls>\n  <source src=\"podcast.mp3\" type=\"audio/mpeg\">\n  <source src=\"podcast.ogg\" type=\"audio/ogg\">\n  <p>Seu navegador não suporta áudio HTML5.\n     <a href=\"podcast.mp3\">Baixe o arquivo</a>.\n  </p>\n</audio>\n\n<!-- Reprodução automática (use com moderação) -->\n<audio controls autoplay muted loop>\n  <source src=\"musica-fundo.mp3\" type=\"audio/mpeg\">\n</audio>\n\nUso comum: Podcasts, players de música, efeitos sonoros em jogos, áudio de leitura (acessibilidade), anúncios de voz.\n\nDica prática: Nunca use autoplay sem muted — navegadores modernos bloqueiam reprodução automática com som. Para música de fundo, use autoplay muted e deixe o usuário ativar o som explicitamente.",
-      "order": 42,
-      "tags": [
-        "imagens",
-        "midia",
-        "audio"
-      ]
-    },
-    {
-      "id": "legacy-html-u5-l9",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "imagens-e-midia-video",
-      "title": "<video>",
-      "content": "Objetivo: Incorpore vídeo nativo em páginas web com <video>.\n\nFato-chave: O elemento <video> funciona de forma similar ao <audio> — exibe controles nativos, suporta múltiplos formatos e é reproduzido diretamente no browser sem Flash ou plugins. Adicione poster para exibir uma imagem de capa antes de o vídeo iniciar.\n\nExemplo de uso:\n<video controls width=\"800\" height=\"450\" poster=\"capa-video.jpg\">\n  <source src=\"tutorial.mp4\" type=\"video/mp4\">\n  <source src=\"tutorial.webm\" type=\"video/webm\">\n  <p>Seu navegador não suporta vídeo HTML5.\n     <a href=\"tutorial.mp4\">Baixe o vídeo</a>.\n  </p>\n</video>\n\n<!-- Vídeo de fundo (sem controles) -->\n<video autoplay muted loop playsinline>\n  <source src=\"hero-bg.mp4\" type=\"video/mp4\">\n</video>\n\nUso comum: Demonstrações de produtos, tutoriais, apresentações, vídeos de fundo em seções hero, conteúdo educacional.\n\nDica prática: Para vídeos externos (YouTube, Vimeo), use <iframe> de embed em vez de <video>. Para vídeos próprios, MP4 (H.264) tem o maior suporte de navegadores. Use WebM como formato alternativo para browsers que o suportam com melhor compressão.",
-      "order": 43,
-      "tags": [
-        "imagens",
-        "midia",
-        "video"
-      ]
-    },
-    {
-      "id": "legacy-html-u6-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "listas-lista-não-ordenada-ul",
-      "title": "Lista não ordenada <ul>",
-      "content": "Objetivo: Crie listas de itens sem ordem definida com <ul>.\n\nFato-chave: <ul> (unordered list) cria listas com marcadores (•) onde a ordem dos itens não importa. Cada item da lista é um <li>. O estilo do marcador pode ser alterado com CSS (list-style-type).\n\nExemplo de uso:\n<ul>\n  <li>HTML — estrutura</li>\n  <li>CSS — aparência</li>\n  <li>JavaScript — comportamento</li>\n</ul>\n\n<!-- Lista de ingredientes (ordem não importa) -->\n<ul>\n  <li>2 ovos</li>\n  <li>200g de farinha</li>\n  <li>1 xícara de leite</li>\n</ul>\n\n<!-- Remover marcadores com CSS -->\n<ul style=\"list-style: none; padding: 0;\">...</ul>\n\nUso comum: Menus de navegação, listas de recursos, ingredientes, características de produtos, tags, qualquer agrupamento onde a ordem é irrelevante.\n\nDica prática: Menus de navegação HTML usam <ul> e <li> por boas práticas de acessibilidade: <nav><ul><li><a href=\"/\">Início</a></li></ul></nav>. Leitores de tela anunciam o número de itens da lista.",
-      "order": 44,
-      "tags": [
-        "listas",
-        "lista",
-        "não",
-        "ordenada"
-      ]
-    },
-    {
-      "id": "legacy-html-u6-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "listas-lista-ordenada-ol",
-      "title": "Lista ordenada <ol>",
-      "content": "Objetivo: Crie listas numeradas onde a ordem importa com <ol>.\n\nFato-chave: <ol> (ordered list) cria listas numeradas onde a sequência dos itens tem significado (1, 2, 3...). Aceita atributos start (número inicial) e reversed (contagem regressiva). O tipo de numeração é controlado pelo atributo type ou CSS.\n\nExemplo de uso:\n<!-- Receita: a ordem dos passos importa -->\n<ol>\n  <li>Pré-aqueça o forno a 180°C.</li>\n  <li>Misture os ingredientes secos.</li>\n  <li>Adicione os líquidos e mexa.</li>\n  <li>Asse por 35 minutos.</li>\n</ol>\n\n<!-- Começando em número diferente -->\n<ol start=\"5\">\n  <li>Quinto passo</li>\n  <li>Sexto passo</li>\n</ol>\n\n<!-- Contagem regressiva -->\n<ol reversed start=\"3\">\n  <li>Bronze</li>\n  <li>Prata</li>\n  <li>Ouro</li>\n</ol>\n\nUso comum: Tutoriais passo a passo, rankings, instruções sequenciais, processos, checklists ordenados.\n\nDica prática: Use <ol> sempre que a ordem importar semanticamente, mesmo que queira exibir a lista de outra forma visualmente. O CSS pode mudar totalmente o estilo (list-style: upper-alpha para A, B, C...) sem perder a semântica.",
-      "order": 45,
-      "tags": [
-        "listas",
-        "lista",
-        "ordenada"
-      ]
-    },
-    {
-      "id": "legacy-html-u6-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "listas-itens-li",
-      "title": "Itens <li>",
-      "content": "Objetivo: Marque cada item de uma lista com <li>.\n\nFato-chave: <li> (list item) é o único filho válido direto de <ul> e <ol>. Pode conter qualquer tipo de conteúdo: texto, imagens, links, outras listas. Em <ol>, o atributo value define o número de um item específico, afetando a numeração dos seguintes.\n\nExemplo de uso:\n<ul>\n  <li>Item simples</li>\n  <li><strong>Item em negrito</strong></li>\n  <li><a href=\"/artigo\">Link dentro de item</a></li>\n  <li>\n    Item com sublista:\n    <ul>\n      <li>Subitem A</li>\n      <li>Subitem B</li>\n    </ul>\n  </li>\n</ul>\n\n<!-- Em ol, value define numeração customizada -->\n<ol>\n  <li value=\"10\">Décimo item</li>\n  <li>Décimo primeiro (automático)</li>\n</ol>\n\nUso comum: Todo item de qualquer lista HTML. Pode conter div, p, img, a, ul, ol — qualquer elemento.\n\nDica prática: Nunca coloque <li> fora de <ul> ou <ol>. Navegadores tentam corrigir isso, mas o comportamento é imprevisível. Valide seu HTML no validator.w3.org para detectar esses erros estruturais.",
-      "order": 46,
-      "tags": [
-        "listas",
-        "itens"
-      ]
-    },
-    {
-      "id": "legacy-html-u6-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "listas-listas-aninhadas",
-      "title": "Listas aninhadas",
-      "content": "Objetivo: Crie hierarquias de informação com listas dentro de listas.\n\nFato-chave: Listas podem ser aninhadas — um <li> pode conter outra <ul> ou <ol> como filho. Isso cria hierarquias visuais com indentação. A lista interna fica dentro do <li>, não fora dele.\n\nExemplo de uso:\n<!-- Menu de navegação com submenus -->\n<ul>\n  <li>Frontend\n    <ul>\n      <li>HTML</li>\n      <li>CSS</li>\n      <li>JavaScript</li>\n    </ul>\n  </li>\n  <li>Backend\n    <ul>\n      <li>Node.js</li>\n      <li>Python</li>\n    </ul>\n  </li>\n</ul>\n\n<!-- Misturando tipos -->\n<ol>\n  <li>Fase 1: Fundamentos\n    <ul>\n      <li>HTML</li>\n      <li>CSS</li>\n    </ul>\n  </li>\n  <li>Fase 2: JavaScript</li>\n</ol>\n\nUso comum: Sitemap, menus dropdown, sumários de documentos, categorias e subcategorias, árvores de arquivos.\n\nDica prática: Não aninhe listas só por decoração visual. O aninhamento deve refletir uma hierarquia semântica real. Para dropdown menus com CSS ou JS, o aninhamento de listas é o padrão da web moderna.",
-      "order": 47,
-      "tags": [
-        "listas",
-        "aninhadas"
-      ]
-    },
-    {
       "id": "legacy-html-u6-l5",
       "module_id": "module-html-basics",
       "language": "html",
@@ -741,20 +334,6 @@ export const learningSeed: LearningSeed = {
         "listas",
         "lista",
         "definicao"
-      ]
-    },
-    {
-      "id": "legacy-html-u7-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "tabelas-tag-table",
-      "title": "Tag <table>",
-      "content": "Objetivo: Organize dados em linhas e colunas com tabelas HTML.\n\nFato-chave: A tag <table> cria uma tabela de dados. Tabelas HTML são para dados tabulares — não para layout de página (isso era prática antiga, abandonada em favor do CSS Grid e Flexbox). Uma tabela bem estruturada é acessível a leitores de tela.\n\nExemplo de uso:\n<table>\n  <thead>\n    <tr>\n      <th>Linguagem</th>\n      <th>Tipo</th>\n      <th>Criada em</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>JavaScript</td>\n      <td>Interpretada</td>\n      <td>1995</td>\n    </tr>\n    <tr>\n      <td>Python</td>\n      <td>Interpretada</td>\n      <td>1991</td>\n    </tr>\n  </tbody>\n</table>\n\nUso comum: Preços e planos, horários, comparativos de produtos, relatórios financeiros, rankings, dados científicos.\n\nDica prática: NUNCA use tabelas para layout de página — use CSS Grid ou Flexbox. Tabelas para layout são inacessíveis, lentas e difíceis de manter. Tabelas são apenas para dados tabulares que fazem sentido em grade de linhas e colunas.",
-      "order": 49,
-      "tags": [
-        "tabelas",
-        "tag",
-        "table"
       ]
     },
     {
@@ -782,18 +361,6 @@ export const learningSeed: LearningSeed = {
       ]
     },
     {
-      "id": "legacy-html-u7-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "tabelas-th",
-      "title": "<th>",
-      "content": "Objetivo: Crie células de cabeçalho acessíveis com <th>.\n\nFato-chave: <th> (table header) define uma célula de cabeçalho. Por padrão, o conteúdo fica em negrito e centralizado. O atributo scope (col, row, colgroup, rowgroup) especifica para qual direção o cabeçalho se aplica — essencial para acessibilidade em leitores de tela.\n\nExemplo de uso:\n<table>\n  <tr>\n    <th scope=\"col\">Produto</th>\n    <th scope=\"col\">Preço</th>\n    <th scope=\"col\">Estoque</th>\n  </tr>\n  <tr>\n    <th scope=\"row\">Teclado Mecânico</th>\n    <td>R$ 299</td>\n    <td>15 unidades</td>\n  </tr>\n</table>\n\nUso comum: Linha de cabeçalho das colunas (dentro de <thead>), cabeçalhos de linhas para tabelas com dados bidirecionais.\n\nDica prática: Sempre use scope=\"col\" em <th> de colunas e scope=\"row\" em <th> de linhas. Isso permite que leitores de tela JAWS e NVDA anunciem o cabeçalho relevante a cada célula lida, tornando a tabela acessível.",
-      "order": 52,
-      "tags": [
-        "tabelas"
-      ]
-    },
-    {
       "id": "legacy-html-u7-l5",
       "module_id": "module-html-basics",
       "language": "html",
@@ -804,462 +371,6 @@ export const learningSeed: LearningSeed = {
       "tags": [
         "tabelas",
         "thead"
-      ]
-    },
-    {
-      "id": "legacy-html-u7-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "tabelas-tbody",
-      "title": "<tbody>",
-      "content": "Objetivo: Corpo da tabela. agrupa as linhas de dados principais da tabela. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 54,
-      "tags": [
-        "tabelas",
-        "tbody"
-      ]
-    },
-    {
-      "id": "legacy-html-u7-l7",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "tabelas-tfoot",
-      "title": "<tfoot>",
-      "content": "Objetivo: Rodape da tabela. agrupa linhas de rodape, como totais ou resumos. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 55,
-      "tags": [
-        "tabelas",
-        "tfoot"
-      ]
-    },
-    {
-      "id": "legacy-html-u7-l8",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "tabelas-colspan-e-rowspan",
-      "title": "colspan e rowspan",
-      "content": "Objetivo: Mesclando celulas. colspan mescla colunas horizontalmente. rowspan mescla linhas verticalmente. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 56,
-      "tags": [
-        "tabelas",
-        "colspan",
-        "rowspan"
-      ]
-    },
-    {
-      "id": "legacy-html-u7-l9",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "tabelas-caption",
-      "title": "<caption>",
-      "content": "Objetivo: Título da tabela. adiciona um título a tabela. Deve ser o primeiro elemento dentro de . Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 57,
-      "tags": [
-        "tabelas",
-        "caption"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-tag-form",
-      "title": "Tag <form>",
-      "content": "Objetivo: Criando formularios. Formularios coletam dados com inputs, labels e botoes. Exemplo de uso: cadastro e login. Uso comum: pesquisas, contato e pagamento. Dica prática: sempre associe label ao input.",
-      "order": 58,
-      "tags": [
-        "formularios",
-        "tag",
-        "form"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-action",
-      "title": "action",
-      "content": "Objetivo: Destino do formulario. action define a URL para onde os dados serao enviados quando o form for submetido. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 59,
-      "tags": [
-        "formularios",
-        "action"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-method",
-      "title": "method",
-      "content": "Objetivo: Como enviar dados. method define como os dados são enviados. GET na URL, POST no corpo da requisicao. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 60,
-      "tags": [
-        "formularios",
-        "method"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-input-type-text",
-      "title": "<input type=\"text\">",
-      "content": "Objetivo: Campo de texto. cria um campo para texto simples de uma linha. Exemplo de uso: Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 61,
-      "tags": [
-        "formularios",
-        "input",
-        "type",
-        "text"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-input-type-email",
-      "title": "<input type=\"email\">",
-      "content": "Objetivo: Campo de email. type=\"email\" valida automaticamente se o texto e um email valido. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 62,
-      "tags": [
-        "formularios",
-        "input",
-        "type",
-        "email"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-input-type-password",
-      "title": "<input type=\"password\">",
-      "content": "Objetivo: Campo de senha. type=\"password\" oculta os caracteres digitados, mostrando apenas pontos. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 63,
-      "tags": [
-        "formularios",
-        "input",
-        "type",
-        "password"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l7",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-input-type-checkbox",
-      "title": "<input type=\"checkbox\">",
-      "content": "Objetivo: Caixa de seleção. type=\"checkbox\" cria uma caixa que pode ser marcada ou desmarcada. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 64,
-      "tags": [
-        "formularios",
-        "input",
-        "type",
-        "checkbox"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l8",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-input-type-radio",
-      "title": "<input type=\"radio\">",
-      "content": "Objetivo: Botoes de opção. type=\"radio\" cria botoes onde apenas uma opção pode ser selecionada por grupo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 65,
-      "tags": [
-        "formularios",
-        "input",
-        "type",
-        "radio"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l9",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-textarea",
-      "title": "<textarea>",
-      "content": "Objetivo: Area de texto. cria uma area para texto longo com múltiplas linhas. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 66,
-      "tags": [
-        "formularios",
-        "textarea"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l10",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-select",
-      "title": "<select>",
-      "content": "Objetivo: Lista suspensa. cria uma lista dropdown. Opcoes ficam dentro com . Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 67,
-      "tags": [
-        "formularios",
-        "select"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l11",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-option",
-      "title": "<option>",
-      "content": "Objetivo: Opcoes do select. define cada opção dentro de . O atributo value e o que e enviado. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 68,
-      "tags": [
-        "formularios",
-        "option"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l12",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-button",
-      "title": "<button>",
-      "content": "Objetivo: Botoes de acao. cria um botao clicavel. Por padrão, type=\"submit\" envia o formulario. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 69,
-      "tags": [
-        "formularios",
-        "button"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l13",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-required",
-      "title": "required",
-      "content": "Objetivo: Campo obrigatorio. O atributo required torna o campo obrigatorio. O formulario não envia se estiver vazio. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 70,
-      "tags": [
-        "formularios",
-        "required"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l14",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-placeholder",
-      "title": "placeholder",
-      "content": "Objetivo: Texto de dica. placeholder mostra um texto de dica dentro do campo, que desaparece quando você digita. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 71,
-      "tags": [
-        "formularios",
-        "placeholder"
-      ]
-    },
-    {
-      "id": "legacy-html-u8-l15",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "formularios-name",
-      "title": "name",
-      "content": "Objetivo: Nome do campo. name identifica o campo quando os dados são enviados. E a chave no par chave=valor. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 72,
-      "tags": [
-        "formularios",
-        "name"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-o-que-e-html-semantico",
-      "title": "O que e HTML semantico",
-      "content": "Objetivo: Significado no codigo. HTML semantico usa tags que descrevem o conteúdo. Exemplo de uso: organizar página em areas claras. Uso comum: melhorar acessibilidade e SEO. Dica prática: evite excesso de div sem significado.",
-      "order": 73,
-      "tags": [
-        "html",
-        "semantico",
-        "que"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-header",
-      "title": "<header>",
-      "content": "Objetivo: Cabecalho da página. representa o cabecalho de uma página ou seção. Geralmente contem logo, título e navegação. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 74,
-      "tags": [
-        "html",
-        "semantico",
-        "header"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-nav",
-      "title": "<nav>",
-      "content": "Objetivo: Navegação principal. representa uma seção de navegação com links para outras páginas ou partes do site. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 75,
-      "tags": [
-        "html",
-        "semantico",
-        "nav"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-main",
-      "title": "<main>",
-      "content": "Objetivo: Conteúdo principal. contem o conteúdo principal da página. Deve haver apenas um por página. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 76,
-      "tags": [
-        "html",
-        "semantico",
-        "main"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-section",
-      "title": "<section>",
-      "content": "Objetivo: Secoes tematicas. representa uma seção tematica de conteúdo. Geralmente tem seu próprio título. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 77,
-      "tags": [
-        "html",
-        "semantico",
-        "section"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l6",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-article",
-      "title": "<article>",
-      "content": "Objetivo: Conteúdo independente. representa conteúdo autocontido que faz sentido sozinho: post, noticia, comentario. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 78,
-      "tags": [
-        "html",
-        "semantico",
-        "article"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l7",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-aside",
-      "title": "<aside>",
-      "content": "Objetivo: Conteúdo relacionado. contem conteúdo relacionado mas separado: sidebars, caixas de destaque, anuncios. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 79,
-      "tags": [
-        "html",
-        "semantico",
-        "aside"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l8",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-footer",
-      "title": "<footer>",
-      "content": "Objetivo: Rodape. representa o rodape de uma página ou seção. Contem copyright, links, contato. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 80,
-      "tags": [
-        "html",
-        "semantico",
-        "footer"
-      ]
-    },
-    {
-      "id": "legacy-html-u9-l9",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "html-semantico-quando-usar-div",
-      "title": "Quando usar div",
-      "content": "Objetivo: O papel da div generica. e um container generico sem significado semantico. Use quando nenhuma tag semântica se aplica. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 81,
-      "tags": [
-        "html",
-        "semantico",
-        "quando",
-        "usar",
-        "div"
-      ]
-    },
-    {
-      "id": "legacy-html-u10-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "atributos-globais-id",
-      "title": "id",
-      "content": "Objetivo: Identificador unico. id e um identificador unico na página. Cada id so pode aparecer uma vez. Exemplo de uso: ... Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 82,
-      "tags": [
-        "atributos",
-        "globais"
-      ]
-    },
-    {
-      "id": "legacy-html-u10-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "atributos-globais-class",
-      "title": "class",
-      "content": "Objetivo: Classes de estilo. class define uma ou mais classes CSS. Diferente de id, classes podem ser repetidas. Exemplo de uso: Conteúdo Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 83,
-      "tags": [
-        "atributos",
-        "globais",
-        "class"
-      ]
-    },
-    {
-      "id": "legacy-html-u10-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "atributos-globais-style",
-      "title": "style",
-      "content": "Objetivo: CSS inline. style aplica CSS diretamente no elemento. Util para estilos unicos e rapidos. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 84,
-      "tags": [
-        "atributos",
-        "globais",
-        "style"
-      ]
-    },
-    {
-      "id": "legacy-html-u10-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "atributos-globais-title",
-      "title": "title",
-      "content": "Objetivo: Dica ao passar o mouse. title mostra uma tooltip quando o usuario passa o mouse sobre o elemento. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 85,
-      "tags": [
-        "atributos",
-        "globais",
-        "title"
-      ]
-    },
-    {
-      "id": "legacy-html-u10-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "atributos-globais-lang",
-      "title": "lang",
-      "content": "Objetivo: Idioma do conteúdo. lang define o idioma do conteúdo. Importante para acessibilidade e SEO. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 86,
-      "tags": [
-        "atributos",
-        "globais",
-        "lang"
       ]
     },
     {
@@ -1274,104 +385,6 @@ export const learningSeed: LearningSeed = {
         "atributos",
         "globais",
         "data"
-      ]
-    },
-    {
-      "id": "legacy-html-u10-l7",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "atributos-globais-hidden",
-      "title": "hidden",
-      "content": "Objetivo: Ocultar elementos. hidden oculta o elemento da página. Ele ainda existe no codigo, mas não e exibido. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 88,
-      "tags": [
-        "atributos",
-        "globais",
-        "hidden"
-      ]
-    },
-    {
-      "id": "legacy-html-u10-l8",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "atributos-globais-tabindex",
-      "title": "tabindex",
-      "content": "Objetivo: Ordem de tabulacao. tabindex controla se e em que ordem o elemento recebe foco ao pressionar Tab. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 89,
-      "tags": [
-        "atributos",
-        "globais",
-        "tabindex"
-      ]
-    },
-    {
-      "id": "legacy-html-u11-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "acessibilidade-o-que-e-acessibilidade",
-      "title": "O que e acessibilidade",
-      "content": "Objetivo: Web para todos. Acessibilidade garante que todos consigam usar o site. Exemplo de uso: leitores de tela dependem do alt e aria. Uso comum: formularios, botoes e menus. Dica prática: teste com teclado e leitor de tela.",
-      "order": 90,
-      "tags": [
-        "acessibilidade",
-        "que"
-      ]
-    },
-    {
-      "id": "legacy-html-u11-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "acessibilidade-uso-correto-de-alt",
-      "title": "Uso correto de alt",
-      "content": "Objetivo: Descrevendo imagens. O atributo alt e lido por leitores de tela. Descreva o conteúdo e função da imagem. Exemplo de uso: Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 91,
-      "tags": [
-        "acessibilidade",
-        "uso",
-        "correto",
-        "alt"
-      ]
-    },
-    {
-      "id": "legacy-html-u11-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "acessibilidade-label-e-formularios",
-      "title": "<label> e formularios",
-      "content": "Objetivo: Rotulos acessiveis. associa texto a um campo de formulario. Essencial para leitores de tela. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 92,
-      "tags": [
-        "acessibilidade",
-        "label",
-        "formularios"
-      ]
-    },
-    {
-      "id": "legacy-html-u11-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "acessibilidade-ordem-de-tabulacao",
-      "title": "Ordem de tabulacao",
-      "content": "Objetivo: Navegação por teclado. Muitos usuarios navegam com Tab. A ordem deve fazer sentido logico. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 93,
-      "tags": [
-        "acessibilidade",
-        "ordem",
-        "tabulacao"
-      ]
-    },
-    {
-      "id": "legacy-html-u11-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "acessibilidade-introducao-a-aria",
-      "title": "Introducao a ARIA",
-      "content": "Objetivo: Atributos de acessibilidade. ARIA (Accessible Rich Internet Applications) são atributos que melhoram a acessibilidade de conteúdo dinâmico. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 94,
-      "tags": [
-        "acessibilidade",
-        "introducao",
-        "aria"
       ]
     },
     {
@@ -1403,176 +416,6 @@ export const learningSeed: LearningSeed = {
       ]
     },
     {
-      "id": "legacy-html-u12-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "seo-com-html-títulos-hierarquicos",
-      "title": "Titulos hierarquicos",
-      "content": "Objetivo: Estrutura para buscadores. Buscadores usam h1-h6 para entender a estrutura. Use apenas um h1, depois h2, h3 em ordem. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 97,
-      "tags": [
-        "seo",
-        "com",
-        "html",
-        "títulos",
-        "hierarquicos"
-      ]
-    },
-    {
-      "id": "legacy-html-u12-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "seo-com-html-estrutura-semântica",
-      "title": "Estrutura semântica",
-      "content": "Objetivo: HTML que buscadores entendem. Tags semanticas (header, main, article) ajudam buscadores a entender a estrutura do conteúdo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 98,
-      "tags": [
-        "seo",
-        "com",
-        "html",
-        "estrutura",
-        "semântica"
-      ]
-    },
-    {
-      "id": "legacy-html-u12-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "seo-com-html-meta-description",
-      "title": "Meta description",
-      "content": "Objetivo: Descricao nos resultados. A meta description aparece nos resultados de busca abaixo do título. Deve ser atraente e ter ate 160 caracteres. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 99,
-      "tags": [
-        "seo",
-        "com",
-        "html",
-        "meta",
-        "description"
-      ]
-    },
-    {
-      "id": "legacy-html-u12-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "seo-com-html-links-internos",
-      "title": "Links internos",
-      "content": "Objetivo: Conectando páginas. Links entre páginas do seu site ajudam buscadores a descobrir e indexar conteúdo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 100,
-      "tags": [
-        "seo",
-        "com",
-        "html",
-        "links",
-        "internos"
-      ]
-    },
-    {
-      "id": "legacy-html-u12-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "seo-com-html-imagens-com-alt",
-      "title": "Imagens com alt",
-      "content": "Objetivo: SEO para imagens. O atributo alt ajuda buscadores a entender o conteúdo da imagem. Pode aparecer em buscas de imagens. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 101,
-      "tags": [
-        "seo",
-        "com",
-        "html",
-        "imagens",
-        "alt"
-      ]
-    },
-    {
-      "id": "legacy-html-u13-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "integração-com-css-e-js-link",
-      "title": "<link>",
-      "content": "Objetivo: Conectando CSS externo. conecta arquivos CSS externos. Vai dentro do . Exemplo de uso: Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 102,
-      "tags": [
-        "integração",
-        "com",
-        "css",
-        "link"
-      ]
-    },
-    {
-      "id": "legacy-html-u13-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "integração-com-css-e-js-style",
-      "title": "<style>",
-      "content": "Objetivo: CSS interno. permite escrever CSS diretamente no HTML, dentro do . Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 103,
-      "tags": [
-        "integração",
-        "com",
-        "css",
-        "style"
-      ]
-    },
-    {
-      "id": "legacy-html-u13-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "integração-com-css-e-js-script",
-      "title": "<script>",
-      "content": "Objetivo: Adicionando JavaScript. adiciona JavaScript. Pode ser codigo inline ou arquivo externo. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 104,
-      "tags": [
-        "integração",
-        "com",
-        "css",
-        "script"
-      ]
-    },
-    {
-      "id": "legacy-html-u13-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "integração-com-css-e-js-defer",
-      "title": "defer",
-      "content": "Objetivo: Carregamento adiado. defer faz o script baixar em paralelo e executar apos o HTML ser completamente parseado. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 105,
-      "tags": [
-        "integração",
-        "com",
-        "css",
-        "defer"
-      ]
-    },
-    {
-      "id": "legacy-html-u13-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "integração-com-css-e-js-async",
-      "title": "async",
-      "content": "Objetivo: Carregamento assincrono. async baixa em paralelo e executa imediatamente apos baixar, sem esperar o HTML. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 106,
-      "tags": [
-        "integração",
-        "com",
-        "css",
-        "async"
-      ]
-    },
-    {
-      "id": "legacy-html-u14-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "boas-práticas-codigo-limpo",
-      "title": "Codigo limpo",
-      "content": "Objetivo: HTML organizado. HTML limpo e fácil de ler, manter e colaborar. Use indentação consistente e nomes claros. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 107,
-      "tags": [
-        "boas",
-        "práticas",
-        "codigo",
-        "limpo"
-      ]
-    },
-    {
       "id": "legacy-html-u14-l2",
       "module_id": "module-html-basics",
       "language": "html",
@@ -1585,198 +428,6 @@ export const learningSeed: LearningSeed = {
         "práticas",
         "comentarios",
         "úteis"
-      ]
-    },
-    {
-      "id": "legacy-html-u14-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "boas-práticas-validação-html",
-      "title": "Validação HTML",
-      "content": "Objetivo: Verificando erros. Validadores verificam se seu HTML segue os padrões. Erros podem causar problemas de renderizacao. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 109,
-      "tags": [
-        "boas",
-        "práticas",
-        "validação",
-        "html"
-      ]
-    },
-    {
-      "id": "legacy-html-u14-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "boas-práticas-performance-básica",
-      "title": "Performance básica",
-      "content": "Objetivo: Sites mais rapidos. HTML leve carrega mais rápido. Evite codigo desnecessario e otimize recursos. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 110,
-      "tags": [
-        "boas",
-        "práticas",
-        "performance",
-        "básica"
-      ]
-    },
-    {
-      "id": "legacy-html-u14-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "boas-práticas-compatibilidade",
-      "title": "Compatibilidade",
-      "content": "Objetivo: Funcionando em todos navegadores. Nem todos navegadores interpretam HTML igualmente. Teste em Chrome, Firefox, Safari, Edge. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 111,
-      "tags": [
-        "boas",
-        "práticas",
-        "compatibilidade"
-      ]
-    },
-    {
-      "id": "legacy-html-u15-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "projetos-praticos-página-pessoal",
-      "title": "Página pessoal",
-      "content": "Objetivo: Seu primeiro site. Vamos criar uma página simples com seu nome, foto, bio e links para redes sociais. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 112,
-      "tags": [
-        "projetos",
-        "praticos",
-        "página",
-        "pessoal"
-      ]
-    },
-    {
-      "id": "legacy-html-u15-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "projetos-praticos-landing-page-simples",
-      "title": "Landing page simples",
-      "content": "Objetivo: Página de conversao. Uma landing page tem: título chamativo, proposta de valor, beneficios e call-to-action. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 113,
-      "tags": [
-        "projetos",
-        "praticos",
-        "landing",
-        "page",
-        "simples"
-      ]
-    },
-    {
-      "id": "legacy-html-u15-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "projetos-praticos-página-de-contato",
-      "title": "Página de contato",
-      "content": "Objetivo: Formulario de contato. Inclua informacoes de contato (email, telefone, endereco) e um formulario para mensagens. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 114,
-      "tags": [
-        "projetos",
-        "praticos",
-        "página",
-        "contato"
-      ]
-    },
-    {
-      "id": "legacy-html-u15-l4",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "projetos-praticos-formulario-funcional",
-      "title": "Formulario funcional",
-      "content": "Objetivo: Formulario completo. Pratique todos os tipos de input: text, email, password, checkbox, radio, select, textarea. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 115,
-      "tags": [
-        "projetos",
-        "praticos",
-        "formulario",
-        "funcional"
-      ]
-    },
-    {
-      "id": "legacy-html-u15-l5",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "projetos-praticos-mini-site-institucional",
-      "title": "Mini site institucional",
-      "content": "Objetivo: Site de empresa. Site com múltiplas páginas: Home, Sobre, Servicos, Contato. Navegação entre elas. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 116,
-      "tags": [
-        "projetos",
-        "praticos",
-        "mini",
-        "site",
-        "institucional"
-      ]
-    },
-    {
-      "id": "legacy-html-u16-l1",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "complementar-html-vs-frameworks",
-      "title": "HTML vs frameworks",
-      "content": "Objetivo: HTML puro e bibliotecas. Frameworks como React, Vue, Angular usam HTML dentro de JavaScript. A base ainda e HTML. Exemplo de uso: Título Texto base Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 117,
-      "tags": [
-        "complementar",
-        "html",
-        "frameworks"
-      ]
-    },
-    {
-      "id": "legacy-html-u16-l2",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "complementar-introducao-a-web-components",
-      "title": "Introducao a Web Components",
-      "content": "Objetivo: Componentes nativos. Web Components permitem criar elementos HTML customizados e reutilizaveis, nativamente no navegador. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 118,
-      "tags": [
-        "complementar",
-        "introducao",
-        "web",
-        "components"
-      ]
-    },
-    {
-      "id": "legacy-html-u16-l3",
-      "module_id": "module-html-basics",
-      "language": "html",
-      "concept": "complementar-html-em-pwas",
-      "title": "HTML em PWAs",
-      "content": "Objetivo: Apps progressivos. PWAs são sites que funcionam como apps. Podem ser instalados e funcionar offline. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 119,
-      "tags": [
-        "complementar",
-        "html",
-        "pwas"
-      ]
-    },
-    {
-      "id": "legacy-css-u17-l1",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "fundamentos-de-css-o-que-e-css",
-      "title": "O que e CSS",
-      "content": "Objetivo: Estilos para a web. CSS define a aparencia dos elementos HTML. Exemplo de uso: mudar cores, tamanhos e espacamentos. Uso comum: criar identidade visual. Dica prática: comece pelo layout geral e refine depois.",
-      "order": 1,
-      "tags": [
-        "fundamentos",
-        "css",
-        "que"
-      ]
-    },
-    {
-      "id": "legacy-css-u17-l2",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "fundamentos-de-css-seletores",
-      "title": "Seletores",
-      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica prática: prefira classes para reutilizacao.",
-      "order": 2,
-      "tags": [
-        "fundamentos",
-        "css",
-        "seletores"
       ]
     },
     {
@@ -1795,134 +446,6 @@ export const learningSeed: LearningSeed = {
       ]
     },
     {
-      "id": "legacy-css-u17-l4",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "fundamentos-de-css-box-model",
-      "title": "Box model",
-      "content": "Objetivo: Espacamento e tamanho. Todo elemento tem conteúdo, padding, border e margin. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 4,
-      "tags": [
-        "fundamentos",
-        "css",
-        "box",
-        "model"
-      ]
-    },
-    {
-      "id": "legacy-css-u17-l5",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "fundamentos-de-css-cascata-e-especificidade",
-      "title": "Cascata e especificidade",
-      "content": "Objetivo: Quem vence?. Se dois estilos se aplicam, vence o mais específico ou o que esta por último. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 5,
-      "tags": [
-        "fundamentos",
-        "css",
-        "cascata",
-        "especificidade"
-      ]
-    },
-    {
-      "id": "legacy-css-u18-l1",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "layout-e-responsividade-flexbox",
-      "title": "Flexbox",
-      "content": "Objetivo: Alinhamento flexivel. Box model define como tamanho e espacamento funcionam. Exemplo de uso: criar cartoes com respiro. Uso comum: ajustar layout sem quebrar o conteúdo. Dica prática: use DevTools para visualizar o box model.",
-      "order": 6,
-      "tags": [
-        "layout",
-        "responsividade",
-        "flexbox"
-      ]
-    },
-    {
-      "id": "legacy-css-u18-l2",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "layout-e-responsividade-grid",
-      "title": "Grid",
-      "content": "Objetivo: Layout em grade. Flexbox alinha itens em uma linha ou coluna. Exemplo de uso: barras de navegação e cards. Uso comum: alinhar botoes e menus. Dica prática: combine com gap para espacamento.",
-      "order": 7,
-      "tags": [
-        "layout",
-        "responsividade",
-        "grid"
-      ]
-    },
-    {
-      "id": "legacy-css-u18-l3",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "layout-e-responsividade-position",
-      "title": "Position",
-      "content": "Objetivo: Controle de posicionamento. relative mantem espaco, absolute remove do fluxo e posiciona no ancestral. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 8,
-      "tags": [
-        "layout",
-        "responsividade",
-        "position"
-      ]
-    },
-    {
-      "id": "legacy-css-u18-l4",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "layout-e-responsividade-responsividade",
-      "title": "Responsividade",
-      "content": "Objetivo: Layouts para todas telas. Media queries aplicam estilos em condições, como largura da tela. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 9,
-      "tags": [
-        "layout",
-        "responsividade"
-      ]
-    },
-    {
-      "id": "legacy-css-u18-l5",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "layout-e-responsividade-pseudo-classes",
-      "title": "Pseudo-classes",
-      "content": "Objetivo: Estados interativos. Pseudo-classes como :hover, :focus e :active controlam estados. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 10,
-      "tags": [
-        "layout",
-        "responsividade",
-        "pseudo",
-        "classes"
-      ]
-    },
-    {
-      "id": "legacy-css-u19-l1",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "css-avancado-transitions",
-      "title": "Transitions",
-      "content": "Objetivo: Animacoes suaves. Transicoes criam animações suaves entre estados. Exemplo de uso: feedback visual em botoes. Uso comum: melhorar a sensacao de interação. Dica prática: transicoes curtas são mais naturais.",
-      "order": 11,
-      "tags": [
-        "css",
-        "avancado",
-        "transitions"
-      ]
-    },
-    {
-      "id": "legacy-css-u19-l2",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "css-avancado-animations",
-      "title": "Animations",
-      "content": "Objetivo: Keyframes no CSS. Crie animações com @keyframes e aplique com animation. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 12,
-      "tags": [
-        "css",
-        "avancado",
-        "animations"
-      ]
-    },
-    {
       "id": "legacy-css-u19-l3",
       "module_id": "module-css-basics",
       "language": "css",
@@ -1934,21 +457,6 @@ export const learningSeed: LearningSeed = {
         "css",
         "avancado",
         "variáveis"
-      ]
-    },
-    {
-      "id": "legacy-css-u19-l4",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "css-avancado-pseudo-elementos",
-      "title": "Pseudo-elementos",
-      "content": "Objetivo: Detalhes com ::before/::after. Use ::before e ::after para inserir conteúdo decorativo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
-      "order": 14,
-      "tags": [
-        "css",
-        "avancado",
-        "pseudo",
-        "elementos"
       ]
     },
     {
@@ -1981,20 +489,6 @@ export const learningSeed: LearningSeed = {
       ]
     },
     {
-      "id": "legacy-css-u22-l2",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "seletores-e-especificidade-combinadores",
-      "title": "Combinadores",
-      "content": "Objetivo: Descendentes e filhos. Eles definem relacoes entre elementos: descendente, filho e irmao. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 17,
-      "tags": [
-        "seletores",
-        "especificidade",
-        "combinadores"
-      ]
-    },
-    {
       "id": "legacy-css-u22-l3",
       "module_id": "module-css-basics",
       "language": "css",
@@ -2007,34 +501,6 @@ export const learningSeed: LearningSeed = {
         "especificidade",
         "pseudo",
         "classes"
-      ]
-    },
-    {
-      "id": "legacy-css-u22-l4",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "seletores-e-especificidade-especificidade",
-      "title": "Especificidade",
-      "content": "Objetivo: Quem vence no CSS. Quando regras entram em conflito, a mais específica vence. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 19,
-      "tags": [
-        "seletores",
-        "especificidade"
-      ]
-    },
-    {
-      "id": "legacy-css-u23-l1",
-      "module_id": "module-css-basics",
-      "language": "css",
-      "concept": "flexbox-e-grid-flex-container",
-      "title": "Flex container",
-      "content": "Objetivo: Eixos e alinhamento. Ative com display: flex para distribuir itens em um eixo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
-      "order": 20,
-      "tags": [
-        "flexbox",
-        "grid",
-        "flex",
-        "container"
       ]
     },
     {
@@ -2087,7 +553,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "variáveis",
       "title": "Variaveis e constantes",
-      "content": "Objetivo: guardar dados com clareza. Regra prática: use const por padrão e let quando o valor precisar mudar. Exemplo: const nome = \"Ana\"; let pontos = 0; pontos += 5;. Erro comum: usar nomes vagos como x ou dado; prefira nomes que expliquem a intencao, como totalCarrinho ou usuarioAtual.",
+      "content": "Objetivo: Declare e use variáveis para armazenar e manipular dados em JavaScript.\n\nFato-chave: JavaScript tem três formas de declarar variáveis. Use const por padrão, let quando precisar reatribuir, e nunca use var em código moderno.\n\nconst → valor não reatribuível (use sempre que possível)\nlet   → valor reatribuível (loops, acumuladores)\nvar   → escopo de função, içamento (hoisting) — evite em código moderno\n\nTipos de dados primitivos:\nconst nome = \"Ana\";           // string\nconst idade = 28;             // number\nconst preco = 19.99;          // number (sem distinção int/float)\nconst ativo = true;           // boolean\nconst nulo = null;            // null (ausência intencional de valor)\nlet indefinido;               // undefined (variável declarada sem valor)\nconst id = Symbol(\"único\");   // symbol (identificador único)\n\nOperadores:\nconst soma = 10 + 3;         // 13\nconst texto = \"Olá\" + \" Mundo\"; // concatenação: \"Olá Mundo\"\nconst concatenação = `Olá ${nome}, você tem ${idade} anos.`; // template string\n\nEscopo:\n{\n  const local = \"apenas aqui\";  // só existe dentro do bloco {}\n  let tambémLocal = \"idem\";\n}\n// console.log(local); → ReferenceError\n\nConvenções de nomenclatura:\ncamelCase para variáveis e funções: nomeCompleto, calcularTotal\nPascalCase para classes: ContaCorrente, UsuarioAdmin\nSCREAMING_SNAKE_CASE para constantes globais: MAX_TENTATIVAS, API_URL\n\nDica prática: Use typeof para verificar o tipo de uma variável: typeof \"texto\" → \"string\", typeof 42 → \"number\", typeof null → \"object\" (bug histórico do JS). Para verificar null especificamente, use valor === null.",
       "order": 1,
       "tags": [
         "js",
@@ -2102,7 +568,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "condicionais",
       "title": "Condicionais",
-      "content": "Objetivo: tomar decisoes no codigo. Use if/else para escolher entre caminhos: if (idade >= 18) { ... } else { ... }. Compare valores com operadores claros (===, !==, >, >=) e combine regras com && (e) e || (ou). Erro comum: usar = dentro de condição; lembre que = atribui e === compara.",
+      "content": "Objetivo: Controle o fluxo de execução do programa com condicionais.\n\nFato-chave: Condicionais executam blocos de código apenas quando uma condição é verdadeira. JavaScript usa igualdade estrita (===) que compara tipo E valor — sempre prefira === ao == para evitar coerções inesperadas.\n\nif / else if / else:\nconst hora = new Date().getHours();\n\nif (hora < 12) {\n  console.log(\"Bom dia!\");\n} else if (hora < 18) {\n  console.log(\"Boa tarde!\");\n} else {\n  console.log(\"Boa noite!\");\n}\n\nOperadores de comparação:\n===  → igual (valor E tipo): \"5\" === 5  → false\n!==  → diferente (valor E tipo)\n>  >= < <=  → numéricos\n&&  → E lógico (ambos verdadeiros)\n||  → OU lógico (pelo menos um verdadeiro)\n!   → NÃO (inverte booleano)\n\nOperador ternário — para condicionais simples:\nconst status = idade >= 18 ? \"adulto\" : \"menor\";\nconst msg = estoque > 0 ? \"Em estoque\" : \"Esgotado\";\n\nSwitch — para múltiplos valores exatos:\nswitch (diaDaSemana) {\n  case \"sábado\":\n  case \"domingo\":\n    console.log(\"Fim de semana!\");\n    break;\n  case \"segunda\":\n    console.log(\"Início da semana\");\n    break;\n  default:\n    console.log(\"Dia útil\");\n}\n\nValores falsy (tratados como false em condicionais):\nfalse, 0, \"\", null, undefined, NaN\n\nNullish coalescing (??):\nconst nome = usuario.nome ?? \"Visitante\";  // usa \"Visitante\" apenas se for null/undefined\n// diferente de || que também substitui 0, \"\" e false\n\nOptional chaining (?.) — acesso seguro a propriedades:\nconst cidade = usuario?.endereco?.cidade;  // undefined se qualquer nível for null/undefined\n\nDica prática: Cuidado com == (igualdade frouxa): 0 == false → true, \"\" == false → true, null == undefined → true. Esses comportamentos são bug-prone. SEMPRE use === e !== em código de produção.",
       "order": 2,
       "tags": [
         "js",
@@ -2117,7 +583,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "funções",
       "title": "Funcoes",
-      "content": "Objetivo: reutilizar logica sem repetir codigo. Pense em função como maquina: entrada (parametros), processamento e saida (return). Exemplo: function soma(a, b) { return a + b; }. Para casos curtos, use arrow function: const dobro = (n) => n * 2;. Erro comum: esquecer o return quando a função precisa devolver valor.",
+      "content": "Objetivo: Crie funções reutilizáveis com as diferentes sintaxes do JavaScript.\n\nFato-chave: Funções são \"cidadãs de primeira classe\" em JavaScript — podem ser armazenadas em variáveis, passadas como argumentos e retornadas por outras funções. Isso viabiliza programação funcional e callbacks.\n\nDeclaração de função (pode ser chamada antes de definida — hoisting):\nfunction saudar(nome) {\n  return `Olá, ${nome}!`;\n}\nconsole.log(saudar(\"Ana\")); // \"Olá, Ana!\"\n\nFunção expression (variável recebe função):\nconst calcularArea = function(largura, altura) {\n  return largura * altura;\n};\n\nArrow function — sintaxe moderna e concisa:\nconst somar = (a, b) => a + b;                    // retorno implícito\nconst quadrado = x => x * x;                      // um parâmetro: sem parênteses\nconst saudar = (nome) => { return `Olá, ${nome}!`; }; // bloco: precisa de return\n\nParâmetros com defaults:\nfunction conectar(host = \"localhost\", porta = 3000) {\n  return `Conectando em ${host}:${porta}`;\n}\nconectar();             // \"Conectando em localhost:3000\"\nconectar(\"api.com\", 80); // \"Conectando em api.com:80\"\n\nRest parameters — recebe N argumentos como array:\nfunction somar(...numeros) {\n  return numeros.reduce((acc, n) => acc + n, 0);\n}\nsomar(1, 2, 3, 4); // 10\n\nFunções como argument (callbacks):\nsetTimeout(() => console.log(\"3 segundos!\"), 3000);\n[1, 2, 3].forEach(n => console.log(n * 2));\nconst pares = [1, 2, 3, 4, 5].filter(n => n % 2 === 0); // [2, 4]\n\nClosures — função \"lembra\" do escopo onde foi criada:\nfunction contador() {\n  let count = 0;\n  return () => ++count;  // arrow function captura 'count'\n}\nconst incrementar = contador();\nincrementar(); // 1\nincrementar(); // 2\nincrementar(); // 3\n\nDica prática: Use arrow functions para callbacks e funções pequenas. Use function declaration para funções nomeadas no escopo do módulo — o hoisting permite organizar código com a função sendo chamada antes de definida. Evite funções com mais de 20 linhas — refatore em subfunções.",
       "order": 3,
       "tags": [
         "js",
@@ -2132,7 +598,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "repetição",
       "title": "Lacos de repetição",
-      "content": "Objetivo: repetir instruções sem copiar e colar codigo. Use for quando souber quantas repeticoes deseja, e while quando depender de uma condição. Exemplo for: for (let i = 0; i < 3; i++) { ... }. Erro comum: esquecer de atualizar o contador e criar loop infinito.",
+      "content": "Objetivo: Repita operações eficientemente com os diferentes tipos de laços.\n\nFato-chave: JavaScript tem múltiplos tipos de loop — cada um tem um caso de uso ideal. Prefira métodos funcionais (forEach, map, filter) para arrays por serem mais legíveis e funcionais.\n\nfor — quando sabe quantas iterações:\nfor (let i = 0; i < 5; i++) {\n  console.log(i);  // 0, 1, 2, 3, 4\n}\n\n// Iteração reversa\nfor (let i = arr.length - 1; i >= 0; i--) {\n  console.log(arr[i]);\n}\n\nwhile — enquanto condição for verdadeira:\nlet tentativas = 0;\nwhile (tentativas < 3) {\n  tentativas++;\n  const resposta = pedirSenha();\n  if (resposta === senhaCorreta) break;\n}\n\ndo...while — executa pelo menos uma vez:\nlet input;\ndo {\n  input = prompt(\"Digite um número positivo:\");\n} while (isNaN(input) || input <= 0);\n\nfor...of — percorre valores de iteráveis (arrays, strings, Sets, Maps):\nconst frutas = [\"maçã\", \"banana\", \"laranja\"];\nfor (const fruta of frutas) {\n  console.log(fruta);\n}\n\nfor...in — percorre chaves de objetos:\nconst pessoa = { nome: \"Ana\", idade: 28, cidade: \"SP\" };\nfor (const chave in pessoa) {\n  console.log(`${chave}: ${pessoa[chave]}`);\n}\n\nbreak e continue:\nfor (let i = 0; i < 10; i++) {\n  if (i === 3) continue;  // pula o 3\n  if (i === 7) break;     // para no 7\n  console.log(i);         // 0, 1, 2, 4, 5, 6\n}\n\nDica prática: Para arrays, prefira métodos funcionais: arr.forEach() para efeitos colaterais, arr.map() para transformar, arr.filter() para filtrar, arr.reduce() para acumular. Eles são mais legíveis, não modificam o array original e funcionam bem com encadeamento.",
       "order": 4,
       "tags": [
         "js",
@@ -2147,7 +613,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "arrays",
       "title": "Arrays",
-      "content": "Objetivo: armazenar colecoes de dados na ordem. Acesso por indice comeca em 0: lista[0] e o primeiro item. Propriedade util: lista.length mostra quantidade. Operacao comum: lista.push(novoItem) para adicionar no final. Erro comum: tentar acessar indice que não existe e receber undefined.",
+      "content": "Objetivo: Manipule coleções de dados com arrays e seus poderosos métodos.\n\nFato-chave: Arrays em JavaScript são dinâmicos (crescem/encolhem), podem conter qualquer tipo de dado e têm dezenas de métodos nativos. Os métodos funcionais (map, filter, reduce) são a forma moderna e elegante de trabalhar com arrays.\n\nCriação e acesso:\nconst frutas = [\"maçã\", \"banana\", \"laranja\"];\nfrutas[0]          // \"maçã\" (índice começa em 0)\nfrutas.length      // 3\nfrutas.at(-1)      // \"laranja\" (índice negativo — último elemento)\n\nAdição e remoção:\nfrutas.push(\"uva\");       // adiciona no final → retorna novo length\nfrutas.pop();             // remove do final → retorna o elemento removido\nfrutas.unshift(\"kiwi\");   // adiciona no início\nfrutas.shift();           // remove do início\n\nBusca:\nfrutas.indexOf(\"banana\")  // 1 (ou -1 se não encontrar)\nfrutas.includes(\"uva\")    // true/false\nfrutas.find(f => f.startsWith(\"b\"))      // \"banana\" (primeiro que satisfaz)\nfrutas.findIndex(f => f.length > 5)     // índice do primeiro que satisfaz\n\nTransformação (não modificam o original):\nconst numeros = [1, 2, 3, 4, 5];\n\nnumeros.map(n => n * 2)        // [2, 4, 6, 8, 10] — transforma cada item\nnumeros.filter(n => n % 2 === 0) // [2, 4] — mantém quem satisfaz\nnumeros.reduce((acc, n) => acc + n, 0) // 15 — acumula em um valor\nnumeros.slice(1, 3)            // [2, 3] — extrai sem modificar\nnumeros.every(n => n > 0)     // true — todos satisfazem?\nnumeros.some(n => n > 4)      // true — algum satisfaz?\n\nOrdenação (modifica o original):\nconst notas = [7, 3, 9, 1, 5];\nnotas.sort((a, b) => a - b);  // [1, 3, 5, 7, 9] crescente\nnotas.sort((a, b) => b - a);  // [9, 7, 5, 3, 1] decrescente\nnotas.reverse();               // inverte a ordem\n\nSpread e desestruturação:\nconst cópia = [...numeros];               // cópia rasa\nconst combinado = [...numeros, ...notas]; // concatena\nconst [primeiro, segundo, ...resto] = numeros; // desestruturação\n\nEncadeamento (fluent API):\nconst resultado = [1, 2, 3, 4, 5, 6]\n  .filter(n => n % 2 === 0)   // [2, 4, 6]\n  .map(n => n * n)             // [4, 16, 36]\n  .reduce((acc, n) => acc + n, 0); // 56\n\nDica prática: flat() e flatMap() são úteis para arrays de arrays: [[1,2],[3,4]].flat() → [1,2,3,4]. Array.from() cria arrays a partir de iteráveis: Array.from({length: 5}, (_, i) => i) → [0,1,2,3,4].",
       "order": 5,
       "tags": [
         "js",
@@ -2162,7 +628,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "objetos",
       "title": "Objetos",
-      "content": "Objetivo: representar entidades com propriedades nomeadas. Exemplo: const usuario = { nome: \"Lia\", idade: 20 };. Leia com usuario.nome e atualize com usuario.idade = 21. Use objetos quando cada item tiver varios campos relacionados. Erro comum: confundir [] de arrays com {} de objetos.",
+      "content": "Objetivo: Trabalhe com objetos para modelar dados estruturados do mundo real.\n\nFato-chave: Objetos em JavaScript são coleções de pares chave-valor. São fundamentais para modelar entidades do domínio (usuário, produto, pedido). Quase tudo em JavaScript é um objeto.\n\nCriação e acesso:\nconst usuario = {\n  nome: \"Ana Silva\",\n  idade: 28,\n  email: \"ana@email.com\",\n  endereço: {\n    cidade: \"São Paulo\",\n    estado: \"SP\"\n  },\n  ativo: true\n};\n\nusuario.nome             // \"Ana Silva\" (dot notation)\nusuario[\"email\"]         // \"ana@email.com\" (bracket — útil com variáveis)\nusuario.endereço.cidade  // \"São Paulo\" (encadeamento)\nusuario.telefone         // undefined (chave inexistente)\n\nModificação:\nusuario.telefone = \"(11) 99999-9999\";  // adiciona nova propriedade\nusuario.nome = \"Ana Souza\";            // atualiza\ndelete usuario.ativo;                  // remove\n\nDesestruturação (extrair propriedades em variáveis):\nconst { nome, email, endereço: { cidade } } = usuario;\nconsole.log(nome, email, cidade); // \"Ana Souza\" \"ana@email.com\" \"São Paulo\"\n\n// Com renomeação e default:\nconst { nome: nomeUsuario = \"Anônimo\", telefone = \"s/n\" } = usuario;\n\nSpread — copiar e mesclar objetos:\nconst atualizado = { ...usuario, nome: \"Ana Oliveira\", ultimoLogin: new Date() };\nconst mesclado = { ...config, ...userConfig }; // userConfig sobrescreve config\n\nMétodos de Object:\nObject.keys(usuario)    // [\"nome\", \"idade\", \"email\", \"endereço\"]\nObject.values(usuario)  // [\"Ana Souza\", 28, \"ana@email.com\", {...}]\nObject.entries(usuario) // [[\"nome\", \"Ana Souza\"], [\"idade\", 28], ...]\n\n// Iterar sobre o objeto:\nfor (const [chave, valor] of Object.entries(usuario)) {\n  console.log(`${chave}: ${valor}`);\n}\n\nShorthand properties e computed keys:\nconst nome = \"Carlos\";\nconst nota = 9.5;\nconst aluno = { nome, nota };           // equivale a { nome: nome, nota: nota }\nconst chave = \"dinamica\";\nconst obj = { [chave]: \"valor\" };       // { dinamica: \"valor\" }\n\nOptional chaining:\nconst fone = usuario?.contato?.telefone; // undefined (sem erro se contato não existe)\n\nDica prática: Objetos são passados por referência. Ao fazer const b = a, b e a apontam para o mesmo objeto — alterar b altera a. Para cópia independente: const b = { ...a } (cópia rasa) ou structuredClone(a) (cópia profunda, modern API).",
       "order": 6,
       "tags": [
         "js",
@@ -2176,7 +642,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "strings",
       "title": "Strings e templates",
-      "content": "Objetivo: manipular texto com seguranca e legibilidade. Operacoes essenciais: trim() remove espacos extras, toLowerCase() padroniza letras e template string facilita montar frases: `Ola, ${nome}`. Erro comum: esquecer parenteses em metodos, por exemplo usar toUpperCase em vez de toUpperCase().",
+      "content": "Objetivo: Manipule texto com os métodos nativos de string do JavaScript.\n\nFato-chave: Strings em JavaScript são imutáveis — todo método retorna uma nova string sem modificar a original. Template literals (``) são a forma moderna de criar strings com expressões incorporadas.\n\nCriação:\nconst simples = \"Olá, Mundo\";\nconst aspasSimples = 'também funciona';\nconst template = `Olá, ${nome}! Hoje é ${new Date().toLocaleDateString('pt-BR')}.`;\nconst multilinha = `\n  Primeira linha\n  Segunda linha\n  Terceira linha\n`;\n\nTamanho e acesso:\n\"JavaScript\".length       // 10\n\"JavaScript\"[0]           // \"J\"\n\"JavaScript\".at(-1)       // \"t\" (último caractere)\n\"JavaScript\".charAt(4)    // \"S\"\n\nBusca:\n\"Olá Mundo\".indexOf(\"Mundo\")      // 4 (posição, ou -1 se não encontrar)\n\"Olá Mundo\".includes(\"Mundo\")     // true\n\"arquivo.ts\".startsWith(\"arquivo\") // true\n\"arquivo.ts\".endsWith(\".ts\")      // true\n\"olá olá olá\".match(/olá/g)       // [\"olá\", \"olá\", \"olá\"]\n\nTransformação:\n\"olá mundo\".toUpperCase()         // \"OLÁ MUNDO\"\n\"OLÁ MUNDO\".toLowerCase()         // \"olá mundo\"\n\"  espaço  \".trim()               // \"espaço\" (remove espaços nas bordas)\n\"  espaço  \".trimStart()          // \"espaço  \"\n\"  espaço  \".trimEnd()            // \"  espaço\"\n\"a-b-c\".split(\"-\")                // [\"a\", \"b\", \"c\"]\n[\"a\", \"b\", \"c\"].join(\" | \")       // \"a | b | c\"\n\nExtração:\n\"JavaScript\".slice(0, 4)          // \"Java\" (start, end — aceita negativo)\n\"JavaScript\".slice(-6)            // \"Script\"\n\"JavaScript\".substring(4, 10)     // \"Script\"\n\nSubstituição:\n\"olá olá\".replace(\"olá\", \"oi\")   // \"oi olá\" (apenas primeira ocorrência)\n\"olá olá\".replaceAll(\"olá\", \"oi\") // \"oi oi\"\n\"preço: 100\".replace(/d+/, n => n * 2) // \"preço: 200\" (com função)\n\nPadding e repetição:\n\"5\".padStart(3, \"0\")              // \"005\" (útil para formatar números)\n\"5\".padEnd(5, \"*\")               // \"5****\"\n\"ha\".repeat(3)                    // \"hahaha\"\n\nDica prática: Para validação com regex, use test(): /^[a-z]+$/.test(\"abc\") → true. Para extrair grupos: \"2024-03-15\".match(/(d{4})-(d{2})-(d{2})/) retorna array com grupos capturados. Tagged templates permitem sanitizar HTML: html`<p>${userInput}</p>`.",
       "order": 7,
       "tags": [
         "js",
@@ -2237,7 +703,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "async-await",
       "title": "Async/Await e requisicoes",
-      "content": "Objetivo: lidar com operações que demoram, como chamadas de API. async transforma a função para trabalhar com Promises e await pausa ate o resultado chegar. Fluxo básico: await fetch(...), await resposta.json() e retorno final. Erro comum: esquecer await e tentar usar dados antes da resposta estar pronta.",
+      "content": "Objetivo: Entenda e use JavaScript assíncrono com Promises e async/await.\n\nFato-chave: JavaScript é single-threaded — executa uma tarefa por vez. Para operações demoradas (chamadas de API, leitura de arquivos), usa-se código assíncrono: o JS \"programa para depois\" e continua executando. O loop de eventos gerencia essa fila.\n\nCallbacks — o começo (problemas: callback hell):\nsetTimeout(() => console.log(\"2 segundos\"), 2000);\nbuscarDados(url, (dados) => {\n  processarDados(dados, (resultado) => {  // callback hell começa aqui\n    salvarResultado(resultado, () => { ... });\n  });\n});\n\nPromises — encadeia operações assíncronas:\nconst promessa = new Promise((resolve, reject) => {\n  setTimeout(() => resolve(\"Dados carregados!\"), 2000);\n  // ou: reject(new Error(\"Falha!\"));\n});\n\npromessa\n  .then(dados => console.log(dados))  // \"Dados carregados!\"\n  .catch(erro => console.error(erro))\n  .finally(() => console.log(\"Sempre executa\"));\n\nPromise.all — aguarda várias promises em paralelo:\nconst [usuarios, produtos] = await Promise.all([\n  fetch(\"/api/usuarios\").then(r => r.json()),\n  fetch(\"/api/produtos\").then(r => r.json())\n]);\n\nasync/await — forma mais legível de trabalhar com Promises:\nasync function buscarUsuario(id) {\n  try {\n    const resposta = await fetch(`https://api.exemplo.com/usuarios/${id}`);\n\n    if (!resposta.ok) {\n      throw new Error(`Erro HTTP: ${resposta.status}`);\n    }\n\n    const usuario = await resposta.json();\n    return usuario;\n\n  } catch (erro) {\n    console.error(\"Falha ao buscar usuário:\", erro);\n    throw erro; // re-throw para o chamador tratar também\n  }\n}\n\n// Chamada:\nconst usuario = await buscarUsuario(42);\nconsole.log(usuario.nome);\n\nfetch API — requisições HTTP:\n// GET\nconst res = await fetch(\"https://viacep.com.br/ws/01310100/json/\");\nconst cep = await res.json();\n\n// POST com JSON\nconst novoUsuario = await fetch(\"/api/usuarios\", {\n  method: \"POST\",\n  headers: { \"Content-Type\": \"application/json\" },\n  body: JSON.stringify({ nome: \"Ana\", email: \"ana@email.com\" })\n}).then(r => r.json());\n\nDica prática: Async functions SEMPRE retornam uma Promise, mesmo que retornem um valor primitivo. Para executar múltiplas promises em paralelo, use Promise.all em vez de vários await sequenciais — é muito mais rápido quando as operações são independentes.",
       "order": 11,
       "tags": [
         "js",
@@ -2253,7 +719,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "tratamento-erros",
       "title": "Tratamento de erros com try/catch",
-      "content": "Objetivo: evitar que seu programa quebre quando algo inesperado acontece. Use try para executar o codigo que pode falhar e catch para tratar o erro com seguranca. Regra prática: trate erro perto da origem e devolva um resultado previsivel (null, false ou mensagem). Erro comum: capturar erro e ignorar completamente sem retornar nada util.",
+      "content": "Objetivo: Trate erros de forma robusta para criar aplicações confiáveis.\n\nFato-chave: Erros não tratados crasham a aplicação. Um bom tratamento de erros diz ao usuário o que aconteceu, registra informações para debugging e permite que o programa continue funcionando.\n\ntry / catch / finally:\ntry {\n  const dados = JSON.parse(textoInvalido);  // pode lançar SyntaxError\n  const resultado = processarDados(dados);\n  return resultado;\n} catch (erro) {\n  // Tipos de erro nativos:\n  // Error, SyntaxError, TypeError, RangeError, ReferenceError, URIError\n  if (erro instanceof SyntaxError) {\n    console.error(\"JSON inválido:\", erro.message);\n  } else {\n    console.error(\"Erro inesperado:\", erro);\n    throw erro;  // re-lança erros que não sabemos tratar\n  }\n} finally {\n  // Executa SEMPRE (erro ou não) — ideal para limpeza:\n  carregamento.style.display = \"none\";\n  conexao.fechar();\n}\n\nErros customizados:\nclass ApiError extends Error {\n  constructor(message, statusCode, endpoint) {\n    super(message);\n    this.name = \"ApiError\";\n    this.statusCode = statusCode;\n    this.endpoint = endpoint;\n  }\n}\n\nasync function chamarApi(url) {\n  const res = await fetch(url);\n  if (!res.ok) {\n    throw new ApiError(\n      `Falha na requisição`,\n      res.status,\n      url\n    );\n  }\n  return res.json();\n}\n\n// Uso:\ntry {\n  const dados = await chamarApi(\"/api/usuarios\");\n} catch (erro) {\n  if (erro instanceof ApiError) {\n    if (erro.statusCode === 401) redirecionarLogin();\n    if (erro.statusCode === 404) mostrarMensagem(\"Não encontrado\");\n    if (erro.statusCode >= 500) mostrarMensagem(\"Erro no servidor\");\n  }\n}\n\nValidação defensiva:\nfunction dividir(a, b) {\n  if (typeof a !== \"number\" || typeof b !== \"number\") {\n    throw new TypeError(\"Ambos os argumentos devem ser números\");\n  }\n  if (b === 0) {\n    throw new RangeError(\"Divisão por zero não é permitida\");\n  }\n  return a / b;\n}\n\nErro global não tratado:\nwindow.addEventListener(\"unhandledrejection\", (event) => {\n  console.error(\"Promise rejeitada sem tratamento:\", event.reason);\n  // Enviar para serviço de monitoramento (Sentry, Datadog)\n});\n\nDica prática: Em aplicações de produção, use serviços como Sentry (sentry.io) para capturar erros automaticamente. Eles fornecem stack trace, contexto do usuário, frequência e muito mais — essenciais para debuggar problemas em produção.",
       "order": 12,
       "tags": [
         "js",
@@ -2284,7 +750,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "classes",
       "title": "Classes e objetos na prática",
-      "content": "Objetivo: organizar dados e comportamentos relacionados. Com class você define um molde e com new cria objetos. O constructor recebe os dados iniciais e metodos ficam no corpo da classe. Erro comum: esquecer this ao acessar propriedades da instancia.",
+      "content": "Objetivo: Organize código com classes orientadas a objetos em JavaScript.\n\nFato-chave: Classes em JavaScript são \"açúcar sintático\" sobre o sistema de protótipos. Elas fornecem uma sintaxe familiar para POO, mas internamente ainda usam protótipos. Entender isso ajuda a evitar armadilhas do this.\n\nDeclaração de classe:\nclass Animal {\n  // Propriedades privadas (ES2022+)\n  #nome;\n  #energia = 100;\n\n  static contagem = 0;  // propriedade estática (da classe, não da instância)\n\n  constructor(nome, tipo) {\n    this.#nome = nome;\n    this.tipo = tipo;\n    Animal.contagem++;\n  }\n\n  // Getter\n  get nome() { return this.#nome; }\n\n  // Método de instância\n  comer(quantidade) {\n    this.#energia = Math.min(100, this.#energia + quantidade);\n    return this;  // permite encadeamento: animal.comer(20).dormir(8)\n  }\n\n  // Método estático (chamado na classe, não na instância)\n  static criarGato(nome) {\n    return new Animal(nome, \"gato\");\n  }\n\n  toString() {\n    return `${this.tipo} ${this.#nome} (energia: ${this.#energia}%)`;\n  }\n}\n\nHerança:\nclass Cachorro extends Animal {\n  #raça;\n\n  constructor(nome, raça) {\n    super(nome, \"cachorro\");  // OBRIGATÓRIO: chama o constructor da classe pai\n    this.#raça = raça;\n  }\n\n  latir() {\n    console.log(\"Au au!\");\n    return this;\n  }\n\n  toString() {\n    return `${super.toString()} — Raça: ${this.#raça}`;\n  }\n}\n\nUso:\nconst rex = new Cachorro(\"Rex\", \"Labrador\");\nrex.comer(20).latir();\nconsole.log(rex.toString());\nconsole.log(Animal.contagem); // 1\n\nconst gato = Animal.criarGato(\"Mimi\");\n\ninstanceof e verificação de tipo:\nrex instanceof Cachorro  // true\nrex instanceof Animal    // true\ntypeof rex               // \"object\" — classes retornam object\n\nDica prática: O contexto do this em Arrow functions vs function declaration é diferente. Arrow functions herdam o this do escopo onde foram definidas — útil em callbacks de classe. Ao passar métodos como callbacks (onClick={this.handleClick}), use arrow functions ou bind: this.handleClick = this.handleClick.bind(this) no constructor.",
       "order": 14,
       "tags": [
         "js",
@@ -2315,7 +781,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "testes",
       "title": "Testes unitarios para iniciantes",
-      "content": "Objetivo: garantir que funções continuem corretas ao evoluir o codigo. Um teste unitario valida uma regra pequena, com entrada previsivel e saida esperada. Padrão util: organize por cenarios de sucesso, limite e erro. Erro comum: testar varias responsabilidades ao mesmo tempo e não saber onde o bug aconteceu.",
+      "content": "Objetivo: Escreva testes automatizados para garantir que seu código funciona corretamente.\n\nFato-chave: Testes automatizados documentam o comportamento esperado, detectam regressões e dão confiança para refatorar. Um projeto sem testes vira uma \"caixa preta\" que ninguém quer tocar.\n\nTipos de testes:\nUnitário   → testa uma função/classe isoladamente (rápido, muitos)\nIntegração → testa a interação entre partes do sistema\nE2E (ponta a ponta) → testa o fluxo completo pelo browser (lento, alguns)\n\nVitest — framework moderno de testes (recomendado para projetos Vite):\n// utils.test.js\nimport { describe, it, expect, vi, beforeEach } from \"vitest\";\nimport { formatarMoeda, calcularDesconto } from \"./utils\";\n\ndescribe(\"formatarMoeda\", () => {\n  it(\"formata valores positivos corretamente\", () => {\n    expect(formatarMoeda(1234.56)).toBe(\"R$ 1.234,56\");\n  });\n\n  it(\"formata zero\", () => {\n    expect(formatarMoeda(0)).toBe(\"R$ 0,00\");\n  });\n\n  it(\"lança erro para valores não numéricos\", () => {\n    expect(() => formatarMoeda(\"texto\")).toThrow(TypeError);\n  });\n});\n\ndescribe(\"calcularDesconto\", () => {\n  it(\"calcula 10% de desconto\", () => {\n    expect(calcularDesconto(100, 10)).toBe(90);\n  });\n\n  it(\"não permite desconto maior que 100%\", () => {\n    expect(() => calcularDesconto(100, 110)).toThrow(RangeError);\n  });\n});\n\nMatchers principais do expect():\nexpect(valor).toBe(exato)              // igualdade estrita (===)\nexpect(valor).toEqual({ obj: \"completo\" }) // igualdade profunda (objetos)\nexpect(fn).toThrow(Error)             // deve lançar erro\nexpect(arr).toContain(\"item\")          // array contém\nexpect(str).toMatch(/regex/)          // string bate com regex\nexpect(fn).toHaveBeenCalled()         // foi chiamada (mock)\nexpect(fn).toHaveBeenCalledWith(args) // chamada com argumentos específicos\nexpect(valor).toBeTruthy()            // verdadeiro\nexpect(valor).toBeFalsy()             // falso\n\nMocks — simular dependências externas:\nconst buscarDados = vi.fn().mockResolvedValue({ nome: \"Ana\" });\n// ou:\nvi.mock(\"./api\", () => ({\n  buscarUsuario: vi.fn().mockResolvedValue({ id: 1, nome: \"Ana\" })\n}));\n\nExecutar testes:\nnpx vitest run          // executa uma vez\nnpx vitest              // modo watch (reexecuta ao salvar)\nnpx vitest --coverage   // relatório de cobertura\n\nTDD — Test Driven Development (escreva o teste ANTES do código):\n1. Escreva o teste (vai falhar — RED)\n2. Escreva o mínimo de código para passar (GREEN)\n3. Refatore mantendo testes verdes (REFACTOR)\n\nDica prática: Mire em 70-80% de cobertura de código para funções de lógica de negócio. Não tente cobrir 100% — arquivos de configuração, UI simples e boilerplate não precisam de teste. Use coverage para identificar lógica crítica não testada.",
       "order": 16,
       "tags": [
         "js",
@@ -2328,7 +794,7 @@ export const learningSeed: LearningSeed = {
   "exercises": [
     {
       "id": "legacy-html-u1-l1-3",
-      "lesson_id": "legacy-html-u1-l1",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Quem criou a World Wide Web? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2364,7 +830,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l1-4",
-      "lesson_id": "legacy-html-u1-l1",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Complete: A Web usa a sigla...",
       "starter_code": "{{blank1}}",
@@ -2400,7 +866,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l1-practice",
-      "lesson_id": "legacy-html-u1-l1",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2436,7 +902,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l2-3",
-      "lesson_id": "legacy-html-u1-l2",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Complete a sigla HTML:",
       "starter_code": "{{blank1}} Markup Language",
@@ -2472,7 +938,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l2-4",
-      "lesson_id": "legacy-html-u1-l2",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "HTML é uma linguagem de: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2508,7 +974,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l2-practice",
-      "lesson_id": "legacy-html-u1-l2",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2544,7 +1010,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l3-3",
-      "lesson_id": "legacy-html-u1-l3",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Qual tecnologia define cores e fontes? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2580,7 +1046,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l3-4",
-      "lesson_id": "legacy-html-u1-l3",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Qual tecnologia adiciona interatividade? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2616,7 +1082,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l3-practice",
-      "lesson_id": "legacy-html-u1-l3",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2652,7 +1118,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l4-3",
-      "lesson_id": "legacy-html-u1-l4",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "A arvore de elementos se chama:",
       "starter_code": "{{blank1}}",
@@ -2688,7 +1154,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l4-4",
-      "lesson_id": "legacy-html-u1-l4",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "O navegador le o HTML em qual ordem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2724,7 +1190,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l4-practice",
-      "lesson_id": "legacy-html-u1-l4",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2760,7 +1226,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l5-2",
-      "lesson_id": "legacy-html-u1-l5",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Complete a tag de paragrafo:",
       "starter_code": "<{{blank1}}>Ola, mundo!</{{blank2}}>",
@@ -2801,7 +1267,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l5-4",
-      "lesson_id": "legacy-html-u1-l5",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Feche a tag corretamente:",
       "starter_code": "<h1>Título<{{blank1}}h1>",
@@ -2837,7 +1303,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l5-practice",
-      "lesson_id": "legacy-html-u1-l5",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2873,7 +1339,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l6-3",
-      "lesson_id": "legacy-html-u1-l6",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Adicione o atributo href:",
       "starter_code": "<a {{blank1}}=\"https://google.com\">Link</a>",
@@ -2909,7 +1375,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l6-4",
-      "lesson_id": "legacy-html-u1-l6",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Onde ficam os atributos? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2945,7 +1411,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l6-practice",
-      "lesson_id": "legacy-html-u1-l6",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -2981,7 +1447,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l7-3",
-      "lesson_id": "legacy-html-u1-l7",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "HTML pode fazer calculos matematicos? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3017,7 +1483,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l7-4",
-      "lesson_id": "legacy-html-u1-l7",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Para logica e interatividade, usamos: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3053,7 +1519,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u1-l7-practice",
-      "lesson_id": "legacy-html-u1-l7",
+      "lesson_id": "html-01-fundamentos-da-web",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3089,7 +1555,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l1-3",
-      "lesson_id": "legacy-html-u2-l1",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Complete a declaração:",
       "starter_code": "<!{{blank1}} html>",
@@ -3125,7 +1591,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l1-4",
-      "lesson_id": "legacy-html-u2-l1",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Onde fica o DOCTYPE? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3161,7 +1627,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l1-practice",
-      "lesson_id": "legacy-html-u2-l1",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3197,7 +1663,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l2-3",
-      "lesson_id": "legacy-html-u2-l2",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Complete a estrutura:",
       "starter_code": "<!DOCTYPE html>\n<{{blank1}} lang=\"pt-BR\">\n</{{blank2}}>",
@@ -3238,7 +1704,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l2-4",
-      "lesson_id": "legacy-html-u2-l2",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Defina o idioma como portugues:",
       "starter_code": "<html {{blank1}}=\"pt-BR\">",
@@ -3274,7 +1740,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l2-practice",
-      "lesson_id": "legacy-html-u2-l2",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento html com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -3315,7 +1781,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l3-3",
-      "lesson_id": "legacy-html-u2-l3",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Complete a estrutura:",
       "starter_code": "<html>\n <{{blank1}}>\n <!-- metadados aqui -->\n </{{blank2}}>\n</html>",
@@ -3356,7 +1822,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l3-4",
-      "lesson_id": "legacy-html-u2-l3",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "O conteúdo do <head> aparece na página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3392,7 +1858,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l3-practice",
-      "lesson_id": "legacy-html-u2-l3",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento head com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -3433,7 +1899,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l4-3",
-      "lesson_id": "legacy-html-u2-l4",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Onde vai o conteúdo visivel?",
       "starter_code": "<html>\n <head></head>\n <{{blank1}}>\n <h1>Ola!</h1>\n </{{blank2}}>\n</html>",
@@ -3474,7 +1940,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l4-4",
-      "lesson_id": "legacy-html-u2-l4",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Quantos <body> pode ter um documento? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3510,7 +1976,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l4-practice",
-      "lesson_id": "legacy-html-u2-l4",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento body com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -3551,7 +2017,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l5-3",
-      "lesson_id": "legacy-html-u2-l5",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Adicione um título:",
       "starter_code": "<head>\n <{{blank1}}>Meu Site</{{blank2}}>\n</head>",
@@ -3592,7 +2058,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l5-4",
-      "lesson_id": "legacy-html-u2-l5",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Onde aparece o <title>? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3628,7 +2094,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l5-practice",
-      "lesson_id": "legacy-html-u2-l5",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento title com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -3669,7 +2135,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l6-3",
-      "lesson_id": "legacy-html-u2-l6",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Defina a codificação:",
       "starter_code": "<meta {{blank1}}=\"UTF-8\">",
@@ -3705,7 +2171,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l6-4",
-      "lesson_id": "legacy-html-u2-l6",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Qual codificação suporta acentos? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3741,7 +2207,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l6-practice",
-      "lesson_id": "legacy-html-u2-l6",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3777,7 +2243,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l7-3",
-      "lesson_id": "legacy-html-u2-l7",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Complete a meta viewport:",
       "starter_code": "<meta name=\"{{blank1}}\" content=\"width=device-width\">",
@@ -3813,7 +2279,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l7-4",
-      "lesson_id": "legacy-html-u2-l7",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "A meta viewport é importante para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3849,7 +2315,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l7-practice",
-      "lesson_id": "legacy-html-u2-l7",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3885,7 +2351,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l8-3",
-      "lesson_id": "legacy-html-u2-l8",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Crie um comentario:",
       "starter_code": "{{blank1}}-- Este e um comentario --{{blank2}}",
@@ -3926,7 +2392,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l8-4",
-      "lesson_id": "legacy-html-u2-l8",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Comentarios aparecem na página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3962,7 +2428,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l8-practice",
-      "lesson_id": "legacy-html-u2-l8",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -3998,7 +2464,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l9-3",
-      "lesson_id": "legacy-html-u2-l9",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Qual codigo esta bem indentado? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4034,7 +2500,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l9-4",
-      "lesson_id": "legacy-html-u2-l9",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Indentação afeta o funcionamento? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4070,7 +2536,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u2-l9-practice",
-      "lesson_id": "legacy-html-u2-l9",
+      "lesson_id": "html-02-estrutura-do-documento",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4106,7 +2572,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l1-2",
-      "lesson_id": "legacy-html-u3-l1",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Crie o título principal:",
       "starter_code": "<{{blank1}}>Bem-vindo ao meu site</{{blank2}}>",
@@ -4147,7 +2613,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l1-3",
-      "lesson_id": "legacy-html-u3-l1",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Qual e o maior título? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4183,7 +2649,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l1-4",
-      "lesson_id": "legacy-html-u3-l1",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Crie um subtitulo (nível 2):",
       "starter_code": "<{{blank1}}>Sobre Nos</{{blank2}}>",
@@ -4224,7 +2690,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l1-practice",
-      "lesson_id": "legacy-html-u3-l1",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento h1 com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -4265,7 +2731,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l2-2",
-      "lesson_id": "legacy-html-u3-l2",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Crie um paragrafo:",
       "starter_code": "<{{blank1}}>Este e meu primeiro paragrafo.</{{blank2}}>",
@@ -4306,7 +2772,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l2-3",
-      "lesson_id": "legacy-html-u3-l2",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Paragrafos são elementos: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4342,7 +2808,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l2-practice",
-      "lesson_id": "legacy-html-u3-l2",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento p com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -4383,7 +2849,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l3-2",
-      "lesson_id": "legacy-html-u3-l3",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Quebre a linha:",
       "starter_code": "<p>Linha 1<{{blank1}}>Linha 2</p>",
@@ -4419,7 +2885,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l3-3",
-      "lesson_id": "legacy-html-u3-l3",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "<br> precisa de tag de fechamento? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4455,7 +2921,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l3-practice",
-      "lesson_id": "legacy-html-u3-l3",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4491,7 +2957,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l4-2",
-      "lesson_id": "legacy-html-u3-l4",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Adicione uma linha separadora:",
       "starter_code": "<p>Seção 1</p>\n<{{blank1}}>\n<p>Seção 2</p>",
@@ -4527,7 +2993,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l4-3",
-      "lesson_id": "legacy-html-u3-l4",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "<hr> significa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4563,7 +3029,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l4-practice",
-      "lesson_id": "legacy-html-u3-l4",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4599,7 +3065,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l5-2",
-      "lesson_id": "legacy-html-u3-l5",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Deixe \"atenção\" em negrito:",
       "starter_code": "<p><{{blank1}}>Atenção</{{blank2}}>: leia com cuidado.</p>",
@@ -4640,7 +3106,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l5-4",
-      "lesson_id": "legacy-html-u3-l5",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Qual tag indica importancia semântica? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4676,7 +3142,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l5-practice",
-      "lesson_id": "legacy-html-u3-l5",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento strong com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -4717,7 +3183,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l6-2",
-      "lesson_id": "legacy-html-u3-l6",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Enfatize \"muito\":",
       "starter_code": "<p>Estou <{{blank1}}>muito</{{blank2}}> feliz!</p>",
@@ -4758,7 +3224,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l6-4",
-      "lesson_id": "legacy-html-u3-l6",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Qual tag indica enfase? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4794,7 +3260,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l6-practice",
-      "lesson_id": "legacy-html-u3-l6",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento em com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -4835,7 +3301,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l7-2",
-      "lesson_id": "legacy-html-u3-l7",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Crie texto pre-formatado:",
       "starter_code": "<{{blank1}}>\n Linha 1\n Linha 2\n</{{blank2}}>",
@@ -4876,7 +3342,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l7-3",
-      "lesson_id": "legacy-html-u3-l7",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "<pre> preserva: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -4912,7 +3378,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l7-practice",
-      "lesson_id": "legacy-html-u3-l7",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento pre com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -4953,7 +3419,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l8-2",
-      "lesson_id": "legacy-html-u3-l8",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Marque como codigo:",
       "starter_code": "<p>Use <{{blank1}}>console.log()</{{blank2}}> para debug.</p>",
@@ -4994,7 +3460,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l8-4",
-      "lesson_id": "legacy-html-u3-l8",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "<code> e usado para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5030,7 +3496,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l8-practice",
-      "lesson_id": "legacy-html-u3-l8",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento code com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -5071,7 +3537,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l9-2",
-      "lesson_id": "legacy-html-u3-l9",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Crie uma citacao:",
       "starter_code": "<{{blank1}}>\n \"A simplicidade e a sofisticacao suprema.\"\n</{{blank2}}>",
@@ -5112,7 +3578,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l9-4",
-      "lesson_id": "legacy-html-u3-l9",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "<blockquote> e para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5148,7 +3614,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u3-l9-practice",
-      "lesson_id": "legacy-html-u3-l9",
+      "lesson_id": "html-03-texto-e-formatacao",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento blockquote com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -5189,7 +3655,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l1-2",
-      "lesson_id": "legacy-html-u4-l1",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Crie um link:",
       "starter_code": "<{{blank1}} href=\"https://google.com\">Google</{{blank2}}>",
@@ -5230,7 +3696,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l1-3",
-      "lesson_id": "legacy-html-u4-l1",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "A tag para links e: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5266,7 +3732,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l1-practice",
-      "lesson_id": "legacy-html-u4-l1",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Complete o link com href:",
       "starter_code": "<a {{blank1}}=\"https://exemplo.com\">Site</a>",
@@ -5302,7 +3768,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l2-2",
-      "lesson_id": "legacy-html-u4-l2",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Adicione o atributo:",
       "starter_code": "<a {{blank1}}=\"https://github.com\">GitHub</a>",
@@ -5338,7 +3804,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l2-3",
-      "lesson_id": "legacy-html-u4-l2",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "O que href significa? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5374,7 +3840,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l2-practice",
-      "lesson_id": "legacy-html-u4-l2",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5410,7 +3876,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l3-2",
-      "lesson_id": "legacy-html-u4-l3",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Link para site externo:",
       "starter_code": "<a href=\"{{blank1}}://twitter.com\">Twitter</a>",
@@ -5446,7 +3912,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l3-3",
-      "lesson_id": "legacy-html-u4-l3",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Links externos usam: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5482,7 +3948,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l3-practice",
-      "lesson_id": "legacy-html-u4-l3",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5518,7 +3984,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l4-2",
-      "lesson_id": "legacy-html-u4-l4",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Link para página local:",
       "starter_code": "<a href=\"{{blank1}}\">Sobre</a>",
@@ -5554,7 +4020,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l4-4",
-      "lesson_id": "legacy-html-u4-l4",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "../ significa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5590,7 +4056,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l4-practice",
-      "lesson_id": "legacy-html-u4-l4",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5626,7 +4092,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l5-2",
-      "lesson_id": "legacy-html-u4-l5",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Link para seção com id \"contato\":",
       "starter_code": "<a href=\"{{blank1}}contato\">Ir para Contato</a>",
@@ -5662,7 +4128,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l5-4",
-      "lesson_id": "legacy-html-u4-l5",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "href=\"#topo\" leva para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5698,7 +4164,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l5-practice",
-      "lesson_id": "legacy-html-u4-l5",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5734,7 +4200,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l6-2",
-      "lesson_id": "legacy-html-u4-l6",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Abra em nova aba:",
       "starter_code": "<a href=\"https://google.com\" {{blank1}}=\"_blank\">Google</a>",
@@ -5770,7 +4236,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l6-3",
-      "lesson_id": "legacy-html-u4-l6",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "target=\"_blank\" faz o que? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5806,7 +4272,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l6-practice",
-      "lesson_id": "legacy-html-u4-l6",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5842,7 +4308,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l7-3",
-      "lesson_id": "legacy-html-u4-l7",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Adicione seguranca ao link:",
       "starter_code": "<a href=\"...\" target=\"_blank\" {{blank1}}=\"noopener noreferrer\">Link</a>",
@@ -5878,7 +4344,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l7-4",
-      "lesson_id": "legacy-html-u4-l7",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "rel=\"nofollow\" e usado para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5914,7 +4380,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l7-practice",
-      "lesson_id": "legacy-html-u4-l7",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -5950,7 +4416,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l8-2",
-      "lesson_id": "legacy-html-u4-l8",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Crie link de email:",
       "starter_code": "<a href=\"{{blank1}}:contato@site.com\">Envie um email</a>",
@@ -5986,7 +4452,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l8-4",
-      "lesson_id": "legacy-html-u4-l8",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "mailto: abre: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6022,7 +4488,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l8-practice",
-      "lesson_id": "legacy-html-u4-l8",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6058,7 +4524,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l9-2",
-      "lesson_id": "legacy-html-u4-l9",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Crie link de telefone:",
       "starter_code": "<a href=\"{{blank1}}:+5511999999999\">Ligar</a>",
@@ -6094,7 +4560,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l9-4",
-      "lesson_id": "legacy-html-u4-l9",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "tel: e mais util em: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6130,7 +4596,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u4-l9-practice",
-      "lesson_id": "legacy-html-u4-l9",
+      "lesson_id": "html-04-links-e-navegacao",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6166,7 +4632,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l1-2",
-      "lesson_id": "legacy-html-u5-l1",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Complete a tag:",
       "starter_code": "<{{blank1}} src=\"foto.jpg\" alt=\"Descricao\">",
@@ -6202,7 +4668,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l1-3",
-      "lesson_id": "legacy-html-u5-l1",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "<img> precisa de fechamento? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6238,7 +4704,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l1-practice",
-      "lesson_id": "legacy-html-u5-l1",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Complete a tag de imagem com src:",
       "starter_code": "<img {{blank1}}=\"foto.jpg\" alt=\"Perfil\">",
@@ -6274,7 +4740,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l2-2",
-      "lesson_id": "legacy-html-u5-l2",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Adicione o caminho:",
       "starter_code": "<img {{blank1}}=\"images/logo.png\" alt=\"Logo\">",
@@ -6310,7 +4776,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l2-4",
-      "lesson_id": "legacy-html-u5-l2",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "src significa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6346,7 +4812,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l2-practice",
-      "lesson_id": "legacy-html-u5-l2",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6382,7 +4848,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l3-2",
-      "lesson_id": "legacy-html-u5-l3",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Adicione descricao:",
       "starter_code": "<img src=\"cachorro.jpg\" {{blank1}}=\"Um cachorro correndo no parque\">",
@@ -6418,7 +4884,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l3-4",
-      "lesson_id": "legacy-html-u5-l3",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "alt e importante para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6454,7 +4920,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l3-practice",
-      "lesson_id": "legacy-html-u5-l3",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6490,7 +4956,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l4-2",
-      "lesson_id": "legacy-html-u5-l4",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Defina largura de 300px:",
       "starter_code": "<img src=\"foto.jpg\" {{blank1}}=\"300\" alt=\"Foto\">",
@@ -6526,7 +4992,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l4-4",
-      "lesson_id": "legacy-html-u5-l4",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Defina altura de 200px:",
       "starter_code": "<img src=\"foto.jpg\" {{blank1}}=\"200\" alt=\"Foto\">",
@@ -6562,7 +5028,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l4-practice",
-      "lesson_id": "legacy-html-u5-l4",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6598,7 +5064,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l5-2",
-      "lesson_id": "legacy-html-u5-l5",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Qual formato suporta transparencia? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6634,7 +5100,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l5-3",
-      "lesson_id": "legacy-html-u5-l5",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Qual formato e melhor para fotos? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6670,7 +5136,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l5-practice",
-      "lesson_id": "legacy-html-u5-l5",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6706,7 +5172,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l6-2",
-      "lesson_id": "legacy-html-u5-l6",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Crie um figure:",
       "starter_code": "<{{blank1}}>\n <img src=\"foto.jpg\" alt=\"Foto\">\n</{{blank2}}>",
@@ -6747,7 +5213,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l6-3",
-      "lesson_id": "legacy-html-u5-l6",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "<figure> e usado para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6783,7 +5249,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l6-practice",
-      "lesson_id": "legacy-html-u5-l6",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento figure com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -6824,7 +5290,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l7-2",
-      "lesson_id": "legacy-html-u5-l7",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Adicione legenda:",
       "starter_code": "<figure>\n <img src=\"foto.jpg\" alt=\"Montanha\">\n <{{blank1}}>Vista das montanhas</{{blank2}}>\n</figure>",
@@ -6865,7 +5331,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l7-3",
-      "lesson_id": "legacy-html-u5-l7",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "<figcaption> deve ficar: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -6901,7 +5367,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l7-practice",
-      "lesson_id": "legacy-html-u5-l7",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento figcaption com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -6942,7 +5408,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l8-2",
-      "lesson_id": "legacy-html-u5-l8",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Crie um player de audio:",
       "starter_code": "<{{blank1}} src=\"musica.mp3\" controls></{{blank2}}>",
@@ -6983,7 +5449,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l8-4",
-      "lesson_id": "legacy-html-u5-l8",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "controls mostra: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7019,7 +5485,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l8-practice",
-      "lesson_id": "legacy-html-u5-l8",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento audio com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7060,7 +5526,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l9-2",
-      "lesson_id": "legacy-html-u5-l9",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Crie um player de video:",
       "starter_code": "<{{blank1}} src=\"video.mp4\" controls width=\"640\"></{{blank2}}>",
@@ -7101,7 +5567,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l9-4",
-      "lesson_id": "legacy-html-u5-l9",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "poster define: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7137,7 +5603,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u5-l9-practice",
-      "lesson_id": "legacy-html-u5-l9",
+      "lesson_id": "html-05-imagens-e-midia",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento video com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7178,7 +5644,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l1-2",
-      "lesson_id": "legacy-html-u6-l1",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Crie uma lista não ordenada:",
       "starter_code": "<{{blank1}}>\n <li>Item 1</li>\n <li>Item 2</li>\n</{{blank2}}>",
@@ -7219,7 +5685,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l1-3",
-      "lesson_id": "legacy-html-u6-l1",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "ul significa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7255,7 +5721,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l1-practice",
-      "lesson_id": "legacy-html-u6-l1",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento ul com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7296,7 +5762,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l2-2",
-      "lesson_id": "legacy-html-u6-l2",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Crie uma lista ordenada:",
       "starter_code": "<{{blank1}}>\n <li>Primeiro</li>\n <li>Segundo</li>\n</{{blank2}}>",
@@ -7337,7 +5803,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l2-3",
-      "lesson_id": "legacy-html-u6-l2",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "ol significa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7373,7 +5839,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l2-practice",
-      "lesson_id": "legacy-html-u6-l2",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento ol com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7414,7 +5880,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l3-2",
-      "lesson_id": "legacy-html-u6-l3",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Adicione um item:",
       "starter_code": "<ul>\n <{{blank1}}>Maca</{{blank2}}>\n <li>Banana</li>\n</ul>",
@@ -7455,7 +5921,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l3-3",
-      "lesson_id": "legacy-html-u6-l3",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "<li> pode ficar fora de <ul> ou <ol>? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7491,7 +5957,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l3-practice",
-      "lesson_id": "legacy-html-u6-l3",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento li com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7532,7 +5998,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l4-3",
-      "lesson_id": "legacy-html-u6-l4",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "A lista interna deve estar dentro de: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7568,7 +6034,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l4-practice",
-      "lesson_id": "legacy-html-u6-l4",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Prática guiada: Crie uma lista não ordenada:",
       "starter_code": "<{{blank1}}>\n <li>Item</li>\n</{{blank2}}>",
@@ -7609,7 +6075,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l5-3",
-      "lesson_id": "legacy-html-u6-l5",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Crie uma lista de definicao:",
       "starter_code": "<{{blank1}}>\n <dt>HTML</dt>\n <dd>Linguagem de marcacao</dd>\n</{{blank2}}>",
@@ -7650,7 +6116,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l5-4",
-      "lesson_id": "legacy-html-u6-l5",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "<dt> representa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7686,7 +6152,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u6-l5-practice",
-      "lesson_id": "legacy-html-u6-l5",
+      "lesson_id": "html-06-listas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento dl com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7727,7 +6193,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l1-2",
-      "lesson_id": "legacy-html-u7-l1",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Inicie uma tabela:",
       "starter_code": "<{{blank1}}>\n <!-- linhas aqui -->\n</{{blank2}}>",
@@ -7768,7 +6234,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l1-4",
-      "lesson_id": "legacy-html-u7-l1",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Tabelas são para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7804,7 +6270,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l1-practice",
-      "lesson_id": "legacy-html-u7-l1",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento table com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7845,7 +6311,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l2-2",
-      "lesson_id": "legacy-html-u7-l2",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Adicione uma linha:",
       "starter_code": "<table>\n <{{blank1}}>\n <td>Celula</td>\n </{{blank2}}>\n</table>",
@@ -7886,7 +6352,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l2-3",
-      "lesson_id": "legacy-html-u7-l2",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "tr significa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -7922,7 +6388,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l2-practice",
-      "lesson_id": "legacy-html-u7-l2",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento tr com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -7963,7 +6429,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l3-2",
-      "lesson_id": "legacy-html-u7-l3",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Adicione uma celula:",
       "starter_code": "<tr>\n <{{blank1}}>Joao</{{blank2}}>\n <td>25</td>\n</tr>",
@@ -8004,7 +6470,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l3-3",
-      "lesson_id": "legacy-html-u7-l3",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "td significa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8040,7 +6506,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l3-practice",
-      "lesson_id": "legacy-html-u7-l3",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento td com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -8081,7 +6547,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l4-2",
-      "lesson_id": "legacy-html-u7-l4",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Crie um cabecalho:",
       "starter_code": "<tr>\n <{{blank1}}>Nome</{{blank2}}>\n <th>Idade</th>\n</tr>",
@@ -8122,7 +6588,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l4-3",
-      "lesson_id": "legacy-html-u7-l4",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "<th> e usado para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8158,7 +6624,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l4-practice",
-      "lesson_id": "legacy-html-u7-l4",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento th com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -8199,7 +6665,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l5-2",
-      "lesson_id": "legacy-html-u7-l5",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Agrupe o cabecalho:",
       "starter_code": "<table>\n <{{blank1}}>\n <tr><th>Nome</th></tr>\n </{{blank2}}>\n</table>",
@@ -8240,7 +6706,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l5-3",
-      "lesson_id": "legacy-html-u7-l5",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "<thead> deve vir: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8276,7 +6742,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l5-practice",
-      "lesson_id": "legacy-html-u7-l5",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento thead com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -8317,7 +6783,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l6-2",
-      "lesson_id": "legacy-html-u7-l6",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Agrupe os dados:",
       "starter_code": "<table>\n <thead>...</thead>\n <{{blank1}}>\n <tr><td>Dado</td></tr>\n </{{blank2}}>\n</table>",
@@ -8358,7 +6824,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l6-3",
-      "lesson_id": "legacy-html-u7-l6",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "<tbody> contem: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8394,7 +6860,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l6-practice",
-      "lesson_id": "legacy-html-u7-l6",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento tbody com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -8435,7 +6901,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l7-2",
-      "lesson_id": "legacy-html-u7-l7",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Adicione um rodape:",
       "starter_code": "<table>\n <tbody>...</tbody>\n <{{blank1}}>\n <tr><td>Total: 100</td></tr>\n </{{blank2}}>\n</table>",
@@ -8476,7 +6942,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l7-3",
-      "lesson_id": "legacy-html-u7-l7",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "<tfoot> e usado para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8512,7 +6978,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l7-practice",
-      "lesson_id": "legacy-html-u7-l7",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento tfoot com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -8553,7 +7019,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l8-2",
-      "lesson_id": "legacy-html-u7-l8",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Mescle 2 colunas:",
       "starter_code": "<td {{blank1}}=\"2\">Ocupa 2 colunas</td>",
@@ -8589,7 +7055,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l8-3",
-      "lesson_id": "legacy-html-u7-l8",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Mescle 3 linhas:",
       "starter_code": "<td {{blank1}}=\"3\">Ocupa 3 linhas</td>",
@@ -8625,7 +7091,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l8-4",
-      "lesson_id": "legacy-html-u7-l8",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "colspan mescla: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8661,7 +7127,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l8-practice",
-      "lesson_id": "legacy-html-u7-l8",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Complete a estrutura da tabela:",
       "starter_code": "<table>\n <{{blank1}}>\n <td>Celula</td>\n </{{blank2}}>\n</table>",
@@ -8702,7 +7168,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l9-2",
-      "lesson_id": "legacy-html-u7-l9",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Adicione um título:",
       "starter_code": "<table>\n <{{blank1}}>Vendas 2024</{{blank2}}>\n <thead>...</thead>\n</table>",
@@ -8743,7 +7209,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l9-3",
-      "lesson_id": "legacy-html-u7-l9",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "<caption> deve ser: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8779,7 +7245,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u7-l9-practice",
-      "lesson_id": "legacy-html-u7-l9",
+      "lesson_id": "html-07-tabelas",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento caption com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -8820,7 +7286,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l1-2",
-      "lesson_id": "legacy-html-u8-l1",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie um formulario:",
       "starter_code": "<{{blank1}}>\n <!-- campos aqui -->\n</{{blank2}}>",
@@ -8861,7 +7327,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l1-4",
-      "lesson_id": "legacy-html-u8-l1",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "<form> e usado para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -8897,7 +7363,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l1-practice",
-      "lesson_id": "legacy-html-u8-l1",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento form com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -8938,7 +7404,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l2-2",
-      "lesson_id": "legacy-html-u8-l2",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Defina o destino:",
       "starter_code": "<form {{blank1}}=\"/processar\">",
@@ -8974,7 +7440,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l2-4",
-      "lesson_id": "legacy-html-u8-l2",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "action define: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9010,7 +7476,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l2-practice",
-      "lesson_id": "legacy-html-u8-l2",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9046,7 +7512,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l3-2",
-      "lesson_id": "legacy-html-u8-l3",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Use POST para enviar:",
       "starter_code": "<form action=\"/login\" {{blank1}}=\"POST\">",
@@ -9082,7 +7548,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l3-3",
-      "lesson_id": "legacy-html-u8-l3",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Para senhas, use: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9118,7 +7584,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l3-practice",
-      "lesson_id": "legacy-html-u8-l3",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9154,7 +7620,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l4-2",
-      "lesson_id": "legacy-html-u8-l4",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie um campo de texto:",
       "starter_code": "<input {{blank1}}=\"text\" name=\"nome\">",
@@ -9190,7 +7656,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l4-4",
-      "lesson_id": "legacy-html-u8-l4",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "type=\"text\" e para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9226,7 +7692,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l4-practice",
-      "lesson_id": "legacy-html-u8-l4",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9262,7 +7728,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l5-2",
-      "lesson_id": "legacy-html-u8-l5",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie campo de email:",
       "starter_code": "<input type=\"{{blank1}}\" name=\"email\">",
@@ -9298,7 +7764,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l5-4",
-      "lesson_id": "legacy-html-u8-l5",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "type=\"email\" faz validação: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9334,7 +7800,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l5-practice",
-      "lesson_id": "legacy-html-u8-l5",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9370,7 +7836,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l6-2",
-      "lesson_id": "legacy-html-u8-l6",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie campo de senha:",
       "starter_code": "<input type=\"{{blank1}}\" name=\"senha\">",
@@ -9406,7 +7872,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l6-4",
-      "lesson_id": "legacy-html-u8-l6",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "type=\"password\" exibe: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9442,7 +7908,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l6-practice",
-      "lesson_id": "legacy-html-u8-l6",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9478,7 +7944,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l7-2",
-      "lesson_id": "legacy-html-u8-l7",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie um checkbox:",
       "starter_code": "<input type=\"{{blank1}}\" name=\"aceito\"> Li os termos",
@@ -9514,7 +7980,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l7-4",
-      "lesson_id": "legacy-html-u8-l7",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Checkbox permite: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9550,7 +8016,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l7-practice",
-      "lesson_id": "legacy-html-u8-l7",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9586,7 +8052,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l8-2",
-      "lesson_id": "legacy-html-u8-l8",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie um radio:",
       "starter_code": "<input type=\"{{blank1}}\" name=\"genero\" value=\"m\"> Masculino",
@@ -9622,7 +8088,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l8-4",
-      "lesson_id": "legacy-html-u8-l8",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Radio permite: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9658,7 +8124,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l8-practice",
-      "lesson_id": "legacy-html-u8-l8",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9694,7 +8160,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l9-2",
-      "lesson_id": "legacy-html-u8-l9",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie uma area de texto:",
       "starter_code": "<{{blank1}} name=\"mensagem\"></{{blank2}}>",
@@ -9735,7 +8201,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l9-4",
-      "lesson_id": "legacy-html-u8-l9",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "<textarea> precisa de fechamento? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9771,7 +8237,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l9-practice",
-      "lesson_id": "legacy-html-u8-l9",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento textarea com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -9812,7 +8278,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l10-2",
-      "lesson_id": "legacy-html-u8-l10",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie um select:",
       "starter_code": "<{{blank1}} name=\"pais\">\n <option>Brasil</option>\n</{{blank2}}>",
@@ -9853,7 +8319,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l10-4",
-      "lesson_id": "legacy-html-u8-l10",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "<select> cria: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -9889,7 +8355,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l10-practice",
-      "lesson_id": "legacy-html-u8-l10",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento select com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -9930,7 +8396,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l11-2",
-      "lesson_id": "legacy-html-u8-l11",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie uma opção:",
       "starter_code": "<select>\n <{{blank1}} value=\"br\">Brasil</{{blank2}}>\n</select>",
@@ -9971,7 +8437,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l11-4",
-      "lesson_id": "legacy-html-u8-l11",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "O que e enviado ao servidor? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10007,7 +8473,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l11-practice",
-      "lesson_id": "legacy-html-u8-l11",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento option com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -10048,7 +8514,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l12-2",
-      "lesson_id": "legacy-html-u8-l12",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Crie um botao:",
       "starter_code": "<{{blank1}}>Enviar</{{blank2}}>",
@@ -10089,7 +8555,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l12-4",
-      "lesson_id": "legacy-html-u8-l12",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "type=\"submit\" faz o que? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10125,7 +8591,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l12-practice",
-      "lesson_id": "legacy-html-u8-l12",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento button com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -10166,7 +8632,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l13-2",
-      "lesson_id": "legacy-html-u8-l13",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Torne o campo obrigatorio:",
       "starter_code": "<input type=\"email\" {{blank1}}>",
@@ -10202,7 +8668,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l13-4",
-      "lesson_id": "legacy-html-u8-l13",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "required e um atributo: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10238,7 +8704,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l13-practice",
-      "lesson_id": "legacy-html-u8-l13",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10274,7 +8740,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l14-2",
-      "lesson_id": "legacy-html-u8-l14",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Adicione uma dica:",
       "starter_code": "<input type=\"text\" {{blank1}}=\"Digite seu nome\">",
@@ -10310,7 +8776,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l14-4",
-      "lesson_id": "legacy-html-u8-l14",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Placeholder some quando: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10346,7 +8812,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l14-practice",
-      "lesson_id": "legacy-html-u8-l14",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10382,7 +8848,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l15-2",
-      "lesson_id": "legacy-html-u8-l15",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Nomeie o campo:",
       "starter_code": "<input type=\"text\" {{blank1}}=\"usuario\">",
@@ -10418,7 +8884,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l15-4",
-      "lesson_id": "legacy-html-u8-l15",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Campo sem name: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10454,7 +8920,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u8-l15-practice",
-      "lesson_id": "legacy-html-u8-l15",
+      "lesson_id": "html-08-formularios",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10490,7 +8956,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l1-3",
-      "lesson_id": "legacy-html-u9-l1",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Qual e mais semantico? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10526,7 +8992,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l1-4",
-      "lesson_id": "legacy-html-u9-l1",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "HTML semantico ajuda: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10562,7 +9028,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l1-practice",
-      "lesson_id": "legacy-html-u9-l1",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10598,7 +9064,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l2-2",
-      "lesson_id": "legacy-html-u9-l2",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Crie um header:",
       "starter_code": "<{{blank1}}>\n <h1>Meu Site</h1>\n <nav>...</nav>\n</{{blank2}}>",
@@ -10639,7 +9105,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l2-3",
-      "lesson_id": "legacy-html-u9-l2",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "<header> e para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10675,7 +9141,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l2-practice",
-      "lesson_id": "legacy-html-u9-l2",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento header com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -10716,7 +9182,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l3-2",
-      "lesson_id": "legacy-html-u9-l3",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Crie navegação:",
       "starter_code": "<{{blank1}}>\n <a href=\"/\">Home</a>\n <a href=\"/sobre\">Sobre</a>\n</{{blank2}}>",
@@ -10757,7 +9223,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l3-4",
-      "lesson_id": "legacy-html-u9-l3",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "<nav> e ideal para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10793,7 +9259,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l3-practice",
-      "lesson_id": "legacy-html-u9-l3",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento nav com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -10834,7 +9300,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l4-2",
-      "lesson_id": "legacy-html-u9-l4",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Crie o main:",
       "starter_code": "<{{blank1}}>\n <h1>Bem-vindo</h1>\n <p>Conteúdo principal aqui.</p>\n</{{blank2}}>",
@@ -10875,7 +9341,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l4-3",
-      "lesson_id": "legacy-html-u9-l4",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Quantos <main> por página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -10911,7 +9377,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l4-practice",
-      "lesson_id": "legacy-html-u9-l4",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento main com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -10952,7 +9418,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l5-2",
-      "lesson_id": "legacy-html-u9-l5",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Crie uma seção:",
       "starter_code": "<{{blank1}}>\n <h2>Nossos Servicos</h2>\n <p>...</p>\n</{{blank2}}>",
@@ -10993,7 +9459,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l5-4",
-      "lesson_id": "legacy-html-u9-l5",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "<section> agrupa: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11029,7 +9495,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l5-practice",
-      "lesson_id": "legacy-html-u9-l5",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento section com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -11070,7 +9536,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l6-2",
-      "lesson_id": "legacy-html-u9-l6",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Crie um artigo:",
       "starter_code": "<{{blank1}}>\n <h2>Título do Post</h2>\n <p>Conteúdo do post...</p>\n</{{blank2}}>",
@@ -11111,7 +9577,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l6-4",
-      "lesson_id": "legacy-html-u9-l6",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "<article> e para conteúdo: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11147,7 +9613,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l6-practice",
-      "lesson_id": "legacy-html-u9-l6",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento article com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -11188,7 +9654,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l7-2",
-      "lesson_id": "legacy-html-u9-l7",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Crie um aside:",
       "starter_code": "<{{blank1}}>\n <h3>Posts Relacionados</h3>\n <ul>...</ul>\n</{{blank2}}>",
@@ -11229,7 +9695,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l7-4",
-      "lesson_id": "legacy-html-u9-l7",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "<aside> e ideal para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11265,7 +9731,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l7-practice",
-      "lesson_id": "legacy-html-u9-l7",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento aside com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -11306,7 +9772,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l8-2",
-      "lesson_id": "legacy-html-u9-l8",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Crie um footer:",
       "starter_code": "<{{blank1}}>\n <p>&copy; 2024 Meu Site</p>\n</{{blank2}}>",
@@ -11347,7 +9813,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l8-4",
-      "lesson_id": "legacy-html-u9-l8",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "<footer> geralmente contem: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11383,7 +9849,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l8-practice",
-      "lesson_id": "legacy-html-u9-l8",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento footer com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -11424,7 +9890,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l9-3",
-      "lesson_id": "legacy-html-u9-l9",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Para uma sidebar, prefira: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11460,7 +9926,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l9-4",
-      "lesson_id": "legacy-html-u9-l9",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "div e: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11496,7 +9962,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u9-l9-practice",
-      "lesson_id": "legacy-html-u9-l9",
+      "lesson_id": "html-09-html-semantico",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11532,7 +9998,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l1-2",
-      "lesson_id": "legacy-html-u10-l1",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Adicione um id:",
       "starter_code": "<div {{blank1}}=\"cabecalho\">Meu Header</div>",
@@ -11568,7 +10034,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l1-4",
-      "lesson_id": "legacy-html-u10-l1",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Cada id deve ser: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11604,7 +10070,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l1-practice",
-      "lesson_id": "legacy-html-u10-l1",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11640,7 +10106,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l2-2",
-      "lesson_id": "legacy-html-u10-l2",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Adicione uma classe:",
       "starter_code": "<button {{blank1}}=\"btn-primary\">Clique</button>",
@@ -11676,7 +10142,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l2-4",
-      "lesson_id": "legacy-html-u10-l2",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Classes podem ser: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11712,7 +10178,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l2-practice",
-      "lesson_id": "legacy-html-u10-l2",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11748,7 +10214,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l3-2",
-      "lesson_id": "legacy-html-u10-l3",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Adicione estilo inline:",
       "starter_code": "<p {{blank1}}=\"color: red;\">Texto vermelho</p>",
@@ -11784,7 +10250,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l3-4",
-      "lesson_id": "legacy-html-u10-l3",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Para projetos grandes, prefira: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11820,7 +10286,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l3-practice",
-      "lesson_id": "legacy-html-u10-l3",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11856,7 +10322,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l4-2",
-      "lesson_id": "legacy-html-u10-l4",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Adicione uma dica:",
       "starter_code": "<abbr {{blank1}}=\"HyperText Markup Language\">HTML</abbr>",
@@ -11892,7 +10358,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l4-4",
-      "lesson_id": "legacy-html-u10-l4",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "title aparece ao: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11928,7 +10394,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l4-practice",
-      "lesson_id": "legacy-html-u10-l4",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -11964,7 +10430,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l5-2",
-      "lesson_id": "legacy-html-u10-l5",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Defina portugues brasileiro:",
       "starter_code": "<html {{blank1}}=\"pt-BR\">",
@@ -12000,7 +10466,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l5-4",
-      "lesson_id": "legacy-html-u10-l5",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "lang ajuda: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12036,7 +10502,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l5-practice",
-      "lesson_id": "legacy-html-u10-l5",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12180,7 +10646,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l7-2",
-      "lesson_id": "legacy-html-u10-l7",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Oculte o elemento:",
       "starter_code": "<div {{blank1}}>Conteúdo oculto</div>",
@@ -12216,7 +10682,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l7-4",
-      "lesson_id": "legacy-html-u10-l7",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Elemento com hidden: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12252,7 +10718,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l7-practice",
-      "lesson_id": "legacy-html-u10-l7",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12288,7 +10754,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l8-3",
-      "lesson_id": "legacy-html-u10-l8",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Torne focavel via Tab:",
       "starter_code": "<div {{blank1}}=\"0\">Clique ou Tab</div>",
@@ -12324,7 +10790,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l8-4",
-      "lesson_id": "legacy-html-u10-l8",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "tabindex e importante para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12360,7 +10826,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u10-l8-practice",
-      "lesson_id": "legacy-html-u10-l8",
+      "lesson_id": "html-10-atributos-globais",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12396,7 +10862,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l1-3",
-      "lesson_id": "legacy-html-u11-l1",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Acessibilidade beneficia: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12432,7 +10898,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l1-practice",
-      "lesson_id": "legacy-html-u11-l1",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12468,7 +10934,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l2-3",
-      "lesson_id": "legacy-html-u11-l2",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Para imagem decorativa, use: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12504,7 +10970,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l2-4",
-      "lesson_id": "legacy-html-u11-l2",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Descreva a imagem:",
       "starter_code": "<img src=\"cachorro.jpg\" {{blank1}}=\"Cachorro golden retriever brincando no parque\">",
@@ -12540,7 +11006,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l2-practice",
-      "lesson_id": "legacy-html-u11-l2",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12576,7 +11042,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l3-2",
-      "lesson_id": "legacy-html-u11-l3",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Associe label ao input:",
       "starter_code": "<{{blank1}} for=\"email\">Email:</{{blank2}}>\n<input id=\"email\" type=\"email\">",
@@ -12617,7 +11083,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l3-4",
-      "lesson_id": "legacy-html-u11-l3",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "for do label deve corresponder a: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12653,7 +11119,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l3-practice",
-      "lesson_id": "legacy-html-u11-l3",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento label com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -12694,7 +11160,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l4-3",
-      "lesson_id": "legacy-html-u11-l4",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "tabindex positivo alto e: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12730,7 +11196,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l4-practice",
-      "lesson_id": "legacy-html-u11-l4",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12766,7 +11232,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l5-3",
-      "lesson_id": "legacy-html-u11-l5",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "ARIA deve ser usado: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -12802,7 +11268,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u11-l5-practice",
-      "lesson_id": "legacy-html-u11-l5",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13054,7 +11520,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l1-3",
-      "lesson_id": "legacy-html-u12-l1",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Quantos h1 por página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13090,7 +11556,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l1-4",
-      "lesson_id": "legacy-html-u12-l1",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Qual ordem esta correta? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13126,7 +11592,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l1-practice",
-      "lesson_id": "legacy-html-u12-l1",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13162,7 +11628,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l2-3",
-      "lesson_id": "legacy-html-u12-l2",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Buscadores preferem: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13198,7 +11664,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l2-practice",
-      "lesson_id": "legacy-html-u12-l2",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13234,7 +11700,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l3-2",
-      "lesson_id": "legacy-html-u12-l3",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Crie uma meta description:",
       "starter_code": "<meta name=\"{{blank1}}\" content=\"Aprenda HTML do zero...\">",
@@ -13270,7 +11736,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l3-4",
-      "lesson_id": "legacy-html-u12-l3",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Meta description deve ter: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13306,7 +11772,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l3-practice",
-      "lesson_id": "legacy-html-u12-l3",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13342,7 +11808,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l4-3",
-      "lesson_id": "legacy-html-u12-l4",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Qual texto ancora e melhor? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13378,7 +11844,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l4-practice",
-      "lesson_id": "legacy-html-u12-l4",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13414,7 +11880,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l5-3",
-      "lesson_id": "legacy-html-u12-l5",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Para SEO, alt deve ser: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13450,7 +11916,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l5-4",
-      "lesson_id": "legacy-html-u12-l5",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Alt otimizado:",
       "starter_code": "<img src=\"bolo.jpg\" {{blank1}}=\"Bolo de chocolate decorado para festa de aniversario\">",
@@ -13486,7 +11952,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u12-l5-practice",
-      "lesson_id": "legacy-html-u12-l5",
+      "lesson_id": "html-11-acessibilidade-e-seo",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13522,7 +11988,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l1-2",
-      "lesson_id": "legacy-html-u13-l1",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Conecte um arquivo CSS:",
       "starter_code": "<{{blank1}} rel=\"stylesheet\" href=\"estilos.css\">",
@@ -13558,7 +12024,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l1-4",
-      "lesson_id": "legacy-html-u13-l1",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Complete o link:",
       "starter_code": "<link {{blank1}}=\"stylesheet\" href=\"style.css\">",
@@ -13594,7 +12060,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l1-practice",
-      "lesson_id": "legacy-html-u13-l1",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13630,7 +12096,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l2-2",
-      "lesson_id": "legacy-html-u13-l2",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Crie um bloco de estilos:",
       "starter_code": "<{{blank1}}>\n body { background: blue; }\n</{{blank2}}>",
@@ -13671,7 +12137,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l2-4",
-      "lesson_id": "legacy-html-u13-l2",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "<style> deve ficar no: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13707,7 +12173,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l2-practice",
-      "lesson_id": "legacy-html-u13-l2",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento style com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -13748,7 +12214,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l3-2",
-      "lesson_id": "legacy-html-u13-l3",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Conecte um arquivo JS:",
       "starter_code": "<{{blank1}} src=\"app.js\"></{{blank2}}>",
@@ -13789,7 +12255,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l3-4",
-      "lesson_id": "legacy-html-u13-l3",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "<script> precisa de fechamento? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13825,7 +12291,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l3-practice",
-      "lesson_id": "legacy-html-u13-l3",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Crie um elemento script com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
@@ -13866,7 +12332,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l4-2",
-      "lesson_id": "legacy-html-u13-l4",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Adicione defer:",
       "starter_code": "<script src=\"app.js\" {{blank1}}></script>",
@@ -13902,7 +12368,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l4-4",
-      "lesson_id": "legacy-html-u13-l4",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "defer executa apos: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13938,7 +12404,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l4-practice",
-      "lesson_id": "legacy-html-u13-l4",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -13974,7 +12440,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l5-2",
-      "lesson_id": "legacy-html-u13-l5",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Adicione async:",
       "starter_code": "<script src=\"analytics.js\" {{blank1}}></script>",
@@ -14010,7 +12476,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l5-4",
-      "lesson_id": "legacy-html-u13-l5",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "async e ideal para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14046,7 +12512,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u13-l5-practice",
-      "lesson_id": "legacy-html-u13-l5",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14082,7 +12548,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l1-3",
-      "lesson_id": "legacy-html-u14-l1",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Qual esta mais limpo? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14118,7 +12584,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l1-practice",
-      "lesson_id": "legacy-html-u14-l1",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14226,7 +12692,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l3-3",
-      "lesson_id": "legacy-html-u14-l3",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Validar HTML ajuda a: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14262,7 +12728,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l3-practice",
-      "lesson_id": "legacy-html-u14-l3",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14298,7 +12764,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l4-3",
-      "lesson_id": "legacy-html-u14-l4",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Especificar dimensoes de imagem: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14334,7 +12800,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l4-practice",
-      "lesson_id": "legacy-html-u14-l4",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14370,7 +12836,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l5-3",
-      "lesson_id": "legacy-html-u14-l5",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Para compatibilidade, devemos: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14406,7 +12872,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u14-l5-practice",
-      "lesson_id": "legacy-html-u14-l5",
+      "lesson_id": "html-12-integrando-css-e-js",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14442,7 +12908,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l1-3",
-      "lesson_id": "legacy-html-u15-l1",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Crie a estrutura:",
       "starter_code": "<{{blank1}}>\n <h1>Seu Nome</h1>\n</{{blank2}}>\n<main>\n <img src=\"foto.jpg\" alt=\"Minha foto\">\n <p>Sobre mim...</p>\n</main>",
@@ -14483,7 +12949,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l1-practice",
-      "lesson_id": "legacy-html-u15-l1",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14519,7 +12985,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l2-3",
-      "lesson_id": "legacy-html-u15-l2",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Crie a seção hero:",
       "starter_code": "<{{blank1}}>\n <h1>Aprenda HTML em 30 dias</h1>\n <p>Do zero ao profissional</p>\n <button>Comece agora</button>\n</{{blank2}}>",
@@ -14560,7 +13026,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l2-practice",
-      "lesson_id": "legacy-html-u15-l2",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14596,7 +13062,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l3-3",
-      "lesson_id": "legacy-html-u15-l3",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Crie o form de contato:",
       "starter_code": "<form action=\"/contato\" method=\"POST\">\n <label for=\"nome\">Nome:</label>\n <input type=\"text\" id=\"nome\" name=\"nome\" {{blank1}}>\n <button type=\"submit\">Enviar</button>\n</form>",
@@ -14632,7 +13098,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l3-practice",
-      "lesson_id": "legacy-html-u15-l3",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14668,7 +13134,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l4-3",
-      "lesson_id": "legacy-html-u15-l4",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Agrupe campos:",
       "starter_code": "<{{blank1}}>\n <legend>Dados pessoais</legend>\n <label>Nome: <input type=\"text\"></label>\n</{{blank2}}>",
@@ -14709,7 +13175,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l4-practice",
-      "lesson_id": "legacy-html-u15-l4",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14745,7 +13211,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l5-3",
-      "lesson_id": "legacy-html-u15-l5",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Crie a navegação:",
       "starter_code": "<nav>\n <a href=\"index.html\">Home</a>\n <a href=\"{{blank1}}\">Sobre</a>\n <a href=\"servicos.html\">Servicos</a>\n <a href=\"contato.html\">Contato</a>\n</nav>",
@@ -14781,7 +13247,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u15-l5-practice",
-      "lesson_id": "legacy-html-u15-l5",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14817,7 +13283,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u16-l1-3",
-      "lesson_id": "legacy-html-u16-l1",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Frameworks substituem HTML? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14853,7 +13319,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u16-l1-practice",
-      "lesson_id": "legacy-html-u16-l1",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14889,7 +13355,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u16-l2-3",
-      "lesson_id": "legacy-html-u16-l2",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Web Components são: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14925,7 +13391,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u16-l2-practice",
-      "lesson_id": "legacy-html-u16-l2",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -14961,7 +13427,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u16-l3-3",
-      "lesson_id": "legacy-html-u16-l3",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Link para o manifest:",
       "starter_code": "<link rel=\"{{blank1}}\" href=\"manifest.json\">",
@@ -14997,7 +13463,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u16-l3-4",
-      "lesson_id": "legacy-html-u16-l3",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "PWAs podem: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15033,7 +13499,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-html-u16-l3-practice",
-      "lesson_id": "legacy-html-u16-l3",
+      "lesson_id": "html-13-boas-praticas-e-projetos",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15069,7 +13535,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l1-3",
-      "lesson_id": "legacy-css-u17-l1",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "O CSS e responsavel por: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15105,7 +13571,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l1-4",
-      "lesson_id": "legacy-css-u17-l1",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Complete a sigla:",
       "starter_code": "{{blank1}} Style Sheets",
@@ -15141,7 +13607,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l1-practice",
-      "lesson_id": "legacy-css-u17-l1",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15177,7 +13643,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l2-2",
-      "lesson_id": "legacy-css-u17-l2",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Selecione todos os paragrafos:",
       "starter_code": "{{blank1}} { color: red; }",
@@ -15213,7 +13679,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l2-3",
-      "lesson_id": "legacy-css-u17-l2",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "O seletor de classe e: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15249,7 +13715,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l2-practice",
-      "lesson_id": "legacy-css-u17-l2",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Prática guiada: Qual seletor aplica em classe? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15393,7 +13859,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l4-2",
-      "lesson_id": "legacy-css-u17-l4",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Adicione espaco interno:",
       "starter_code": ".card { {{blank1}}: 16px; }",
@@ -15429,7 +13895,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l4-3",
-      "lesson_id": "legacy-css-u17-l4",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Qual propriedade cria espaco externo? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15465,7 +13931,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l4-practice",
-      "lesson_id": "legacy-css-u17-l4",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15501,7 +13967,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l5-2",
-      "lesson_id": "legacy-css-u17-l5",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Quem tem maior especificidade? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15537,7 +14003,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l5-3",
-      "lesson_id": "legacy-css-u17-l5",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Selecione por id:",
       "starter_code": "{{blank1}}menu { color: white; }",
@@ -15573,7 +14039,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u17-l5-practice",
-      "lesson_id": "legacy-css-u17-l5",
+      "lesson_id": "css-01-fundamentos-css",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15609,7 +14075,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l1-2",
-      "lesson_id": "legacy-css-u18-l1",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Ative o flex:",
       "starter_code": ".container { display: {{blank1}}; }",
@@ -15645,7 +14111,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l1-3",
-      "lesson_id": "legacy-css-u18-l1",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Centralizar horizontalmente no eixo principal: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15681,7 +14147,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l1-practice",
-      "lesson_id": "legacy-css-u18-l1",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15717,7 +14183,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l2-2",
-      "lesson_id": "legacy-css-u18-l2",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Crie duas colunas iguais:",
       "starter_code": ".grid { display: grid; {{blank1}}: 1fr 1fr; }",
@@ -15753,7 +14219,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l2-3",
-      "lesson_id": "legacy-css-u18-l2",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Para espacamento entre colunas/linhas use: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15789,7 +14255,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l2-practice",
-      "lesson_id": "legacy-css-u18-l2",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15825,7 +14291,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l3-2",
-      "lesson_id": "legacy-css-u18-l3",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Posicione com absolute:",
       "starter_code": ".badge { position: {{blank1}}; top: 8px; right: 8px; }",
@@ -15861,7 +14327,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l3-3",
-      "lesson_id": "legacy-css-u18-l3",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Elemento fixo no topo da tela: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15897,7 +14363,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l3-practice",
-      "lesson_id": "legacy-css-u18-l3",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -15933,7 +14399,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l4-2",
-      "lesson_id": "legacy-css-u18-l4",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Crie uma media query:",
       "starter_code": "@media (max-width: 768px) { {{blank1}} }",
@@ -15969,7 +14435,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l4-3",
-      "lesson_id": "legacy-css-u18-l4",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Para mobile first, comecamos: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16005,7 +14471,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l4-practice",
-      "lesson_id": "legacy-css-u18-l4",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16041,7 +14507,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l5-2",
-      "lesson_id": "legacy-css-u18-l5",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Crie um hover:",
       "starter_code": "button{{blank1}} { background: #22c55e; }",
@@ -16077,7 +14543,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l5-3",
-      "lesson_id": "legacy-css-u18-l5",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Qual pseudo-classe indica foco? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16113,7 +14579,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u18-l5-practice",
-      "lesson_id": "legacy-css-u18-l5",
+      "lesson_id": "css-02-layout-moderno",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16149,7 +14615,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l1-2",
-      "lesson_id": "legacy-css-u19-l1",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Adicione transicao:",
       "starter_code": ".btn { transition: {{blank1}}; }",
@@ -16185,7 +14651,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l1-3",
-      "lesson_id": "legacy-css-u19-l1",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Qual propriedade define duracao? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16221,7 +14687,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l1-practice",
-      "lesson_id": "legacy-css-u19-l1",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16257,7 +14723,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l2-2",
-      "lesson_id": "legacy-css-u19-l2",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Defina uma animação:",
       "starter_code": "@keyframes {{blank1}} { from { opacity: 0; } to { opacity: 1; } }",
@@ -16293,7 +14759,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l2-3",
-      "lesson_id": "legacy-css-u19-l2",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Repetir infinitamente: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16329,7 +14795,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l2-practice",
-      "lesson_id": "legacy-css-u19-l2",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16473,7 +14939,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l4-2",
-      "lesson_id": "legacy-css-u19-l4",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Crie um marcador:",
       "starter_code": ".item{{blank1}} { content: \" \"; color: #22c55e; }",
@@ -16509,7 +14975,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l4-3",
-      "lesson_id": "legacy-css-u19-l4",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Pseudo-elementos requerem: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16545,7 +15011,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u19-l4-practice",
-      "lesson_id": "legacy-css-u19-l4",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16797,7 +15263,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u22-l2-2",
-      "lesson_id": "legacy-css-u22-l2",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Selecione apenas filhos diretos:",
       "starter_code": "ul {{blank1}} li { list-style: none; }",
@@ -16833,7 +15299,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u22-l2-3",
-      "lesson_id": "legacy-css-u22-l2",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Selecione links dentro de nav:",
       "starter_code": "nav {{blank1}} { color: #0ea5e9; }",
@@ -16869,7 +15335,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u22-l2-4",
-      "lesson_id": "legacy-css-u22-l2",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Qual combinador indica filho direto? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -16905,7 +15371,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u22-l2-practice",
-      "lesson_id": "legacy-css-u22-l2",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -17049,7 +15515,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u22-l4-3",
-      "lesson_id": "legacy-css-u22-l4",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Qual seletor e mais específico? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -17085,7 +15551,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u22-l4-4",
-      "lesson_id": "legacy-css-u22-l4",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Exemplo com ID:",
       "starter_code": "{{blank1}}header { position: sticky; }",
@@ -17121,7 +15587,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u22-l4-practice",
-      "lesson_id": "legacy-css-u22-l4",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -17157,7 +15623,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u23-l1-2",
-      "lesson_id": "legacy-css-u23-l1",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Ative o flex:",
       "starter_code": ".linha { display: {{blank1}}; }",
@@ -17193,7 +15659,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u23-l1-3",
-      "lesson_id": "legacy-css-u23-l1",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Alinhar no eixo principal: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
@@ -17229,7 +15695,7 @@ export const learningSeed: LearningSeed = {
     },
     {
       "id": "legacy-css-u23-l1-practice",
-      "lesson_id": "legacy-css-u23-l1",
+      "lesson_id": "css-03-animacoes-e-avancado",
       "type": "blank",
       "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
