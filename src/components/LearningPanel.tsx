@@ -26,6 +26,17 @@ const daysBetween = (a: Date, b: Date) => {
   return Math.floor((utcA - utcB) / (1000 * 60 * 60 * 24));
 };
 
+/** Converts 'YYYY-MM-DD' (start of week) into a readable date in DD/MM/YYYY format */
+const formatWeekKey = (weekKey: string): string => {
+  // weekKey is the ISO date of the Monday that starts the week (e.g. "2026-02-23")
+  const parts = weekKey.split('-');
+  if (parts.length === 3) {
+    const [year, month, day] = parts;
+    return `${day}/${month}/${year}`;
+  }
+  return weekKey;
+};
+
 const languageLabel = (language: string) => {
   const normalized = (language || '').toLowerCase();
   if (normalized === 'javascript') return 'JS';
@@ -446,7 +457,7 @@ export function LearningPanel() {
           </div>
 
           <div className="mb-2 flex items-center justify-between text-xs text-muted-foreground">
-            <span>Semana iniciada em {weeklyProgress.weekKey}</span>
+            <span>Semana iniciada em {formatWeekKey(weeklyProgress.weekKey)}</span>
             <span className="font-semibold text-foreground">{weeklyProgress.percent}%</span>
           </div>
           <div className="progress-bar h-2.5">
@@ -490,13 +501,15 @@ export function LearningPanel() {
             </div>
           )}
 
-          <Button
-            variant="secondary"
-            className="mt-3 w-full"
-            onClick={() => navigate('/admin')}
-          >
-            Abrir painel do professor
-          </Button>
+          {user && (
+            <Button
+              variant="secondary"
+              className="mt-3 w-full"
+              onClick={() => navigate('/admin')}
+            >
+              Abrir painel do professor
+            </Button>
+          )}
         </div>
       )}
 
@@ -581,13 +594,16 @@ export function LearningPanel() {
 
         {filteredLessons.map(item => {
           const locked = !item.unlocked;
+          const isNext = item.lesson.id === nextLessonId;
           return (
             <button
               key={item.lesson.id}
               onClick={() => !locked && navigate(`/lesson/${item.lesson.id}`)}
               className={`w-full rounded-xl border p-3 text-left transition-all ${locked
                 ? 'cursor-not-allowed border-border/45 bg-muted/25 opacity-70'
-                : 'border-border/60 bg-card/55 hover:-translate-y-0.5 hover:border-primary/45'
+                : isNext
+                  ? 'border-primary/60 bg-primary/8 hover:-translate-y-0.5 shadow-[0_0_0_1px_hsl(var(--primary)/0.25)]'
+                  : 'border-border/60 bg-card/55 hover:-translate-y-0.5 hover:border-primary/45'
                 }`}
               disabled={locked}
               aria-label={locked ? `Lição bloqueada: ${item.lesson.title}` : `Abrir lição ${item.lesson.title}`}
@@ -596,6 +612,11 @@ export function LearningPanel() {
                 <span className="flex items-center gap-2 font-semibold">
                   {locked && <Lock className="h-4 w-4 text-warning" />}
                   {item.lesson.title}
+                  {isNext && !locked && (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-primary/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-primary">
+                      Próxima
+                    </span>
+                  )}
                 </span>
                 <span className="text-xs text-muted-foreground">
                   {item.completed}/{item.total} | acerto {item.accuracy}%

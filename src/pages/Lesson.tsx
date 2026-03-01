@@ -216,7 +216,6 @@ export default function Lesson() {
 
   const currentLessonAccuracy = useMemo(() => {
     if (!lesson) return 0;
-    const lessonExercises = exercises.filter(exercise => exercise.lesson_id === lesson.id);
     let totalCorrect = 0;
     let totalWrong = 0;
 
@@ -229,7 +228,7 @@ export default function Lesson() {
 
     const attempts = totalCorrect + totalWrong;
     return attempts > 0 ? totalCorrect / attempts : 0;
-  }, [exercises, lesson, progressByExercise]);
+  }, [lessonExercises, lesson, progressByExercise]);
 
   const currentLessonMastered = useMemo(() => {
     if (!lesson) return false;

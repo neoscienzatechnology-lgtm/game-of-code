@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { ArrowRight, Check, Lightbulb, X, Zap } from 'lucide-react';
+import { ArrowRight, Check, Lightbulb, Loader2, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import type { ExerciseData, ExerciseValidation } from '@/types/learning';
 import { validateExercise } from '@/lib/validators/exerciseValidator';
@@ -335,11 +335,12 @@ export function LearningExerciseSession({
       onAttempt?.(exercise, true);
     } else {
       const lessonContext = getLessonContext?.(exercise.id);
+      const currentHint = exercise.hints[Math.min(hintLevel, exercise.hints.length - 1)]?.text;
       const feedback = buildPedagogicalFeedback({
         exercise,
         lessonContext,
         blankValidation,
-        hint: exercise.hints[0]?.text,
+        hint: currentHint,
         attemptsOnCurrent,
       });
       playSound('error');
@@ -357,6 +358,7 @@ export function LearningExerciseSession({
     if (showResult !== 'correct') {
       setShowResult(null);
       setErrorMessage(undefined);
+      setBlanks({});
       return;
     }
 
@@ -653,14 +655,19 @@ export function LearningExerciseSession({
               }`}
             aria-label={showResult === 'correct' ? 'Ir para próximo exercício' : 'Verificar resposta'}
           >
-            {showResult === 'correct'
-              ? isLastExercise
-                ? 'Concluir'
-                : 'Próximo'
-              : showResult === 'wrong'
-                ? 'Tentar novamente'
-                : 'Verificar'}
-            <ArrowRight className="ml-2 h-5 w-5" />
+            {checking ? (
+              <>
+                <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                Verificando...
+              </>
+            ) : showResult === 'correct' ? (
+              isLastExercise ? 'Concluir' : 'Próximo'
+            ) : showResult === 'wrong' ? (
+              'Tentar novamente'
+            ) : (
+              'Verificar'
+            )}
+            {!checking && <ArrowRight className="ml-2 h-5 w-5" />}
           </Button>
         </div>
       </div>

@@ -5,34 +5,34 @@ export const learningSeed: LearningSeed = {
     {
       "id": "module-html-basics",
       "language": "html",
-      "title": "HTML Basico",
-      "description": "Trilha completa de HTML: estrutura, semantica, formularios, SEO e boas praticas.",
+      "title": "HTML Básico",
+      "description": "Trilha completa de HTML: estrutura, semântica, formularios, SEO e boas práticas.",
       "order": 1,
       "tags": [
         "html",
         "estrutura",
-        "semantica",
+        "semântica",
         "seo"
       ]
     },
     {
       "id": "module-css-basics",
       "language": "css",
-      "title": "CSS Basico",
-      "description": "Trilha completa de CSS: seletores, box model, layout, responsividade e animacoes.",
+      "title": "CSS Básico",
+      "description": "Trilha completa de CSS: seletores, box model, layout, responsividade e animações.",
       "order": 2,
       "tags": [
         "css",
         "layout",
         "responsivo",
-        "animacao"
+        "animação"
       ]
     },
     {
       "id": "module-js-basics",
       "language": "javascript",
-      "title": "JavaScript Basico",
-      "description": "Trilha pratica para sair do zero com explicacoes curtas, exemplos reais e exercicios guiados.",
+      "title": "JavaScript Básico",
+      "description": "Trilha prática para sair do zero com explicacoes curtas, exemplos reais e exercicios guiados.",
       "order": 3,
       "tags": [
         "js",
@@ -48,7 +48,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "introducao-a-web-o-que-e-a-web",
       "title": "O que e a Web",
-      "content": "Objetivo: Entenda como a internet funciona. A Web e um conjunto de documentos ligados por links e acessados via navegador. Ela usa a internet (a rede fisica) para transportar dados, enquanto a Web define como o conteudo e publicado. Exemplo de uso: ao digitar um endereco, o navegador baixa arquivos HTML, CSS e JS. Uso comum: sites, dashboards e aplicativos web. Dica pratica: use o DevTools (F12) para ver o HTML recebido. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Entenda a diferença entre internet e Web.\n\nFato-chave: A internet é a infraestrutura física (cabos, roteadores, servidores). A Web é um serviço que roda sobre ela — formada por páginas HTML acessadas via navegador usando o protocolo HTTP ou HTTPS.\n\nExemplo de uso: Quando você digita https://google.com, o navegador envia uma requisição HTTP ao servidor, que devolve um arquivo HTML. O navegador interpreta esse HTML e exibe a página.\n\nUso comum: Sites, aplicações web, dashboards, sistemas de e-commerce e blogs — tudo funciona sobre a Web.\n\nDica prática: Abra o DevTools (F12) → aba Network e recarregue uma página. Você verá cada arquivo solicitado: HTML, CSS, JS, imagens e fontes.",
       "order": 1,
       "tags": [
         "introducao",
@@ -62,7 +62,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "introducao-a-web-o-que-e-html",
       "title": "O que e HTML",
-      "content": "Objetivo: Descubra a linguagem da web. HTML define a estrutura do conteudo. Pense nele como o esqueleto da pagina. Cada elemento e criado com tags e pode ter atributos. Exemplo de uso: paginas, artigos e blogs sempre tem HTML por tras. Uso comum: organizar titulos, textos, listas e imagens. Dica pratica: comece simples e va adicionando tags aos poucos. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Descubra o papel do HTML na web.\n\nFato-chave: HTML (HyperText Markup Language) é uma linguagem de marcação que define a estrutura e o significado semântico do conteúdo. Ele não controla a aparência — isso é trabalho do CSS.\n\nExemplo de uso:\n<h1>Meu Site</h1>\n<p>Bem-vindo ao meu primeiro site!</p>\n<a href=\"sobre.html\">Saiba mais</a>\n\nUso comum: Todo site tem pelo menos um arquivo HTML como ponto de entrada. HTML é o esqueleto sobre o qual CSS e JavaScript trabalham.\n\nDica prática: Use o validador validator.w3.org para encontrar erros de HTML. O navegador tolera erros silenciosamente, mas eles causam problemas em acessibilidade e SEO.",
       "order": 2,
       "tags": [
         "introducao",
@@ -77,7 +77,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "introducao-a-web-html-vs-css-vs-javascript",
       "title": "HTML vs CSS vs JavaScript",
-      "content": "Objetivo: Entenda o papel de cada tecnologia. HTML, CSS e JavaScript trabalham juntos. HTML define estrutura, CSS define aparencia e JS adiciona comportamento. Exemplo de uso: botao estilizado que responde a clique. Uso comum: interfaces completas e responsivas. Dica pratica: teste cada camada separadamente. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Entenda a responsabilidade de cada tecnologia da web.\n\nFato-chave: As três tecnologias têm papéis distintos: HTML define O QUÊ (estrutura e conteúdo), CSS define COMO (aparência e layout) e JavaScript define O COMPORTAMENTO (interações e lógica dinâmica).\n\nExemplo de uso:\n<!-- HTML: estrutura -->\n<button id=\"btn\">Clique aqui</button>\n\n/* CSS: aparência */\n#btn { background: blue; color: white; border-radius: 8px; }\n\n// JS: comportamento\ndocument.getElementById('btn').onclick = () => alert('Olá!');\n\nUso comum: Qualquer interface moderna combina as três camadas. Separá-las facilita manutenção e reuso de código.\n\nDica prática: Nunca misture CSS inline (style=\"...\") com HTML de conteúdo. Mantenha os arquivos separados para facilitar futuras mudanças de design sem tocar no HTML.",
       "order": 3,
       "tags": [
         "introducao",
@@ -93,7 +93,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "introducao-a-web-como-o-navegador-interpreta-html",
       "title": "Como o navegador interpreta HTML",
-      "content": "Objetivo: Veja como sua pagina ganha vida. O navegador le o codigo HTML de cima para baixo e constroi uma arvore de elementos chamada DOM (Document Object Model). Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Entenda o processo de renderização do navegador.\n\nFato-chave: O navegador lê o HTML de cima para baixo, construindo uma árvore chamada DOM (Document Object Model). Em seguida, combina o DOM com o CSSOM (regras CSS) para criar a Render Tree e exibir a página.\n\nExemplo de uso: Se você colocar um <script> no <head> sem o atributo defer, ele bloqueia a análise do HTML até ser executado. Por isso, use defer ou coloque scripts antes de </body>.\n\nUso comum: Entender o fluxo de renderização é essencial para otimizar performance e evitar conteúdo que \"pisca\" ao carregar.\n\nDica prática: No DevTools (F12) → aba Performance, grave o carregamento da página para visualizar cada etapa: Parse HTML, Style, Layout, Paint e Composite.",
       "order": 4,
       "tags": [
         "introducao",
@@ -107,15 +107,15 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l5",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "introducao-a-web-o-que-sao-tags",
-      "title": "O que sao tags",
-      "content": "Objetivo: Aprenda a sintaxe basica do HTML. Tags sao comandos entre sinais de . A maioria tem abertura e fechamento . Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "introducao-a-web-o-que-são-tags",
+      "title": "O que são tags",
+      "content": "Objetivo: Aprenda a sintaxe básica das tags HTML.\n\nFato-chave: Tags são delimitadas por < e >. A maioria vem em pares: <tag> abre e </tag> fecha. Algumas são void elements (auto-fechantes) como <br>, <img> e <input> — não possuem conteúdo interno nem tag de fechamento.\n\nExemplo de uso:\n<p>Isso é um parágrafo.</p>\n<img src=\"foto.jpg\" alt=\"Minha foto\">\n<input type=\"text\" placeholder=\"Digite aqui\">\n\nUso comum: O HTML5 define mais de 100 tags diferentes, cada uma com significado semântico específico. Usar a tag certa melhora acessibilidade e SEO.\n\nDica prática: Nunca use <br> para adicionar espaçamento visual — use margin CSS. A tag <br> é para quebras que fazem parte do conteúdo, como em endereços postais ou poemas.",
       "order": 5,
       "tags": [
         "introducao",
         "web",
         "que",
-        "sao",
+        "são",
         "tags"
       ]
     },
@@ -123,15 +123,15 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l6",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "introducao-a-web-o-que-sao-atributos",
-      "title": "O que sao atributos",
-      "content": "Objetivo: Adicione informacoes extras as tags. Atributos fornecem informacoes extras sobre um elemento. Ficam dentro da tag de abertura: . Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "introducao-a-web-o-que-são-atributos",
+      "title": "O que são atributos",
+      "content": "Objetivo: Adicione informações extras às tags com atributos.\n\nFato-chave: Atributos ficam dentro da tag de abertura no formato nome=\"valor\". Eles modificam o comportamento ou as propriedades do elemento. Um elemento pode ter vários atributos separados por espaço.\n\nExemplo de uso:\n<a href=\"https://exemplo.com\" target=\"_blank\" rel=\"noopener\">Abrir site</a>\n<img src=\"logo.png\" alt=\"Logo da empresa\" width=\"200\">\n<input type=\"email\" required placeholder=\"Seu e-mail\">\n\nUso comum: Atributos class e id conectam HTML ao CSS e JavaScript. Atributos como required e disabled controlam formulários.\n\nDica prática: Sempre coloque valores de atributos entre aspas duplas. Embora aspas sejam opcionais em alguns casos no HTML5, mantê-las evita erros e é uma boa prática universal.",
       "order": 6,
       "tags": [
         "introducao",
         "web",
         "que",
-        "sao",
+        "são",
         "atributos"
       ]
     },
@@ -139,15 +139,15 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l7",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "introducao-a-web-html-nao-e-linguagem-de-programacao",
-      "title": "HTML nao e linguagem de programacao",
-      "content": "Objetivo: Entenda a diferenca importante. HTML e uma linguagem de marcacao, nao de programacao. Ela nao faz calculos, loops ou decisoes logicas. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "introducao-a-web-html-não-e-linguagem-de-programacao",
+      "title": "HTML não e linguagem de programacao",
+      "content": "Objetivo: Entenda a distinção entre linguagem de marcação e de programação.\n\nFato-chave: HTML é uma linguagem de marcação (markup language), não de programação. Ele não tem variáveis, condicionais (if/else) nem laços (for/while). HTML apenas declara o que existe na página — não o que fazer com esses dados.\n\nExemplo de uso:\n<!-- HTML não pode fazer isso. JavaScript pode: -->\nif (usuario.logado) {\n  document.querySelector('.menu').textContent = 'Sair';\n}\n\nUso comum: Entender essa distinção importa ao escolher o que aprender: HTML estrutura páginas, JavaScript as torna dinâmicas.\n\nDica prática: Para gerar HTML dinamicamente a partir de dados (banco de dados, API), use JavaScript no front-end ou linguagens como Python, PHP ou Node.js no servidor.",
       "order": 7,
       "tags": [
         "introducao",
         "web",
         "html",
-        "nao",
+        "não",
         "linguagem"
       ]
     },
@@ -157,7 +157,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-doctype-html",
       "title": "<!DOCTYPE html>",
-      "content": "Objetivo: A primeira linha de todo documento. O DOCTYPE informa ao navegador que o documento segue o padrao HTML5. Sem ele, alguns navegadores entram em modo de compatibilidade. Exemplo de uso: todo arquivo HTML deve iniciar com o DOCTYPE. Uso comum: padronizar renderizacao entre navegadores. Dica pratica: deixe o DOCTYPE sempre na primeira linha. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Entenda por que todo documento HTML começa com DOCTYPE.\n\nFato-chave: <!DOCTYPE html> não é uma tag — é uma instrução para o navegador que indica que o documento segue o padrão HTML5. Sem ela, navegadores antigos entram em \"Quirks Mode\", que renderiza páginas de forma imprevisível e diferente entre browsers.\n\nExemplo de uso:\n<!DOCTYPE html>\n<html lang=\"pt-BR\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Meu Site</title>\n  </head>\n  <body>\n    <p>Conteúdo da página.</p>\n  </body>\n</html>\n\nUso comum: Presente em absolutamente todo arquivo HTML moderno. É sempre a primeira linha do documento.\n\nDica prática: Confirme o modo de renderização no DevTools: Console → digit document.compatMode. O valor \"CSS1Compat\" indica modo padrão (correto). \"BackCompat\" indica Quirks Mode (problema).",
       "order": 8,
       "tags": [
         "estrutura",
@@ -171,7 +171,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-tag-html",
       "title": "Tag <html>",
-      "content": "Objetivo: O elemento raiz do documento. A tag envolve todo o documento e define o idioma com lang. Exemplo de uso: lang=\"pt-BR\" ajuda leitores de tela e SEO. Uso comum: definir idioma e agrupar head/body. Dica pratica: sempre configure o lang correto. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Conheça o elemento raiz de todo documento HTML.\n\nFato-chave: A tag <html> envolve todo o conteúdo da página e é a raiz da árvore DOM. O atributo lang define o idioma principal do documento — essencial para leitores de tela, tradução automática e indexação pelo Google.\n\nExemplo de uso:\n<html lang=\"pt-BR\">  <!-- Português do Brasil -->\n  ...\n</html>\n\n<!-- Outros idiomas: -->\n<html lang=\"en\">     <!-- Inglês -->\n<html lang=\"es\">     <!-- Espanhol -->\n<html lang=\"pt-PT\">  <!-- Português de Portugal -->\n\nUso comum: Todo documento HTML tem exatamente uma tag <html>. O lang é recomendado pelas diretrizes WCAG 2.1 de acessibilidade.\n\nDica prática: Use códigos IETF corretos: pt-BR, en-US, es-ES. Evite usar apenas \"pt\" quando o conteúdo é especificamente brasileiro — afeta leitores de tela e SEO regional.",
       "order": 9,
       "tags": [
         "estrutura",
@@ -185,7 +185,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-tag-head",
       "title": "Tag <head>",
-      "content": "Objetivo: Metadados e configuracoes. O head guarda metadados e links para recursos externos. Exemplo de uso: carregar CSS e definir o titulo da pagina. Uso comum: incluir fontes, meta tags e scripts. Dica pratica: mantenha o head organizado e limpo. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Entenda o papel dos metadados no <head>.\n\nFato-chave: O <head> contém informações sobre a página que não aparecem no conteúdo visível. Inclui charset, viewport, título, links para CSS, meta tags de SEO e scripts com defer.\n\nExemplo de uso:\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <meta name=\"description\" content=\"Aprenda HTML do zero com exemplos práticos.\">\n  <title>Curso de HTML | Exemplo</title>\n  <link rel=\"stylesheet\" href=\"estilo.css\">\n</head>\n\nUso comum: O <head> bem estruturado melhora SEO, acessibilidade e desempenho. O Google lê as meta tags para indexar e exibir seu site nos resultados de busca.\n\nDica prática: A ordem dos elementos no <head> importa para performance: primeiro <meta charset>, depois <meta viewport>, depois o CSS. Scripts com defer podem vir por último.",
       "order": 10,
       "tags": [
         "estrutura",
@@ -200,7 +200,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-tag-body",
       "title": "Tag <body>",
-      "content": "Objetivo: O conteudo visivel da pagina. O body contem tudo que aparece na pagina: textos, imagens, botoes. Exemplo de uso: todo conteudo visivel vai no body. Uso comum: organizar a interface da pagina. Dica pratica: separe o conteudo em secoes. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Conheça onde vai todo o conteúdo visível da página.\n\nFato-chave: O <body> contém todo o conteúdo que o usuário vê e interage: textos, imagens, botões, formulários, vídeos. É único por página e deve ser organizado com elementos semânticos para melhor acessibilidade.\n\nExemplo de uso:\n<body>\n  <header>\n    <h1>Meu Blog</h1>\n    <nav>...</nav>\n  </header>\n  <main>\n    <article>...</article>\n  </main>\n  <footer>...</footer>\n</body>\n\nUso comum: Toda estrutura de página — menus, conteúdo, rodapé, formulários — vive dentro do <body>.\n\nDica prática: Coloque scripts que manipulam o DOM logo antes de </body> (ou use defer no <head>) para garantir que o HTML já foi completamente carregado quando o script executar.",
       "order": 11,
       "tags": [
         "estrutura",
@@ -215,7 +215,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-title",
       "title": "<title>",
-      "content": "Objetivo: O titulo na aba do navegador. A tag define o titulo que aparece na aba do navegador e nos resultados de busca. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Defina o título que aparece na aba do navegador.\n\nFato-chave: A tag <title> define o texto exibido na aba do navegador, nos resultados do Google e nos favoritos. É um dos fatores mais importantes de SEO on-page. Cada página deve ter um <title> único.\n\nExemplo de uso:\n<!-- Ruim (genérico, prejudica SEO): -->\n<title>Página</title>\n\n<!-- Bom (descritivo e único): -->\n<title>Como Fazer Bolo de Cenoura em 30 Minutos | Receitas da Maria</title>\n\nO ideal: entre 50–60 caracteres para não ser cortado nos resultados de busca.\n\nUso comum: SEO, abas do navegador, histórico de navegação, favoritos compartilhados.\n\nDica prática: Use o formato \"Tópico Principal | Nome do Site\". Evite títulos genéricos como \"Início\" ou \"Home\". Ferramentas como Google Search Console mostram como seus títulos aparecem nos resultados de busca.",
       "order": 12,
       "tags": [
         "estrutura",
@@ -229,7 +229,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-meta-charset",
       "title": "<meta charset>",
-      "content": "Objetivo: Codificacao de caracteres. O define a codificacao de caracteres. UTF-8 suporta acentos e caracteres especiais. Exemplo de uso: Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Configure a codificação de caracteres do documento.\n\nFato-chave: O charset define como o navegador interpreta os bytes do arquivo HTML. UTF-8 é o padrão universal que suporta caracteres de todos os idiomas — incluindo acentos (ã, é, ç), emojis e ideogramas asiáticos.\n\nExemplo de uso:\n<head>\n  <meta charset=\"UTF-8\">   <!-- Sempre a primeira linha do <head> -->\n</head>\n\n<!-- Sem isso, acentos aparecem corrompidos: -->\n<!-- \"Olá\" vira \"OlÃ¡\" -->\n<!-- \"não\" vira \"nÃ£o\" -->\n\nUso comum: Obrigatório em 100% dos documentos HTML modernos. Sem ele, o site pode exibir caracteres corrompidos dependendo do sistema operacional do usuário.\n\nDica prática: O <meta charset> deve ser o PRIMEIRO elemento dentro do <head>, antes do <title>. Isso garante que o navegador saiba a codificação antes de tentar interpretar qualquer texto.",
       "order": 13,
       "tags": [
         "estrutura",
@@ -244,7 +244,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-meta-name-viewport",
       "title": "<meta name=\"viewport\">",
-      "content": "Objetivo: Responsividade em dispositivos. O viewport e a area visivel da pagina. A meta viewport ajusta o site para diferentes tamanhos de tela. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Torne seu site responsivo em dispositivos móveis.\n\nFato-chave: Sem a meta viewport, navegadores mobile exibem a página simulando uma tela de desktop e fazem zoom out, tornando o texto minúsculo. A meta viewport instrui o navegador a usar a largura real do dispositivo.\n\nExemplo de uso:\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n<!-- NUNCA desabilite o zoom (prejudica acessibilidade): -->\n<meta name=\"viewport\" content=\"..., user-scalable=no\">  <!-- Evite! -->\n\nUso comum: Presente em 100% dos sites responsivos. É pré-requisito para que media queries CSS funcionem corretamente em celulares e tablets.\n\nDica prática: No DevTools (F12), pressione Ctrl+Shift+M para ativar o modo responsivo. Você pode simular iPhone, iPad e outros dispositivos sem precisar de um aparelho físico.",
       "order": 14,
       "tags": [
         "estrutura",
@@ -260,7 +260,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "estrutura-do-html-comentarios-html",
       "title": "Comentarios HTML",
-      "content": "Objetivo: Anotacoes no codigo. Comentarios sao anotacoes no codigo que o navegador ignora. Usamos para documentar e explicar o codigo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Documente e organize seu código com comentários.\n\nFato-chave: Comentários HTML ficam entre <!-- e --> e são ignorados pelo navegador. Eles servem para explicar o código, deixar lembretes para a equipe ou desativar partes do HTML temporariamente.\n\nExemplo de uso:\n<!-- Cabeçalho principal da página -->\n<header>\n  <h1>Meu Site</h1>\n</header>\n\n<!-- TODO: adicionar navegação responsiva aqui -->\n\n<!-- Seção desativada temporariamente:\n<div class=\"banner-antigo\">...</div>\n-->\n\nUso comum: Marcar seções em arquivos HTML longos, indicar onde terminam elementos, documentar decisões de arquitetura.\n\nDica prática: CUIDADO: comentários HTML são visíveis no código-fonte (Ctrl+U). Jamais insira senhas, tokens de API ou dados privados em comentários HTML — qualquer usuário pode lê-los.",
       "order": 15,
       "tags": [
         "estrutura",
@@ -272,42 +272,42 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l9",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "estrutura-do-html-indentacao-e-organizacao",
-      "title": "Indentacao e organizacao",
-      "content": "Objetivo: Codigo limpo e legivel. A indentacao (espacos no inicio da linha) torna o codigo mais facil de ler e entender a hierarquia. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "estrutura-do-html-indentação-e-organização",
+      "title": "Indentação e organização",
+      "content": "Objetivo: Escreva HTML limpo, legível e fácil de manter.\n\nFato-chave: Indentação é o recuo que mostra visualmente a hierarquia dos elementos. O padrão mais comum é 2 espaços por nível de aninhamento. Código bem indentado facilita debugging, revisão em equipe e manutenção a longo prazo.\n\nExemplo de uso:\n<!-- Mal indentado (difícil de ler): -->\n<div><ul><li>Item</li><li>Item</li></ul></div>\n\n<!-- Bem indentado (fácil de ler): -->\n<div>\n  <ul>\n    <li>Item 1</li>\n    <li>Item 2</li>\n  </ul>\n</div>\n\nUso comum: Projetos profissionais sempre têm padrões de formatação definidos. Editores como VS Code indentam automaticamente ao pressionar Enter após uma tag de abertura.\n\nDica prática: Use Shift+Alt+F no VS Code para formatar o arquivo inteiro de uma vez. Instale a extensão Prettier para padronizar formatação automaticamente ao salvar.",
       "order": 16,
       "tags": [
         "estrutura",
         "html",
-        "indentacao",
-        "organizacao"
+        "indentação",
+        "organização"
       ]
     },
     {
       "id": "legacy-html-u3-l1",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-titulos-h1-a-h6",
+      "concept": "texto-e-conteúdo-títulos-h1-a-h6",
       "title": "Titulos <h1> a <h6>",
-      "content": "Objetivo: Hierarquia de titulos. Titulos criam hierarquia de leitura. Use h1 apenas uma vez por pagina. Exemplo de uso: organizar secao de conteudo. Uso comum: melhorar SEO e acessibilidade. Dica pratica: nao pule niveis de titulo. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie hierarquia de conteúdo com títulos semânticos.\n\nFato-chave: HTML tem 6 níveis de títulos: <h1> é o mais importante e <h6> o menos. Os títulos definem hierarquia de conteúdo — não tamanho de fonte (para isso, use CSS). Nunca pule níveis (de h2 direto para h4).\n\nExemplo de uso:\n<h1>Guia de Culinária Brasileira</h1>\n  <h2>Sobremesas</h2>\n    <h3>Bolos</h3>\n      <h4>Bolo de Cenoura com Cobertura de Chocolate</h4>\n\nUso comum: Motores de busca lêem títulos para entender a estrutura do conteúdo. Leitores de tela usam títulos para navegação rápida na página.\n\nDica prática: Cada página deve ter exatamente um <h1> — o título principal. A extensão \"HeadingsMap\" para Chrome exibe a hierarquia de títulos de qualquer página, útil para revisar sua própria estrutura.",
       "order": 17,
       "tags": [
         "texto",
-        "conteudo",
-        "titulos"
+        "conteúdo",
+        "títulos"
       ]
     },
     {
       "id": "legacy-html-u3-l2",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-paragrafos-p",
+      "concept": "texto-e-conteúdo-paragrafos-p",
       "title": "Paragrafos <p>",
-      "content": "Objetivo: Blocos de texto. Paragrafos agrupam texto e criam espacamento automatico. Exemplo de uso: textos longos em artigos. Uso comum: separar ideias em blocos. Dica pratica: evite usar para blocos de texto. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Organize texto em blocos lógicos com parágrafos.\n\nFato-chave: A tag <p> define um bloco de texto. O navegador adiciona automaticamente margem acima e abaixo. Parágrafos são elementos de bloco — cada um ocupa sua própria linha. Nunca use <br><br> para simular parágrafo.\n\nExemplo de uso:\n<p>O HTML foi criado por Tim Berners-Lee em 1991.</p>\n<p>A versão atual, HTML5, foi padronizada pelo W3C em 2014.</p>\n\n<!-- Errado: simular parágrafo com quebras: -->\nPrimeiro bloco de texto...<br><br>Segundo bloco de texto...\n\nUso comum: Todo texto de artigos, notícias, descrições de produtos e documentações usa <p> para organizar o conteúdo.\n\nDica prática: Controle o espaçamento entre parágrafos com CSS: p { margin-bottom: 1rem; } — nunca use <br> para esse fim. Isso mantém o espaçamento consistente em todo o site.",
       "order": 18,
       "tags": [
         "texto",
-        "conteudo",
+        "conteúdo",
         "paragrafos"
       ]
     },
@@ -315,13 +315,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l3",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-quebra-de-linha-br",
+      "concept": "texto-e-conteúdo-quebra-de-linha-br",
       "title": "Quebra de linha <br>",
-      "content": "Objetivo: Pular para proxima linha. A tag forca uma quebra de linha. E uma tag auto-fechante (nao precisa de ). Exemplo de uso: Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Insira quebras de linha dentro de blocos de texto.\n\nFato-chave: <br> é um void element (auto-fechante) que força uma quebra de linha sem criar novo parágrafo. Use apenas quando a quebra é parte do significado do conteúdo — não para fins de espaçamento.\n\nExemplo de uso:\n<!-- Uso correto: endereço postal -->\n<address>\n  Rua das Flores, 123<br>\n  Jardim Primavera<br>\n  São Paulo — SP, 01234-567\n</address>\n\n<!-- Uso correto: trecho de poema -->\n<p>Rosas são vermelhas,<br>Violetas são azuis,<br>HTML é estrutura,<br>E CSS é o visual.</p>\n\nUso comum: Endereços, poemas, letras de música, código com quebras específicas de formatação.\n\nDica prática: Se você usa <br> para criar espaço visual entre elementos, esse é um sinal claro de que você precisa de CSS (margin ou padding), não de <br>.",
       "order": 19,
       "tags": [
         "texto",
-        "conteudo",
+        "conteúdo",
         "quebra",
         "linha"
       ]
@@ -330,13 +330,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l4",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-linha-horizontal-hr",
+      "concept": "texto-e-conteúdo-linha-horizontal-hr",
       "title": "Linha horizontal <hr>",
-      "content": "Objetivo: Separador visual. A tag cria uma linha horizontal para separar secoes. Tambem e auto-fechante. Exemplo de uso: Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Separe seções temáticas com uma linha divisória semântica.\n\nFato-chave: <hr> (horizontal rule) representa uma quebra temática entre partes do conteúdo — como a mudança de assunto em um artigo. É um void element exibido como linha horizontal por padrão, mas totalmente estilizável com CSS.\n\nExemplo de uso:\n<article>\n  <h2>Capítulo 1: Introdução</h2>\n  <p>Texto do capítulo...</p>\n\n  <hr>\n\n  <h2>Capítulo 2: Desenvolvimento</h2>\n  <p>Texto do próximo capítulo...</p>\n</article>\n\nUso comum: Divisão entre seções de artigos, documentos técnicos ou formulários longos com múltiplas etapas.\n\nDica prática: Para estilizar, use CSS: hr { border: none; border-top: 2px solid #ccc; margin: 2rem 0; }. Para linhas meramente decorativas (sem mudança de tema), prefira um div com bordas CSS — semanticamente mais correto.",
       "order": 20,
       "tags": [
         "texto",
-        "conteudo",
+        "conteúdo",
         "linha",
         "horizontal"
       ]
@@ -345,13 +345,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l5",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-negrito-strong",
+      "concept": "texto-e-conteúdo-negrito-strong",
       "title": "Negrito <strong>",
-      "content": "Objetivo: Destaque importante. Use para texto com importancia forte. O navegador exibe em negrito. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Destaque texto com importância semântica alta.\n\nFato-chave: <strong> indica importância forte — não apenas negrito visual. Leitores de tela enfatizam a voz ao ler <strong>. Use para alertas críticos, termos-chave ou informações que o leitor jamais deve ignorar.\n\nExemplo de uso:\n<p><strong>Atenção:</strong> Nunca compartilhe sua senha com ninguém.</p>\n<p>O prazo final é <strong>31 de dezembro de 2025</strong>, sem prorrogação.</p>\n\n<!-- <b> é para negrito visual sem importância semântica: -->\n<p>Os produtos em <b>destaque</b> estão na vitrine central.</p>\n\nUso comum: Alertas, definições, termos-chave em documentação técnica, datas ou valores críticos.\n\nDica prática: Diferencie <strong> (importância semântica, afeta acessibilidade) de <b> (apenas visual). O estilo padrão é idêntico, mas o significado para tecnologias assistivas é diferente. Prefira <strong> na maioria dos casos.",
       "order": 21,
       "tags": [
         "texto",
-        "conteudo",
+        "conteúdo",
         "negrito",
         "strong"
       ]
@@ -360,13 +360,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l6",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-italico-em",
+      "concept": "texto-e-conteúdo-italico-em",
       "title": "Italico <em>",
-      "content": "Objetivo: Enfase no texto. Use para dar enfase ao texto. O navegador exibe em italico. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Destaque texto com ênfase semântica que muda o sentido.\n\nFato-chave: <em> (emphasis) indica ênfase que altera o significado da frase — como se fosse a entonação na fala. Leitores de tela mudam o tom de voz ao ler <em>. Use quando a ênfase muda o sentido, não apenas a aparência.\n\nExemplo de uso:\n<p>Você precisa salvar o arquivo <em>antes</em> de fechar o editor.</p>\n<p>O framework não é obrigatório — o <em>JavaScript</em> em si é o que importa.</p>\n\n<!-- <i> é para itálico visual sem ênfase semântica: -->\n<p>O nome científico é <i>Homo sapiens</i>.</p>\n<p>Função de <i>callback</i> é executada assincronamente.</p>\n\nUso comum: Ênfase em instruções, termos em língua estrangeira, títulos de obras.\n\nDica prática: <em> pode ser aninhado com <strong>: <strong><em>Crítico:</em> leia com atenção.</strong>. Use <i> para itálico decorativo (termos técnicos em inglês, nomes científicos, etc.).",
       "order": 22,
       "tags": [
         "texto",
-        "conteudo",
+        "conteúdo",
         "italico"
       ]
     },
@@ -374,13 +374,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l7",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-texto-pre-formatado-pre",
+      "concept": "texto-e-conteúdo-texto-pre-formatado-pre",
       "title": "Texto pre-formatado <pre>",
-      "content": "Objetivo: Preservar espacos e quebras. preserva espacos e quebras de linha exatamente como voce escreveu. Usa fonte monoespacada. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Preserve espaços e quebras de linha exatamente como escritos.\n\nFato-chave: HTML normalmente colapsa múltiplos espaços em um só e ignora quebras de linha no código. A tag <pre> (preformatted) preserva a formatação exata do texto — todos os espaços, tabs e newlines — e usa fonte monoespaçada por padrão.\n\nExemplo de uso:\n<pre>\n  Nome:  João Silva\n  Email: joao@email.com\n  Cargo: Desenvolvedor Front-end\n</pre>\n\n<!-- Combinado com <code> para blocos de código: -->\n<pre><code>function soma(a, b) {\n  return a + b;\n}\n\nconsole.log(soma(2, 3)); // 5\n</code></pre>\n\nUso comum: Exibir saídas de terminal, arte ASCII, código-fonte com indentação preservada.\n\nDica prática: Sempre combine <pre> com <code> para blocos de código. Estilize com CSS: pre { background: #1e1e1e; color: #d4d4d4; padding: 1rem; border-radius: 8px; overflow-x: auto; }",
       "order": 23,
       "tags": [
         "texto",
-        "conteudo",
+        "conteúdo",
         "pre",
         "formatado"
       ]
@@ -389,13 +389,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l8",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-codigo-code",
+      "concept": "texto-e-conteúdo-codigo-code",
       "title": "Codigo <code>",
-      "content": "Objetivo: Exibir codigo no texto. e usado para marcar trechos de codigo no texto. Exibe em fonte monoespacada. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Marque trechos de código dentro de texto corrido.\n\nFato-chave: <code> é um elemento inline que marca código no meio de um texto. Não preserva espaços como <pre> — é para nomes de funções, propriedades, comandos ou valores mencionados dentro de um parágrafo.\n\nExemplo de uso:\n<p>Use a propriedade <code>display: flex</code> para alinhar elementos.</p>\n<p>A função <code>console.log()</code> exibe valores no console do navegador.</p>\n<p>O arquivo principal deve se chamar <code>index.html</code>.</p>\n\nUso comum: Documentações técnicas, tutoriais, artigos de programação — qualquer texto que mencione código, comandos, nomes de arquivos ou propriedades CSS/JS.\n\nDica prática: Estilize o <code> inline com CSS para diferenciar visualmente do texto:\ncode { background: #f0f0f0; color: #d63384; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.9em; }",
       "order": 24,
       "tags": [
         "texto",
-        "conteudo",
+        "conteúdo",
         "codigo",
         "code"
       ]
@@ -404,14 +404,14 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l9",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "texto-e-conteudo-citacoes-blockquote",
+      "concept": "texto-e-conteúdo-citações-blockquote",
       "title": "Citacoes <blockquote>",
-      "content": "Objetivo: Blocos de citacao. e usado para citacoes longas. O navegador geralmente adiciona recuo. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Marque citações longas de fontes externas com semântica correta.\n\nFato-chave: <blockquote> define um bloco de citação proveniente de outra fonte. O atributo cite especifica a URL da fonte original (não visível na página, mas útil para ferramentas e SEO). Use <q> para citações curtas inline.\n\nExemplo de uso:\n<blockquote cite=\"https://www.w3.org/\">\n  <p>A missão do W3C é liderar a World Wide Web para que atinja seu pleno potencial.</p>\n  <footer>— <cite>World Wide Web Consortium (W3C)</cite></footer>\n</blockquote>\n\n<!-- Para citações curtas dentro de um parágrafo: -->\n<p>Tim Berners-Lee disse: <q>A Web é para todos.</q></p>\n\nUso comum: Artigos com citações de obras, entrevistas, depoimentos, trechos de documentações técnicas ou discursos.\n\nDica prática: O navegador adiciona aspas automáticas ao conteúdo de <q> no idioma definido pelo atributo lang da página. Sempre inclua a fonte da citação — melhora credibilidade e evita problemas de plágio.",
       "order": 25,
       "tags": [
         "texto",
-        "conteudo",
-        "citacoes",
+        "conteúdo",
+        "citações",
         "blockquote"
       ]
     },
@@ -419,13 +419,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l1",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-tag-a",
+      "concept": "links-e-navegação-tag-a",
       "title": "Tag <a>",
-      "content": "Objetivo: Criando links. Links conectam paginas e recursos com a tag . Exemplo de uso: navegar para outra pagina ou abrir um email. Uso comum: menus e chamadas para acao. Dica pratica: sempre use texto descritivo no link. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie links para conectar páginas e recursos.\n\nFato-chave: A tag <a> (anchor) é a base da Web — ela cria hyperlinks que conectam páginas, arquivos e seções. O atributo href define o destino. Sem <a>, não existiria navegação entre páginas.\n\nExemplo de uso:\n<a href=\"https://developer.mozilla.org\">MDN Web Docs</a>\n<a href=\"sobre.html\">Sobre nós</a>\n<a href=\"#contato\">Ir para Contato</a>\n<a href=\"mailto:email@exemplo.com\">Enviar e-mail</a>\n\nUso comum: Menus de navegação, botões que redirecionam, breadcrumbs, rodapés com links sociais e links dentro de texto corrido.\n\nDica prática: Use texto descritivo no link — nunca \"clique aqui\". Leitores de tela leem apenas o texto do link para navegar. Prefira \"Saiba mais sobre acessibilidade\" a \"Clique aqui\".",
       "order": 26,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "tag"
       ]
     },
@@ -433,13 +433,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l2",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-atributo-href",
+      "concept": "links-e-navegação-atributo-href",
       "title": "Atributo href",
-      "content": "Objetivo: Definindo o destino. href (Hypertext Reference) define para onde o link leva. Pode ser uma URL, arquivo ou secao da pagina. Exemplo de uso: Link Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Defina o destino de um link com o atributo href.\n\nFato-chave: href (Hypertext Reference) é o atributo obrigatório da tag <a>. Pode receber: URL absoluta (https://...), URL relativa (pagina.html), âncora (#secao), e-mail (mailto:), telefone (tel:) ou JavaScript (javascript:void 0 — evitar).\n\nExemplo de uso:\n<!-- URL absoluta (outro site) -->\n<a href=\"https://github.com\">GitHub</a>\n\n<!-- URL relativa (mesma pasta) -->\n<a href=\"contato.html\">Contato</a>\n\n<!-- URL relativa (pasta acima) -->\n<a href=\"../index.html\">Início</a>\n\n<!-- Âncora na mesma página -->\n<a href=\"#sobre\">Sobre</a>\n\nUso comum: Toda navegação web depende de href correto. URLs relativas são preferidas para links internos — o site funciona em qualquer domínio.\n\nDica prática: Nunca use href=\"#\" para links que não redirecionam — cria rolar para o topo inesperado. Use href=\"javascript:void(0)\" ou um <button> com evento JS se precisar de um elemento clicável sem navegação.",
       "order": 27,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "atributo",
         "href"
       ]
@@ -448,13 +448,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l3",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-links-externos",
+      "concept": "links-e-navegação-links-externos",
       "title": "Links externos",
-      "content": "Objetivo: Links para outros sites. Links externos apontam para outros sites. Use a URL completa comecando com https://. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie links que abrem outros sites corretamente.\n\nFato-chave: Links externos apontam para outros domínios e devem usar a URL completa com protocolo (https://). Boas práticas de segurança recomendam target=\"_blank\" + rel=\"noopener noreferrer\" para evitar que a página de destino acesse window.opener.\n\nExemplo de uso:\n<!-- Link externo seguro -->\n<a href=\"https://www.google.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Pesquisar no Google\n</a>\n\n<!-- Link externo sem abrir nova aba -->\n<a href=\"https://exemplo.com\">Visitar Exemplo</a>\n\nUso comum: Referências a fontes externas, redes sociais, documentações de terceiros, parceiros e afiliados.\n\nDica prática: Sempre adicione rel=\"noopener noreferrer\" quando usar target=\"_blank\". Sem isso, a nova aba pode manipular a página original via JavaScript — uma vulnerabilidade conhecida como \"reverse tabnapping\".",
       "order": 28,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "externos"
       ]
     },
@@ -462,13 +462,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l4",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-links-internos",
+      "concept": "links-e-navegação-links-internos",
       "title": "Links internos",
-      "content": "Objetivo: Links dentro do site. Links internos apontam para outras paginas do mesmo site. Use caminhos relativos. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Navegue entre páginas do mesmo site com links internos.\n\nFato-chave: Links internos usam caminhos relativos — sem domínio. Isso faz o site funcionar em qualquer ambiente (localhost, staging, produção) sem necessidade de atualizar os links. O navegador resolve o caminho relativo a partir da URL atual.\n\nExemplo de uso:\n<!-- Da raiz do site -->\n<a href=\"sobre.html\">Sobre</a>\n<a href=\"blog/artigo.html\">Artigo</a>\n\n<!-- De dentro de uma subpasta -->\n<a href=\"../index.html\">Voltar ao início</a>\n<a href=\"./contato.html\">Contato</a>\n\n<!-- Caminho absoluto do site (barra inicial) -->\n<a href=\"/produtos\">Ver Produtos</a>\n\nUso comum: Menus, breadcrumbs, paginação, links entre seções do site, botões \"Próximo artigo\" / \"Artigo anterior\".\n\nDica prática: Use / (barra) no início para links absolutos do site: href=\"/contato\" sempre aponta para a raiz, independente de qual página você está. Use caminhos relativos (../outra.html) para projetos simples sem servidor.",
       "order": 29,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "internos"
       ]
     },
@@ -476,13 +476,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l5",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-ancoras",
+      "concept": "links-e-navegação-ancoras",
       "title": "Ancoras",
-      "content": "Objetivo: Links para secoes da pagina. Use #id para linkar a uma secao da mesma pagina. O elemento de destino precisa ter o id correspondente. Exemplo de uso: #id { / estilos / } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie links para seções específicas da mesma página.\n\nFato-chave: Âncoras funcionam em dois passos: (1) o elemento de destino recebe um atributo id e (2) o link usa href=\"#id\" para navegar até ele. Isso rola a página suavemente até a seção correspondente.\n\nExemplo de uso:\n<!-- Links de navegação -->\n<nav>\n  <a href=\"#sobre\">Sobre</a>\n  <a href=\"#servicos\">Serviços</a>\n  <a href=\"#contato\">Contato</a>\n</nav>\n\n<!-- Seções com IDs correspondentes -->\n<section id=\"sobre\">\n  <h2>Sobre Nós</h2>\n  ...\n</section>\n\n<section id=\"contato\">\n  <h2>Contato</h2>\n  ...\n</section>\n\nUso comum: Páginas longas de landing page, FAQs, documentações técnicas, páginas de políticas e tutoriais com índice.\n\nDica prática: Adicione scroll-behavior: smooth ao CSS global para criar rolagem suave: html { scroll-behavior: smooth; }. Também considere scroll-margin-top: 80px nas seções para compensar headers fixos.",
       "order": 30,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "ancoras"
       ]
     },
@@ -490,13 +490,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l6",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-atributo-target",
+      "concept": "links-e-navegação-atributo-target",
       "title": "Atributo target",
-      "content": "Objetivo: Onde abrir o link. target define onde o link abre. _blank abre em nova aba, _self na mesma (padrao). Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Controle onde o link abre com o atributo target.\n\nFato-chave: O atributo target define onde a página de destino é aberta. Os valores mais usados são _self (mesma aba, padrão) e _blank (nova aba). Evite _blank sem rel=\"noopener\" por questões de segurança.\n\nExemplo de uso:\n<!-- Abre na mesma aba (padrão) -->\n<a href=\"pagina.html\" target=\"_self\">Mesma aba</a>\n\n<!-- Abre em nova aba -->\n<a href=\"https://exemplo.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n  Nova aba\n</a>\n\n<!-- Outros valores menos comuns -->\n<a href=\"pagina.html\" target=\"_parent\">Frame pai</a>\n<a href=\"pagina.html\" target=\"_top\">Janela completa</a>\n\nUso comum: Links externos geralmente abrem em _blank para não tirar o usuário do seu site. Links internos ficam em _self.\n\nDica prática: Do ponto de vista de UX, abrir links em nova aba (_blank) sem aviso pode confundir usuários. Considere adicionar um ícone de \"nova aba\" ou uma tooltip indicando esse comportamento, especialmente em contextos de acessibilidade.",
       "order": 31,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "atributo",
         "target"
       ]
@@ -505,13 +505,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l7",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-atributo-rel",
+      "concept": "links-e-navegação-atributo-rel",
       "title": "Atributo rel",
-      "content": "Objetivo: Relacao do link. rel define a relacao entre a pagina atual e o destino. Importante para seguranca e SEO. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Defina a relação semântica entre a página e o link com rel.\n\nFato-chave: O atributo rel define a relação entre a página atual e o destino do link. É essencial para segurança (noopener), SEO (nofollow) e acessibilidade. Pode receber múltiplos valores separados por espaço.\n\nExemplo de uso:\n<!-- Segurança: impede acesso a window.opener -->\n<a href=\"...\" target=\"_blank\" rel=\"noopener noreferrer\">Link externo</a>\n\n<!-- SEO: instrui o Google a não seguir/valorizar este link -->\n<a href=\"...\" rel=\"nofollow\">Link pago ou não endossado</a>\n\n<!-- Link para o autor do conteúdo -->\n<a href=\"...\" rel=\"author\">Sobre o autor</a>\n\n<!-- Link alternativo (como feed RSS) -->\n<link rel=\"alternate\" type=\"application/rss+xml\" href=\"/feed.xml\">\n\nUso comum: noopener noreferrer em links externos com _blank. nofollow em links pagos, comments e conteúdo de usuários.\n\nDica prática: O Google interpreta rel=\"nofollow\" como uma sugestão desde 2019 — não uma regra absoluta. Para afiliados e publicidade, use rel=\"sponsored\". Para conteúdo de usuários (comentários), use rel=\"ugc\".",
       "order": 32,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "atributo",
         "rel"
       ]
@@ -520,13 +520,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l8",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-links-mailto",
+      "concept": "links-e-navegação-links-mailto",
       "title": "Links mailto",
-      "content": "Objetivo: Links para email. Use mailto: para criar links que abrem o cliente de email do usuario. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie links que abrem o cliente de e-mail do usuário.\n\nFato-chave: O esquema mailto: no href transforma um link em ação de e-mail. Ao clicar, o sistema operacional abre o aplicativo de e-mail padrão com o destinatário já preenchido. Você pode pré-preencher subject, cc, bcc e body também.\n\nExemplo de uso:\n<!-- Simples -->\n<a href=\"mailto:contato@empresa.com\">Envie um e-mail</a>\n\n<!-- Com assunto e corpo pré-preenchidos -->\n<a href=\"mailto:suporte@app.com?subject=Problema%20com%20login&body=Olá%2C%20preciso%20de%20ajuda%20com...\">\n  Contatar suporte\n</a>\n\n<!-- Com cópia -->\n<a href=\"mailto:fulano@email.com?cc=beltrano@email.com\">Email com cópia</a>\n\nUso comum: Páginas de contato, rodapés de sites corporativos, portfolios, formulários simples sem backend.\n\nDica prática: Use encodeURIComponent() em JavaScript para gerar URLs mailto: dinâmicas corretamente. Espaços viram %20, @ vira %40. Evite expor e-mails em texto puro no HTML — bots coletam esses endereços para spam.",
       "order": 33,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "mailto"
       ]
     },
@@ -534,13 +534,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l9",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "links-e-navegacao-links-tel",
+      "concept": "links-e-navegação-links-tel",
       "title": "Links tel",
-      "content": "Objetivo: Links para telefone. Use tel: para criar links que iniciam chamadas em dispositivos moveis. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie links que iniciam ligações em dispositivos móveis.\n\nFato-chave: O esquema tel: transforma um link em ação de ligação. Em celulares, ao clicar, o discador é aberto com o número preenchido. Em desktops, pode abrir apps de VoIP como Skype ou FaceTime, dependendo da configuração do sistema.\n\nExemplo de uso:\n<!-- Formato recomendado: E.164 (código do país + DDD + número) -->\n<a href=\"tel:+5511987654321\">(11) 98765-4321</a>\n\n<!-- Com texto descritivo -->\n<a href=\"tel:+5508001234567\">\n  Ligue grátis: 0800 123 4567\n</a>\n\nUso comum: Sites de negócios locais, clínicas, imobiliárias, e-commerce com suporte telefônico — qualquer site onde o usuário precisa ligar.\n\nDica prática: Exiba o número formatado de forma legível para humanos no texto do link (com parênteses, traços e espaços) e use o formato E.164 no href (apenas números e + no início). Isso garante compatibilidade com todos os sistemas.",
       "order": 34,
       "tags": [
         "links",
-        "navegacao",
+        "navegação",
         "tel"
       ]
     },
@@ -550,7 +550,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-tag-img",
       "title": "Tag <img>",
-      "content": "Objetivo: Inserindo imagens. Imagens usam a tag com src e alt. Exemplo de uso: ilustrar produtos e conteudos. Uso comum: banners, galerias e perfis. Dica pratica: o alt ajuda acessibilidade e SEO. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Insira imagens em páginas web com a tag correta.\n\nFato-chave: A tag <img> é um void element (sem fechamento) que incorpora imagens. Os atributos src (caminho) e alt (texto alternativo) são obrigatórios. Sem alt, leitores de tela não conseguem descrever a imagem.\n\nExemplo de uso:\n<!-- Imagem local -->\n<img src=\"foto.jpg\" alt=\"Foto do produto X em fundo branco\">\n\n<!-- Imagem externa (URL) -->\n<img src=\"https://exemplo.com/logo.png\" alt=\"Logo da Empresa\">\n\n<!-- Com dimensões definidas -->\n<img src=\"banner.jpg\" alt=\"Promoção de verão\" width=\"800\" height=\"400\">\n\nUso comum: Fotos de produtos, avatars de usuários, logos, banners, ilustrações, ícones e galerias de imagens.\n\nDica prática: Sempre defina width e height no HTML mesmo que controle o tamanho com CSS. Isso reserva o espaço antes da imagem carregar, evitando o \"layout shift\" (CLS) que prejudica a experiência e o score do Core Web Vitals.",
       "order": 35,
       "tags": [
         "imagens",
@@ -565,7 +565,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-atributo-src",
       "title": "Atributo src",
-      "content": "Objetivo: Caminho da imagem. src (source) define o caminho ou URL da imagem. Pode ser relativo ou absoluto. Exemplo de uso: Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Especifique o caminho ou URL da imagem com src.\n\nFato-chave: O atributo src (source) define de onde a imagem será carregada. Aceita três formatos: URL absoluta (https://...), URL relativa ao arquivo HTML atual (../img/foto.jpg) ou URL relativa à raiz do site (/img/foto.jpg).\n\nExemplo de uso:\n<!-- URL absoluta (outro servidor) -->\n<img src=\"https://picsum.photos/400/300\" alt=\"Imagem aleatória\">\n\n<!-- Relativa ao arquivo atual -->\n<img src=\"imagens/perfil.jpg\" alt=\"Foto de perfil\">\n<img src=\"../assets/logo.svg\" alt=\"Logo\">\n\n<!-- Relativa à raiz do site -->\n<img src=\"/img/hero.webp\" alt=\"Imagem de destaque\">\n\nUso comum: Em projetos reais, imagens ficam em pastas como /img, /assets ou /public e são referenciadas com caminhos relativos à raiz.\n\nDica prática: Use imagens modernas no formato WebP — são 25–35% menores que JPG mantendo a mesma qualidade. Ferramentas como Squoosh (squoosh.app) convertem e comprimem imagens diretamente no browser, de graça.",
       "order": 36,
       "tags": [
         "imagens",
@@ -580,7 +580,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-atributo-alt",
       "title": "Atributo alt",
-      "content": "Objetivo: Texto alternativo. alt fornece texto alternativo se a imagem nao carregar. Essencial para acessibilidade. Exemplo de uso: Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Forneça texto alternativo acessível para imagens com alt.\n\nFato-chave: O atributo alt fornece uma descrição textual da imagem. É lido por leitores de tela para usuários com deficiência visual, exibido quando a imagem falha ao carregar e indexado por motores de busca para SEO de imagens.\n\nExemplo de uso:\n<!-- Imagem informativa: descreva o conteúdo -->\n<img src=\"grafico.png\" alt=\"Gráfico de barras mostrando crescimento de 40% em 2024\">\n\n<!-- Imagem decorativa: alt vazio (não omita o atributo) -->\n<img src=\"divisor.svg\" alt=\"\">\n\n<!-- Logo: nome da empresa/marca -->\n<img src=\"logo.png\" alt=\"CodeLearn — plataforma de ensino de programação\">\n\nUso comum: Toda imagem precisa de alt. O WCAG 2.1 exige alt descritivo em imagens informativas e alt=\"\" em imagens puramente decorativas.\n\nDica prática: Nunca use alt=\"imagem\" ou alt=\"foto\" — isso não ajuda ninguém. Descreva o que a imagem comunica, não o que ela é. Ferramentas de acessibilidade como axe DevTools verificam automaticamente a qualidade dos textos alt.",
       "order": 37,
       "tags": [
         "imagens",
@@ -595,7 +595,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-tamanho-de-imagens",
       "title": "Tamanho de imagens",
-      "content": "Objetivo: width e height. Use width e height para definir dimensoes em pixels. Ajuda o layout carregar corretamente. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Defina dimensões de imagens para evitar layout shift.\n\nFato-chave: Os atributos width e height reservam o espaço da imagem enquanto ela carrega, evitando que o conteúdo \"pule\" na página — fenômeno chamado Cumulative Layout Shift (CLS), que prejudica a experiência e o ranking no Google.\n\nExemplo de uso:\n<!-- Sempre defina width e height originais da imagem -->\n<img src=\"foto.jpg\" alt=\"Descrição\" width=\"800\" height=\"600\">\n\n<!-- O CSS pode redimensionar sem causar layout shift -->\n<style>\n  img { max-width: 100%; height: auto; }\n</style>\n\n<!-- Imagem responsiva: deixe height automático no CSS -->\n<img src=\"banner.jpg\" alt=\"Banner\" width=\"1200\" height=\"400\"\n     style=\"width: 100%; height: auto;\">\n\nUso comum: Importantíssimo para Core Web Vitals — principais métricas de performance do Google que afetam o rankeamento de busca.\n\nDica prática: Defina sempre as dimensões originais (reais) da imagem em width e height. Depois use CSS para torná-la responsiva: img { max-width: 100%; height: auto; }. O navegador calculará o aspect-ratio correto automaticamente.",
       "order": 38,
       "tags": [
         "imagens",
@@ -609,7 +609,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-formatos-de-imagem",
       "title": "Formatos de imagem",
-      "content": "Objetivo: JPG, PNG, GIF, WebP, SVG. JPG: fotos. PNG: transparencia. GIF: animacoes simples. WebP: moderno, menor tamanho. SVG: vetores. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Escolha o formato de imagem certo para cada situação.\n\nFato-chave: Cada formato tem seu caso de uso ideal. JPG é melhor para fotografias. PNG para imagens com transparência. GIF para animações simples (mas prefira CSS). WebP para tudo — é moderno e mais eficiente. SVG para ícones e logos escaláveis.\n\nExemplo de uso:\n<!-- Fotografia: use WebP (ou JPG como fallback) -->\n<img src=\"produto.webp\" alt=\"Foto do produto\">\n\n<!-- Logo vetorial escalável: use SVG -->\n<img src=\"logo.svg\" alt=\"Logo da empresa\">\n\n<!-- Ícone pequeno: use SVG inline ou PNG -->\n<img src=\"icone-busca.svg\" alt=\"\" width=\"24\" height=\"24\">\n\n<!-- Animação simples: prefira CSS, mas GIF funciona -->\n<img src=\"loading.gif\" alt=\"Carregando...\">\n\nUso comum: Sites modernos usam WebP para fotos, SVG para ícones e logos, PNG para imagens com transparência em contextos específicos.\n\nDica prática: Use a tag <picture> para oferecer formatos modernos com fallback: <picture><source srcset=\"img.webp\" type=\"image/webp\"><img src=\"img.jpg\" alt=\"...\"></picture>. Isso garante WebP para browsers modernos e JPG para os antigos.",
       "order": 39,
       "tags": [
         "imagens",
@@ -624,7 +624,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-figure",
       "title": "<figure>",
-      "content": "Objetivo: Container para midia. e um container semantico para imagens, diagramas ou ilustracoes com legendas. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Agrupe imagens com its legenda usando elementos semânticos.\n\nFato-chave: O elemento <figure> é um container semântico para conteúdo autônomo — imagens, gráficos, trechos de código ou citações. Combinado com <figcaption>, cria uma unidade semântica de figura + legenda, usada por leitores de tela e motores de busca.\n\nExemplo de uso:\n<figure>\n  <img src=\"grafico-vendas.png\" alt=\"Gráfico de vendas do 1º trimestre de 2024\">\n  <figcaption>\n    Figura 1 — Crescimento de 32% nas vendas entre janeiro e março de 2024.\n  </figcaption>\n</figure>\n\n<!-- Figure também funciona para código: -->\n<figure>\n  <pre><code>const soma = (a, b) => a + b;</code></pre>\n  <figcaption>Exemplo de arrow function em JavaScript.</figcaption>\n</figure>\n\nUso comum: Artigos técnicos, relatórios, documentações, blogs com imagens ou gráficos comentados.\n\nDica prática: O <figure> pode ser movido para outra posição no documento sem afetar o fluxo do texto principal — isso é o que o define semanticamente. Use quando a imagem e sua legenda formam uma unidade independente do texto ao redor.",
       "order": 40,
       "tags": [
         "imagens",
@@ -638,7 +638,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-figcaption",
       "title": "<figcaption>",
-      "content": "Objetivo: Legendas para figuras. adiciona uma legenda ao . Fica dentro do figure. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Associe legendas descritivas a imagens com figcaption.\n\nFato-chave: O elemento <figcaption> deve ser o primeiro ou último filho do <figure>. Ele fornece contexto adicional que o alt não precisa repetir — alt descreve a imagem para quem não pode vê-la; figcaption complementa com informações para todos os leitores.\n\nExemplo de uso:\n<figure>\n  <img src=\"mapa-brasil.svg\" alt=\"Mapa político do Brasil com estados demarcados\">\n  <figcaption>\n    Mapa do Brasil dividido por estados e regiões.\n    Fonte: IBGE, 2023.\n  </figcaption>\n</figure>\n\n<!-- figcaption pode conter HTML -->\n<figure>\n  <img src=\"screenshot.png\" alt=\"Tela do dashboard com gráfico de barras\">\n  <figcaption>Dashboard de <strong>análise de vendas</strong> — versão 3.0</figcaption>\n</figure>\n\nUso comum: Gráficos com fonte de dados, screenshots com explicações, fotos de produtos com descrições, diagramas técnicos.\n\nDica prática: Não repita no figcaption o que já está no alt. Use alt para descrever o conteúdo visual e figcaption para adicionar contexto, fonte, interpretação ou informação complementar.",
       "order": 41,
       "tags": [
         "imagens",
@@ -652,7 +652,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-audio",
       "title": "<audio>",
-      "content": "Objetivo: Inserindo audio. incorpora arquivos de audio. Use o atributo controls para mostrar controles de reproducao. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Incorpore áudio em páginas web de forma nativa.\n\nFato-chave: O elemento <audio> permite reproduzir arquivos de áudio diretamente no browser sem plugins. O atributo controls exibe os controles nativos do navegador (play, pause, volume). Suporte a múltiplos formatos garante compatibilidade cross-browser.\n\nExemplo de uso:\n<!-- Com controles visíveis -->\n<audio controls>\n  <source src=\"podcast.mp3\" type=\"audio/mpeg\">\n  <source src=\"podcast.ogg\" type=\"audio/ogg\">\n  <p>Seu navegador não suporta áudio HTML5.\n     <a href=\"podcast.mp3\">Baixe o arquivo</a>.\n  </p>\n</audio>\n\n<!-- Reprodução automática (use com moderação) -->\n<audio controls autoplay muted loop>\n  <source src=\"musica-fundo.mp3\" type=\"audio/mpeg\">\n</audio>\n\nUso comum: Podcasts, players de música, efeitos sonoros em jogos, áudio de leitura (acessibilidade), anúncios de voz.\n\nDica prática: Nunca use autoplay sem muted — navegadores modernos bloqueiam reprodução automática com som. Para música de fundo, use autoplay muted e deixe o usuário ativar o som explicitamente.",
       "order": 42,
       "tags": [
         "imagens",
@@ -666,7 +666,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "imagens-e-midia-video",
       "title": "<video>",
-      "content": "Objetivo: Inserindo video. incorpora arquivos de video. Funciona similar ao audio, com controls e outros atributos. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Incorpore vídeo nativo em páginas web com <video>.\n\nFato-chave: O elemento <video> funciona de forma similar ao <audio> — exibe controles nativos, suporta múltiplos formatos e é reproduzido diretamente no browser sem Flash ou plugins. Adicione poster para exibir uma imagem de capa antes de o vídeo iniciar.\n\nExemplo de uso:\n<video controls width=\"800\" height=\"450\" poster=\"capa-video.jpg\">\n  <source src=\"tutorial.mp4\" type=\"video/mp4\">\n  <source src=\"tutorial.webm\" type=\"video/webm\">\n  <p>Seu navegador não suporta vídeo HTML5.\n     <a href=\"tutorial.mp4\">Baixe o vídeo</a>.\n  </p>\n</video>\n\n<!-- Vídeo de fundo (sem controles) -->\n<video autoplay muted loop playsinline>\n  <source src=\"hero-bg.mp4\" type=\"video/mp4\">\n</video>\n\nUso comum: Demonstrações de produtos, tutoriais, apresentações, vídeos de fundo em seções hero, conteúdo educacional.\n\nDica prática: Para vídeos externos (YouTube, Vimeo), use <iframe> de embed em vez de <video>. Para vídeos próprios, MP4 (H.264) tem o maior suporte de navegadores. Use WebM como formato alternativo para browsers que o suportam com melhor compressão.",
       "order": 43,
       "tags": [
         "imagens",
@@ -678,14 +678,14 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u6-l1",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "listas-lista-nao-ordenada-ul",
-      "title": "Lista nao ordenada <ul>",
-      "content": "Objetivo: Listas com marcadores. (unordered list) cria listas com marcadores ( ). A ordem nao importa. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "listas-lista-não-ordenada-ul",
+      "title": "Lista não ordenada <ul>",
+      "content": "Objetivo: Crie listas de itens sem ordem definida com <ul>.\n\nFato-chave: <ul> (unordered list) cria listas com marcadores (•) onde a ordem dos itens não importa. Cada item da lista é um <li>. O estilo do marcador pode ser alterado com CSS (list-style-type).\n\nExemplo de uso:\n<ul>\n  <li>HTML — estrutura</li>\n  <li>CSS — aparência</li>\n  <li>JavaScript — comportamento</li>\n</ul>\n\n<!-- Lista de ingredientes (ordem não importa) -->\n<ul>\n  <li>2 ovos</li>\n  <li>200g de farinha</li>\n  <li>1 xícara de leite</li>\n</ul>\n\n<!-- Remover marcadores com CSS -->\n<ul style=\"list-style: none; padding: 0;\">...</ul>\n\nUso comum: Menus de navegação, listas de recursos, ingredientes, características de produtos, tags, qualquer agrupamento onde a ordem é irrelevante.\n\nDica prática: Menus de navegação HTML usam <ul> e <li> por boas práticas de acessibilidade: <nav><ul><li><a href=\"/\">Início</a></li></ul></nav>. Leitores de tela anunciam o número de itens da lista.",
       "order": 44,
       "tags": [
         "listas",
         "lista",
-        "nao",
+        "não",
         "ordenada"
       ]
     },
@@ -695,7 +695,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "listas-lista-ordenada-ol",
       "title": "Lista ordenada <ol>",
-      "content": "Objetivo: Listas numeradas. (ordered list) cria listas numeradas (1, 2, 3...). Use quando a ordem importa. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie listas numeradas onde a ordem importa com <ol>.\n\nFato-chave: <ol> (ordered list) cria listas numeradas onde a sequência dos itens tem significado (1, 2, 3...). Aceita atributos start (número inicial) e reversed (contagem regressiva). O tipo de numeração é controlado pelo atributo type ou CSS.\n\nExemplo de uso:\n<!-- Receita: a ordem dos passos importa -->\n<ol>\n  <li>Pré-aqueça o forno a 180°C.</li>\n  <li>Misture os ingredientes secos.</li>\n  <li>Adicione os líquidos e mexa.</li>\n  <li>Asse por 35 minutos.</li>\n</ol>\n\n<!-- Começando em número diferente -->\n<ol start=\"5\">\n  <li>Quinto passo</li>\n  <li>Sexto passo</li>\n</ol>\n\n<!-- Contagem regressiva -->\n<ol reversed start=\"3\">\n  <li>Bronze</li>\n  <li>Prata</li>\n  <li>Ouro</li>\n</ol>\n\nUso comum: Tutoriais passo a passo, rankings, instruções sequenciais, processos, checklists ordenados.\n\nDica prática: Use <ol> sempre que a ordem importar semanticamente, mesmo que queira exibir a lista de outra forma visualmente. O CSS pode mudar totalmente o estilo (list-style: upper-alpha para A, B, C...) sem perder a semântica.",
       "order": 45,
       "tags": [
         "listas",
@@ -709,7 +709,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "listas-itens-li",
       "title": "Itens <li>",
-      "content": "Objetivo: Itens de lista. (list item) representa cada item dentro de ou . Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Marque cada item de uma lista com <li>.\n\nFato-chave: <li> (list item) é o único filho válido direto de <ul> e <ol>. Pode conter qualquer tipo de conteúdo: texto, imagens, links, outras listas. Em <ol>, o atributo value define o número de um item específico, afetando a numeração dos seguintes.\n\nExemplo de uso:\n<ul>\n  <li>Item simples</li>\n  <li><strong>Item em negrito</strong></li>\n  <li><a href=\"/artigo\">Link dentro de item</a></li>\n  <li>\n    Item com sublista:\n    <ul>\n      <li>Subitem A</li>\n      <li>Subitem B</li>\n    </ul>\n  </li>\n</ul>\n\n<!-- Em ol, value define numeração customizada -->\n<ol>\n  <li value=\"10\">Décimo item</li>\n  <li>Décimo primeiro (automático)</li>\n</ol>\n\nUso comum: Todo item de qualquer lista HTML. Pode conter div, p, img, a, ul, ol — qualquer elemento.\n\nDica prática: Nunca coloque <li> fora de <ul> ou <ol>. Navegadores tentam corrigir isso, mas o comportamento é imprevisível. Valide seu HTML no validator.w3.org para detectar esses erros estruturais.",
       "order": 46,
       "tags": [
         "listas",
@@ -722,7 +722,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "listas-listas-aninhadas",
       "title": "Listas aninhadas",
-      "content": "Objetivo: Listas dentro de listas. Voce pode colocar uma lista dentro de outra, criando sublistas. A lista interna fica dentro de um . Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie hierarquias de informação com listas dentro de listas.\n\nFato-chave: Listas podem ser aninhadas — um <li> pode conter outra <ul> ou <ol> como filho. Isso cria hierarquias visuais com indentação. A lista interna fica dentro do <li>, não fora dele.\n\nExemplo de uso:\n<!-- Menu de navegação com submenus -->\n<ul>\n  <li>Frontend\n    <ul>\n      <li>HTML</li>\n      <li>CSS</li>\n      <li>JavaScript</li>\n    </ul>\n  </li>\n  <li>Backend\n    <ul>\n      <li>Node.js</li>\n      <li>Python</li>\n    </ul>\n  </li>\n</ul>\n\n<!-- Misturando tipos -->\n<ol>\n  <li>Fase 1: Fundamentos\n    <ul>\n      <li>HTML</li>\n      <li>CSS</li>\n    </ul>\n  </li>\n  <li>Fase 2: JavaScript</li>\n</ol>\n\nUso comum: Sitemap, menus dropdown, sumários de documentos, categorias e subcategorias, árvores de arquivos.\n\nDica prática: Não aninhe listas só por decoração visual. O aninhamento deve refletir uma hierarquia semântica real. Para dropdown menus com CSS ou JS, o aninhamento de listas é o padrão da web moderna.",
       "order": 47,
       "tags": [
         "listas",
@@ -735,7 +735,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "listas-lista-de-definicao-dl",
       "title": "Lista de definicao <dl>",
-      "content": "Objetivo: Termos e definicoes. (definition list) e usada para termos e suas definicoes, como um glossario. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie glossários e pares termo-definição com <dl>.\n\nFato-chave: <dl> (description list) cria uma lista de termos (<dt>) e suas definições (<dd>). Diferente de <ul>/<ol>, é usada para pares chave-valor semânticos — como um dicionário, glossário, metadados ou FAQ.\n\nExemplo de uso:\n<!-- Glossário técnico -->\n<dl>\n  <dt>HTML</dt>\n  <dd>HyperText Markup Language — linguagem de marcação que estrutura páginas web.</dd>\n\n  <dt>CSS</dt>\n  <dd>Cascading Style Sheets — linguagem que define a aparência de elementos HTML.</dd>\n\n  <dt>API</dt>\n  <dd>Application Programming Interface — interface para comunicação entre sistemas.</dd>\n</dl>\n\n<!-- Metadados de produto -->\n<dl>\n  <dt>Marca</dt>  <dd>TechBrand</dd>\n  <dt>Modelo</dt> <dd>X-2000</dd>\n  <dt>Peso</dt>   <dd>350g</dd>\n</dl>\n\nUso comum: Glossários, FAQs, especificações de produtos, metadados, dicionários e listas de propriedades.\n\nDica prática: Um <dt> pode ter vários <dd> (múltiplas definições) e vários <dt> podem compartilhar um <dd> (sinônimos). Use CSS para estilizar: dt { font-weight: bold; } dd { margin-left: 1.5rem; margin-bottom: 0.5rem; }",
       "order": 48,
       "tags": [
         "listas",
@@ -749,7 +749,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-tag-table",
       "title": "Tag <table>",
-      "content": "Objetivo: Criando tabelas. cria uma tabela. Tabelas organizam dados em linhas e colunas. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Organize dados em linhas e colunas com tabelas HTML.\n\nFato-chave: A tag <table> cria uma tabela de dados. Tabelas HTML são para dados tabulares — não para layout de página (isso era prática antiga, abandonada em favor do CSS Grid e Flexbox). Uma tabela bem estruturada é acessível a leitores de tela.\n\nExemplo de uso:\n<table>\n  <thead>\n    <tr>\n      <th>Linguagem</th>\n      <th>Tipo</th>\n      <th>Criada em</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>JavaScript</td>\n      <td>Interpretada</td>\n      <td>1995</td>\n    </tr>\n    <tr>\n      <td>Python</td>\n      <td>Interpretada</td>\n      <td>1991</td>\n    </tr>\n  </tbody>\n</table>\n\nUso comum: Preços e planos, horários, comparativos de produtos, relatórios financeiros, rankings, dados científicos.\n\nDica prática: NUNCA use tabelas para layout de página — use CSS Grid ou Flexbox. Tabelas para layout são inacessíveis, lentas e difíceis de manter. Tabelas são apenas para dados tabulares que fazem sentido em grade de linhas e colunas.",
       "order": 49,
       "tags": [
         "tabelas",
@@ -763,7 +763,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-tr",
       "title": "<tr>",
-      "content": "Objetivo: Linhas da tabela. (table row) cria uma linha na tabela. Celulas ficam dentro de cada linha. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Adicione linhas à tabela com <tr>.\n\nFato-chave: <tr> (table row) define uma linha horizontal na tabela. Cada <tr> contém células (<td> para dados ou <th> para cabeçalhos). Todas as linhas de uma coluna ficam alinhadas automaticamente pelo navegador.\n\nExemplo de uso:\n<table>\n  <tr>\n    <th>Nome</th>\n    <th>Nota</th>\n    <th>Situação</th>\n  </tr>\n  <tr>           <!-- Primeira linha de dados -->\n    <td>Ana</td>\n    <td>9.5</td>\n    <td>Aprovada</td>\n  </tr>\n  <tr>           <!-- Segunda linha de dados -->\n    <td>Bruno</td>\n    <td>7.0</td>\n    <td>Aprovado</td>\n  </tr>\n</table>\n\nUso comum: Cada registro de dado em uma tabela = uma <tr>. Use quantas <tr> precisar dentro de <thead>, <tbody> e <tfoot>.\n\nDica prática: Para estilizar linhas alternadas (zebra striping), use CSS: tr:nth-child(even) { background-color: #f2f2f2; }. Isso melhora a legibilidade de tabelas longas sem precisar adicionar classes em cada linha.",
       "order": 50,
       "tags": [
         "tabelas"
@@ -775,7 +775,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-td",
       "title": "<td>",
-      "content": "Objetivo: Celulas de dados. (table data) cria uma celula com dados. Fica dentro de . Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Defina células de dados em tabelas com <td>.\n\nFato-chave: <td> (table data) cria uma célula com conteúdo de dado. Pode conter qualquer elemento HTML — texto, imagens, links, botões. Os atributos colspan e rowspan permitem mesclar células horizontal e verticalmente.\n\nExemplo de uso:\n<table>\n  <tr>\n    <td>Produto A</td>\n    <td>R$ 49,90</td>\n    <td><a href=\"/comprar\">Comprar</a></td>\n  </tr>\n  <tr>\n    <!-- colspan: ocupa 2 colunas -->\n    <td colspan=\"2\">Total do pedido</td>\n    <td>R$ 49,90</td>\n  </tr>\n</table>\n\n<!-- rowspan: célula que ocupa 3 linhas -->\n<td rowspan=\"3\">Categoria A</td>\n\nUso comum: Qualquer célula de dado em tabelas — preços, nomes, datas, valores numéricos, ações (botões/links).\n\nDica prática: Estilize células com CSS para melhor legibilidade: td { padding: 8px 12px; border-bottom: 1px solid #ddd; } table { border-collapse: collapse; width: 100%; }. border-collapse: collapse elimina espaço duplo entre bordas.",
       "order": 51,
       "tags": [
         "tabelas"
@@ -787,7 +787,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-th",
       "title": "<th>",
-      "content": "Objetivo: Celulas de cabecalho. (table header) cria uma celula de cabecalho. Aparece em negrito e centralizada. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crie células de cabeçalho acessíveis com <th>.\n\nFato-chave: <th> (table header) define uma célula de cabeçalho. Por padrão, o conteúdo fica em negrito e centralizado. O atributo scope (col, row, colgroup, rowgroup) especifica para qual direção o cabeçalho se aplica — essencial para acessibilidade em leitores de tela.\n\nExemplo de uso:\n<table>\n  <tr>\n    <th scope=\"col\">Produto</th>\n    <th scope=\"col\">Preço</th>\n    <th scope=\"col\">Estoque</th>\n  </tr>\n  <tr>\n    <th scope=\"row\">Teclado Mecânico</th>\n    <td>R$ 299</td>\n    <td>15 unidades</td>\n  </tr>\n</table>\n\nUso comum: Linha de cabeçalho das colunas (dentro de <thead>), cabeçalhos de linhas para tabelas com dados bidirecionais.\n\nDica prática: Sempre use scope=\"col\" em <th> de colunas e scope=\"row\" em <th> de linhas. Isso permite que leitores de tela JAWS e NVDA anunciem o cabeçalho relevante a cada célula lida, tornando a tabela acessível.",
       "order": 52,
       "tags": [
         "tabelas"
@@ -799,7 +799,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-thead",
       "title": "<thead>",
-      "content": "Objetivo: Grupo de cabecalho. agrupa as linhas de cabecalho. Melhora a semantica e facilita estilizacao. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Separe o cabeçalho da tabela com <thead>.\n\nFato-chave: <thead> agrupa as linhas de cabeçalho da tabela. Junto com <tbody> e <tfoot>, define a estrutura semântica da tabela. Em tabelas muito longas com scroll, o navegador pode repetir o <thead> automaticamente ao imprimir a página.\n\nExemplo de uso:\n<table>\n  <thead>\n    <tr>\n      <th scope=\"col\">Mês</th>\n      <th scope=\"col\">Receita</th>\n      <th scope=\"col\">Despesa</th>\n      <th scope=\"col\">Saldo</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>Janeiro</td>\n      <td>R$ 10.000</td>\n      <td>R$ 7.500</td>\n      <td>R$ 2.500</td>\n    </tr>\n    <!-- mais linhas... -->\n  </tbody>\n  <tfoot>\n    <tr>\n      <th scope=\"row\">Total</th>\n      <td>R$ 120.000</td>\n      <td>R$ 90.000</td>\n      <td>R$ 30.000</td>\n    </tr>\n  </tfoot>\n</table>\n\nUso comum: Toda tabela bem estruturada tem thead + tbody. O tfoot é opcional mas útil para totais e resumos.\n\nDica prática: Estilize thead separadamente do tbody: thead { background-color: #2d3748; color: white; }. Isso cria uma hierarquia visual clara e melhora a leitura de tabelas com muitos dados.",
       "order": 53,
       "tags": [
         "tabelas",
@@ -812,7 +812,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-tbody",
       "title": "<tbody>",
-      "content": "Objetivo: Corpo da tabela. agrupa as linhas de dados principais da tabela. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Corpo da tabela. agrupa as linhas de dados principais da tabela. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 54,
       "tags": [
         "tabelas",
@@ -825,7 +825,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-tfoot",
       "title": "<tfoot>",
-      "content": "Objetivo: Rodape da tabela. agrupa linhas de rodape, como totais ou resumos. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Rodape da tabela. agrupa linhas de rodape, como totais ou resumos. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 55,
       "tags": [
         "tabelas",
@@ -838,7 +838,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-colspan-e-rowspan",
       "title": "colspan e rowspan",
-      "content": "Objetivo: Mesclando celulas. colspan mescla colunas horizontalmente. rowspan mescla linhas verticalmente. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Mesclando celulas. colspan mescla colunas horizontalmente. rowspan mescla linhas verticalmente. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 56,
       "tags": [
         "tabelas",
@@ -852,7 +852,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "tabelas-caption",
       "title": "<caption>",
-      "content": "Objetivo: Titulo da tabela. adiciona um titulo a tabela. Deve ser o primeiro elemento dentro de . Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Título da tabela. adiciona um título a tabela. Deve ser o primeiro elemento dentro de . Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 57,
       "tags": [
         "tabelas",
@@ -865,7 +865,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-tag-form",
       "title": "Tag <form>",
-      "content": "Objetivo: Criando formularios. Formularios coletam dados com inputs, labels e botoes. Exemplo de uso: cadastro e login. Uso comum: pesquisas, contato e pagamento. Dica pratica: sempre associe label ao input. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Criando formularios. Formularios coletam dados com inputs, labels e botoes. Exemplo de uso: cadastro e login. Uso comum: pesquisas, contato e pagamento. Dica prática: sempre associe label ao input.",
       "order": 58,
       "tags": [
         "formularios",
@@ -879,7 +879,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-action",
       "title": "action",
-      "content": "Objetivo: Destino do formulario. action define a URL para onde os dados serao enviados quando o form for submetido. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Destino do formulario. action define a URL para onde os dados serao enviados quando o form for submetido. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 59,
       "tags": [
         "formularios",
@@ -892,7 +892,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-method",
       "title": "method",
-      "content": "Objetivo: Como enviar dados. method define como os dados sao enviados. GET na URL, POST no corpo da requisicao. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Como enviar dados. method define como os dados são enviados. GET na URL, POST no corpo da requisicao. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 60,
       "tags": [
         "formularios",
@@ -905,7 +905,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-input-type-text",
       "title": "<input type=\"text\">",
-      "content": "Objetivo: Campo de texto. cria um campo para texto simples de uma linha. Exemplo de uso: Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Campo de texto. cria um campo para texto simples de uma linha. Exemplo de uso: Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 61,
       "tags": [
         "formularios",
@@ -920,7 +920,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-input-type-email",
       "title": "<input type=\"email\">",
-      "content": "Objetivo: Campo de email. type=\"email\" valida automaticamente se o texto e um email valido. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Campo de email. type=\"email\" valida automaticamente se o texto e um email valido. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 62,
       "tags": [
         "formularios",
@@ -935,7 +935,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-input-type-password",
       "title": "<input type=\"password\">",
-      "content": "Objetivo: Campo de senha. type=\"password\" oculta os caracteres digitados, mostrando apenas pontos. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Campo de senha. type=\"password\" oculta os caracteres digitados, mostrando apenas pontos. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 63,
       "tags": [
         "formularios",
@@ -950,7 +950,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-input-type-checkbox",
       "title": "<input type=\"checkbox\">",
-      "content": "Objetivo: Caixa de selecao. type=\"checkbox\" cria uma caixa que pode ser marcada ou desmarcada. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Caixa de seleção. type=\"checkbox\" cria uma caixa que pode ser marcada ou desmarcada. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 64,
       "tags": [
         "formularios",
@@ -965,7 +965,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-input-type-radio",
       "title": "<input type=\"radio\">",
-      "content": "Objetivo: Botoes de opcao. type=\"radio\" cria botoes onde apenas uma opcao pode ser selecionada por grupo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Botoes de opção. type=\"radio\" cria botoes onde apenas uma opção pode ser selecionada por grupo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 65,
       "tags": [
         "formularios",
@@ -980,7 +980,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-textarea",
       "title": "<textarea>",
-      "content": "Objetivo: Area de texto. cria uma area para texto longo com multiplas linhas. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Area de texto. cria uma area para texto longo com múltiplas linhas. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 66,
       "tags": [
         "formularios",
@@ -993,7 +993,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-select",
       "title": "<select>",
-      "content": "Objetivo: Lista suspensa. cria uma lista dropdown. Opcoes ficam dentro com . Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Lista suspensa. cria uma lista dropdown. Opcoes ficam dentro com . Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 67,
       "tags": [
         "formularios",
@@ -1006,7 +1006,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-option",
       "title": "<option>",
-      "content": "Objetivo: Opcoes do select. define cada opcao dentro de . O atributo value e o que e enviado. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Opcoes do select. define cada opção dentro de . O atributo value e o que e enviado. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 68,
       "tags": [
         "formularios",
@@ -1019,7 +1019,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-button",
       "title": "<button>",
-      "content": "Objetivo: Botoes de acao. cria um botao clicavel. Por padrao, type=\"submit\" envia o formulario. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Botoes de acao. cria um botao clicavel. Por padrão, type=\"submit\" envia o formulario. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 69,
       "tags": [
         "formularios",
@@ -1032,7 +1032,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-required",
       "title": "required",
-      "content": "Objetivo: Campo obrigatorio. O atributo required torna o campo obrigatorio. O formulario nao envia se estiver vazio. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Campo obrigatorio. O atributo required torna o campo obrigatorio. O formulario não envia se estiver vazio. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 70,
       "tags": [
         "formularios",
@@ -1045,7 +1045,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-placeholder",
       "title": "placeholder",
-      "content": "Objetivo: Texto de dica. placeholder mostra um texto de dica dentro do campo, que desaparece quando voce digita. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Texto de dica. placeholder mostra um texto de dica dentro do campo, que desaparece quando você digita. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 71,
       "tags": [
         "formularios",
@@ -1058,7 +1058,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "formularios-name",
       "title": "name",
-      "content": "Objetivo: Nome do campo. name identifica o campo quando os dados sao enviados. E a chave no par chave=valor. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Nome do campo. name identifica o campo quando os dados são enviados. E a chave no par chave=valor. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 72,
       "tags": [
         "formularios",
@@ -1071,7 +1071,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-o-que-e-html-semantico",
       "title": "O que e HTML semantico",
-      "content": "Objetivo: Significado no codigo. HTML semantico usa tags que descrevem o conteudo. Exemplo de uso: organizar pagina em areas claras. Uso comum: melhorar acessibilidade e SEO. Dica pratica: evite excesso de div sem significado. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Significado no codigo. HTML semantico usa tags que descrevem o conteúdo. Exemplo de uso: organizar página em areas claras. Uso comum: melhorar acessibilidade e SEO. Dica prática: evite excesso de div sem significado.",
       "order": 73,
       "tags": [
         "html",
@@ -1085,7 +1085,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-header",
       "title": "<header>",
-      "content": "Objetivo: Cabecalho da pagina. representa o cabecalho de uma pagina ou secao. Geralmente contem logo, titulo e navegacao. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Cabecalho da página. representa o cabecalho de uma página ou seção. Geralmente contem logo, título e navegação. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 74,
       "tags": [
         "html",
@@ -1099,7 +1099,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-nav",
       "title": "<nav>",
-      "content": "Objetivo: Navegacao principal. representa uma secao de navegacao com links para outras paginas ou partes do site. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Navegação principal. representa uma seção de navegação com links para outras páginas ou partes do site. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 75,
       "tags": [
         "html",
@@ -1113,7 +1113,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-main",
       "title": "<main>",
-      "content": "Objetivo: Conteudo principal. contem o conteudo principal da pagina. Deve haver apenas um por pagina. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Conteúdo principal. contem o conteúdo principal da página. Deve haver apenas um por página. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 76,
       "tags": [
         "html",
@@ -1127,7 +1127,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-section",
       "title": "<section>",
-      "content": "Objetivo: Secoes tematicas. representa uma secao tematica de conteudo. Geralmente tem seu proprio titulo. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Secoes tematicas. representa uma seção tematica de conteúdo. Geralmente tem seu próprio título. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 77,
       "tags": [
         "html",
@@ -1141,7 +1141,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-article",
       "title": "<article>",
-      "content": "Objetivo: Conteudo independente. representa conteudo autocontido que faz sentido sozinho: post, noticia, comentario. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Conteúdo independente. representa conteúdo autocontido que faz sentido sozinho: post, noticia, comentario. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 78,
       "tags": [
         "html",
@@ -1155,7 +1155,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-aside",
       "title": "<aside>",
-      "content": "Objetivo: Conteudo relacionado. contem conteudo relacionado mas separado: sidebars, caixas de destaque, anuncios. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Conteúdo relacionado. contem conteúdo relacionado mas separado: sidebars, caixas de destaque, anuncios. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 79,
       "tags": [
         "html",
@@ -1169,7 +1169,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-footer",
       "title": "<footer>",
-      "content": "Objetivo: Rodape. representa o rodape de uma pagina ou secao. Contem copyright, links, contato. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Rodape. representa o rodape de uma página ou seção. Contem copyright, links, contato. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 80,
       "tags": [
         "html",
@@ -1183,7 +1183,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "html-semantico-quando-usar-div",
       "title": "Quando usar div",
-      "content": "Objetivo: O papel da div generica. e um container generico sem significado semantico. Use quando nenhuma tag semantica se aplica. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: O papel da div generica. e um container generico sem significado semantico. Use quando nenhuma tag semântica se aplica. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 81,
       "tags": [
         "html",
@@ -1199,7 +1199,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-id",
       "title": "id",
-      "content": "Objetivo: Identificador unico. id e um identificador unico na pagina. Cada id so pode aparecer uma vez. Exemplo de uso: ... Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Identificador unico. id e um identificador unico na página. Cada id so pode aparecer uma vez. Exemplo de uso: ... Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 82,
       "tags": [
         "atributos",
@@ -1212,7 +1212,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-class",
       "title": "class",
-      "content": "Objetivo: Classes de estilo. class define uma ou mais classes CSS. Diferente de id, classes podem ser repetidas. Exemplo de uso: Conteudo Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Classes de estilo. class define uma ou mais classes CSS. Diferente de id, classes podem ser repetidas. Exemplo de uso: Conteúdo Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 83,
       "tags": [
         "atributos",
@@ -1226,7 +1226,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-style",
       "title": "style",
-      "content": "Objetivo: CSS inline. style aplica CSS diretamente no elemento. Util para estilos unicos e rapidos. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: CSS inline. style aplica CSS diretamente no elemento. Util para estilos unicos e rapidos. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 84,
       "tags": [
         "atributos",
@@ -1240,7 +1240,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-title",
       "title": "title",
-      "content": "Objetivo: Dica ao passar o mouse. title mostra uma tooltip quando o usuario passa o mouse sobre o elemento. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Dica ao passar o mouse. title mostra uma tooltip quando o usuario passa o mouse sobre o elemento. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 85,
       "tags": [
         "atributos",
@@ -1254,7 +1254,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-lang",
       "title": "lang",
-      "content": "Objetivo: Idioma do conteudo. lang define o idioma do conteudo. Importante para acessibilidade e SEO. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Idioma do conteúdo. lang define o idioma do conteúdo. Importante para acessibilidade e SEO. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 86,
       "tags": [
         "atributos",
@@ -1268,7 +1268,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-data",
       "title": "data-*",
-      "content": "Objetivo: Dados personalizados. data- permite armazenar dados personalizados nos elementos. Util para JavaScript. Exemplo de uso: p { data-: valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Dados personalizados. data- permite armazenar dados personalizados nos elementos. Util para JavaScript. Exemplo de uso: p { data-: valor; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 87,
       "tags": [
         "atributos",
@@ -1282,7 +1282,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-hidden",
       "title": "hidden",
-      "content": "Objetivo: Ocultar elementos. hidden oculta o elemento da pagina. Ele ainda existe no codigo, mas nao e exibido. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Ocultar elementos. hidden oculta o elemento da página. Ele ainda existe no codigo, mas não e exibido. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 88,
       "tags": [
         "atributos",
@@ -1296,7 +1296,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "atributos-globais-tabindex",
       "title": "tabindex",
-      "content": "Objetivo: Ordem de tabulacao. tabindex controla se e em que ordem o elemento recebe foco ao pressionar Tab. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Ordem de tabulacao. tabindex controla se e em que ordem o elemento recebe foco ao pressionar Tab. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 89,
       "tags": [
         "atributos",
@@ -1310,7 +1310,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "acessibilidade-o-que-e-acessibilidade",
       "title": "O que e acessibilidade",
-      "content": "Objetivo: Web para todos. Acessibilidade garante que todos consigam usar o site. Exemplo de uso: leitores de tela dependem do alt e aria. Uso comum: formularios, botoes e menus. Dica pratica: teste com teclado e leitor de tela. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Web para todos. Acessibilidade garante que todos consigam usar o site. Exemplo de uso: leitores de tela dependem do alt e aria. Uso comum: formularios, botoes e menus. Dica prática: teste com teclado e leitor de tela.",
       "order": 90,
       "tags": [
         "acessibilidade",
@@ -1323,7 +1323,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "acessibilidade-uso-correto-de-alt",
       "title": "Uso correto de alt",
-      "content": "Objetivo: Descrevendo imagens. O atributo alt e lido por leitores de tela. Descreva o conteudo e funcao da imagem. Exemplo de uso: Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Descrevendo imagens. O atributo alt e lido por leitores de tela. Descreva o conteúdo e função da imagem. Exemplo de uso: Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 91,
       "tags": [
         "acessibilidade",
@@ -1338,7 +1338,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "acessibilidade-label-e-formularios",
       "title": "<label> e formularios",
-      "content": "Objetivo: Rotulos acessiveis. associa texto a um campo de formulario. Essencial para leitores de tela. Exemplo de uso: Texto aqui Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Rotulos acessiveis. associa texto a um campo de formulario. Essencial para leitores de tela. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 92,
       "tags": [
         "acessibilidade",
@@ -1352,7 +1352,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "acessibilidade-ordem-de-tabulacao",
       "title": "Ordem de tabulacao",
-      "content": "Objetivo: Navegacao por teclado. Muitos usuarios navegam com Tab. A ordem deve fazer sentido logico. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Navegação por teclado. Muitos usuarios navegam com Tab. A ordem deve fazer sentido logico. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 93,
       "tags": [
         "acessibilidade",
@@ -1366,7 +1366,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "acessibilidade-introducao-a-aria",
       "title": "Introducao a ARIA",
-      "content": "Objetivo: Atributos de acessibilidade. ARIA (Accessible Rich Internet Applications) sao atributos que melhoram a acessibilidade de conteudo dinamico. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Atributos de acessibilidade. ARIA (Accessible Rich Internet Applications) são atributos que melhoram a acessibilidade de conteúdo dinâmico. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 94,
       "tags": [
         "acessibilidade",
@@ -1380,7 +1380,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "acessibilidade-aria-label",
       "title": "aria-label",
-      "content": "Objetivo: Rotulos invisiveis. aria-label fornece um rotulo acessivel quando nao ha texto visivel. Exemplo de uso: p { aria-label: valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Rotulos invisiveis. aria-label fornece um rotulo acessivel quando não ha texto visivel. Exemplo de uso: p { aria-label: valor; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 95,
       "tags": [
         "acessibilidade",
@@ -1394,7 +1394,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "acessibilidade-aria-hidden",
       "title": "aria-hidden",
-      "content": "Objetivo: Ocultando de leitores de tela. aria-hidden=\"true\" esconde o elemento de tecnologias assistivas, mas mantem visivel. Exemplo de uso: p { aria-hidden=\"true\": valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Ocultando de leitores de tela. aria-hidden=\"true\" esconde o elemento de tecnologias assistivas, mas mantem visivel. Exemplo de uso: p { aria-hidden=\"true\": valor; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 96,
       "tags": [
         "acessibilidade",
@@ -1406,15 +1406,15 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l1",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "seo-com-html-titulos-hierarquicos",
+      "concept": "seo-com-html-títulos-hierarquicos",
       "title": "Titulos hierarquicos",
-      "content": "Objetivo: Estrutura para buscadores. Buscadores usam h1-h6 para entender a estrutura. Use apenas um h1, depois h2, h3 em ordem. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Estrutura para buscadores. Buscadores usam h1-h6 para entender a estrutura. Use apenas um h1, depois h2, h3 em ordem. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 97,
       "tags": [
         "seo",
         "com",
         "html",
-        "titulos",
+        "títulos",
         "hierarquicos"
       ]
     },
@@ -1422,16 +1422,16 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l2",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "seo-com-html-estrutura-semantica",
-      "title": "Estrutura semantica",
-      "content": "Objetivo: HTML que buscadores entendem. Tags semanticas (header, main, article) ajudam buscadores a entender a estrutura do conteudo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "seo-com-html-estrutura-semântica",
+      "title": "Estrutura semântica",
+      "content": "Objetivo: HTML que buscadores entendem. Tags semanticas (header, main, article) ajudam buscadores a entender a estrutura do conteúdo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 98,
       "tags": [
         "seo",
         "com",
         "html",
         "estrutura",
-        "semantica"
+        "semântica"
       ]
     },
     {
@@ -1440,7 +1440,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "seo-com-html-meta-description",
       "title": "Meta description",
-      "content": "Objetivo: Descricao nos resultados. A meta description aparece nos resultados de busca abaixo do titulo. Deve ser atraente e ter ate 160 caracteres. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Descricao nos resultados. A meta description aparece nos resultados de busca abaixo do título. Deve ser atraente e ter ate 160 caracteres. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 99,
       "tags": [
         "seo",
@@ -1456,7 +1456,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "seo-com-html-links-internos",
       "title": "Links internos",
-      "content": "Objetivo: Conectando paginas. Links entre paginas do seu site ajudam buscadores a descobrir e indexar conteudo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Conectando páginas. Links entre páginas do seu site ajudam buscadores a descobrir e indexar conteúdo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 100,
       "tags": [
         "seo",
@@ -1472,7 +1472,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "seo-com-html-imagens-com-alt",
       "title": "Imagens com alt",
-      "content": "Objetivo: SEO para imagens. O atributo alt ajuda buscadores a entender o conteudo da imagem. Pode aparecer em buscas de imagens. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: SEO para imagens. O atributo alt ajuda buscadores a entender o conteúdo da imagem. Pode aparecer em buscas de imagens. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 101,
       "tags": [
         "seo",
@@ -1486,12 +1486,12 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l1",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "integracao-com-css-e-js-link",
+      "concept": "integração-com-css-e-js-link",
       "title": "<link>",
-      "content": "Objetivo: Conectando CSS externo. conecta arquivos CSS externos. Vai dentro do . Exemplo de uso: Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Conectando CSS externo. conecta arquivos CSS externos. Vai dentro do . Exemplo de uso: Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 102,
       "tags": [
-        "integracao",
+        "integração",
         "com",
         "css",
         "link"
@@ -1501,12 +1501,12 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l2",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "integracao-com-css-e-js-style",
+      "concept": "integração-com-css-e-js-style",
       "title": "<style>",
-      "content": "Objetivo: CSS interno. permite escrever CSS diretamente no HTML, dentro do . Exemplo de uso: Texto aqui Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: CSS interno. permite escrever CSS diretamente no HTML, dentro do . Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 103,
       "tags": [
-        "integracao",
+        "integração",
         "com",
         "css",
         "style"
@@ -1516,12 +1516,12 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l3",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "integracao-com-css-e-js-script",
+      "concept": "integração-com-css-e-js-script",
       "title": "<script>",
-      "content": "Objetivo: Adicionando JavaScript. adiciona JavaScript. Pode ser codigo inline ou arquivo externo. Exemplo de uso: Texto aqui Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Adicionando JavaScript. adiciona JavaScript. Pode ser codigo inline ou arquivo externo. Exemplo de uso: veja a sintaxe na documentação oficial do MDN Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 104,
       "tags": [
-        "integracao",
+        "integração",
         "com",
         "css",
         "script"
@@ -1531,12 +1531,12 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l4",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "integracao-com-css-e-js-defer",
+      "concept": "integração-com-css-e-js-defer",
       "title": "defer",
-      "content": "Objetivo: Carregamento adiado. defer faz o script baixar em paralelo e executar apos o HTML ser completamente parseado. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Carregamento adiado. defer faz o script baixar em paralelo e executar apos o HTML ser completamente parseado. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 105,
       "tags": [
-        "integracao",
+        "integração",
         "com",
         "css",
         "defer"
@@ -1546,12 +1546,12 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l5",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "integracao-com-css-e-js-async",
+      "concept": "integração-com-css-e-js-async",
       "title": "async",
-      "content": "Objetivo: Carregamento assincrono. async baixa em paralelo e executa imediatamente apos baixar, sem esperar o HTML. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Carregamento assincrono. async baixa em paralelo e executa imediatamente apos baixar, sem esperar o HTML. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 106,
       "tags": [
-        "integracao",
+        "integração",
         "com",
         "css",
         "async"
@@ -1561,13 +1561,13 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l1",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "boas-praticas-codigo-limpo",
+      "concept": "boas-práticas-codigo-limpo",
       "title": "Codigo limpo",
-      "content": "Objetivo: HTML organizado. HTML limpo e facil de ler, manter e colaborar. Use indentacao consistente e nomes claros. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: HTML organizado. HTML limpo e fácil de ler, manter e colaborar. Use indentação consistente e nomes claros. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 107,
       "tags": [
         "boas",
-        "praticas",
+        "práticas",
         "codigo",
         "limpo"
       ]
@@ -1576,29 +1576,29 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l2",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "boas-praticas-comentarios-uteis",
-      "title": "Comentarios uteis",
-      "content": "Objetivo: Documentando o codigo. Comente o porque, nao o que. Bom: \" \". Ruim: \" \". Exemplo de uso: p { : valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "boas-práticas-comentarios-úteis",
+      "title": "Comentarios úteis",
+      "content": "Objetivo: Documentando o codigo. Comente o porque, não o que. Bom: \" \". Ruim: \" \". Exemplo de uso: p { : valor; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 108,
       "tags": [
         "boas",
-        "praticas",
+        "práticas",
         "comentarios",
-        "uteis"
+        "úteis"
       ]
     },
     {
       "id": "legacy-html-u14-l3",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "boas-praticas-validacao-html",
-      "title": "Validacao HTML",
-      "content": "Objetivo: Verificando erros. Validadores verificam se seu HTML segue os padroes. Erros podem causar problemas de renderizacao. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "boas-práticas-validação-html",
+      "title": "Validação HTML",
+      "content": "Objetivo: Verificando erros. Validadores verificam se seu HTML segue os padrões. Erros podem causar problemas de renderizacao. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 109,
       "tags": [
         "boas",
-        "praticas",
-        "validacao",
+        "práticas",
+        "validação",
         "html"
       ]
     },
@@ -1606,28 +1606,28 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l4",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "boas-praticas-performance-basica",
-      "title": "Performance basica",
-      "content": "Objetivo: Sites mais rapidos. HTML leve carrega mais rapido. Evite codigo desnecessario e otimize recursos. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "boas-práticas-performance-básica",
+      "title": "Performance básica",
+      "content": "Objetivo: Sites mais rapidos. HTML leve carrega mais rápido. Evite codigo desnecessario e otimize recursos. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 110,
       "tags": [
         "boas",
-        "praticas",
+        "práticas",
         "performance",
-        "basica"
+        "básica"
       ]
     },
     {
       "id": "legacy-html-u14-l5",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "boas-praticas-compatibilidade",
+      "concept": "boas-práticas-compatibilidade",
       "title": "Compatibilidade",
-      "content": "Objetivo: Funcionando em todos navegadores. Nem todos navegadores interpretam HTML igualmente. Teste em Chrome, Firefox, Safari, Edge. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Funcionando em todos navegadores. Nem todos navegadores interpretam HTML igualmente. Teste em Chrome, Firefox, Safari, Edge. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 111,
       "tags": [
         "boas",
-        "praticas",
+        "práticas",
         "compatibilidade"
       ]
     },
@@ -1635,14 +1635,14 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l1",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "projetos-praticos-pagina-pessoal",
-      "title": "Pagina pessoal",
-      "content": "Objetivo: Seu primeiro site. Vamos criar uma pagina simples com seu nome, foto, bio e links para redes sociais. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "projetos-praticos-página-pessoal",
+      "title": "Página pessoal",
+      "content": "Objetivo: Seu primeiro site. Vamos criar uma página simples com seu nome, foto, bio e links para redes sociais. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 112,
       "tags": [
         "projetos",
         "praticos",
-        "pagina",
+        "página",
         "pessoal"
       ]
     },
@@ -1652,7 +1652,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "projetos-praticos-landing-page-simples",
       "title": "Landing page simples",
-      "content": "Objetivo: Pagina de conversao. Uma landing page tem: titulo chamativo, proposta de valor, beneficios e call-to-action. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Página de conversao. Uma landing page tem: título chamativo, proposta de valor, beneficios e call-to-action. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 113,
       "tags": [
         "projetos",
@@ -1666,14 +1666,14 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l3",
       "module_id": "module-html-basics",
       "language": "html",
-      "concept": "projetos-praticos-pagina-de-contato",
-      "title": "Pagina de contato",
-      "content": "Objetivo: Formulario de contato. Inclua informacoes de contato (email, telefone, endereco) e um formulario para mensagens. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "projetos-praticos-página-de-contato",
+      "title": "Página de contato",
+      "content": "Objetivo: Formulario de contato. Inclua informacoes de contato (email, telefone, endereco) e um formulario para mensagens. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 114,
       "tags": [
         "projetos",
         "praticos",
-        "pagina",
+        "página",
         "contato"
       ]
     },
@@ -1683,7 +1683,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "projetos-praticos-formulario-funcional",
       "title": "Formulario funcional",
-      "content": "Objetivo: Formulario completo. Pratique todos os tipos de input: text, email, password, checkbox, radio, select, textarea. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Formulario completo. Pratique todos os tipos de input: text, email, password, checkbox, radio, select, textarea. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 115,
       "tags": [
         "projetos",
@@ -1698,7 +1698,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "projetos-praticos-mini-site-institucional",
       "title": "Mini site institucional",
-      "content": "Objetivo: Site de empresa. Site com multiplas paginas: Home, Sobre, Servicos, Contato. Navegacao entre elas. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Site de empresa. Site com múltiplas páginas: Home, Sobre, Servicos, Contato. Navegação entre elas. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 116,
       "tags": [
         "projetos",
@@ -1714,7 +1714,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "complementar-html-vs-frameworks",
       "title": "HTML vs frameworks",
-      "content": "Objetivo: HTML puro e bibliotecas. Frameworks como React, Vue, Angular usam HTML dentro de JavaScript. A base ainda e HTML. Exemplo de uso: Titulo Texto base Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: HTML puro e bibliotecas. Frameworks como React, Vue, Angular usam HTML dentro de JavaScript. A base ainda e HTML. Exemplo de uso: Título Texto base Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 117,
       "tags": [
         "complementar",
@@ -1728,7 +1728,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "complementar-introducao-a-web-components",
       "title": "Introducao a Web Components",
-      "content": "Objetivo: Componentes nativos. Web Components permitem criar elementos HTML customizados e reutilizaveis, nativamente no navegador. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Componentes nativos. Web Components permitem criar elementos HTML customizados e reutilizaveis, nativamente no navegador. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 118,
       "tags": [
         "complementar",
@@ -1743,7 +1743,7 @@ export const learningSeed: LearningSeed = {
       "language": "html",
       "concept": "complementar-html-em-pwas",
       "title": "HTML em PWAs",
-      "content": "Objetivo: Apps progressivos. PWAs sao sites que funcionam como apps. Podem ser instalados e funcionar offline. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Apps progressivos. PWAs são sites que funcionam como apps. Podem ser instalados e funcionar offline. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 119,
       "tags": [
         "complementar",
@@ -1757,7 +1757,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "fundamentos-de-css-o-que-e-css",
       "title": "O que e CSS",
-      "content": "Objetivo: Estilos para a web. CSS define a aparencia dos elementos HTML. Exemplo de uso: mudar cores, tamanhos e espacamentos. Uso comum: criar identidade visual. Dica pratica: comece pelo layout geral e refine depois. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Estilos para a web. CSS define a aparencia dos elementos HTML. Exemplo de uso: mudar cores, tamanhos e espacamentos. Uso comum: criar identidade visual. Dica prática: comece pelo layout geral e refine depois.",
       "order": 1,
       "tags": [
         "fundamentos",
@@ -1771,7 +1771,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "fundamentos-de-css-seletores",
       "title": "Seletores",
-      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica pratica: prefira classes para reutilizacao. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Como escolher elementos. Seletores escolhem quais elementos receberao estilo. Exemplo de uso: aplicar estilos pontuais. Uso comum: diferenciar componentes. Dica prática: prefira classes para reutilizacao.",
       "order": 2,
       "tags": [
         "fundamentos",
@@ -1785,7 +1785,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "fundamentos-de-css-cores-e-tipografia",
       "title": "Cores e tipografia",
-      "content": "Objetivo: Deixando o texto legivel. Use color, font-size, font-family e font-weight para estilizar textos. Exemplo de uso: p { color: #1f2937; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Deixando o texto legivel. Use color, font-size, font-family e font-weight para estilizar textos. Exemplo de uso: p { color: #1f2937; } Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 3,
       "tags": [
         "fundamentos",
@@ -1800,7 +1800,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "fundamentos-de-css-box-model",
       "title": "Box model",
-      "content": "Objetivo: Espacamento e tamanho. Todo elemento tem conteudo, padding, border e margin. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Espacamento e tamanho. Todo elemento tem conteúdo, padding, border e margin. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 4,
       "tags": [
         "fundamentos",
@@ -1815,7 +1815,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "fundamentos-de-css-cascata-e-especificidade",
       "title": "Cascata e especificidade",
-      "content": "Objetivo: Quem vence?. Se dois estilos se aplicam, vence o mais especifico ou o que esta por ultimo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Quem vence?. Se dois estilos se aplicam, vence o mais específico ou o que esta por último. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 5,
       "tags": [
         "fundamentos",
@@ -1830,7 +1830,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "layout-e-responsividade-flexbox",
       "title": "Flexbox",
-      "content": "Objetivo: Alinhamento flexivel. Box model define como tamanho e espacamento funcionam. Exemplo de uso: criar cartoes com respiro. Uso comum: ajustar layout sem quebrar o conteudo. Dica pratica: use DevTools para visualizar o box model. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Alinhamento flexivel. Box model define como tamanho e espacamento funcionam. Exemplo de uso: criar cartoes com respiro. Uso comum: ajustar layout sem quebrar o conteúdo. Dica prática: use DevTools para visualizar o box model.",
       "order": 6,
       "tags": [
         "layout",
@@ -1844,7 +1844,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "layout-e-responsividade-grid",
       "title": "Grid",
-      "content": "Objetivo: Layout em grade. Flexbox alinha itens em uma linha ou coluna. Exemplo de uso: barras de navegacao e cards. Uso comum: alinhar botoes e menus. Dica pratica: combine com gap para espacamento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Layout em grade. Flexbox alinha itens em uma linha ou coluna. Exemplo de uso: barras de navegação e cards. Uso comum: alinhar botoes e menus. Dica prática: combine com gap para espacamento.",
       "order": 7,
       "tags": [
         "layout",
@@ -1858,7 +1858,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "layout-e-responsividade-position",
       "title": "Position",
-      "content": "Objetivo: Controle de posicionamento. relative mantem espaco, absolute remove do fluxo e posiciona no ancestral. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Controle de posicionamento. relative mantem espaco, absolute remove do fluxo e posiciona no ancestral. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 8,
       "tags": [
         "layout",
@@ -1872,7 +1872,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "layout-e-responsividade-responsividade",
       "title": "Responsividade",
-      "content": "Objetivo: Layouts para todas telas. Media queries aplicam estilos em condicoes, como largura da tela. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Layouts para todas telas. Media queries aplicam estilos em condições, como largura da tela. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 9,
       "tags": [
         "layout",
@@ -1885,7 +1885,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "layout-e-responsividade-pseudo-classes",
       "title": "Pseudo-classes",
-      "content": "Objetivo: Estados interativos. Pseudo-classes como :hover, :focus e :active controlam estados. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Estados interativos. Pseudo-classes como :hover, :focus e :active controlam estados. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 10,
       "tags": [
         "layout",
@@ -1900,7 +1900,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "css-avancado-transitions",
       "title": "Transitions",
-      "content": "Objetivo: Animacoes suaves. Transicoes criam animacoes suaves entre estados. Exemplo de uso: feedback visual em botoes. Uso comum: melhorar a sensacao de interacao. Dica pratica: transicoes curtas sao mais naturais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Animacoes suaves. Transicoes criam animações suaves entre estados. Exemplo de uso: feedback visual em botoes. Uso comum: melhorar a sensacao de interação. Dica prática: transicoes curtas são mais naturais.",
       "order": 11,
       "tags": [
         "css",
@@ -1914,7 +1914,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "css-avancado-animations",
       "title": "Animations",
-      "content": "Objetivo: Keyframes no CSS. Crie animacoes com @keyframes e aplique com animation. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Keyframes no CSS. Crie animações com @keyframes e aplique com animation. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 12,
       "tags": [
         "css",
@@ -1926,14 +1926,14 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l3",
       "module_id": "module-css-basics",
       "language": "css",
-      "concept": "css-avancado-variaveis-css",
+      "concept": "css-avancado-variáveis-css",
       "title": "Variaveis CSS",
-      "content": "Objetivo: Custom properties. Variaveis CSS comecam com -- e sao usadas com var(). Exemplo de uso: p { --: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Custom properties. Variaveis CSS comecam com -- e são usadas com var(). Exemplo de uso: p { --: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 13,
       "tags": [
         "css",
         "avancado",
-        "variaveis"
+        "variáveis"
       ]
     },
     {
@@ -1942,7 +1942,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "css-avancado-pseudo-elementos",
       "title": "Pseudo-elementos",
-      "content": "Objetivo: Detalhes com ::before/::after. Use ::before e ::after para inserir conteudo decorativo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Detalhes com ::before/::after. Use ::before e ::after para inserir conteúdo decorativo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 14,
       "tags": [
         "css",
@@ -1957,7 +1957,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "css-avancado-sombras-e-fundos",
       "title": "Sombras e fundos",
-      "content": "Objetivo: Profundidade visual. Use box-shadow para criar profundidade em cartoes e botoes. Exemplo de uso: p { box-shadow: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica pratica: altere valores e observe as mudancas visuais. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Profundidade visual. Use box-shadow para criar profundidade em cartoes e botoes. Exemplo de uso: p { box-shadow: valor; } Uso comum: estilizar elementos e ajustar o layout. Dica prática: altere valores e observe as mudancas visuais.",
       "order": 15,
       "tags": [
         "css",
@@ -1972,7 +1972,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "seletores-e-especificidade-seletores-basicos",
       "title": "Seletores basicos",
-      "content": "Objetivo: Elementos, classes e IDs. Seletores permitem escolher quais elementos receberao estilos. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Elementos, classes e IDs. Seletores permitem escolher quais elementos receberao estilos. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 16,
       "tags": [
         "seletores",
@@ -1986,7 +1986,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "seletores-e-especificidade-combinadores",
       "title": "Combinadores",
-      "content": "Objetivo: Descendentes e filhos. Eles definem relacoes entre elementos: descendente, filho e irmao. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Descendentes e filhos. Eles definem relacoes entre elementos: descendente, filho e irmao. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 17,
       "tags": [
         "seletores",
@@ -2000,7 +2000,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "seletores-e-especificidade-pseudo-classes",
       "title": "Pseudo-classes",
-      "content": "Objetivo: Estados dos elementos. Use :hover, :focus e :nth-child() para estados e posicao. Exemplo de uso: p { :nth-child(): valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Estados dos elementos. Use :hover, :focus e :nth-child() para estados e posição. Exemplo de uso: p { :nth-child(): valor; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 18,
       "tags": [
         "seletores",
@@ -2015,7 +2015,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "seletores-e-especificidade-especificidade",
       "title": "Especificidade",
-      "content": "Objetivo: Quem vence no CSS. Quando regras entram em conflito, a mais especifica vence. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Quem vence no CSS. Quando regras entram em conflito, a mais específica vence. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 19,
       "tags": [
         "seletores",
@@ -2028,7 +2028,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "flexbox-e-grid-flex-container",
       "title": "Flex container",
-      "content": "Objetivo: Eixos e alinhamento. Ative com display: flex para distribuir itens em um eixo. Exemplo de uso: Trecho pratico aplicado ao mesmo conceito da licao. Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Eixos e alinhamento. Ative com display: flex para distribuir itens em um eixo. Exemplo de uso: Consulte a documentação MDN para exemplos aplicados a este conceito. Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 20,
       "tags": [
         "flexbox",
@@ -2043,7 +2043,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "flexbox-e-grid-flex-items",
       "title": "Flex items",
-      "content": "Objetivo: Crescimento e espaco. Use flex para controlar crescimento, reducao e tamanho base. Exemplo de uso: container { display: flex; gap: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Crescimento e espaco. Use flex para controlar crescimento, reducao e tamanho base. Exemplo de uso: container { display: flex; gap: 12px; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 21,
       "tags": [
         "flexbox",
@@ -2056,14 +2056,14 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u23-l3",
       "module_id": "module-css-basics",
       "language": "css",
-      "concept": "flexbox-e-grid-grid-basico",
-      "title": "Grid basico",
-      "content": "Objetivo: Colunas e linhas. Use display: grid para layouts bidimensionais. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "concept": "flexbox-e-grid-grid-básico",
+      "title": "Grid básico",
+      "content": "Objetivo: Colunas e linhas. Use display: grid para layouts bidimensionais. Exemplo de uso: .card { padding: 16px; border-radius: 12px; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 22,
       "tags": [
         "flexbox",
         "grid",
-        "basico"
+        "básico"
       ]
     },
     {
@@ -2072,7 +2072,7 @@ export const learningSeed: LearningSeed = {
       "language": "css",
       "concept": "flexbox-e-grid-layout-responsivo",
       "title": "Layout responsivo",
-      "content": "Objetivo: Grid fluido. Combine auto-fit e minmax() para grades adaptaveis. Exemplo de uso: p { auto-fit: valor; } Uso comum: estruturar conteudo de paginas web. Dica pratica: visualize no navegador e inspecione o elemento. Veja um exemplo completo aplicado: O que observar: estrutura, nomes claros e boas praticas.",
+      "content": "Objetivo: Grid fluido. Combine auto-fit e minmax() para grades adaptaveis. Exemplo de uso: p { auto-fit: valor; } Uso comum: presente em praticamente todas as páginas web modernas. Dica prática: use o DevTools (F12) → aba Elements para inspecionar como o navegador interpreta este elemento.",
       "order": 23,
       "tags": [
         "flexbox",
@@ -2085,13 +2085,13 @@ export const learningSeed: LearningSeed = {
       "id": "lesson-js-variables",
       "module_id": "module-js-basics",
       "language": "javascript",
-      "concept": "variaveis",
+      "concept": "variáveis",
       "title": "Variaveis e constantes",
-      "content": "Objetivo: guardar dados com clareza. Regra pratica: use const por padrao e let quando o valor precisar mudar. Exemplo: const nome = \"Ana\"; let pontos = 0; pontos += 5;. Erro comum: usar nomes vagos como x ou dado; prefira nomes que expliquem a intencao, como totalCarrinho ou usuarioAtual.",
+      "content": "Objetivo: guardar dados com clareza. Regra prática: use const por padrão e let quando o valor precisar mudar. Exemplo: const nome = \"Ana\"; let pontos = 0; pontos += 5;. Erro comum: usar nomes vagos como x ou dado; prefira nomes que expliquem a intencao, como totalCarrinho ou usuarioAtual.",
       "order": 1,
       "tags": [
         "js",
-        "variaveis",
+        "variáveis",
         "const",
         "let"
       ]
@@ -2102,26 +2102,26 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "condicionais",
       "title": "Condicionais",
-      "content": "Objetivo: tomar decisoes no codigo. Use if/else para escolher entre caminhos: if (idade >= 18) { ... } else { ... }. Compare valores com operadores claros (===, !==, >, >=) e combine regras com && (e) e || (ou). Erro comum: usar = dentro de condicao; lembre que = atribui e === compara.",
+      "content": "Objetivo: tomar decisoes no codigo. Use if/else para escolher entre caminhos: if (idade >= 18) { ... } else { ... }. Compare valores com operadores claros (===, !==, >, >=) e combine regras com && (e) e || (ou). Erro comum: usar = dentro de condição; lembre que = atribui e === compara.",
       "order": 2,
       "tags": [
         "js",
         "if",
         "else",
-        "comparacao"
+        "comparação"
       ]
     },
     {
       "id": "lesson-js-functions",
       "module_id": "module-js-basics",
       "language": "javascript",
-      "concept": "funcoes",
+      "concept": "funções",
       "title": "Funcoes",
-      "content": "Objetivo: reutilizar logica sem repetir codigo. Pense em funcao como maquina: entrada (parametros), processamento e saida (return). Exemplo: function soma(a, b) { return a + b; }. Para casos curtos, use arrow function: const dobro = (n) => n * 2;. Erro comum: esquecer o return quando a funcao precisa devolver valor.",
+      "content": "Objetivo: reutilizar logica sem repetir codigo. Pense em função como maquina: entrada (parametros), processamento e saida (return). Exemplo: function soma(a, b) { return a + b; }. Para casos curtos, use arrow function: const dobro = (n) => n * 2;. Erro comum: esquecer o return quando a função precisa devolver valor.",
       "order": 3,
       "tags": [
         "js",
-        "funcoes",
+        "funções",
         "parametros",
         "return"
       ]
@@ -2130,15 +2130,15 @@ export const learningSeed: LearningSeed = {
       "id": "lesson-js-loops",
       "module_id": "module-js-basics",
       "language": "javascript",
-      "concept": "repeticao",
-      "title": "Lacos de repeticao",
-      "content": "Objetivo: repetir instrucoes sem copiar e colar codigo. Use for quando souber quantas repeticoes deseja, e while quando depender de uma condicao. Exemplo for: for (let i = 0; i < 3; i++) { ... }. Erro comum: esquecer de atualizar o contador e criar loop infinito.",
+      "concept": "repetição",
+      "title": "Lacos de repetição",
+      "content": "Objetivo: repetir instruções sem copiar e colar codigo. Use for quando souber quantas repeticoes deseja, e while quando depender de uma condição. Exemplo for: for (let i = 0; i < 3; i++) { ... }. Erro comum: esquecer de atualizar o contador e criar loop infinito.",
       "order": 4,
       "tags": [
         "js",
         "for",
         "while",
-        "repeticao"
+        "repetição"
       ]
     },
     {
@@ -2147,7 +2147,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "arrays",
       "title": "Arrays",
-      "content": "Objetivo: armazenar colecoes de dados na ordem. Acesso por indice comeca em 0: lista[0] e o primeiro item. Propriedade util: lista.length mostra quantidade. Operacao comum: lista.push(novoItem) para adicionar no final. Erro comum: tentar acessar indice que nao existe e receber undefined.",
+      "content": "Objetivo: armazenar colecoes de dados na ordem. Acesso por indice comeca em 0: lista[0] e o primeiro item. Propriedade util: lista.length mostra quantidade. Operacao comum: lista.push(novoItem) para adicionar no final. Erro comum: tentar acessar indice que não existe e receber undefined.",
       "order": 5,
       "tags": [
         "js",
@@ -2191,12 +2191,12 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "logica",
       "title": "Comparacoes e logica booleana",
-      "content": "Objetivo: escrever regras corretas usando true e false. Use comparacoes estritas (===, !==) e operadores logicos: && exige todas as condicoes; || aceita pelo menos uma. Erro comum: confundir = (atribui) com === (compara). Outra boa pratica: quebrar condicoes complexas em variaveis booleanas com nomes claros.",
+      "content": "Objetivo: escrever regras corretas usando true e false. Use comparacoes estritas (===, !==) e operadores logicos: && exige todas as condições; || aceita pelo menos uma. Erro comum: confundir = (atribui) com === (compara). Outra boa prática: quebrar condições complexas em variáveis booleanas com nomes claros.",
       "order": 8,
       "tags": [
         "js",
         "boolean",
-        "comparacao",
+        "comparação",
         "logica"
       ]
     },
@@ -2206,7 +2206,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "metodos-array",
       "title": "Metodos de array: map, filter e reduce",
-      "content": "Objetivo: transformar listas sem loops manuais. map cria nova lista transformada, filter seleciona itens por condicao e reduce acumula um resultado unico. Exemplo: precos.reduce((total, p) => total + p, 0). Erro comum: esquecer o valor inicial do reduce e gerar comportamento inesperado em listas vazias.",
+      "content": "Objetivo: transformar listas sem loops manuais. map cria nova lista transformada, filter seleciona itens por condição e reduce acumula um resultado unico. Exemplo: precos.reduce((total, p) => total + p, 0). Erro comum: esquecer o valor inicial do reduce e gerar comportamento inesperado em listas vazias.",
       "order": 9,
       "tags": [
         "js",
@@ -2222,7 +2222,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "dom-eventos",
       "title": "DOM e eventos",
-      "content": "Objetivo: conectar JavaScript com a interface. Use document.querySelector para selecionar elementos e addEventListener para reagir a acoes do usuario. Padrao util: selecione, valide se o elemento existe e depois atualize textContent ou classes. Erro comum: tentar manipular elemento nulo sem verificar.",
+      "content": "Objetivo: conectar JavaScript com a interface. Use document.querySelector para selecionar elementos e addEventListener para reagir a acoes do usuario. Padrão util: selecione, valide se o elemento existe e depois atualize textContent ou classes. Erro comum: tentar manipular elemento nulo sem verificar.",
       "order": 10,
       "tags": [
         "js",
@@ -2237,7 +2237,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "async-await",
       "title": "Async/Await e requisicoes",
-      "content": "Objetivo: lidar com operacoes que demoram, como chamadas de API. async transforma a funcao para trabalhar com Promises e await pausa ate o resultado chegar. Fluxo basico: await fetch(...), await resposta.json() e retorno final. Erro comum: esquecer await e tentar usar dados antes da resposta estar pronta.",
+      "content": "Objetivo: lidar com operações que demoram, como chamadas de API. async transforma a função para trabalhar com Promises e await pausa ate o resultado chegar. Fluxo básico: await fetch(...), await resposta.json() e retorno final. Erro comum: esquecer await e tentar usar dados antes da resposta estar pronta.",
       "order": 11,
       "tags": [
         "js",
@@ -2253,7 +2253,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "tratamento-erros",
       "title": "Tratamento de erros com try/catch",
-      "content": "Objetivo: evitar que seu programa quebre quando algo inesperado acontece. Use try para executar o codigo que pode falhar e catch para tratar o erro com seguranca. Regra pratica: trate erro perto da origem e devolva um resultado previsivel (null, false ou mensagem). Erro comum: capturar erro e ignorar completamente sem retornar nada util.",
+      "content": "Objetivo: evitar que seu programa quebre quando algo inesperado acontece. Use try para executar o codigo que pode falhar e catch para tratar o erro com seguranca. Regra prática: trate erro perto da origem e devolva um resultado previsivel (null, false ou mensagem). Erro comum: capturar erro e ignorar completamente sem retornar nada util.",
       "order": 12,
       "tags": [
         "js",
@@ -2267,8 +2267,8 @@ export const learningSeed: LearningSeed = {
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "promises",
-      "title": "Promises na pratica",
-      "content": "Objetivo: controlar operacoes assincronas com sucesso e falha. Promise.resolve entrega um valor com sucesso e Promise.reject representa erro. Com then voce trata sucesso; com catch trata falha. Em codigo moderno, async/await torna esse fluxo mais legivel. Erro comum: esquecer o catch e deixar erro sem tratamento.",
+      "title": "Promises na prática",
+      "content": "Objetivo: controlar operações assincronas com sucesso e falha. Promise.resolve entrega um valor com sucesso e Promise.reject representa erro. Com then você trata sucesso; com catch trata falha. Em codigo moderno, async/await torna esse fluxo mais legivel. Erro comum: esquecer o catch e deixar erro sem tratamento.",
       "order": 13,
       "tags": [
         "js",
@@ -2283,8 +2283,8 @@ export const learningSeed: LearningSeed = {
       "module_id": "module-js-basics",
       "language": "javascript",
       "concept": "classes",
-      "title": "Classes e objetos na pratica",
-      "content": "Objetivo: organizar dados e comportamentos relacionados. Com class voce define um molde e com new cria objetos. O constructor recebe os dados iniciais e metodos ficam no corpo da classe. Erro comum: esquecer this ao acessar propriedades da instancia.",
+      "title": "Classes e objetos na prática",
+      "content": "Objetivo: organizar dados e comportamentos relacionados. Com class você define um molde e com new cria objetos. O constructor recebe os dados iniciais e metodos ficam no corpo da classe. Erro comum: esquecer this ao acessar propriedades da instancia.",
       "order": 14,
       "tags": [
         "js",
@@ -2300,12 +2300,12 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "modularizacao",
       "title": "Modularizacao de codigo",
-      "content": "Objetivo: dividir o codigo em partes pequenas e reutilizaveis. Um modulo deve ter responsabilidade clara, com funcoes de entrada e saida bem definidas. Em projetos reais usamos export/import para ligar modulos. Erro comum: criar modulo gigante com regras de varios assuntos misturados.",
+      "content": "Objetivo: dividir o codigo em partes pequenas e reutilizaveis. Um módulo deve ter responsabilidade clara, com funções de entrada e saida bem definidas. Em projetos reais usamos export/import para ligar módulos. Erro comum: criar módulo gigante com regras de varios assuntos misturados.",
       "order": 15,
       "tags": [
         "js",
-        "modulo",
-        "organizacao",
+        "módulo",
+        "organização",
         "reuso"
       ]
     },
@@ -2315,7 +2315,7 @@ export const learningSeed: LearningSeed = {
       "language": "javascript",
       "concept": "testes",
       "title": "Testes unitarios para iniciantes",
-      "content": "Objetivo: garantir que funcoes continuem corretas ao evoluir o codigo. Um teste unitario valida uma regra pequena, com entrada previsivel e saida esperada. Padrao util: organize por cenarios de sucesso, limite e erro. Erro comum: testar varias responsabilidades ao mesmo tempo e nao saber onde o bug aconteceu.",
+      "content": "Objetivo: garantir que funções continuem corretas ao evoluir o codigo. Um teste unitario valida uma regra pequena, com entrada previsivel e saida esperada. Padrão util: organize por cenarios de sucesso, limite e erro. Erro comum: testar varias responsabilidades ao mesmo tempo e não saber onde o bug aconteceu.",
       "order": 16,
       "tags": [
         "js",
@@ -2347,7 +2347,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e a Web."
+          "text": "Pense no conceito central da lição: O que e a Web."
         },
         {
           "level": 2,
@@ -2383,11 +2383,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: O que e a Web."
+          "text": "Revise o ponto principal da lição: O que e a Web."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2402,7 +2402,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l1-practice",
       "lesson_id": "legacy-html-u1-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2419,11 +2419,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e a Web."
+          "text": "Pense no conceito central da lição: O que e a Web."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2455,11 +2455,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: O que e HTML."
+          "text": "Revise o ponto principal da lição: O que e HTML."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2474,7 +2474,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l2-4",
       "lesson_id": "legacy-html-u1-l2",
       "type": "blank",
-      "prompt": "HTML e uma linguagem de: Digite a resposta correta.",
+      "prompt": "HTML é uma linguagem de: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2491,7 +2491,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e HTML."
+          "text": "Pense no conceito central da lição: O que e HTML."
         },
         {
           "level": 2,
@@ -2510,7 +2510,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l2-practice",
       "lesson_id": "legacy-html-u1-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2527,11 +2527,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e HTML."
+          "text": "Pense no conceito central da lição: O que e HTML."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2563,7 +2563,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML vs CSS vs JavaScript."
+          "text": "Pense no conceito central da lição: HTML vs CSS vs JavaScript."
         },
         {
           "level": 2,
@@ -2599,7 +2599,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML vs CSS vs JavaScript."
+          "text": "Pense no conceito central da lição: HTML vs CSS vs JavaScript."
         },
         {
           "level": 2,
@@ -2618,7 +2618,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l3-practice",
       "lesson_id": "legacy-html-u1-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2635,11 +2635,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML vs CSS vs JavaScript."
+          "text": "Pense no conceito central da lição: HTML vs CSS vs JavaScript."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2671,11 +2671,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Como o navegador interpreta HTML."
+          "text": "Revise o ponto principal da lição: Como o navegador interpreta HTML."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2707,7 +2707,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Como o navegador interpreta HTML."
+          "text": "Pense no conceito central da lição: Como o navegador interpreta HTML."
         },
         {
           "level": 2,
@@ -2726,7 +2726,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l4-practice",
       "lesson_id": "legacy-html-u1-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2743,11 +2743,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Como o navegador interpreta HTML."
+          "text": "Pense no conceito central da lição: Como o navegador interpreta HTML."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -2784,11 +2784,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: O que sao tags."
+          "text": "Revise o ponto principal da lição: O que são tags."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2804,7 +2804,7 @@ export const learningSeed: LearningSeed = {
       "lesson_id": "legacy-html-u1-l5",
       "type": "blank",
       "prompt": "Feche a tag corretamente:",
-      "starter_code": "<h1>Titulo<{{blank1}}h1>",
+      "starter_code": "<h1>Título<{{blank1}}h1>",
       "validations": [
         {
           "type": "blank",
@@ -2820,18 +2820,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: O que sao tags."
+          "text": "Revise o ponto principal da lição: O que são tags."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
           "text": "Resposta esperada: /"
         }
       ],
-      "solution": "<h1>Titulo</h1>",
+      "solution": "<h1>Título</h1>",
       "difficulty": "easy",
       "estimated_time": 40
     },
@@ -2839,7 +2839,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l5-practice",
       "lesson_id": "legacy-html-u1-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2847,7 +2847,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "O que sao tags",
+              "answer": "O que são tags",
               "placeholder": "resposta"
             }
           ]
@@ -2856,18 +2856,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que sao tags."
+          "text": "Pense no conceito central da lição: O que são tags."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: O que sao tags"
+          "text": "Resposta esperada: O que são tags"
         }
       ],
-      "solution": "O que sao tags",
+      "solution": "O que são tags",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -2892,11 +2892,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: O que sao atributos."
+          "text": "Revise o ponto principal da lição: O que são atributos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -2928,7 +2928,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que sao atributos."
+          "text": "Pense no conceito central da lição: O que são atributos."
         },
         {
           "level": 2,
@@ -2947,7 +2947,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l6-practice",
       "lesson_id": "legacy-html-u1-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -2955,7 +2955,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "O que sao atributos",
+              "answer": "O que são atributos",
               "placeholder": "resposta"
             }
           ]
@@ -2964,18 +2964,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que sao atributos."
+          "text": "Pense no conceito central da lição: O que são atributos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: O que sao atributos"
+          "text": "Resposta esperada: O que são atributos"
         }
       ],
-      "solution": "O que sao atributos",
+      "solution": "O que são atributos",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -2991,7 +2991,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao",
+              "answer": "Não",
               "placeholder": "resposta"
             }
           ]
@@ -3000,7 +3000,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML nao e linguagem de programacao."
+          "text": "Pense no conceito central da lição: HTML não e linguagem de programacao."
         },
         {
           "level": 2,
@@ -3008,10 +3008,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao"
+          "text": "Resposta esperada: Não"
         }
       ],
-      "solution": "Nao",
+      "solution": "Não",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3036,7 +3036,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML nao e linguagem de programacao."
+          "text": "Pense no conceito central da lição: HTML não e linguagem de programacao."
         },
         {
           "level": 2,
@@ -3055,7 +3055,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u1-l7-practice",
       "lesson_id": "legacy-html-u1-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3063,7 +3063,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "HTML nao e linguagem de programacao",
+              "answer": "HTML não e linguagem de programacao",
               "placeholder": "resposta"
             }
           ]
@@ -3072,18 +3072,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML nao e linguagem de programacao."
+          "text": "Pense no conceito central da lição: HTML não e linguagem de programacao."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: HTML nao e linguagem de programacao"
+          "text": "Resposta esperada: HTML não e linguagem de programacao"
         }
       ],
-      "solution": "HTML nao e linguagem de programacao",
+      "solution": "HTML não e linguagem de programacao",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3091,7 +3091,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l1-3",
       "lesson_id": "legacy-html-u2-l1",
       "type": "blank",
-      "prompt": "Complete a declaracao:",
+      "prompt": "Complete a declaração:",
       "starter_code": "<!{{blank1}} html>",
       "validations": [
         {
@@ -3108,11 +3108,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <!DOCTYPE html>."
+          "text": "Revise o ponto principal da lição: <!DOCTYPE html>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3144,7 +3144,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <!DOCTYPE html>."
+          "text": "Pense no conceito central da lição: <!DOCTYPE html>."
         },
         {
           "level": 2,
@@ -3163,7 +3163,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l1-practice",
       "lesson_id": "legacy-html-u2-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3171,7 +3171,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Tema da licao",
+              "answer": "Tema da lição",
               "placeholder": "resposta"
             }
           ]
@@ -3180,18 +3180,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <!DOCTYPE html>."
+          "text": "Pense no conceito central da lição: <!DOCTYPE html>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Tema da licao"
+          "text": "Resposta esperada: Tema da lição"
         }
       ],
-      "solution": "Tema da licao",
+      "solution": "Tema da lição",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3221,11 +3221,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <html>."
+          "text": "Revise o ponto principal da lição: Tag <html>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3257,11 +3257,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <html>."
+          "text": "Revise o ponto principal da lição: Tag <html>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3276,7 +3276,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l2-practice",
       "lesson_id": "legacy-html-u2-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento html com classe:",
+      "prompt": "Prática guiada: Crie um elemento html com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -3298,11 +3298,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <html>."
+          "text": "Revise o ponto principal da lição: Tag <html>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3339,11 +3339,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <head>."
+          "text": "Revise o ponto principal da lição: Tag <head>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3358,7 +3358,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l3-4",
       "lesson_id": "legacy-html-u2-l3",
       "type": "blank",
-      "prompt": "O conteudo do <head> aparece na pagina? Digite a resposta correta.",
+      "prompt": "O conteúdo do <head> aparece na página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3366,7 +3366,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao diretamente",
+              "answer": "Não diretamente",
               "placeholder": "resposta"
             }
           ]
@@ -3375,7 +3375,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Tag <head>."
+          "text": "Pense no conceito central da lição: Tag <head>."
         },
         {
           "level": 2,
@@ -3383,10 +3383,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao diretamente"
+          "text": "Resposta esperada: Não diretamente"
         }
       ],
-      "solution": "Nao diretamente",
+      "solution": "Não diretamente",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3394,7 +3394,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l3-practice",
       "lesson_id": "legacy-html-u2-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento head com classe:",
+      "prompt": "Prática guiada: Crie um elemento head com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -3416,11 +3416,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <head>."
+          "text": "Revise o ponto principal da lição: Tag <head>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3435,7 +3435,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l4-3",
       "lesson_id": "legacy-html-u2-l4",
       "type": "blank",
-      "prompt": "Onde vai o conteudo visivel?",
+      "prompt": "Onde vai o conteúdo visivel?",
       "starter_code": "<html>\n <head></head>\n <{{blank1}}>\n <h1>Ola!</h1>\n </{{blank2}}>\n</html>",
       "validations": [
         {
@@ -3457,11 +3457,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <body>."
+          "text": "Revise o ponto principal da lição: Tag <body>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3493,7 +3493,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Tag <body>."
+          "text": "Pense no conceito central da lição: Tag <body>."
         },
         {
           "level": 2,
@@ -3512,7 +3512,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l4-practice",
       "lesson_id": "legacy-html-u2-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento body com classe:",
+      "prompt": "Prática guiada: Crie um elemento body com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -3534,11 +3534,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <body>."
+          "text": "Revise o ponto principal da lição: Tag <body>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3553,7 +3553,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l5-3",
       "lesson_id": "legacy-html-u2-l5",
       "type": "blank",
-      "prompt": "Adicione um titulo:",
+      "prompt": "Adicione um título:",
       "starter_code": "<head>\n <{{blank1}}>Meu Site</{{blank2}}>\n</head>",
       "validations": [
         {
@@ -3575,11 +3575,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <title>."
+          "text": "Revise o ponto principal da lição: <title>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3611,11 +3611,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <title>."
+          "text": "Pense no conceito central da lição: <title>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: No corpo da pagina / No rodape."
+          "text": "Evite estas alternativas: No corpo da página / No rodape."
         },
         {
           "level": 3,
@@ -3630,7 +3630,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l5-practice",
       "lesson_id": "legacy-html-u2-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento title com classe:",
+      "prompt": "Prática guiada: Crie um elemento title com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -3652,11 +3652,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <title>."
+          "text": "Revise o ponto principal da lição: <title>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3671,7 +3671,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l6-3",
       "lesson_id": "legacy-html-u2-l6",
       "type": "blank",
-      "prompt": "Defina a codificacao:",
+      "prompt": "Defina a codificação:",
       "starter_code": "<meta {{blank1}}=\"UTF-8\">",
       "validations": [
         {
@@ -3688,11 +3688,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <meta charset>."
+          "text": "Revise o ponto principal da lição: <meta charset>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3707,7 +3707,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l6-4",
       "lesson_id": "legacy-html-u2-l6",
       "type": "blank",
-      "prompt": "Qual codificacao suporta acentos? Digite a resposta correta.",
+      "prompt": "Qual codificação suporta acentos? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3724,7 +3724,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <meta charset>."
+          "text": "Pense no conceito central da lição: <meta charset>."
         },
         {
           "level": 2,
@@ -3743,7 +3743,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l6-practice",
       "lesson_id": "legacy-html-u2-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3751,7 +3751,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Tema da licao",
+              "answer": "Tema da lição",
               "placeholder": "resposta"
             }
           ]
@@ -3760,18 +3760,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <meta charset>."
+          "text": "Pense no conceito central da lição: <meta charset>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Tema da licao"
+          "text": "Resposta esperada: Tema da lição"
         }
       ],
-      "solution": "Tema da licao",
+      "solution": "Tema da lição",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3796,11 +3796,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <meta name=\"viewport\">."
+          "text": "Revise o ponto principal da lição: <meta name=\"viewport\">."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3815,7 +3815,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l7-4",
       "lesson_id": "legacy-html-u2-l7",
       "type": "blank",
-      "prompt": "A meta viewport e importante para: Digite a resposta correta.",
+      "prompt": "A meta viewport é importante para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3832,7 +3832,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <meta name=\"viewport\">."
+          "text": "Pense no conceito central da lição: <meta name=\"viewport\">."
         },
         {
           "level": 2,
@@ -3851,7 +3851,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l7-practice",
       "lesson_id": "legacy-html-u2-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3859,7 +3859,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Tema da licao",
+              "answer": "Tema da lição",
               "placeholder": "resposta"
             }
           ]
@@ -3868,18 +3868,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <meta name=\"viewport\">."
+          "text": "Pense no conceito central da lição: <meta name=\"viewport\">."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Tema da licao"
+          "text": "Resposta esperada: Tema da lição"
         }
       ],
-      "solution": "Tema da licao",
+      "solution": "Tema da lição",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3909,11 +3909,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Comentarios HTML."
+          "text": "Revise o ponto principal da lição: Comentarios HTML."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -3928,7 +3928,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l8-4",
       "lesson_id": "legacy-html-u2-l8",
       "type": "blank",
-      "prompt": "Comentarios aparecem na pagina? Digite a resposta correta.",
+      "prompt": "Comentarios aparecem na página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3936,7 +3936,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao",
+              "answer": "Não",
               "placeholder": "resposta"
             }
           ]
@@ -3945,7 +3945,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Comentarios HTML."
+          "text": "Pense no conceito central da lição: Comentarios HTML."
         },
         {
           "level": 2,
@@ -3953,10 +3953,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao"
+          "text": "Resposta esperada: Não"
         }
       ],
-      "solution": "Nao",
+      "solution": "Não",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -3964,7 +3964,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l8-practice",
       "lesson_id": "legacy-html-u2-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -3981,11 +3981,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Comentarios HTML."
+          "text": "Pense no conceito central da lição: Comentarios HTML."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -4017,7 +4017,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Indentacao e organizacao."
+          "text": "Pense no conceito central da lição: Indentação e organização."
         },
         {
           "level": 2,
@@ -4036,7 +4036,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l9-4",
       "lesson_id": "legacy-html-u2-l9",
       "type": "blank",
-      "prompt": "Indentacao afeta o funcionamento? Digite a resposta correta.",
+      "prompt": "Indentação afeta o funcionamento? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -4044,7 +4044,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao, so melhora a leitura",
+              "answer": "Não, so melhora a leitura",
               "placeholder": "resposta"
             }
           ]
@@ -4053,7 +4053,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Indentacao e organizacao."
+          "text": "Pense no conceito central da lição: Indentação e organização."
         },
         {
           "level": 2,
@@ -4061,10 +4061,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao, so melhora a leitura"
+          "text": "Resposta esperada: Não, so melhora a leitura"
         }
       ],
-      "solution": "Nao, so melhora a leitura",
+      "solution": "Não, so melhora a leitura",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -4072,7 +4072,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u2-l9-practice",
       "lesson_id": "legacy-html-u2-l9",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -4080,7 +4080,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Indentacao e organizacao",
+              "answer": "Indentação e organização",
               "placeholder": "resposta"
             }
           ]
@@ -4089,18 +4089,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Indentacao e organizacao."
+          "text": "Pense no conceito central da lição: Indentação e organização."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Indentacao e organizacao"
+          "text": "Resposta esperada: Indentação e organização"
         }
       ],
-      "solution": "Indentacao e organizacao",
+      "solution": "Indentação e organização",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -4108,7 +4108,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l1-2",
       "lesson_id": "legacy-html-u3-l1",
       "type": "blank",
-      "prompt": "Crie o titulo principal:",
+      "prompt": "Crie o título principal:",
       "starter_code": "<{{blank1}}>Bem-vindo ao meu site</{{blank2}}>",
       "validations": [
         {
@@ -4130,11 +4130,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Titulos <h1> a <h6>."
+          "text": "Revise o ponto principal da lição: Titulos <h1> a <h6>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4149,7 +4149,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l1-3",
       "lesson_id": "legacy-html-u3-l1",
       "type": "blank",
-      "prompt": "Qual e o maior titulo? Digite a resposta correta.",
+      "prompt": "Qual e o maior título? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -4166,7 +4166,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Titulos <h1> a <h6>."
+          "text": "Pense no conceito central da lição: Titulos <h1> a <h6>."
         },
         {
           "level": 2,
@@ -4185,7 +4185,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l1-4",
       "lesson_id": "legacy-html-u3-l1",
       "type": "blank",
-      "prompt": "Crie um subtitulo (nivel 2):",
+      "prompt": "Crie um subtitulo (nível 2):",
       "starter_code": "<{{blank1}}>Sobre Nos</{{blank2}}>",
       "validations": [
         {
@@ -4207,11 +4207,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Titulos <h1> a <h6>."
+          "text": "Revise o ponto principal da lição: Titulos <h1> a <h6>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4226,7 +4226,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l1-practice",
       "lesson_id": "legacy-html-u3-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento h1 com classe:",
+      "prompt": "Prática guiada: Crie um elemento h1 com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -4248,11 +4248,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Titulos <h1> a <h6>."
+          "text": "Revise o ponto principal da lição: Titulos <h1> a <h6>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4289,11 +4289,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Paragrafos <p>."
+          "text": "Revise o ponto principal da lição: Paragrafos <p>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4308,7 +4308,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l2-3",
       "lesson_id": "legacy-html-u3-l2",
       "type": "blank",
-      "prompt": "Paragrafos sao elementos: Digite a resposta correta.",
+      "prompt": "Paragrafos são elementos: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -4325,7 +4325,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Paragrafos <p>."
+          "text": "Pense no conceito central da lição: Paragrafos <p>."
         },
         {
           "level": 2,
@@ -4344,7 +4344,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l2-practice",
       "lesson_id": "legacy-html-u3-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento p com classe:",
+      "prompt": "Prática guiada: Crie um elemento p com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -4366,11 +4366,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Paragrafos <p>."
+          "text": "Revise o ponto principal da lição: Paragrafos <p>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4402,11 +4402,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Quebra de linha <br>."
+          "text": "Revise o ponto principal da lição: Quebra de linha <br>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4429,7 +4429,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao",
+              "answer": "Não",
               "placeholder": "resposta"
             }
           ]
@@ -4438,7 +4438,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Quebra de linha <br>."
+          "text": "Pense no conceito central da lição: Quebra de linha <br>."
         },
         {
           "level": 2,
@@ -4446,10 +4446,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao"
+          "text": "Resposta esperada: Não"
         }
       ],
-      "solution": "Nao",
+      "solution": "Não",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -4457,7 +4457,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l3-practice",
       "lesson_id": "legacy-html-u3-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -4474,7 +4474,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Quebra de linha <br>."
+          "text": "Pense no conceito central da lição: Quebra de linha <br>."
         },
         {
           "level": 2,
@@ -4494,7 +4494,7 @@ export const learningSeed: LearningSeed = {
       "lesson_id": "legacy-html-u3-l4",
       "type": "blank",
       "prompt": "Adicione uma linha separadora:",
-      "starter_code": "<p>Secao 1</p>\n<{{blank1}}>\n<p>Secao 2</p>",
+      "starter_code": "<p>Seção 1</p>\n<{{blank1}}>\n<p>Seção 2</p>",
       "validations": [
         {
           "type": "blank",
@@ -4510,18 +4510,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Linha horizontal <hr>."
+          "text": "Revise o ponto principal da lição: Linha horizontal <hr>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
           "text": "Resposta esperada: hr"
         }
       ],
-      "solution": "<p>Secao 1</p>\n<hr>\n<p>Secao 2</p>",
+      "solution": "<p>Seção 1</p>\n<hr>\n<p>Seção 2</p>",
       "difficulty": "easy",
       "estimated_time": 40
     },
@@ -4546,7 +4546,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Linha horizontal <hr>."
+          "text": "Pense no conceito central da lição: Linha horizontal <hr>."
         },
         {
           "level": 2,
@@ -4565,7 +4565,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l4-practice",
       "lesson_id": "legacy-html-u3-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -4582,7 +4582,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Linha horizontal <hr>."
+          "text": "Pense no conceito central da lição: Linha horizontal <hr>."
         },
         {
           "level": 2,
@@ -4601,8 +4601,8 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l5-2",
       "lesson_id": "legacy-html-u3-l5",
       "type": "blank",
-      "prompt": "Deixe \"atencao\" em negrito:",
-      "starter_code": "<p><{{blank1}}>Atencao</{{blank2}}>: leia com cuidado.</p>",
+      "prompt": "Deixe \"atenção\" em negrito:",
+      "starter_code": "<p><{{blank1}}>Atenção</{{blank2}}>: leia com cuidado.</p>",
       "validations": [
         {
           "type": "blank",
@@ -4623,18 +4623,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Negrito <strong>."
+          "text": "Revise o ponto principal da lição: Negrito <strong>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
           "text": "Resposta esperada: strong"
         }
       ],
-      "solution": "<p><strong>Atencao</strong>: leia com cuidado.</p>",
+      "solution": "<p><strong>Atenção</strong>: leia com cuidado.</p>",
       "difficulty": "medium",
       "estimated_time": 55
     },
@@ -4642,7 +4642,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l5-4",
       "lesson_id": "legacy-html-u3-l5",
       "type": "blank",
-      "prompt": "Qual tag indica importancia semantica? Digite a resposta correta.",
+      "prompt": "Qual tag indica importancia semântica? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -4659,7 +4659,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Negrito <strong>."
+          "text": "Pense no conceito central da lição: Negrito <strong>."
         },
         {
           "level": 2,
@@ -4678,7 +4678,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l5-practice",
       "lesson_id": "legacy-html-u3-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento strong com classe:",
+      "prompt": "Prática guiada: Crie um elemento strong com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -4700,11 +4700,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Negrito <strong>."
+          "text": "Revise o ponto principal da lição: Negrito <strong>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4741,11 +4741,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Italico <em>."
+          "text": "Revise o ponto principal da lição: Italico <em>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4777,7 +4777,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Italico <em>."
+          "text": "Pense no conceito central da lição: Italico <em>."
         },
         {
           "level": 2,
@@ -4796,7 +4796,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l6-practice",
       "lesson_id": "legacy-html-u3-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento em com classe:",
+      "prompt": "Prática guiada: Crie um elemento em com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -4818,11 +4818,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Italico <em>."
+          "text": "Revise o ponto principal da lição: Italico <em>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4859,11 +4859,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Texto pre-formatado <pre>."
+          "text": "Revise o ponto principal da lição: Texto pre-formatado <pre>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4895,7 +4895,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Texto pre-formatado <pre>."
+          "text": "Pense no conceito central da lição: Texto pre-formatado <pre>."
         },
         {
           "level": 2,
@@ -4914,7 +4914,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l7-practice",
       "lesson_id": "legacy-html-u3-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento pre com classe:",
+      "prompt": "Prática guiada: Crie um elemento pre com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -4936,11 +4936,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Texto pre-formatado <pre>."
+          "text": "Revise o ponto principal da lição: Texto pre-formatado <pre>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -4977,11 +4977,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Codigo <code>."
+          "text": "Revise o ponto principal da lição: Codigo <code>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5013,7 +5013,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Codigo <code>."
+          "text": "Pense no conceito central da lição: Codigo <code>."
         },
         {
           "level": 2,
@@ -5032,7 +5032,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l8-practice",
       "lesson_id": "legacy-html-u3-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento code com classe:",
+      "prompt": "Prática guiada: Crie um elemento code com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -5054,11 +5054,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Codigo <code>."
+          "text": "Revise o ponto principal da lição: Codigo <code>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5095,11 +5095,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Citacoes <blockquote>."
+          "text": "Revise o ponto principal da lição: Citacoes <blockquote>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5131,7 +5131,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Citacoes <blockquote>."
+          "text": "Pense no conceito central da lição: Citacoes <blockquote>."
         },
         {
           "level": 2,
@@ -5150,7 +5150,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u3-l9-practice",
       "lesson_id": "legacy-html-u3-l9",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento blockquote com classe:",
+      "prompt": "Prática guiada: Crie um elemento blockquote com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -5172,11 +5172,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Citacoes <blockquote>."
+          "text": "Revise o ponto principal da lição: Citacoes <blockquote>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5213,11 +5213,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <a>."
+          "text": "Revise o ponto principal da lição: Tag <a>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5249,7 +5249,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Tag <a>."
+          "text": "Pense no conceito central da lição: Tag <a>."
         },
         {
           "level": 2,
@@ -5268,7 +5268,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l1-practice",
       "lesson_id": "legacy-html-u4-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Complete o link com href:",
+      "prompt": "Prática guiada: Complete o link com href:",
       "starter_code": "<a {{blank1}}=\"https://exemplo.com\">Site</a>",
       "validations": [
         {
@@ -5285,11 +5285,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <a>."
+          "text": "Revise o ponto principal da lição: Tag <a>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5321,11 +5321,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Atributo href."
+          "text": "Revise o ponto principal da lição: Atributo href."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5357,7 +5357,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo href."
+          "text": "Pense no conceito central da lição: Atributo href."
         },
         {
           "level": 2,
@@ -5376,7 +5376,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l2-practice",
       "lesson_id": "legacy-html-u4-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -5393,11 +5393,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo href."
+          "text": "Pense no conceito central da lição: Atributo href."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -5429,11 +5429,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Links externos."
+          "text": "Revise o ponto principal da lição: Links externos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5465,7 +5465,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links externos."
+          "text": "Pense no conceito central da lição: Links externos."
         },
         {
           "level": 2,
@@ -5484,7 +5484,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l3-practice",
       "lesson_id": "legacy-html-u4-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -5501,11 +5501,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links externos."
+          "text": "Pense no conceito central da lição: Links externos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -5520,7 +5520,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l4-2",
       "lesson_id": "legacy-html-u4-l4",
       "type": "blank",
-      "prompt": "Link para pagina local:",
+      "prompt": "Link para página local:",
       "starter_code": "<a href=\"{{blank1}}\">Sobre</a>",
       "validations": [
         {
@@ -5537,11 +5537,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Links internos."
+          "text": "Revise o ponto principal da lição: Links internos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5573,7 +5573,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links internos."
+          "text": "Pense no conceito central da lição: Links internos."
         },
         {
           "level": 2,
@@ -5592,7 +5592,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l4-practice",
       "lesson_id": "legacy-html-u4-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -5609,11 +5609,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links internos."
+          "text": "Pense no conceito central da lição: Links internos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -5628,7 +5628,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l5-2",
       "lesson_id": "legacy-html-u4-l5",
       "type": "blank",
-      "prompt": "Link para secao com id \"contato\":",
+      "prompt": "Link para seção com id \"contato\":",
       "starter_code": "<a href=\"{{blank1}}contato\">Ir para Contato</a>",
       "validations": [
         {
@@ -5645,11 +5645,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Ancoras."
+          "text": "Revise o ponto principal da lição: Ancoras."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5681,11 +5681,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Ancoras."
+          "text": "Pense no conceito central da lição: Ancoras."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Outro site / Outra pagina."
+          "text": "Evite estas alternativas: Outro site / Outra página."
         },
         {
           "level": 3,
@@ -5700,7 +5700,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l5-practice",
       "lesson_id": "legacy-html-u4-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -5717,11 +5717,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Ancoras."
+          "text": "Pense no conceito central da lição: Ancoras."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -5753,11 +5753,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Atributo target."
+          "text": "Revise o ponto principal da lição: Atributo target."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5789,7 +5789,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo target."
+          "text": "Pense no conceito central da lição: Atributo target."
         },
         {
           "level": 2,
@@ -5808,7 +5808,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l6-practice",
       "lesson_id": "legacy-html-u4-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -5825,11 +5825,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo target."
+          "text": "Pense no conceito central da lição: Atributo target."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -5861,11 +5861,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Atributo rel."
+          "text": "Revise o ponto principal da lição: Atributo rel."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -5888,7 +5888,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Indicar ao Google para nao seguir",
+              "answer": "Indicar ao Google para não seguir",
               "placeholder": "resposta"
             }
           ]
@@ -5897,7 +5897,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo rel."
+          "text": "Pense no conceito central da lição: Atributo rel."
         },
         {
           "level": 2,
@@ -5905,10 +5905,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Indicar ao Google para nao seguir"
+          "text": "Resposta esperada: Indicar ao Google para não seguir"
         }
       ],
-      "solution": "Indicar ao Google para nao seguir",
+      "solution": "Indicar ao Google para não seguir",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -5916,7 +5916,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l7-practice",
       "lesson_id": "legacy-html-u4-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -5933,11 +5933,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo rel."
+          "text": "Pense no conceito central da lição: Atributo rel."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -5969,11 +5969,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Links mailto."
+          "text": "Revise o ponto principal da lição: Links mailto."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6005,7 +6005,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links mailto."
+          "text": "Pense no conceito central da lição: Links mailto."
         },
         {
           "level": 2,
@@ -6024,7 +6024,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l8-practice",
       "lesson_id": "legacy-html-u4-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -6041,11 +6041,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links mailto."
+          "text": "Pense no conceito central da lição: Links mailto."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -6077,11 +6077,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Links tel."
+          "text": "Revise o ponto principal da lição: Links tel."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6113,7 +6113,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links tel."
+          "text": "Pense no conceito central da lição: Links tel."
         },
         {
           "level": 2,
@@ -6132,7 +6132,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u4-l9-practice",
       "lesson_id": "legacy-html-u4-l9",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -6149,11 +6149,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links tel."
+          "text": "Pense no conceito central da lição: Links tel."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -6185,11 +6185,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <img>."
+          "text": "Revise o ponto principal da lição: Tag <img>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6212,7 +6212,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao",
+              "answer": "Não",
               "placeholder": "resposta"
             }
           ]
@@ -6221,7 +6221,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Tag <img>."
+          "text": "Pense no conceito central da lição: Tag <img>."
         },
         {
           "level": 2,
@@ -6229,10 +6229,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao"
+          "text": "Resposta esperada: Não"
         }
       ],
-      "solution": "Nao",
+      "solution": "Não",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -6240,7 +6240,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l1-practice",
       "lesson_id": "legacy-html-u5-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Complete a tag de imagem com src:",
+      "prompt": "Prática guiada: Complete a tag de imagem com src:",
       "starter_code": "<img {{blank1}}=\"foto.jpg\" alt=\"Perfil\">",
       "validations": [
         {
@@ -6257,11 +6257,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <img>."
+          "text": "Revise o ponto principal da lição: Tag <img>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6293,11 +6293,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Atributo src."
+          "text": "Revise o ponto principal da lição: Atributo src."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6329,7 +6329,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo src."
+          "text": "Pense no conceito central da lição: Atributo src."
         },
         {
           "level": 2,
@@ -6348,7 +6348,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l2-practice",
       "lesson_id": "legacy-html-u5-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -6365,11 +6365,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo src."
+          "text": "Pense no conceito central da lição: Atributo src."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -6401,11 +6401,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Atributo alt."
+          "text": "Revise o ponto principal da lição: Atributo alt."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6437,7 +6437,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo alt."
+          "text": "Pense no conceito central da lição: Atributo alt."
         },
         {
           "level": 2,
@@ -6456,7 +6456,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l3-practice",
       "lesson_id": "legacy-html-u5-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -6473,11 +6473,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Atributo alt."
+          "text": "Pense no conceito central da lição: Atributo alt."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -6509,11 +6509,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tamanho de imagens."
+          "text": "Revise o ponto principal da lição: Tamanho de imagens."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6545,11 +6545,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tamanho de imagens."
+          "text": "Revise o ponto principal da lição: Tamanho de imagens."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6564,7 +6564,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l4-practice",
       "lesson_id": "legacy-html-u5-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -6581,11 +6581,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Tamanho de imagens."
+          "text": "Pense no conceito central da lição: Tamanho de imagens."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -6617,7 +6617,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Formatos de imagem."
+          "text": "Pense no conceito central da lição: Formatos de imagem."
         },
         {
           "level": 2,
@@ -6653,7 +6653,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Formatos de imagem."
+          "text": "Pense no conceito central da lição: Formatos de imagem."
         },
         {
           "level": 2,
@@ -6672,7 +6672,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l5-practice",
       "lesson_id": "legacy-html-u5-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -6689,11 +6689,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Formatos de imagem."
+          "text": "Pense no conceito central da lição: Formatos de imagem."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -6730,11 +6730,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <figure>."
+          "text": "Revise o ponto principal da lição: <figure>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6766,7 +6766,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <figure>."
+          "text": "Pense no conceito central da lição: <figure>."
         },
         {
           "level": 2,
@@ -6785,7 +6785,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l6-practice",
       "lesson_id": "legacy-html-u5-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento figure com classe:",
+      "prompt": "Prática guiada: Crie um elemento figure com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -6807,11 +6807,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <figure>."
+          "text": "Revise o ponto principal da lição: <figure>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6848,11 +6848,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <figcaption>."
+          "text": "Revise o ponto principal da lição: <figcaption>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6884,7 +6884,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <figcaption>."
+          "text": "Pense no conceito central da lição: <figcaption>."
         },
         {
           "level": 2,
@@ -6903,7 +6903,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l7-practice",
       "lesson_id": "legacy-html-u5-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento figcaption com classe:",
+      "prompt": "Prática guiada: Crie um elemento figcaption com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -6925,11 +6925,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <figcaption>."
+          "text": "Revise o ponto principal da lição: <figcaption>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -6966,11 +6966,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <audio>."
+          "text": "Revise o ponto principal da lição: <audio>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7002,7 +7002,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <audio>."
+          "text": "Pense no conceito central da lição: <audio>."
         },
         {
           "level": 2,
@@ -7021,7 +7021,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l8-practice",
       "lesson_id": "legacy-html-u5-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento audio com classe:",
+      "prompt": "Prática guiada: Crie um elemento audio com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7043,11 +7043,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <audio>."
+          "text": "Revise o ponto principal da lição: <audio>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7084,11 +7084,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <video>."
+          "text": "Revise o ponto principal da lição: <video>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7120,7 +7120,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <video>."
+          "text": "Pense no conceito central da lição: <video>."
         },
         {
           "level": 2,
@@ -7139,7 +7139,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u5-l9-practice",
       "lesson_id": "legacy-html-u5-l9",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento video com classe:",
+      "prompt": "Prática guiada: Crie um elemento video com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7161,11 +7161,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <video>."
+          "text": "Revise o ponto principal da lição: <video>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7180,7 +7180,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u6-l1-2",
       "lesson_id": "legacy-html-u6-l1",
       "type": "blank",
-      "prompt": "Crie uma lista nao ordenada:",
+      "prompt": "Crie uma lista não ordenada:",
       "starter_code": "<{{blank1}}>\n <li>Item 1</li>\n <li>Item 2</li>\n</{{blank2}}>",
       "validations": [
         {
@@ -7202,11 +7202,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Lista nao ordenada <ul>."
+          "text": "Revise o ponto principal da lição: Lista não ordenada <ul>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7238,7 +7238,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Lista nao ordenada <ul>."
+          "text": "Pense no conceito central da lição: Lista não ordenada <ul>."
         },
         {
           "level": 2,
@@ -7257,7 +7257,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u6-l1-practice",
       "lesson_id": "legacy-html-u6-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento ul com classe:",
+      "prompt": "Prática guiada: Crie um elemento ul com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7279,11 +7279,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Lista nao ordenada <ul>."
+          "text": "Revise o ponto principal da lição: Lista não ordenada <ul>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7320,11 +7320,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Lista ordenada <ol>."
+          "text": "Revise o ponto principal da lição: Lista ordenada <ol>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7356,7 +7356,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Lista ordenada <ol>."
+          "text": "Pense no conceito central da lição: Lista ordenada <ol>."
         },
         {
           "level": 2,
@@ -7375,7 +7375,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u6-l2-practice",
       "lesson_id": "legacy-html-u6-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento ol com classe:",
+      "prompt": "Prática guiada: Crie um elemento ol com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7397,11 +7397,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Lista ordenada <ol>."
+          "text": "Revise o ponto principal da lição: Lista ordenada <ol>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7438,11 +7438,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Itens <li>."
+          "text": "Revise o ponto principal da lição: Itens <li>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7465,7 +7465,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao",
+              "answer": "Não",
               "placeholder": "resposta"
             }
           ]
@@ -7474,7 +7474,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Itens <li>."
+          "text": "Pense no conceito central da lição: Itens <li>."
         },
         {
           "level": 2,
@@ -7482,10 +7482,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao"
+          "text": "Resposta esperada: Não"
         }
       ],
-      "solution": "Nao",
+      "solution": "Não",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -7493,7 +7493,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u6-l3-practice",
       "lesson_id": "legacy-html-u6-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento li com classe:",
+      "prompt": "Prática guiada: Crie um elemento li com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7515,11 +7515,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Itens <li>."
+          "text": "Revise o ponto principal da lição: Itens <li>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7551,7 +7551,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Listas aninhadas."
+          "text": "Pense no conceito central da lição: Listas aninhadas."
         },
         {
           "level": 2,
@@ -7570,7 +7570,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u6-l4-practice",
       "lesson_id": "legacy-html-u6-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie uma lista nao ordenada:",
+      "prompt": "Prática guiada: Crie uma lista não ordenada:",
       "starter_code": "<{{blank1}}>\n <li>Item</li>\n</{{blank2}}>",
       "validations": [
         {
@@ -7592,11 +7592,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Listas aninhadas."
+          "text": "Revise o ponto principal da lição: Listas aninhadas."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7633,11 +7633,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Lista de definicao <dl>."
+          "text": "Revise o ponto principal da lição: Lista de definicao <dl>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7669,7 +7669,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Lista de definicao <dl>."
+          "text": "Pense no conceito central da lição: Lista de definicao <dl>."
         },
         {
           "level": 2,
@@ -7688,7 +7688,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u6-l5-practice",
       "lesson_id": "legacy-html-u6-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento dl com classe:",
+      "prompt": "Prática guiada: Crie um elemento dl com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7710,11 +7710,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Lista de definicao <dl>."
+          "text": "Revise o ponto principal da lição: Lista de definicao <dl>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7751,11 +7751,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <table>."
+          "text": "Revise o ponto principal da lição: Tag <table>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7770,7 +7770,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l1-4",
       "lesson_id": "legacy-html-u7-l1",
       "type": "blank",
-      "prompt": "Tabelas sao para: Digite a resposta correta.",
+      "prompt": "Tabelas são para: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -7787,11 +7787,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Tag <table>."
+          "text": "Pense no conceito central da lição: Tag <table>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Layout de pagina."
+          "text": "Evite estas alternativas: Layout de página."
         },
         {
           "level": 3,
@@ -7806,7 +7806,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l1-practice",
       "lesson_id": "legacy-html-u7-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento table com classe:",
+      "prompt": "Prática guiada: Crie um elemento table com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7828,11 +7828,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <table>."
+          "text": "Revise o ponto principal da lição: Tag <table>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7869,11 +7869,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <tr>."
+          "text": "Revise o ponto principal da lição: <tr>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7905,7 +7905,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <tr>."
+          "text": "Pense no conceito central da lição: <tr>."
         },
         {
           "level": 2,
@@ -7924,7 +7924,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l2-practice",
       "lesson_id": "legacy-html-u7-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento tr com classe:",
+      "prompt": "Prática guiada: Crie um elemento tr com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -7946,11 +7946,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <tr>."
+          "text": "Revise o ponto principal da lição: <tr>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -7987,11 +7987,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <td>."
+          "text": "Revise o ponto principal da lição: <td>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8023,7 +8023,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <td>."
+          "text": "Pense no conceito central da lição: <td>."
         },
         {
           "level": 2,
@@ -8042,7 +8042,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l3-practice",
       "lesson_id": "legacy-html-u7-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento td com classe:",
+      "prompt": "Prática guiada: Crie um elemento td com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -8064,11 +8064,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <td>."
+          "text": "Revise o ponto principal da lição: <td>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8105,11 +8105,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <th>."
+          "text": "Revise o ponto principal da lição: <th>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8141,7 +8141,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <th>."
+          "text": "Pense no conceito central da lição: <th>."
         },
         {
           "level": 2,
@@ -8160,7 +8160,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l4-practice",
       "lesson_id": "legacy-html-u7-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento th com classe:",
+      "prompt": "Prática guiada: Crie um elemento th com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -8182,11 +8182,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <th>."
+          "text": "Revise o ponto principal da lição: <th>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8223,11 +8223,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <thead>."
+          "text": "Revise o ponto principal da lição: <thead>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8259,7 +8259,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <thead>."
+          "text": "Pense no conceito central da lição: <thead>."
         },
         {
           "level": 2,
@@ -8278,7 +8278,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l5-practice",
       "lesson_id": "legacy-html-u7-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento thead com classe:",
+      "prompt": "Prática guiada: Crie um elemento thead com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -8300,11 +8300,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <thead>."
+          "text": "Revise o ponto principal da lição: <thead>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8341,11 +8341,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <tbody>."
+          "text": "Revise o ponto principal da lição: <tbody>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8377,7 +8377,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <tbody>."
+          "text": "Pense no conceito central da lição: <tbody>."
         },
         {
           "level": 2,
@@ -8396,7 +8396,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l6-practice",
       "lesson_id": "legacy-html-u7-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento tbody com classe:",
+      "prompt": "Prática guiada: Crie um elemento tbody com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -8418,11 +8418,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <tbody>."
+          "text": "Revise o ponto principal da lição: <tbody>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8459,11 +8459,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <tfoot>."
+          "text": "Revise o ponto principal da lição: <tfoot>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8495,7 +8495,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <tfoot>."
+          "text": "Pense no conceito central da lição: <tfoot>."
         },
         {
           "level": 2,
@@ -8514,7 +8514,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l7-practice",
       "lesson_id": "legacy-html-u7-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento tfoot com classe:",
+      "prompt": "Prática guiada: Crie um elemento tfoot com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -8536,11 +8536,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <tfoot>."
+          "text": "Revise o ponto principal da lição: <tfoot>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8572,11 +8572,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: colspan e rowspan."
+          "text": "Revise o ponto principal da lição: colspan e rowspan."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8608,11 +8608,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: colspan e rowspan."
+          "text": "Revise o ponto principal da lição: colspan e rowspan."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8644,7 +8644,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: colspan e rowspan."
+          "text": "Pense no conceito central da lição: colspan e rowspan."
         },
         {
           "level": 2,
@@ -8663,7 +8663,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l8-practice",
       "lesson_id": "legacy-html-u7-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Complete a estrutura da tabela:",
+      "prompt": "Prática guiada: Complete a estrutura da tabela:",
       "starter_code": "<table>\n <{{blank1}}>\n <td>Celula</td>\n </{{blank2}}>\n</table>",
       "validations": [
         {
@@ -8685,11 +8685,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: colspan e rowspan."
+          "text": "Revise o ponto principal da lição: colspan e rowspan."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8704,7 +8704,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l9-2",
       "lesson_id": "legacy-html-u7-l9",
       "type": "blank",
-      "prompt": "Adicione um titulo:",
+      "prompt": "Adicione um título:",
       "starter_code": "<table>\n <{{blank1}}>Vendas 2024</{{blank2}}>\n <thead>...</thead>\n</table>",
       "validations": [
         {
@@ -8726,11 +8726,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <caption>."
+          "text": "Revise o ponto principal da lição: <caption>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8762,11 +8762,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <caption>."
+          "text": "Pense no conceito central da lição: <caption>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Ultimo elemento."
+          "text": "Evite estas alternativas: Último elemento."
         },
         {
           "level": 3,
@@ -8781,7 +8781,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u7-l9-practice",
       "lesson_id": "legacy-html-u7-l9",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento caption com classe:",
+      "prompt": "Prática guiada: Crie um elemento caption com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -8803,11 +8803,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <caption>."
+          "text": "Revise o ponto principal da lição: <caption>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8844,11 +8844,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <form>."
+          "text": "Revise o ponto principal da lição: Tag <form>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8880,7 +8880,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Tag <form>."
+          "text": "Pense no conceito central da lição: Tag <form>."
         },
         {
           "level": 2,
@@ -8899,7 +8899,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l1-practice",
       "lesson_id": "legacy-html-u8-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento form com classe:",
+      "prompt": "Prática guiada: Crie um elemento form com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -8921,11 +8921,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Tag <form>."
+          "text": "Revise o ponto principal da lição: Tag <form>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8957,11 +8957,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: action."
+          "text": "Revise o ponto principal da lição: action."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -8993,7 +8993,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: action."
+          "text": "Pense no conceito central da lição: action."
         },
         {
           "level": 2,
@@ -9012,7 +9012,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l2-practice",
       "lesson_id": "legacy-html-u8-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9029,7 +9029,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: action."
+          "text": "Pense no conceito central da lição: action."
         },
         {
           "level": 2,
@@ -9065,11 +9065,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: method."
+          "text": "Revise o ponto principal da lição: method."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9101,7 +9101,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: method."
+          "text": "Pense no conceito central da lição: method."
         },
         {
           "level": 2,
@@ -9120,7 +9120,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l3-practice",
       "lesson_id": "legacy-html-u8-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9137,7 +9137,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: method."
+          "text": "Pense no conceito central da lição: method."
         },
         {
           "level": 2,
@@ -9173,11 +9173,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <input type=\"text\">."
+          "text": "Revise o ponto principal da lição: <input type=\"text\">."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9209,7 +9209,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"text\">."
+          "text": "Pense no conceito central da lição: <input type=\"text\">."
         },
         {
           "level": 2,
@@ -9228,7 +9228,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l4-practice",
       "lesson_id": "legacy-html-u8-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9245,7 +9245,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"text\">."
+          "text": "Pense no conceito central da lição: <input type=\"text\">."
         },
         {
           "level": 2,
@@ -9281,11 +9281,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <input type=\"email\">."
+          "text": "Revise o ponto principal da lição: <input type=\"email\">."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9300,7 +9300,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l5-4",
       "lesson_id": "legacy-html-u8-l5",
       "type": "blank",
-      "prompt": "type=\"email\" faz validacao: Digite a resposta correta.",
+      "prompt": "type=\"email\" faz validação: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9317,7 +9317,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"email\">."
+          "text": "Pense no conceito central da lição: <input type=\"email\">."
         },
         {
           "level": 2,
@@ -9336,7 +9336,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l5-practice",
       "lesson_id": "legacy-html-u8-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9353,7 +9353,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"email\">."
+          "text": "Pense no conceito central da lição: <input type=\"email\">."
         },
         {
           "level": 2,
@@ -9389,11 +9389,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <input type=\"password\">."
+          "text": "Revise o ponto principal da lição: <input type=\"password\">."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9425,7 +9425,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"password\">."
+          "text": "Pense no conceito central da lição: <input type=\"password\">."
         },
         {
           "level": 2,
@@ -9444,7 +9444,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l6-practice",
       "lesson_id": "legacy-html-u8-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9461,7 +9461,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"password\">."
+          "text": "Pense no conceito central da lição: <input type=\"password\">."
         },
         {
           "level": 2,
@@ -9497,11 +9497,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <input type=\"checkbox\">."
+          "text": "Revise o ponto principal da lição: <input type=\"checkbox\">."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9533,7 +9533,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"checkbox\">."
+          "text": "Pense no conceito central da lição: <input type=\"checkbox\">."
         },
         {
           "level": 2,
@@ -9552,7 +9552,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l7-practice",
       "lesson_id": "legacy-html-u8-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9569,7 +9569,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"checkbox\">."
+          "text": "Pense no conceito central da lição: <input type=\"checkbox\">."
         },
         {
           "level": 2,
@@ -9605,11 +9605,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <input type=\"radio\">."
+          "text": "Revise o ponto principal da lição: <input type=\"radio\">."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9641,7 +9641,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"radio\">."
+          "text": "Pense no conceito central da lição: <input type=\"radio\">."
         },
         {
           "level": 2,
@@ -9660,7 +9660,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l8-practice",
       "lesson_id": "legacy-html-u8-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -9677,7 +9677,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <input type=\"radio\">."
+          "text": "Pense no conceito central da lição: <input type=\"radio\">."
         },
         {
           "level": 2,
@@ -9718,11 +9718,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <textarea>."
+          "text": "Revise o ponto principal da lição: <textarea>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9754,11 +9754,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <textarea>."
+          "text": "Pense no conceito central da lição: <textarea>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Nao."
+          "text": "Evite estas alternativas: Não."
         },
         {
           "level": 3,
@@ -9773,7 +9773,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l9-practice",
       "lesson_id": "legacy-html-u8-l9",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento textarea com classe:",
+      "prompt": "Prática guiada: Crie um elemento textarea com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -9795,11 +9795,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <textarea>."
+          "text": "Revise o ponto principal da lição: <textarea>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9836,11 +9836,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <select>."
+          "text": "Revise o ponto principal da lição: <select>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9872,7 +9872,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <select>."
+          "text": "Pense no conceito central da lição: <select>."
         },
         {
           "level": 2,
@@ -9891,7 +9891,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l10-practice",
       "lesson_id": "legacy-html-u8-l10",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento select com classe:",
+      "prompt": "Prática guiada: Crie um elemento select com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -9913,11 +9913,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <select>."
+          "text": "Revise o ponto principal da lição: <select>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9932,7 +9932,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l11-2",
       "lesson_id": "legacy-html-u8-l11",
       "type": "blank",
-      "prompt": "Crie uma opcao:",
+      "prompt": "Crie uma opção:",
       "starter_code": "<select>\n <{{blank1}} value=\"br\">Brasil</{{blank2}}>\n</select>",
       "validations": [
         {
@@ -9954,11 +9954,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <option>."
+          "text": "Revise o ponto principal da lição: <option>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -9990,7 +9990,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <option>."
+          "text": "Pense no conceito central da lição: <option>."
         },
         {
           "level": 2,
@@ -10009,7 +10009,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l11-practice",
       "lesson_id": "legacy-html-u8-l11",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento option com classe:",
+      "prompt": "Prática guiada: Crie um elemento option com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -10031,11 +10031,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <option>."
+          "text": "Revise o ponto principal da lição: <option>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10072,11 +10072,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <button>."
+          "text": "Revise o ponto principal da lição: <button>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10108,7 +10108,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <button>."
+          "text": "Pense no conceito central da lição: <button>."
         },
         {
           "level": 2,
@@ -10127,7 +10127,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l12-practice",
       "lesson_id": "legacy-html-u8-l12",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento button com classe:",
+      "prompt": "Prática guiada: Crie um elemento button com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -10149,11 +10149,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <button>."
+          "text": "Revise o ponto principal da lição: <button>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10185,11 +10185,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: required."
+          "text": "Revise o ponto principal da lição: required."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10221,7 +10221,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: required."
+          "text": "Pense no conceito central da lição: required."
         },
         {
           "level": 2,
@@ -10240,7 +10240,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l13-practice",
       "lesson_id": "legacy-html-u8-l13",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -10257,7 +10257,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: required."
+          "text": "Pense no conceito central da lição: required."
         },
         {
           "level": 2,
@@ -10293,11 +10293,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: placeholder."
+          "text": "Revise o ponto principal da lição: placeholder."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10320,7 +10320,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Voce digita",
+              "answer": "Você digita",
               "placeholder": "resposta"
             }
           ]
@@ -10329,18 +10329,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: placeholder."
+          "text": "Pense no conceito central da lição: placeholder."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: A pagina carrega."
+          "text": "Evite estas alternativas: A página carrega."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Voce digita"
+          "text": "Resposta esperada: Você digita"
         }
       ],
-      "solution": "Voce digita",
+      "solution": "Você digita",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -10348,7 +10348,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l14-practice",
       "lesson_id": "legacy-html-u8-l14",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -10365,7 +10365,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: placeholder."
+          "text": "Pense no conceito central da lição: placeholder."
         },
         {
           "level": 2,
@@ -10401,11 +10401,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: name."
+          "text": "Revise o ponto principal da lição: name."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10428,7 +10428,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao e enviado",
+              "answer": "Não e enviado",
               "placeholder": "resposta"
             }
           ]
@@ -10437,7 +10437,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: name."
+          "text": "Pense no conceito central da lição: name."
         },
         {
           "level": 2,
@@ -10445,10 +10445,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao e enviado"
+          "text": "Resposta esperada: Não e enviado"
         }
       ],
-      "solution": "Nao e enviado",
+      "solution": "Não e enviado",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -10456,7 +10456,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u8-l15-practice",
       "lesson_id": "legacy-html-u8-l15",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo define o tipo do input? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -10473,7 +10473,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: name."
+          "text": "Pense no conceito central da lição: name."
         },
         {
           "level": 2,
@@ -10509,7 +10509,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e HTML semantico."
+          "text": "Pense no conceito central da lição: O que e HTML semantico."
         },
         {
           "level": 2,
@@ -10545,7 +10545,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e HTML semantico."
+          "text": "Pense no conceito central da lição: O que e HTML semantico."
         },
         {
           "level": 2,
@@ -10564,7 +10564,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l1-practice",
       "lesson_id": "legacy-html-u9-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -10581,11 +10581,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e HTML semantico."
+          "text": "Pense no conceito central da lição: O que e HTML semantico."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -10622,11 +10622,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <header>."
+          "text": "Revise o ponto principal da lição: <header>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10658,7 +10658,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <header>."
+          "text": "Pense no conceito central da lição: <header>."
         },
         {
           "level": 2,
@@ -10677,7 +10677,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l2-practice",
       "lesson_id": "legacy-html-u9-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento header com classe:",
+      "prompt": "Prática guiada: Crie um elemento header com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -10699,11 +10699,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <header>."
+          "text": "Revise o ponto principal da lição: <header>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10718,7 +10718,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l3-2",
       "lesson_id": "legacy-html-u9-l3",
       "type": "blank",
-      "prompt": "Crie navegacao:",
+      "prompt": "Crie navegação:",
       "starter_code": "<{{blank1}}>\n <a href=\"/\">Home</a>\n <a href=\"/sobre\">Sobre</a>\n</{{blank2}}>",
       "validations": [
         {
@@ -10740,11 +10740,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <nav>."
+          "text": "Revise o ponto principal da lição: <nav>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10776,7 +10776,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <nav>."
+          "text": "Pense no conceito central da lição: <nav>."
         },
         {
           "level": 2,
@@ -10795,7 +10795,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l3-practice",
       "lesson_id": "legacy-html-u9-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento nav com classe:",
+      "prompt": "Prática guiada: Crie um elemento nav com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -10817,11 +10817,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <nav>."
+          "text": "Revise o ponto principal da lição: <nav>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10837,7 +10837,7 @@ export const learningSeed: LearningSeed = {
       "lesson_id": "legacy-html-u9-l4",
       "type": "blank",
       "prompt": "Crie o main:",
-      "starter_code": "<{{blank1}}>\n <h1>Bem-vindo</h1>\n <p>Conteudo principal aqui.</p>\n</{{blank2}}>",
+      "starter_code": "<{{blank1}}>\n <h1>Bem-vindo</h1>\n <p>Conteúdo principal aqui.</p>\n</{{blank2}}>",
       "validations": [
         {
           "type": "blank",
@@ -10858,18 +10858,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <main>."
+          "text": "Revise o ponto principal da lição: <main>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
           "text": "Resposta esperada: main"
         }
       ],
-      "solution": "<main>\n <h1>Bem-vindo</h1>\n <p>Conteudo principal aqui.</p>\n</main>",
+      "solution": "<main>\n <h1>Bem-vindo</h1>\n <p>Conteúdo principal aqui.</p>\n</main>",
       "difficulty": "medium",
       "estimated_time": 55
     },
@@ -10877,7 +10877,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l4-3",
       "lesson_id": "legacy-html-u9-l4",
       "type": "blank",
-      "prompt": "Quantos <main> por pagina? Digite a resposta correta.",
+      "prompt": "Quantos <main> por página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -10894,7 +10894,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <main>."
+          "text": "Pense no conceito central da lição: <main>."
         },
         {
           "level": 2,
@@ -10913,7 +10913,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l4-practice",
       "lesson_id": "legacy-html-u9-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento main com classe:",
+      "prompt": "Prática guiada: Crie um elemento main com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -10935,11 +10935,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <main>."
+          "text": "Revise o ponto principal da lição: <main>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -10954,7 +10954,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l5-2",
       "lesson_id": "legacy-html-u9-l5",
       "type": "blank",
-      "prompt": "Crie uma secao:",
+      "prompt": "Crie uma seção:",
       "starter_code": "<{{blank1}}>\n <h2>Nossos Servicos</h2>\n <p>...</p>\n</{{blank2}}>",
       "validations": [
         {
@@ -10976,11 +10976,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <section>."
+          "text": "Revise o ponto principal da lição: <section>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11003,7 +11003,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Conteudo tematicamente relacionado",
+              "answer": "Conteúdo tematicamente relacionado",
               "placeholder": "resposta"
             }
           ]
@@ -11012,18 +11012,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <section>."
+          "text": "Pense no conceito central da lição: <section>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Qualquer conteudo."
+          "text": "Evite estas alternativas: Qualquer conteúdo."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Conteudo tematicamente relacionado"
+          "text": "Resposta esperada: Conteúdo tematicamente relacionado"
         }
       ],
-      "solution": "Conteudo tematicamente relacionado",
+      "solution": "Conteúdo tematicamente relacionado",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -11031,7 +11031,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l5-practice",
       "lesson_id": "legacy-html-u9-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento section com classe:",
+      "prompt": "Prática guiada: Crie um elemento section com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -11053,11 +11053,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <section>."
+          "text": "Revise o ponto principal da lição: <section>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11073,7 +11073,7 @@ export const learningSeed: LearningSeed = {
       "lesson_id": "legacy-html-u9-l6",
       "type": "blank",
       "prompt": "Crie um artigo:",
-      "starter_code": "<{{blank1}}>\n <h2>Titulo do Post</h2>\n <p>Conteudo do post...</p>\n</{{blank2}}>",
+      "starter_code": "<{{blank1}}>\n <h2>Título do Post</h2>\n <p>Conteúdo do post...</p>\n</{{blank2}}>",
       "validations": [
         {
           "type": "blank",
@@ -11094,18 +11094,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <article>."
+          "text": "Revise o ponto principal da lição: <article>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
           "text": "Resposta esperada: article"
         }
       ],
-      "solution": "<article>\n <h2>Titulo do Post</h2>\n <p>Conteudo do post...</p>\n</article>",
+      "solution": "<article>\n <h2>Título do Post</h2>\n <p>Conteúdo do post...</p>\n</article>",
       "difficulty": "medium",
       "estimated_time": 55
     },
@@ -11113,7 +11113,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l6-4",
       "lesson_id": "legacy-html-u9-l6",
       "type": "blank",
-      "prompt": "<article> e para conteudo: Digite a resposta correta.",
+      "prompt": "<article> e para conteúdo: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -11130,7 +11130,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <article>."
+          "text": "Pense no conceito central da lição: <article>."
         },
         {
           "level": 2,
@@ -11149,7 +11149,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l6-practice",
       "lesson_id": "legacy-html-u9-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento article com classe:",
+      "prompt": "Prática guiada: Crie um elemento article com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -11171,11 +11171,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <article>."
+          "text": "Revise o ponto principal da lição: <article>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11212,11 +11212,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <aside>."
+          "text": "Revise o ponto principal da lição: <aside>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11248,11 +11248,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <aside>."
+          "text": "Pense no conceito central da lição: <aside>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Conteudo principal."
+          "text": "Evite estas alternativas: Conteúdo principal."
         },
         {
           "level": 3,
@@ -11267,7 +11267,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l7-practice",
       "lesson_id": "legacy-html-u9-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento aside com classe:",
+      "prompt": "Prática guiada: Crie um elemento aside com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -11289,11 +11289,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <aside>."
+          "text": "Revise o ponto principal da lição: <aside>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11330,11 +11330,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <footer>."
+          "text": "Revise o ponto principal da lição: <footer>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11366,11 +11366,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <footer>."
+          "text": "Pense no conceito central da lição: <footer>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Navegacao principal."
+          "text": "Evite estas alternativas: Navegação principal."
         },
         {
           "level": 3,
@@ -11385,7 +11385,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l8-practice",
       "lesson_id": "legacy-html-u9-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento footer com classe:",
+      "prompt": "Prática guiada: Crie um elemento footer com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -11407,11 +11407,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <footer>."
+          "text": "Revise o ponto principal da lição: <footer>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11443,7 +11443,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Quando usar div."
+          "text": "Pense no conceito central da lição: Quando usar div."
         },
         {
           "level": 2,
@@ -11479,11 +11479,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Quando usar div."
+          "text": "Pense no conceito central da lição: Quando usar div."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Semantica."
+          "text": "Evite estas alternativas: Semântica."
         },
         {
           "level": 3,
@@ -11498,7 +11498,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u9-l9-practice",
       "lesson_id": "legacy-html-u9-l9",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -11515,11 +11515,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Quando usar div."
+          "text": "Pense no conceito central da lição: Quando usar div."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -11551,11 +11551,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: id."
+          "text": "Revise o ponto principal da lição: id."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11578,7 +11578,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Unico na pagina",
+              "answer": "Unico na página",
               "placeholder": "resposta"
             }
           ]
@@ -11587,7 +11587,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: id."
+          "text": "Pense no conceito central da lição: id."
         },
         {
           "level": 2,
@@ -11595,10 +11595,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Unico na pagina"
+          "text": "Resposta esperada: Unico na página"
         }
       ],
-      "solution": "Unico na pagina",
+      "solution": "Unico na página",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -11606,7 +11606,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l1-practice",
       "lesson_id": "legacy-html-u10-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -11623,11 +11623,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: id."
+          "text": "Pense no conceito central da lição: id."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -11659,11 +11659,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: class."
+          "text": "Revise o ponto principal da lição: class."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11695,7 +11695,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: class."
+          "text": "Pense no conceito central da lição: class."
         },
         {
           "level": 2,
@@ -11714,7 +11714,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l2-practice",
       "lesson_id": "legacy-html-u10-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -11731,11 +11731,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: class."
+          "text": "Pense no conceito central da lição: class."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -11767,11 +11767,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: style."
+          "text": "Revise o ponto principal da lição: style."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11803,7 +11803,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: style."
+          "text": "Pense no conceito central da lição: style."
         },
         {
           "level": 2,
@@ -11822,7 +11822,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l3-practice",
       "lesson_id": "legacy-html-u10-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -11839,11 +11839,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: style."
+          "text": "Pense no conceito central da lição: style."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -11875,11 +11875,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: title."
+          "text": "Revise o ponto principal da lição: title."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -11911,7 +11911,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: title."
+          "text": "Pense no conceito central da lição: title."
         },
         {
           "level": 2,
@@ -11930,7 +11930,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l4-practice",
       "lesson_id": "legacy-html-u10-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -11947,11 +11947,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: title."
+          "text": "Pense no conceito central da lição: title."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -11983,11 +11983,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: lang."
+          "text": "Revise o ponto principal da lição: lang."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -12019,7 +12019,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: lang."
+          "text": "Pense no conceito central da lição: lang."
         },
         {
           "level": 2,
@@ -12038,7 +12038,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l5-practice",
       "lesson_id": "legacy-html-u10-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12055,11 +12055,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: lang."
+          "text": "Pense no conceito central da lição: lang."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -12091,11 +12091,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: data-*."
+          "text": "Revise o ponto principal da lição: data-*."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -12127,7 +12127,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: data-*."
+          "text": "Pense no conceito central da lição: data-*."
         },
         {
           "level": 2,
@@ -12146,7 +12146,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l6-practice",
       "lesson_id": "legacy-html-u10-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12163,11 +12163,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: data-*."
+          "text": "Pense no conceito central da lição: data-*."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -12183,7 +12183,7 @@ export const learningSeed: LearningSeed = {
       "lesson_id": "legacy-html-u10-l7",
       "type": "blank",
       "prompt": "Oculte o elemento:",
-      "starter_code": "<div {{blank1}}>Conteudo oculto</div>",
+      "starter_code": "<div {{blank1}}>Conteúdo oculto</div>",
       "validations": [
         {
           "type": "blank",
@@ -12199,18 +12199,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: hidden."
+          "text": "Revise o ponto principal da lição: hidden."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
           "text": "Resposta esperada: hidden"
         }
       ],
-      "solution": "<div hidden>Conteudo oculto</div>",
+      "solution": "<div hidden>Conteúdo oculto</div>",
       "difficulty": "easy",
       "estimated_time": 40
     },
@@ -12226,7 +12226,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Existe mas nao aparece",
+              "answer": "Existe mas não aparece",
               "placeholder": "resposta"
             }
           ]
@@ -12235,7 +12235,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: hidden."
+          "text": "Pense no conceito central da lição: hidden."
         },
         {
           "level": 2,
@@ -12243,10 +12243,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Existe mas nao aparece"
+          "text": "Resposta esperada: Existe mas não aparece"
         }
       ],
-      "solution": "Existe mas nao aparece",
+      "solution": "Existe mas não aparece",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -12254,7 +12254,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l7-practice",
       "lesson_id": "legacy-html-u10-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12271,11 +12271,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: hidden."
+          "text": "Pense no conceito central da lição: hidden."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -12307,11 +12307,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: tabindex."
+          "text": "Revise o ponto principal da lição: tabindex."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -12343,7 +12343,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: tabindex."
+          "text": "Pense no conceito central da lição: tabindex."
         },
         {
           "level": 2,
@@ -12362,7 +12362,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u10-l8-practice",
       "lesson_id": "legacy-html-u10-l8",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12379,11 +12379,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: tabindex."
+          "text": "Pense no conceito central da lição: tabindex."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -12415,7 +12415,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e acessibilidade."
+          "text": "Pense no conceito central da lição: O que e acessibilidade."
         },
         {
           "level": 2,
@@ -12434,7 +12434,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u11-l1-practice",
       "lesson_id": "legacy-html-u11-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12451,7 +12451,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e acessibilidade."
+          "text": "Pense no conceito central da lição: O que e acessibilidade."
         },
         {
           "level": 2,
@@ -12487,11 +12487,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Uso correto de alt."
+          "text": "Pense no conceito central da lição: Uso correto de alt."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Nao colocar alt."
+          "text": "Evite estas alternativas: Não colocar alt."
         },
         {
           "level": 3,
@@ -12523,11 +12523,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Uso correto de alt."
+          "text": "Revise o ponto principal da lição: Uso correto de alt."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -12542,7 +12542,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u11-l2-practice",
       "lesson_id": "legacy-html-u11-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12559,7 +12559,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Uso correto de alt."
+          "text": "Pense no conceito central da lição: Uso correto de alt."
         },
         {
           "level": 2,
@@ -12600,11 +12600,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <label> e formularios."
+          "text": "Revise o ponto principal da lição: <label> e formularios."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -12636,7 +12636,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <label> e formularios."
+          "text": "Pense no conceito central da lição: <label> e formularios."
         },
         {
           "level": 2,
@@ -12655,7 +12655,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u11-l3-practice",
       "lesson_id": "legacy-html-u11-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento label com classe:",
+      "prompt": "Prática guiada: Crie um elemento label com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -12677,11 +12677,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <label> e formularios."
+          "text": "Revise o ponto principal da lição: <label> e formularios."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -12713,7 +12713,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Ordem de tabulacao."
+          "text": "Pense no conceito central da lição: Ordem de tabulacao."
         },
         {
           "level": 2,
@@ -12732,7 +12732,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u11-l4-practice",
       "lesson_id": "legacy-html-u11-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12749,7 +12749,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Ordem de tabulacao."
+          "text": "Pense no conceito central da lição: Ordem de tabulacao."
         },
         {
           "level": 2,
@@ -12776,7 +12776,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Quando HTML nativo nao basta",
+              "answer": "Quando HTML nativo não basta",
               "placeholder": "resposta"
             }
           ]
@@ -12785,7 +12785,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Introducao a ARIA."
+          "text": "Pense no conceito central da lição: Introducao a ARIA."
         },
         {
           "level": 2,
@@ -12793,10 +12793,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Quando HTML nativo nao basta"
+          "text": "Resposta esperada: Quando HTML nativo não basta"
         }
       ],
-      "solution": "Quando HTML nativo nao basta",
+      "solution": "Quando HTML nativo não basta",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -12804,7 +12804,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u11-l5-practice",
       "lesson_id": "legacy-html-u11-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12821,7 +12821,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Introducao a ARIA."
+          "text": "Pense no conceito central da lição: Introducao a ARIA."
         },
         {
           "level": 2,
@@ -12857,11 +12857,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: aria-label."
+          "text": "Revise o ponto principal da lição: aria-label."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -12893,7 +12893,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: aria-label."
+          "text": "Pense no conceito central da lição: aria-label."
         },
         {
           "level": 2,
@@ -12912,7 +12912,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u11-l6-practice",
       "lesson_id": "legacy-html-u11-l6",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -12929,7 +12929,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: aria-label."
+          "text": "Pense no conceito central da lição: aria-label."
         },
         {
           "level": 2,
@@ -12965,11 +12965,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: aria-hidden."
+          "text": "Revise o ponto principal da lição: aria-hidden."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13001,7 +13001,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: aria-hidden."
+          "text": "Pense no conceito central da lição: aria-hidden."
         },
         {
           "level": 2,
@@ -13020,7 +13020,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u11-l7-practice",
       "lesson_id": "legacy-html-u11-l7",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual atributo descreve uma imagem? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13037,7 +13037,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: aria-hidden."
+          "text": "Pense no conceito central da lição: aria-hidden."
         },
         {
           "level": 2,
@@ -13056,7 +13056,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l1-3",
       "lesson_id": "legacy-html-u12-l1",
       "type": "blank",
-      "prompt": "Quantos h1 por pagina? Digite a resposta correta.",
+      "prompt": "Quantos h1 por página? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13073,7 +13073,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Titulos hierarquicos."
+          "text": "Pense no conceito central da lição: Titulos hierarquicos."
         },
         {
           "level": 2,
@@ -13109,7 +13109,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Titulos hierarquicos."
+          "text": "Pense no conceito central da lição: Titulos hierarquicos."
         },
         {
           "level": 2,
@@ -13128,7 +13128,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l1-practice",
       "lesson_id": "legacy-html-u12-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13145,11 +13145,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Titulos hierarquicos."
+          "text": "Pense no conceito central da lição: Titulos hierarquicos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -13181,7 +13181,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Estrutura semantica."
+          "text": "Pense no conceito central da lição: Estrutura semântica."
         },
         {
           "level": 2,
@@ -13200,7 +13200,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l2-practice",
       "lesson_id": "legacy-html-u12-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13208,7 +13208,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Estrutura semantica",
+              "answer": "Estrutura semântica",
               "placeholder": "resposta"
             }
           ]
@@ -13217,18 +13217,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Estrutura semantica."
+          "text": "Pense no conceito central da lição: Estrutura semântica."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Estrutura semantica"
+          "text": "Resposta esperada: Estrutura semântica"
         }
       ],
-      "solution": "Estrutura semantica",
+      "solution": "Estrutura semântica",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -13253,11 +13253,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Meta description."
+          "text": "Revise o ponto principal da lição: Meta description."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13289,7 +13289,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Meta description."
+          "text": "Pense no conceito central da lição: Meta description."
         },
         {
           "level": 2,
@@ -13308,7 +13308,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l3-practice",
       "lesson_id": "legacy-html-u12-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13325,11 +13325,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Meta description."
+          "text": "Pense no conceito central da lição: Meta description."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -13361,7 +13361,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links internos."
+          "text": "Pense no conceito central da lição: Links internos."
         },
         {
           "level": 2,
@@ -13380,7 +13380,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l4-practice",
       "lesson_id": "legacy-html-u12-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13397,11 +13397,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Links internos."
+          "text": "Pense no conceito central da lição: Links internos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -13433,7 +13433,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Imagens com alt."
+          "text": "Pense no conceito central da lição: Imagens com alt."
         },
         {
           "level": 2,
@@ -13469,11 +13469,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Imagens com alt."
+          "text": "Revise o ponto principal da lição: Imagens com alt."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13488,7 +13488,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u12-l5-practice",
       "lesson_id": "legacy-html-u12-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13505,11 +13505,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Imagens com alt."
+          "text": "Pense no conceito central da lição: Imagens com alt."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -13541,11 +13541,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <link>."
+          "text": "Revise o ponto principal da lição: <link>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13577,11 +13577,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <link>."
+          "text": "Revise o ponto principal da lição: <link>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13596,7 +13596,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l1-practice",
       "lesson_id": "legacy-html-u13-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual dessas tags e auto-fechada? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13613,7 +13613,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <link>."
+          "text": "Pense no conceito central da lição: <link>."
         },
         {
           "level": 2,
@@ -13654,11 +13654,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <style>."
+          "text": "Revise o ponto principal da lição: <style>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13690,7 +13690,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <style>."
+          "text": "Pense no conceito central da lição: <style>."
         },
         {
           "level": 2,
@@ -13709,7 +13709,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l2-practice",
       "lesson_id": "legacy-html-u13-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento style com classe:",
+      "prompt": "Prática guiada: Crie um elemento style com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -13731,11 +13731,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <style>."
+          "text": "Revise o ponto principal da lição: <style>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13772,11 +13772,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <script>."
+          "text": "Revise o ponto principal da lição: <script>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13808,11 +13808,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: <script>."
+          "text": "Pense no conceito central da lição: <script>."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Nao."
+          "text": "Evite estas alternativas: Não."
         },
         {
           "level": 3,
@@ -13827,7 +13827,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l3-practice",
       "lesson_id": "legacy-html-u13-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Crie um elemento script com classe:",
+      "prompt": "Prática guiada: Crie um elemento script com classe:",
       "starter_code": "<{{blank1}} class=\"destaque\">Texto</{{blank2}}>",
       "validations": [
         {
@@ -13849,11 +13849,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: <script>."
+          "text": "Revise o ponto principal da lição: <script>."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13885,11 +13885,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: defer."
+          "text": "Revise o ponto principal da lição: defer."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -13921,7 +13921,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: defer."
+          "text": "Pense no conceito central da lição: defer."
         },
         {
           "level": 2,
@@ -13940,7 +13940,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l4-practice",
       "lesson_id": "legacy-html-u13-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -13957,7 +13957,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: defer."
+          "text": "Pense no conceito central da lição: defer."
         },
         {
           "level": 2,
@@ -13993,11 +13993,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: async."
+          "text": "Revise o ponto principal da lição: async."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -14029,7 +14029,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: async."
+          "text": "Pense no conceito central da lição: async."
         },
         {
           "level": 2,
@@ -14048,7 +14048,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u13-l5-practice",
       "lesson_id": "legacy-html-u13-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14065,7 +14065,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: async."
+          "text": "Pense no conceito central da lição: async."
         },
         {
           "level": 2,
@@ -14101,7 +14101,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Codigo limpo."
+          "text": "Pense no conceito central da lição: Codigo limpo."
         },
         {
           "level": 2,
@@ -14120,7 +14120,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l1-practice",
       "lesson_id": "legacy-html-u14-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14137,11 +14137,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Codigo limpo."
+          "text": "Pense no conceito central da lição: Codigo limpo."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -14164,7 +14164,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "<!-- Formulario de contato - requer validacao JS -->",
+              "answer": "<!-- Formulario de contato - requer validação JS -->",
               "placeholder": "resposta"
             }
           ]
@@ -14173,7 +14173,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Comentarios uteis."
+          "text": "Pense no conceito central da lição: Comentarios úteis."
         },
         {
           "level": 2,
@@ -14181,10 +14181,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: <!-- Formulario de contato - requer validacao JS -->"
+          "text": "Resposta esperada: <!-- Formulario de contato - requer validação JS -->"
         }
       ],
-      "solution": "<!-- Formulario de contato - requer validacao JS -->",
+      "solution": "<!-- Formulario de contato - requer validação JS -->",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14192,7 +14192,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l2-practice",
       "lesson_id": "legacy-html-u14-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14200,7 +14200,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Comentarios uteis",
+              "answer": "Comentarios úteis",
               "placeholder": "resposta"
             }
           ]
@@ -14209,18 +14209,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Comentarios uteis."
+          "text": "Pense no conceito central da lição: Comentarios úteis."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Comentarios uteis"
+          "text": "Resposta esperada: Comentarios úteis"
         }
       ],
-      "solution": "Comentarios uteis",
+      "solution": "Comentarios úteis",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14245,7 +14245,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Validacao HTML."
+          "text": "Pense no conceito central da lição: Validação HTML."
         },
         {
           "level": 2,
@@ -14264,7 +14264,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l3-practice",
       "lesson_id": "legacy-html-u14-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14272,7 +14272,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Validacao HTML",
+              "answer": "Validação HTML",
               "placeholder": "resposta"
             }
           ]
@@ -14281,18 +14281,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Validacao HTML."
+          "text": "Pense no conceito central da lição: Validação HTML."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Validacao HTML"
+          "text": "Resposta esperada: Validação HTML"
         }
       ],
-      "solution": "Validacao HTML",
+      "solution": "Validação HTML",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14317,11 +14317,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Performance basica."
+          "text": "Pense no conceito central da lição: Performance básica."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Nao faz diferenca."
+          "text": "Evite estas alternativas: Não faz diferenca."
         },
         {
           "level": 3,
@@ -14336,7 +14336,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l4-practice",
       "lesson_id": "legacy-html-u14-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14344,7 +14344,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Performance basica",
+              "answer": "Performance básica",
               "placeholder": "resposta"
             }
           ]
@@ -14353,18 +14353,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Performance basica."
+          "text": "Pense no conceito central da lição: Performance básica."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Performance basica"
+          "text": "Resposta esperada: Performance básica"
         }
       ],
-      "solution": "Performance basica",
+      "solution": "Performance básica",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14389,7 +14389,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Compatibilidade."
+          "text": "Pense no conceito central da lição: Compatibilidade."
         },
         {
           "level": 2,
@@ -14408,7 +14408,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u14-l5-practice",
       "lesson_id": "legacy-html-u14-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14425,11 +14425,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Compatibilidade."
+          "text": "Pense no conceito central da lição: Compatibilidade."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -14466,11 +14466,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pagina pessoal."
+          "text": "Revise o ponto principal da lição: Página pessoal."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -14485,7 +14485,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l1-practice",
       "lesson_id": "legacy-html-u15-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14493,7 +14493,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Pagina pessoal",
+              "answer": "Página pessoal",
               "placeholder": "resposta"
             }
           ]
@@ -14502,18 +14502,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pagina pessoal."
+          "text": "Pense no conceito central da lição: Página pessoal."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Pagina pessoal"
+          "text": "Resposta esperada: Página pessoal"
         }
       ],
-      "solution": "Pagina pessoal",
+      "solution": "Página pessoal",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14521,7 +14521,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l2-3",
       "lesson_id": "legacy-html-u15-l2",
       "type": "blank",
-      "prompt": "Crie a secao hero:",
+      "prompt": "Crie a seção hero:",
       "starter_code": "<{{blank1}}>\n <h1>Aprenda HTML em 30 dias</h1>\n <p>Do zero ao profissional</p>\n <button>Comece agora</button>\n</{{blank2}}>",
       "validations": [
         {
@@ -14543,11 +14543,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Landing page simples."
+          "text": "Revise o ponto principal da lição: Landing page simples."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -14562,7 +14562,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l2-practice",
       "lesson_id": "legacy-html-u15-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14579,11 +14579,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Landing page simples."
+          "text": "Pense no conceito central da lição: Landing page simples."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -14615,11 +14615,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pagina de contato."
+          "text": "Revise o ponto principal da lição: Página de contato."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -14634,7 +14634,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l3-practice",
       "lesson_id": "legacy-html-u15-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14642,7 +14642,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Pagina de contato",
+              "answer": "Página de contato",
               "placeholder": "resposta"
             }
           ]
@@ -14651,18 +14651,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pagina de contato."
+          "text": "Pense no conceito central da lição: Página de contato."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Pagina de contato"
+          "text": "Resposta esperada: Página de contato"
         }
       ],
-      "solution": "Pagina de contato",
+      "solution": "Página de contato",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14692,11 +14692,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Formulario funcional."
+          "text": "Revise o ponto principal da lição: Formulario funcional."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -14711,7 +14711,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l4-practice",
       "lesson_id": "legacy-html-u15-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14728,11 +14728,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Formulario funcional."
+          "text": "Pense no conceito central da lição: Formulario funcional."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -14747,7 +14747,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l5-3",
       "lesson_id": "legacy-html-u15-l5",
       "type": "blank",
-      "prompt": "Crie a navegacao:",
+      "prompt": "Crie a navegação:",
       "starter_code": "<nav>\n <a href=\"index.html\">Home</a>\n <a href=\"{{blank1}}\">Sobre</a>\n <a href=\"servicos.html\">Servicos</a>\n <a href=\"contato.html\">Contato</a>\n</nav>",
       "validations": [
         {
@@ -14764,11 +14764,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Mini site institucional."
+          "text": "Revise o ponto principal da lição: Mini site institucional."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -14783,7 +14783,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u15-l5-practice",
       "lesson_id": "legacy-html-u15-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14800,11 +14800,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Mini site institucional."
+          "text": "Pense no conceito central da lição: Mini site institucional."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -14827,7 +14827,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Nao, usam HTML por baixo",
+              "answer": "Não, usam HTML por baixo",
               "placeholder": "resposta"
             }
           ]
@@ -14836,7 +14836,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML vs frameworks."
+          "text": "Pense no conceito central da lição: HTML vs frameworks."
         },
         {
           "level": 2,
@@ -14844,10 +14844,10 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Nao, usam HTML por baixo"
+          "text": "Resposta esperada: Não, usam HTML por baixo"
         }
       ],
-      "solution": "Nao, usam HTML por baixo",
+      "solution": "Não, usam HTML por baixo",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14855,7 +14855,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u16-l1-practice",
       "lesson_id": "legacy-html-u16-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14872,11 +14872,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML vs frameworks."
+          "text": "Pense no conceito central da lição: HTML vs frameworks."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -14891,7 +14891,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u16-l2-3",
       "lesson_id": "legacy-html-u16-l2",
       "type": "blank",
-      "prompt": "Web Components sao: Digite a resposta correta.",
+      "prompt": "Web Components são: Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14899,7 +14899,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Padrao nativo dos navegadores",
+              "answer": "Padrão nativo dos navegadores",
               "placeholder": "resposta"
             }
           ]
@@ -14908,18 +14908,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Introducao a Web Components."
+          "text": "Pense no conceito central da lição: Introducao a Web Components."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Um framework especifico."
+          "text": "Evite estas alternativas: Um framework específico."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Padrao nativo dos navegadores"
+          "text": "Resposta esperada: Padrão nativo dos navegadores"
         }
       ],
-      "solution": "Padrao nativo dos navegadores",
+      "solution": "Padrão nativo dos navegadores",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -14927,7 +14927,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u16-l2-practice",
       "lesson_id": "legacy-html-u16-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -14944,11 +14944,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Introducao a Web Components."
+          "text": "Pense no conceito central da lição: Introducao a Web Components."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -14980,11 +14980,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: HTML em PWAs."
+          "text": "Revise o ponto principal da lição: HTML em PWAs."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15016,7 +15016,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML em PWAs."
+          "text": "Pense no conceito central da lição: HTML em PWAs."
         },
         {
           "level": 2,
@@ -15035,7 +15035,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-html-u16-l3-practice",
       "lesson_id": "legacy-html-u16-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15052,11 +15052,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: HTML em PWAs."
+          "text": "Pense no conceito central da lição: HTML em PWAs."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -15088,11 +15088,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e CSS."
+          "text": "Pense no conceito central da lição: O que e CSS."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura do conteudo / Logica e interatividade."
+          "text": "Evite estas alternativas: Estrutura do conteúdo / Logica e interatividade."
         },
         {
           "level": 3,
@@ -15124,11 +15124,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: O que e CSS."
+          "text": "Revise o ponto principal da lição: O que e CSS."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15143,7 +15143,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u17-l1-practice",
       "lesson_id": "legacy-css-u17-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15160,7 +15160,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: O que e CSS."
+          "text": "Pense no conceito central da lição: O que e CSS."
         },
         {
           "level": 2,
@@ -15196,11 +15196,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Seletores."
+          "text": "Revise o ponto principal da lição: Seletores."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15232,7 +15232,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores."
+          "text": "Pense no conceito central da lição: Seletores."
         },
         {
           "level": 2,
@@ -15251,7 +15251,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u17-l2-practice",
       "lesson_id": "legacy-css-u17-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual seletor aplica em classe? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual seletor aplica em classe? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15268,7 +15268,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores."
+          "text": "Pense no conceito central da lição: Seletores."
         },
         {
           "level": 2,
@@ -15304,11 +15304,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Cores e tipografia."
+          "text": "Revise o ponto principal da lição: Cores e tipografia."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15340,7 +15340,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Cores e tipografia."
+          "text": "Pense no conceito central da lição: Cores e tipografia."
         },
         {
           "level": 2,
@@ -15359,7 +15359,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u17-l3-practice",
       "lesson_id": "legacy-css-u17-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Defina a cor do texto:",
+      "prompt": "Prática guiada: Defina a cor do texto:",
       "starter_code": "p { {{blank1}}: #0f172a; }",
       "validations": [
         {
@@ -15376,11 +15376,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Cores e tipografia."
+          "text": "Revise o ponto principal da lição: Cores e tipografia."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15412,11 +15412,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Box model."
+          "text": "Revise o ponto principal da lição: Box model."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15448,7 +15448,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Box model."
+          "text": "Pense no conceito central da lição: Box model."
         },
         {
           "level": 2,
@@ -15467,7 +15467,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u17-l4-practice",
       "lesson_id": "legacy-css-u17-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15484,7 +15484,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Box model."
+          "text": "Pense no conceito central da lição: Box model."
         },
         {
           "level": 2,
@@ -15520,7 +15520,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Cascata e especificidade."
+          "text": "Pense no conceito central da lição: Cascata e especificidade."
         },
         {
           "level": 2,
@@ -15556,11 +15556,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Cascata e especificidade."
+          "text": "Revise o ponto principal da lição: Cascata e especificidade."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15575,7 +15575,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u17-l5-practice",
       "lesson_id": "legacy-css-u17-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15592,7 +15592,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Cascata e especificidade."
+          "text": "Pense no conceito central da lição: Cascata e especificidade."
         },
         {
           "level": 2,
@@ -15628,11 +15628,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Flexbox."
+          "text": "Revise o ponto principal da lição: Flexbox."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15664,7 +15664,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flexbox."
+          "text": "Pense no conceito central da lição: Flexbox."
         },
         {
           "level": 2,
@@ -15683,7 +15683,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u18-l1-practice",
       "lesson_id": "legacy-css-u18-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15700,11 +15700,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flexbox."
+          "text": "Pense no conceito central da lição: Flexbox."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -15736,11 +15736,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Grid."
+          "text": "Revise o ponto principal da lição: Grid."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15772,7 +15772,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid."
+          "text": "Pense no conceito central da lição: Grid."
         },
         {
           "level": 2,
@@ -15791,7 +15791,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u18-l2-practice",
       "lesson_id": "legacy-css-u18-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15808,11 +15808,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid."
+          "text": "Pense no conceito central da lição: Grid."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -15844,11 +15844,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Position."
+          "text": "Revise o ponto principal da lição: Position."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15880,7 +15880,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Position."
+          "text": "Pense no conceito central da lição: Position."
         },
         {
           "level": 2,
@@ -15899,7 +15899,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u18-l3-practice",
       "lesson_id": "legacy-css-u18-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -15916,11 +15916,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Position."
+          "text": "Pense no conceito central da lição: Position."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -15952,11 +15952,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Responsividade."
+          "text": "Revise o ponto principal da lição: Responsividade."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -15988,7 +15988,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Responsividade."
+          "text": "Pense no conceito central da lição: Responsividade."
         },
         {
           "level": 2,
@@ -16007,7 +16007,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u18-l4-practice",
       "lesson_id": "legacy-css-u18-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16024,11 +16024,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Responsividade."
+          "text": "Pense no conceito central da lição: Responsividade."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -16060,11 +16060,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pseudo-classes."
+          "text": "Revise o ponto principal da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16096,7 +16096,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
@@ -16115,7 +16115,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u18-l5-practice",
       "lesson_id": "legacy-css-u18-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16132,11 +16132,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -16168,11 +16168,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Transitions."
+          "text": "Revise o ponto principal da lição: Transitions."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16204,7 +16204,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Transitions."
+          "text": "Pense no conceito central da lição: Transitions."
         },
         {
           "level": 2,
@@ -16223,7 +16223,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l1-practice",
       "lesson_id": "legacy-css-u19-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16240,7 +16240,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Transitions."
+          "text": "Pense no conceito central da lição: Transitions."
         },
         {
           "level": 2,
@@ -16259,7 +16259,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l2-2",
       "lesson_id": "legacy-css-u19-l2",
       "type": "blank",
-      "prompt": "Defina uma animacao:",
+      "prompt": "Defina uma animação:",
       "starter_code": "@keyframes {{blank1}} { from { opacity: 0; } to { opacity: 1; } }",
       "validations": [
         {
@@ -16276,11 +16276,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Animations."
+          "text": "Revise o ponto principal da lição: Animations."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16312,7 +16312,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Animations."
+          "text": "Pense no conceito central da lição: Animations."
         },
         {
           "level": 2,
@@ -16331,7 +16331,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l2-practice",
       "lesson_id": "legacy-css-u19-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16348,7 +16348,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Animations."
+          "text": "Pense no conceito central da lição: Animations."
         },
         {
           "level": 2,
@@ -16367,7 +16367,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l3-2",
       "lesson_id": "legacy-css-u19-l3",
       "type": "blank",
-      "prompt": "Defina uma variavel:",
+      "prompt": "Defina uma variável:",
       "starter_code": ":root { {{blank1}}: #22c55e; }",
       "validations": [
         {
@@ -16384,11 +16384,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Variaveis CSS."
+          "text": "Revise o ponto principal da lição: Variaveis CSS."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16403,7 +16403,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l3-3",
       "lesson_id": "legacy-css-u19-l3",
       "type": "blank",
-      "prompt": "Use a variavel:",
+      "prompt": "Use a variável:",
       "starter_code": "button { background: {{blank1}}; }",
       "validations": [
         {
@@ -16420,11 +16420,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Variaveis CSS."
+          "text": "Revise o ponto principal da lição: Variaveis CSS."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16439,7 +16439,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l3-practice",
       "lesson_id": "legacy-css-u19-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16456,7 +16456,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Variaveis CSS."
+          "text": "Pense no conceito central da lição: Variaveis CSS."
         },
         {
           "level": 2,
@@ -16492,11 +16492,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pseudo-elementos."
+          "text": "Revise o ponto principal da lição: Pseudo-elementos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16528,7 +16528,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-elementos."
+          "text": "Pense no conceito central da lição: Pseudo-elementos."
         },
         {
           "level": 2,
@@ -16547,7 +16547,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l4-practice",
       "lesson_id": "legacy-css-u19-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16564,7 +16564,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-elementos."
+          "text": "Pense no conceito central da lição: Pseudo-elementos."
         },
         {
           "level": 2,
@@ -16600,11 +16600,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Sombras e fundos."
+          "text": "Revise o ponto principal da lição: Sombras e fundos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16636,7 +16636,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Sombras e fundos."
+          "text": "Pense no conceito central da lição: Sombras e fundos."
         },
         {
           "level": 2,
@@ -16655,7 +16655,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u19-l5-practice",
       "lesson_id": "legacy-css-u19-l5",
       "type": "blank",
-      "prompt": "Pratica guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
+      "prompt": "Prática guiada: Qual propriedade controla tamanho da fonte? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16672,7 +16672,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Sombras e fundos."
+          "text": "Pense no conceito central da lição: Sombras e fundos."
         },
         {
           "level": 2,
@@ -16708,11 +16708,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Seletores basicos."
+          "text": "Revise o ponto principal da lição: Seletores basicos."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16744,7 +16744,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores basicos."
+          "text": "Pense no conceito central da lição: Seletores basicos."
         },
         {
           "level": 2,
@@ -16763,7 +16763,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u22-l1-practice",
       "lesson_id": "legacy-css-u22-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16780,11 +16780,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Seletores basicos."
+          "text": "Pense no conceito central da lição: Seletores basicos."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -16816,11 +16816,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Combinadores."
+          "text": "Revise o ponto principal da lição: Combinadores."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16852,11 +16852,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Combinadores."
+          "text": "Revise o ponto principal da lição: Combinadores."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16888,7 +16888,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Combinadores."
+          "text": "Pense no conceito central da lição: Combinadores."
         },
         {
           "level": 2,
@@ -16907,7 +16907,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u22-l2-practice",
       "lesson_id": "legacy-css-u22-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -16924,11 +16924,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Combinadores."
+          "text": "Pense no conceito central da lição: Combinadores."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -16960,11 +16960,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Pseudo-classes."
+          "text": "Revise o ponto principal da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -16996,7 +16996,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
@@ -17015,7 +17015,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u22-l3-practice",
       "lesson_id": "legacy-css-u22-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -17032,11 +17032,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Pseudo-classes."
+          "text": "Pense no conceito central da lição: Pseudo-classes."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -17051,7 +17051,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u22-l4-3",
       "lesson_id": "legacy-css-u22-l4",
       "type": "blank",
-      "prompt": "Qual seletor e mais especifico? Digite a resposta correta.",
+      "prompt": "Qual seletor e mais específico? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -17068,7 +17068,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Especificidade."
+          "text": "Pense no conceito central da lição: Especificidade."
         },
         {
           "level": 2,
@@ -17104,11 +17104,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Especificidade."
+          "text": "Revise o ponto principal da lição: Especificidade."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -17123,7 +17123,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u22-l4-practice",
       "lesson_id": "legacy-css-u22-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -17140,11 +17140,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Especificidade."
+          "text": "Pense no conceito central da lição: Especificidade."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -17176,11 +17176,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Flex container."
+          "text": "Revise o ponto principal da lição: Flex container."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -17212,7 +17212,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex container."
+          "text": "Pense no conceito central da lição: Flex container."
         },
         {
           "level": 2,
@@ -17231,7 +17231,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u23-l1-practice",
       "lesson_id": "legacy-css-u23-l1",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -17248,11 +17248,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex container."
+          "text": "Pense no conceito central da lição: Flex container."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -17284,11 +17284,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Flex items."
+          "text": "Revise o ponto principal da lição: Flex items."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -17320,7 +17320,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex items."
+          "text": "Pense no conceito central da lição: Flex items."
         },
         {
           "level": 2,
@@ -17339,7 +17339,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u23-l2-practice",
       "lesson_id": "legacy-css-u23-l2",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -17356,11 +17356,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Flex items."
+          "text": "Pense no conceito central da lição: Flex items."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -17392,11 +17392,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Grid basico."
+          "text": "Revise o ponto principal da lição: Grid básico."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -17428,7 +17428,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid basico."
+          "text": "Pense no conceito central da lição: Grid básico."
         },
         {
           "level": 2,
@@ -17447,7 +17447,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u23-l3-practice",
       "lesson_id": "legacy-css-u23-l3",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -17455,7 +17455,7 @@ export const learningSeed: LearningSeed = {
           "blanks": [
             {
               "id": "blank1",
-              "answer": "Grid basico",
+              "answer": "Grid básico",
               "placeholder": "resposta"
             }
           ]
@@ -17464,18 +17464,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Grid basico."
+          "text": "Pense no conceito central da lição: Grid básico."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
-          "text": "Resposta esperada: Grid basico"
+          "text": "Resposta esperada: Grid básico"
         }
       ],
-      "solution": "Grid basico",
+      "solution": "Grid básico",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -17500,11 +17500,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Revise o ponto principal da licao: Layout responsivo."
+          "text": "Revise o ponto principal da lição: Layout responsivo."
         },
         {
           "level": 2,
-          "text": "Compare com o padrao de sintaxe apresentado no enunciado."
+          "text": "Compare com o padrão de sintaxe apresentado no enunciado."
         },
         {
           "level": 3,
@@ -17536,7 +17536,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Layout responsivo."
+          "text": "Pense no conceito central da lição: Layout responsivo."
         },
         {
           "level": 2,
@@ -17555,7 +17555,7 @@ export const learningSeed: LearningSeed = {
       "id": "legacy-css-u23-l4-practice",
       "lesson_id": "legacy-css-u23-l4",
       "type": "blank",
-      "prompt": "Pratica guiada: Com base no que voce acabou de estudar, qual e o tema principal desta licao? Digite a resposta correta.",
+      "prompt": "Prática guiada: Com base no que você acabou de estudar, qual e o tema principal desta lição? Digite a resposta correta.",
       "starter_code": "{{blank1}}",
       "validations": [
         {
@@ -17572,11 +17572,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Pense no conceito central da licao: Layout responsivo."
+          "text": "Pense no conceito central da lição: Layout responsivo."
         },
         {
           "level": 2,
-          "text": "Evite estas alternativas: Estrutura basica de HTML / Estilizacao com CSS."
+          "text": "Evite estas alternativas: Estrutura básica de HTML / Estilizacao com CSS."
         },
         {
           "level": 3,
@@ -17591,7 +17591,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-vars-1",
       "lesson_id": "lesson-js-variables",
       "type": "blank",
-      "prompt": "Complete o nome da variavel para guardar o nome da pessoa.",
+      "prompt": "Complete o nome da variável para guardar o nome da pessoa.",
       "starter_code": "const {{blank1}} = \"Ana\";",
       "validations": [
         {
@@ -17608,11 +17608,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Use um nome de variavel que descreva o valor guardado."
+          "text": "Use um nome de variável que descreva o valor guardado."
         },
         {
           "level": 2,
-          "text": "O valor e o nome de uma pessoa."
+          "text": "O valor é o nome de uma pessoa."
         },
         {
           "level": 3,
@@ -17627,15 +17627,15 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-vars-2",
       "lesson_id": "lesson-js-variables",
       "type": "code",
-      "prompt": "Crie uma variavel let chamada contador iniciando em 0.",
+      "prompt": "Crie uma variável let chamada contador iniciando em 0.",
       "starter_code": "// escreva seu codigo abaixo",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "contador deve ser numero",
-              "code": "assert(typeof contador === 'number', 'contador deve ser numero');"
+              "name": "contador deve ser número",
+              "code": "assert(typeof contador === 'number', 'contador deve ser número');"
             },
             {
               "name": "contador inicia em 0",
@@ -17666,15 +17666,15 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-vars-3",
       "lesson_id": "lesson-js-variables",
       "type": "bugfix",
-      "prompt": "Corrija o bug: a funcao monta a mensagem, mas nao devolve o resultado.",
+      "prompt": "Corrija o bug: a função monta a mensagem, mas não devolve o resultado.",
       "starter_code": "function criarMensagem(nome) {\n  const mensagem = \"Ola, \" + nome;\n}",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "funcao retorna mensagem",
-              "code": "assert(criarMensagem('Ada') === 'Ola, Ada', 'A funcao deve retornar a mensagem');"
+              "name": "função retorna mensagem",
+              "code": "assert(criarMensagem('Ada') === 'Ola, Ada', 'A função deve retornar a mensagem');"
             }
           ]
         }
@@ -17682,15 +17682,15 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "A variavel mensagem esta correta. Falta devolver o valor."
+          "text": "A variável mensagem esta correta. Falta devolver o valor."
         },
         {
           "level": 2,
-          "text": "Use return no final da funcao."
+          "text": "Use return no final da função."
         },
         {
           "level": 3,
-          "text": "Return mensagem no final da funcao."
+          "text": "Return mensagem no final da função."
         }
       ],
       "solution": "function criarMensagem(nome) {\n  const mensagem = \"Ola, \" + nome;\n  return mensagem;\n}",
@@ -17701,7 +17701,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-if-1",
       "lesson_id": "lesson-js-conditionals",
       "type": "blank",
-      "prompt": "Complete a condicao com a variavel correta.",
+      "prompt": "Complete a condição com a variável correta.",
       "starter_code": "if ({{blank1}} >= 18) {\n  console.log(\"acesso permitido\");\n}",
       "validations": [
         {
@@ -17722,7 +17722,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "A variavel representa a idade da pessoa."
+          "text": "A variável representa a idade da pessoa."
         },
         {
           "level": 3,
@@ -17737,7 +17737,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-if-2",
       "lesson_id": "lesson-js-conditionals",
       "type": "code",
-      "prompt": "Implemente a funcao isPar que retorna true para numeros pares.",
+      "prompt": "Implemente a função isPar que retorna true para números pares.",
       "starter_code": "function isPar(n) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -17765,7 +17765,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "Numero par deixa resto 0 ao dividir por 2."
+          "text": "Número par deixa resto 0 ao dividir por 2."
         },
         {
           "level": 3,
@@ -17780,7 +17780,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-if-3",
       "lesson_id": "lesson-js-conditionals",
       "type": "bugfix",
-      "prompt": "Corrija a comparacao para que 18 anos tambem seja permitido.",
+      "prompt": "Corrija a comparação para que 18 anos também seja permitido.",
       "starter_code": "function podeDirigir(idade) {\n  return idade > 18;\n}",
       "validations": [
         {
@@ -17819,7 +17819,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-fn-1",
       "lesson_id": "lesson-js-functions",
       "type": "blank",
-      "prompt": "Complete o nome da funcao de soma.",
+      "prompt": "Complete o nome da função de soma.",
       "starter_code": "function {{blank1}}(a, b) {\n  return a + b;\n}",
       "validations": [
         {
@@ -17840,7 +17840,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "A funcao adiciona dois numeros."
+          "text": "A função adiciona dois números."
         },
         {
           "level": 3,
@@ -17862,8 +17862,8 @@ export const learningSeed: LearningSeed = {
           "type": "js-tests",
           "tests": [
             {
-              "name": "dobro e funcao",
-              "code": "assert(typeof dobro === 'function', 'dobro deve ser funcao');"
+              "name": "dobro e função",
+              "code": "assert(typeof dobro === 'function', 'dobro deve ser função');"
             },
             {
               "name": "dobro de 4",
@@ -17875,7 +17875,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Use const para armazenar a funcao."
+          "text": "Use const para armazenar a função."
         },
         {
           "level": 2,
@@ -17894,7 +17894,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-fn-3",
       "lesson_id": "lesson-js-functions",
       "type": "code",
-      "prompt": "Implemente a funcao saudacao que retorna 'Ola, <nome>'.",
+      "prompt": "Implemente a função saudacao que retorna 'Ola, <nome>'.",
       "starter_code": "function saudacao(nome) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -17918,7 +17918,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "Voce pode usar concatenacao ou template string."
+          "text": "Você pode usar concatenacao ou template string."
         },
         {
           "level": 3,
@@ -17933,7 +17933,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-fn-4",
       "lesson_id": "lesson-js-functions",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para usar largura e altura no calculo da area.",
+      "prompt": "Corrija a função para usar largura e altura no calculo da area.",
       "starter_code": "function areaRetangulo(largura, altura) {\n  return largura * largura;\n}",
       "validations": [
         {
@@ -17989,7 +17989,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "Para executar 5 vezes, o ultimo valor de i deve ser 4."
+          "text": "Para executar 5 vezes, o último valor de i deve ser 4."
         },
         {
           "level": 3,
@@ -18004,15 +18004,15 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-loop-2",
       "lesson_id": "lesson-js-loops",
       "type": "code",
-      "prompt": "Crie a funcao somaAte(n) que soma todos os numeros de 1 ate n.",
+      "prompt": "Crie a função somaAte(n) que soma todos os números de 1 ate n.",
       "starter_code": "function somaAte(n) {\n  // seu codigo\n}",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "funcao existe",
-              "code": "assert(typeof somaAte === 'function', 'somaAte deve ser funcao');"
+              "name": "função existe",
+              "code": "assert(typeof somaAte === 'function', 'somaAte deve ser função');"
             },
             {
               "name": "somaAte(1)",
@@ -18028,7 +18028,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Crie uma variavel acumuladora com valor inicial 0."
+          "text": "Crie uma variável acumuladora com valor inicial 0."
         },
         {
           "level": 2,
@@ -18048,14 +18048,14 @@ export const learningSeed: LearningSeed = {
       "lesson_id": "lesson-js-loops",
       "type": "bugfix",
       "prompt": "Corrija o loop para ele terminar e retornar 3.",
-      "starter_code": "function contarAteTres() {\n  let numero = 0;\n  while (numero < 3) {\n    numero = numero + 0;\n  }\n  return numero;\n}",
+      "starter_code": "function contarAteTres() {\n  let número = 0;\n  while (número < 3) {\n    número = número + 0;\n  }\n  return número;\n}",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
               "name": "deve retornar 3",
-              "code": "assert(contarAteTres() === 3, 'funcao deve retornar 3');"
+              "code": "assert(contarAteTres() === 3, 'função deve retornar 3');"
             }
           ]
         }
@@ -18067,14 +18067,14 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "Some 1 em numero a cada iteracao."
+          "text": "Some 1 em número a cada iteração."
         },
         {
           "level": 3,
-          "text": "numero = numero + 1;"
+          "text": "número = número + 1;"
         }
       ],
-      "solution": "function contarAteTres() {\n  let numero = 0;\n  while (numero < 3) {\n    numero = numero + 1;\n  }\n  return numero;\n}",
+      "solution": "function contarAteTres() {\n  let número = 0;\n  while (número < 3) {\n    número = número + 1;\n  }\n  return número;\n}",
       "difficulty": "medium",
       "estimated_time": 60
     },
@@ -18129,8 +18129,8 @@ export const learningSeed: LearningSeed = {
               "code": "assert(primeiroItem(['a', 'b', 'c']) === 'a', 'deve retornar o primeiro item');"
             },
             {
-              "name": "retorna primeiro numero",
-              "code": "assert(primeiroItem([10, 20]) === 10, 'deve funcionar com numeros');"
+              "name": "retorna primeiro número",
+              "code": "assert(primeiroItem([10, 20]) === 10, 'deve funcionar com números');"
             }
           ]
         }
@@ -18157,7 +18157,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-arr-3",
       "lesson_id": "lesson-js-arrays",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para adicionar tarefa no final da lista.",
+      "prompt": "Corrija a função para adicionar tarefa no final da lista.",
       "starter_code": "function adicionarTarefa(lista, tarefa) {\n  lista.pop(tarefa);\n  return lista;\n}",
       "validations": [
         {
@@ -18168,7 +18168,7 @@ export const learningSeed: LearningSeed = {
               "code": "const tarefas = ['estudar']; const resultado = adicionarTarefa(tarefas, 'praticar'); assert(resultado.length === 2, 'deve ter 2 itens');"
             },
             {
-              "name": "ultimo item deve ser tarefa nova",
+              "name": "último item deve ser tarefa nova",
               "code": "const tarefas = ['estudar']; const resultado = adicionarTarefa(tarefas, 'praticar'); assert(resultado[1] === 'praticar', 'deve adicionar no final');"
             }
           ]
@@ -18177,7 +18177,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "pop remove item; aqui voce precisa adicionar."
+          "text": "pop remove item; aqui você precisa adicionar."
         },
         {
           "level": 2,
@@ -18217,7 +18217,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "A propriedade e a mesma definida no objeto literal."
+          "text": "A propriedade é a mesma definida no objeto literal."
         },
         {
           "level": 3,
@@ -18232,7 +18232,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-obj-2",
       "lesson_id": "lesson-js-objects",
       "type": "code",
-      "prompt": "Crie a funcao criarProduto(nome, preco) que retorna um objeto com essas propriedades.",
+      "prompt": "Crie a função criarProduto(nome, preco) que retorna um objeto com essas propriedades.",
       "starter_code": "function criarProduto(nome, preco) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -18291,7 +18291,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Percentual nao e valor fixo. Voce precisa calcular uma parte do preco."
+          "text": "Percentual não e valor fixo. Você precisa calcular uma parte do preco."
         },
         {
           "level": 2,
@@ -18370,7 +18370,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "Voce pode usar split(' ') e join('-')."
+          "text": "Você pode usar split(' ') e join('-')."
         },
         {
           "level": 3,
@@ -18385,7 +18385,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-str-3",
       "lesson_id": "lesson-js-strings",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para retornar o texto com primeira letra maiuscula.",
+      "prompt": "Corrija a função para retornar o texto com primeira letra maiuscula.",
       "starter_code": "function primeiraLetraMaiuscula(nome) {\n  return nome[0].toUpperCase + nome.slice(1);\n}",
       "validations": [
         {
@@ -18441,7 +18441,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Evite comparacao solta para reduzir bugs."
+          "text": "Evite comparação solta para reduzir bugs."
         },
         {
           "level": 2,
@@ -18460,23 +18460,23 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-logic-2",
       "lesson_id": "lesson-js-logic",
       "type": "code",
-      "prompt": "Implemente podeAcessarAreaPremium(logado, assinaturaAtiva). Deve retornar true somente quando as duas condicoes forem verdadeiras.",
+      "prompt": "Implemente podeAcessarAreaPremium(logado, assinaturaAtiva). Deve retornar true somente quando as duas condições forem verdadeiras.",
       "starter_code": "function podeAcessarAreaPremium(logado, assinaturaAtiva) {\n  // seu codigo\n}",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "duas condicoes verdadeiras",
+              "name": "duas condições verdadeiras",
               "code": "assert(podeAcessarAreaPremium(true, true) === true, \"deve liberar quando ambos forem true\");"
             },
             {
-              "name": "nao logado",
-              "code": "assert(podeAcessarAreaPremium(false, true) === false, \"deve negar se nao estiver logado\");"
+              "name": "não logado",
+              "code": "assert(podeAcessarAreaPremium(false, true) === false, \"deve negar se não estiver logado\");"
             },
             {
               "name": "sem assinatura",
-              "code": "assert(podeAcessarAreaPremium(true, false) === false, \"deve negar se nao tiver assinatura\");"
+              "code": "assert(podeAcessarAreaPremium(true, false) === false, \"deve negar se não tiver assinatura\");"
             }
           ]
         }
@@ -18484,7 +18484,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Use operador && para combinar as condicoes."
+          "text": "Use operador && para combinar as condições."
         },
         {
           "level": 2,
@@ -18523,7 +18523,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "A comparacao deve incluir o 7."
+          "text": "A comparação deve incluir o 7."
         },
         {
           "level": 2,
@@ -18543,7 +18543,7 @@ export const learningSeed: LearningSeed = {
       "lesson_id": "lesson-js-array-methods",
       "type": "blank",
       "prompt": "Complete com o metodo que transforma cada item do array.",
-      "starter_code": "const numeros = [1, 2, 3];\nconst dobrados = numeros.{{blank1}}((n) => n * 2);",
+      "starter_code": "const números = [1, 2, 3];\nconst dobrados = números.{{blank1}}((n) => n * 2);",
       "validations": [
         {
           "type": "blank",
@@ -18570,7 +18570,7 @@ export const learningSeed: LearningSeed = {
           "text": "Resposta: map"
         }
       ],
-      "solution": "const numeros = [1, 2, 3];\nconst dobrados = numeros.map((n) => n * 2);",
+      "solution": "const números = [1, 2, 3];\nconst dobrados = números.map((n) => n * 2);",
       "difficulty": "easy",
       "estimated_time": 35
     },
@@ -18578,7 +18578,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-arrm-2",
       "lesson_id": "lesson-js-array-methods",
       "type": "code",
-      "prompt": "Implemente filtrarPares(lista) usando filter para retornar somente numeros pares.",
+      "prompt": "Implemente filtrarPares(lista) usando filter para retornar somente números pares.",
       "starter_code": "function filtrarPares(lista) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -18590,7 +18590,7 @@ export const learningSeed: LearningSeed = {
             },
             {
               "name": "lista sem pares",
-              "code": "const resultado = filtrarPares([1, 3, 5]); assert(JSON.stringify(resultado) === JSON.stringify([]), 'deve retornar array vazio quando nao houver pares');"
+              "code": "const resultado = filtrarPares([1, 3, 5]); assert(JSON.stringify(resultado) === JSON.stringify([]), 'deve retornar array vazio quando não houver pares');"
             }
           ]
         }
@@ -18598,11 +18598,11 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Use lista.filter(...) com uma condicao booleana."
+          "text": "Use lista.filter(...) com uma condição booleana."
         },
         {
           "level": 2,
-          "text": "Numero par: n % 2 === 0."
+          "text": "Número par: n % 2 === 0."
         },
         {
           "level": 3,
@@ -18617,7 +18617,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-arrm-3",
       "lesson_id": "lesson-js-array-methods",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para somar os precos corretamente com reduce.",
+      "prompt": "Corrija a função para somar os precos corretamente com reduce.",
       "starter_code": "function totalCarrinho(itens) {\n  return itens.reduce((total, item) => total - item.preco, 0);\n}",
       "validations": [
         {
@@ -18637,7 +18637,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "A operacao atual esta subtraindo em vez de somar."
+          "text": "A operação atual esta subtraindo em vez de somar."
         },
         {
           "level": 2,
@@ -18692,7 +18692,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-dom-2",
       "lesson_id": "lesson-js-dom-events",
       "type": "code",
-      "prompt": "Implemente atualizarTexto(doc, seletor, texto): selecione o elemento, atualize textContent e retorne true. Se nao existir, retorne false.",
+      "prompt": "Implemente atualizarTexto(doc, seletor, texto): selecione o elemento, atualize textContent e retorne true. Se não existir, retorne false.",
       "starter_code": "function atualizarTexto(doc, seletor, texto) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -18700,11 +18700,11 @@ export const learningSeed: LearningSeed = {
           "tests": [
             {
               "name": "atualiza quando encontra elemento",
-              "code": "const elemento = { textContent: 'antigo' }; const doc = { querySelector: (sel) => (sel === '.titulo' ? elemento : null) }; const ok = atualizarTexto(doc, '.titulo', 'Novo titulo'); assert(ok === true, 'deve retornar true quando atualizar'); assert(elemento.textContent === 'Novo titulo', 'deve atualizar textContent');"
+              "code": "const elemento = { textContent: 'antigo' }; const doc = { querySelector: (sel) => (sel === '.título' ? elemento : null) }; const ok = atualizarTexto(doc, '.título', 'Novo título'); assert(ok === true, 'deve retornar true quando atualizar'); assert(elemento.textContent === 'Novo título', 'deve atualizar textContent');"
             },
             {
-              "name": "retorna false quando seletor nao existe",
-              "code": "const doc = { querySelector: () => null }; const ok = atualizarTexto(doc, '.inexistente', 'Novo'); assert(ok === false, 'deve retornar false quando nao encontrar elemento');"
+              "name": "retorna false quando seletor não existe",
+              "code": "const doc = { querySelector: () => null }; const ok = atualizarTexto(doc, '.inexistente', 'Novo'); assert(ok === false, 'deve retornar false quando não encontrar elemento');"
             }
           ]
         }
@@ -18712,7 +18712,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Guarde o resultado de doc.querySelector(seletor) em uma variavel."
+          "text": "Guarde o resultado de doc.querySelector(seletor) em uma variável."
         },
         {
           "level": 2,
@@ -18731,7 +18731,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-dom-3",
       "lesson_id": "lesson-js-dom-events",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para registrar o evento correto de clique.",
+      "prompt": "Corrija a função para registrar o evento correto de clique.",
       "starter_code": "function registrarClique(botao, aoClicar) {\n  botao.addEventListener('mouseover', aoClicar);\n}",
       "validations": [
         {
@@ -18747,7 +18747,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "A funcao esta ouvindo o evento errado."
+          "text": "A função esta ouvindo o evento errado."
         },
         {
           "level": 2,
@@ -18802,7 +18802,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-async-2",
       "lesson_id": "lesson-js-async",
       "type": "code",
-      "prompt": "Implemente a funcao async buscarNomeUsuario(fetchFn, url) que faz a requisicao e retorna dados.nome.",
+      "prompt": "Implemente a função async buscarNomeUsuario(fetchFn, url) que faz a requisicao e retorna dados.nome.",
       "starter_code": "async function buscarNomeUsuario(fetchFn, url) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -18841,7 +18841,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-async-3",
       "lesson_id": "lesson-js-async",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para aguardar a resposta e retornar dados.total.",
+      "prompt": "Corrija a função para aguardar a resposta e retornar dados.total.",
       "starter_code": "async function obterTotalPedidos(fetchFn) {\n  const resposta = fetchFn('/pedidos');\n  const dados = resposta.json();\n  return dados.total;\n}",
       "validations": [
         {
@@ -18865,7 +18865,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "Quando nao usa await, resposta e dados viram Promise, nao valor final."
+          "text": "Quando não usa await, resposta e dados viram Promise, não valor final."
         },
         {
           "level": 3,
@@ -18955,7 +18955,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-err-3",
       "lesson_id": "lesson-js-error-handling",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para retornar null quando houver divisao por zero.",
+      "prompt": "Corrija a função para retornar null quando houver divisao por zero.",
       "starter_code": "function dividirSeguro(a, b) {\n  try {\n    return a / b;\n  } catch (error) {\n    return null;\n  }\n}",
       "validations": [
         {
@@ -18975,7 +18975,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Dividir por zero nao gera excecao automaticamente em JS."
+          "text": "Dividir por zero não gera excecao automaticamente em JS."
         },
         {
           "level": 2,
@@ -19011,7 +19011,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Esse tipo representa resultado futuro de operacao assincrona."
+          "text": "Esse tipo representa resultado futuro de operação assincrona."
         },
         {
           "level": 2,
@@ -19030,7 +19030,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-promise-2",
       "lesson_id": "lesson-js-promises",
       "type": "code",
-      "prompt": "Implemente esperarValor(valor) como funcao async que aguarda uma Promise e retorna o valor final.",
+      "prompt": "Implemente esperarValor(valor) como função async que aguarda uma Promise e retorna o valor final.",
       "starter_code": "async function esperarValor(valor) {\n  // seu codigo\n}",
       "validations": [
         {
@@ -19069,7 +19069,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-promise-3",
       "lesson_id": "lesson-js-promises",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para usar fallback quando a promessa principal falhar.",
+      "prompt": "Corrija a função para usar fallback quando a promessa principal falhar.",
       "starter_code": "function buscarComFallback(buscarPrimario, buscarSecundario) {\n  return buscarPrimario().then((dados) => dados);\n}",
       "validations": [
         {
@@ -19077,7 +19077,7 @@ export const learningSeed: LearningSeed = {
           "tests": [
             {
               "name": "usa primario quando funciona",
-              "code": "const resultado = await buscarComFallback(() => Promise.resolve('primario'), () => Promise.resolve('secundario')); assert(resultado === 'primario', 'deve manter resultado primario quando nao falhar');"
+              "code": "const resultado = await buscarComFallback(() => Promise.resolve('primario'), () => Promise.resolve('secundario')); assert(resultado === 'primario', 'deve manter resultado primario quando não falhar');"
             },
             {
               "name": "usa secundario quando primario falha",
@@ -19089,7 +19089,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "A funcao nao trata erro do primario."
+          "text": "A função não trata erro do primario."
         },
         {
           "level": 2,
@@ -19125,7 +19125,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Classes em JavaScript usam uma palavra reservada especifica."
+          "text": "Classes em JavaScript usam uma palavra reservada específica."
         },
         {
           "level": 2,
@@ -19218,7 +19218,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-mod-1",
       "lesson_id": "lesson-js-modularizacao",
       "type": "blank",
-      "prompt": "Complete o nome do objeto que representa um modulo de calculo.",
+      "prompt": "Complete o nome do objeto que representa um módulo de calculo.",
       "starter_code": "const {{blank1}} = {\n  somar(a, b) { return a + b; }\n};",
       "validations": [
         {
@@ -19239,7 +19239,7 @@ export const learningSeed: LearningSeed = {
         },
         {
           "level": 2,
-          "text": "Comeca com modulo e termina com Calculo."
+          "text": "Comeca com módulo e termina com Calculo."
         },
         {
           "level": 3,
@@ -19254,7 +19254,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-mod-2",
       "lesson_id": "lesson-js-modularizacao",
       "type": "code",
-      "prompt": "Crie a funcao criarModuloUsuario() que retorna um objeto com dois metodos: normalizarNome(nome) e gerarSlug(nome).",
+      "prompt": "Crie a função criarModuloUsuario() que retorna um objeto com dois metodos: normalizarNome(nome) e gerarSlug(nome).",
       "starter_code": "function criarModuloUsuario() {\n  // seu codigo\n}",
       "validations": [
         {
@@ -19262,15 +19262,15 @@ export const learningSeed: LearningSeed = {
           "tests": [
             {
               "name": "retorna metodos esperados",
-              "code": "const modulo = criarModuloUsuario(); assert(typeof modulo.normalizarNome === 'function', 'deve ter normalizarNome'); assert(typeof modulo.gerarSlug === 'function', 'deve ter gerarSlug');"
+              "code": "const módulo = criarModuloUsuario(); assert(typeof módulo.normalizarNome === 'function', 'deve ter normalizarNome'); assert(typeof módulo.gerarSlug === 'function', 'deve ter gerarSlug');"
             },
             {
               "name": "normaliza nome",
-              "code": "const modulo = criarModuloUsuario(); assert(modulo.normalizarNome('  liA  ') === 'Lia', 'normalizarNome deve ajustar espacos e capitalizacao');"
+              "code": "const módulo = criarModuloUsuario(); assert(módulo.normalizarNome('  liA  ') === 'Lia', 'normalizarNome deve ajustar espacos e capitalizacao');"
             },
             {
               "name": "gera slug",
-              "code": "const modulo = criarModuloUsuario(); assert(modulo.gerarSlug('  Curso JS Basico  ') === 'curso-js-basico', 'gerarSlug deve criar slug valido');"
+              "code": "const módulo = criarModuloUsuario(); assert(módulo.gerarSlug('  Curso JS Básico  ') === 'curso-js-básico', 'gerarSlug deve criar slug valido');"
             }
           ]
         }
@@ -19278,7 +19278,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Retorne um objeto com as duas funcoes dentro."
+          "text": "Retorne um objeto com as duas funções dentro."
         },
         {
           "level": 2,
@@ -19297,19 +19297,19 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-mod-3",
       "lesson_id": "lesson-js-modularizacao",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para delegar validacao ao modulo recebido por parametro.",
-      "starter_code": "function validarComModulo(modulo, email) {\n  return validarEmail(email);\n}",
+      "prompt": "Corrija a função para delegar validação ao módulo recebido por parametro.",
+      "starter_code": "function validarComModulo(módulo, email) {\n  return validarEmail(email);\n}",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "usa metodo do modulo",
-              "code": "let chamado = 0; const modulo = { validarEmail(valor) { chamado += 1; return valor.includes('@'); } }; const ok = validarComModulo(modulo, 'lia@email.com'); assert(ok === true, 'deve validar email correto'); assert(chamado === 1, 'deve chamar metodo do modulo uma vez');"
+              "name": "usa metodo do módulo",
+              "code": "let chamado = 0; const módulo = { validarEmail(valor) { chamado += 1; return valor.includes('@'); } }; const ok = validarComModulo(módulo, 'lia@email.com'); assert(ok === true, 'deve validar email correto'); assert(chamado === 1, 'deve chamar metodo do módulo uma vez');"
             },
             {
               "name": "retorna false para email invalido",
-              "code": "const modulo = { validarEmail(valor) { return valor.includes('@'); } }; const ok = validarComModulo(modulo, 'email-invalido'); assert(ok === false, 'deve retornar false para email sem @');"
+              "code": "const módulo = { validarEmail(valor) { return valor.includes('@'); } }; const ok = validarComModulo(módulo, 'email-invalido'); assert(ok === false, 'deve retornar false para email sem @');"
             }
           ]
         }
@@ -19317,18 +19317,18 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "A funcao precisa usar o parametro modulo."
+          "text": "A função precisa usar o parametro módulo."
         },
         {
           "level": 2,
-          "text": "Chame modulo.validarEmail(email)."
+          "text": "Chame módulo.validarEmail(email)."
         },
         {
           "level": 3,
-          "text": "return modulo.validarEmail(email);"
+          "text": "return módulo.validarEmail(email);"
         }
       ],
-      "solution": "function validarComModulo(modulo, email) {\n  return modulo.validarEmail(email);\n}",
+      "solution": "function validarComModulo(módulo, email) {\n  return módulo.validarEmail(email);\n}",
       "difficulty": "easy",
       "estimated_time": 45
     },
@@ -19336,7 +19336,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-test-1",
       "lesson_id": "lesson-js-testing",
       "type": "blank",
-      "prompt": "Complete com o nome da funcao usada para validar condicoes em testes.",
+      "prompt": "Complete com o nome da função usada para validar condições em testes.",
       "starter_code": "{{blank1}}(soma(2, 2) === 4, \"2 + 2 deve ser 4\");",
       "validations": [
         {
@@ -19353,7 +19353,7 @@ export const learningSeed: LearningSeed = {
       "hints": [
         {
           "level": 1,
-          "text": "Essa funcao ja aparece nos testes autom?ticos dos exercicios."
+          "text": "Essa função ja aparece nos testes autom?ticos dos exercicios."
         },
         {
           "level": 2,
@@ -19372,19 +19372,19 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-test-2",
       "lesson_id": "lesson-js-testing",
       "type": "code",
-      "prompt": "Implemente a funcao verificarParidade(fnIsPar) que retorna true somente se a funcao passar nos testes basicos de paridade.",
+      "prompt": "Implemente a função verificarParidade(fnIsPar) que retorna true somente se a função passar nos testes basicos de paridade.",
       "starter_code": "function verificarParidade(fnIsPar) {\n  // seu codigo\n}",
       "validations": [
         {
           "type": "js-tests",
           "tests": [
             {
-              "name": "retorna true para implementacao correta",
-              "code": "const ok = verificarParidade((n) => n % 2 === 0); assert(ok === true, \"deve retornar true para funcao correta\");"
+              "name": "retorna true para implementação correta",
+              "code": "const ok = verificarParidade((n) => n % 2 === 0); assert(ok === true, \"deve retornar true para função correta\");"
             },
             {
-              "name": "retorna false para implementacao incorreta",
-              "code": "const ok = verificarParidade(() => true); assert(ok === false, \"deve retornar false para funcao incorreta\");"
+              "name": "retorna false para implementação incorreta",
+              "code": "const ok = verificarParidade(() => true); assert(ok === false, \"deve retornar false para função incorreta\");"
             }
           ]
         }
@@ -19411,7 +19411,7 @@ export const learningSeed: LearningSeed = {
       "id": "ex-js-test-3",
       "lesson_id": "lesson-js-testing",
       "type": "bugfix",
-      "prompt": "Corrija a funcao para validar todos os cenarios de teste e retornar false se qualquer um falhar.",
+      "prompt": "Corrija a função para validar todos os cenarios de teste e retornar false se qualquer um falhar.",
       "starter_code": "function executarCenarios(fn, cenarios) {\n  for (const cenario of cenarios) {\n    if (fn(cenario.entrada) === cenario.esperado) {\n      return true;\n    }\n  }\n  return false;\n}",
       "validations": [
         {
